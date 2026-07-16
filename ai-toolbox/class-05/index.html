@@ -1,0 +1,1180 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Class 05 · Data Analysis Tools — Python, Gently — The AI Toolbox</title>
+<link rel="icon" type="image/png" href="/meritpoint-slides/assets/favicon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+<style>
+:root{--navy:#0C2D52;--navy2:#12386A;--blue:#1769C0;--teal:#0F9DB0;--tealb:#2BC4D4;--coral:#EE6B36;--amber:#F2A93B;--green:#1FA37A;--ink:#21303F;--muted:#5E7183;--line:#D7E2EC;--cloud:#EEF4FA;--cloud2:#F6F9FC}
+.reveal{font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);font-size:30px}
+.reveal h1,.reveal h2,.reveal h3{font-family:Georgia,serif;color:var(--navy);text-transform:none;letter-spacing:0;font-weight:700;line-height:1.12}
+.reveal h1{font-size:1.55em}.reveal h2{font-size:1.12em}.reveal h3{font-size:.9em}
+.reveal .kicker{color:var(--teal);font-weight:700;letter-spacing:3px;font-size:.44em;text-transform:uppercase;margin-bottom:.35em;font-family:-apple-system,sans-serif}
+.reveal section{text-align:left}.reveal section.center{text-align:center}
+.reveal ul,.reveal ol{margin-left:1.05em}.reveal li{margin:.28em 0;font-size:.7em;line-height:1.38}
+.reveal p{font-size:.74em;line-height:1.42}.reveal .lead{font-size:.82em}.reveal .muted{color:var(--muted)}
+.reveal .callout{background:var(--cloud);border-left:6px solid var(--teal);border-radius:8px;padding:.45em .8em;margin-top:.5em;font-size:.7em}
+.reveal .callout b{color:var(--teal)}
+.reveal .pill{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:999px;padding:.16em .7em;font-size:.55em;color:var(--navy);margin:.12em .18em}
+.reveal .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.65em}.reveal .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6em}
+.reveal .box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.6em .75em;box-shadow:0 4px 14px rgba(20,40,70,.06)}
+.reveal .box h3{margin:.05em 0 .2em}.reveal .box p{font-size:.58em;margin:0}
+.reveal .feature{display:inline-block;font-size:.55em;font-weight:700;color:#fff;background:var(--navy);border-radius:6px;padding:.1em .55em;margin-top:.25em}
+.reveal .rate{display:inline-block;font-weight:800;color:#fff;border-radius:5px;padding:.05em .4em;font-size:.92em;line-height:1.3}
+.reveal .rate.r-g{background:var(--green)}.reveal .rate.r-pg{background:var(--blue)}.reveal .rate.r-r{background:var(--coral)}
+.reveal .vid{display:grid;grid-template-columns:1.5fr 1fr;gap:1em;align-items:center}
+.reveal .poster{border-radius:12px;height:2.7em;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1.25em;text-align:center;box-shadow:0 8px 24px rgba(20,40,70,.18);position:relative}
+.reveal .poster .play{position:absolute;width:1em;height:1em;border-radius:50%;background:rgba(255,255,255,.92);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:.5em}
+.reveal .qr{width:1.6em;height:1.6em;border:1px solid var(--line);border-radius:8px;background:#fff;padding:4px}
+.reveal .qrwrap{text-align:center;font-size:.5em;color:var(--muted)}.reveal .qrwrap a{color:var(--teal);word-break:break-all}
+.reveal a.btn{display:inline-block;background:#fff;border:1px solid var(--teal);color:var(--teal);border-radius:8px;padding:.16em .7em;font-size:.58em;font-weight:600}
+.reveal .src{font-size:.5em;color:var(--muted);margin-top:.5em}
+.reveal blockquote{border:none;box-shadow:none;background:var(--cloud2);border-left:6px solid var(--teal);border-radius:8px;font-size:.76em;font-style:normal;width:100%;padding:.65em 1em}
+.reveal .speak{cursor:pointer;display:inline-flex;align-items:center;gap:.4em;background:var(--teal);color:#fff;border:none;border-radius:999px;padding:.28em .85em;font-size:.52em;font-weight:700;font-family:-apple-system,sans-serif;box-shadow:0 4px 12px rgba(15,157,176,.3)}
+.reveal .speak:hover{background:#0d8a9b}.reveal .speak.playing{background:var(--coral)}
+/* timeline */
+.reveal .tl{display:flex;gap:.4em;align-items:stretch;margin-top:.5em}
+.reveal .tl .ev{flex:1;background:#fff;border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:10px;padding:.45em .5em}
+.reveal .tl .ev.winter{border-top-color:#7FA8D0}.reveal .tl .ev.boom{border-top-color:var(--coral)}
+.reveal .tl .yr{font-family:Georgia,serif;font-weight:800;color:var(--navy);font-size:.72em}
+.reveal .tl .ev b{font-size:.56em;color:var(--navy);display:block;margin:.1em 0}.reveal .tl .ev span{font-size:.5em;color:var(--muted);line-height:1.25;display:block}
+/* flow steps */
+.reveal .flow{display:flex;flex-wrap:wrap;gap:.4em;align-items:stretch}
+.reveal .step{flex:1 1 0;min-width:2.3em;background:#fff;border:1px solid var(--line);border-radius:10px;padding:.38em .42em;position:relative}
+.reveal .step .n{position:absolute;top:-.5em;left:-.3em;width:1em;height:1em;border-radius:50%;background:var(--teal);color:#fff;font-size:.5em;font-weight:800;display:flex;align-items:center;justify-content:center}
+.reveal .step b{font-size:.56em;color:var(--navy);display:block;line-height:1.15}.reveal .step span{font-size:.48em;color:var(--muted)}
+.reveal .step.loop{border-color:var(--coral);border-style:dashed}
+/* prompt cards */
+.reveal .prompt{background:#0f2742;color:#dfeaf6;border-radius:9px;padding:.4em .65em;font-family:Consolas,monospace;font-size:.54em;margin:.26em 0;line-height:1.38}
+.reveal .prompt .you{color:var(--tealb);font-weight:700}
+/* skills */
+.reveal .skillcard{background:linear-gradient(135deg,#fff,var(--cloud));border:1px solid var(--line);border-radius:14px;padding:.65em .8em}
+.reveal .skillcard .cn{font-size:.95em;color:var(--navy);font-weight:700;font-family:Georgia,serif}
+/* QUIZ */
+.reveal .quiz{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.7em .85em;box-shadow:0 6px 18px rgba(20,40,70,.07);max-width:18em}
+.reveal .quiz .qq{font-size:.72em;font-weight:600;color:var(--navy);margin:0 0 .5em}
+.reveal .quiz .opt{display:block;width:100%;text-align:left;background:var(--cloud2);border:1px solid var(--line);border-radius:9px;padding:.4em .6em;margin:.25em 0;font-size:.6em;color:var(--ink);cursor:pointer;transition:.1s;font-family:-apple-system,sans-serif}
+.reveal .quiz .opt:hover{border-color:var(--teal);background:#fff}
+.reveal .quiz .opt.correct{background:#E6F4EE;border-color:var(--green);color:#0d6b4f;font-weight:600}
+.reveal .quiz .opt.wrong{background:#FBEAE7;border-color:var(--coral);color:#a23c1c}
+.reveal .quiz .opt[disabled]{cursor:default}
+.reveal .quiz-exp{font-size:.56em;color:var(--muted);margin:.4em 0 0;display:none}
+.reveal .quiz.answered .quiz-exp{display:block}
+.reveal .quiz-badge{font-size:.5em;color:var(--teal);font-weight:700;letter-spacing:1px}
+/* QUIZ LIVE DISTRIBUTION (shown once answered) */
+.reveal .qstats{display:none;margin-top:.5em;border-top:1px dashed var(--line);padding-top:.4em}
+.reveal .quiz.answered .qstats{display:block}
+.reveal .qhead{display:flex;justify-content:space-between;align-items:center;font-size:.5em;color:var(--muted);margin-bottom:.3em}
+.reveal .qm{border:1px solid var(--line);background:var(--cloud2);border-radius:999px;padding:.15em .7em;margin-left:.4em;font:inherit;font-size:.95em;cursor:pointer;color:var(--muted)}
+.reveal .qm.on{background:var(--teal);border-color:var(--teal);color:#fff;font-weight:700}
+.reveal .qrow{display:flex;align-items:center;gap:.4em;margin:.14em 0}
+.reveal .ql{font-size:.5em;font-weight:800;color:var(--navy);width:1.1em}
+.reveal .qbar{flex:1;height:.55em;background:var(--cloud2);border-radius:999px;overflow:hidden}
+.reveal .qfill{height:100%;background:var(--navy);border-radius:999px;transition:width .5s}
+.reveal .qfill.qok{background:var(--green)}
+.reveal .qp{font-size:.45em;color:var(--muted);min-width:4.2em;text-align:right}
+#liveChip{position:fixed;left:14px;bottom:46px;z-index:40;background:rgba(255,255,255,.92);border:1px solid var(--line);
+  border-radius:999px;padding:5px 12px;font:600 12px -apple-system,'Segoe UI',sans-serif;color:#1a9a6c;box-shadow:0 4px 14px rgba(20,40,70,.10)}
+/* CODE LAB */
+.reveal .lab{display:grid;grid-template-columns:1.55fr 1fr;gap:.6em;margin-top:.4em;height:11.2em}
+.reveal .lab-main{display:flex;flex-direction:column;min-width:0}
+.reveal .lab textarea.code{flex:1;width:100%;background:#0f2742;color:#e7f0fb;border:1px solid #21405f;border-radius:10px 10px 0 0;font-family:Consolas,"SF Mono",monospace;font-size:13px;line-height:1.4;padding:.5em .6em;resize:none;outline:none;tab-size:4}
+.reveal .lab-bar{display:flex;align-items:center;gap:.4em;background:#11314f;border:1px solid #21405f;border-top:none;padding:.3em .4em;flex-wrap:wrap}
+.reveal .lab-bar button{font-family:-apple-system,sans-serif;font-size:11px;font-weight:600;border:none;border-radius:7px;padding:.4em .7em;cursor:pointer}
+.reveal .lab-bar .run{background:var(--green);color:#fff}.reveal .lab-bar .run:hover{background:#178a64}
+.reveal .lab-bar .ai-explain,.reveal .lab-bar .ai-debug,.reveal .lab-bar .ai-improve{background:#1b3e5e;color:#cfe0ef}
+.reveal .lab-bar .ai-explain:hover,.reveal .lab-bar .ai-debug:hover,.reveal .lab-bar .ai-improve:hover{background:#27557d}
+.reveal .lab-status{font-size:10.5px;color:#9db8d6;margin-left:auto;font-family:-apple-system,sans-serif}
+.reveal .lab pre.out{background:#08192b;color:#bfe3c7;border:1px solid #21405f;border-top:none;border-radius:0 0 10px 10px;margin:0;padding:.5em .6em;font-family:Consolas,monospace;font-size:11.5px;line-height:1.4;overflow:auto;min-height:2.4em;max-height:4.2em;white-space:pre-wrap}
+.reveal .lab pre.out .err{color:#ff9b8a}
+.reveal .assist{display:flex;flex-direction:column;background:linear-gradient(135deg,#fff,#f1f7fb);border:1px solid var(--line);border-radius:11px;overflow:hidden;min-width:0}
+.reveal .assist-head{background:linear-gradient(90deg,#0F9DB0,#2BC4D4);color:#fff;font-size:12px;font-weight:700;padding:.45em .7em;font-family:-apple-system,sans-serif;display:flex;align-items:center;justify-content:space-between;gap:.5em}
+.reveal .assist-head .ai-model{font-family:-apple-system,sans-serif;font-size:11px;font-weight:600;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.5);border-radius:6px;padding:.15em .3em;cursor:pointer;outline:none}
+.reveal .assist-head .ai-model option{color:var(--ink)}
+.reveal .assist-body{flex:1;overflow:auto;padding:.5em .65em;font-size:12px;line-height:1.46;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .assist-body p{font-size:12px;margin:.3em 0}.reveal .assist-body code{background:#eef3f8;border-radius:4px;padding:0 .25em;font-family:Consolas,monospace;font-size:11px}
+.reveal .assist-body pre{background:#0f2742;color:#e7f0fb;border-radius:8px;padding:.5em .6em;font-size:11px;overflow:auto;white-space:pre}
+.reveal .assist-body pre code{background:none;color:inherit}
+.reveal .assist-body .apply{background:var(--teal);color:#fff;border:none;border-radius:6px;padding:.25em .6em;font-size:11px;font-weight:600;cursor:pointer;margin-top:.2em}
+.reveal .assist-ask{display:flex;gap:.3em;border-top:1px solid var(--line);padding:.4em}
+.reveal .assist-ask input{flex:1;border:1px solid var(--line);border-radius:7px;padding:.4em .5em;font-size:12px;font-family:-apple-system,sans-serif;outline:none}
+.reveal .assist-ask button{background:var(--navy);color:#fff;border:none;border-radius:7px;padding:.4em .7em;font-size:12px;font-weight:600;cursor:pointer}
+/* HEAP / TOP-K VISUALIZER */
+.reveal .heapviz{margin-top:.35em;font-family:-apple-system,sans-serif}
+.reveal .hv-top{display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
+.reveal .hv-code{background:#0f2742;border-radius:10px 10px 0 0;padding:8px 12px;border:1px solid #21405f;border-bottom:none}
+.reveal .hv-code-title{color:#9db8d6;font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:4px}
+.reveal .hv-code pre.hv-pre{margin:0;color:#e7f0fb;font-family:Consolas,"SF Mono",monospace;font-size:11.5px;line-height:1.5;max-height:150px;overflow:auto;white-space:pre}
+.reveal .hv-info{background:#eef4fa;border:1px solid #21405f22;border-top:none;border-radius:0 0 10px 10px;padding:6px 12px;font-size:11px;color:var(--muted)}
+.reveal .hv-panel{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:6px}
+.reveal .hv-panel label{font-size:10.5px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin-top:4px}
+.reveal .hv-panel label:first-child{margin-top:0}
+.reveal .hv-row{display:flex;gap:6px}
+.reveal .hv-input{flex:1;border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:13px;font-family:-apple-system,sans-serif;min-width:0}
+.reveal .hv-insert{background:var(--green);color:#fff;border:none;border-radius:7px;padding:6px 12px;font-size:12.5px;font-weight:700;cursor:pointer}
+.reveal .hv-quick{display:flex;gap:5px;flex-wrap:wrap}
+.reveal .hv-quick-btn{background:var(--cloud);border:1px solid var(--line);border-radius:7px;padding:4px 10px;font-size:12px;font-weight:600;cursor:pointer;color:var(--ink)}
+.reveal .hv-quick-btn:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .hv-arr-now{background:var(--cloud2);border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-family:Consolas,monospace;font-size:12.5px}
+.reveal .hv-status,.reveal .hv-action{font-size:12px;color:var(--ink)}
+.reveal .hv-frames-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin:10px 0 4px}
+.reveal .hv-frames{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.reveal .hv-frame{flex:0 0 auto;min-width:150px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 8px;text-align:center}
+.reveal .hv-frame-active{border-color:var(--teal);box-shadow:0 0 0 2px rgba(15,157,176,.18)}
+.reveal .hv-frame-title{font-size:11px;font-weight:700;color:var(--navy)}
+.reveal .hv-frame-desc{font-size:9.5px;color:var(--muted);min-height:1.6em;line-height:1.25;margin:2px 0}
+.reveal .hv-tree-svg{width:100%;height:80px}
+.reveal .hv-empty{color:var(--muted);font-size:10.5px;padding:20px 0}
+.reveal .hv-node{fill:#D6ECEF;stroke:#0B7E8A;stroke-width:1.5}
+.reveal .hv-node-hi{fill:#F2A93B;stroke:#c07f1a}
+.reveal .hv-node-text{font-size:9px;font-weight:700;fill:#0C2D52;text-anchor:middle;font-family:-apple-system,sans-serif}
+.reveal .hv-edge{stroke:#c7d6e4;stroke-width:1.5}
+.reveal .hv-swap{stroke:#C0392B;stroke-width:2;stroke-dasharray:3,2}
+.reveal .hv-arrs{display:flex;gap:8px;overflow-x:auto;margin-top:6px}
+.reveal .hv-arr{flex:0 0 auto;min-width:150px;text-align:center;font-family:Consolas,monospace;font-size:11.5px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:5px 8px;color:var(--ink)}
+.reveal .hv-arr-active{border-color:var(--teal)}
+.reveal .hv-arr-hi{color:#C0392B;font-weight:700}
+.reveal .hv-controls{display:flex;align-items:center;gap:6px;margin-top:8px;flex-wrap:wrap}
+.reveal .hv-controls button{background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 10px;font-size:11.5px;font-weight:600;cursor:pointer;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .hv-controls button:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .hv-play{background:var(--teal)!important;color:#fff!important;border-color:var(--teal)!important}
+.reveal .hv-speed-label{font-size:11px;color:var(--muted);margin-left:6px}
+/* convolution visualizer */
+.reveal .cv-top{display:grid;grid-template-columns:1fr 1.05fr 1fr;gap:14px;align-items:start;justify-items:center}
+.reveal .cv-col{display:flex;flex-direction:column;align-items:center}
+.reveal .cv-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin-bottom:5px;text-align:center}
+.reveal .cv-grid{display:grid;gap:2px;width:max-content}
+.reveal .cv-in{grid-template-columns:repeat(8,25px)}
+.reveal .cv-out{grid-template-columns:repeat(6,33px)}
+.reveal .cv-cell{width:25px;height:25px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:9px;font-weight:700;cursor:pointer;user-select:none;border:1px solid rgba(12,45,82,.14)}
+.reveal .cv-ocell{width:33px;height:33px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:10.5px;font-weight:700;background:var(--cloud);color:#b9c6d4;border:1px solid var(--line)}
+.reveal .cv-win{outline:2.5px solid var(--coral);outline-offset:-1px;z-index:1}
+.reveal .cv-kwrap{background:#0f2742;border-radius:10px;padding:10px 12px;border:1px solid #21405f;width:100%}
+.reveal .cv-kgrid{display:grid;grid-template-columns:repeat(3,36px);gap:2px;width:max-content;margin:0 auto}
+.reveal .cv-kcell{width:36px;height:28px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:11.5px;font-weight:700;background:#1a3a5f;color:#e7f0fb;border:1px solid #2c4d75}
+.reveal .cv-kdiv{text-align:center;color:#9db8d6;font-size:10px;margin-top:4px;font-family:Consolas,monospace}
+.reveal .cv-calc{margin-top:8px;font-family:Consolas,monospace;font-size:10px;line-height:1.55;color:#cfe0ef;min-height:60px;text-align:center}
+.reveal .cv-calc .cv-sum{color:#F2A93B;font-weight:700}
+.reveal .cv-chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px;justify-content:center}
+.reveal .cv-chip{background:var(--cloud);border:1px solid var(--line);border-radius:7px;padding:4px 9px;font-size:11px;font-weight:600;cursor:pointer;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .cv-chip:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .cv-chip.sel{background:var(--teal);border-color:var(--teal);color:#fff}
+.reveal .cv-status{font-size:12px;color:var(--ink);margin-top:7px}
+.reveal .cv-controls{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;flex-wrap:wrap}
+.reveal .cv-controls button{background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 10px;font-size:11.5px;font-weight:600;cursor:pointer;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .cv-controls button:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .cv-play{background:var(--teal)!important;color:#fff!important;border-color:var(--teal)!important}
+/* comments */
+/* bottom-right toolbar (CC | Listen | Comment) — top-right belongs to the
+   signed-in profile chip (#mpAuth, assets/auth.js), which used to cover this */
+#commentBtn{position:fixed;right:16px;bottom:14px;z-index:60;background:var(--teal);color:#fff;border:none;border-radius:999px;padding:9px 15px;font-size:13px;font-weight:700;font-family:-apple-system,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(15,157,176,.4)}
+#commentBtn:hover{background:#0d8a9b}#commentBtn .cnum{background:#fff;color:var(--teal);border-radius:999px;padding:0 6px;margin-left:5px;font-size:11px}
+#listenBtn{--p:0%;position:fixed;right:168px;bottom:14px;z-index:60;min-width:128px;justify-content:center;color:#fff;border:none;border-radius:999px;padding:9px 15px;font-size:13px;font-weight:700;font-family:-apple-system,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(20,40,70,.34);display:none;align-items:center;gap:.45em;background:linear-gradient(to right,var(--teal) var(--p),var(--navy) var(--p));transition:background .15s linear}
+#listenBtn:hover{filter:brightness(1.1)}
+#listenBtn.playing{background:linear-gradient(to right,var(--coral) var(--p),#16406e var(--p))}
+#listenBtn .li-ic{font-size:12px;line-height:1}#listenBtn .li-tx{font-variant-numeric:tabular-nums;font-size:11.5px;opacity:.92}
+#ccBtn{position:fixed;right:306px;bottom:14px;z-index:60;background:var(--navy);color:#fff;border:none;border-radius:999px;padding:9px 12px;font-size:11.5px;font-weight:800;letter-spacing:.03em;font-family:-apple-system,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(20,40,70,.34);display:none;opacity:.5}
+#ccBtn:hover{opacity:.8}#ccBtn.on{opacity:1;background:var(--teal)}
+#capBar{position:fixed;left:50%;bottom:58px;transform:translateX(-50%);max-width:70%;background:rgba(8,16,30,.88);color:#fff;padding:.4em 1em;border-radius:9px;font-size:13.5px;line-height:1.35;text-align:center;z-index:59;display:none;font-family:-apple-system,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+#commentPanel{position:fixed;right:16px;bottom:60px;width:340px;max-height:64vh;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 44px rgba(20,40,70,.22);z-index:61;display:none;flex-direction:column;font-family:-apple-system,sans-serif;overflow:hidden}
+#commentPanel.open{display:flex}
+#commentPanel .ph{background:var(--navy);color:#fff;padding:10px 14px;font-size:13px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+#commentPanel .ph .x{cursor:pointer;opacity:.8}#commentPanel .ph .x:hover{opacity:1}
+#commentList{flex:1;overflow:auto;padding:10px 14px}
+#commentList .c{border-bottom:1px solid var(--cloud);padding:7px 0}#commentList .c:last-child{border:none}
+#commentList .c .cn{font-size:12px;font-weight:700;color:var(--navy)}#commentList .c .ct{font-size:10px;color:var(--muted);margin-left:6px}
+#commentList .c .cb{font-size:13px;color:var(--ink);margin-top:2px;white-space:pre-wrap;word-break:break-word}
+#commentList .none{color:var(--muted);font-size:12.5px;text-align:center;padding:14px 0}
+#commentForm{border-top:1px solid var(--line);padding:10px 12px;display:flex;flex-direction:column;gap:6px}
+#commentForm input,#commentForm textarea{border:1px solid var(--line);border-radius:8px;padding:7px 9px;font-size:13px;font-family:-apple-system,sans-serif;outline:none}
+#commentForm textarea{resize:vertical;min-height:46px}
+#commentForm .row{display:flex;gap:6px;align-items:center}
+#commentForm button{background:var(--teal);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:700;cursor:pointer}
+#commentForm .msg{font-size:11px;color:var(--muted)}
+/* donate */
+#donateBtn{position:fixed;left:70px;top:19px;z-index:60;background:var(--coral);color:#fff;border-radius:999px;padding:8px 16px;font-size:12.5px;font-weight:700;font-family:-apple-system,sans-serif;text-decoration:none;box-shadow:0 6px 18px rgba(238,107,54,.4)}
+#donateBtn:hover{background:#d85a28;text-decoration:none}
+/* MPA logo badge — top-left of every slide, next to Donate (top-right holds the auth chip) */
+#mpaLogo{position:fixed;left:16px;top:14px;z-index:50;display:block;width:44px;height:44px;border-radius:10px;background:#fff;box-shadow:0 4px 14px rgba(20,40,70,.25);opacity:.92;transition:opacity .15s}
+#mpaLogo:hover{opacity:1}
+#mpaLogo img{width:100%;height:100%;object-fit:contain;display:block}
+/* slide number: default bottom-right collides with the comment/listen/cc button row, so move it to bottom-left */
+.reveal .slide-number{left:14px;right:auto;bottom:14px;z-index:58;background:rgba(255,255,255,.85);padding:2px 8px;border-radius:6px;color:var(--muted)}
+/* PDF download — top-left row, after Donate */
+#pdfBtn{position:fixed;left:178px;top:19px;z-index:60;background:#fff;color:var(--navy);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:12.5px;font-weight:700;font-family:-apple-system,sans-serif;text-decoration:none;box-shadow:0 4px 14px rgba(20,40,70,.18)}
+#pdfBtn:hover{border-color:var(--teal);color:var(--teal);text-decoration:none}
+/* keep screen-only chrome out of print / the exported PDF (fixed elements repeat on every page) */
+@media print{#donateBtn,#mpaLogo,#pdfBtn,#ccBtn,#listenBtn,#commentBtn,#commentPanel,#capBar,#mpAuth{display:none!important}}
+</style></head><body>
+<div class="reveal"><div class="slides">
+<section id="title" data-sid="title" class="center" data-background-gradient="linear-gradient(135deg,#0C2D52,#16406e)">
+<div class="kicker" style="color:#7fd3df">The AI Toolbox · Class 05</div>
+    <h1 style="color:#fff">Data-Analysis Tools<br>(Python, Gently)</h1>
+    <p style="color:#cfe0ef;margin-top:.5em">Handle real data with a few lines of Python — <b>no fear required</b>.</p>
+    <p style="color:#9db8d6;font-size:.58em;margin-top:1.1em">Merit Point Academy · 60 min · press <b>S</b> notes · <b>→</b> next · 💬 to comment</p>
+    <aside class="notes">The gentlest possible landing into real programming for data. Reassure early: today needs ~six pandas moves, not 'learning Python'. Every code line in this deck runs in the browser, and the AI assistant from Class 4 is standing by in every lab. This begins the pipeline's DATA stage (classes 5-9).</aside>
+</section>
+<section id="recap-class04" data-sid="recap-class04">
+<div class="kicker">Recap · where we left off</div>
+    <h2>Last class in 60 seconds</h2>
+    <div class="grid3" style="margin-top:.35em">
+      <div class="box"><h3 style="color:var(--navy)">Prompt anatomy</h3><p><b>Role · context · format · constraints</b> — and constraints make answers checkable.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">The framework</h3><p>Every paper in three parts: <b>summary · contribution · limitation</b> — the limitation is your idea mine.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">The seatbelt</h3><p>LLMs predict plausible text → <b>verify every claim</b>. Unverifiable = unusable.</p></div>
+    </div>
+    <div class="callout"><b>Homework share:</b> who caught a hallucination in the wild? And show a ✓-verified summary. Today your Class-4 assistant becomes a <b>coding co-pilot</b> — paste any error, ask what it means, fix it yourself.</div>
+    <aside class="notes">Celebrate any caught hallucinations — best possible proof the verify habit works. The co-pilot framing sets today's safety net: nobody gets stuck on an error message with an LLM one tab away.</aside>
+</section>
+<section id="agenda" data-sid="agenda">
+<div class="kicker">Agenda · how this hour runs</div>
+    <h2>Where we're going</h2>
+    <div class="grid2" style="margin-top:.4em">
+      <ul>
+        <li><b>0–8'</b> Homework share + the analyst who built his own tool</li>
+        <li><b>8–18'</b> Everything is a table · Series &amp; DataFrame</li>
+        <li><b>18–30'</b> The four verbs: load · inspect · select · summarize</li>
+        <li><b>30–38'</b> Filtering with conditions · handling missing values</li>
+      </ul>
+      <ul>
+        <li><b>38–46'</b> Demos: Colab workflow · the real Titanic · AI-debugging</li>
+        <li><b>46–54'</b> Two labs: the AV detection log · Titanic survival, for real</li>
+        <li><b>54–60'</b> Your first data task, homework &amp; wrap-up</li>
+        <li>Quizzes &amp; 💬 comments throughout</li>
+      </ul>
+    </div>
+    <div class="callout"><b>By the end:</b> read any dataset as rows × columns, run pandas' four verbs on real data, and produce your first cleaned dataset + labeled chart in Colab.</div>
+    <aside class="notes">Pace check: concepts are deliberately few (one shape, four verbs, two fixes). The hour's energy should go to the labs and the Colab task — this class is judged by what students RUN, not what they hear.</aside>
+</section>
+<section id="quiz-warmup" data-sid="quiz-warmup">
+<div class="kicker">Warm-up · activate</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="1">
+    <p class="qq">A self-driving car 'sees' 30 frames every second, detecting several objects per frame. What does one second of its vision look like, written down?</p>
+    <div class="opts"><button class="opt" data-i="0">A movie file — you can't write vision down</button><button class="opt" data-i="1">A table: one row per detected object, columns like frame, class, confidence, distance</button><button class="opt" data-i="2">A single number between 0 and 1</button><button class="opt" data-i="3">Six pages of if-statements</button></div>
+    <p class="quiz-exp">Everything the perception system outputs lands in a table: each detection is a row; each fact about it (which frame, what class, how confident, how far) is a column. Today you'll hold exactly that table in your hands.</p>
+  </div>
+  <aside class="notes">The answer IS today's concept 1, planted before it's taught. The detection-log lab makes it literal in 40 minutes.</aside>
+</section>
+<section id="story-pandas" data-sid="story-pandas">
+<div class="kicker">The Story</div>
+    <h2>Built to tame a mountain of data</h2>
+    <blockquote id="quote">In 2008, an analyst named <b>Wes McKinney</b> was drowning in financial spreadsheets at a hedge fund. Python had no good way to handle tables of data — so he <b>built one himself</b> and called it <b>pandas</b>. He open-sourced it, and today it's the tool millions of scientists reach for first. It exists because one person was tired of wrestling messy tables by hand.</blockquote>
+    <div style="margin-top:.4em;display:flex;align-items:center;gap:1em">
+      <button class="speak" data-audio="audio/quote.mp3">🔊 <span>Speak this story</span></button>
+      <span class="muted" style="font-size:.52em">Neural voice · click to play / pause</span></div>
+    <p class="src">The name isn't the animal: <b>pan</b>(el) <b>da</b>(ta) — economists' word for tables over time. Think of it as a super-Excel that speaks Python: millions of rows, automated, reproducible.</p>
+    <aside class="notes">A tool-origin story with the same moral as ImageNet: the bottleneck was boring infrastructure, and fixing it changed the field. 'Super Excel' is the analogy that lands with parents and students alike — everything they know from spreadsheets transfers.</aside>
+</section>
+<section id="concept-table" data-sid="concept-table">
+<div class="kicker">Concept 1 · the one shape</div>
+    <h2>Everything is a table</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1.2fr;align-items:center;margin-top:.2em">
+      <div>
+        <ul>
+          <li><b>Rows = examples.</b> One detection, one house, one passenger, one day of your life.</li>
+          <li><b>Columns = variables.</b> Price, confidence, age, hours slept — one fact per column.</li>
+          <li>In pandas this shape is called a <b>DataFrame</b>.</li>
+        </ul>
+        <p class="src">Recognize it? It's Class 2's "picture the data table" — today the picture becomes an object you can compute on.</p>
+      </div>
+      <div class="box" style="padding:.5em .6em">
+        <table style="width:100%;border-collapse:collapse;font-family:Consolas,monospace;font-size:.5em">
+          <tr style="background:var(--cloud);color:var(--navy);font-weight:700"><td style="padding:.3em .5em">frame</td><td>object</td><td>conf</td><td>dist_m</td></tr>
+          <tr><td style="padding:.25em .5em">001</td><td>pedestrian</td><td>0.94</td><td>8.2</td></tr>
+          <tr style="background:var(--cloud2)"><td style="padding:.25em .5em">001</td><td>car</td><td>0.88</td><td>15.0</td></tr>
+          <tr><td style="padding:.25em .5em">002</td><td>sign</td><td>0.79</td><td>22.4</td></tr>
+        </table>
+        <p style="font-size:.5em;color:var(--muted);margin:.4em 0 0">→ a row = one example &nbsp;·&nbsp; ↓ a column = one variable</p>
+      </div>
+    </div>
+    <div class="callout"><b>KEY IDEA</b> — rows are <b>things</b>; columns are <b>facts about them</b>. See data this way and the code becomes simple. That's 90% of data science.</div>
+    <aside class="notes">The single most important slide of the hour. The mini-table IS the AV detection log they'll load in lab 1. Class-2 callback makes the arc explicit: picture the table (Class 2) → draw its pipeline (Class 3) → hold it in code (today).</aside>
+</section>
+<section id="concept-series-df" data-sid="concept-series-df">
+<div class="kicker">Concept 2 · the two containers</div>
+    <h2>Series and DataFrame</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1fr;margin-top:.25em">
+      <div class="box"><h3 style="color:var(--teal)">📏 Series — one labeled column</h3>
+        <div class="prompt">scores = pd.Series([98, 87, 92],<br>&nbsp;&nbsp;index=["Alice", "Bob", "Carl"])</div>
+        <p>A single column with row labels. Ask it things: <span style="font-family:Consolas,monospace">scores.mean()</span> → 92.3.</p></div>
+      <div class="box"><h3 style="color:var(--navy)">🗂️ DataFrame — the whole table</h3>
+        <div class="prompt">df = pd.DataFrame({"name": [...],<br>&nbsp;&nbsp;"score": [...], "grade": [...]})</div>
+        <p>Many Series sharing the same rows. Select one column — <span style="font-family:Consolas,monospace">df["score"]</span> — and you get a Series back.</p></div>
+    </div>
+    <div class="callout"><b>The mental model:</b> DataFrame = the Excel sheet · Series = one of its columns. Two containers, and you already understand both — that's the whole type system you need this course.</div>
+    <aside class="notes">Deliberately shallow: name the two containers, connect to Excel, move on. Depth comes from using them in the labs, not from more slides.</aside>
+</section>
+<section id="quiz-table" data-sid="quiz-table">
+<div class="kicker">Check · table thinking</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="1">
+    <p class="qq">You track your study sessions for a month: each session's date, subject, minutes, and focus rating. In the table, what is one ROW?</p>
+    <div class="opts"><button class="opt" data-i="0">One subject, like math</button><button class="opt" data-i="1">One study session — with its date, subject, minutes, and rating as its facts</button><button class="opt" data-i="2">One month</button><button class="opt" data-i="3">The minutes column</button></div>
+    <p class="quiz-exp">A row is one example — here, one session. Subject and minutes are columns (facts about each session). Get rows-vs-columns right and every pandas command afterwards reads naturally.</p>
+  </div>
+  <aside class="notes">Same discussion-slide dataset students will design later — planting it early. Rows/columns confusion is THE beginner blocker; resolve it before code appears.</aside>
+</section>
+<section id="concept-four-verbs" data-sid="concept-four-verbs">
+<div class="kicker">Concept 3 · 80% of data work</div>
+    <h2>pandas in four verbs</h2>
+    <div class="grid2" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">1 · Load</h3>
+        <div class="prompt">df = pd.read_csv("data.csv")</div>
+        <p>One line: file → DataFrame. (Excel, JSON, SQL — same idea, different verb ending.)</p></div>
+      <div class="box"><h3 style="color:var(--teal)">2 · Inspect</h3>
+        <div class="prompt">df.head()&nbsp;&nbsp;df.info()&nbsp;&nbsp;df.describe()</div>
+        <p>First five rows · column types &amp; missing counts · statistics of every numeric column.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">3 · Select</h3>
+        <div class="prompt">df["conf"]&nbsp;&nbsp;df[["frame","conf"]]</div>
+        <p>Grab one column (a Series) or several (a smaller DataFrame).</p></div>
+      <div class="box"><h3 style="color:var(--amber)">4 · Summarize</h3>
+        <div class="prompt">df["conf"].mean()&nbsp;&nbsp;df["object"].value_counts()</div>
+        <p>Averages, counts, extremes — the numbers your research question actually needs.</p></div>
+    </div>
+    <div class="callout"><b>Load → inspect → select → summarize.</b> Four verbs ≈ 80% of all data work. Everything else is variations.</div>
+    <aside class="notes">The operational core of the hour. Read each verb aloud with its line — students will type all four within 20 minutes in lab 1. describe() got a cameo in Class 3's homework; now it's officially taught.</aside>
+</section>
+<section id="concept-filter" data-sid="concept-filter">
+<div class="kicker">Concept 4 · asking questions of the table</div>
+    <h2>Filtering: keep only the rows that match</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1fr;margin-top:.25em">
+      <div class="box"><h3 style="color:var(--teal)">One condition</h3>
+        <div class="prompt">sure = df[df["conf"] &gt; 0.9]</div>
+        <p>Read it inside-out: <span style="font-family:Consolas,monospace">df["conf"] &gt; 0.9</span> marks each row True/False; the outer <span style="font-family:Consolas,monospace">df[...]</span> keeps the True ones.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">Combined conditions</h3>
+        <div class="prompt">df[(df["object"]=="pedestrian")<br>&nbsp;&nbsp;&amp; (df["conf"] &lt; 0.7)]</div>
+        <p><b>&amp;</b> = and · <b>|</b> = or · <b>~</b> = not — each condition in its own parentheses.</p></div>
+    </div>
+    <div class="callout"><b>Why it matters:</b> every research question is a filter. "How does the detector do on pedestrians at night?" = <i>filter rows, then summarize them</i>. The right-hand example finds exactly the low-confidence pedestrians your Class-2 strong question worries about.</div>
+    <aside class="notes">'Every research question is a filter' is the bridge from syntax to science — filtering + the four verbs answer real questions, which lab 1's challenge proves immediately.</aside>
+</section>
+<section id="concept-missing" data-sid="concept-missing">
+<div class="kicker">Concept 5 · real data has holes</div>
+    <h2>Missing values: find, then drop or fill</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">🔎 Find</h3>
+        <div class="prompt">df.isnull().sum()</div>
+        <p>Missing-value count per column — always the <b>first diagnostic</b> after loading.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">🗑️ Drop</h3>
+        <div class="prompt">df = df.dropna()</div>
+        <p>Delete rows with holes. Fine when few rows are affected — simple and honest.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">🩹 Fill</h3>
+        <div class="prompt">df["age"] = df["age"]<br>&nbsp;&nbsp;.fillna(df["age"].median())</div>
+        <p>Replace holes with the median/mean. Keeps the rows when too many would die.</p></div>
+    </div>
+    <div class="callout"><b>Drop or fill?</b> A judgment call — few holes: drop; many holes: fill, and <b>say so in your write-up</b>. Silently invented data is a small cousin of Class 4's hallucination: always disclose what you filled.</div>
+    <aside class="notes">The disclosure norm matters more than the syntax — filling values IS making data up, acceptable only when declared. The hallucination echo makes the ethics memorable. Class 8 goes deep on cleaning.</aside>
+</section>
+<section id="quiz-missing" data-sid="quiz-missing">
+<div class="kicker">Check · drop or fill</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="2">
+    <p class="qq">Your 900-row dataset has 12 rows missing 'distance' and 400 rows missing 'age'. What's the sensible plan?</p>
+    <div class="opts"><button class="opt" data-i="0">Drop every row that has any hole — 488 rows left is fine</button><button class="opt" data-i="1">Fill everything with 0 so the code runs</button><button class="opt" data-i="2">Drop the 12 distance holes; fill the 400 ages with the median — and disclose the fill</button><button class="opt" data-i="3">Delete both columns entirely</button></div>
+    <p class="quiz-exp">Twelve rows are cheap to drop; 400 are nearly half your data — filling with the median preserves them. Filling with 0 invents 400 newborns and poisons every age statistic. And whichever you do: write it down.</p>
+  </div>
+  <aside class="notes">The 0-fill trap is worth naming — it 'works' (code runs) while quietly corrupting everything, the worst kind of bug. Judgment + disclosure = the lesson.</aside>
+</section>
+<section id="why-python" data-sid="why-python">
+<div class="kicker">Zoom out · why Python for all of this</div>
+    <h2>The language your whole toolbox speaks</h2>
+    <div class="grid2" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">📖 Reads like English</h3><p><span style="font-family:Consolas,monospace;font-size:.85em">df["age"].mean()</span> — you can guess what that does. Energy goes to the research, not the syntax.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">🧰 Batteries included</h3><p>pandas (tables) · NumPy (math) · Matplotlib (charts) · scikit-learn (models — you met it in Class 3's lab). One ecosystem, every pipeline stage.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">🌍 Everyone's here</h3><p>The world's largest data community: every error you'll ever hit has been answered — and your Class-4 assistant read all of it.</p></div>
+      <div class="box"><h3 style="color:var(--amber)">🚀 Grows with you</h3><p>The same language runs TensorFlow and PyTorch — today's <span style="font-family:Consolas,monospace;font-size:.85em">read_csv</span>, someday your neural network. Nothing to relearn.</p></div>
+    </div>
+    <aside class="notes">Reassurance slide, 60 seconds max. The point for parents/students: Python is the industry default, and everything learned today compounds through Class 15 and beyond.</aside>
+</section>
+<section id="case-detection-log" data-sid="case-detection-log">
+<div class="kicker">Case study · our running example, as data</div>
+    <h2>Reading the car's diary</h2>
+    <p class="lead" style="margin:0 0 .25em">A perception system's output <b>is</b> a CSV — one row per detected object. Walk it with the four verbs:</p>
+    <div class="flow" style="margin-top:.3em">
+      <div class="step"><div class="n">1</div><b>Columns</b><span>frame · object_class · confidence · box size · distance_m</span></div>
+      <div class="step"><div class="n">2</div><b>Inspect</b><span>df.head() shows the shape; df.describe() → average confidence?</span></div>
+      <div class="step"><div class="n">3</div><b>Filter</b><span>Only pedestrians · only conf &lt; 0.7 — the risky detections</span></div>
+      <div class="step"><div class="n">4</div><b>Summarize</b><span>value_counts() → what does the car see most? Objects per frame?</span></div>
+    </div>
+    <div class="callout"><b>The thread continues:</b> Class 2 asked whether night data raises pedestrian recall; Class 3 drew its pipeline; today you're inside the pipeline's <b>data stage</b>, touching the actual rows. Prefer another domain? Any log, any diary, any sensor — same four verbs.</div>
+    <aside class="notes">The detection log makes 'everything is a table' concrete for the running example — and lab 1 hands them THIS exact table. Emphasize: real AV teams stare at exactly this kind of CSV all day.</aside>
+</section>
+<section id="discuss-life-dataset" data-sid="discuss-life-dataset">
+<div class="kicker">Discuss · 5 minutes · design a table</div>
+    <h2>Your week as a dataset</h2>
+    <p class="lead">Design the table for a dataset about <b>your own life this week</b> — sleep, mood, screen time, study, sport… anything measurable.</p>
+    <div class="grid2" style="margin-top:.4em">
+      <div class="box" style="border-top:4px solid var(--teal)"><h3 style="color:var(--teal)">Decide</h3><p>What is one <b>row</b> — a day? a study session? a meal? Which 4–6 <b>columns</b> would you track?</p></div>
+      <div class="box" style="border-top:4px solid var(--coral)"><h3 style="color:var(--coral)">Stress-test</h3><p>Which column would be hardest to measure <b>honestly</b>? (Mood on a 1–10 scale? Screen time you'd rather not know?)</p></div>
+    </div>
+    <p class="lead" style="margin-top:.4em">Pairs, 3 minutes — then a few tables out loud. Post your columns in 💬.</p>
+    <aside class="notes">Everyone owns a dataset-in-waiting; designing its schema exercises rows-vs-columns thinking on personal stakes. The 'honest measurement' box quietly previews data-quality issues (Class 7-8) and measurement bias.</aside>
+</section>
+<section id="demo-colab" data-sid="demo-colab">
+<div class="kicker">Live demo 1</div>
+  <h2>Colab — the full first-data-task flow</h2>
+  <p class="lead" style="margin:.15em 0 .35em">Tonight's deliverable, performed live: file to chart in five moves. Watch once, then it's yours.</p>
+  <div class="grid2" style="grid-template-columns:2.3fr 1fr;align-items:start">
+    <div><div class="prompt"><span class="you">You ▸</span> Upload titanic.csv (folder icon → upload) — or read it straight from a URL</div><div class="prompt"><span class="you">You ▸</span> df = pd.read_csv("titanic.csv") · df.head() · df.info()</div><div class="prompt"><span class="you">You ▸</span> df.isnull().sum() → decide: dropna() or fillna(median)</div><div class="prompt"><span class="you">You ▸</span> df.describe() — screenshot-worthy stats appear</div><div class="prompt"><span class="you">You ▸</span> df["Age"].plot(kind="hist", title="Passenger ages"); label the axes!</div></div>
+    <div class="qrwrap" style="margin-top:.2em"><img class="qr" src="assets/qr-colab.png" alt="QR"><br><a href="https://colab.research.google.com/" target="_blank" rel="noopener">colab.research.google.com</a></div>
+  </div><aside class="notes">The graded deliverable, demonstrated end-to-end (matches the class05-data-task auto-grader: clean data + stats + one labeled chart). Go slow on the upload step — it's where beginners actually stumble. The chart line is the hour's applause moment.</aside>
+</section>
+<section id="demo-titanic" data-sid="demo-titanic">
+<div class="kicker">Live demo 2</div>
+  <h2>Kaggle — meet the real Titanic</h2>
+  <p class="lead" style="margin:.15em 0 .35em">Class 1's Lab 1 used 12 toy rows. The real dataset: 891 passengers, 12 columns, genuine holes in the Age column.</p>
+  <div class="grid2" style="grid-template-columns:2.3fr 1fr;align-items:start">
+    <div><div class="prompt"><span class="you">You ▸</span> kaggle.com/c/titanic → Data tab → download train.csv</div><div class="prompt"><span class="you">You ▸</span> Skim the column list: Pclass, Sex, Age, Fare, Survived — which columns have missing values?</div><div class="prompt"><span class="you">You ▸</span> The data dictionary explains every column — real datasets ship with one</div><div class="prompt"><span class="you">You ▸</span> Fun check: average age 29.7 · survivors 342 of 891 — you'll verify both in Lab 2</div></div>
+    <div class="qrwrap" style="margin-top:.2em"><img class="qr" src="assets/qr-titanic.png" alt="QR"><br><a href="https://www.kaggle.com/c/titanic" target="_blank" rel="noopener">kaggle.com/c/titanic</a></div>
+  </div><aside class="notes">The payoff of Class 1's toy lab: same question, real scale. Point at the data dictionary habit — professionals read it before touching rows. The two stats quoted get computed by students themselves in lab 2 (well, on the mini version) and in homework (full version).</aside>
+</section>
+<section id="demo-ai-debug" data-sid="demo-ai-debug">
+<div class="kicker">Live demo 3</div>
+  <h2>Your co-pilot: AI-assisted debugging</h2>
+  <p class="lead" style="margin:.15em 0 .35em">You WILL hit errors tonight. Here's the routine that turns every red message into a 90-second lesson.</p>
+  <div class="grid2" style="grid-template-columns:2.3fr 1fr;align-items:start">
+    <div><div class="prompt"><span class="you">You ▸</span> [Paste the full error] — What does this error mean, in one sentence?</div><div class="prompt"><span class="you">You ▸</span> Here's my code: [paste]. Why does it throw that error, and what's the smallest fix?</div><div class="prompt"><span class="you">You ▸</span> Explain what df.groupby("Sex")["Survived"].mean() does, step by step.</div><div class="prompt"><span class="you">You ▸</span> I fixed it — now explain why my fix worked, so I learn the pattern.</div></div>
+    <div class="qrwrap" style="margin-top:.2em"><img class="qr" src="assets/qr-chatgpt.png" alt="QR"><br><a href="https://chatgpt.com/" target="_blank" rel="noopener">chatgpt.com</a></div>
+  </div><aside class="notes">Class 4's programmer hat, operationalized. The routine: understand the error FIRST, then fix, then ask why the fix worked — prompt 4 is what converts debugging into learning. Live-demo a real KeyError (df['age'] vs df['Age']) — tonight's most likely error.</aside>
+</section>
+<section id="lab-detection-log" data-sid="lab-detection-log">
+<div class="kicker">Hands-on lab 1 · the four verbs</div>
+  <h2>Read the car's diary with pandas</h2>
+  <p class="lead" style="margin:.1em 0 .25em">The detection log from the case study — as a real DataFrame, in your browser. Run the <b>four verbs</b>, then answer a research question with a filter.</p>
+  <div class="lab" data-packages="pandas">
+    <div class="lab-main">
+      <textarea class="code" spellcheck="false">import pandas as pd
+
+# The car's diary: one row = one detected object
+log = pd.DataFrame({
+    "frame":    [1, 1, 2, 2, 2, 3, 3, 4, 4, 5],
+    "object":   ["pedestrian", "car", "car", "sign", "pedestrian",
+                 "car", "pedestrian", "car", "sign", "pedestrian"],
+    "conf":     [0.94, 0.88, 0.91, 0.79, 0.62, 0.95, 0.58, 0.90, 0.83, 0.97],
+    "dist_m":   [8.2, 15.0, 14.1, 22.4, 9.5, 13.0, 7.8, 16.2, 21.0, 6.9],
+})
+
+print(log.head())                       # 2. INSPECT: first rows
+print()
+print("What the car sees most:")
+print(log["object"].value_counts())    # 4. SUMMARIZE: counts
+print()
+print("Average confidence:", round(log["conf"].mean(), 3))
+
+# Every research question is a filter + a summary:
+peds = log[log["object"] == "pedestrian"]          # 3. SELECT rows
+print("Pedestrian avg conf:", round(peds["conf"].mean(), 3))
+
+risky = log[(log["object"] == "pedestrian") &amp; (log["conf"] &lt; 0.7)]
+print("Risky pedestrian detections:")
+print(risky)
+
+# CHALLENGE 1: what's the average DISTANCE of pedestrians vs cars?
+# CHALLENGE 2: which FRAME had the most detections?  (hint: value_counts)
+# CHALLENGE 3: are the two risky pedestrians near or far? What might
+#              that mean for the car - and for Class 2's night question?
+</textarea>
+      <div class="lab-bar">
+        <button class="run">▶ Run</button>
+        <button class="ai-explain">✨ Explain</button>
+        <button class="ai-debug">🐞 Debug</button>
+        <button class="ai-improve">⚡ Improve</button>
+        <span class="lab-status">Python loads on first Run</span>
+      </div>
+      <pre class="out">▶ Run the code to see the output here.</pre>
+    </div>
+    <div class="assist">
+      <div class="assist-head"><span>✨ AI Assistant</span><select class="ai-model" title="Choose the AI model"><option value="haiku">⚡ Haiku · fastest</option><option value="sonnet">Sonnet · balanced</option><option value="opus">Opus · most capable</option></select></div>
+      <div class="assist-body">Hi! Edit the code and hit <b>Run</b>. Stuck? I can <b>Explain</b>, <b>Debug</b>, or <b>Improve</b> it — or just ask me below.</div>
+      <div class="assist-ask"><input class="ask-in" placeholder="Ask about this code…"><button class="ask-btn">Ask</button></div>
+    </div>
+  </div><aside class="notes">First run loads pandas (~15s) — narrate the four verbs meanwhile. The 'risky' filter surfaces the two low-conf pedestrians (0.62 @ 9.5m, 0.58 @ 7.8m — near ones!), which challenge 3 connects back to the strong question: low confidence on CLOSE pedestrians is exactly the safety problem. Assistant panel handles syntax stumbles.</aside>
+</section>
+<section id="lab-titanic" data-sid="lab-titanic">
+<div class="kicker">Hands-on lab 2 · Class 1's lab, grown up</div>
+  <h2>Titanic survival — with real pandas moves</h2>
+  <p class="lead" style="margin:.1em 0 .25em">In Class 1 you counted 12 toy rows by hand-written loops. Today: the same question with <b>real tools</b> — missing values, medians, and one groupby line that answers everything.</p>
+  <div class="lab" data-packages="pandas">
+    <div class="lab-main">
+      <textarea class="code" spellcheck="false">import pandas as pd
+import numpy as np
+
+# A slice of the real Titanic data (age holes and all)
+df = pd.DataFrame({
+    "name": ["Braund","Cumings","Heikkinen","Futrelle","Beesley","Moran",
+             "McCarthy","Palsson","Vander Planke","Nasser","Sandstrom","Bonnell"],
+    "sex":  ["male","female","female","female","male","male",
+             "male","male","female","female","female","female"],
+    "pclass":   [3, 1, 3, 1, 2, 3, 1, 3, 3, 2, 3, 1],
+    "age":      [22, 38, 26, 35, 34, np.nan, 54, 2, 18, np.nan, 4, 58],
+    "survived": [0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1],
+})
+
+print("Missing values per column:")
+print(df.isnull().sum())                      # find the holes
+
+median_age = df["age"].median()
+df["age"] = df["age"].fillna(median_age)      # fill, and DISCLOSE:
+print(f"\nFilled 2 missing ages with the median ({median_age})")
+
+print("\nSurvival rate by sex:")
+print(df.groupby("sex")["survived"].mean())   # the famous result
+
+print("\nSurvival rate by class:")
+print(df.groupby("pclass")["survived"].mean())
+
+# Class 1's lab needed 8 lines of loops for ONE of these numbers.
+# groupby does every group at once - that's why pandas exists.
+
+# CHALLENGE 1: average AGE of survivors vs non-survivors?
+#              (hint: df.groupby("survived")["age"].mean())
+# CHALLENGE 2: tonight, run these exact lines on the FULL 891-row
+#              train.csv in Colab. Do the patterns hold?
+</textarea>
+      <div class="lab-bar">
+        <button class="run">▶ Run</button>
+        <button class="ai-explain">✨ Explain</button>
+        <button class="ai-debug">🐞 Debug</button>
+        <button class="ai-improve">⚡ Improve</button>
+        <span class="lab-status">Python loads on first Run</span>
+      </div>
+      <pre class="out">▶ Run the code to see the output here.</pre>
+    </div>
+    <div class="assist">
+      <div class="assist-head"><span>✨ AI Assistant</span><select class="ai-model" title="Choose the AI model"><option value="haiku">⚡ Haiku · fastest</option><option value="sonnet">Sonnet · balanced</option><option value="opus">Opus · most capable</option></select></div>
+      <div class="assist-body">Hi! Edit the code and hit <b>Run</b>. Stuck? I can <b>Explain</b>, <b>Debug</b>, or <b>Improve</b> it — or just ask me below.</div>
+      <div class="assist-ask"><input class="ask-in" placeholder="Ask about this code…"><button class="ask-btn">Ask</button></div>
+    </div>
+  </div><aside class="notes">The full-circle moment: Class 1's survival_rate() loop becomes one groupby. Results on this slice: females 0.86, males 0.20 — the same direction as the full data (74%/19%), and NOT a perfect split, so the 'association, not destiny' reading stays honest. Challenge 2 IS tonight's homework bridge. The fill-and-disclose print models the norm from concept 5.</aside>
+</section>
+<section id="your-project" data-sid="your-project">
+<div class="kicker">Your project</div>
+    <h2>Your first data task</h2>
+    <div class="grid2" style="grid-template-columns:1.3fr 1fr">
+      <div><p class="lead">Take a messy CSV and get your <b>first real numbers and chart</b> out of it — in Colab, where your projects live from now on.</p>
+        <ul><li>Load the CSV (<span style="font-family:Consolas,monospace;font-size:.85em">read_csv</span>) — Titanic, or a dataset from your own project</li>
+          <li>Diagnose holes (<span style="font-family:Consolas,monospace;font-size:.85em">isnull().sum()</span>), then drop or fill — <b>and say which</b></li>
+          <li>Compute basic statistics (<span style="font-family:Consolas,monospace;font-size:.85em">describe()</span>, a groupby of your choice)</li>
+          <li>Make <b>one chart</b> — with a title and labeled axes</li></ul></div>
+      <div class="box"><h3 style="color:var(--teal)">Deliverable</h3><p>A Colab notebook showing clean data, summary stats, and one plot.</p>
+        <h3 style="color:var(--coral);margin-top:.35em">Success looks like</h3><p>Code runs top-to-bottom with no errors — and the chart has a title and labeled axes.</p></div>
+    </div>
+    <aside class="notes">The graded deliverable (Classroom: 'A cleaned dataset + first stats and chart in Colab' — note this one has an auto-grader wired). 'Runs top-to-bottom' is the professional bar: Runtime → Run all before submitting. Chart labeling is pitfall-#4 hygiene from Class 3.</aside>
+</section>
+<section id="build-it-now" data-sid="build-it-now">
+<div class="kicker">Build it now · hands-on</div>
+    <h2>File → clean → stats → chart</h2>
+    <ol style="font-size:.72em;margin-left:1.05em">
+      <li>Open Colab → new notebook → upload <b>train.csv</b> from Kaggle's Titanic page</li>
+      <li>Run the four verbs: <span style="font-family:Consolas,monospace">read_csv → head → info → describe</span></li>
+      <li>Handle the Age holes (median fill) — print a line saying what you did</li>
+      <li>One groupby that interests you (survival by sex? class? age group?)</li>
+      <li>One labeled chart: <span style="font-family:Consolas,monospace">df["Age"].plot(kind="hist")</span> + title + axis labels</li>
+      <li>Runtime → <b>Run all</b> — zero errors? Submit the notebook link in Classroom.</li></ol>
+    <div style="margin-top:.2em"><span class="pill">Google Colab</span><span class="pill">pandas</span><span class="pill">ChatGPT / Claude (debug co-pilot)</span></div>
+    <div class="callout"><b>Stuck on an error?</b> That's the plan working: paste it into your assistant, understand it, fix it yourself, ask why the fix worked. Every error survived tonight is a pattern you own forever.</div>
+    <aside class="notes">Circulate on steps 1 and 3 — upload friction and the fill decision are the two stall points. Fast finishers: swap in a dataset relevant to their own Class-2 question (ScholarMind or Kaggle search can find one).</aside>
+</section>
+<section id="benchmark-notebook" data-sid="benchmark-notebook">
+<div class="kicker">Benchmark · judge against this</div>
+    <h2>What a finished first data task looks like</h2>
+    <div class="grid3" style="margin-top:.25em">
+      <div class="box"><h3 style="color:var(--navy)">🧹 Clean, disclosed</h3>
+        <div class="prompt" style="font-size:.48em">df["Age"] = df["Age"].fillna(df["Age"].median())<br>print("Filled 177 missing ages with median 28.0")</div>
+        <p>The fill is <b>announced</b>, not hidden — a reader knows exactly what was done.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">📊 A stat that says something</h3>
+        <div class="prompt" style="font-size:.48em">df.groupby("Sex")["Survived"].mean()<br># female 0.74 · male 0.19</div>
+        <p>Not just describe() dumped — one grouped comparison with a takeaway sentence under it.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">📈 A chart a stranger can read</h3>
+        <div class="prompt" style="font-size:.48em">ax = df["Age"].plot(kind="hist", bins=20,<br>&nbsp;&nbsp;title="Titanic passenger ages")<br>ax.set_xlabel("Age (years)")</div>
+        <p>Title ✓ · axis labels ✓ · a sentence: "most passengers were 20–40."</p></div>
+    </div>
+    <div class="callout"><b>The bar in one line:</b> someone who wasn't in class tonight could open your notebook, press Run all, and understand what you found. That's a research artifact, not homework.</div>
+    <aside class="notes">Three cells = the grading rubric made visible (and what the auto-grader checks: clean + stats + labeled chart). The takeaway-sentence habit under every stat/chart is Class 9's storytelling seeded early.</aside>
+</section>
+<section id="reference-key-terms" data-sid="reference-key-terms">
+<div class="kicker">Reference · key terms</div>
+    <h2>Today's vocabulary</h2>
+    <div class="grid2" style="margin-top:.3em">
+      <div class="box"><p><b>DataFrame</b> — pandas' table: rows = examples, columns = variables.</p></div>
+      <div class="box"><p><b>Series</b> — one labeled column; what you get from <span style="font-family:Consolas,monospace;font-size:.85em">df["col"]</span>.</p></div>
+      <div class="box"><p><b>CSV</b> — comma-separated values: the plain-text table format every tool speaks.</p></div>
+      <div class="box"><p><b>Boolean indexing</b> — filtering rows with a True/False condition: <span style="font-family:Consolas,monospace;font-size:.85em">df[df["x"] &gt; 0.9]</span>.</p></div>
+      <div class="box"><p><b>NaN</b> — "not a number": pandas' marker for a missing value. Find with isnull(), then drop or fill.</p></div>
+      <div class="box"><p><b>EDA</b> — exploratory data analysis: the inspect-summarize-plot ritual you do before any modeling.</p></div>
+    </div>
+    <aside class="notes">EDA gets named here so classes 7-9 can use the term freely. Everything else on this card was exercised in the labs.</aside>
+</section>
+<section id="homework" data-sid="homework">
+<div class="kicker">Recommended homework</div>
+    <h2>Before next class</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1fr">
+      <div><ol style="font-size:.66em;margin-left:1.05em">
+        <li><b>Finish your first data task</b> (clean + stats + labeled chart, Run-all clean) and submit the Colab link in Google Classroom.</li>
+        <li><b>Full Titanic, three questions:</b> survival rate by sex on all 891 rows · <span style="font-family:Consolas,monospace">value_counts()</span> of the Embarked column · fill Age's holes with the <b>median</b> and re-run — do the stats move?</li>
+        <li><b>Log one debugging win:</b> paste one error you hit + the one-sentence explanation your AI co-pilot gave + your fix.</li>
+      </ol></div>
+      <div class="box"><h3 style="color:var(--teal)">⭐ Stretch (optional)</h3>
+        <p>Enter Kaggle's <b>"Titanic — Machine Learning from Disaster"</b> for real: run a starter notebook top to bottom and submit a prediction. Data science's "Hello World" — you now know every pandas line in it.</p>
+        <a class="btn" href="https://www.kaggle.com/c/titanic" target="_blank" rel="noopener">kaggle.com · Titanic</a></div>
+    </div>
+    <div class="callout">Prefer working local? Anaconda + Jupyter is the classic setup — but Colab needs zero installs, so it stays our default. Questions → 💬 on any slide.</div>
+    <aside class="notes">Task 1 = the graded, auto-checkable deliverable. Task 2 extends lab 2 to full scale (females 74%, males 19%; Embarked S/C/Q = 644/168/77). Task 3 makes the debugging routine a habit with a receipt. Titanic stretch was teased since Class 1 — now they're actually equipped.</aside>
+</section>
+<section id="line-to-remember" data-sid="line-to-remember" class="center" data-background-gradient="linear-gradient(135deg,#0B7E8A,#0F9DB0)">
+<div class="kicker">Today's line to remember</div>
+    <h2 style="color:#fff">"Without data, you're just another person with an opinion."</h2>
+    <p style="color:#cfe0ef;margin-top:.3em">— W. Edwards Deming</p>
+    <p style="color:#eaf2fb;font-size:.8em;margin-top:.5em">Tonight you stop being that person: four verbs, one chart, real numbers.</p>
+    <div style="margin-top:.5em"><button class="speak" data-audio="audio/quote2.mp3">🔊 <span>Speak this</span></button></div>
+    <aside class="notes">Deming lands the whole DATA-stage arc that starts today. Pairs with Class 3's conclusion-stage discipline: opinions in, evidence out.</aside>
+</section>
+<section id="wrap-up" data-sid="wrap-up" class="center" data-background-gradient="linear-gradient(135deg,#0C2D52,#16406e)">
+<div class="kicker" style="color:#7fd3df">Wrap-up</div>
+    <h2 style="color:#fff">Three things to keep</h2>
+    <ul style="display:inline-block;text-align:left;color:#eaf2fb">
+      <li>Data is <b>rows (examples) × columns (variables)</b> — see the table, and code gets simple</li>
+      <li><b>Load → inspect → select → summarize</b> — four verbs are 80% of data work</li>
+      <li>Real data has holes: find them, drop or fill them, and <b>disclose what you did</b></li></ul>
+    <p style="color:#cfe0ef;margin-top:.6em"><b>Exit ticket:</b> what's one column you'd add to the car's detection log — and what question would it let you ask? Post in 💬.</p>
+    <p style="color:#9db8d6;font-size:.6em;margin-top:.7em">Next · Class 6 — the research toolbox: the tools that find the right papers and datasets for you.</p>
+    <aside class="notes">The exit ticket doubles as feature-engineering intuition (new column = new askable questions) — Class 7-8 territory. Tease Class 6 as 'the librarian tools': Elicit, Semantic Scholar, Kaggle search.</aside>
+</section>
+<section id="backup-material" data-sid="backup-material">
+<div class="kicker" style="color:var(--coral)">Backup material</div>
+    <h2>Extra slides — if there's time</h2>
+    <p class="lead">Deeper dives and extra practice. Skip in a tight hour; pull up on demand or for a longer session.</p>
+    <div class="flow" style="margin-top:.4em">
+      <div class="step"><b>The four jobs of data analysis</b><span>understand · clean · engineer · validate</span></div>
+      <div class="step"><b>Data literacy</b><span>a life skill, not a job skill</span></div>
+      <div class="step"><b>Bonus quiz</b><span>one more check</span></div>
+    </div>
+    <aside class="notes">The four-jobs slide maps this class into the data stage of Class 3's pipeline; data literacy is the parents'-night slide.</aside>
+</section>
+<section id="backup-four-jobs" data-sid="backup-four-jobs">
+<div class="kicker">Backup · zoom out</div>
+    <h2>Data analysis has four jobs</h2>
+    <div class="grid2" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">1 · Understand</h3><p>Shape, distributions, quality — today's inspect verbs. <i>You are here.</i></p></div>
+      <div class="box"><h3 style="color:var(--teal)">2 · Clean</h3><p>Missing values, outliers, duplicates, formats — today's dropna/fillna, expanded in <b>Class 8</b>.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">3 · Engineer features</h3><p>Build better columns from raw ones (age → age-group; time → rush-hour flag) — the craft of <b>Classes 7–8</b>.</p></div>
+      <div class="box"><h3 style="color:var(--amber)">4 · Validate</h3><p>Test whether the data supports your hypothesis — statistics + charts, <b>Classes 9 &amp; 14</b>.</p></div>
+    </div>
+    <div class="callout">All four live inside the <b>Data</b> box of your pipeline diagram — which is why that box earned your ⚠ in Class 3, and why it gets three full classes.</div>
+    <aside class="notes">Orientation for students who like the map view: today = job 1 + a taste of 2. The ⚠ callback validates their Class-3 prediction.</aside>
+</section>
+<section id="backup-data-literacy" data-sid="backup-data-literacy">
+<div class="kicker">Backup · extended thinking</div>
+    <h2>Data literacy: not just for scientists</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">🧐 Critical reading</h3><p>Where did this number come from? What's the sample? What's NOT shown? — the same skepticism you learned for LLM claims, aimed at statistics.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">🎯 Evidence-based choices</h3><p>From picking a phone plan to picking a college: deciding on data beats deciding on vibes — Deming's point, applied to life.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">🗣️ Data storytelling</h3><p>Turning numbers into a sentence others understand — the skill Class 9 trains, and the one careers are built on.</p></div>
+    </div>
+    <div class="callout">"Learning data analysis is not just mastering a tool — it's cultivating a rational, structured way of seeing the world." The four verbs are for everyone.</div>
+    <aside class="notes">The life-skill framing answers 'why must non-STEM kids learn this'. Connects the Class-4 verify habit to numeric claims generally.</aside>
+</section>
+<section id="quiz-backup-bonus" data-sid="quiz-backup-bonus">
+<div class="kicker">Backup · bonus check</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="1">
+    <p class="qq">df.groupby("Sex")["Survived"].mean() returns female 0.74, male 0.19. Which conclusion does this data support?</p>
+    <div class="opts"><button class="opt" data-i="0">Being female caused survival</button><button class="opt" data-i="1">In this dataset, female passengers survived at a far higher rate — why, the table alone can't say</button><button class="opt" data-i="2">74% of passengers were female</button><button class="opt" data-i="3">The 0.19 must be a data error</button></div>
+    <p class="quiz-exp">The numbers show a strong association, not a mechanism — 'women and children first', cabin locations, class effects could all be behind it. Conclusion stage discipline (Class 3): only what the numbers support. And option C misreads what was grouped.</p>
+  </div>
+  <aside class="notes">Correlation-vs-cause gets its first quiet appearance — Class 14 treats it formally. Option C is a genuinely common misreading of groupby output, worth 30 seconds.</aside>
+</section>
+</div></div>
+
+<a id="donateBtn" href="https://buy.stripe.com/14AbIT26kfUzbqjbGv4ow00" target="_blank" rel="noopener">♥ Donate</a>
+<a id="pdfBtn" href="slides.pdf" download title="Download these slides as a PDF">⬇ PDF</a>
+<a id="mpaLogo" href="/meritpoint-slides/" title="Merit Point Academy — all courses"><img src="/meritpoint-slides/assets/mpa-logo.png" alt="Merit Point Academy"></a>
+<!-- per-slide comments -->
+<audio id="narratorAudio" preload="none" style="display:none"></audio>
+<div id="capBar"></div>
+<button id="ccBtn" title="Toggle captions">CC</button>
+<button id="listenBtn" title="Listen to this slide narrated"><span class="li-ic">▶</span><span class="li-tx">Listen</span></button>
+<button id="commentBtn" title="Comment on this slide">💬 Comment<span class="cnum" id="cnum">0</span></button>
+<div id="commentPanel">
+  <div class="ph"><span id="cph">Comments</span><span class="x" id="cclose">✕</span></div>
+  <div id="commentList"></div>
+  <form id="commentForm">
+    <div class="row"><input id="cname" placeholder="Your name (optional)" maxlength="40"></div>
+    <textarea id="cbody" placeholder="Leave a comment or question about this slide…" maxlength="2000"></textarea>
+    <div class="row"><button type="submit">Post</button><span class="msg" id="cmsg">Visible to your instructor &amp; classmates.</span></div>
+  </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+<script>
+const DECK = "ai-toolbox/class-05";
+Reveal.initialize({ hash:true, slideNumber:'c/t', controls:true, progress:true,
+  width:1280, height:720, margin:0.04, transition:'slide',
+  keyboardCondition:'focused', plugins:[ RevealNotes ] });
+
+/* ---------- Shared audio player ----------
+ * One audio element, already attached to the DOM (see markup above), reused
+ * for every play. A bare detached Audio object is never used: on at least one
+ * real browser/profile that made Chrome abort play() within milliseconds
+ * ("interrupted because the media was removed from the document") — audio
+ * never audibly played and the button silently reset to idle before anyone
+ * noticed. Reusing an attached element avoids that path. */
+const _audio=document.getElementById('narratorAudio');
+let _btn=null,_playToken=0;
+function fmtClock(s){ s=Math.max(0,Math.floor(s||0)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
+function resetListenUI(){ listenBtn.style.setProperty('--p','0%'); listenBtn.querySelector('.li-ic').textContent='▶'; listenBtn.querySelector('.li-tx').textContent='Listen'; }
+function stopAudio(){
+  _playToken++; // invalidate any in-flight play() for the old src
+  _audio.pause(); _audio.currentTime=0; _audio.removeAttribute('src'); _audio.load();
+  _audio.removeEventListener('timeupdate',onListenTimeupdate); // else it'd animate listenBtn during a .speak clip
+  capBar.style.display='none';
+  if(_btn){
+    _btn.classList.remove('playing');
+    if(_btn===listenBtn) resetListenUI();
+    else if(_btn.querySelector('span')) _btn.querySelector('span').textContent=_btn.dataset.label||'Speak';
+  }
+  _btn=null;
+}
+document.addEventListener('click',function(e){
+  const b=e.target.closest('.speak'); if(!b) return;
+  if(_btn===b && !_audio.paused){ stopAudio(); return; }
+  stopAudio();
+  const token=_playToken;
+  _btn=b; b.dataset.label=b.dataset.label||b.querySelector('span').textContent;
+  b.classList.add('playing'); b.querySelector('span').textContent='Pause';
+  _audio.src=b.dataset.audio;
+  _audio.addEventListener('ended',stopAudio,{once:true});
+  _audio.play().catch(function(){ if(token===_playToken) stopAudio(); });
+});
+
+/* ---------- Per-slide narration ("Listen") + captions ---------- */
+const listenBtn=document.getElementById('listenBtn');
+const ccBtn=document.getElementById('ccBtn');
+const capBar=document.getElementById('capBar');
+let _narrationData=null; // { [sid]: { script, cues:[{start,end,text}], ... } }
+let _ccOn=localStorage.getItem('cc_captions')!=='0'; // on by default
+function updateCcBtn(){ ccBtn.classList.toggle('on',_ccOn); ccBtn.title=_ccOn?'Captions on — click to hide':'Captions off — click to show'; }
+async function loadNarrated(){
+  try{ const r=await fetch('audio/narration.json',{cache:'no-cache'}); if(!r.ok) throw 0;
+    _narrationData=await r.json(); }
+  catch(e){ _narrationData={}; }
+  updateCcBtn();
+  updateListen();
+}
+function updateListen(){
+  if(!_narrationData){ return; }
+  const has=!!_narrationData[curSid];
+  listenBtn.style.display=has?'inline-flex':'none';
+  ccBtn.style.display=has?'inline-flex':'none';
+  if(!has && _btn===listenBtn) stopAudio();
+}
+function cueAt(cues,t){ for(const c of cues) if(t>=c.start && t<c.end) return c; return null; }
+function updateCaption(){
+  const data=_narrationData && _narrationData[curSid];
+  const cues=data && data.cues;
+  if(!_ccOn || _btn!==listenBtn || !cues || !cues.length){ capBar.style.display='none'; return; }
+  const cue=cueAt(cues,_audio.currentTime);
+  if(cue){ capBar.textContent=cue.text; capBar.style.display='block'; }
+  else capBar.style.display='none'; // brief gap between sentences
+}
+ccBtn.addEventListener('click',function(){
+  _ccOn=!_ccOn; localStorage.setItem('cc_captions',_ccOn?'1':'0'); updateCcBtn(); updateCaption();
+});
+function onListenTimeupdate(){
+  if(_audio.duration) listenBtn.style.setProperty('--p',(_audio.currentTime/_audio.duration*100)+'%');
+  listenBtn.querySelector('.li-tx').textContent=fmtClock(_audio.currentTime)+' / '+fmtClock(_audio.duration);
+  updateCaption();
+}
+listenBtn.addEventListener('click',function(){
+  if(_btn===listenBtn && !_audio.paused){ stopAudio(); return; } // toggles play/stop even mid-buffer
+  stopAudio();
+  const token=_playToken;
+  _btn=listenBtn;
+  listenBtn.classList.add('playing');
+  listenBtn.querySelector('.li-ic').textContent='⏹';
+  listenBtn.querySelector('.li-tx').textContent='loading…';
+  _audio.src='audio/'+encodeURIComponent(curSid)+'.mp3';
+  _audio.addEventListener('timeupdate',onListenTimeupdate);
+  _audio.addEventListener('ended',stopAudio,{once:true});
+  _audio.play().catch(function(){
+    if(token!==_playToken) return; // superseded by a newer click/stop — ignore
+    _audio.removeEventListener('timeupdate',onListenTimeupdate);
+    stopAudio();
+    listenBtn.querySelector('.li-tx').textContent='tap to retry';
+    setTimeout(resetListenUI,2200);
+  });
+});
+
+/* ---------- Quizzes (answers feed the live class distribution) ---------- */
+function renderQuizStats(quiz,data){
+  quiz._qstats=data;
+  let box=quiz.querySelector('.qstats');
+  if(!box){ box=document.createElement('div'); box.className='qstats'; quiz.appendChild(box); }
+  const mode=quiz._qmode||'today';
+  const st=(data&&data[mode])||{counts:{},total:0};
+  const opts=quiz.querySelectorAll('.opt'), correct=parseInt(quiz.dataset.correct,10);
+  let bars='';
+  for(let i=0;i<opts.length;i++){
+    const c=st.counts[i]||0, pct=st.total?Math.round(c*100/st.total):0;
+    bars+='<div class="qrow"><span class="ql">'+String.fromCharCode(65+i)+'</span>'
+      +'<div class="qbar"><div class="qfill'+(i===correct?' qok':'')+'" style="width:'+pct+'%"></div></div>'
+      +'<span class="qp">'+pct+'% ('+c+')</span></div>';
+  }
+  box.innerHTML='<div class="qhead"><span>Class results · '+st.total+' answered</span>'
+    +'<span><button class="qm'+(mode==='today'?' on':'')+'" data-m="today">Today</button>'
+    +'<button class="qm'+(mode==='all'?' on':'')+'" data-m="all">All time</button></span></div>'+bars;
+}
+document.addEventListener('click',function(e){
+  const m=e.target.closest('.qstats .qm');
+  if(m){ const q=m.closest('.quiz'); q._qmode=m.dataset.m; renderQuizStats(q,q._qstats); return; }
+  const opt=e.target.closest('.quiz .opt'); if(!opt) return;
+  const quiz=opt.closest('.quiz'); if(quiz.classList.contains('answered')) return;
+  const correct=parseInt(quiz.dataset.correct,10);
+  quiz.querySelectorAll('.opt').forEach(function(o){o.setAttribute('disabled','');});
+  const chosen=parseInt(opt.dataset.i,10);
+  quiz.querySelectorAll('.opt')[correct].classList.add('correct');
+  if(chosen!==correct) opt.classList.add('wrong');
+  quiz.classList.add('answered');
+  const sec=quiz.closest('section');
+  const sid=(sec&&sec.dataset.sid)||_hashSid(sec);
+  fetch('/api/quiz/answer',{method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({deck:DECK,slide:sid,choice:chosen,correct:chosen===correct})})
+    .then(function(r){return r.json();})
+    .then(function(j){ if(j&&j.today) renderQuizStats(quiz,{today:j.today,all:j.all}); })
+    .catch(function(){ fetch('/api/quiz/stats?deck='+encodeURIComponent(DECK)+'&slide='+encodeURIComponent(sid))
+      .then(function(r){return r.json();}).then(function(j){renderQuizStats(quiz,j);}).catch(function(){}); });
+});
+
+/* ---------- Heap / Top-K insertion visualizer ---------- */
+function hvState(el){
+  if(!el._hv){ el._hv={ frames:[{heap:[],action:'Ready. Insert a value to see the animation.',hi:[]}], cur:0, playing:false, timer:null }; }
+  return el._hv;
+}
+function hvTree(arr,hi){
+  if(!arr.length) return '<div class="hv-empty">(empty)</div>';
+  const W=200,H=140; const depthOf=(i)=>Math.floor(Math.log2(i+1)); const maxDepth=depthOf(arr.length-1);
+  const nodes=arr.map(function(v,i){ const d=depthOf(i); const levelStart=Math.pow(2,d)-1; const pos=i-levelStart; const cnt=Math.pow(2,d);
+    return { i:i, v:v, x:((pos+0.5)/cnt)*W, y:16+d*((H-24)/Math.max(1,maxDepth)) }; });
+  let svg='<svg viewBox="0 0 '+W+' '+(H+16)+'" class="hv-tree-svg">';
+  nodes.forEach(function(n){ if(n.i===0) return; const p=nodes[Math.floor((n.i-1)/2)];
+    svg+='<line x1="'+p.x+'" y1="'+p.y+'" x2="'+n.x+'" y2="'+n.y+'" class="hv-edge"/>'; });
+  (hi||[]).forEach(function(pair){ if(pair.length===2 && nodes[pair[0]] && nodes[pair[1]]){
+    svg+='<line x1="'+nodes[pair[0]].x+'" y1="'+nodes[pair[0]].y+'" x2="'+nodes[pair[1]].x+'" y2="'+nodes[pair[1]].y+'" class="hv-swap"/>'; } });
+  const hiIdx=(hi||[]).flat();
+  nodes.forEach(function(n){ const isHi=hiIdx.indexOf(n.i)>-1;
+    svg+='<circle cx="'+n.x+'" cy="'+n.y+'" r="13" class="hv-node'+(isHi?' hv-node-hi':'')+'"/><text x="'+n.x+'" y="'+(n.y+4)+'" class="hv-node-text">'+n.v+'</text>'; });
+  return svg+'</svg>';
+}
+function hvRender(el){
+  const st=hvState(el);
+  el.querySelector('.hv-arr-now').textContent='['+st.frames[st.cur].heap.join(', ')+']';
+  el.querySelector('.hv-step').textContent=st.cur+' / '+(st.frames.length-1);
+  el.querySelector('.hv-action-text').textContent=st.frames[st.cur].action;
+  const framesEl=el.querySelector('.hv-frames'), arrsEl=el.querySelector('.hv-arrs');
+  framesEl.innerHTML=''; arrsEl.innerHTML='';
+  st.frames.forEach(function(f,idx){
+    const hiIdx=(f.hi||[]).flat();
+    const card=document.createElement('div'); card.className='hv-frame'+(idx===st.cur?' hv-frame-active':'');
+    card.innerHTML='<div class="hv-frame-title">Step '+idx+'</div><div class="hv-frame-desc">'+(idx===0?'(empty)':f.action)+'</div>'+hvTree(f.heap,f.hi);
+    framesEl.appendChild(card);
+    const a=document.createElement('div'); a.className='hv-arr'+(idx===st.cur?' hv-arr-active':'');
+    a.innerHTML='['+f.heap.map(function(v,i){ return hiIdx.indexOf(i)>-1?'<span class="hv-arr-hi">'+v+'</span>':v; }).join(', ')+']';
+    arrsEl.appendChild(a);
+  });
+  const active=framesEl.querySelector('.hv-frame-active');
+  if(active) active.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
+}
+function hvInsert(el,val){
+  const st=hvState(el);
+  if(st.cur!==st.frames.length-1) st.frames=st.frames.slice(0,st.cur+1); // drop redo history on a fresh insert
+  const heap=st.frames[st.frames.length-1].heap.slice();
+  const idx=heap.length; heap.push(val);
+  let i=idx, hi=[[idx,idx]];
+  while(i>0){ const p=Math.floor((i-1)/2);
+    if(heap[p]>heap[i]){ const t=heap[p]; heap[p]=heap[i]; heap[i]=t; hi=[[p,i]]; i=p; } else break; }
+  st.frames.push({ heap:heap, action:'Insert '+val+' at index '+idx, hi:hi });
+  st.cur=st.frames.length-1; hvRender(el);
+}
+function hvGoto(el,idx){ const st=hvState(el); st.cur=Math.max(0,Math.min(st.frames.length-1,idx)); hvRender(el); }
+function hvStop(el){ const st=hvState(el); if(st.timer){ clearInterval(st.timer); st.timer=null; } st.playing=false;
+  const b=el.querySelector('.hv-play'); if(b) b.textContent='▶ Play'; }
+function hvPlay(el){ const st=hvState(el); if(st.playing){ hvStop(el); return; }
+  if(st.cur>=st.frames.length-1) hvGoto(el,0);
+  st.playing=true; const b=el.querySelector('.hv-play'); if(b) b.textContent='⏸ Pause';
+  const speed=parseInt(el.querySelector('.hv-speed').value,10)||3, delay=Math.max(280,1300-speed*220);
+  st.timer=setInterval(function(){ if(st.cur>=st.frames.length-1){ hvStop(el); return; } hvGoto(el,st.cur+1); },delay);
+}
+document.addEventListener('click',function(e){
+  const hv=e.target.closest('.heapviz'); if(!hv) return;
+  if(e.target.closest('.hv-insert')){ const inp=hv.querySelector('.hv-input'); const v=parseInt(inp.value,10);
+    if(!isNaN(v)){ hvStop(hv); hvInsert(hv,v); inp.value=''; } }
+  else if(e.target.closest('.hv-quick-btn')){ hvStop(hv); hvInsert(hv,parseInt(e.target.closest('.hv-quick-btn').dataset.v,10)); }
+  else if(e.target.closest('.hv-first')){ hvStop(hv); hvGoto(hv,0); }
+  else if(e.target.closest('.hv-prev')){ hvStop(hv); hvGoto(hv,hvState(hv).cur-1); }
+  else if(e.target.closest('.hv-next')){ hvStop(hv); hvGoto(hv,hvState(hv).cur+1); }
+  else if(e.target.closest('.hv-last')){ hvStop(hv); hvGoto(hv,hvState(hv).frames.length-1); }
+  else if(e.target.closest('.hv-play')){ hvPlay(hv); }
+});
+document.addEventListener('keydown',function(e){
+  if(e.target.classList&&e.target.classList.contains('hv-input')&&e.key==='Enter'){
+    e.preventDefault(); const hv=e.target.closest('.heapviz'); const v=parseInt(e.target.value,10);
+    if(!isNaN(v)){ hvStop(hv); hvInsert(hv,v); e.target.value=''; }
+  }
+});
+document.querySelectorAll('.heapviz').forEach(function(hv){
+  const preset=(hv.dataset.preset||'').split(',').map(function(s){return s.trim();}).filter(Boolean);
+  const q=hv.querySelector('.hv-quick');
+  preset.forEach(function(v){ const b=document.createElement('button'); b.type='button'; b.className='hv-quick-btn'; b.dataset.v=v; b.textContent=v; q.appendChild(b); });
+  hvRender(hv);
+});
+
+/* ---------- Convolution (sliding-window) visualizer ---------- */
+const CV_IMGS={
+  edge:['11110000','11110000','11110000','11110000','11110000','11110000','11110000','11110000'],
+  hedge:['11111111','11111111','11111111','11111111','00000000','00000000','00000000','00000000'],
+  diag:['11000000','11100000','01110000','00111000','00011100','00001110','00000111','00000011'],
+  smiley:['00000000','01100110','01100110','00000000','10000001','01000010','00111100','00000000'],
+  x:['10000001','11000011','01100110','00111100','00111100','01100110','11000011','10000001'],
+  clear:['00000000','00000000','00000000','00000000','00000000','00000000','00000000','00000000']
+};
+const CV_IMG_NAMES=[['edge','Vertical edge'],['hedge','Horizontal edge'],['diag','Diagonal'],['smiley','Smiley'],['x','X'],['clear','Clear']];
+const CV_KERNELS=[
+  {name:'Vertical edge',k:[[1,0,-1],[1,0,-1],[1,0,-1]],div:1},
+  {name:'Horizontal edge',k:[[1,1,1],[0,0,0],[-1,-1,-1]],div:1},
+  {name:'Blur (average)',k:[[1,1,1],[1,1,1],[1,1,1]],div:9},
+  {name:'Sharpen',k:[[0,-1,0],[-1,5,-1],[0,-1,0]],div:1}
+];
+function cvState(el){
+  if(!el._cv){
+    const rows=CV_IMGS[el.dataset.img||'edge'];
+    el._cv={ img:rows.map(function(r){return r.split('').map(Number);}), ki:0, cur:0, playing:false, timer:null };
+  }
+  return el._cv;
+}
+function cvOutputs(st){
+  const K=CV_KERNELS[st.ki], out=[];
+  for(let r=0;r<6;r++){ const row=[];
+    for(let c=0;c<6;c++){ let s=0;
+      for(let i=0;i<3;i++) for(let j=0;j<3;j++) s+=st.img[r+i][c+j]*K.k[i][j];
+      row.push(s); }
+    out.push(row); }
+  return out;
+}
+function cvFmt(v){ return String(Math.round(v*10)/10); }
+function cvRender(el){
+  const st=cvState(el), K=CV_KERNELS[st.ki], out=cvOutputs(st);
+  const wr=Math.floor(st.cur/6), wc=st.cur%6;
+  const inEl=el.querySelector('.cv-in'); inEl.innerHTML='';
+  for(let r=0;r<8;r++) for(let c=0;c<8;c++){
+    const d=document.createElement('div'); d.className='cv-cell'; d.dataset.r=r; d.dataset.c=c;
+    const v=st.img[r][c];
+    d.style.background=v?'#F2A93B':'#132A47';
+    d.style.color=v?'#5c3d05':'#3d5878';
+    d.textContent=v;
+    if(r>=wr&&r<wr+3&&c>=wc&&c<wc+3) d.classList.add('cv-win');
+    inEl.appendChild(d);
+  }
+  const kg=el.querySelector('.cv-kgrid'); kg.innerHTML='';
+  for(let i=0;i<3;i++) for(let j=0;j<3;j++){ const d=document.createElement('div'); d.className='cv-kcell'; d.textContent=K.k[i][j]; kg.appendChild(d); }
+  el.querySelector('.cv-kdiv').textContent=K.div>1?'output = sum ÷ '+K.div:'output = sum of the 9 products';
+  let maxAbs=1; out.forEach(function(row){ row.forEach(function(v){ maxAbs=Math.max(maxAbs,Math.abs(v/K.div)); }); });
+  const lines=[]; let s=0;
+  for(let i=0;i<3;i++){ const terms=[];
+    for(let j=0;j<3;j++){ s+=st.img[wr+i][wc+j]*K.k[i][j];
+      terms.push(st.img[wr+i][wc+j]+'×'+(K.k[i][j]<0?'('+K.k[i][j]+')':K.k[i][j])); }
+    lines.push(terms.join(' + ')); }
+  el.querySelector('.cv-calc').innerHTML=lines.join('<br>')+'<br><span class="cv-sum">= '+cvFmt(s/K.div)+'</span>';
+  const outEl=el.querySelector('.cv-out'); outEl.innerHTML='';
+  for(let r=0;r<6;r++) for(let c=0;c<6;c++){
+    const d=document.createElement('div'); d.className='cv-ocell'; const idx=r*6+c;
+    if(idx<=st.cur){ const v=out[r][c]/K.div, t=Math.min(1,Math.abs(v)/maxAbs);
+      d.textContent=cvFmt(v);
+      if(v>0) d.style.background='rgba(15,157,176,'+(0.12+0.88*t).toFixed(2)+')';
+      else if(v<0) d.style.background='rgba(238,107,54,'+(0.12+0.88*t).toFixed(2)+')';
+      d.style.color=t>0.5&&v!==0?'#fff':'#21303F';
+    }
+    if(idx===st.cur) d.classList.add('cv-win');
+    outEl.appendChild(d);
+  }
+  el.querySelector('.cv-step').textContent=(st.cur+1)+' / 36 · row '+(wr+1)+', col '+(wc+1);
+  el.querySelectorAll('.cv-kchips .cv-chip').forEach(function(ch,i){ ch.classList.toggle('sel',i===st.ki); });
+}
+function cvGoto(el,idx){ const st=cvState(el); st.cur=Math.max(0,Math.min(35,idx)); cvRender(el); }
+function cvStop(el){ const st=cvState(el); if(st.timer){ clearInterval(st.timer); st.timer=null; } st.playing=false;
+  const b=el.querySelector('.cv-play'); if(b) b.textContent='▶ Play'; }
+function cvPlay(el){ const st=cvState(el); if(st.playing){ cvStop(el); return; }
+  if(st.cur>=35) cvGoto(el,0);
+  st.playing=true; const b=el.querySelector('.cv-play'); if(b) b.textContent='⏸ Pause';
+  const speed=parseInt(el.querySelector('.cv-speed').value,10)||3, delay=Math.max(120,900-speed*160);
+  st.timer=setInterval(function(){ if(st.cur>=35){ cvStop(el); return; } cvGoto(el,st.cur+1); },delay);
+}
+document.addEventListener('click',function(e){
+  const cv=e.target.closest('.convviz'); if(!cv) return;
+  const cell=e.target.closest('.cv-cell');
+  if(cell){ const st=cvState(cv); cvStop(cv);
+    const r=parseInt(cell.dataset.r,10), c=parseInt(cell.dataset.c,10);
+    st.img[r][c]=st.img[r][c]?0:1; cvRender(cv); return; }
+  const chip=e.target.closest('.cv-chip');
+  if(chip){ cvStop(cv); const st=cvState(cv);
+    if(chip.dataset.k!==undefined){ st.ki=parseInt(chip.dataset.k,10); }
+    else if(chip.dataset.img){ st.img=CV_IMGS[chip.dataset.img].map(function(r){return r.split('').map(Number);}); st.cur=0; }
+    cvRender(cv); return; }
+  if(e.target.closest('.cv-first')){ cvStop(cv); cvGoto(cv,0); }
+  else if(e.target.closest('.cv-prev')){ cvStop(cv); cvGoto(cv,cvState(cv).cur-1); }
+  else if(e.target.closest('.cv-next')){ cvStop(cv); cvGoto(cv,cvState(cv).cur+1); }
+  else if(e.target.closest('.cv-last')){ cvStop(cv); cvGoto(cv,35); }
+  else if(e.target.closest('.cv-play')){ cvPlay(cv); }
+});
+document.querySelectorAll('.convviz').forEach(function(cv){
+  const pr=cv.querySelector('.cv-presets');
+  CV_IMG_NAMES.forEach(function(p){ const b=document.createElement('button'); b.type='button'; b.className='cv-chip'; b.dataset.img=p[0]; b.textContent=p[1]; pr.appendChild(b); });
+  const kc=cv.querySelector('.cv-kchips');
+  CV_KERNELS.forEach(function(k,i){ const b=document.createElement('button'); b.type='button'; b.className='cv-chip'; b.dataset.k=i; b.textContent=k.name; kc.appendChild(b); });
+  cvRender(cv);
+});
+
+/* ---------- Pyodide code labs ---------- */
+let _py=null,_pyLoading=null;
+async function getPy(statusEl){
+  if(_py) return _py;
+  if(!_pyLoading){ if(statusEl)statusEl.textContent='Loading Python…';
+    _pyLoading=loadPyodide({indexURL:'https://cdn.jsdelivr.net/pyodide/v0.26.2/full/'}); }
+  _py=await _pyLoading; return _py;
+}
+function labOf(el){ return el.closest('.lab'); }
+async function runLab(lab){
+  const code=lab.querySelector('.code').value;
+  const out=lab.querySelector('.out'); const status=lab.querySelector('.lab-status');
+  out.textContent=''; out.classList.remove('has-err'); lab.dataset.lastError='';
+  try{
+    const py=await getPy(status);
+    const pkgs=(lab.dataset.packages||'').split(',').map(s=>s.trim()).filter(Boolean);
+    if(pkgs.length){ status.textContent='Loading '+pkgs.join(', ')+'…'; await py.loadPackage(pkgs); }
+    status.textContent='Running…';
+    let buf='';
+    py.setStdout({batched:(s)=>{buf+=s+'\n';}});
+    py.setStderr({batched:(s)=>{buf+=s+'\n';}});
+    await py.runPythonAsync(code);
+    out.textContent=buf||'(no output — add a print(...) )';
+    status.textContent='✓ done';
+  }catch(err){
+    const msg=(err&&err.message)?err.message:String(err);
+    out.innerHTML='<span class="err">'+msg.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))+'</span>';
+    lab.dataset.lastError=msg; status.textContent='✗ error — try 🐞 Debug';
+  }
+}
+/* very small markdown -> html for assistant replies */
+function mdToHtml(md){
+  const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  let html=''; const parts=md.split(/```/);
+  parts.forEach(function(p,i){
+    if(i%2===1){ const code=p.replace(/^python\n?/i,''); html+='<pre data-code="'+encodeURIComponent(code.trim())+'"><code>'+esc(code.trim())+'</code></pre>'+
+      '<button class="apply">↧ Use this code</button>'; }
+    else { let t=esc(p).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/`(.+?)`/g,'<code>$1</code>').replace(/\n{2,}/g,'</p><p>').replace(/\n/g,'<br>'); if(t.trim())html+='<p>'+t+'</p>'; }
+  });
+  return html;
+}
+async function askAssistant(lab,action,question){
+  const body=lab.querySelector('.assist-body');
+  const sel=lab.querySelector('.ai-model');
+  const model=(sel&&sel.value)||'haiku';
+  body.innerHTML='<p class="muted">✨ Thinking…</p>';
+  try{
+    const r=await fetch('/api/assistant',{method:'POST',headers:{'content-type':'application/json'},
+      body:JSON.stringify({action:action,question:question||'',code:lab.querySelector('.code').value,error:lab.dataset.lastError||'',model:model})});
+    const j=await r.json();
+    body.innerHTML=mdToHtml(j.text||'(no response)');
+  }catch(e){ body.innerHTML='<p class="muted">Assistant unavailable right now. Try again shortly.</p>'; }
+}
+document.addEventListener('click',function(e){
+  const t=e.target;
+  if(t.closest('.lab .run')){ runLab(labOf(t.closest('.run'))); }
+  else if(t.closest('.lab .ai-explain')){ askAssistant(labOf(t.closest('.ai-explain')),'explain'); }
+  else if(t.closest('.lab .ai-debug')){ askAssistant(labOf(t.closest('.ai-debug')),'debug'); }
+  else if(t.closest('.lab .ai-improve')){ askAssistant(labOf(t.closest('.ai-improve')),'improve'); }
+  else if(t.closest('.lab .ask-btn')){ const lab=labOf(t.closest('.ask-btn')); const inp=lab.querySelector('.ask-in'); if(inp.value.trim()){ askAssistant(lab,'ask',inp.value.trim()); inp.value=''; } }
+  else if(t.classList&&t.classList.contains('apply')){ const pre=t.previousElementSibling; const lab=t.closest('.lab'); if(pre&&lab){ lab.querySelector('.code').value=decodeURIComponent(pre.dataset.code); } }
+});
+/* Tab key inserts spaces in code editors; keep typing inside textareas from triggering reveal nav */
+document.addEventListener('keydown',function(e){
+  const ta=e.target;
+  if(ta.classList&&ta.classList.contains('code')&&e.key==='Tab'){ e.preventDefault(); const s=ta.selectionStart,en=ta.selectionEnd; ta.value=ta.value.slice(0,s)+'    '+ta.value.slice(en); ta.selectionStart=ta.selectionEnd=s+4; }
+},true);
+/* allow Enter to submit the assistant question */
+document.addEventListener('keydown',function(e){ if(e.target.classList&&e.target.classList.contains('ask-in')&&e.key==='Enter'){ e.preventDefault(); const lab=labOf(e.target); if(e.target.value.trim()){ askAssistant(lab,'ask',e.target.value.trim()); e.target.value=''; } } });
+
+/* ---------- Per-slide comments ---------- */
+const btn=document.getElementById('commentBtn'),panel=document.getElementById('commentPanel'),
+  listEl=document.getElementById('commentList'),cnum=document.getElementById('cnum'),
+  cph=document.getElementById('cph'),form=document.getElementById('commentForm');
+let counts={}, curSid='title';
+// Comment identity = the slide's stable data-sid slug. Never positional:
+// a positional key would re-point old comments to a different slide whenever
+// the deck is reordered. Every slide is built with a sid (asserted at build);
+// the content-hash fallback below stays position-independent just in case.
+function _hashSid(s){ const t=((s&&s.textContent)||'').replace(/s+/g,' ').trim().slice(0,400); let h=0; for(let i=0;i<t.length;i++){ h=(h*31+t.charCodeAt(i))|0; } return 'auto-'+(h>>>0).toString(36); }
+function sidOf(){ const s=Reveal.getCurrentSlide(); if(s&&s.dataset.sid) return s.dataset.sid; console.warn('slide has no data-sid; using content-hash key'); return _hashSid(s); }
+function fmtTime(ts){ const d=new Date(ts); return d.toLocaleDateString()+' '+d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}); }
+function escc(s){ return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+async function loadCounts(){ try{ const r=await fetch('/api/comments/counts?deck='+encodeURIComponent(DECK)); const j=await r.json(); counts=j.counts||{}; updateBadge(); }catch(e){} }
+function updateBadge(){ cnum.textContent=counts[curSid]||0; }
+async function loadComments(){ listEl.innerHTML='<div class="none">Loading…</div>';
+  try{ const r=await fetch('/api/comments?deck='+encodeURIComponent(DECK)+'&slide='+encodeURIComponent(curSid)); const j=await r.json();
+    const cs=j.comments||[]; counts[curSid]=cs.length; updateBadge();
+    listEl.innerHTML=cs.length?cs.map(c=>'<div class="c"><span class="cn">'+escc(c.name)+'</span><span class="ct">'+fmtTime(c.created)+'</span><div class="cb">'+escc(c.body)+'</div></div>').join(''):'<div class="none">No comments yet — be the first!</div>';
+  }catch(e){ listEl.innerHTML='<div class="none">Could not load comments.</div>'; }
+}
+function openPanel(){ curSid=sidOf(); cph.textContent='Comments · '+curSid; panel.classList.add('open'); loadComments(); }
+btn.onclick=function(){ panel.classList.contains('open')?panel.classList.remove('open'):openPanel(); };
+document.getElementById('cclose').onclick=function(){ panel.classList.remove('open'); };
+form.onsubmit=async function(e){ e.preventDefault();
+  const name=document.getElementById('cname').value, body=document.getElementById('cbody').value.trim();
+  const msg=document.getElementById('cmsg'); if(!body){ msg.textContent='Write something first.'; return; }
+  msg.textContent='Posting…';
+  try{ const r=await fetch('/api/comments',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({deck:DECK,slide:curSid,name:name,body:body})});
+    const j=await r.json(); if(j.ok){ document.getElementById('cbody').value=''; msg.textContent='Posted! Thanks.'; loadComments(); } else { msg.textContent=j.error||'Could not post.'; }
+  }catch(e){ msg.textContent='Network error — try again.'; }
+};
+Reveal.on('slidechanged',function(){ stopAudio(); curSid=sidOf(); updateBadge(); updateListen(); sendSlide(); if(panel.classList.contains('open')){ cph.textContent='Comments · '+curSid; loadComments(); } });
+Reveal.on('ready',function(){ curSid=sidOf(); loadCounts(); loadNarrated(); });
+
+/* ---------- Live classroom: presence chip + quiz stream (SSE) ---------- */
+let liveId=null;
+const liveChip=document.createElement('div');
+liveChip.id='liveChip'; liveChip.style.display='none'; document.body.appendChild(liveChip);
+function setOnline(n){ liveChip.style.display=''; liveChip.textContent='🟢 '+n+' online'; }
+function sendSlide(){
+  if(!liveId) return;
+  fetch('/api/presence',{method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({id:liveId,slide:curSid})}).catch(function(){});
+}
+function quizBySid(sid){
+  const secs=document.querySelectorAll('section[data-sid]');
+  for(const s of secs) if(s.dataset.sid===sid) return s.querySelector('.quiz');
+  return null;
+}
+function pollLive(){ // fallback when EventSource can't stream through a proxy
+  const tick=function(){ fetch('/api/presence/count?deck='+encodeURIComponent(DECK))
+    .then(function(r){return r.json();}).then(function(j){setOnline(j.online);}).catch(function(){}); };
+  tick(); setInterval(tick,20000);
+}
+(function connectLive(){
+  if(typeof EventSource==='undefined') return pollLive();
+  const es=new EventSource('/api/live?deck='+encodeURIComponent(DECK));
+  let opened=false;
+  es.onopen=function(){ opened=true; };
+  es.onmessage=function(ev){
+    let d; try{ d=JSON.parse(ev.data); }catch(e){ return; }
+    if(d.type==='hello'){ liveId=d.id; setOnline(d.online); sendSlide(); }
+    else if(d.type==='presence'){ setOnline(d.online); }
+    else if(d.type==='quiz'){ // live-update the chart on the quiz slide (only visible once answered)
+      const q=quizBySid(d.slide); if(q) renderQuizStats(q,{today:d.today,all:d.all});
+    }
+  };
+  es.onerror=function(){ if(!opened){ es.close(); pollLive(); } };
+})();
+</script>
+<script defer src="/meritpoint-slides/assets/auth.js"></script>
+</body></html>

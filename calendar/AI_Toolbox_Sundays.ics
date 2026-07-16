@@ -1,0 +1,39 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merit Point Academy//The AI Toolbox//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:20070311T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:20071104T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:ai-toolbox-2026-sundays@courses.hopeembark.org
+DTSTAMP:20260703T210000Z
+DTSTART;TZID=America/New_York:20260705T130000
+DTEND;TZID=America/New_York:20260705T150000
+RRULE:FREQ=WEEKLY;BYDAY=SU;COUNT=8
+SUMMARY:The AI Toolbox · 科研全流程课（每周两堂连上）
+LOCATION:https://us06web.zoom.us/meeting/register/pRdq9-XwSHOmKAM4hfVNcg
+DESCRIPTION:请先注册（每人只需注册一次，即可参加全部8节课）：https://us06web.zoom.us/meeting/register/pRdq9-XwSHOmKAM4hfVNcg\n注册后你会收到含专属进入链接的确认邮件。\n\n课件与作业 Google Classroom 班级码: kday73zp\n互动课件网站: https://courses.hopeembark.org/\n\n主讲: 商博博士 · 助教: 柴天一老师 · Merit Point Academy
+URL:https://us06web.zoom.us/meeting/register/pRdq9-XwSHOmKAM4hfVNcg
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:The AI Toolbox 上课提醒（30分钟后开始）
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

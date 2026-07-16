@@ -1,0 +1,1157 @@
+{
+  "title": {
+    "hash": "0ead080d0c58a7dc",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Welcome back, everyone. Last time we explored what AI actually is, and today we're tackling what I think is the single most important skill of this entire course: asking a good research question. Here's the thing — everything you build later, your data, your model, your experiments, all of it inherits its quality from the question you start with. So by the end of today, each of you will draft three questions of rising quality, and then we'll stress-test your best one together. Let's turn a vague interest into something you could genuinely study.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.687,
+        "text": "Welcome back, everyone."
+      },
+      {
+        "start": 1.687,
+        "end": 12.475,
+        "text": "Last time we explored what AI actually is, and today we're tackling what I think is the single most important skill of this entire course: asking a good research question."
+      },
+      {
+        "start": 12.475,
+        "end": 22.65,
+        "text": "Here's the thing — everything you build later, your data, your model, your experiments, all of it inherits its quality from the question you start with."
+      },
+      {
+        "start": 22.65,
+        "end": 30.65,
+        "text": "So by the end of today, each of you will draft three questions of rising quality, and then we'll stress-test your best one together."
+      },
+      {
+        "start": 30.65,
+        "end": 35.112,
+        "text": "Let's turn a vague interest into something you could genuinely study."
+      }
+    ],
+    "bytes": 211104,
+    "model": "claude-opus-4-8"
+  },
+  "recap-class01": {
+    "hash": "bf4097c56da4bee1",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's take a quick minute to remember where we left off. Think of AI, machine learning, and deep learning as nested circles, not the same thing — Deep Blue was AI but never learned from data, while ChatGPT lives in all three. And every time you unlock your phone or open a map, that's a model trained on data, not magic — a powerful instrument, but you still own the question. Now I'd love two or three of you to share your application maps in thirty seconds each: your domain, your favorite system, and how its input becomes output.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.8,
+        "text": "Let's take a quick minute to remember where we left off."
+      },
+      {
+        "start": 2.8,
+        "end": 15.3,
+        "text": "Think of AI, machine learning, and deep learning as nested circles, not the same thing — Deep Blue was AI but never learned from data, while ChatGPT lives in all three."
+      },
+      {
+        "start": 15.3,
+        "end": 24.787,
+        "text": "And every time you unlock your phone or open a map, that's a model trained on data, not magic — a powerful instrument, but you still own the question."
+      },
+      {
+        "start": 24.787,
+        "end": 34.362,
+        "text": "Now I'd love two or three of you to share your application maps in thirty seconds each: your domain, your favorite system, and how its input becomes output."
+      }
+    ],
+    "bytes": 206496,
+    "model": "claude-opus-4-8"
+  },
+  "agenda": {
+    "hash": "e8095f0ba978807d",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's how our hour together is going to flow. We'll kick off with a warm-up story about a race that no car could finish, then dig into what research actually means and what makes a question worth investigating. From there we'll compare strong questions to weak ones, learn three techniques for generating your own, and get our hands dirty with live demos and a couple of Python labs. By the end, you'll be able to take something you genuinely care about and shape it into a specific, measurable question — and yes, there'll be quizzes and space for your comments the whole way through.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.85,
+        "text": "Here's how our hour together is going to flow."
+      },
+      {
+        "start": 2.85,
+        "end": 12.012,
+        "text": "We'll kick off with a warm-up story about a race that no car could finish, then dig into what research actually means and what makes a question worth investigating."
+      },
+      {
+        "start": 12.012,
+        "end": 23.062,
+        "text": "From there we'll compare strong questions to weak ones, learn three techniques for generating your own, and get our hands dirty with live demos and a couple of Python labs."
+      },
+      {
+        "start": 23.062,
+        "end": 34.037,
+        "text": "By the end, you'll be able to take something you genuinely care about and shape it into a specific, measurable question — and yes, there'll be quizzes and space for your comments the whole way through."
+      }
+    ],
+    "bytes": 204624,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-warmup": {
+    "hash": "ceeacf48e79a46b5",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's start with something that's probably happened to you already. Your phone keeps autocorrecting a slang word you love, so you get curious, you read up on how autocorrect learns, then you type the word ten times to test if it adapts. What did you actually just do there? Believe it or not, that's a complete little research project — you observed something odd, asked why, gathered information, and ran an experiment. Research is just curiosity made systematic, and no lab coat required.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.037,
+        "text": "Let's start with something that's probably happened to you already."
+      },
+      {
+        "start": 3.037,
+        "end": 14.312,
+        "text": "Your phone keeps autocorrecting a slang word you love, so you get curious, you read up on how autocorrect learns, then you type the word ten times to test if it adapts."
+      },
+      {
+        "start": 14.312,
+        "end": 16,
+        "text": "What did you actually just do there?"
+      },
+      {
+        "start": 16,
+        "end": 25.037,
+        "text": "Believe it or not, that's a complete little research project — you observed something odd, asked why, gathered information, and ran an experiment."
+      },
+      {
+        "start": 25.037,
+        "end": 30.287,
+        "text": "Research is just curiosity made systematic, and no lab coat required."
+      }
+    ],
+    "bytes": 182016,
+    "model": "claude-opus-4-8"
+  },
+  "story-darpa": {
+    "hash": "3ad806709eb4374f",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Picture this: it's 2004, a million dollars on the table, and a race across the desert that no car could finish. The best one crawled just seven miles before getting stuck. Everyone called it a failure. But one year later, five cars completed the entire course — and the hardware barely changed. What changed was the questions the teams asked, turning a vague wish into specific, testable problems. That single shift launched the whole self-driving industry.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.8,
+        "text": "Picture this: it's 2004, a million dollars on the table, and a race across the desert that no car could finish."
+      },
+      {
+        "start": 7.8,
+        "end": 11.5,
+        "text": "The best one crawled just seven miles before getting stuck."
+      },
+      {
+        "start": 11.5,
+        "end": 13.262,
+        "text": "Everyone called it a failure."
+      },
+      {
+        "start": 13.262,
+        "end": 19.512,
+        "text": "But one year later, five cars completed the entire course — and the hardware barely changed."
+      },
+      {
+        "start": 19.512,
+        "end": 26.587,
+        "text": "What changed was the questions the teams asked, turning a vague wish into specific, testable problems."
+      },
+      {
+        "start": 26.587,
+        "end": 30.837,
+        "text": "That single shift launched the whole self-driving industry."
+      }
+    ],
+    "bytes": 185328,
+    "model": "claude-opus-4-8"
+  },
+  "curiosity-loop": {
+    "hash": "ba22dcda1b30c30f",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "You know that thing where you notice something strange and just have to know why? That's exactly how real research begins. Watch how one curiosity grows up: you observe that parrots and mynas can mimic human speech, you ask why, then you explore what's already known about their vocal organs and brains. Most people stop right there, at Googling — but a researcher pushes to that magic fourth step, narrowing all that wonder into one sharp, testable question. That's the whole trick.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.725,
+        "text": "You know that thing where you notice something strange and just have to know why?"
+      },
+      {
+        "start": 4.725,
+        "end": 7.625,
+        "text": "That's exactly how real research begins."
+      },
+      {
+        "start": 7.625,
+        "end": 19.05,
+        "text": "Watch how one curiosity grows up: you observe that parrots and mynas can mimic human speech, you ask why, then you explore what's already known about their vocal organs and brains."
+      },
+      {
+        "start": 19.05,
+        "end": 29.075,
+        "text": "Most people stop right there, at Googling — but a researcher pushes to that magic fourth step, narrowing all that wonder into one sharp, testable question."
+      },
+      {
+        "start": 29.075,
+        "end": 30.45,
+        "text": "That's the whole trick."
+      }
+    ],
+    "bytes": 183024,
+    "model": "claude-opus-4-8"
+  },
+  "concept-what-is-research": {
+    "hash": "b621c8775cf254a7",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's clear up a big misunderstanding right away: research is not just Googling something. When you search, you find answers that already exist, but real research critically filters, evaluates, and builds something new — knowledge that didn't exist before and can survive other people's scrutiny. And it follows a systematic loop: you ask a question, form a testable hypothesis, design an experiment, then gather evidence. Notice that last step often loops you right back to sharpen your original question — and today, we're living entirely inside that very first step.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.937,
+        "text": "Let's clear up a big misunderstanding right away: research is not just Googling something."
+      },
+      {
+        "start": 5.937,
+        "end": 19.475,
+        "text": "When you search, you find answers that already exist, but real research critically filters, evaluates, and builds something new — knowledge that didn't exist before and can survive other people's scrutiny."
+      },
+      {
+        "start": 19.475,
+        "end": 27.812,
+        "text": "And it follows a systematic loop: you ask a question, form a testable hypothesis, design an experiment, then gather evidence."
+      },
+      {
+        "start": 27.812,
+        "end": 36.975,
+        "text": "Notice that last step often loops you right back to sharpen your original question — and today, we're living entirely inside that very first step."
+      }
+    ],
+    "bytes": 222192,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-research-nature": {
+    "hash": "be0a7f7c137d736b",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's put four weekends to the test — who among these classmates actually did research? Look closely: three of them just gathered information that already existed, which is genuinely useful, but nothing new was created or tested. It's option C who ran the full loop — a question, a guess, and then an experiment to check it. And notice something clever: she compared her homework with music versus without, which is exactly the kind of design we'll dig into later on.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.7620000000000005,
+        "text": "Alright, let's put four weekends to the test — who among these classmates actually did research?"
+      },
+      {
+        "start": 5.7620000000000005,
+        "end": 14.962,
+        "text": "Look closely: three of them just gathered information that already existed, which is genuinely useful, but nothing new was created or tested."
+      },
+      {
+        "start": 14.962,
+        "end": 21.475,
+        "text": "It's option C who ran the full loop — a question, a guess, and then an experiment to check it."
+      },
+      {
+        "start": 21.475,
+        "end": 29.625,
+        "text": "And notice something clever: she compared her homework with music versus without, which is exactly the kind of design we'll dig into later on."
+      }
+    ],
+    "bytes": 178128,
+    "model": "claude-opus-4-8"
+  },
+  "concept-research-question": {
+    "hash": "578a006eb7626737",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the single most useful tool you'll take from today. A good research question is specific, measurable, and answerable within your time and skills — but the fastest way to check is the picture test. Close your eyes and try to picture the actual table of data that would answer your question. Ask \"Is AI good?\" and you get nothing — no imaginable table. But ask \"Does training on night photos raise night recall?\" and you can literally sketch the columns. If you can't picture the data, it's not a research question yet.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.275,
+        "text": "Here's the single most useful tool you'll take from today."
+      },
+      {
+        "start": 3.275,
+        "end": 12.037,
+        "text": "A good research question is specific, measurable, and answerable within your time and skills — but the fastest way to check is the picture test."
+      },
+      {
+        "start": 12.037,
+        "end": 17.1,
+        "text": "Close your eyes and try to picture the actual table of data that would answer your question."
+      },
+      {
+        "start": 17.1,
+        "end": 22.225,
+        "text": "Ask \"Is AI good?\" and you get nothing — no imaginable table."
+      },
+      {
+        "start": 22.225,
+        "end": 28.412,
+        "text": "But ask \"Does training on night photos raise night recall?\" and you can literally sketch the columns."
+      },
+      {
+        "start": 28.412,
+        "end": 31.9,
+        "text": "If you can't picture the data, it's not a research question yet."
+      }
+    ],
+    "bytes": 191808,
+    "model": "claude-opus-4-8"
+  },
+  "concept-question-ladder": {
+    "hash": "1d502a31456d9b35",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's climb a ladder together, because a good research question is something you build one rung at a time. At the bottom we have \"Is self-driving good?\" — nothing there we can actually measure. Step up and we get \"Can a model detect pedestrians at night?\" — now it's testable, but still pretty broad. At the top we ask whether low-light training images raise night recall without hurting day accuracy, and that little guard clause is everything. A strong question names exactly what you'll measure and what would count as success.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.6,
+        "text": "Let's climb a ladder together, because a good research question is something you build one rung at a time."
+      },
+      {
+        "start": 5.6,
+        "end": 8.4,
+        "text": "At the bottom we have \"Is self-driving good?\""
+      },
+      {
+        "start": 8.4,
+        "end": 10.312,
+        "text": "— nothing there we can actually measure."
+      },
+      {
+        "start": 10.312,
+        "end": 14.55,
+        "text": "Step up and we get \"Can a model detect pedestrians at night?\""
+      },
+      {
+        "start": 14.55,
+        "end": 17.162,
+        "text": "— now it's testable, but still pretty broad."
+      },
+      {
+        "start": 17.162,
+        "end": 26.312,
+        "text": "At the top we ask whether low-light training images raise night recall without hurting day accuracy, and that little guard clause is everything."
+      },
+      {
+        "start": 26.312,
+        "end": 31.387,
+        "text": "A strong question names exactly what you'll measure and what would count as success."
+      }
+    ],
+    "bytes": 188640,
+    "model": "claude-opus-4-8"
+  },
+  "concept-input-output-metric": {
+    "hash": "654228cfc68fabce",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the trick that turns any idea you're curious about into a real AI question: name three things. First, the input — what the model actually looks at, like frames from a night camera. Second, the output — what it predicts, maybe a box saying \"pedestrian here.\" And third, the metric — one honest number that tells you if it worked, like how many real pedestrians you actually caught. Input, output, metric — that triple is the seed of every project you'll build in this course.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.225,
+        "text": "Here's the trick that turns any idea you're curious about into a real AI question: name three things."
+      },
+      {
+        "start": 7.225,
+        "end": 12.6,
+        "text": "First, the input — what the model actually looks at, like frames from a night camera."
+      },
+      {
+        "start": 12.6,
+        "end": 17.975,
+        "text": "Second, the output — what it predicts, maybe a box saying \"pedestrian here.\""
+      },
+      {
+        "start": 17.975,
+        "end": 25.262,
+        "text": "And third, the metric — one honest number that tells you if it worked, like how many real pedestrians you actually caught."
+      },
+      {
+        "start": 25.262,
+        "end": 32.462,
+        "text": "Input, output, metric — that triple is the seed of every project you'll build in this course."
+      }
+    ],
+    "bytes": 195120,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-ladder": {
+    "hash": "3eeb1a1325383fa7",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Take a look at this research question about low-light training images and pedestrian detection. What actually makes it strong? It's not that it's exciting, or long, or ambitiously impossible. It's strong because it names the specific data we're using, it names a measurable outcome we can test, and it includes a success condition with a guard — we want night-time recall to go up without daytime accuracy dropping. That trade-off guard is the subtle part, so hold onto it: a great question protects against fixing one thing while breaking another.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.525,
+        "text": "Take a look at this research question about low-light training images and pedestrian detection."
+      },
+      {
+        "start": 5.525,
+        "end": 7.1370000000000005,
+        "text": "What actually makes it strong?"
+      },
+      {
+        "start": 7.1370000000000005,
+        "end": 11.625,
+        "text": "It's not that it's exciting, or long, or ambitiously impossible."
+      },
+      {
+        "start": 11.625,
+        "end": 24.575,
+        "text": "It's strong because it names the specific data we're using, it names a measurable outcome we can test, and it includes a success condition with a guard — we want night-time recall to go up without daytime accuracy dropping."
+      },
+      {
+        "start": 24.575,
+        "end": 32.312,
+        "text": "That trade-off guard is the subtle part, so hold onto it: a great question protects against fixing one thing while breaking another."
+      }
+    ],
+    "bytes": 194256,
+    "model": "claude-opus-4-8"
+  },
+  "case-av-questions": {
+    "hash": "95b416b02d8ffeee",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's take a big, inspiring goal like \"I want to make cars safer\" and watch what happens to it. It's a wonderful vision, but you can't actually build or test it as written—it's just too broad. So real self-driving teams break it apart layer by layer. In perception, they ask how a network can spot pedestrians better on a dark night, with real camera frames going in and accuracy measured out. In prediction, they ask how to forecast another car's path five seconds ahead, checking it against what actually happened. Same recipe every time: a specific scenario, a model, and a metric you can measure.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.85,
+        "text": "Let's take a big, inspiring goal like \"I want to make cars safer\" and watch what happens to it."
+      },
+      {
+        "start": 5.85,
+        "end": 11.712,
+        "text": "It's a wonderful vision, but you can't actually build or test it as written—it's just too broad."
+      },
+      {
+        "start": 11.712,
+        "end": 15.6,
+        "text": "So real self-driving teams break it apart layer by layer."
+      },
+      {
+        "start": 15.6,
+        "end": 24.725,
+        "text": "In perception, they ask how a network can spot pedestrians better on a dark night, with real camera frames going in and accuracy measured out."
+      },
+      {
+        "start": 24.725,
+        "end": 32.087,
+        "text": "In prediction, they ask how to forecast another car's path five seconds ahead, checking it against what actually happened."
+      },
+      {
+        "start": 32.087,
+        "end": 38.65,
+        "text": "Same recipe every time: a specific scenario, a model, and a metric you can measure."
+      }
+    ],
+    "bytes": 232272,
+    "model": "claude-opus-4-8"
+  },
+  "case-medical-questions": {
+    "hash": "36393c6cef407c14",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's take that same recipe we've been building and drop it into medicine. In the first case, we ask whether a deep model can look at a low-dose CT scan and tell a dangerous lung nodule from a harmless one — and we measure accuracy while keeping false alarms in check, so doctors aren't buried in noise. In the second, a model traces the exact pixels of a brain tumor on an MRI to help plan surgery, and we score how well its outline overlaps the expert's. Notice how each question comes with its own honest number and a built-in guard. Every field you care about hides questions shaped exactly like these.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4,
+        "text": "Let's take that same recipe we've been building and drop it into medicine."
+      },
+      {
+        "start": 4,
+        "end": 17.837,
+        "text": "In the first case, we ask whether a deep model can look at a low-dose CT scan and tell a dangerous lung nodule from a harmless one — and we measure accuracy while keeping false alarms in check, so doctors aren't buried in noise."
+      },
+      {
+        "start": 17.837,
+        "end": 28.125,
+        "text": "In the second, a model traces the exact pixels of a brain tumor on an MRI to help plan surgery, and we score how well its outline overlaps the expert's."
+      },
+      {
+        "start": 28.125,
+        "end": 32.737,
+        "text": "Notice how each question comes with its own honest number and a built-in guard."
+      },
+      {
+        "start": 32.737,
+        "end": 37.537,
+        "text": "Every field you care about hides questions shaped exactly like these."
+      }
+    ],
+    "bytes": 225648,
+    "model": "claude-opus-4-8"
+  },
+  "method-funnel": {
+    "hash": "2cd75da2b53d42ac",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "So here's my favorite trick for turning a vague passion into a real research question: think of a funnel. You start wide with something you care about, like protecting the environment, then you narrow to a sub-field like wildlife conservation, then you pinpoint an actual pain point, and finally you find the AI angle. Watch how \"I love animals\" becomes \"Can a vision model count snow leopards in drone images despite camouflage and shifting light?\" Each step gets sharper, and here's the key: if your question still feels foggy, you simply stopped narrowing too soon.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.675,
+        "text": "So here's my favorite trick for turning a vague passion into a real research question: think of a funnel."
+      },
+      {
+        "start": 6.675,
+        "end": 18.4,
+        "text": "You start wide with something you care about, like protecting the environment, then you narrow to a sub-field like wildlife conservation, then you pinpoint an actual pain point, and finally you find the AI angle."
+      },
+      {
+        "start": 18.4,
+        "end": 26.775,
+        "text": "Watch how \"I love animals\" becomes \"Can a vision model count snow leopards in drone images despite camouflage and shifting light?\""
+      },
+      {
+        "start": 26.775,
+        "end": 34.825,
+        "text": "Each step gets sharper, and here's the key: if your question still feels foggy, you simply stopped narrowing too soon."
+      }
+    ],
+    "bytes": 209376,
+    "model": "claude-opus-4-8"
+  },
+  "method-scamper": {
+    "hash": "9ad0232fb7608b15",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "When you're stuck on a research question, staring harder almost never helps — but shifting your angle does. SCAMPER gives you seven different angles to point at any existing product or process: substitute, combine, adapt, modify, put to other uses, eliminate, and reverse. Don't bother memorizing the letters; the real skill is deliberately trying a fresh lens instead of pushing on the same one. And watch that last one, reverse — flipping the roles or the order often gives you the weirdest, most original idea of all.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.912,
+        "text": "When you're stuck on a research question, staring harder almost never helps — but shifting your angle does."
+      },
+      {
+        "start": 5.912,
+        "end": 18.162,
+        "text": "SCAMPER gives you seven different angles to point at any existing product or process: substitute, combine, adapt, modify, put to other uses, eliminate, and reverse."
+      },
+      {
+        "start": 18.162,
+        "end": 25.887,
+        "text": "Don't bother memorizing the letters; the real skill is deliberately trying a fresh lens instead of pushing on the same one."
+      },
+      {
+        "start": 25.887,
+        "end": 33.937,
+        "text": "And watch that last one, reverse — flipping the roles or the order often gives you the weirdest, most original idea of all."
+      }
+    ],
+    "bytes": 204048,
+    "model": "claude-opus-4-8"
+  },
+  "scamper-library": {
+    "hash": "4f0ab1c548a3e748",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Look at what happens when we point SCAMPER at the most ordinary place imaginable — a quiet library. Suddenly we've got six real research questions hiding in the shelves: robots that reshelve, face-scan checkout, recommendations like your favorite shopping site, and search that understands \"that dragon book from last summer.\" Notice you didn't need an exotic topic to find great ideas. But each question still needs the recipe — what goes in, what comes out, and how you measure success. Let's pick one and run it aloud together.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.8870000000000005,
+        "text": "Look at what happens when we point SCAMPER at the most ordinary place imaginable — a quiet library."
+      },
+      {
+        "start": 6.8870000000000005,
+        "end": 20.512,
+        "text": "Suddenly we've got six real research questions hiding in the shelves: robots that reshelve, face-scan checkout, recommendations like your favorite shopping site, and search that understands \"that dragon book from last summer.\""
+      },
+      {
+        "start": 20.512,
+        "end": 24.337,
+        "text": "Notice you didn't need an exotic topic to find great ideas."
+      },
+      {
+        "start": 24.337,
+        "end": 30.9,
+        "text": "But each question still needs the recipe — what goes in, what comes out, and how you measure success."
+      },
+      {
+        "start": 30.9,
+        "end": 33.412,
+        "text": "Let's pick one and run it aloud together."
+      }
+    ],
+    "bytes": 200880,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-scamper": {
+    "hash": "912ae09f862a73fe",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a quick one for you. If we take that \"you may also like\" engine from online shopping and point it at library books instead, which SCAMPER move is that? Have a think and tap your answer. The key is this: we're not swapping out a person or removing a step here. We're borrowing a technique that already works in one field and moving it into a completely different one, so this is Adapt.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.4,
+        "text": "Here's a quick one for you."
+      },
+      {
+        "start": 1.4,
+        "end": 8.6,
+        "text": "If we take that \"you may also like\" engine from online shopping and point it at library books instead, which SCAMPER move is that?"
+      },
+      {
+        "start": 8.6,
+        "end": 10.85,
+        "text": "Have a think and tap your answer."
+      },
+      {
+        "start": 10.85,
+        "end": 15.9,
+        "text": "The key is this: we're not swapping out a person or removing a step here."
+      },
+      {
+        "start": 15.9,
+        "end": 23.8,
+        "text": "We're borrowing a technique that already works in one field and moving it into a completely different one, so this is Adapt."
+      }
+    ],
+    "bytes": 143136,
+    "model": "claude-opus-4-8"
+  },
+  "method-literature": {
+    "hash": "94f64f484927d522",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the professional's secret to finding a great question: stand on the shoulders of people who've already done the hard work. When you read papers, you learn what's been done, what hasn't, and where the field itself says research should go next. And here's the gold — that little \"Future Work\" paragraph at the end is basically a list of questions the experts ran out of time to answer, just sitting there waiting for you. Don't worry about the heavy math; you can absolutely read an abstract and that final section, and if someone's already answered your question, that's good news — just narrow it or add your own twist.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.225,
+        "text": "Here's the professional's secret to finding a great question: stand on the shoulders of people who've already done the hard work."
+      },
+      {
+        "start": 7.225,
+        "end": 14.15,
+        "text": "When you read papers, you learn what's been done, what hasn't, and where the field itself says research should go next."
+      },
+      {
+        "start": 14.15,
+        "end": 23.337,
+        "text": "And here's the gold — that little \"Future Work\" paragraph at the end is basically a list of questions the experts ran out of time to answer, just sitting there waiting for you."
+      },
+      {
+        "start": 23.337,
+        "end": 34.6,
+        "text": "Don't worry about the heavy math; you can absolutely read an abstract and that final section, and if someone's already answered your question, that's good news — just narrow it or add your own twist."
+      }
+    ],
+    "bytes": 207936,
+    "model": "claude-opus-4-8"
+  },
+  "demo-chatgpt": {
+    "hash": "a665f877051f59c9",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's try something live together. Today I'm not treating this tool as an answer machine but as a thinking partner, and watch how it works. First I ask it to brainstorm widely, then I narrow to sub-questions, then I force it to phrase things as input, output, and a measurable metric, and finally I reality-check what data I could actually get my hands on. That's the funnel in action — but remember from last class, it sounds confident even when it's wrong, so everything it suggests still needs our Scholar check next.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.75,
+        "text": "Let's try something live together."
+      },
+      {
+        "start": 1.75,
+        "end": 7.437,
+        "text": "Today I'm not treating this tool as an answer machine but as a thinking partner, and watch how it works."
+      },
+      {
+        "start": 7.437,
+        "end": 20.775,
+        "text": "First I ask it to brainstorm widely, then I narrow to sub-questions, then I force it to phrase things as input, output, and a measurable metric, and finally I reality-check what data I could actually get my hands on."
+      },
+      {
+        "start": 20.775,
+        "end": 29.725,
+        "text": "That's the funnel in action — but remember from last class, it sounds confident even when it's wrong, so everything it suggests still needs our Scholar check next."
+      }
+    ],
+    "bytes": 178704,
+    "model": "claude-opus-4-8"
+  },
+  "demo-scholar": {
+    "hash": "407a143ff5b3090e",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's jump into Google Scholar, where every single result is a real research paper. Try searching something like phishing email detection with deep learning, then open just one and read only the abstract — you'll be surprised how much you understand, just what they asked and what they found. Now here's the clever trick: scroll to the future work or limitations part, because that's where researchers literally hand you the questions nobody's solved yet. And if you find your own idea's already been done? That's not bad news — it means your question mattered, so sharpen it and add your own twist.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.675,
+        "text": "Let's jump into Google Scholar, where every single result is a real research paper."
+      },
+      {
+        "start": 5.675,
+        "end": 17.262,
+        "text": "Try searching something like phishing email detection with deep learning, then open just one and read only the abstract — you'll be surprised how much you understand, just what they asked and what they found."
+      },
+      {
+        "start": 17.262,
+        "end": 26.425,
+        "text": "Now here's the clever trick: scroll to the future work or limitations part, because that's where researchers literally hand you the questions nobody's solved yet."
+      },
+      {
+        "start": 26.425,
+        "end": 29.325,
+        "text": "And if you find your own idea's already been done?"
+      },
+      {
+        "start": 29.325,
+        "end": 34.85,
+        "text": "That's not bad news — it means your question mattered, so sharpen it and add your own twist."
+      }
+    ],
+    "bytes": 209520,
+    "model": "claude-opus-4-8"
+  },
+  "demo-scholarmind": {
+    "hash": "03485a5d665b5ca4",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's put our research platform to work and see the very first step of the workflow come alive. I'll give it a topic like \"wildlife and drones,\" and it proposes three testable questions, then goes hunting through real, downloadable datasets to check if the data for your question actually exists. That reality check is the key here — a brilliant question with no reachable data just falls apart in practice. Once we've found the strongest question, it drafts a research brief, and that brief is exactly what a coding agent will build from in our later classes.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.412,
+        "text": "Alright, let's put our research platform to work and see the very first step of the workflow come alive."
+      },
+      {
+        "start": 6.412,
+        "end": 18.95,
+        "text": "I'll give it a topic like \"wildlife and drones,\" and it proposes three testable questions, then goes hunting through real, downloadable datasets to check if the data for your question actually exists."
+      },
+      {
+        "start": 18.95,
+        "end": 26.3,
+        "text": "That reality check is the key here — a brilliant question with no reachable data just falls apart in practice."
+      },
+      {
+        "start": 26.3,
+        "end": 35.462,
+        "text": "Once we've found the strongest question, it drafts a research brief, and that brief is exactly what a coding agent will build from in our later classes."
+      }
+    ],
+    "bytes": 213120,
+    "model": "claude-opus-4-8"
+  },
+  "lab-question-checker": {
+    "hash": "d01bc0802efefc4f",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's actually run some Python and see if code can judge a research question. This little checker hunts for the ingredients of a strong question — does it name real data, a metric, a concrete task, and does it dodge vague mush like \"good\" or \"change the world\"? Run it on those three questions and watch them climb from VAGUE to STRONG. Then here's the fun part: try to trick it — stuff in the right keywords and force a terrible question to score STRONG. When you pull that off, you'll see exactly why the final judgement still has to be a human one.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.1370000000000005,
+        "text": "Alright, let's actually run some Python and see if code can judge a research question."
+      },
+      {
+        "start": 5.1370000000000005,
+        "end": 17.375,
+        "text": "This little checker hunts for the ingredients of a strong question — does it name real data, a metric, a concrete task, and does it dodge vague mush like \"good\" or \"change the world\"?"
+      },
+      {
+        "start": 17.375,
+        "end": 22.15,
+        "text": "Run it on those three questions and watch them climb from VAGUE to STRONG."
+      },
+      {
+        "start": 22.15,
+        "end": 28.837,
+        "text": "Then here's the fun part: try to trick it — stuff in the right keywords and force a terrible question to score STRONG."
+      },
+      {
+        "start": 28.837,
+        "end": 34.637,
+        "text": "When you pull that off, you'll see exactly why the final judgement still has to be a human one."
+      }
+    ],
+    "bytes": 208224,
+    "model": "claude-opus-4-8"
+  },
+  "lab-answer-question": {
+    "hash": "e627a04742a81f2c",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Remember that strong question we crafted? It told us exactly what to measure, and now we get to actually answer it. We've got two toy models — one trained only on daytime photos, one with extra low-light images — and we test each on ten photos to see if night recall improved without wrecking daytime accuracy. Run it and watch the answer appear. But here's the honest catch: with only five night photos, flipping just one swings recall by twenty percent, which is exactly why real studies need far more data.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.362,
+        "text": "Remember that strong question we crafted?"
+      },
+      {
+        "start": 2.362,
+        "end": 6.75,
+        "text": "It told us exactly what to measure, and now we get to actually answer it."
+      },
+      {
+        "start": 6.75,
+        "end": 19.5,
+        "text": "We've got two toy models — one trained only on daytime photos, one with extra low-light images — and we test each on ten photos to see if night recall improved without wrecking daytime accuracy."
+      },
+      {
+        "start": 19.5,
+        "end": 21.662,
+        "text": "Run it and watch the answer appear."
+      },
+      {
+        "start": 21.662,
+        "end": 31.837,
+        "text": "But here's the honest catch: with only five night photos, flipping just one swings recall by twenty percent, which is exactly why real studies need far more data."
+      }
+    ],
+    "bytes": 191376,
+    "model": "claude-opus-4-8"
+  },
+  "your-project": {
+    "hash": "5ddcaf4488287a8d",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's where you get to build something yourself. Pick a topic you genuinely care about — your sport, your favourite music, gaming, the climate, anything that fires you up. Now write three questions about it that climb in quality: one simple, one medium, and one strong. And here's the real work — next to each one, tell me why it sits at that level, which ingredient is missing or present. Your strongest question should name an input, an output, and a metric, and be answerable with data you could actually get your hands on.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.125,
+        "text": "Alright, here's where you get to build something yourself."
+      },
+      {
+        "start": 3.125,
+        "end": 10.85,
+        "text": "Pick a topic you genuinely care about — your sport, your favourite music, gaming, the climate, anything that fires you up."
+      },
+      {
+        "start": 10.85,
+        "end": 17.387,
+        "text": "Now write three questions about it that climb in quality: one simple, one medium, and one strong."
+      },
+      {
+        "start": 17.387,
+        "end": 24.637,
+        "text": "And here's the real work — next to each one, tell me why it sits at that level, which ingredient is missing or present."
+      },
+      {
+        "start": 24.637,
+        "end": 32.087,
+        "text": "Your strongest question should name an input, an output, and a metric, and be answerable with data you could actually get your hands on."
+      }
+    ],
+    "bytes": 192816,
+    "model": "claude-opus-4-8"
+  },
+  "build-it-now": {
+    "hash": "cf33aa8e575b211a",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, now it's your turn to actually build something. Start by picking a topic from your application map, then use SCAMPER or the funnel to zoom in from a broad field down to a real pain point with an AI angle. Ask ChatGPT for five research questions, sort them from weak to strong, and rewrite your best one in that input-to-output-to-metric form — that's your checkpoint, so don't skip it. Then hit Google Scholar to see if someone's already answered it. And here's the secret: if it's been done, that's great news — the topic matters and data exists, so just add a twist and make it yours.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.05,
+        "text": "Alright, now it's your turn to actually build something."
+      },
+      {
+        "start": 3.05,
+        "end": 11.8,
+        "text": "Start by picking a topic from your application map, then use SCAMPER or the funnel to zoom in from a broad field down to a real pain point with an AI angle."
+      },
+      {
+        "start": 11.8,
+        "end": 23.537,
+        "text": "Ask ChatGPT for five research questions, sort them from weak to strong, and rewrite your best one in that input-to-output-to-metric form — that's your checkpoint, so don't skip it."
+      },
+      {
+        "start": 23.537,
+        "end": 27.037,
+        "text": "Then hit Google Scholar to see if someone's already answered it."
+      },
+      {
+        "start": 27.037,
+        "end": 36.212,
+        "text": "And here's the secret: if it's been done, that's great news — the topic matters and data exists, so just add a twist and make it yours."
+      }
+    ],
+    "bytes": 217584,
+    "model": "claude-opus-4-8"
+  },
+  "benchmark-good-question": {
+    "hash": "19aa1115e3087577",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's set a bar you can actually measure your own question against. Look at what fails first: \"How can we make AI smarter?\" has no domain, no data, no metric, and \"Will AI replace humans?\" is just a debate no experiment can settle. Now the strong one nails a specific domain, honest metrics like accuracy and F1, and real value. And notice the clever part — it bakes a hard test right in, checking against phishing styles the model has never seen before. That's the move: put the tough challenge inside your question from the start.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.312,
+        "text": "Let's set a bar you can actually measure your own question against."
+      },
+      {
+        "start": 3.312,
+        "end": 15.6,
+        "text": "Look at what fails first: \"How can we make AI smarter?\" has no domain, no data, no metric, and \"Will AI replace humans?\" is just a debate no experiment can settle."
+      },
+      {
+        "start": 15.6,
+        "end": 22.925,
+        "text": "Now the strong one nails a specific domain, honest metrics like accuracy and F1, and real value."
+      },
+      {
+        "start": 22.925,
+        "end": 30.55,
+        "text": "And notice the clever part — it bakes a hard test right in, checking against phishing styles the model has never seen before."
+      },
+      {
+        "start": 30.55,
+        "end": 34.962,
+        "text": "That's the move: put the tough challenge inside your question from the start."
+      }
+    ],
+    "bytes": 210096,
+    "model": "claude-opus-4-8"
+  },
+  "reference-key-terms": {
+    "hash": "e6994a603e074d2a",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's build a shared vocabulary you can lean on all term. A research question is one clear thing you can actually answer with evidence, and a hypothesis is your honest guess about that answer before you peek at the data. A metric is the number that tells you how well things worked, and recall specifically asks: of all the real positives out there, how many did your model actually catch? Keep this handy — whenever these words pop up again, come right back here.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.2,
+        "text": "Let's build a shared vocabulary you can lean on all term."
+      },
+      {
+        "start": 3.2,
+        "end": 12.687,
+        "text": "A research question is one clear thing you can actually answer with evidence, and a hypothesis is your honest guess about that answer before you peek at the data."
+      },
+      {
+        "start": 12.687,
+        "end": 23.287,
+        "text": "A metric is the number that tells you how well things worked, and recall specifically asks: of all the real positives out there, how many did your model actually catch?"
+      },
+      {
+        "start": 23.287,
+        "end": 27.85,
+        "text": "Keep this handy — whenever these words pop up again, come right back here."
+      }
+    ],
+    "bytes": 167472,
+    "model": "claude-opus-4-8"
+  },
+  "homework": {
+    "hash": "d2a9dd70d1cefbdf",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's what I'd like you to do before we meet again. Finalize your three questions in a short document, and make sure your strong one passes the recipe—input, output, and a clear metric. Then read three abstracts near that question, and for each just jot one line: their method, their finding, and one gap you spotted. Re-run Lab 1 on your final question and see if it scores strong, and honestly ask yourself if it should. If you get stuck, drop your draft anywhere and I'll jump in to help.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.675,
+        "text": "Here's what I'd like you to do before we meet again."
+      },
+      {
+        "start": 2.675,
+        "end": 12.212,
+        "text": "Finalize your three questions in a short document, and make sure your strong one passes the recipe—input, output, and a clear metric."
+      },
+      {
+        "start": 12.212,
+        "end": 20.825,
+        "text": "Then read three abstracts near that question, and for each just jot one line: their method, their finding, and one gap you spotted."
+      },
+      {
+        "start": 20.825,
+        "end": 26.862,
+        "text": "Re-run Lab 1 on your final question and see if it scores strong, and honestly ask yourself if it should."
+      },
+      {
+        "start": 26.862,
+        "end": 30.525,
+        "text": "If you get stuck, drop your draft anywhere and I'll jump in to help."
+      }
+    ],
+    "bytes": 183456,
+    "model": "claude-opus-4-8"
+  },
+  "line-to-remember": {
+    "hash": "8d44c1840d7d2e44",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the whole class packed into a single sentence from Einstein: framing the problem well often matters more than solving it. Think back to those DARPA teams. The solution that worked in 2005 was already sitting inside the 2004 teams — the talent, the tools, the ideas were all there. What changed was the question they asked. So before you rush to answers, learn to ask better.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 8.125,
+        "text": "Here's the whole class packed into a single sentence from Einstein: framing the problem well often matters more than solving it."
+      },
+      {
+        "start": 8.125,
+        "end": 10.2,
+        "text": "Think back to those DARPA teams."
+      },
+      {
+        "start": 10.2,
+        "end": 19.525,
+        "text": "The solution that worked in 2005 was already sitting inside the 2004 teams — the talent, the tools, the ideas were all there."
+      },
+      {
+        "start": 19.525,
+        "end": 21.6,
+        "text": "What changed was the question they asked."
+      },
+      {
+        "start": 21.6,
+        "end": 24.937,
+        "text": "So before you rush to answers, learn to ask better."
+      }
+    ],
+    "bytes": 150048,
+    "model": "claude-opus-4-8"
+  },
+  "wrap-up": {
+    "hash": "cf3240608c12ec76",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's pull together the three big ideas worth carrying with you. First, research isn't a lucky search — it's curiosity made systematic, a loop you keep running. Second, a strong question always names its input, its output, and its metric, and it protects a trade-off. And third, you generate ideas widely, then verify them ruthlessly. Before you go, post your strongest question in the comments — your first feedback is free, and next time we'll follow where that question travels.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.35,
+        "text": "Alright, let's pull together the three big ideas worth carrying with you."
+      },
+      {
+        "start": 4.35,
+        "end": 11.812,
+        "text": "First, research isn't a lucky search — it's curiosity made systematic, a loop you keep running."
+      },
+      {
+        "start": 11.812,
+        "end": 19.125,
+        "text": "Second, a strong question always names its input, its output, and its metric, and it protects a trade-off."
+      },
+      {
+        "start": 19.125,
+        "end": 24.587,
+        "text": "And third, you generate ideas widely, then verify them ruthlessly."
+      },
+      {
+        "start": 24.587,
+        "end": 32.562,
+        "text": "Before you go, post your strongest question in the comments — your first feedback is free, and next time we'll follow where that question travels."
+      }
+    ],
+    "bytes": 195696,
+    "model": "claude-opus-4-8"
+  },
+  "backup-material": {
+    "hash": "84f0f463a18581bb",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, so what we've got here is our backup stash—a few extra slides for when we've got a little breathing room. If we're tight on time today, we'll happily skip these, but they're here whenever you want to go deeper. We can explore what actually makes a question valuable, run through a little clinic for fixing the most common mistakes, and even squeeze in a bonus quiz. Think of these as your on-demand extras, ready whenever you need them.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.6,
+        "text": "Alright, so what we've got here is our backup stash—a few extra slides for when we've got a little breathing room."
+      },
+      {
+        "start": 6.6,
+        "end": 12.45,
+        "text": "If we're tight on time today, we'll happily skip these, but they're here whenever you want to go deeper."
+      },
+      {
+        "start": 12.45,
+        "end": 21.575,
+        "text": "We can explore what actually makes a question valuable, run through a little clinic for fixing the most common mistakes, and even squeeze in a bonus quiz."
+      },
+      {
+        "start": 21.575,
+        "end": 26.225,
+        "text": "Think of these as your on-demand extras, ready whenever you need them."
+      }
+    ],
+    "bytes": 157680,
+    "model": "claude-opus-4-8"
+  },
+  "backup-question-value": {
+    "hash": "63ecdff366e56faf",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "So your question can be perfectly built and still be boring — form and worth are two totally different things. Ask yourself three things: does it push what we know, does it solve a real problem someone actually has, and does it bring a fresh angle? Score each one from one to five. You don't need three perfect fives, but if you're scoring ones across the board, keep looking. And honestly, for most of your projects, that practical value is where the magic starts.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.75,
+        "text": "So your question can be perfectly built and still be boring — form and worth are two totally different things."
+      },
+      {
+        "start": 6.75,
+        "end": 16.162,
+        "text": "Ask yourself three things: does it push what we know, does it solve a real problem someone actually has, and does it bring a fresh angle?"
+      },
+      {
+        "start": 16.162,
+        "end": 18.425,
+        "text": "Score each one from one to five."
+      },
+      {
+        "start": 18.425,
+        "end": 23.637,
+        "text": "You don't need three perfect fives, but if you're scoring ones across the board, keep looking."
+      },
+      {
+        "start": 23.637,
+        "end": 29.562,
+        "text": "And honestly, for most of your projects, that practical value is where the magic starts."
+      }
+    ],
+    "bytes": 177696,
+    "model": "claude-opus-4-8"
+  },
+  "backup-question-clinic": {
+    "hash": "87c215418e6c1dc0",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "So here's a little first-aid kit for when your research question isn't quite working. Most weak questions fail in one of four ways: they're too broad, they can't be measured, they've already been answered, or the data you need is simply out of reach. For each one there's a mechanical fix — narrow it down, find a number to track, add a fresh twist, or hunt for public data first. That last one is the sneakiest, because a question can look perfect on paper yet be impossible if you can never touch those hospital records.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.725,
+        "text": "So here's a little first-aid kit for when your research question isn't quite working."
+      },
+      {
+        "start": 4.725,
+        "end": 14.625,
+        "text": "Most weak questions fail in one of four ways: they're too broad, they can't be measured, they've already been answered, or the data you need is simply out of reach."
+      },
+      {
+        "start": 14.625,
+        "end": 23.362,
+        "text": "For each one there's a mechanical fix — narrow it down, find a number to track, add a fresh twist, or hunt for public data first."
+      },
+      {
+        "start": 23.362,
+        "end": 32.187,
+        "text": "That last one is the sneakiest, because a question can look perfect on paper yet be impossible if you can never touch those hospital records."
+      }
+    ],
+    "bytes": 193536,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-backup-bonus": {
+    "hash": "77f2e17558a11275",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's do a quick check together. Why is \"Will AI replace humans?\" a weak research question? The key issue is that no experiment or dataset could ever settle it — there's no input, output, or metric that would give us evidence one way or the other. It's a fascinating debate, sure, but interesting doesn't mean researchable. The rescue move is to slice off a measurable piece, like asking which specific tasks in a given job current models can do at human accuracy.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.662,
+        "text": "Let's do a quick check together."
+      },
+      {
+        "start": 1.662,
+        "end": 6.062,
+        "text": "Why is \"Will AI replace humans?\" a weak research question?"
+      },
+      {
+        "start": 6.062,
+        "end": 15.937,
+        "text": "The key issue is that no experiment or dataset could ever settle it — there's no input, output, or metric that would give us evidence one way or the other."
+      },
+      {
+        "start": 15.937,
+        "end": 20.762,
+        "text": "It's a fascinating debate, sure, but interesting doesn't mean researchable."
+      },
+      {
+        "start": 20.762,
+        "end": 29.912,
+        "text": "The rescue move is to slice off a measurable piece, like asking which specific tasks in a given job current models can do at human accuracy."
+      }
+    ],
+    "bytes": 179856,
+    "model": "claude-opus-4-8"
+  }
+}

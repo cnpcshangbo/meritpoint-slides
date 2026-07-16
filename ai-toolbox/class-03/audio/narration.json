@@ -1,0 +1,1147 @@
+{
+  "title": {
+    "hash": "777a1a65300d6b97",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Welcome back, everyone! In our first two classes, we built up our AI literacy and learned how to shape a strong research question. Today, we're going to zoom way out and look at the whole map — the complete journey a question takes, from a spark of an idea all the way to a real result. By the end, you'll actually draw your own research pipeline, and every class we do after this will find its home somewhere on that map. Let's dive in.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.612,
+        "text": "Welcome back, everyone!"
+      },
+      {
+        "start": 1.612,
+        "end": 8.637,
+        "text": "In our first two classes, we built up our AI literacy and learned how to shape a strong research question."
+      },
+      {
+        "start": 8.637,
+        "end": 17.925,
+        "text": "Today, we're going to zoom way out and look at the whole map — the complete journey a question takes, from a spark of an idea all the way to a real result."
+      },
+      {
+        "start": 17.925,
+        "end": 25.637,
+        "text": "By the end, you'll actually draw your own research pipeline, and every class we do after this will find its home somewhere on that map."
+      },
+      {
+        "start": 25.637,
+        "end": 26.637,
+        "text": "Let's dive in."
+      }
+    ],
+    "bytes": 160128,
+    "model": "claude-opus-4-8"
+  },
+  "recap-class02": {
+    "hash": "3370e423003960d7",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's take sixty seconds to remember where we landed last time. We climbed the question ladder from vague to strong, and a strong question always names what you'll measure and what success looks like. Remember the recipe: input plus output plus metric equals a real research question, and if you can't picture the data table, you're not there yet. Now grab a neighbor, swap your three homework questions, and check their strongest one against that recipe. Give each other just one sentence of honest feedback.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.637,
+        "text": "Let's take sixty seconds to remember where we landed last time."
+      },
+      {
+        "start": 3.637,
+        "end": 11.425,
+        "text": "We climbed the question ladder from vague to strong, and a strong question always names what you'll measure and what success looks like."
+      },
+      {
+        "start": 11.425,
+        "end": 20.625,
+        "text": "Remember the recipe: input plus output plus metric equals a real research question, and if you can't picture the data table, you're not there yet."
+      },
+      {
+        "start": 20.625,
+        "end": 26.85,
+        "text": "Now grab a neighbor, swap your three homework questions, and check their strongest one against that recipe."
+      },
+      {
+        "start": 26.85,
+        "end": 30.025,
+        "text": "Give each other just one sentence of honest feedback."
+      }
+    ],
+    "bytes": 180576,
+    "model": "claude-opus-4-8"
+  },
+  "agenda": {
+    "hash": "6a4251024447b80a",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's how our hour together is going to flow. We'll start with a famous dataset that basically woke up modern AI, then walk through the pipeline that drives every project: data, model, experiment, conclusion. We'll break down the five steps and see exactly where projects tend to fall apart, get our hands dirty in Colab and Kaggle, and run two quick labs. By the end, you'll draw one diagram that maps everything we do for the rest of this course.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.75,
+        "text": "Here's how our hour together is going to flow."
+      },
+      {
+        "start": 2.75,
+        "end": 13.487,
+        "text": "We'll start with a famous dataset that basically woke up modern AI, then walk through the pipeline that drives every project: data, model, experiment, conclusion."
+      },
+      {
+        "start": 13.487,
+        "end": 22.6,
+        "text": "We'll break down the five steps and see exactly where projects tend to fall apart, get our hands dirty in Colab and Kaggle, and run two quick labs."
+      },
+      {
+        "start": 22.6,
+        "end": 28.825,
+        "text": "By the end, you'll draw one diagram that maps everything we do for the rest of this course."
+      }
+    ],
+    "bytes": 173376,
+    "model": "claude-opus-4-8"
+  },
+  "concept-lifecycle": {
+    "hash": "e1723efb9401fbc1",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's where it gets real. What looks like a straight line is actually a loop with five named steps: you define the problem, get and prep your data, build and train your model, evaluate and optimize it, then test and present. And here's the key part — that last step bends right back to the first, because when you present your results, you always uncover new questions. So research isn't a one-way road; it's laps around a track, and each lap gets a little better than the last.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.45,
+        "text": "Here's where it gets real."
+      },
+      {
+        "start": 1.45,
+        "end": 13.525,
+        "text": "What looks like a straight line is actually a loop with five named steps: you define the problem, get and prep your data, build and train your model, evaluate and optimize it, then test and present."
+      },
+      {
+        "start": 13.525,
+        "end": 21.812,
+        "text": "And here's the key part — that last step bends right back to the first, because when you present your results, you always uncover new questions."
+      },
+      {
+        "start": 21.812,
+        "end": 28.625,
+        "text": "So research isn't a one-way road; it's laps around a track, and each lap gets a little better than the last."
+      }
+    ],
+    "bytes": 172080,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-pipeline": {
+    "hash": "6d4adad616390ca7",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "So here's a moment every researcher hits: you run your experiment, and the score comes back ugly. What do you do next? You don't quit, and you definitely don't hide the number — you loop back and ask whether it's the data, the model, or even the question that's off, and then you run another lap. A bad result isn't failure, it's information, and every strong project you'll ever admire went around this loop many, many times.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.537,
+        "text": "So here's a moment every researcher hits: you run your experiment, and the score comes back ugly."
+      },
+      {
+        "start": 6.537,
+        "end": 7.737,
+        "text": "What do you do next?"
+      },
+      {
+        "start": 7.737,
+        "end": 17.325,
+        "text": "You don't quit, and you definitely don't hide the number — you loop back and ask whether it's the data, the model, or even the question that's off, and then you run another lap."
+      },
+      {
+        "start": 17.325,
+        "end": 25.862,
+        "text": "A bad result isn't failure, it's information, and every strong project you'll ever admire went around this loop many, many times."
+      }
+    ],
+    "bytes": 155520,
+    "model": "claude-opus-4-8"
+  },
+  "step1-problem": {
+    "hash": "40a84c1980f505a9",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Before you build anything, you have to decide what game you're actually playing. Are you predicting a category, a number, or are you hunting for hidden groups with no labels at all? That single choice locks in your models and how you'll measure success — so set your target up front, like \"accuracy of at least ninety-five percent means we win.\" And notice this is really just Class 2's input, output, metric recipe, now dressed up in engineering clothes. If you wrote a strong research question, you've already finished step one.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.85,
+        "text": "Before you build anything, you have to decide what game you're actually playing."
+      },
+      {
+        "start": 3.85,
+        "end": 9.65,
+        "text": "Are you predicting a category, a number, or are you hunting for hidden groups with no labels at all?"
+      },
+      {
+        "start": 9.65,
+        "end": 18.987,
+        "text": "That single choice locks in your models and how you'll measure success — so set your target up front, like \"accuracy of at least ninety-five percent means we win.\""
+      },
+      {
+        "start": 18.987,
+        "end": 26.487,
+        "text": "And notice this is really just Class 2's input, output, metric recipe, now dressed up in engineering clothes."
+      },
+      {
+        "start": 26.487,
+        "end": 30.537,
+        "text": "If you wrote a strong research question, you've already finished step one."
+      }
+    ],
+    "bytes": 183600,
+    "model": "claude-opus-4-8"
+  },
+  "step2-data": {
+    "hash": "586d36feae14037c",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a phrase I want you to tattoo on your brain: garbage in, garbage out. Your model can only ever be as good as the data you feed it, which is why this is step two and not some boring afterthought. For most of your projects, start with public data from places like Kaggle — collecting your own is a whole project on its own. Then clean it, pick the useful features, and split it into three piles that each have a different job. Spend half your time right here — it's where ImageNet actually won back in 2012.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.55,
+        "text": "Here's a phrase I want you to tattoo on your brain: garbage in, garbage out."
+      },
+      {
+        "start": 4.55,
+        "end": 11.862,
+        "text": "Your model can only ever be as good as the data you feed it, which is why this is step two and not some boring afterthought."
+      },
+      {
+        "start": 11.862,
+        "end": 19.012,
+        "text": "For most of your projects, start with public data from places like Kaggle — collecting your own is a whole project on its own."
+      },
+      {
+        "start": 19.012,
+        "end": 24.875,
+        "text": "Then clean it, pick the useful features, and split it into three piles that each have a different job."
+      },
+      {
+        "start": 24.875,
+        "end": 30.725,
+        "text": "Spend half your time right here — it's where ImageNet actually won back in 2012."
+      }
+    ],
+    "bytes": 184752,
+    "model": "claude-opus-4-8"
+  },
+  "step3-model": {
+    "hash": "70c2c469f7677e8e",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's where the real magic happens — we pick a learner, we let it learn, and we fine-tune it. The trick is matching the tool to the job: for simple, clean problems reach for something like linear regression or a decision tree, and save the neural networks for messy, complicated data. Always start simple — that's your golden rule. Then you feed in the training data and the model learns the patterns on its own, and finally you tune the knobs, small turns at a time, like tuning a guitar until it sounds just right.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.375,
+        "text": "Here's where the real magic happens — we pick a learner, we let it learn, and we fine-tune it."
+      },
+      {
+        "start": 6.375,
+        "end": 18.275,
+        "text": "The trick is matching the tool to the job: for simple, clean problems reach for something like linear regression or a decision tree, and save the neural networks for messy, complicated data."
+      },
+      {
+        "start": 18.275,
+        "end": 21.037,
+        "text": "Always start simple — that's your golden rule."
+      },
+      {
+        "start": 21.037,
+        "end": 31.462,
+        "text": "Then you feed in the training data and the model learns the patterns on its own, and finally you tune the knobs, small turns at a time, like tuning a guitar until it sounds just right."
+      }
+    ],
+    "bytes": 189072,
+    "model": "claude-opus-4-8"
+  },
+  "step4-evaluate": {
+    "hash": "767d1a4f277f4580",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Now let's play doctor, because machine learning models get sick in two classic ways. The first is underfitting, when your model is just too simple to learn anything well, so it scores badly everywhere. The second is overfitting, when your model memorizes the training data down to the noise, then completely falls apart on data it's never seen. Here's your diagnostic trick: always compare the score on training data against the score on new data, because a big gap between them is your smoking gun. You'll watch this happen live in Lab 2.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.562,
+        "text": "Now let's play doctor, because machine learning models get sick in two classic ways."
+      },
+      {
+        "start": 5.562,
+        "end": 13.175,
+        "text": "The first is underfitting, when your model is just too simple to learn anything well, so it scores badly everywhere."
+      },
+      {
+        "start": 13.175,
+        "end": 22.5,
+        "text": "The second is overfitting, when your model memorizes the training data down to the noise, then completely falls apart on data it's never seen."
+      },
+      {
+        "start": 22.5,
+        "end": 31.625,
+        "text": "Here's your diagnostic trick: always compare the score on training data against the score on new data, because a big gap between them is your smoking gun."
+      },
+      {
+        "start": 31.625,
+        "end": 34.037,
+        "text": "You'll watch this happen live in Lab 2."
+      }
+    ],
+    "bytes": 204624,
+    "model": "claude-opus-4-8"
+  },
+  "step5-present": {
+    "hash": "faf4914bf88f1102",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here we are at the finish line, and this is where discipline really pays off. Your test set is data the model has never seen — not during training, not during tuning — so when you finally measure on it, you get one honest, unbiased answer to your question. And I mean once. If you peek at it while tuning, even a single time, that score becomes a lie — we call that data leakage. Then you tell the world: problem, method, results, conclusion, and that all-important future work, where someone else's next question begins.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.575,
+        "text": "Here we are at the finish line, and this is where discipline really pays off."
+      },
+      {
+        "start": 4.575,
+        "end": 15.975,
+        "text": "Your test set is data the model has never seen — not during training, not during tuning — so when you finally measure on it, you get one honest, unbiased answer to your question."
+      },
+      {
+        "start": 15.975,
+        "end": 17.25,
+        "text": "And I mean once."
+      },
+      {
+        "start": 17.25,
+        "end": 23.825,
+        "text": "If you peek at it while tuning, even a single time, that score becomes a lie — we call that data leakage."
+      },
+      {
+        "start": 23.825,
+        "end": 33.225,
+        "text": "Then you tell the world: problem, method, results, conclusion, and that all-important future work, where someone else's next question begins."
+      }
+    ],
+    "bytes": 199728,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-overfitting": {
+    "hash": "679505bac604a9a3",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's put your detective skills to work here. A model that nails 99% on training but crashes to 62% on brand-new data is showing us a classic warning sign. That huge gap tells you the model memorized the answers instead of actually learning the pattern — that's overfitting. And be careful with that tempting third option: reporting the shiny 99% would be dishonest, because the 62% is the real story on data it hasn't seen. So tap what you think, and let's talk it through.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.037,
+        "text": "Alright, let's put your detective skills to work here."
+      },
+      {
+        "start": 3.037,
+        "end": 11.587,
+        "text": "A model that nails 99% on training but crashes to 62% on brand-new data is showing us a classic warning sign."
+      },
+      {
+        "start": 11.587,
+        "end": 18.7,
+        "text": "That huge gap tells you the model memorized the answers instead of actually learning the pattern — that's overfitting."
+      },
+      {
+        "start": 18.7,
+        "end": 29.387,
+        "text": "And be careful with that tempting third option: reporting the shiny 99% would be dishonest, because the 62% is the real story on data it hasn't seen."
+      },
+      {
+        "start": 29.387,
+        "end": 31.85,
+        "text": "So tap what you think, and let's talk it through."
+      }
+    ],
+    "bytes": 191520,
+    "model": "claude-opus-4-8"
+  },
+  "concept-data-driven": {
+    "hash": "1c2513e798fb9090",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the big flip I want you to notice. In traditional programming, a human writes every rule by hand, feeds in data, and out come answers — think calculators or thermostats. But machine learning turns that upside down: we give the machine data along with the answers, and it figures out the rules for itself, including rules no human could ever write down. That's why data gets its own stage in the pipeline — the data isn't fuel for the program, it's the program's teacher.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.2,
+        "text": "Here's the big flip I want you to notice."
+      },
+      {
+        "start": 2.2,
+        "end": 11.675,
+        "text": "In traditional programming, a human writes every rule by hand, feeds in data, and out come answers — think calculators or thermostats."
+      },
+      {
+        "start": 11.675,
+        "end": 22.762,
+        "text": "But machine learning turns that upside down: we give the machine data along with the answers, and it figures out the rules for itself, including rules no human could ever write down."
+      },
+      {
+        "start": 22.762,
+        "end": 30.312,
+        "text": "That's why data gets its own stage in the pipeline — the data isn't fuel for the program, it's the program's teacher."
+      }
+    ],
+    "bytes": 182304,
+    "model": "claude-opus-4-8"
+  },
+  "concept-supervised": {
+    "hash": "4c86412e39ea4d64",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "There are really two big ways a machine can learn, and the difference comes down to one thing: do you have an answer key? In supervised learning, every example arrives labeled — this image is a pedestrian, this house sold for $340,000 — and the model learns to map inputs to those answers. In unsupervised learning there are no labels at all, so the model has to find structure on its own, like grouping similar customers or songs. Our pedestrian detector is supervised, learning from boxes humans painstakingly drew by hand, and that labeling effort is exactly what made ImageNet so valuable. For most of this course, we'll be living in the supervised world.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.212,
+        "text": "There are really two big ways a machine can learn, and the difference comes down to one thing: do you have an answer key?"
+      },
+      {
+        "start": 7.212,
+        "end": 19.025,
+        "text": "In supervised learning, every example arrives labeled — this image is a pedestrian, this house sold for $340,000 — and the model learns to map inputs to those answers."
+      },
+      {
+        "start": 19.025,
+        "end": 28.275,
+        "text": "In unsupervised learning there are no labels at all, so the model has to find structure on its own, like grouping similar customers or songs."
+      },
+      {
+        "start": 28.275,
+        "end": 39.65,
+        "text": "Our pedestrian detector is supervised, learning from boxes humans painstakingly drew by hand, and that labeling effort is exactly what made ImageNet so valuable."
+      },
+      {
+        "start": 39.65,
+        "end": 43.662,
+        "text": "For most of this course, we'll be living in the supervised world."
+      }
+    ],
+    "bytes": 262368,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-supervised": {
+    "hash": "0c7bac03ee12a227",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's try this one out together. Imagine you've got ten thousand customer records, and you want to find natural groups of similar shoppers — but nobody's told you what those groups should be. Which kind of learning is that? The key clue is that there's no answer key, no labels to learn from, which makes it unsupervised. And here's the deeper point: if you'd asked a different question — like \"will this customer buy again, yes or no?\" using past answers — the very same data would suddenly become supervised. The question you ask decides the paradigm.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.625,
+        "text": "Let's try this one out together."
+      },
+      {
+        "start": 1.625,
+        "end": 9.925,
+        "text": "Imagine you've got ten thousand customer records, and you want to find natural groups of similar shoppers — but nobody's told you what those groups should be."
+      },
+      {
+        "start": 9.925,
+        "end": 11.6,
+        "text": "Which kind of learning is that?"
+      },
+      {
+        "start": 11.6,
+        "end": 17.875,
+        "text": "The key clue is that there's no answer key, no labels to learn from, which makes it unsupervised."
+      },
+      {
+        "start": 17.875,
+        "end": 29.412,
+        "text": "And here's the deeper point: if you'd asked a different question — like \"will this customer buy again, yes or no?\" using past answers — the very same data would suddenly become supervised."
+      },
+      {
+        "start": 29.412,
+        "end": 32.15,
+        "text": "The question you ask decides the paradigm."
+      }
+    ],
+    "bytes": 193248,
+    "model": "claude-opus-4-8"
+  },
+  "case-av-pipeline": {
+    "hash": "5d65ee79e36de2eb",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Remember that strong question we built last class — do low-light training images boost night recall without hurting day accuracy? Watch it walk through all four stages of the pipeline. We gather day and night road images with pedestrians boxed by humans, then we train our detector twice — once with the low-light images, once without — and test both on the exact same unseen data. Notice that \"trained twice\" trick: it's the only fair way to isolate what the low-light data actually did, and it gives us one honest answer — night recall up nineteen percent, no day loss, nothing more.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 8.075,
+        "text": "Remember that strong question we built last class — do low-light training images boost night recall without hurting day accuracy?"
+      },
+      {
+        "start": 8.075,
+        "end": 11.05,
+        "text": "Watch it walk through all four stages of the pipeline."
+      },
+      {
+        "start": 11.05,
+        "end": 23.937,
+        "text": "We gather day and night road images with pedestrians boxed by humans, then we train our detector twice — once with the low-light images, once without — and test both on the exact same unseen data."
+      },
+      {
+        "start": 23.937,
+        "end": 36.625,
+        "text": "Notice that \"trained twice\" trick: it's the only fair way to isolate what the low-light data actually did, and it gives us one honest answer — night recall up nineteen percent, no day loss, nothing more."
+      }
+    ],
+    "bytes": 220176,
+    "model": "claude-opus-4-8"
+  },
+  "case-house-prices": {
+    "hash": "5b056c2b28646009",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's our second case, and notice we're running the exact same loop, just for a different game. This time we're predicting house prices, and because price is a number, that makes it regression rather than classification. We start simple with linear regression as our baseline, then bring in a random forest to catch the trickier nonlinear patterns, measuring our error and iterating to lower it. But here's the real gold: the feature importances tell us which factors actually drive price, and that insight often matters more than the prediction itself. Same pipeline, cars or houses — and this exact project is waiting for you on Kaggle.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.325,
+        "text": "Here's our second case, and notice we're running the exact same loop, just for a different game."
+      },
+      {
+        "start": 5.325,
+        "end": 13.15,
+        "text": "This time we're predicting house prices, and because price is a number, that makes it regression rather than classification."
+      },
+      {
+        "start": 13.15,
+        "end": 24.75,
+        "text": "We start simple with linear regression as our baseline, then bring in a random forest to catch the trickier nonlinear patterns, measuring our error and iterating to lower it."
+      },
+      {
+        "start": 24.75,
+        "end": 34.562,
+        "text": "But here's the real gold: the feature importances tell us which factors actually drive price, and that insight often matters more than the prediction itself."
+      },
+      {
+        "start": 34.562,
+        "end": 41.1,
+        "text": "Same pipeline, cars or houses — and this exact project is waiting for you on Kaggle."
+      }
+    ],
+    "bytes": 246960,
+    "model": "claude-opus-4-8"
+  },
+  "tool-colab": {
+    "hash": "a9042a042309d1a8",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let me introduce you to the tool where your real projects are going to live: Google Colab. Think of it as a free lab bench that runs entirely in your browser — Python is already installed, there's nothing to set up, and it runs on Google's own machines. Here's the part I love: you get free access to powerful GPUs that can train models way faster than any laptop, even an old one. And you can share your work as easily as a Google Doc. Tonight, I want you to open it and just try it out.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.6370000000000005,
+        "text": "Let me introduce you to the tool where your real projects are going to live: Google Colab."
+      },
+      {
+        "start": 5.6370000000000005,
+        "end": 15.612,
+        "text": "Think of it as a free lab bench that runs entirely in your browser — Python is already installed, there's nothing to set up, and it runs on Google's own machines."
+      },
+      {
+        "start": 15.612,
+        "end": 24.187,
+        "text": "Here's the part I love: you get free access to powerful GPUs that can train models way faster than any laptop, even an old one."
+      },
+      {
+        "start": 24.187,
+        "end": 30.062,
+        "text": "And you can share your work as easily as a Google Doc. Tonight, I want you to open it and just try it out."
+      }
+    ],
+    "bytes": 180720,
+    "model": "claude-opus-4-8"
+  },
+  "tool-kaggle": {
+    "hash": "cd1e26e2049bef30",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "You've actually met Kaggle twice already, back with the Titanic challenge and again in QUEST, so tonight let's give it a proper introduction. Think of it as the world's biggest playground for data science, and it gives you three things: thousands of free labeled datasets, real competitions with live leaderboards, and — my favorite — notebooks where the top competitors publish their entire code. That last one is gold, because reading how an expert builds their pipeline is like a literature review for programmers. Tonight's stretch goal is the House Prices challenge, so go poke around.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 8.05,
+        "text": "You've actually met Kaggle twice already, back with the Titanic challenge and again in QUEST, so tonight let's give it a proper introduction."
+      },
+      {
+        "start": 8.05,
+        "end": 24.137,
+        "text": "Think of it as the world's biggest playground for data science, and it gives you three things: thousands of free labeled datasets, real competitions with live leaderboards, and — my favorite — notebooks where the top competitors publish their entire code."
+      },
+      {
+        "start": 24.137,
+        "end": 30.962,
+        "text": "That last one is gold, because reading how an expert builds their pipeline is like a literature review for programmers."
+      },
+      {
+        "start": 30.962,
+        "end": 35.9,
+        "text": "Tonight's stretch goal is the House Prices challenge, so go poke around."
+      }
+    ],
+    "bytes": 215712,
+    "model": "claude-opus-4-8"
+  },
+  "lab-pipeline": {
+    "hash": "5b692d10a074abd2",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here it is — the entire research pipeline in just twenty-five lines, running right in your browser. Follow the comment headers and you'll see the four stages we've been talking about: first we load real data, a hundred and fifty iris flowers with four measurements each. Then a decision tree learns the patterns, we test it on flowers it has never seen, and finally we draw a conclusion the numbers actually support. While the libraries load, notice how honest this is — we only trust it against that fresh exam pile. When it finishes, try dropping the depth to one and watch what happens.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.2620000000000005,
+        "text": "Here it is — the entire research pipeline in just twenty-five lines, running right in your browser."
+      },
+      {
+        "start": 6.2620000000000005,
+        "end": 15.387,
+        "text": "Follow the comment headers and you'll see the four stages we've been talking about: first we load real data, a hundred and fifty iris flowers with four measurements each."
+      },
+      {
+        "start": 15.387,
+        "end": 24.187,
+        "text": "Then a decision tree learns the patterns, we test it on flowers it has never seen, and finally we draw a conclusion the numbers actually support."
+      },
+      {
+        "start": 24.187,
+        "end": 30.337,
+        "text": "While the libraries load, notice how honest this is — we only trust it against that fresh exam pile."
+      },
+      {
+        "start": 30.337,
+        "end": 34.612,
+        "text": "When it finishes, try dropping the depth to one and watch what happens."
+      }
+    ],
+    "bytes": 208080,
+    "model": "claude-opus-4-8"
+  },
+  "lab-overfitting": {
+    "hash": "6aaf560510fa0e20",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's where we actually watch the disease unfold. We've got some data that follows a gentle curve with a bit of noise, and we're going to fit three models of increasing complexity to it. Keep your eyes on those two numbers: the training error keeps dropping, but the error on unseen data drops, then turns around and climbs. That turning point — that's overfitting happening right in front of you, and degree fifteen is where it explodes. Once you've seen it, try the degrees in between and find exactly where the test error bottoms out.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.375,
+        "text": "Alright, here's where we actually watch the disease unfold."
+      },
+      {
+        "start": 3.375,
+        "end": 11,
+        "text": "We've got some data that follows a gentle curve with a bit of noise, and we're going to fit three models of increasing complexity to it."
+      },
+      {
+        "start": 11,
+        "end": 19.325,
+        "text": "Keep your eyes on those two numbers: the training error keeps dropping, but the error on unseen data drops, then turns around and climbs."
+      },
+      {
+        "start": 19.325,
+        "end": 25.812,
+        "text": "That turning point — that's overfitting happening right in front of you, and degree fifteen is where it explodes."
+      },
+      {
+        "start": 25.812,
+        "end": 31.512,
+        "text": "Once you've seen it, try the degrees in between and find exactly where the test error bottoms out."
+      }
+    ],
+    "bytes": 189504,
+    "model": "claude-opus-4-8"
+  },
+  "your-project": {
+    "hash": "09320b2ef5cce297",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's where your strong question from last class becomes a real plan. I want you to draw four stages, left to right: data, model, experiment, conclusion — and under each one, write concretely what happens for your question. Don't write \"get data\" — write something like \"five hundred labeled night images from a specific dataset.\" And put a little warning mark wherever you think the hard part will hit, because for most of you, that's going to be the data stage.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.437,
+        "text": "Alright, here's where your strong question from last class becomes a real plan."
+      },
+      {
+        "start": 4.437,
+        "end": 15.462,
+        "text": "I want you to draw four stages, left to right: data, model, experiment, conclusion — and under each one, write concretely what happens for your question."
+      },
+      {
+        "start": 15.462,
+        "end": 21.312,
+        "text": "Don't write \"get data\" — write something like \"five hundred labeled night images from a specific dataset.\""
+      },
+      {
+        "start": 21.312,
+        "end": 28.525,
+        "text": "And put a little warning mark wherever you think the hard part will hit, because for most of you, that's going to be the data stage."
+      }
+    ],
+    "bytes": 171504,
+    "model": "claude-opus-4-8"
+  },
+  "build-it-now": {
+    "hash": "9972e670e37b4b42",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, time to get your hands dirty. Start by re-running Lab 1 and saying the four stages out loud straight from the code comments, then sketch your pipeline on paper or a whiteboard and snap a photo. Now upgrade that sketch into a mini research plan, one line per step: restate the problem, pick your metric and threshold, name your data, plan baseline before fancy, and decide how you'll split and evaluate. Finally, mark the hardest stage with a warning and write one sentence on why it scares you.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.125,
+        "text": "Alright, time to get your hands dirty."
+      },
+      {
+        "start": 2.125,
+        "end": 11.462,
+        "text": "Start by re-running Lab 1 and saying the four stages out loud straight from the code comments, then sketch your pipeline on paper or a whiteboard and snap a photo."
+      },
+      {
+        "start": 11.462,
+        "end": 26.075,
+        "text": "Now upgrade that sketch into a mini research plan, one line per step: restate the problem, pick your metric and threshold, name your data, plan baseline before fancy, and decide how you'll split and evaluate."
+      },
+      {
+        "start": 26.075,
+        "end": 31.612,
+        "text": "Finally, mark the hardest stage with a warning and write one sentence on why it scares you."
+      }
+    ],
+    "bytes": 190080,
+    "model": "claude-opus-4-8"
+  },
+  "benchmark-plan-template": {
+    "hash": "91726b934c25d637",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's what a finished mini-plan actually looks like, using a simple question: can a model tell cats from dogs in photos? Notice how every single line is concrete — a named dataset, an exact number to beat, a path from a simple model to a stronger one, and a clear rule for testing. Don't worry about words like CNN, ResNet, or augmentation; you'll meet all of those in the coming classes. For today, just soak in the structure — that's the bar to measure your own plan against.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.4,
+        "text": "Here's what a finished mini-plan actually looks like, using a simple question: can a model tell cats from dogs in photos?"
+      },
+      {
+        "start": 7.4,
+        "end": 18.75,
+        "text": "Notice how every single line is concrete — a named dataset, an exact number to beat, a path from a simple model to a stronger one, and a clear rule for testing."
+      },
+      {
+        "start": 18.75,
+        "end": 25.887,
+        "text": "Don't worry about words like CNN, ResNet, or augmentation; you'll meet all of those in the coming classes."
+      },
+      {
+        "start": 25.887,
+        "end": 31.8,
+        "text": "For today, just soak in the structure — that's the bar to measure your own plan against."
+      }
+    ],
+    "bytes": 191088,
+    "model": "claude-opus-4-8"
+  },
+  "pitfalls": {
+    "hash": "6c774909ef574f8a",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let me show you the four ways your project will try to die — and the good news is, you now know the vaccines for each one. First, people fall in love with a fancy model but feed it garbage; spend half your time understanding and cleaning your data instead. Second, don't jump to the deep end — build a simple baseline first so you know how hard the problem actually is. Third, never brag about accuracy on data your model memorized; report scores on unseen data only. And finally, don't drown people in numbers — one honest chart beats a whole table of digits.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.05,
+        "text": "Let me show you the four ways your project will try to die — and the good news is, you now know the vaccines for each one."
+      },
+      {
+        "start": 7.05,
+        "end": 15.837,
+        "text": "First, people fall in love with a fancy model but feed it garbage; spend half your time understanding and cleaning your data instead."
+      },
+      {
+        "start": 15.837,
+        "end": 23.225,
+        "text": "Second, don't jump to the deep end — build a simple baseline first so you know how hard the problem actually is."
+      },
+      {
+        "start": 23.225,
+        "end": 30.4,
+        "text": "Third, never brag about accuracy on data your model memorized; report scores on unseen data only."
+      },
+      {
+        "start": 30.4,
+        "end": 36.425,
+        "text": "And finally, don't drown people in numbers — one honest chart beats a whole table of digits."
+      }
+    ],
+    "bytes": 218880,
+    "model": "claude-opus-4-8"
+  },
+  "reference-key-terms": {
+    "hash": "a6f52c6e04914f24",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let me hand you the vocabulary we'll lean on all course long. Think of the pipeline as a loop every study walks: data, model, experiment, conclusion. Notice the three piles of data—one to learn from, one to tune on, and one saved for the final exam you only take once. And keep an eye on that last term, data leakage, because when test information sneaks into training, your scores start to lie to you.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.975,
+        "text": "Let me hand you the vocabulary we'll lean on all course long."
+      },
+      {
+        "start": 3.975,
+        "end": 10.662,
+        "text": "Think of the pipeline as a loop every study walks: data, model, experiment, conclusion."
+      },
+      {
+        "start": 10.662,
+        "end": 18.725,
+        "text": "Notice the three piles of data—one to learn from, one to tune on, and one saved for the final exam you only take once."
+      },
+      {
+        "start": 18.725,
+        "end": 26.212,
+        "text": "And keep an eye on that last term, data leakage, because when test information sneaks into training, your scores start to lie to you."
+      }
+    ],
+    "bytes": 157680,
+    "model": "claude-opus-4-8"
+  },
+  "homework": {
+    "hash": "64540d2a0719217b",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's what I'd love you to do before we meet again. First, finish your pipeline diagram with all four stages, each showing a real artifact, and flag the tricky part — that's your graded piece, so submit it in Classroom. Then tonight, just open Colab, load any dataset, and print its shape and first rows; done is the whole goal there, nothing fancy. Re-run Lab 2 to find the degree where test error bottoms out, and bring me that number. If you're hungry for more, peek at the House Prices challenge and spot the pipeline stages in someone else's code.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.575,
+        "text": "Alright, here's what I'd love you to do before we meet again."
+      },
+      {
+        "start": 3.575,
+        "end": 14.287,
+        "text": "First, finish your pipeline diagram with all four stages, each showing a real artifact, and flag the tricky part — that's your graded piece, so submit it in Classroom."
+      },
+      {
+        "start": 14.287,
+        "end": 23.362,
+        "text": "Then tonight, just open Colab, load any dataset, and print its shape and first rows; done is the whole goal there, nothing fancy."
+      },
+      {
+        "start": 23.362,
+        "end": 28.925,
+        "text": "Re-run Lab 2 to find the degree where test error bottoms out, and bring me that number."
+      },
+      {
+        "start": 28.925,
+        "end": 35.125,
+        "text": "If you're hungry for more, peek at the House Prices challenge and spot the pipeline stages in someone else's code."
+      }
+    ],
+    "bytes": 211104,
+    "model": "claude-opus-4-8"
+  },
+  "line-to-remember": {
+    "hash": "96dbdbbb5c8fdfdd",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the line I want you to carry out of here today: an ounce of practice is worth a pound of theory. You've spent this hour building a mental map of how everything fits together, and that map is genuinely valuable. But a map only matters when you actually walk it. So tonight, open up Colab and take just one small lap around what we learned — nothing huge, just your hands on the real thing.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.987,
+        "text": "Here's the line I want you to carry out of here today: an ounce of practice is worth a pound of theory."
+      },
+      {
+        "start": 5.987,
+        "end": 13.5,
+        "text": "You've spent this hour building a mental map of how everything fits together, and that map is genuinely valuable."
+      },
+      {
+        "start": 13.5,
+        "end": 16.225,
+        "text": "But a map only matters when you actually walk it."
+      },
+      {
+        "start": 16.225,
+        "end": 23.662,
+        "text": "So tonight, open up Colab and take just one small lap around what we learned — nothing huge, just your hands on the real thing."
+      }
+    ],
+    "bytes": 142272,
+    "model": "claude-opus-4-8"
+  },
+  "wrap-up": {
+    "hash": "b8976ec4793ab13a",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's hold onto three big ideas as we finish today. First, there's one loop that rules them all: data flows to your model, then to an experiment, then to a conclusion, and it keeps cycling around. Second, supervised learning means learning with an answer key, and that answer key is expensive and precious. And third, the test set is sacred: three separate piles, honest numbers, and always start with a baseline. Now tell me, which pipeline stage do you think will be hardest for your project, and why? Next week we'll put an AI assistant to work speeding up every single box on this map.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.412,
+        "text": "Let's hold onto three big ideas as we finish today."
+      },
+      {
+        "start": 3.412,
+        "end": 12.737,
+        "text": "First, there's one loop that rules them all: data flows to your model, then to an experiment, then to a conclusion, and it keeps cycling around."
+      },
+      {
+        "start": 12.737,
+        "end": 20.087,
+        "text": "Second, supervised learning means learning with an answer key, and that answer key is expensive and precious."
+      },
+      {
+        "start": 20.087,
+        "end": 27.812,
+        "text": "And third, the test set is sacred: three separate piles, honest numbers, and always start with a baseline."
+      },
+      {
+        "start": 27.812,
+        "end": 33.087,
+        "text": "Now tell me, which pipeline stage do you think will be hardest for your project, and why?"
+      },
+      {
+        "start": 33.087,
+        "end": 38.487,
+        "text": "Next week we'll put an AI assistant to work speeding up every single box on this map."
+      }
+    ],
+    "bytes": 231264,
+    "model": "claude-opus-4-8"
+  },
+  "backup-material": {
+    "hash": "968a3fe8065508d7",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, everyone, what we've got here is a bit of a bonus stash — extra material I keep in my back pocket for when we have a little more time. If the idea of splitting our data into three piles felt fuzzy earlier, I've got a nice visual that makes it click. We'll also touch on research ethics — things like privacy, bias, and the real-world impact of what we build — and that topic will come back in a bigger way in later classes. And if you're feeling brave, there's one more quick quiz to test yourselves.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.737,
+        "text": "Alright, everyone, what we've got here is a bit of a bonus stash — extra material I keep in my back pocket for when we have a little more time."
+      },
+      {
+        "start": 6.737,
+        "end": 13.962,
+        "text": "If the idea of splitting our data into three piles felt fuzzy earlier, I've got a nice visual that makes it click."
+      },
+      {
+        "start": 13.962,
+        "end": 24.15,
+        "text": "We'll also touch on research ethics — things like privacy, bias, and the real-world impact of what we build — and that topic will come back in a bigger way in later classes."
+      },
+      {
+        "start": 24.15,
+        "end": 28.475,
+        "text": "And if you're feeling brave, there's one more quick quiz to test yourselves."
+      }
+    ],
+    "bytes": 171216,
+    "model": "claude-opus-4-8"
+  },
+  "backup-ethics": {
+    "hash": "b96a041c4eb3e853",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's something I really want you to take with you: ethics isn't a separate checkbox you tick at the end — it lives inside every single stage of your work. When you gather data, ask whether it's truly yours to use; faces and health records being available doesn't make them fair to grab. Remember that day-night imbalance we talked about? That same gap that weakened your question also means your model quietly fails people at night. And at the end, ask honestly whether your results could be misused — because as researchers, we don't just build things, we carry responsibility for them.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 8.987,
+        "text": "Here's something I really want you to take with you: ethics isn't a separate checkbox you tick at the end — it lives inside every single stage of your work."
+      },
+      {
+        "start": 8.987,
+        "end": 17,
+        "text": "When you gather data, ask whether it's truly yours to use; faces and health records being available doesn't make them fair to grab."
+      },
+      {
+        "start": 17,
+        "end": 19.9,
+        "text": "Remember that day-night imbalance we talked about?"
+      },
+      {
+        "start": 19.9,
+        "end": 25.612,
+        "text": "That same gap that weakened your question also means your model quietly fails people at night."
+      },
+      {
+        "start": 25.612,
+        "end": 35.6,
+        "text": "And at the end, ask honestly whether your results could be misused — because as researchers, we don't just build things, we carry responsibility for them."
+      }
+    ],
+    "bytes": 213984,
+    "model": "claude-opus-4-8"
+  },
+  "backup-three-piles": {
+    "hash": "6c1419c903574774",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Think of your data as three separate piles, each with its own job. The training set is your textbook—the model reads it over and over to learn. The validation set is like a practice quiz, where you tune your settings and compare options. And the test set? That's the sealed final exam, opened only once, and its score is what you report. Why so strict? Because anything you keep optimizing against, you slowly memorize—and a student who practices on the final exam hasn't really learned anything.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.575,
+        "text": "Think of your data as three separate piles, each with its own job."
+      },
+      {
+        "start": 4.575,
+        "end": 9.612,
+        "text": "The training set is your textbook—the model reads it over and over to learn."
+      },
+      {
+        "start": 9.612,
+        "end": 15.55,
+        "text": "The validation set is like a practice quiz, where you tune your settings and compare options."
+      },
+      {
+        "start": 15.55,
+        "end": 16.725,
+        "text": "And the test set?"
+      },
+      {
+        "start": 16.725,
+        "end": 22,
+        "text": "That's the sealed final exam, opened only once, and its score is what you report."
+      },
+      {
+        "start": 22,
+        "end": 23.275,
+        "text": "Why so strict?"
+      },
+      {
+        "start": 23.275,
+        "end": 32.575,
+        "text": "Because anything you keep optimizing against, you slowly memorize—and a student who practices on the final exam hasn't really learned anything."
+      }
+    ],
+    "bytes": 195840,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-backup-bonus": {
+    "hash": "079e8f68b0d1a28c",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a sneaky one, so think carefully. A researcher tries fifty different settings, each time peeking at the test set score, and then reports the very best. What went wrong? The trap is that by checking the test set fifty times, they quietly tuned their model to fit it, so that final score is inflated. Tuning is fine, but do it against the validation pile. The test set only answers honestly if you ask it once.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.762,
+        "text": "Here's a sneaky one, so think carefully."
+      },
+      {
+        "start": 2.762,
+        "end": 10.525,
+        "text": "A researcher tries fifty different settings, each time peeking at the test set score, and then reports the very best."
+      },
+      {
+        "start": 10.525,
+        "end": 11.525,
+        "text": "What went wrong?"
+      },
+      {
+        "start": 11.525,
+        "end": 19.45,
+        "text": "The trap is that by checking the test set fifty times, they quietly tuned their model to fit it, so that final score is inflated."
+      },
+      {
+        "start": 19.45,
+        "end": 22.925,
+        "text": "Tuning is fine, but do it against the validation pile."
+      },
+      {
+        "start": 22.925,
+        "end": 26.4,
+        "text": "The test set only answers honestly if you ask it once."
+      }
+    ],
+    "bytes": 158688,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-warmup": {
+    "hash": "2f94b66a85ef28a7",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Last class we ended with a really sharp question: can a car actually detect pedestrians at night? And today we start with an answer like \"it finds 92% of them.\" But think about what sits between that question and that number — it's not luck, and it's not one genius typing fast. It's a machine you can actually see: gather data, fit a model, measure it fairly, and only conclude what the numbers truly support. Today, you learn to see and draw that machine.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.487,
+        "text": "Last class we ended with a really sharp question: can a car actually detect pedestrians at night?"
+      },
+      {
+        "start": 5.487,
+        "end": 9.937,
+        "text": "And today we start with an answer like \"it finds 92% of them.\""
+      },
+      {
+        "start": 9.937,
+        "end": 16.925,
+        "text": "But think about what sits between that question and that number — it's not luck, and it's not one genius typing fast."
+      },
+      {
+        "start": 16.925,
+        "end": 25.612,
+        "text": "It's a machine you can actually see: gather data, fit a model, measure it fairly, and only conclude what the numbers truly support."
+      },
+      {
+        "start": 25.612,
+        "end": 28.762,
+        "text": "Today, you learn to see and draw that machine."
+      }
+    ],
+    "bytes": 172944,
+    "model": "claude-opus-4-8"
+  },
+  "story-imagenet": {
+    "hash": "8e185b4d655137cd",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a story that changed everything. For years, everyone chasing better AI was obsessed with one thing: building cleverer algorithms. But in 2009, Fei-Fei Li made a bold bet in the opposite direction — what if the real problem wasn't the model, but the data feeding it? Her team hand-labeled millions of images to create ImageNet, and in 2012 a neural network trained on it absolutely crushed the competition. The lesson? Sometimes the breakthrough isn't smarter math — it's better data.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.5,
+        "text": "Here's a story that changed everything."
+      },
+      {
+        "start": 2.5,
+        "end": 9.7,
+        "text": "For years, everyone chasing better AI was obsessed with one thing: building cleverer algorithms."
+      },
+      {
+        "start": 9.7,
+        "end": 18.187,
+        "text": "But in 2009, Fei-Fei Li made a bold bet in the opposite direction — what if the real problem wasn't the model, but the data feeding it?"
+      },
+      {
+        "start": 18.187,
+        "end": 27.612,
+        "text": "Her team hand-labeled millions of images to create ImageNet, and in 2012 a neural network trained on it absolutely crushed the competition."
+      },
+      {
+        "start": 27.612,
+        "end": 28.5,
+        "text": "The lesson?"
+      },
+      {
+        "start": 28.5,
+        "end": 32.6,
+        "text": "Sometimes the breakthrough isn't smarter math — it's better data."
+      }
+    ],
+    "bytes": 195984,
+    "model": "claude-opus-4-8"
+  },
+  "concept-pipeline": {
+    "hash": "05fdeb6b979e1f40",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the backbone of everything we'll do together: data, model, experiment, conclusion. Every machine learning project walks these same four steps, whether it's your weekend hobby or a billion-dollar lab. You gather and clean your data, build a model that learns a pattern, test it fairly on examples it's never seen, and then draw only the conclusions the numbers actually support. Learn these four words today, because for the next twelve weeks, every single class is just one of these stages explored in depth.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.625,
+        "text": "Here's the backbone of everything we'll do together: data, model, experiment, conclusion."
+      },
+      {
+        "start": 6.625,
+        "end": 13.862,
+        "text": "Every machine learning project walks these same four steps, whether it's your weekend hobby or a billion-dollar lab."
+      },
+      {
+        "start": 13.862,
+        "end": 24.3,
+        "text": "You gather and clean your data, build a model that learns a pattern, test it fairly on examples it's never seen, and then draw only the conclusions the numbers actually support."
+      },
+      {
+        "start": 24.3,
+        "end": 32.362,
+        "text": "Learn these four words today, because for the next twelve weeks, every single class is just one of these stages explored in depth."
+      }
+    ],
+    "bytes": 194544,
+    "model": "claude-opus-4-8"
+  }
+}

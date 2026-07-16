@@ -1,0 +1,1210 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Class 06 · The Research Toolbox — The AI Toolbox</title>
+<link rel="icon" type="image/png" href="/meritpoint-slides/assets/favicon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+<style>
+:root{--navy:#0C2D52;--navy2:#12386A;--blue:#1769C0;--teal:#0F9DB0;--tealb:#2BC4D4;--coral:#EE6B36;--amber:#F2A93B;--green:#1FA37A;--ink:#21303F;--muted:#5E7183;--line:#D7E2EC;--cloud:#EEF4FA;--cloud2:#F6F9FC}
+.reveal{font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);font-size:30px}
+.reveal h1,.reveal h2,.reveal h3{font-family:Georgia,serif;color:var(--navy);text-transform:none;letter-spacing:0;font-weight:700;line-height:1.12}
+.reveal h1{font-size:1.55em}.reveal h2{font-size:1.12em}.reveal h3{font-size:.9em}
+.reveal .kicker{color:var(--teal);font-weight:700;letter-spacing:3px;font-size:.44em;text-transform:uppercase;margin-bottom:.35em;font-family:-apple-system,sans-serif}
+.reveal section{text-align:left}.reveal section.center{text-align:center}
+.reveal ul,.reveal ol{margin-left:1.05em}.reveal li{margin:.28em 0;font-size:.7em;line-height:1.38}
+.reveal p{font-size:.74em;line-height:1.42}.reveal .lead{font-size:.82em}.reveal .muted{color:var(--muted)}
+.reveal .callout{background:var(--cloud);border-left:6px solid var(--teal);border-radius:8px;padding:.45em .8em;margin-top:.5em;font-size:.7em}
+.reveal .callout b{color:var(--teal)}
+.reveal .pill{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:999px;padding:.16em .7em;font-size:.55em;color:var(--navy);margin:.12em .18em}
+.reveal .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.65em}.reveal .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6em}
+.reveal .box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.6em .75em;box-shadow:0 4px 14px rgba(20,40,70,.06)}
+.reveal .box h3{margin:.05em 0 .2em}.reveal .box p{font-size:.58em;margin:0}
+.reveal .feature{display:inline-block;font-size:.55em;font-weight:700;color:#fff;background:var(--navy);border-radius:6px;padding:.1em .55em;margin-top:.25em}
+.reveal .rate{display:inline-block;font-weight:800;color:#fff;border-radius:5px;padding:.05em .4em;font-size:.92em;line-height:1.3}
+.reveal .rate.r-g{background:var(--green)}.reveal .rate.r-pg{background:var(--blue)}.reveal .rate.r-r{background:var(--coral)}
+.reveal .vid{display:grid;grid-template-columns:1.5fr 1fr;gap:1em;align-items:center}
+.reveal .poster{border-radius:12px;height:2.7em;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1.25em;text-align:center;box-shadow:0 8px 24px rgba(20,40,70,.18);position:relative}
+.reveal .poster .play{position:absolute;width:1em;height:1em;border-radius:50%;background:rgba(255,255,255,.92);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:.5em}
+.reveal .qr{width:1.6em;height:1.6em;border:1px solid var(--line);border-radius:8px;background:#fff;padding:4px}
+.reveal .qrwrap{text-align:center;font-size:.5em;color:var(--muted)}.reveal .qrwrap a{color:var(--teal);word-break:break-all}
+.reveal a.btn{display:inline-block;background:#fff;border:1px solid var(--teal);color:var(--teal);border-radius:8px;padding:.16em .7em;font-size:.58em;font-weight:600}
+.reveal .src{font-size:.5em;color:var(--muted);margin-top:.5em}
+.reveal blockquote{border:none;box-shadow:none;background:var(--cloud2);border-left:6px solid var(--teal);border-radius:8px;font-size:.76em;font-style:normal;width:100%;padding:.65em 1em}
+.reveal .speak{cursor:pointer;display:inline-flex;align-items:center;gap:.4em;background:var(--teal);color:#fff;border:none;border-radius:999px;padding:.28em .85em;font-size:.52em;font-weight:700;font-family:-apple-system,sans-serif;box-shadow:0 4px 12px rgba(15,157,176,.3)}
+.reveal .speak:hover{background:#0d8a9b}.reveal .speak.playing{background:var(--coral)}
+/* timeline */
+.reveal .tl{display:flex;gap:.4em;align-items:stretch;margin-top:.5em}
+.reveal .tl .ev{flex:1;background:#fff;border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:10px;padding:.45em .5em}
+.reveal .tl .ev.winter{border-top-color:#7FA8D0}.reveal .tl .ev.boom{border-top-color:var(--coral)}
+.reveal .tl .yr{font-family:Georgia,serif;font-weight:800;color:var(--navy);font-size:.72em}
+.reveal .tl .ev b{font-size:.56em;color:var(--navy);display:block;margin:.1em 0}.reveal .tl .ev span{font-size:.5em;color:var(--muted);line-height:1.25;display:block}
+/* flow steps */
+.reveal .flow{display:flex;flex-wrap:wrap;gap:.4em;align-items:stretch}
+.reveal .step{flex:1 1 0;min-width:2.3em;background:#fff;border:1px solid var(--line);border-radius:10px;padding:.38em .42em;position:relative}
+.reveal .step .n{position:absolute;top:-.5em;left:-.3em;width:1em;height:1em;border-radius:50%;background:var(--teal);color:#fff;font-size:.5em;font-weight:800;display:flex;align-items:center;justify-content:center}
+.reveal .step b{font-size:.56em;color:var(--navy);display:block;line-height:1.15}.reveal .step span{font-size:.48em;color:var(--muted)}
+.reveal .step.loop{border-color:var(--coral);border-style:dashed}
+/* prompt cards */
+.reveal .prompt{background:#0f2742;color:#dfeaf6;border-radius:9px;padding:.4em .65em;font-family:Consolas,monospace;font-size:.54em;margin:.26em 0;line-height:1.38}
+.reveal .prompt .you{color:var(--tealb);font-weight:700}
+/* skills */
+.reveal .skillcard{background:linear-gradient(135deg,#fff,var(--cloud));border:1px solid var(--line);border-radius:14px;padding:.65em .8em}
+.reveal .skillcard .cn{font-size:.95em;color:var(--navy);font-weight:700;font-family:Georgia,serif}
+/* QUIZ */
+.reveal .quiz{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.7em .85em;box-shadow:0 6px 18px rgba(20,40,70,.07);max-width:18em}
+.reveal .quiz .qq{font-size:.72em;font-weight:600;color:var(--navy);margin:0 0 .5em}
+.reveal .quiz .opt{display:block;width:100%;text-align:left;background:var(--cloud2);border:1px solid var(--line);border-radius:9px;padding:.4em .6em;margin:.25em 0;font-size:.6em;color:var(--ink);cursor:pointer;transition:.1s;font-family:-apple-system,sans-serif}
+.reveal .quiz .opt:hover{border-color:var(--teal);background:#fff}
+.reveal .quiz .opt.correct{background:#E6F4EE;border-color:var(--green);color:#0d6b4f;font-weight:600}
+.reveal .quiz .opt.wrong{background:#FBEAE7;border-color:var(--coral);color:#a23c1c}
+.reveal .quiz .opt[disabled]{cursor:default}
+.reveal .quiz-exp{font-size:.56em;color:var(--muted);margin:.4em 0 0;display:none}
+.reveal .quiz.answered .quiz-exp{display:block}
+.reveal .quiz-badge{font-size:.5em;color:var(--teal);font-weight:700;letter-spacing:1px}
+/* QUIZ LIVE DISTRIBUTION (shown once answered) */
+.reveal .qstats{display:none;margin-top:.5em;border-top:1px dashed var(--line);padding-top:.4em}
+.reveal .quiz.answered .qstats{display:block}
+.reveal .qhead{display:flex;justify-content:space-between;align-items:center;font-size:.5em;color:var(--muted);margin-bottom:.3em}
+.reveal .qm{border:1px solid var(--line);background:var(--cloud2);border-radius:999px;padding:.15em .7em;margin-left:.4em;font:inherit;font-size:.95em;cursor:pointer;color:var(--muted)}
+.reveal .qm.on{background:var(--teal);border-color:var(--teal);color:#fff;font-weight:700}
+.reveal .qrow{display:flex;align-items:center;gap:.4em;margin:.14em 0}
+.reveal .ql{font-size:.5em;font-weight:800;color:var(--navy);width:1.1em}
+.reveal .qbar{flex:1;height:.55em;background:var(--cloud2);border-radius:999px;overflow:hidden}
+.reveal .qfill{height:100%;background:var(--navy);border-radius:999px;transition:width .5s}
+.reveal .qfill.qok{background:var(--green)}
+.reveal .qp{font-size:.45em;color:var(--muted);min-width:4.2em;text-align:right}
+#liveChip{position:fixed;left:14px;bottom:46px;z-index:40;background:rgba(255,255,255,.92);border:1px solid var(--line);
+  border-radius:999px;padding:5px 12px;font:600 12px -apple-system,'Segoe UI',sans-serif;color:#1a9a6c;box-shadow:0 4px 14px rgba(20,40,70,.10)}
+/* CODE LAB */
+.reveal .lab{display:grid;grid-template-columns:1.55fr 1fr;gap:.6em;margin-top:.4em;height:11.2em}
+.reveal .lab-main{display:flex;flex-direction:column;min-width:0}
+.reveal .lab textarea.code{flex:1;width:100%;background:#0f2742;color:#e7f0fb;border:1px solid #21405f;border-radius:10px 10px 0 0;font-family:Consolas,"SF Mono",monospace;font-size:13px;line-height:1.4;padding:.5em .6em;resize:none;outline:none;tab-size:4}
+.reveal .lab-bar{display:flex;align-items:center;gap:.4em;background:#11314f;border:1px solid #21405f;border-top:none;padding:.3em .4em;flex-wrap:wrap}
+.reveal .lab-bar button{font-family:-apple-system,sans-serif;font-size:11px;font-weight:600;border:none;border-radius:7px;padding:.4em .7em;cursor:pointer}
+.reveal .lab-bar .run{background:var(--green);color:#fff}.reveal .lab-bar .run:hover{background:#178a64}
+.reveal .lab-bar .ai-explain,.reveal .lab-bar .ai-debug,.reveal .lab-bar .ai-improve{background:#1b3e5e;color:#cfe0ef}
+.reveal .lab-bar .ai-explain:hover,.reveal .lab-bar .ai-debug:hover,.reveal .lab-bar .ai-improve:hover{background:#27557d}
+.reveal .lab-status{font-size:10.5px;color:#9db8d6;margin-left:auto;font-family:-apple-system,sans-serif}
+.reveal .lab pre.out{background:#08192b;color:#bfe3c7;border:1px solid #21405f;border-top:none;border-radius:0 0 10px 10px;margin:0;padding:.5em .6em;font-family:Consolas,monospace;font-size:11.5px;line-height:1.4;overflow:auto;min-height:2.4em;max-height:4.2em;white-space:pre-wrap}
+.reveal .lab pre.out .err{color:#ff9b8a}
+.reveal .assist{display:flex;flex-direction:column;background:linear-gradient(135deg,#fff,#f1f7fb);border:1px solid var(--line);border-radius:11px;overflow:hidden;min-width:0}
+.reveal .assist-head{background:linear-gradient(90deg,#0F9DB0,#2BC4D4);color:#fff;font-size:12px;font-weight:700;padding:.45em .7em;font-family:-apple-system,sans-serif;display:flex;align-items:center;justify-content:space-between;gap:.5em}
+.reveal .assist-head .ai-model{font-family:-apple-system,sans-serif;font-size:11px;font-weight:600;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.5);border-radius:6px;padding:.15em .3em;cursor:pointer;outline:none}
+.reveal .assist-head .ai-model option{color:var(--ink)}
+.reveal .assist-body{flex:1;overflow:auto;padding:.5em .65em;font-size:12px;line-height:1.46;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .assist-body p{font-size:12px;margin:.3em 0}.reveal .assist-body code{background:#eef3f8;border-radius:4px;padding:0 .25em;font-family:Consolas,monospace;font-size:11px}
+.reveal .assist-body pre{background:#0f2742;color:#e7f0fb;border-radius:8px;padding:.5em .6em;font-size:11px;overflow:auto;white-space:pre}
+.reveal .assist-body pre code{background:none;color:inherit}
+.reveal .assist-body .apply{background:var(--teal);color:#fff;border:none;border-radius:6px;padding:.25em .6em;font-size:11px;font-weight:600;cursor:pointer;margin-top:.2em}
+.reveal .assist-ask{display:flex;gap:.3em;border-top:1px solid var(--line);padding:.4em}
+.reveal .assist-ask input{flex:1;border:1px solid var(--line);border-radius:7px;padding:.4em .5em;font-size:12px;font-family:-apple-system,sans-serif;outline:none}
+.reveal .assist-ask button{background:var(--navy);color:#fff;border:none;border-radius:7px;padding:.4em .7em;font-size:12px;font-weight:600;cursor:pointer}
+/* HEAP / TOP-K VISUALIZER */
+.reveal .heapviz{margin-top:.35em;font-family:-apple-system,sans-serif}
+.reveal .hv-top{display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
+.reveal .hv-code{background:#0f2742;border-radius:10px 10px 0 0;padding:8px 12px;border:1px solid #21405f;border-bottom:none}
+.reveal .hv-code-title{color:#9db8d6;font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:4px}
+.reveal .hv-code pre.hv-pre{margin:0;color:#e7f0fb;font-family:Consolas,"SF Mono",monospace;font-size:11.5px;line-height:1.5;max-height:150px;overflow:auto;white-space:pre}
+.reveal .hv-info{background:#eef4fa;border:1px solid #21405f22;border-top:none;border-radius:0 0 10px 10px;padding:6px 12px;font-size:11px;color:var(--muted)}
+.reveal .hv-panel{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:6px}
+.reveal .hv-panel label{font-size:10.5px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin-top:4px}
+.reveal .hv-panel label:first-child{margin-top:0}
+.reveal .hv-row{display:flex;gap:6px}
+.reveal .hv-input{flex:1;border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:13px;font-family:-apple-system,sans-serif;min-width:0}
+.reveal .hv-insert{background:var(--green);color:#fff;border:none;border-radius:7px;padding:6px 12px;font-size:12.5px;font-weight:700;cursor:pointer}
+.reveal .hv-quick{display:flex;gap:5px;flex-wrap:wrap}
+.reveal .hv-quick-btn{background:var(--cloud);border:1px solid var(--line);border-radius:7px;padding:4px 10px;font-size:12px;font-weight:600;cursor:pointer;color:var(--ink)}
+.reveal .hv-quick-btn:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .hv-arr-now{background:var(--cloud2);border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-family:Consolas,monospace;font-size:12.5px}
+.reveal .hv-status,.reveal .hv-action{font-size:12px;color:var(--ink)}
+.reveal .hv-frames-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin:10px 0 4px}
+.reveal .hv-frames{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.reveal .hv-frame{flex:0 0 auto;min-width:150px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 8px;text-align:center}
+.reveal .hv-frame-active{border-color:var(--teal);box-shadow:0 0 0 2px rgba(15,157,176,.18)}
+.reveal .hv-frame-title{font-size:11px;font-weight:700;color:var(--navy)}
+.reveal .hv-frame-desc{font-size:9.5px;color:var(--muted);min-height:1.6em;line-height:1.25;margin:2px 0}
+.reveal .hv-tree-svg{width:100%;height:80px}
+.reveal .hv-empty{color:var(--muted);font-size:10.5px;padding:20px 0}
+.reveal .hv-node{fill:#D6ECEF;stroke:#0B7E8A;stroke-width:1.5}
+.reveal .hv-node-hi{fill:#F2A93B;stroke:#c07f1a}
+.reveal .hv-node-text{font-size:9px;font-weight:700;fill:#0C2D52;text-anchor:middle;font-family:-apple-system,sans-serif}
+.reveal .hv-edge{stroke:#c7d6e4;stroke-width:1.5}
+.reveal .hv-swap{stroke:#C0392B;stroke-width:2;stroke-dasharray:3,2}
+.reveal .hv-arrs{display:flex;gap:8px;overflow-x:auto;margin-top:6px}
+.reveal .hv-arr{flex:0 0 auto;min-width:150px;text-align:center;font-family:Consolas,monospace;font-size:11.5px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:5px 8px;color:var(--ink)}
+.reveal .hv-arr-active{border-color:var(--teal)}
+.reveal .hv-arr-hi{color:#C0392B;font-weight:700}
+.reveal .hv-controls{display:flex;align-items:center;gap:6px;margin-top:8px;flex-wrap:wrap}
+.reveal .hv-controls button{background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 10px;font-size:11.5px;font-weight:600;cursor:pointer;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .hv-controls button:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .hv-play{background:var(--teal)!important;color:#fff!important;border-color:var(--teal)!important}
+.reveal .hv-speed-label{font-size:11px;color:var(--muted);margin-left:6px}
+/* convolution visualizer */
+.reveal .cv-top{display:grid;grid-template-columns:1fr 1.05fr 1fr;gap:14px;align-items:start;justify-items:center}
+.reveal .cv-col{display:flex;flex-direction:column;align-items:center}
+.reveal .cv-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin-bottom:5px;text-align:center}
+.reveal .cv-grid{display:grid;gap:2px;width:max-content}
+.reveal .cv-in{grid-template-columns:repeat(8,25px)}
+.reveal .cv-out{grid-template-columns:repeat(6,33px)}
+.reveal .cv-cell{width:25px;height:25px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:9px;font-weight:700;cursor:pointer;user-select:none;border:1px solid rgba(12,45,82,.14)}
+.reveal .cv-ocell{width:33px;height:33px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:10.5px;font-weight:700;background:var(--cloud);color:#b9c6d4;border:1px solid var(--line)}
+.reveal .cv-win{outline:2.5px solid var(--coral);outline-offset:-1px;z-index:1}
+.reveal .cv-kwrap{background:#0f2742;border-radius:10px;padding:10px 12px;border:1px solid #21405f;width:100%}
+.reveal .cv-kgrid{display:grid;grid-template-columns:repeat(3,36px);gap:2px;width:max-content;margin:0 auto}
+.reveal .cv-kcell{width:36px;height:28px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:11.5px;font-weight:700;background:#1a3a5f;color:#e7f0fb;border:1px solid #2c4d75}
+.reveal .cv-kdiv{text-align:center;color:#9db8d6;font-size:10px;margin-top:4px;font-family:Consolas,monospace}
+.reveal .cv-calc{margin-top:8px;font-family:Consolas,monospace;font-size:10px;line-height:1.55;color:#cfe0ef;min-height:60px;text-align:center}
+.reveal .cv-calc .cv-sum{color:#F2A93B;font-weight:700}
+.reveal .cv-chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px;justify-content:center}
+.reveal .cv-chip{background:var(--cloud);border:1px solid var(--line);border-radius:7px;padding:4px 9px;font-size:11px;font-weight:600;cursor:pointer;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .cv-chip:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .cv-chip.sel{background:var(--teal);border-color:var(--teal);color:#fff}
+.reveal .cv-status{font-size:12px;color:var(--ink);margin-top:7px}
+.reveal .cv-controls{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;flex-wrap:wrap}
+.reveal .cv-controls button{background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 10px;font-size:11.5px;font-weight:600;cursor:pointer;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .cv-controls button:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .cv-play{background:var(--teal)!important;color:#fff!important;border-color:var(--teal)!important}
+/* comments */
+/* bottom-right toolbar (CC | Listen | Comment) — top-right belongs to the
+   signed-in profile chip (#mpAuth, assets/auth.js), which used to cover this */
+#commentBtn{position:fixed;right:16px;bottom:14px;z-index:60;background:var(--teal);color:#fff;border:none;border-radius:999px;padding:9px 15px;font-size:13px;font-weight:700;font-family:-apple-system,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(15,157,176,.4)}
+#commentBtn:hover{background:#0d8a9b}#commentBtn .cnum{background:#fff;color:var(--teal);border-radius:999px;padding:0 6px;margin-left:5px;font-size:11px}
+#listenBtn{--p:0%;position:fixed;right:168px;bottom:14px;z-index:60;min-width:128px;justify-content:center;color:#fff;border:none;border-radius:999px;padding:9px 15px;font-size:13px;font-weight:700;font-family:-apple-system,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(20,40,70,.34);display:none;align-items:center;gap:.45em;background:linear-gradient(to right,var(--teal) var(--p),var(--navy) var(--p));transition:background .15s linear}
+#listenBtn:hover{filter:brightness(1.1)}
+#listenBtn.playing{background:linear-gradient(to right,var(--coral) var(--p),#16406e var(--p))}
+#listenBtn .li-ic{font-size:12px;line-height:1}#listenBtn .li-tx{font-variant-numeric:tabular-nums;font-size:11.5px;opacity:.92}
+#ccBtn{position:fixed;right:306px;bottom:14px;z-index:60;background:var(--navy);color:#fff;border:none;border-radius:999px;padding:9px 12px;font-size:11.5px;font-weight:800;letter-spacing:.03em;font-family:-apple-system,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(20,40,70,.34);display:none;opacity:.5}
+#ccBtn:hover{opacity:.8}#ccBtn.on{opacity:1;background:var(--teal)}
+#capBar{position:fixed;left:50%;bottom:58px;transform:translateX(-50%);max-width:70%;background:rgba(8,16,30,.88);color:#fff;padding:.4em 1em;border-radius:9px;font-size:13.5px;line-height:1.35;text-align:center;z-index:59;display:none;font-family:-apple-system,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+#commentPanel{position:fixed;right:16px;bottom:60px;width:340px;max-height:64vh;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 44px rgba(20,40,70,.22);z-index:61;display:none;flex-direction:column;font-family:-apple-system,sans-serif;overflow:hidden}
+#commentPanel.open{display:flex}
+#commentPanel .ph{background:var(--navy);color:#fff;padding:10px 14px;font-size:13px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+#commentPanel .ph .x{cursor:pointer;opacity:.8}#commentPanel .ph .x:hover{opacity:1}
+#commentList{flex:1;overflow:auto;padding:10px 14px}
+#commentList .c{border-bottom:1px solid var(--cloud);padding:7px 0}#commentList .c:last-child{border:none}
+#commentList .c .cn{font-size:12px;font-weight:700;color:var(--navy)}#commentList .c .ct{font-size:10px;color:var(--muted);margin-left:6px}
+#commentList .c .cb{font-size:13px;color:var(--ink);margin-top:2px;white-space:pre-wrap;word-break:break-word}
+#commentList .none{color:var(--muted);font-size:12.5px;text-align:center;padding:14px 0}
+#commentForm{border-top:1px solid var(--line);padding:10px 12px;display:flex;flex-direction:column;gap:6px}
+#commentForm input,#commentForm textarea{border:1px solid var(--line);border-radius:8px;padding:7px 9px;font-size:13px;font-family:-apple-system,sans-serif;outline:none}
+#commentForm textarea{resize:vertical;min-height:46px}
+#commentForm .row{display:flex;gap:6px;align-items:center}
+#commentForm button{background:var(--teal);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:700;cursor:pointer}
+#commentForm .msg{font-size:11px;color:var(--muted)}
+/* donate */
+#donateBtn{position:fixed;left:70px;top:19px;z-index:60;background:var(--coral);color:#fff;border-radius:999px;padding:8px 16px;font-size:12.5px;font-weight:700;font-family:-apple-system,sans-serif;text-decoration:none;box-shadow:0 6px 18px rgba(238,107,54,.4)}
+#donateBtn:hover{background:#d85a28;text-decoration:none}
+/* MPA logo badge — top-left of every slide, next to Donate (top-right holds the auth chip) */
+#mpaLogo{position:fixed;left:16px;top:14px;z-index:50;display:block;width:44px;height:44px;border-radius:10px;background:#fff;box-shadow:0 4px 14px rgba(20,40,70,.25);opacity:.92;transition:opacity .15s}
+#mpaLogo:hover{opacity:1}
+#mpaLogo img{width:100%;height:100%;object-fit:contain;display:block}
+/* slide number: default bottom-right collides with the comment/listen/cc button row, so move it to bottom-left */
+.reveal .slide-number{left:14px;right:auto;bottom:14px;z-index:58;background:rgba(255,255,255,.85);padding:2px 8px;border-radius:6px;color:var(--muted)}
+/* PDF download — top-left row, after Donate */
+#pdfBtn{position:fixed;left:178px;top:19px;z-index:60;background:#fff;color:var(--navy);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:12.5px;font-weight:700;font-family:-apple-system,sans-serif;text-decoration:none;box-shadow:0 4px 14px rgba(20,40,70,.18)}
+#pdfBtn:hover{border-color:var(--teal);color:var(--teal);text-decoration:none}
+/* keep screen-only chrome out of print / the exported PDF (fixed elements repeat on every page) */
+@media print{#donateBtn,#mpaLogo,#pdfBtn,#ccBtn,#listenBtn,#commentBtn,#commentPanel,#capBar,#mpAuth{display:none!important}}
+</style></head><body>
+<div class="reveal"><div class="slides">
+<section id="title" data-sid="title" class="center" data-background-gradient="linear-gradient(135deg,#0C2D52,#16406e)">
+<div class="kicker" style="color:#7fd3df">The AI Toolbox · Class 06</div>
+    <h1 style="color:#fff">The Research Toolbox</h1>
+    <p style="color:#cfe0ef;margin-top:.5em">Assemble the toolkit that turns a <b>curious</b> question into a <b>grounded</b> one.</p>
+    <p style="color:#9db8d6;font-size:.58em;margin-top:1.1em">Merit Point Academy · 60 min · press <b>S</b> notes · <b>→</b> next · 💬 to comment</p>
+    <aside class="notes">The last class of Stage 1-2 (literacy + foundations) before the deep data work begins. Today's promise: nobody starts research from a blank Google box anymore. The right five tools turn 'I have a question' into 'I know the five papers that matter and how they connect.' Deliverable is a literature map — the bridge from Class 2's question to Class 7's data.</aside>
+</section>
+<section id="recap-class05" data-sid="recap-class05">
+<div class="kicker">Recap · where we left off</div>
+    <h2>Last class in 60 seconds</h2>
+    <div class="grid3" style="margin-top:.35em">
+      <div class="box"><h3 style="color:var(--navy)">Everything is a table</h3><p>Rows = examples, columns = variables. See the DataFrame and the code gets simple.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">Four verbs</h3><p><b>Load → inspect → select → summarize</b> — 80% of data work, and every question is a filter.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">Honest holes</h3><p>Find missing values, drop or fill — and <b>disclose</b> what you did.</p></div>
+    </div>
+    <div class="callout"><b>Homework share:</b> show your first Colab chart — and one debugging win (the error + what your AI co-pilot taught you). Today we zoom back out from code to <b>strategy</b>: the tools that find the right papers and datasets so your pandas skills point at something worth analyzing.</div>
+    <aside class="notes">Celebrate first charts and debugging wins — momentum matters after the first real-code class. The zoom-out framing: Class 5 was 'how to compute'; Class 6 is 'how to find what's worth computing on.' Both stage-2 skills.</aside>
+</section>
+<section id="agenda" data-sid="agenda">
+<div class="kicker">Agenda · how this hour runs</div>
+    <h2>Where we're going</h2>
+    <div class="grid2" style="margin-top:.4em">
+      <ul>
+        <li><b>0–8'</b> Homework share + a cure hidden between two libraries</li>
+        <li><b>8–20'</b> The modern research stack · reading citation graphs</li>
+        <li><b>20–32'</b> Four discovery tools, one each: Scholar · Elicit · Semantic Scholar · Connected Papers</li>
+        <li><b>32–40'</b> The 5-step literature workflow · GitHub for research</li>
+      </ul>
+      <ul>
+        <li><b>40–48'</b> Live demos: Elicit · Semantic Scholar · Connected Papers</li>
+        <li><b>48–54'</b> Two labs: explore a citation graph · rank papers by relevance</li>
+        <li><b>54–60'</b> Your literature map, homework &amp; wrap-up</li>
+        <li>Quizzes &amp; 💬 comments throughout</li>
+      </ul>
+    </div>
+    <div class="callout"><b>By the end:</b> use AI search tools to find the papers that matter fast, read a citation graph, and build a small literature map for your own question.</div>
+    <aside class="notes">This hour is lighter on new syntax, heavier on tool fluency and judgment. The labs make the abstract (citation graphs, relevance) concrete and runnable, keeping the interactive rhythm even in a 'tools' class.</aside>
+</section>
+<section id="quiz-warmup" data-sid="quiz-warmup">
+<div class="kicker">Warm-up · activate</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="1">
+    <p class="qq">There are 10,000 papers on pedestrian detection. How does a researcher find the handful that actually matter — without reading all 10,000?</p>
+    <div class="opts"><button class="opt" data-i="0">Read the first 10 Google results and hope</button><button class="opt" data-i="1">Use tools that search by meaning, summarize findings, and map citations — then read the few that survive</button><button class="opt" data-i="2">Read only the most recent paper; it contains everything</button><button class="opt" data-i="3">Ask an LLM and cite whatever it lists</button></div>
+    <p class="quiz-exp">Modern discovery tools do the filtering: Elicit summarizes findings, Semantic Scholar searches by meaning, Connected Papers maps who-builds-on-whom. They narrow 10,000 to ~5 — then you read those five yourself (Class 4's rule).</p>
+  </div>
+  <aside class="notes">Option D is the trap from Class 4 — LLMs invent citations, so they FIND leads but never confirm them. The right answer names today's whole toolkit before it's taught.</aside>
+</section>
+<section id="story-swanson" data-sid="story-swanson">
+<div class="kicker">The Story</div>
+    <h2>A cure hidden between two libraries</h2>
+    <blockquote id="quote">In 1986, librarian <b>Don Swanson</b> noticed something strange. One set of medical papers said <b>fish oil thins blood and improves circulation</b>. A completely separate set said patients with <b>Raynaud's disease suffer from poor circulation</b>. Nobody had connected them. Swanson did — purely by <b>reading the literature</b> — and proposed fish oil might help Raynaud's. Later clinical trials showed <b>he was right</b>.</blockquote>
+    <div style="margin-top:.4em;display:flex;align-items:center;gap:1em">
+      <button class="speak" data-audio="audio/quote.mp3">🔊 <span>Speak this story</span></button>
+      <span class="muted" style="font-size:.52em">Neural voice · click to play / pause</span></div>
+    <p class="src">No lab. No experiment. The discovery was already sitting in the library — in the <b>gap between</b> two fields that never cited each other. Today's tools are built to find exactly those gaps.</p>
+    <aside class="notes">The most inspiring story of the course for a 'tools' class: a discovery made from reading alone, in the white space between fields. This is 'undiscovered public knowledge' (Swanson's term) — and Connected Papers/Semantic Scholar exist to surface it. Ties to the discussion slide (gaps between fields).</aside>
+</section>
+<section id="concept-research-stack" data-sid="concept-research-stack">
+<div class="kicker">Concept 1 · you no longer start from a blank box</div>
+    <h2>The modern research stack</h2>
+    <p class="lead" style="margin:0 0 .3em">Four specialized tools, each best at a different job in the discovery loop:</p>
+    <div class="grid2" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">🔎 Google Scholar</h3><p><b>The broad index.</b> Almost every paper ever written, with citation counts and "cited by" links. Your widest net.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">💬 Elicit</h3><p><b>Ask a question, get papers + findings.</b> Type a research question in plain English; it returns relevant papers with their results already summarized in a table.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">🧠 Semantic Scholar</h3><p><b>Search by meaning, not keywords.</b> AI TL;DR summaries, influence scores, and semantically related papers — from the Allen Institute for AI.</p></div>
+      <div class="box"><h3 style="color:var(--amber)">🕸️ Connected Papers</h3><p><b>A visual citation graph.</b> Paste one paper; see the whole neighborhood of related work as a map you can explore.</p></div>
+    </div>
+    <div class="callout"><b>KEY IDEA</b> — use the tools to <b>find</b> papers; then <b>read the papers yourself</b>. The tools narrow the field and summarize — but Class 4's rule still holds: never cite what you haven't opened.</div>
+    <aside class="notes">Four tools, one sentence each — don't over-explain, they get live demos. The closing rule is the through-line from Class 4: tools accelerate discovery, humans verify. Perplexity/ChatGPT (Class 4) round out the stack for quick overviews.</aside>
+</section>
+<section id="concept-citation-graph" data-sid="concept-citation-graph">
+<div class="kicker">Concept 2 · the idea in one picture</div>
+    <h2>Citation graphs: a map of a whole field</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1fr;align-items:center;margin-top:.2em">
+      <div>
+        <ul>
+          <li><b>Backward citations = the roots.</b> The papers your paper cites — the foundations it stands on.</li>
+          <li><b>Forward citations = the frontier.</b> The newer papers that cite yours — where the field went next.</li>
+          <li><b>Clusters = sub-fields.</b> Tight knots of papers citing each other reveal a specialty.</li>
+        </ul>
+      </div>
+      <div style="text-align:center"><svg viewBox="0 0 300 210" style="width:100%;max-width:320px">
+        <line x1="70" y1="60" x2="150" y2="105" stroke="#c7d6e4" stroke-width="1.5"/>
+        <line x1="70" y1="130" x2="150" y2="105" stroke="#c7d6e4" stroke-width="1.5"/>
+        <line x1="150" y1="105" x2="235" y2="55" stroke="#c7d6e4" stroke-width="1.5"/>
+        <line x1="150" y1="105" x2="235" y2="105" stroke="#c7d6e4" stroke-width="1.5"/>
+        <line x1="150" y1="105" x2="235" y2="155" stroke="#c7d6e4" stroke-width="1.5"/>
+        <circle cx="70" cy="60" r="16" fill="#EAF4F6" stroke="#0F9DB0"/><text x="70" y="64" text-anchor="middle" font-size="10" fill="#0B7E8A">root</text>
+        <circle cx="70" cy="130" r="16" fill="#EAF4F6" stroke="#0F9DB0"/><text x="70" y="134" text-anchor="middle" font-size="10" fill="#0B7E8A">root</text>
+        <circle cx="150" cy="105" r="21" fill="#0F9DB0"/><text x="150" y="103" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">seed</text><text x="150" y="115" text-anchor="middle" font-size="7.5" fill="#fff">you read</text>
+        <circle cx="235" cy="55" r="15" fill="#FCE9DE" stroke="#EE6B36"/><text x="235" y="59" text-anchor="middle" font-size="9" fill="#c0521f">new</text>
+        <circle cx="235" cy="105" r="15" fill="#FCE9DE" stroke="#EE6B36"/><text x="235" y="109" text-anchor="middle" font-size="9" fill="#c0521f">new</text>
+        <circle cx="235" cy="155" r="15" fill="#FCE9DE" stroke="#EE6B36"/><text x="235" y="159" text-anchor="middle" font-size="9" fill="#c0521f">new</text>
+        <text x="70" y="185" text-anchor="middle" font-size="8.5" fill="#5E7183">← backward = roots</text>
+        <text x="235" y="185" text-anchor="middle" font-size="8.5" fill="#5E7183">forward = frontier →</text>
+      </svg></div>
+    </div>
+    <div class="callout"><b>Takeaway:</b> follow citations <b>back</b> to the roots of an idea and <b>forward</b> to what's new. Swanson's fish-oil discovery lived in a missing edge between two clusters — the graph makes those gaps visible.</div>
+    <aside class="notes">The signature visual. Read the graph aloud: seed in the middle, roots left, frontier right. Connected Papers draws exactly this automatically. The missing-edge point connects the graph back to the Swanson story — gaps are opportunities.</aside>
+</section>
+<section id="quiz-citation" data-sid="quiz-citation">
+<div class="kicker">Check · reading the graph</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="1">
+    <p class="qq">You've found the one seminal paper for your topic. To discover the newest work building on it, which direction do you follow?</p>
+    <div class="opts"><button class="opt" data-i="0">Backward citations — the papers it cites</button><button class="opt" data-i="1">Forward citations — the papers that cite it</button><button class="opt" data-i="2">Neither; recency can't be found from citations</button><button class="opt" data-i="3">Only papers by the same author</button></div>
+    <p class="quiz-exp">Forward citations ("cited by") point to newer work that builds on the seed — the frontier. Backward citations point to its foundations. One seed paper + both directions = the skeleton of a whole literature map.</p>
+  </div>
+  <aside class="notes">Backward-vs-forward is the single testable idea of the concept. Get it, and Connected Papers becomes intuitive rather than magical.</aside>
+</section>
+<section id="tool-scholar" data-sid="tool-scholar">
+<div class="kicker">The stack · tool 1 of 4</div>
+    <h2>Google Scholar — the widest net</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1fr;margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">What it's best at</h3>
+        <ul style="margin-left:1em"><li>Broadest coverage — nearly every paper, field-agnostic</li><li><b>Citation counts</b> = a quick impact signal</li><li><b>"Cited by"</b> and <b>"Related articles"</b> links = forward citations, one click away</li></ul></div>
+      <div class="box"><h3 style="color:var(--teal)">Power moves</h3>
+        <ul style="margin-left:1em"><li>Quotes for exact phrases; <span style="font-family:Consolas,monospace;font-size:.82em">author:</span> and year filters to narrow</li><li>Sort by date for the frontier; by citations for the classics</li><li>Set an alert to auto-track new papers on your topic</li></ul></div>
+    </div>
+    <div class="callout">You've used it since Class 2 (verifying LLM citations) and Class 4 (the 2-minute check). Today it becomes your <b>starting</b> tool, not just your fact-checker — the widest net you cast first.</div>
+    <aside class="notes">Scholar is the familiar anchor — students already trust it from the verify routine. Reframe it as a discovery starting point. 'Cited by' IS forward-citation traversal, connecting to concept 2.</aside>
+</section>
+<section id="tool-elicit" data-sid="tool-elicit">
+<div class="kicker">The stack · tool 2 of 4</div>
+    <h2>Elicit — ask a question, get a findings table</h2>
+    <div class="grid2" style="grid-template-columns:1.15fr 1fr;margin-top:.3em">
+      <div>
+        <p class="lead" style="margin:0 0 .25em">No keyword guessing — type your <b>actual research question</b>. Elicit finds relevant papers and pulls out each one's key findings into a comparison table.</p>
+        <div class="prompt"><span class="you">You ▸</span> Does adding night-time images improve pedestrian detection at night?</div>
+        <p class="src">Returns: a table of papers × columns like <i>method · dataset · main finding · limitation</i> — hours of skimming, compressed to minutes.</p>
+      </div>
+      <div class="box"><h3 style="color:var(--coral)">Watch for</h3>
+        <p>It's AI-powered, so the same rule applies: the summaries are <b>leads to verify</b>, not gospel. Open the paper before you trust the row. But as a <b>first pass</b> over a new field, nothing is faster.</p></div>
+    </div>
+    <div class="callout"><b>The tabular superpower:</b> that findings table is a ready-made comparison — it turns "read 20 papers" into "scan one spreadsheet, then read the 5 that matter." Your Class-4 summary framework, automated across a whole shelf.</div>
+    <aside class="notes">Elicit is the tool most students haven't seen — spend a beat. The findings table IS the summary/contribution/limitation framework from Class 4 applied in bulk. Verify-the-row caveat keeps the Class-4 discipline alive.</aside>
+</section>
+<section id="tool-semantic" data-sid="tool-semantic">
+<div class="kicker">The stack · tool 3 of 4</div>
+    <h2>Semantic Scholar — search by meaning</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">🧠 Semantic search</h3><p>Understands the <b>meaning</b> of your query, not just keyword matches — finds papers that use different words for the same idea.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">📝 TL;DR summaries</h3><p>An AI one-sentence summary on each paper — triage a search page in seconds before opening anything.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">📈 Influence score</h3><p>Ranks papers by citation-network impact, so the field-defining work rises above the noise.</p></div>
+    </div>
+    <div class="callout">Built by the <b>Allen Institute for AI</b>. Where Scholar casts the widest net, Semantic Scholar casts the <b>smartest</b> one — great when you don't know the exact keywords a field uses (which is most of the time in a new field).</div>
+    <aside class="notes">The 'different words, same idea' strength is the key differentiator from keyword Scholar — vital when entering an unfamiliar field where you don't yet speak the jargon. TL;DR is Class 4's summary, pre-computed and free.</aside>
+</section>
+<section id="tool-connected" data-sid="tool-connected">
+<div class="kicker">The stack · tool 4 of 4</div>
+    <h2>Connected Papers — see the neighborhood</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1fr;margin-top:.3em">
+      <div class="box"><h3 style="color:var(--teal)">How it works</h3>
+        <p>Paste <b>one</b> paper you like. It builds a <b>graph</b> of the most related papers — connected by shared references and citations, not just direct links. Similar papers sit close; the field's structure appears.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">Three views</h3>
+        <ul style="margin-left:1em"><li><b>Graph:</b> the whole neighborhood — spot clusters and bridges</li><li><b>Tree:</b> foundations → derivatives, the roots-to-frontier flow</li><li><b>List:</b> sorted by relevance for quick reading</li></ul></div>
+    </div>
+    <div class="callout"><b>This is concept 2, made real.</b> One seed paper → a citation graph you can click through. The fastest way to grasp an unfamiliar field's shape — and to spot the <b>Swanson gaps</b> where two clusters almost touch.</div>
+    <aside class="notes">Connected Papers is the visual payoff of the citation-graph concept — demo it live if any tool gets screen time. The 'similar, not just cited' nuance is why it surfaces gaps a plain citation list misses. Seed → graph is exactly the case-study workflow next.</aside>
+</section>
+<section id="concept-choose-tool" data-sid="concept-choose-tool">
+<div class="kicker">Concept 3 · the meta-skill</div>
+    <h2>No best tool — only the right tool for the step</h2>
+    <div class="grid2" style="margin-top:.3em">
+      <div class="box"><p><b>Broad first sweep?</b> → Google Scholar or Perplexity</p></div>
+      <div class="box"><p><b>New field, don't know the words?</b> → Semantic Scholar or Elicit</p></div>
+      <div class="box"><p><b>Ask a question, want findings?</b> → Elicit's tables</p></div>
+      <div class="box"><p><b>See how a field connects?</b> → Connected Papers</p></div>
+      <div class="box"><p><b>Quick summary of a topic?</b> → Perplexity or ChatGPT (then verify)</p></div>
+      <div class="box"><p><b>Share code &amp; results?</b> → GitHub</p></div>
+    </div>
+    <div class="callout"><b>The real skill isn't any one tool — it's chaining them.</b> A first sweep feeds a semantic search feeds a citation map feeds your reading list. Tools are a <b>relay team</b>, not rivals. <i>"Tools serve you — don't become a slave to tools."</i></div>
+    <aside class="notes">The meta-lesson: fluency is knowing which tool for which step, and handing off between them. This is the workflow (next slide) in principle. Discourage single-tool dependence and, equally, tool-chasing anxiety — pick a few, chain them well.</aside>
+</section>
+<section id="workflow-literature" data-sid="workflow-literature">
+<div class="kicker">The relay, in order · your literature workflow</div>
+    <h2>From blank page to reading list, in five steps</h2>
+    <div class="flow" style="margin-top:.4em">
+      <div class="step"><div class="n">1</div><b>Overview</b><span>Perplexity: "latest advances in ___?" — get the lay of the land</span></div>
+      <div class="step"><div class="n">2</div><b>Core papers</b><span>Scholar / Semantic Scholar: highly-cited + recent — pick your seed</span></div>
+      <div class="step"><div class="n">3</div><b>Map</b><span>Connected Papers: paste the seed → see the neighborhood</span></div>
+      <div class="step"><div class="n">4</div><b>Summarize</b><span>Elicit / ChatGPT: findings, gaps, methods — then verify</span></div>
+      <div class="step loop"><div class="n">5</div><b>Manage</b><span>Zotero: save the 5 keepers with notes ↩ new questions</span></div>
+    </div>
+    <div class="callout"><b>Overview → core → map → summarize → manage.</b> This compresses a traditionally weeks-long literature review into an afternoon — and step 5's notes feed <b>new questions</b>, looping you back to Class 2. It's exactly today's project.</div>
+    <aside class="notes">The workflow IS the deliverable's method. Zotero/Mendeley named lightly as the 'shoebox' — the key point is that a saved, annotated library beats 40 open tabs. Step 5's loop-back to new questions closes the arc with Class 2/3's cycles.</aside>
+</section>
+<section id="quiz-workflow" data-sid="quiz-workflow">
+<div class="kicker">Check · the relay</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="2">
+    <p class="qq">You're brand new to a field and don't even know its keywords yet. Which tool is the SMARTEST first move?</p>
+    <div class="opts"><button class="opt" data-i="0">Connected Papers — but you have no seed paper yet</button><button class="opt" data-i="1">Zotero — start by organizing (nothing to organize yet)</button><button class="opt" data-i="2">A meaning-based tool (Semantic Scholar / Elicit / Perplexity) to surface the vocabulary and seed papers</button><button class="opt" data-i="3">Google Scholar with a random keyword guess</button></div>
+    <p class="quiz-exp">With no keywords and no seed, you need meaning-based discovery first — it teaches you the field's language and hands you a seed paper. THEN Connected Papers can map from that seed, and Zotero can store what you keep. Order matters.</p>
+  </div>
+  <aside class="notes">The quiz tests workflow ORDER, not tool trivia: Connected Papers and Zotero are powerful but useless as step 1 — they need inputs the earlier steps produce.</aside>
+</section>
+<section id="case-av-map" data-sid="case-av-map">
+<div class="kicker">Case study · our running example, mapped</div>
+    <h2>Mapping "pedestrian detection for self-driving"</h2>
+    <div class="flow" style="margin-top:.3em">
+      <div class="step"><div class="n">1</div><b>Seed</b><span>Start from one seminal detector paper — YOLO (you summarized it in Class 4).</span></div>
+      <div class="step"><div class="n">2</div><b>Branch</b><span>Follow forward citations to recent <b>robustness</b> work — detection at night, in rain, in crowds.</span></div>
+      <div class="step"><div class="n">3</div><b>Map</b><span>Connected Papers draws how the 5 papers relate; you spot the night-detection cluster.</span></div>
+    </div>
+    <div class="callout"><b>The whole course, converging:</b> Class 2 asked the night-recall question · Class 3 drew its pipeline · Class 4 summarized YOLO · Class 5 read its detection log · <b>today you map the literature around it.</b> Five classes, one thread — and your literature map is where the question meets the field. Prefer another domain? Same three steps.</div>
+    <aside class="notes">The convergence slide — say the thread aloud, students feel the course cohere. YOLO as the shared seed links Class 4's summary directly to today's map. The night-detection cluster is where their Class-2 question would slot into the real literature.</aside>
+</section>
+<section id="tool-github" data-sid="tool-github">
+<div class="kicker">Beyond papers · the collaboration tool</div>
+    <h2>GitHub — where research code lives</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">💾 Version control</h3><p>Every change to your code saved and reversible — no more <span style="font-family:Consolas,monospace;font-size:.82em">final_v3_REAL_final.py</span>. Built on Git.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">🤝 Collaboration</h3><p>Many people, one project, no emailed zip files. Issues track tasks; pull requests review changes.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">🌟 Your research shopfront</h3><p>A public repo with a clear README is how researchers <b>show their work</b> — reproducible, citable, and a real portfolio.</p></div>
+    </div>
+    <div class="callout"><b>Why it matters now:</b> from Class 5 on, you're writing real code and notebooks. A GitHub repo is where your project becomes <b>shareable and permanent</b> — this course's decks and site live in one. Tonight's homework: create yours.</div>
+    <aside class="notes">GitHub is stage-2 infrastructure students will use through Class 15. Keep it light — the README-as-portfolio idea motivates the homework. Reproducibility echoes Class 3's honest-science theme. (The course itself is a Git repo — nice meta-note.)</aside>
+</section>
+<section id="demo-elicit" data-sid="demo-elicit">
+<div class="kicker">Live demo 1</div>
+  <h2>Elicit — a findings table from a question</h2>
+  <p class="lead" style="margin:.15em 0 .35em">Type your real research question; watch a comparison table of papers appear. The Class-4 framework, automated across a shelf.</p>
+  <div class="grid2" style="grid-template-columns:2.3fr 1fr;align-items:start">
+    <div><div class="prompt"><span class="you">You ▸</span> Does adding low-light training data improve night-time pedestrian detection?</div><div class="prompt"><span class="you">You ▸</span> Add columns: dataset used · main metric · reported improvement · stated limitation</div><div class="prompt"><span class="you">You ▸</span> Sort by most relevant; open the top 3 — do their abstracts match Elicit's summary?</div><div class="prompt"><span class="you">You ▸</span> Which paper's limitation is closest to your own research question?</div></div>
+    <div class="qrwrap" style="margin-top:.2em"><img class="qr" src="assets/qr-elicit.png" alt="QR"><br><a href="https://elicit.com/" target="_blank" rel="noopener">elicit.com</a></div>
+  </div><aside class="notes">Elicit is the wow tool — the findings table lands instantly. Prompt 3 enforces the verify habit (Elicit summaries are leads). Prompt 4 mines a limitation, chaining back to Class 2's questions and Class 4's summaries. Free tier limits queries; one good question per student.</aside>
+</section>
+<section id="demo-semantic" data-sid="demo-semantic">
+<div class="kicker">Live demo 2</div>
+  <h2>Semantic Scholar — meaning + TL;DR + influence</h2>
+  <p class="lead" style="margin:.15em 0 .35em">Search by idea, triage by TL;DR, rank by influence. Great when you don't know a field's exact words.</p>
+  <div class="grid2" style="grid-template-columns:2.3fr 1fr;align-items:start">
+    <div><div class="prompt"><span class="you">You ▸</span> Search the CONCEPT: "making object detectors robust to bad weather" (no exact keyword)</div><div class="prompt"><span class="you">You ▸</span> Read three TL;DRs — which papers survive a 5-second triage?</div><div class="prompt"><span class="you">You ▸</span> Open one high-influence-score paper → click its "citations" (forward) and "references" (backward)</div><div class="prompt"><span class="you">You ▸</span> Save the best as your SEED paper for Connected Papers next.</div></div>
+    <div class="qrwrap" style="margin-top:.2em"><img class="qr" src="assets/qr-semantic.png" alt="QR"><br><a href="https://www.semanticscholar.org/" target="_blank" rel="noopener">semanticscholar.org</a></div>
+  </div><aside class="notes">The concept-search prompt shows meaning-based discovery beating keyword guessing. TL;DR triage is Class 4's summary at search speed. This demo produces the seed paper the next demo consumes — deliberate handoff.</aside>
+</section>
+<section id="demo-connected" data-sid="demo-connected">
+<div class="kicker">Live demo 3</div>
+  <h2>Connected Papers — the graph, live</h2>
+  <p class="lead" style="margin:.15em 0 .35em">Paste the seed from demo 2; the neighborhood draws itself. Concept 2, on screen.</p>
+  <div class="grid2" style="grid-template-columns:2.3fr 1fr;align-items:start">
+    <div><div class="prompt"><span class="you">You ▸</span> Paste your seed paper → generate the graph</div><div class="prompt"><span class="you">You ▸</span> Find the CLUSTERS — which knot of papers is your topic's sub-field?</div><div class="prompt"><span class="you">You ▸</span> Switch to Tree view: which papers are the roots? Which are the frontier?</div><div class="prompt"><span class="you">You ▸</span> Pick 5 papers total that best surround your question — that's your literature map.</div></div>
+    <div class="qrwrap" style="margin-top:.2em"><img class="qr" src="assets/qr-connected.png" alt="QR"><br><a href="https://www.connectedpapers.com/" target="_blank" rel="noopener">connectedpapers.com</a></div>
+  </div><aside class="notes">The visual climax — clusters and roots/frontier become obvious. The 5-paper selection at the end IS the deliverable, produced live. Point out any near-touching clusters as candidate Swanson gaps. Free tier: a few graphs per month, enough for the project.</aside>
+</section>
+<section id="lab-citation-graph" data-sid="lab-citation-graph">
+<div class="kicker">Hands-on lab 1 · read the graph in code</div>
+  <h2>Explore a citation graph — roots and frontier</h2>
+  <p class="lead" style="margin:.1em 0 .25em">Connected Papers draws the graph; here's what it's <b>computing</b>. A tiny citation network of detection papers — find the <b>roots</b> (most foundational) and the <b>frontier</b> (newest), just like Tree view.</p>
+  <div class="lab" data-packages="">
+    <div class="lab-main">
+      <textarea class="code" spellcheck="false"># A tiny citation graph: who cites whom in "object detection"
+# edge (A, B) means: paper A cites paper B  (A is newer, B is a root)
+cites = [
+    ("R-CNN", "SelectiveSearch"), ("Fast-RCNN", "R-CNN"),
+    ("Faster-RCNN", "Fast-RCNN"), ("YOLO", "R-CNN"),
+    ("YOLO", "Faster-RCNN"), ("YOLOv3", "YOLO"),
+    ("NightDetect", "YOLOv3"), ("RainRobust", "YOLOv3"),
+    ("CrowdPeds", "Faster-RCNN"), ("CrowdPeds", "NightDetect"),
+]
+
+papers = set(p for edge in cites for p in edge)
+
+# forward citations = who cites ME (my frontier)
+# backward citations = who I cite (my roots)
+cited_by = {p: [] for p in papers}   # forward
+cites_to = {p: [] for p in papers}   # backward
+for newer, older in cites:
+    cited_by[older].append(newer)
+    cites_to[newer].append(older)
+
+# ROOTS: cited a lot, cite little themselves (foundations)
+print("Most-cited foundations (roots):")
+for p in sorted(papers, key=lambda p: -len(cited_by[p]))[:3]:
+    print(f"  {p:16s} cited by {len(cited_by[p])} papers")
+
+# FRONTIER: cite others, nobody cites them yet (newest work)
+print("\nFrontier (newest, uncited):")
+for p in papers:
+    if not cited_by[p]:
+        print(f"  {p:16s} builds on {cites_to[p]}")
+
+# Trace one idea's roots, backward:
+def roots_of(paper, depth=0):
+    print("  " * depth + "└ " + paper)
+    for older in cites_to[paper]:
+        roots_of(older, depth + 1)
+
+print("\nWhere does CrowdPeds come from? (follow backward):")
+roots_of("CrowdPeds")
+
+# CHALLENGE 1: which SINGLE paper, if it vanished, would disconnect
+#              the most others? (hint: count how often each appears in cites)
+# CHALLENGE 2: add your own paper that cites NightDetect + RainRobust.
+#              You just proposed a "robust in ALL conditions" study - a
+#              Swanson gap between two clusters!
+</textarea>
+      <div class="lab-bar">
+        <button class="run">▶ Run</button>
+        <button class="ai-explain">✨ Explain</button>
+        <button class="ai-debug">🐞 Debug</button>
+        <button class="ai-improve">⚡ Improve</button>
+        <span class="lab-status">Python loads on first Run</span>
+      </div>
+      <pre class="out">▶ Run the code to see the output here.</pre>
+    </div>
+    <div class="assist">
+      <div class="assist-head"><span>✨ AI Assistant</span><select class="ai-model" title="Choose the AI model"><option value="haiku">⚡ Haiku · fastest</option><option value="sonnet">Sonnet · balanced</option><option value="opus">Opus · most capable</option></select></div>
+      <div class="assist-body">Hi! Edit the code and hit <b>Run</b>. Stuck? I can <b>Explain</b>, <b>Debug</b>, or <b>Improve</b> it — or just ask me below.</div>
+      <div class="assist-ask"><input class="ask-in" placeholder="Ask about this code…"><button class="ask-btn">Ask</button></div>
+    </div>
+  </div><aside class="notes">Runs instantly, no packages. Makes citation graphs concrete: roots = high forward-citations (YOLO/Faster-RCNN), frontier = zero forward-citations (CrowdPeds/RainRobust). roots_of() IS Tree view in 4 lines. Challenge 2 literally has them propose a Swanson-gap paper bridging night+rain clusters — the story made actionable.</aside>
+</section>
+<section id="lab-relevance" data-sid="lab-relevance">
+<div class="kicker">Hands-on lab 2 · rank papers by relevance</div>
+  <h2>A tiny relevance ranker — pick the 5 that matter</h2>
+  <p class="lead" style="margin:.1em 0 .25em">Facing 10,000 papers, how do tools rank relevance? One simple idea: <b>word overlap</b> between your question and each paper. Rank these candidates against a question — then read the top 5.</p>
+  <div class="lab" data-packages="">
+    <div class="lab-main">
+      <textarea class="code" spellcheck="false"># Rank papers by how well they overlap your research question.
+question = "improve pedestrian detection accuracy at night with low light"
+
+papers = {
+  "A": "Low-light image enhancement for night-time object detection",
+  "B": "A survey of pedestrian detection methods in autonomous driving",
+  "C": "Fast real-time object detection on daytime highway images",
+  "D": "Thermal cameras improve pedestrian detection in darkness",
+  "E": "Sentiment analysis of movie reviews using transformers",
+  "F": "Night-time low-light pedestrian detection with synthetic data",
+}
+
+STOP = {"a","of","in","with","for","the","and","to","on","at"}
+def words(text):
+    return {w for w in text.lower().replace("-"," ").split() if w not in STOP}
+
+q = words(question)
+def score(title):
+    shared = q &amp; words(title)
+    return len(shared) / len(q), shared     # fraction of question covered
+
+print(f"Question keywords: {sorted(q)}\n")
+ranked = sorted(papers.items(), key=lambda kv: -score(kv[1])[0])
+for pid, title in ranked:
+    frac, shared = score(title)
+    bar = "#" * round(frac * 20)
+    print(f"[{frac:4.0%}] {bar:&lt;20} {pid}: {title[:44]}")
+
+print("\nRead the top 5; drop the obvious mismatch.")
+
+# CHALLENGE 1: which paper scores ~0 - and why is it in the pile at all?
+# CHALLENGE 2: papers A and D are both spot-on for "night pedestrian
+#              detection" - but D scores lower ONLY because it wrote
+#              'darkness' where you wrote 'night' + 'low light'. Same
+#              meaning, no shared letters, so the ranker under-rates it.
+#              THIS is why Semantic Scholar searches by MEANING, not words.
+#              How might you fix the ranker so 'darkness' ~ 'night'?
+</textarea>
+      <div class="lab-bar">
+        <button class="run">▶ Run</button>
+        <button class="ai-explain">✨ Explain</button>
+        <button class="ai-debug">🐞 Debug</button>
+        <button class="ai-improve">⚡ Improve</button>
+        <span class="lab-status">Python loads on first Run</span>
+      </div>
+      <pre class="out">▶ Run the code to see the output here.</pre>
+    </div>
+    <div class="assist">
+      <div class="assist-head"><span>✨ AI Assistant</span><select class="ai-model" title="Choose the AI model"><option value="haiku">⚡ Haiku · fastest</option><option value="sonnet">Sonnet · balanced</option><option value="opus">Opus · most capable</option></select></div>
+      <div class="assist-body">Hi! Edit the code and hit <b>Run</b>. Stuck? I can <b>Explain</b>, <b>Debug</b>, or <b>Improve</b> it — or just ask me below.</div>
+      <div class="assist-ask"><input class="ask-in" placeholder="Ask about this code…"><button class="ask-btn">Ask</button></div>
+    </div>
+  </div><aside class="notes">Runs instantly. A/F score highest (night+low-light+pedestrian+detection), E (movie sentiment) scores ~0 — the mismatch challenge 1 catches. Challenge 2 is the deep one: D ('darkness' vs 'night') exposes exactly why keyword overlap fails and semantic search exists — connecting the lab back to Semantic Scholar. Synonym/embedding ideas welcome from sharp students.</aside>
+</section>
+<section id="your-project" data-sid="your-project">
+<div class="kicker">Your project</div>
+    <h2>Build a literature map</h2>
+    <div class="grid2" style="grid-template-columns:1.3fr 1fr">
+      <div><p class="lead">Turn <b>your</b> topic into <b>5 key papers</b> and a picture of how they relate — the map you'll navigate for the rest of your project.</p>
+        <ul><li>Pick your topic (your Class-2 question is perfect)</li>
+          <li>Find 5 relevant papers with <b>Elicit / Semantic Scholar</b></li>
+          <li>Paste a seed into <b>Connected Papers</b> to see the links</li>
+          <li>Draw a relationship graph — a one-line note on each paper</li></ul></div>
+      <div class="box"><h3 style="color:var(--teal)">Deliverable</h3><p>A literature map: 5 real papers + a graph showing who builds on whom.</p>
+        <h3 style="color:var(--coral);margin-top:.35em">Success looks like</h3><p>All 5 papers are <b>real and on-topic</b> (you opened each), and the graph shows at least one <b>"builds on"</b> link.</p></div>
+    </div>
+    <aside class="notes">The graded deliverable (Classroom: 'A literature map — 5 papers + how they connect'). 'You opened each' enforces Class 4's verify rule — no phantom papers. One 'builds on' link forces them to actually read citation relationships, not just list titles.</aside>
+</section>
+<section id="build-it-now" data-sid="build-it-now">
+<div class="kicker">Build it now · hands-on</div>
+    <h2>Run the relay for your own question</h2>
+    <ol style="font-size:.72em;margin-left:1.05em">
+      <li><b>Overview:</b> ask Perplexity "latest advances in <i>&lt;your topic&gt;</i>?" — get oriented</li>
+      <li><b>Find:</b> in Elicit or Semantic Scholar, search your question; save 5 promising papers</li>
+      <li><b>Read the abstracts</b> — drop any that aren't truly on-topic (relevance beats quantity)</li>
+      <li><b>Map:</b> paste your best paper into Connected Papers; find the cluster around your question</li>
+      <li><b>Draw</b> the 5-node graph with a one-line note per paper + at least one "builds on" arrow</li></ol>
+    <div style="margin-top:.2em"><span class="pill">Elicit</span><span class="pill">Semantic Scholar</span><span class="pill">Connected Papers</span><span class="pill">Perplexity</span></div>
+    <div class="callout"><b>Instructor's rule:</b> read each abstract <b>before</b> adding it. <b>5 well-chosen papers beat 50 skimmed ones</b> — and each one you actually read is a citation you can defend.</div>
+    <aside class="notes">Circulate on step 3 — students hoard papers; push them to cut. The read-before-add rule is the whole quality lesson. Fast finishers: switch to Tree view and identify their topic's single foundational root paper.</aside>
+</section>
+<section id="benchmark-litmap" data-sid="benchmark-litmap">
+<div class="kicker">Benchmark · judge against this</div>
+    <h2>What a finished literature map looks like</h2>
+    <p class="lead" style="margin:0 0 .25em">Topic: <i>night-time pedestrian detection</i> — five papers, each with a one-line role:</p>
+    <div class="grid2" style="grid-template-columns:1fr 1fr;margin-top:.2em">
+      <div class="box"><p><b>① YOLO</b> <span class="muted">(root, 2016)</span> — real-time single-pass detection. <i>The foundation everyone builds on.</i></p></div>
+      <div class="box"><p><b>② YOLOv3</b> <span class="muted">(2018)</span> — stronger, multi-scale. <i>builds on ①.</i></p></div>
+      <div class="box"><p><b>③ Low-light enhancement</b> <span class="muted">(2020)</span> — brighten images first. <i>a different attack on the same problem.</i></p></div>
+      <div class="box"><p><b>④ Thermal-camera detection</b> <span class="muted">(2021)</span> — skip visible light entirely. <i>the rival approach.</i></p></div>
+      <div class="box" style="border-top:4px solid var(--coral)"><p><b>⑤ Synthetic night data</b> <span class="muted">(2022)</span> — generate night images to train on. <i>builds on ①②; closest to my question.</i></p></div>
+      <div class="box" style="background:var(--cloud)"><p><b>The gap I found:</b> nobody combines ③ (enhancement) + ⑤ (synthetic data). <i>That's my study.</i></p></div>
+    </div>
+    <div class="callout"><b>The bar:</b> real papers, a "builds on" arrow (① → ② → ⑤), rival approaches noted (③ vs ④), and a <b>gap you can point to</b> — the Swanson move, done with your own map.</div>
+    <aside class="notes">The rubric made visible: 5 real papers, relationships (builds-on + rivals), and a gap = a research direction. The gap between ③ and ⑤ mirrors the Swanson story and Class 2's question-mining — students see the whole method converge on their own topic.</aside>
+</section>
+<section id="reference-key-terms" data-sid="reference-key-terms">
+<div class="kicker">Reference · key terms</div>
+    <h2>Today's vocabulary</h2>
+    <div class="grid2" style="margin-top:.3em">
+      <div class="box"><p><b>Literature review</b> — the systematic map of what's already known about your question.</p></div>
+      <div class="box"><p><b>Citation graph</b> — papers as nodes, "cites" as edges; roots behind, frontier ahead.</p></div>
+      <div class="box"><p><b>Forward / backward citations</b> — who cites this paper (newer) vs. what it cites (foundations).</p></div>
+      <div class="box"><p><b>Semantic search</b> — finding papers by meaning, not exact keywords.</p></div>
+      <div class="box"><p><b>Research gap</b> — the unanswered space between what's known; often between two fields (Swanson).</p></div>
+      <div class="box"><p><b>Reference manager</b> — Zotero/Mendeley: your searchable library of saved papers + notes.</p></div>
+    </div>
+    <aside class="notes">'Research gap' formally named — it's been implicit since Class 2's limitation-mining. Reference manager is the practical habit that outlasts the course.</aside>
+</section>
+<section id="homework" data-sid="homework">
+<div class="kicker">Recommended homework</div>
+    <h2>Before next class</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1fr">
+      <div><ol style="font-size:.66em;margin-left:1.05em">
+        <li><b>Finish your literature map</b> — 5 real, on-topic papers + a graph with ≥1 "builds on" link. Submit in Google Classroom. Note which paper is <b>closest to your own question</b>.</li>
+        <li><b>Create a GitHub research repo</b> — a <span style="font-family:Consolas,monospace;font-size:.85em">README.md</span> stating your research direction, goal, and initial plan. Paste the link in 💬. (This is your project's home for the rest of the course.)</li>
+        <li><b>Try 2 new tools</b> from today you'd never used, on your own topic. One sentence each: did it help?</li>
+      </ol></div>
+      <div class="box"><h3 style="color:var(--teal)">⭐ Stretch (optional)</h3>
+        <p>Find a genuine <b>Swanson gap</b>: two sub-fields in your map that almost never cite each other. What question lives in the space between them?</p>
+        <p style="font-size:.72em;margin-top:.3em"><a class="btn" href="https://zotero.org/" target="_blank" rel="noopener">zotero.org — free reference manager</a></p></div>
+    </div>
+    <div class="callout"><b>Note:</b> creating a GitHub account requires signing up yourself (do it with a parent if you're under 13). Questions → 💬 on any slide.</div>
+    <aside class="notes">Task 1 = graded deliverable. Task 2 sets up project infrastructure for Class 7+ (and next class references it). The stretch operationalizes the Swanson story on the student's own map — the course's most creative homework. Note the account-creation caveat per safety norms.</aside>
+</section>
+<section id="line-to-remember" data-sid="line-to-remember" class="center" data-background-gradient="linear-gradient(135deg,#0B7E8A,#0F9DB0)">
+<div class="kicker">Today's line to remember</div>
+    <h2 style="color:#fff">"Give me six hours to chop down a tree, and I'll spend the first four sharpening the axe."</h2>
+    <p style="color:#cfe0ef;margin-top:.3em">— Abraham Lincoln</p>
+    <p style="color:#eaf2fb;font-size:.8em;margin-top:.5em">Today was axe-sharpening. The right tools turn six hours of searching into one.</p>
+    <div style="margin-top:.5em"><button class="speak" data-audio="audio/quote2.mp3">🔊 <span>Speak this</span></button></div>
+    <aside class="notes">Lincoln's axe = the perfect 'tools' closer: preparation is not procrastination. Ties to Class 3's 'baseline first' and the whole stage-2 investment in method before the heavy modeling of stages 4-5.</aside>
+</section>
+<section id="wrap-up" data-sid="wrap-up" class="center" data-background-gradient="linear-gradient(135deg,#0C2D52,#16406e)">
+<div class="kicker" style="color:#7fd3df">Wrap-up</div>
+    <h2 style="color:#fff">Three things to keep</h2>
+    <ul style="display:inline-block;text-align:left;color:#eaf2fb">
+      <li>Specialized tools <b>find and connect</b> papers — Elicit, Semantic Scholar, Connected Papers</li>
+      <li>Citation graphs map a whole field: <b>back to roots, forward to frontier</b></li>
+      <li><b>5 well-chosen papers beat 50 skimmed ones</b> — read each one you cite</li></ul>
+    <p style="color:#cfe0ef;margin-top:.6em"><b>Exit ticket:</b> which of your 5 papers is closest to your own question — and what gap did you spot? Post in 💬.</p>
+    <p style="color:#9db8d6;font-size:.6em;margin-top:.7em">Next · Class 7 — where data comes from, and how to judge whether it's any good. Stage 3 begins.</p>
+    <aside class="notes">Exit tickets surface every student's chosen paper + gap — a preview of their project directions. Tease Class 7 as the start of Stage 3 (the data stage of the pipeline they drew in Class 3): finding and judging real datasets.</aside>
+</section>
+<section id="backup-material" data-sid="backup-material">
+<div class="kicker" style="color:var(--coral)">Backup material</div>
+    <h2>Extra slides — if there's time</h2>
+    <p class="lead">Deeper dives and extra practice. Skip in a tight hour; pull up on demand or for a longer session.</p>
+    <div class="flow" style="margin-top:.4em">
+      <div class="step"><b>Tools &amp; creativity</b><span>amplifier or crutch?</span></div>
+      <div class="step"><b>More of the toolbox</b><span>Roboflow, Zotero, Perplexity</span></div>
+      <div class="step"><b>Bonus quiz</b><span>one more check</span></div>
+    </div>
+    <aside class="notes">The creativity debate is a strong discussion closer; the extra-tools slide previews Class 7-8 (Roboflow annotation) and cements the reference-manager habit.</aside>
+</section>
+<section id="backup-tools-creativity" data-sid="backup-tools-creativity">
+<div class="kicker">Backup · extended thinking</div>
+    <h2>Do tools kill creativity — or free it?</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1fr;margin-top:.3em">
+      <div class="box" style="border-top:4px solid var(--coral)"><h3 style="color:var(--coral)">⚠️ The worry</h3><p>Over-reliance breeds mental laziness — if the tool always finds the papers, do you lose the ability to think through a field yourself?</p></div>
+      <div class="box" style="border-top:4px solid var(--green)"><h3 style="color:var(--green)">✅ The case for</h3><p>Tools clear away the tedious hours (searching, formatting, transferring) so your energy goes to the <b>creative</b> part: the question, the connection, the gap.</p></div>
+    </div>
+    <div class="callout"><b>The resolution — the course's recurring theme:</b> a tool should be an <b>amplifier</b> of your thinking, not a <b>substitute</b> for it. Class 1 said it of AI; Class 4 said it of LLMs; today, of your whole toolbox. You steer; the tools row.</div>
+    <aside class="notes">Same amplifier-not-substitute philosophy as Class 1 (AI as instrument) and Class 4 (LLM as partner). The consistency IS the pedagogy — students should recognize the refrain. Good parents'-night talking point.</aside>
+</section>
+<section id="backup-more-tools" data-sid="backup-more-tools">
+<div class="kicker">Backup · the rest of the toolbox</div>
+    <h2>Three more worth knowing</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">🏷️ Roboflow</h3><p>Label images for computer-vision projects — bounding boxes, then export straight to YOLO. <b>This is how the boxes in our AV example get drawn.</b> (You'll meet it again in the data classes.)</p></div>
+      <div class="box"><h3 style="color:var(--teal)">📚 Zotero</h3><p>Your reference shoebox: one click saves a paper with its citation; organize with tags and notes; auto-formats your bibliography. Free and open-source.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">🔮 Perplexity</h3><p>Class 1's fact-checker, back as a discovery tool: a search engine that answers with cited sources — perfect for the step-1 field overview.</p></div>
+    </div>
+    <div class="callout">The toolbox is bigger than four tools — but <b>don't chase every new one</b>. Pick a handful, chain them into your workflow, and go do research. The tool is never the point.</div>
+    <aside class="notes">Roboflow connects to the AV thread (who draws the boxes — answered) and Class 7-8 data work. Perplexity callback to Class 1 closes a loop. The don't-chase-tools note guards against the tool-anxiety the Lesson deck warns about.</aside>
+</section>
+<section id="quiz-backup-bonus" data-sid="quiz-backup-bonus">
+<div class="kicker">Backup · bonus check</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="2">
+    <p class="qq">Elicit hands you a clean findings table summarizing 12 papers. You're on a deadline. What's the responsible move?</p>
+    <div class="opts"><button class="opt" data-i="0">Cite all 12 straight from the table — it's already summarized</button><button class="opt" data-i="1">Cite the 5 most relevant from the table without opening them; Elicit is usually right</button><button class="opt" data-i="2">Open the 5 you'll actually cite and confirm each summary against the real paper</button><button class="opt" data-i="3">Ignore the table; only manual searching is trustworthy</button></div>
+    <p class="quiz-exp">Elicit's table is a brilliant filter, not a substitute for reading — it's AI-generated, so Class 4's rule holds: verify each paper you cite by opening it. But dismissing the tool entirely (D) wastes its real power. Filter with the tool; cite from the source.</p>
+  </div>
+  <aside class="notes">The mature middle path: tools for discovery and triage, humans for verification and citation. Both extremes (blind trust, blanket distrust) are wrong — same lesson as Class 4's proportionate skepticism.</aside>
+</section>
+</div></div>
+
+<a id="donateBtn" href="https://buy.stripe.com/14AbIT26kfUzbqjbGv4ow00" target="_blank" rel="noopener">♥ Donate</a>
+<a id="pdfBtn" href="slides.pdf" download title="Download these slides as a PDF">⬇ PDF</a>
+<a id="mpaLogo" href="/meritpoint-slides/" title="Merit Point Academy — all courses"><img src="/meritpoint-slides/assets/mpa-logo.png" alt="Merit Point Academy"></a>
+<!-- per-slide comments -->
+<audio id="narratorAudio" preload="none" style="display:none"></audio>
+<div id="capBar"></div>
+<button id="ccBtn" title="Toggle captions">CC</button>
+<button id="listenBtn" title="Listen to this slide narrated"><span class="li-ic">▶</span><span class="li-tx">Listen</span></button>
+<button id="commentBtn" title="Comment on this slide">💬 Comment<span class="cnum" id="cnum">0</span></button>
+<div id="commentPanel">
+  <div class="ph"><span id="cph">Comments</span><span class="x" id="cclose">✕</span></div>
+  <div id="commentList"></div>
+  <form id="commentForm">
+    <div class="row"><input id="cname" placeholder="Your name (optional)" maxlength="40"></div>
+    <textarea id="cbody" placeholder="Leave a comment or question about this slide…" maxlength="2000"></textarea>
+    <div class="row"><button type="submit">Post</button><span class="msg" id="cmsg">Visible to your instructor &amp; classmates.</span></div>
+  </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+<script>
+const DECK = "ai-toolbox/class-06";
+Reveal.initialize({ hash:true, slideNumber:'c/t', controls:true, progress:true,
+  width:1280, height:720, margin:0.04, transition:'slide',
+  keyboardCondition:'focused', plugins:[ RevealNotes ] });
+
+/* ---------- Shared audio player ----------
+ * One audio element, already attached to the DOM (see markup above), reused
+ * for every play. A bare detached Audio object is never used: on at least one
+ * real browser/profile that made Chrome abort play() within milliseconds
+ * ("interrupted because the media was removed from the document") — audio
+ * never audibly played and the button silently reset to idle before anyone
+ * noticed. Reusing an attached element avoids that path. */
+const _audio=document.getElementById('narratorAudio');
+let _btn=null,_playToken=0;
+function fmtClock(s){ s=Math.max(0,Math.floor(s||0)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
+function resetListenUI(){ listenBtn.style.setProperty('--p','0%'); listenBtn.querySelector('.li-ic').textContent='▶'; listenBtn.querySelector('.li-tx').textContent='Listen'; }
+function stopAudio(){
+  _playToken++; // invalidate any in-flight play() for the old src
+  _audio.pause(); _audio.currentTime=0; _audio.removeAttribute('src'); _audio.load();
+  _audio.removeEventListener('timeupdate',onListenTimeupdate); // else it'd animate listenBtn during a .speak clip
+  capBar.style.display='none';
+  if(_btn){
+    _btn.classList.remove('playing');
+    if(_btn===listenBtn) resetListenUI();
+    else if(_btn.querySelector('span')) _btn.querySelector('span').textContent=_btn.dataset.label||'Speak';
+  }
+  _btn=null;
+}
+document.addEventListener('click',function(e){
+  const b=e.target.closest('.speak'); if(!b) return;
+  if(_btn===b && !_audio.paused){ stopAudio(); return; }
+  stopAudio();
+  const token=_playToken;
+  _btn=b; b.dataset.label=b.dataset.label||b.querySelector('span').textContent;
+  b.classList.add('playing'); b.querySelector('span').textContent='Pause';
+  _audio.src=b.dataset.audio;
+  _audio.addEventListener('ended',stopAudio,{once:true});
+  _audio.play().catch(function(){ if(token===_playToken) stopAudio(); });
+});
+
+/* ---------- Per-slide narration ("Listen") + captions ---------- */
+const listenBtn=document.getElementById('listenBtn');
+const ccBtn=document.getElementById('ccBtn');
+const capBar=document.getElementById('capBar');
+let _narrationData=null; // { [sid]: { script, cues:[{start,end,text}], ... } }
+let _ccOn=localStorage.getItem('cc_captions')!=='0'; // on by default
+function updateCcBtn(){ ccBtn.classList.toggle('on',_ccOn); ccBtn.title=_ccOn?'Captions on — click to hide':'Captions off — click to show'; }
+async function loadNarrated(){
+  try{ const r=await fetch('audio/narration.json',{cache:'no-cache'}); if(!r.ok) throw 0;
+    _narrationData=await r.json(); }
+  catch(e){ _narrationData={}; }
+  updateCcBtn();
+  updateListen();
+}
+function updateListen(){
+  if(!_narrationData){ return; }
+  const has=!!_narrationData[curSid];
+  listenBtn.style.display=has?'inline-flex':'none';
+  ccBtn.style.display=has?'inline-flex':'none';
+  if(!has && _btn===listenBtn) stopAudio();
+}
+function cueAt(cues,t){ for(const c of cues) if(t>=c.start && t<c.end) return c; return null; }
+function updateCaption(){
+  const data=_narrationData && _narrationData[curSid];
+  const cues=data && data.cues;
+  if(!_ccOn || _btn!==listenBtn || !cues || !cues.length){ capBar.style.display='none'; return; }
+  const cue=cueAt(cues,_audio.currentTime);
+  if(cue){ capBar.textContent=cue.text; capBar.style.display='block'; }
+  else capBar.style.display='none'; // brief gap between sentences
+}
+ccBtn.addEventListener('click',function(){
+  _ccOn=!_ccOn; localStorage.setItem('cc_captions',_ccOn?'1':'0'); updateCcBtn(); updateCaption();
+});
+function onListenTimeupdate(){
+  if(_audio.duration) listenBtn.style.setProperty('--p',(_audio.currentTime/_audio.duration*100)+'%');
+  listenBtn.querySelector('.li-tx').textContent=fmtClock(_audio.currentTime)+' / '+fmtClock(_audio.duration);
+  updateCaption();
+}
+listenBtn.addEventListener('click',function(){
+  if(_btn===listenBtn && !_audio.paused){ stopAudio(); return; } // toggles play/stop even mid-buffer
+  stopAudio();
+  const token=_playToken;
+  _btn=listenBtn;
+  listenBtn.classList.add('playing');
+  listenBtn.querySelector('.li-ic').textContent='⏹';
+  listenBtn.querySelector('.li-tx').textContent='loading…';
+  _audio.src='audio/'+encodeURIComponent(curSid)+'.mp3';
+  _audio.addEventListener('timeupdate',onListenTimeupdate);
+  _audio.addEventListener('ended',stopAudio,{once:true});
+  _audio.play().catch(function(){
+    if(token!==_playToken) return; // superseded by a newer click/stop — ignore
+    _audio.removeEventListener('timeupdate',onListenTimeupdate);
+    stopAudio();
+    listenBtn.querySelector('.li-tx').textContent='tap to retry';
+    setTimeout(resetListenUI,2200);
+  });
+});
+
+/* ---------- Quizzes (answers feed the live class distribution) ---------- */
+function renderQuizStats(quiz,data){
+  quiz._qstats=data;
+  let box=quiz.querySelector('.qstats');
+  if(!box){ box=document.createElement('div'); box.className='qstats'; quiz.appendChild(box); }
+  const mode=quiz._qmode||'today';
+  const st=(data&&data[mode])||{counts:{},total:0};
+  const opts=quiz.querySelectorAll('.opt'), correct=parseInt(quiz.dataset.correct,10);
+  let bars='';
+  for(let i=0;i<opts.length;i++){
+    const c=st.counts[i]||0, pct=st.total?Math.round(c*100/st.total):0;
+    bars+='<div class="qrow"><span class="ql">'+String.fromCharCode(65+i)+'</span>'
+      +'<div class="qbar"><div class="qfill'+(i===correct?' qok':'')+'" style="width:'+pct+'%"></div></div>'
+      +'<span class="qp">'+pct+'% ('+c+')</span></div>';
+  }
+  box.innerHTML='<div class="qhead"><span>Class results · '+st.total+' answered</span>'
+    +'<span><button class="qm'+(mode==='today'?' on':'')+'" data-m="today">Today</button>'
+    +'<button class="qm'+(mode==='all'?' on':'')+'" data-m="all">All time</button></span></div>'+bars;
+}
+document.addEventListener('click',function(e){
+  const m=e.target.closest('.qstats .qm');
+  if(m){ const q=m.closest('.quiz'); q._qmode=m.dataset.m; renderQuizStats(q,q._qstats); return; }
+  const opt=e.target.closest('.quiz .opt'); if(!opt) return;
+  const quiz=opt.closest('.quiz'); if(quiz.classList.contains('answered')) return;
+  const correct=parseInt(quiz.dataset.correct,10);
+  quiz.querySelectorAll('.opt').forEach(function(o){o.setAttribute('disabled','');});
+  const chosen=parseInt(opt.dataset.i,10);
+  quiz.querySelectorAll('.opt')[correct].classList.add('correct');
+  if(chosen!==correct) opt.classList.add('wrong');
+  quiz.classList.add('answered');
+  const sec=quiz.closest('section');
+  const sid=(sec&&sec.dataset.sid)||_hashSid(sec);
+  fetch('/api/quiz/answer',{method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({deck:DECK,slide:sid,choice:chosen,correct:chosen===correct})})
+    .then(function(r){return r.json();})
+    .then(function(j){ if(j&&j.today) renderQuizStats(quiz,{today:j.today,all:j.all}); })
+    .catch(function(){ fetch('/api/quiz/stats?deck='+encodeURIComponent(DECK)+'&slide='+encodeURIComponent(sid))
+      .then(function(r){return r.json();}).then(function(j){renderQuizStats(quiz,j);}).catch(function(){}); });
+});
+
+/* ---------- Heap / Top-K insertion visualizer ---------- */
+function hvState(el){
+  if(!el._hv){ el._hv={ frames:[{heap:[],action:'Ready. Insert a value to see the animation.',hi:[]}], cur:0, playing:false, timer:null }; }
+  return el._hv;
+}
+function hvTree(arr,hi){
+  if(!arr.length) return '<div class="hv-empty">(empty)</div>';
+  const W=200,H=140; const depthOf=(i)=>Math.floor(Math.log2(i+1)); const maxDepth=depthOf(arr.length-1);
+  const nodes=arr.map(function(v,i){ const d=depthOf(i); const levelStart=Math.pow(2,d)-1; const pos=i-levelStart; const cnt=Math.pow(2,d);
+    return { i:i, v:v, x:((pos+0.5)/cnt)*W, y:16+d*((H-24)/Math.max(1,maxDepth)) }; });
+  let svg='<svg viewBox="0 0 '+W+' '+(H+16)+'" class="hv-tree-svg">';
+  nodes.forEach(function(n){ if(n.i===0) return; const p=nodes[Math.floor((n.i-1)/2)];
+    svg+='<line x1="'+p.x+'" y1="'+p.y+'" x2="'+n.x+'" y2="'+n.y+'" class="hv-edge"/>'; });
+  (hi||[]).forEach(function(pair){ if(pair.length===2 && nodes[pair[0]] && nodes[pair[1]]){
+    svg+='<line x1="'+nodes[pair[0]].x+'" y1="'+nodes[pair[0]].y+'" x2="'+nodes[pair[1]].x+'" y2="'+nodes[pair[1]].y+'" class="hv-swap"/>'; } });
+  const hiIdx=(hi||[]).flat();
+  nodes.forEach(function(n){ const isHi=hiIdx.indexOf(n.i)>-1;
+    svg+='<circle cx="'+n.x+'" cy="'+n.y+'" r="13" class="hv-node'+(isHi?' hv-node-hi':'')+'"/><text x="'+n.x+'" y="'+(n.y+4)+'" class="hv-node-text">'+n.v+'</text>'; });
+  return svg+'</svg>';
+}
+function hvRender(el){
+  const st=hvState(el);
+  el.querySelector('.hv-arr-now').textContent='['+st.frames[st.cur].heap.join(', ')+']';
+  el.querySelector('.hv-step').textContent=st.cur+' / '+(st.frames.length-1);
+  el.querySelector('.hv-action-text').textContent=st.frames[st.cur].action;
+  const framesEl=el.querySelector('.hv-frames'), arrsEl=el.querySelector('.hv-arrs');
+  framesEl.innerHTML=''; arrsEl.innerHTML='';
+  st.frames.forEach(function(f,idx){
+    const hiIdx=(f.hi||[]).flat();
+    const card=document.createElement('div'); card.className='hv-frame'+(idx===st.cur?' hv-frame-active':'');
+    card.innerHTML='<div class="hv-frame-title">Step '+idx+'</div><div class="hv-frame-desc">'+(idx===0?'(empty)':f.action)+'</div>'+hvTree(f.heap,f.hi);
+    framesEl.appendChild(card);
+    const a=document.createElement('div'); a.className='hv-arr'+(idx===st.cur?' hv-arr-active':'');
+    a.innerHTML='['+f.heap.map(function(v,i){ return hiIdx.indexOf(i)>-1?'<span class="hv-arr-hi">'+v+'</span>':v; }).join(', ')+']';
+    arrsEl.appendChild(a);
+  });
+  const active=framesEl.querySelector('.hv-frame-active');
+  if(active) active.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
+}
+function hvInsert(el,val){
+  const st=hvState(el);
+  if(st.cur!==st.frames.length-1) st.frames=st.frames.slice(0,st.cur+1); // drop redo history on a fresh insert
+  const heap=st.frames[st.frames.length-1].heap.slice();
+  const idx=heap.length; heap.push(val);
+  let i=idx, hi=[[idx,idx]];
+  while(i>0){ const p=Math.floor((i-1)/2);
+    if(heap[p]>heap[i]){ const t=heap[p]; heap[p]=heap[i]; heap[i]=t; hi=[[p,i]]; i=p; } else break; }
+  st.frames.push({ heap:heap, action:'Insert '+val+' at index '+idx, hi:hi });
+  st.cur=st.frames.length-1; hvRender(el);
+}
+function hvGoto(el,idx){ const st=hvState(el); st.cur=Math.max(0,Math.min(st.frames.length-1,idx)); hvRender(el); }
+function hvStop(el){ const st=hvState(el); if(st.timer){ clearInterval(st.timer); st.timer=null; } st.playing=false;
+  const b=el.querySelector('.hv-play'); if(b) b.textContent='▶ Play'; }
+function hvPlay(el){ const st=hvState(el); if(st.playing){ hvStop(el); return; }
+  if(st.cur>=st.frames.length-1) hvGoto(el,0);
+  st.playing=true; const b=el.querySelector('.hv-play'); if(b) b.textContent='⏸ Pause';
+  const speed=parseInt(el.querySelector('.hv-speed').value,10)||3, delay=Math.max(280,1300-speed*220);
+  st.timer=setInterval(function(){ if(st.cur>=st.frames.length-1){ hvStop(el); return; } hvGoto(el,st.cur+1); },delay);
+}
+document.addEventListener('click',function(e){
+  const hv=e.target.closest('.heapviz'); if(!hv) return;
+  if(e.target.closest('.hv-insert')){ const inp=hv.querySelector('.hv-input'); const v=parseInt(inp.value,10);
+    if(!isNaN(v)){ hvStop(hv); hvInsert(hv,v); inp.value=''; } }
+  else if(e.target.closest('.hv-quick-btn')){ hvStop(hv); hvInsert(hv,parseInt(e.target.closest('.hv-quick-btn').dataset.v,10)); }
+  else if(e.target.closest('.hv-first')){ hvStop(hv); hvGoto(hv,0); }
+  else if(e.target.closest('.hv-prev')){ hvStop(hv); hvGoto(hv,hvState(hv).cur-1); }
+  else if(e.target.closest('.hv-next')){ hvStop(hv); hvGoto(hv,hvState(hv).cur+1); }
+  else if(e.target.closest('.hv-last')){ hvStop(hv); hvGoto(hv,hvState(hv).frames.length-1); }
+  else if(e.target.closest('.hv-play')){ hvPlay(hv); }
+});
+document.addEventListener('keydown',function(e){
+  if(e.target.classList&&e.target.classList.contains('hv-input')&&e.key==='Enter'){
+    e.preventDefault(); const hv=e.target.closest('.heapviz'); const v=parseInt(e.target.value,10);
+    if(!isNaN(v)){ hvStop(hv); hvInsert(hv,v); e.target.value=''; }
+  }
+});
+document.querySelectorAll('.heapviz').forEach(function(hv){
+  const preset=(hv.dataset.preset||'').split(',').map(function(s){return s.trim();}).filter(Boolean);
+  const q=hv.querySelector('.hv-quick');
+  preset.forEach(function(v){ const b=document.createElement('button'); b.type='button'; b.className='hv-quick-btn'; b.dataset.v=v; b.textContent=v; q.appendChild(b); });
+  hvRender(hv);
+});
+
+/* ---------- Convolution (sliding-window) visualizer ---------- */
+const CV_IMGS={
+  edge:['11110000','11110000','11110000','11110000','11110000','11110000','11110000','11110000'],
+  hedge:['11111111','11111111','11111111','11111111','00000000','00000000','00000000','00000000'],
+  diag:['11000000','11100000','01110000','00111000','00011100','00001110','00000111','00000011'],
+  smiley:['00000000','01100110','01100110','00000000','10000001','01000010','00111100','00000000'],
+  x:['10000001','11000011','01100110','00111100','00111100','01100110','11000011','10000001'],
+  clear:['00000000','00000000','00000000','00000000','00000000','00000000','00000000','00000000']
+};
+const CV_IMG_NAMES=[['edge','Vertical edge'],['hedge','Horizontal edge'],['diag','Diagonal'],['smiley','Smiley'],['x','X'],['clear','Clear']];
+const CV_KERNELS=[
+  {name:'Vertical edge',k:[[1,0,-1],[1,0,-1],[1,0,-1]],div:1},
+  {name:'Horizontal edge',k:[[1,1,1],[0,0,0],[-1,-1,-1]],div:1},
+  {name:'Blur (average)',k:[[1,1,1],[1,1,1],[1,1,1]],div:9},
+  {name:'Sharpen',k:[[0,-1,0],[-1,5,-1],[0,-1,0]],div:1}
+];
+function cvState(el){
+  if(!el._cv){
+    const rows=CV_IMGS[el.dataset.img||'edge'];
+    el._cv={ img:rows.map(function(r){return r.split('').map(Number);}), ki:0, cur:0, playing:false, timer:null };
+  }
+  return el._cv;
+}
+function cvOutputs(st){
+  const K=CV_KERNELS[st.ki], out=[];
+  for(let r=0;r<6;r++){ const row=[];
+    for(let c=0;c<6;c++){ let s=0;
+      for(let i=0;i<3;i++) for(let j=0;j<3;j++) s+=st.img[r+i][c+j]*K.k[i][j];
+      row.push(s); }
+    out.push(row); }
+  return out;
+}
+function cvFmt(v){ return String(Math.round(v*10)/10); }
+function cvRender(el){
+  const st=cvState(el), K=CV_KERNELS[st.ki], out=cvOutputs(st);
+  const wr=Math.floor(st.cur/6), wc=st.cur%6;
+  const inEl=el.querySelector('.cv-in'); inEl.innerHTML='';
+  for(let r=0;r<8;r++) for(let c=0;c<8;c++){
+    const d=document.createElement('div'); d.className='cv-cell'; d.dataset.r=r; d.dataset.c=c;
+    const v=st.img[r][c];
+    d.style.background=v?'#F2A93B':'#132A47';
+    d.style.color=v?'#5c3d05':'#3d5878';
+    d.textContent=v;
+    if(r>=wr&&r<wr+3&&c>=wc&&c<wc+3) d.classList.add('cv-win');
+    inEl.appendChild(d);
+  }
+  const kg=el.querySelector('.cv-kgrid'); kg.innerHTML='';
+  for(let i=0;i<3;i++) for(let j=0;j<3;j++){ const d=document.createElement('div'); d.className='cv-kcell'; d.textContent=K.k[i][j]; kg.appendChild(d); }
+  el.querySelector('.cv-kdiv').textContent=K.div>1?'output = sum ÷ '+K.div:'output = sum of the 9 products';
+  let maxAbs=1; out.forEach(function(row){ row.forEach(function(v){ maxAbs=Math.max(maxAbs,Math.abs(v/K.div)); }); });
+  const lines=[]; let s=0;
+  for(let i=0;i<3;i++){ const terms=[];
+    for(let j=0;j<3;j++){ s+=st.img[wr+i][wc+j]*K.k[i][j];
+      terms.push(st.img[wr+i][wc+j]+'×'+(K.k[i][j]<0?'('+K.k[i][j]+')':K.k[i][j])); }
+    lines.push(terms.join(' + ')); }
+  el.querySelector('.cv-calc').innerHTML=lines.join('<br>')+'<br><span class="cv-sum">= '+cvFmt(s/K.div)+'</span>';
+  const outEl=el.querySelector('.cv-out'); outEl.innerHTML='';
+  for(let r=0;r<6;r++) for(let c=0;c<6;c++){
+    const d=document.createElement('div'); d.className='cv-ocell'; const idx=r*6+c;
+    if(idx<=st.cur){ const v=out[r][c]/K.div, t=Math.min(1,Math.abs(v)/maxAbs);
+      d.textContent=cvFmt(v);
+      if(v>0) d.style.background='rgba(15,157,176,'+(0.12+0.88*t).toFixed(2)+')';
+      else if(v<0) d.style.background='rgba(238,107,54,'+(0.12+0.88*t).toFixed(2)+')';
+      d.style.color=t>0.5&&v!==0?'#fff':'#21303F';
+    }
+    if(idx===st.cur) d.classList.add('cv-win');
+    outEl.appendChild(d);
+  }
+  el.querySelector('.cv-step').textContent=(st.cur+1)+' / 36 · row '+(wr+1)+', col '+(wc+1);
+  el.querySelectorAll('.cv-kchips .cv-chip').forEach(function(ch,i){ ch.classList.toggle('sel',i===st.ki); });
+}
+function cvGoto(el,idx){ const st=cvState(el); st.cur=Math.max(0,Math.min(35,idx)); cvRender(el); }
+function cvStop(el){ const st=cvState(el); if(st.timer){ clearInterval(st.timer); st.timer=null; } st.playing=false;
+  const b=el.querySelector('.cv-play'); if(b) b.textContent='▶ Play'; }
+function cvPlay(el){ const st=cvState(el); if(st.playing){ cvStop(el); return; }
+  if(st.cur>=35) cvGoto(el,0);
+  st.playing=true; const b=el.querySelector('.cv-play'); if(b) b.textContent='⏸ Pause';
+  const speed=parseInt(el.querySelector('.cv-speed').value,10)||3, delay=Math.max(120,900-speed*160);
+  st.timer=setInterval(function(){ if(st.cur>=35){ cvStop(el); return; } cvGoto(el,st.cur+1); },delay);
+}
+document.addEventListener('click',function(e){
+  const cv=e.target.closest('.convviz'); if(!cv) return;
+  const cell=e.target.closest('.cv-cell');
+  if(cell){ const st=cvState(cv); cvStop(cv);
+    const r=parseInt(cell.dataset.r,10), c=parseInt(cell.dataset.c,10);
+    st.img[r][c]=st.img[r][c]?0:1; cvRender(cv); return; }
+  const chip=e.target.closest('.cv-chip');
+  if(chip){ cvStop(cv); const st=cvState(cv);
+    if(chip.dataset.k!==undefined){ st.ki=parseInt(chip.dataset.k,10); }
+    else if(chip.dataset.img){ st.img=CV_IMGS[chip.dataset.img].map(function(r){return r.split('').map(Number);}); st.cur=0; }
+    cvRender(cv); return; }
+  if(e.target.closest('.cv-first')){ cvStop(cv); cvGoto(cv,0); }
+  else if(e.target.closest('.cv-prev')){ cvStop(cv); cvGoto(cv,cvState(cv).cur-1); }
+  else if(e.target.closest('.cv-next')){ cvStop(cv); cvGoto(cv,cvState(cv).cur+1); }
+  else if(e.target.closest('.cv-last')){ cvStop(cv); cvGoto(cv,35); }
+  else if(e.target.closest('.cv-play')){ cvPlay(cv); }
+});
+document.querySelectorAll('.convviz').forEach(function(cv){
+  const pr=cv.querySelector('.cv-presets');
+  CV_IMG_NAMES.forEach(function(p){ const b=document.createElement('button'); b.type='button'; b.className='cv-chip'; b.dataset.img=p[0]; b.textContent=p[1]; pr.appendChild(b); });
+  const kc=cv.querySelector('.cv-kchips');
+  CV_KERNELS.forEach(function(k,i){ const b=document.createElement('button'); b.type='button'; b.className='cv-chip'; b.dataset.k=i; b.textContent=k.name; kc.appendChild(b); });
+  cvRender(cv);
+});
+
+/* ---------- Pyodide code labs ---------- */
+let _py=null,_pyLoading=null;
+async function getPy(statusEl){
+  if(_py) return _py;
+  if(!_pyLoading){ if(statusEl)statusEl.textContent='Loading Python…';
+    _pyLoading=loadPyodide({indexURL:'https://cdn.jsdelivr.net/pyodide/v0.26.2/full/'}); }
+  _py=await _pyLoading; return _py;
+}
+function labOf(el){ return el.closest('.lab'); }
+async function runLab(lab){
+  const code=lab.querySelector('.code').value;
+  const out=lab.querySelector('.out'); const status=lab.querySelector('.lab-status');
+  out.textContent=''; out.classList.remove('has-err'); lab.dataset.lastError='';
+  try{
+    const py=await getPy(status);
+    const pkgs=(lab.dataset.packages||'').split(',').map(s=>s.trim()).filter(Boolean);
+    if(pkgs.length){ status.textContent='Loading '+pkgs.join(', ')+'…'; await py.loadPackage(pkgs); }
+    status.textContent='Running…';
+    let buf='';
+    py.setStdout({batched:(s)=>{buf+=s+'\n';}});
+    py.setStderr({batched:(s)=>{buf+=s+'\n';}});
+    await py.runPythonAsync(code);
+    out.textContent=buf||'(no output — add a print(...) )';
+    status.textContent='✓ done';
+  }catch(err){
+    const msg=(err&&err.message)?err.message:String(err);
+    out.innerHTML='<span class="err">'+msg.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))+'</span>';
+    lab.dataset.lastError=msg; status.textContent='✗ error — try 🐞 Debug';
+  }
+}
+/* very small markdown -> html for assistant replies */
+function mdToHtml(md){
+  const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  let html=''; const parts=md.split(/```/);
+  parts.forEach(function(p,i){
+    if(i%2===1){ const code=p.replace(/^python\n?/i,''); html+='<pre data-code="'+encodeURIComponent(code.trim())+'"><code>'+esc(code.trim())+'</code></pre>'+
+      '<button class="apply">↧ Use this code</button>'; }
+    else { let t=esc(p).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/`(.+?)`/g,'<code>$1</code>').replace(/\n{2,}/g,'</p><p>').replace(/\n/g,'<br>'); if(t.trim())html+='<p>'+t+'</p>'; }
+  });
+  return html;
+}
+async function askAssistant(lab,action,question){
+  const body=lab.querySelector('.assist-body');
+  const sel=lab.querySelector('.ai-model');
+  const model=(sel&&sel.value)||'haiku';
+  body.innerHTML='<p class="muted">✨ Thinking…</p>';
+  try{
+    const r=await fetch('/api/assistant',{method:'POST',headers:{'content-type':'application/json'},
+      body:JSON.stringify({action:action,question:question||'',code:lab.querySelector('.code').value,error:lab.dataset.lastError||'',model:model})});
+    const j=await r.json();
+    body.innerHTML=mdToHtml(j.text||'(no response)');
+  }catch(e){ body.innerHTML='<p class="muted">Assistant unavailable right now. Try again shortly.</p>'; }
+}
+document.addEventListener('click',function(e){
+  const t=e.target;
+  if(t.closest('.lab .run')){ runLab(labOf(t.closest('.run'))); }
+  else if(t.closest('.lab .ai-explain')){ askAssistant(labOf(t.closest('.ai-explain')),'explain'); }
+  else if(t.closest('.lab .ai-debug')){ askAssistant(labOf(t.closest('.ai-debug')),'debug'); }
+  else if(t.closest('.lab .ai-improve')){ askAssistant(labOf(t.closest('.ai-improve')),'improve'); }
+  else if(t.closest('.lab .ask-btn')){ const lab=labOf(t.closest('.ask-btn')); const inp=lab.querySelector('.ask-in'); if(inp.value.trim()){ askAssistant(lab,'ask',inp.value.trim()); inp.value=''; } }
+  else if(t.classList&&t.classList.contains('apply')){ const pre=t.previousElementSibling; const lab=t.closest('.lab'); if(pre&&lab){ lab.querySelector('.code').value=decodeURIComponent(pre.dataset.code); } }
+});
+/* Tab key inserts spaces in code editors; keep typing inside textareas from triggering reveal nav */
+document.addEventListener('keydown',function(e){
+  const ta=e.target;
+  if(ta.classList&&ta.classList.contains('code')&&e.key==='Tab'){ e.preventDefault(); const s=ta.selectionStart,en=ta.selectionEnd; ta.value=ta.value.slice(0,s)+'    '+ta.value.slice(en); ta.selectionStart=ta.selectionEnd=s+4; }
+},true);
+/* allow Enter to submit the assistant question */
+document.addEventListener('keydown',function(e){ if(e.target.classList&&e.target.classList.contains('ask-in')&&e.key==='Enter'){ e.preventDefault(); const lab=labOf(e.target); if(e.target.value.trim()){ askAssistant(lab,'ask',e.target.value.trim()); e.target.value=''; } } });
+
+/* ---------- Per-slide comments ---------- */
+const btn=document.getElementById('commentBtn'),panel=document.getElementById('commentPanel'),
+  listEl=document.getElementById('commentList'),cnum=document.getElementById('cnum'),
+  cph=document.getElementById('cph'),form=document.getElementById('commentForm');
+let counts={}, curSid='title';
+// Comment identity = the slide's stable data-sid slug. Never positional:
+// a positional key would re-point old comments to a different slide whenever
+// the deck is reordered. Every slide is built with a sid (asserted at build);
+// the content-hash fallback below stays position-independent just in case.
+function _hashSid(s){ const t=((s&&s.textContent)||'').replace(/s+/g,' ').trim().slice(0,400); let h=0; for(let i=0;i<t.length;i++){ h=(h*31+t.charCodeAt(i))|0; } return 'auto-'+(h>>>0).toString(36); }
+function sidOf(){ const s=Reveal.getCurrentSlide(); if(s&&s.dataset.sid) return s.dataset.sid; console.warn('slide has no data-sid; using content-hash key'); return _hashSid(s); }
+function fmtTime(ts){ const d=new Date(ts); return d.toLocaleDateString()+' '+d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}); }
+function escc(s){ return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+async function loadCounts(){ try{ const r=await fetch('/api/comments/counts?deck='+encodeURIComponent(DECK)); const j=await r.json(); counts=j.counts||{}; updateBadge(); }catch(e){} }
+function updateBadge(){ cnum.textContent=counts[curSid]||0; }
+async function loadComments(){ listEl.innerHTML='<div class="none">Loading…</div>';
+  try{ const r=await fetch('/api/comments?deck='+encodeURIComponent(DECK)+'&slide='+encodeURIComponent(curSid)); const j=await r.json();
+    const cs=j.comments||[]; counts[curSid]=cs.length; updateBadge();
+    listEl.innerHTML=cs.length?cs.map(c=>'<div class="c"><span class="cn">'+escc(c.name)+'</span><span class="ct">'+fmtTime(c.created)+'</span><div class="cb">'+escc(c.body)+'</div></div>').join(''):'<div class="none">No comments yet — be the first!</div>';
+  }catch(e){ listEl.innerHTML='<div class="none">Could not load comments.</div>'; }
+}
+function openPanel(){ curSid=sidOf(); cph.textContent='Comments · '+curSid; panel.classList.add('open'); loadComments(); }
+btn.onclick=function(){ panel.classList.contains('open')?panel.classList.remove('open'):openPanel(); };
+document.getElementById('cclose').onclick=function(){ panel.classList.remove('open'); };
+form.onsubmit=async function(e){ e.preventDefault();
+  const name=document.getElementById('cname').value, body=document.getElementById('cbody').value.trim();
+  const msg=document.getElementById('cmsg'); if(!body){ msg.textContent='Write something first.'; return; }
+  msg.textContent='Posting…';
+  try{ const r=await fetch('/api/comments',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({deck:DECK,slide:curSid,name:name,body:body})});
+    const j=await r.json(); if(j.ok){ document.getElementById('cbody').value=''; msg.textContent='Posted! Thanks.'; loadComments(); } else { msg.textContent=j.error||'Could not post.'; }
+  }catch(e){ msg.textContent='Network error — try again.'; }
+};
+Reveal.on('slidechanged',function(){ stopAudio(); curSid=sidOf(); updateBadge(); updateListen(); sendSlide(); if(panel.classList.contains('open')){ cph.textContent='Comments · '+curSid; loadComments(); } });
+Reveal.on('ready',function(){ curSid=sidOf(); loadCounts(); loadNarrated(); });
+
+/* ---------- Live classroom: presence chip + quiz stream (SSE) ---------- */
+let liveId=null;
+const liveChip=document.createElement('div');
+liveChip.id='liveChip'; liveChip.style.display='none'; document.body.appendChild(liveChip);
+function setOnline(n){ liveChip.style.display=''; liveChip.textContent='🟢 '+n+' online'; }
+function sendSlide(){
+  if(!liveId) return;
+  fetch('/api/presence',{method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({id:liveId,slide:curSid})}).catch(function(){});
+}
+function quizBySid(sid){
+  const secs=document.querySelectorAll('section[data-sid]');
+  for(const s of secs) if(s.dataset.sid===sid) return s.querySelector('.quiz');
+  return null;
+}
+function pollLive(){ // fallback when EventSource can't stream through a proxy
+  const tick=function(){ fetch('/api/presence/count?deck='+encodeURIComponent(DECK))
+    .then(function(r){return r.json();}).then(function(j){setOnline(j.online);}).catch(function(){}); };
+  tick(); setInterval(tick,20000);
+}
+(function connectLive(){
+  if(typeof EventSource==='undefined') return pollLive();
+  const es=new EventSource('/api/live?deck='+encodeURIComponent(DECK));
+  let opened=false;
+  es.onopen=function(){ opened=true; };
+  es.onmessage=function(ev){
+    let d; try{ d=JSON.parse(ev.data); }catch(e){ return; }
+    if(d.type==='hello'){ liveId=d.id; setOnline(d.online); sendSlide(); }
+    else if(d.type==='presence'){ setOnline(d.online); }
+    else if(d.type==='quiz'){ // live-update the chart on the quiz slide (only visible once answered)
+      const q=quizBySid(d.slide); if(q) renderQuizStats(q,{today:d.today,all:d.all});
+    }
+  };
+  es.onerror=function(){ if(!opened){ es.close(); pollLive(); } };
+})();
+</script>
+<script defer src="/meritpoint-slides/assets/auth.js"></script>
+</body></html>

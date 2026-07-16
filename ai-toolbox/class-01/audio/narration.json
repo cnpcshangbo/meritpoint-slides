@@ -1,0 +1,1259 @@
+{
+  "origin-ml-1959": {
+    "hash": "e81ad0d32a8a39e6",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let me take you back to 1959, to a room-sized IBM computer and an engineer named Arthur Samuel who did something genuinely radical. Instead of programming every move, he let his checkers program play thousands of games against itself, remembering which positions led to wins and tuning its own judgment along the way. By 1962 it beat a strong human player, and Samuel gave this idea a name we still use today: machine learning. That was the first real proof that a machine could get better from experience rather than just follow fixed rules — and that single idea, learning from data, is the seed of everything we'll study in this course.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 9.562,
+        "text": "Let me take you back to 1959, to a room-sized IBM computer and an engineer named Arthur Samuel who did something genuinely radical."
+      },
+      {
+        "start": 9.562,
+        "end": 21.525,
+        "text": "Instead of programming every move, he let his checkers program play thousands of games against itself, remembering which positions led to wins and tuning its own judgment along the way."
+      },
+      {
+        "start": 21.525,
+        "end": 30.2,
+        "text": "By 1962 it beat a strong human player, and Samuel gave this idea a name we still use today: machine learning."
+      },
+      {
+        "start": 30.2,
+        "end": 42.787,
+        "text": "That was the first real proof that a machine could get better from experience rather than just follow fixed rules — and that single idea, learning from data, is the seed of everything we'll study in this course."
+      }
+    ],
+    "bytes": 257040,
+    "model": "claude-opus-4-8"
+  },
+  "title": {
+    "hash": "0b08d9c2cbf88e7f",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Welcome, everyone, to the very first class of our AI Toolbox! Today we're chasing two big questions that every curious researcher needs to answer: what exactly is artificial intelligence, and what can it really do in the real world? We'll travel from the science fiction stories you know all the way to the technology sitting in your pocket right now. Along the way you'll explore its seventy-year history, take quizzes, and even run real code yourselves. So get comfortable, because this is going to be a fun ride.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.05,
+        "text": "Welcome, everyone, to the very first class of our AI Toolbox!"
+      },
+      {
+        "start": 5.05,
+        "end": 15.85,
+        "text": "Today we're chasing two big questions that every curious researcher needs to answer: what exactly is artificial intelligence, and what can it really do in the real world?"
+      },
+      {
+        "start": 15.85,
+        "end": 22.487,
+        "text": "We'll travel from the science fiction stories you know all the way to the technology sitting in your pocket right now."
+      },
+      {
+        "start": 22.487,
+        "end": 29.337,
+        "text": "Along the way you'll explore its seventy-year history, take quizzes, and even run real code yourselves."
+      },
+      {
+        "start": 29.337,
+        "end": 32.4,
+        "text": "So get comfortable, because this is going to be a fun ride."
+      }
+    ],
+    "bytes": 194688,
+    "model": "claude-opus-4-8"
+  },
+  "agenda": {
+    "hash": "58e8c2b65302af32",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's how our hour together is going to flow. We'll start with a quick warm-up and a whirlwind tour through seventy years of AI history, then look at AI on screen from the classics to what's coming next. We'll untangle how AI, machine learning, and deep learning nest inside each other, watch some live demos, and even write and run real Python right here in your browser. This is meant to be interactive, so jump in with questions and comments anytime using the button in the corner. By the end, you'll tell these ideas apart and see AI as a tool for discovery, not just a product.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.775,
+        "text": "Here's how our hour together is going to flow."
+      },
+      {
+        "start": 2.775,
+        "end": 12.037,
+        "text": "We'll start with a quick warm-up and a whirlwind tour through seventy years of AI history, then look at AI on screen from the classics to what's coming next."
+      },
+      {
+        "start": 12.037,
+        "end": 23.212,
+        "text": "We'll untangle how AI, machine learning, and deep learning nest inside each other, watch some live demos, and even write and run real Python right here in your browser."
+      },
+      {
+        "start": 23.212,
+        "end": 29.625,
+        "text": "This is meant to be interactive, so jump in with questions and comments anytime using the button in the corner."
+      },
+      {
+        "start": 29.625,
+        "end": 36.575,
+        "text": "By the end, you'll tell these ideas apart and see AI as a tool for discovery, not just a product."
+      }
+    ],
+    "bytes": 219744,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-warmup": {
+    "hash": "612a9a44d62d5ed5",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's start with something you probably did this morning without a second thought. You woke up, looked at your phone to unlock it, and your music app already had a song ready for you. So how many AI systems were quietly working there? Take a guess and tap your answer. The truth is at least two — your face unlock is a trained vision model, and those song suggestions come from a recommendation engine. AI is already woven into your day before you're even fully awake.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.862,
+        "text": "Let's start with something you probably did this morning without a second thought."
+      },
+      {
+        "start": 3.862,
+        "end": 9.312,
+        "text": "You woke up, looked at your phone to unlock it, and your music app already had a song ready for you."
+      },
+      {
+        "start": 9.312,
+        "end": 12.45,
+        "text": "So how many AI systems were quietly working there?"
+      },
+      {
+        "start": 12.45,
+        "end": 14.437,
+        "text": "Take a guess and tap your answer."
+      },
+      {
+        "start": 14.437,
+        "end": 22.025,
+        "text": "The truth is at least two — your face unlock is a trained vision model, and those song suggestions come from a recommendation engine."
+      },
+      {
+        "start": 22.025,
+        "end": 26.7,
+        "text": "AI is already woven into your day before you're even fully awake."
+      }
+    ],
+    "bytes": 160560,
+    "model": "claude-opus-4-8"
+  },
+  "story-teach-by-examples": {
+    "hash": "19d4fadbde8de279",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Picture this: back in 1956, ten brilliant scientists gathered at Dartmouth thinking they could build a thinking machine over a single summer. They gave it a name — artificial intelligence — and, honestly, they had no idea how hard the problem really was. But just three years later, Arthur Samuel did something clever: he wrote a checkers program that got better every time it played itself. That was the first spark of a huge idea — don't program intelligence, let the machine learn from examples.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 9.237,
+        "text": "Picture this: back in 1956, ten brilliant scientists gathered at Dartmouth thinking they could build a thinking machine over a single summer."
+      },
+      {
+        "start": 9.237,
+        "end": 16.462,
+        "text": "They gave it a name — artificial intelligence — and, honestly, they had no idea how hard the problem really was."
+      },
+      {
+        "start": 16.462,
+        "end": 25.087,
+        "text": "But just three years later, Arthur Samuel did something clever: he wrote a checkers program that got better every time it played itself."
+      },
+      {
+        "start": 25.087,
+        "end": 31.737,
+        "text": "That was the first spark of a huge idea — don't program intelligence, let the machine learn from examples."
+      }
+    ],
+    "bytes": 190800,
+    "model": "claude-opus-4-8"
+  },
+  "history-long-road": {
+    "hash": "e2169db34a3eb281",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's something that surprises a lot of people: artificial intelligence isn't new at all. The term was actually coined back in 1956, and since then the field has ridden this rollercoaster of booms and busts — two winters, two springs, and now the era we're living in today. Notice the pattern: every boom felt unstoppable, and every winter felt like it would last forever, but neither was true. So as you look at today's incredible progress, stay level-headed and always ask yourself what's real and what's just hype.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.575,
+        "text": "Here's something that surprises a lot of people: artificial intelligence isn't new at all."
+      },
+      {
+        "start": 5.575,
+        "end": 17.3,
+        "text": "The term was actually coined back in 1956, and since then the field has ridden this rollercoaster of booms and busts — two winters, two springs, and now the era we're living in today."
+      },
+      {
+        "start": 17.3,
+        "end": 25.537,
+        "text": "Notice the pattern: every boom felt unstoppable, and every winter felt like it would last forever, but neither was true."
+      },
+      {
+        "start": 25.537,
+        "end": 33.012,
+        "text": "So as you look at today's incredible progress, stay level-headed and always ask yourself what's real and what's just hype."
+      }
+    ],
+    "bytes": 198432,
+    "model": "claude-opus-4-8"
+  },
+  "hook-think-pair-share": {
+    "hash": "80999dc6ea458307",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, take a look at these five everyday things: face unlock, autocomplete, a thermostat, a chess app, and a plain calculator. Here's my question for you — which of these actually count as artificial intelligence, and more importantly, how would you decide? Turn to the person next to you and argue it out for a minute. Don't worry if you disagree, because I'm not going to tell you the answer yet — the next three clips will hand you a rule to figure it out yourselves.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 8.937,
+        "text": "Alright, take a look at these five everyday things: face unlock, autocomplete, a thermostat, a chess app, and a plain calculator."
+      },
+      {
+        "start": 8.937,
+        "end": 16.337,
+        "text": "Here's my question for you — which of these actually count as artificial intelligence, and more importantly, how would you decide?"
+      },
+      {
+        "start": 16.337,
+        "end": 19.912,
+        "text": "Turn to the person next to you and argue it out for a minute."
+      },
+      {
+        "start": 19.912,
+        "end": 27.825,
+        "text": "Don't worry if you disagree, because I'm not going to tell you the answer yet — the next three clips will hand you a rule to figure it out yourselves."
+      }
+    ],
+    "bytes": 167328,
+    "model": "claude-opus-4-8"
+  },
+  "video-deep-blue": {
+    "hash": "e1768bb0cd1d5f17",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Picture this: back in 1997, a machine called Deep Blue beat the world chess champion, Garry Kasparov. But here's the twist — it never actually learned to play chess. Instead, it searched around two hundred million positions every single second, following rules that human experts had written by hand. It was brilliant at exactly one thing and completely useless at everything else. So was it really intelligent, or just a very fast rule-follower? That line, you'll find, is surprisingly blurry.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.8870000000000005,
+        "text": "Picture this: back in 1997, a machine called Deep Blue beat the world chess champion, Garry Kasparov."
+      },
+      {
+        "start": 7.8870000000000005,
+        "end": 11.425,
+        "text": "But here's the twist — it never actually learned to play chess."
+      },
+      {
+        "start": 11.425,
+        "end": 19.887,
+        "text": "Instead, it searched around two hundred million positions every single second, following rules that human experts had written by hand."
+      },
+      {
+        "start": 19.887,
+        "end": 25.425,
+        "text": "It was brilliant at exactly one thing and completely useless at everything else."
+      },
+      {
+        "start": 25.425,
+        "end": 30.262,
+        "text": "So was it really intelligent, or just a very fast rule-follower?"
+      },
+      {
+        "start": 30.262,
+        "end": 33.625,
+        "text": "That line, you'll find, is surprisingly blurry."
+      }
+    ],
+    "bytes": 202176,
+    "model": "claude-opus-4-8"
+  },
+  "video-chatgpt": {
+    "hash": "5e90ef24b4681288",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's something amazing about the AI we use today: nobody sat down and wrote out the rules of grammar for it. Instead, it learned language by studying oceans of examples, spotting patterns on its own. That's why one single model can chat with you, summarize an article, translate between languages, and even write code. But keep this in mind — it's still not truly understanding, and it can confidently make things up. Let's watch it in action.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.9,
+        "text": "Here's something amazing about the AI we use today: nobody sat down and wrote out the rules of grammar for it."
+      },
+      {
+        "start": 6.9,
+        "end": 12.662,
+        "text": "Instead, it learned language by studying oceans of examples, spotting patterns on its own."
+      },
+      {
+        "start": 12.662,
+        "end": 20.025,
+        "text": "That's why one single model can chat with you, summarize an article, translate between languages, and even write code."
+      },
+      {
+        "start": 20.025,
+        "end": 25.887,
+        "text": "But keep this in mind — it's still not truly understanding, and it can confidently make things up."
+      },
+      {
+        "start": 25.887,
+        "end": 27.2,
+        "text": "Let's watch it in action."
+      }
+    ],
+    "bytes": 163584,
+    "model": "claude-opus-4-8"
+  },
+  "video-her-agi": {
+    "hash": "a4f7e2046ae53850",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Now let's look at the kind of AI you see in movies, like the film \"Her,\" where a computer can talk, learn anything, and even set its own goals. That idea has a name — Artificial General Intelligence, one system that reasons across everything the way a human can. But here's the crucial part: it doesn't actually exist yet. A movie is not evidence, and learning to tell the real science from the sci-fi is genuinely one of the sharpest skills you can build.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 8.487,
+        "text": "Now let's look at the kind of AI you see in movies, like the film \"Her,\" where a computer can talk, learn anything, and even set its own goals."
+      },
+      {
+        "start": 8.487,
+        "end": 16.562,
+        "text": "That idea has a name — Artificial General Intelligence, one system that reasons across everything the way a human can."
+      },
+      {
+        "start": 16.562,
+        "end": 20.3,
+        "text": "But here's the crucial part: it doesn't actually exist yet."
+      },
+      {
+        "start": 20.3,
+        "end": 28.437,
+        "text": "A movie is not evidence, and learning to tell the real science from the sci-fi is genuinely one of the sharpest skills you can build."
+      }
+    ],
+    "bytes": 170928,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-after-clips": {
+    "hash": "f4620a08ba6605d1",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's put this to the test. Think back to Deep Blue, the computer that beat the world chess champion. It searched through millions of possible moves using rules that human experts had carefully written by hand. So which kind of AI is that? Take a moment and pick your answer. The key clue is that it never learned anything from data — those rules were handed to it by people, and that's exactly what sets it apart from the machine learning we use today.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.337,
+        "text": "Alright, let's put this to the test."
+      },
+      {
+        "start": 2.337,
+        "end": 7.225,
+        "text": "Think back to Deep Blue, the computer that beat the world chess champion."
+      },
+      {
+        "start": 7.225,
+        "end": 13.75,
+        "text": "It searched through millions of possible moves using rules that human experts had carefully written by hand."
+      },
+      {
+        "start": 13.75,
+        "end": 15.537,
+        "text": "So which kind of AI is that?"
+      },
+      {
+        "start": 15.537,
+        "end": 17.637,
+        "text": "Take a moment and pick your answer."
+      },
+      {
+        "start": 17.637,
+        "end": 27.675,
+        "text": "The key clue is that it never learned anything from data — those rules were handed to it by people, and that's exactly what sets it apart from the machine learning we use today."
+      }
+    ],
+    "bytes": 166464,
+    "model": "claude-opus-4-8"
+  },
+  "concept-ai-ml-dl": {
+    "hash": "2bb0485bb36bd078",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's clear up some words that people throw around all the time. Think of these as circles nested inside each other. Artificial intelligence is the biggest circle, the whole idea of machines acting smart. Inside that sits machine learning, systems that get better by studying data instead of following rules we write by hand, and deep learning is a special corner of that using many-layered neural networks. So when someone says \"AI\" today, they usually mean machine learning.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.987,
+        "text": "Let's clear up some words that people throw around all the time."
+      },
+      {
+        "start": 2.987,
+        "end": 6.8,
+        "text": "Think of these as circles nested inside each other."
+      },
+      {
+        "start": 6.8,
+        "end": 13.337,
+        "text": "Artificial intelligence is the biggest circle, the whole idea of machines acting smart."
+      },
+      {
+        "start": 13.337,
+        "end": 25.425,
+        "text": "Inside that sits machine learning, systems that get better by studying data instead of following rules we write by hand, and deep learning is a special corner of that using many-layered neural networks."
+      },
+      {
+        "start": 25.425,
+        "end": 30.125,
+        "text": "So when someone says \"AI\" today, they usually mean machine learning."
+      }
+    ],
+    "bytes": 181152,
+    "model": "claude-opus-4-8"
+  },
+  "concept-layer-tech": {
+    "hash": "270708b8e47ca371",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Think of these as three rings, each running on its own kind of machinery. At the outer edge, classic AI is the grand vision, driven by clever rules and search — that's where a chess champion like Deep Blue lived. Step inward and machine learning stops relying on hand-written rules and starts learning straight from data. Then deep learning, with its neural networks hungry for huge data and computing power, is the tool that cracked vision and language and set off the boom of the last decade.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.1,
+        "text": "Think of these as three rings, each running on its own kind of machinery."
+      },
+      {
+        "start": 5.1,
+        "end": 14.462,
+        "text": "At the outer edge, classic AI is the grand vision, driven by clever rules and search — that's where a chess champion like Deep Blue lived."
+      },
+      {
+        "start": 14.462,
+        "end": 20.612,
+        "text": "Step inward and machine learning stops relying on hand-written rules and starts learning straight from data."
+      },
+      {
+        "start": 20.612,
+        "end": 31.525,
+        "text": "Then deep learning, with its neural networks hungry for huge data and computing power, is the tool that cracked vision and language and set off the boom of the last decade."
+      }
+    ],
+    "bytes": 189504,
+    "model": "claude-opus-4-8"
+  },
+  "concept-3": {
+    "hash": "71947877714b3039",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's something wild: you've probably used a dozen AI systems before lunch without even noticing. Think about it — your morning feed suggesting videos, your spam filter cleaning your inbox, maps finding you the fastest route, your phone recognizing your face to unlock. Each of these is a model trained on data — not a person hiding behind a screen, not magic, and not someone hand-writing every rule. The first real research skill is simply learning to spot the AI hiding in plain sight, then asking: what data trained it?",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.775,
+        "text": "Here's something wild: you've probably used a dozen AI systems before lunch without even noticing."
+      },
+      {
+        "start": 5.775,
+        "end": 17.1,
+        "text": "Think about it — your morning feed suggesting videos, your spam filter cleaning your inbox, maps finding you the fastest route, your phone recognizing your face to unlock."
+      },
+      {
+        "start": 17.1,
+        "end": 26.05,
+        "text": "Each of these is a model trained on data — not a person hiding behind a screen, not magic, and not someone hand-writing every rule."
+      },
+      {
+        "start": 26.05,
+        "end": 34.462,
+        "text": "The first real research skill is simply learning to spot the AI hiding in plain sight, then asking: what data trained it?"
+      }
+    ],
+    "bytes": 207072,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-concepts": {
+    "hash": "f12ebd504cf83e2a",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, quick check — tap the answer you think is true. Here's the key idea to hold onto: these three fit inside each other like nested circles. Deep learning sits inside machine learning, and machine learning sits inside AI. So every machine-learning system counts as AI, but not every AI learns from data — think of an old chess program like Deep Blue that just followed hand-written rules. Give it a shot!",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.4,
+        "text": "Alright, quick check — tap the answer you think is true."
+      },
+      {
+        "start": 3.4,
+        "end": 9.925,
+        "text": "Here's the key idea to hold onto: these three fit inside each other like nested circles."
+      },
+      {
+        "start": 9.925,
+        "end": 15.437,
+        "text": "Deep learning sits inside machine learning, and machine learning sits inside AI."
+      },
+      {
+        "start": 15.437,
+        "end": 26.1,
+        "text": "So every machine-learning system counts as AI, but not every AI learns from data — think of an old chess program like Deep Blue that just followed hand-written rules."
+      },
+      {
+        "start": 26.1,
+        "end": 27.1,
+        "text": "Give it a shot!"
+      }
+    ],
+    "bytes": 163008,
+    "model": "claude-opus-4-8"
+  },
+  "application-map": {
+    "hash": "718fb2b0d08cbe9c",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Look at all the places AI is already working today. In medicine, it reads scans and spots tumors as well as expert doctors. In biology, AlphaFold cracked a fifty-year puzzle by predicting almost every human protein structure. It forecasts wild weather, catches fraud in real time, paints pictures from words, and drives our cars. The same core idea — learning patterns from data — reshaped every one of these fields. So which one is calling your name?",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.212,
+        "text": "Look at all the places AI is already working today."
+      },
+      {
+        "start": 3.212,
+        "end": 8.262,
+        "text": "In medicine, it reads scans and spots tumors as well as expert doctors."
+      },
+      {
+        "start": 8.262,
+        "end": 15.575,
+        "text": "In biology, AlphaFold cracked a fifty-year puzzle by predicting almost every human protein structure."
+      },
+      {
+        "start": 15.575,
+        "end": 22.662,
+        "text": "It forecasts wild weather, catches fraud in real time, paints pictures from words, and drives our cars."
+      },
+      {
+        "start": 22.662,
+        "end": 28.862,
+        "text": "The same core idea — learning patterns from data — reshaped every one of these fields."
+      },
+      {
+        "start": 28.862,
+        "end": 30.475,
+        "text": "So which one is calling your name?"
+      }
+    ],
+    "bytes": 183168,
+    "model": "claude-opus-4-8"
+  },
+  "spotlight-science": {
+    "hash": "724b291dbb4faa74",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's something that genuinely gives me goosebumps. Proteins are the tiny machines that run your body, and their exact three-dimensional shape decides what they do — but for fifty years, figuring out those shapes stumped the smartest biologists on Earth. Then AlphaFold predicted them at near-atomic accuracy, mapping almost every human protein and giving it away for free to labs worldwide. What used to take months in a lab now takes seconds. That's AI not as a chatbot, but as a microscope for life itself.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.85,
+        "text": "Here's something that genuinely gives me goosebumps."
+      },
+      {
+        "start": 2.85,
+        "end": 15.125,
+        "text": "Proteins are the tiny machines that run your body, and their exact three-dimensional shape decides what they do — but for fifty years, figuring out those shapes stumped the smartest biologists on Earth."
+      },
+      {
+        "start": 15.125,
+        "end": 25.2,
+        "text": "Then AlphaFold predicted them at near-atomic accuracy, mapping almost every human protein and giving it away for free to labs worldwide."
+      },
+      {
+        "start": 25.2,
+        "end": 28.7,
+        "text": "What used to take months in a lab now takes seconds."
+      },
+      {
+        "start": 28.7,
+        "end": 33.387,
+        "text": "That's AI not as a chatbot, but as a microscope for life itself."
+      }
+    ],
+    "bytes": 200736,
+    "model": "claude-opus-4-8"
+  },
+  "concept-research-tool": {
+    "hash": "2c8bcd2b58d9d7e8",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's something exciting: think of AI not just as a product you use, but as an instrument, like a microscope. A microscope doesn't do the science for you, but it lets you see things you never could before. AI can scan hundreds of papers in minutes, suggest hidden connections in your data, crunch massive datasets, and even help you write and debug code without being a programmer. Next, I'll show you a real workflow that turns a fuzzy idea into a finished, polished paper.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.725,
+        "text": "Here's something exciting: think of AI not just as a product you use, but as an instrument, like a microscope."
+      },
+      {
+        "start": 6.725,
+        "end": 12.175,
+        "text": "A microscope doesn't do the science for you, but it lets you see things you never could before."
+      },
+      {
+        "start": 12.175,
+        "end": 23.1,
+        "text": "AI can scan hundreds of papers in minutes, suggest hidden connections in your data, crunch massive datasets, and even help you write and debug code without being a programmer."
+      },
+      {
+        "start": 23.1,
+        "end": 29.537,
+        "text": "Next, I'll show you a real workflow that turns a fuzzy idea into a finished, polished paper."
+      }
+    ],
+    "bytes": 177552,
+    "model": "claude-opus-4-8"
+  },
+  "research-workflow": {
+    "hash": "cf7d916066ad1b0e",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let me walk you through how this actually works from start to finish. You begin with just a topic, and the AI helps sharpen it into a real research question, then hands you a brief to work from. From there a coding agent builds a draft and turns it into a PDF that you read and comment on. Here's the key part: those last three steps form a loop you repeat until the work is genuinely good. The AI does the heavy lifting, but your judgement stays in charge the whole way.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.075,
+        "text": "Let me walk you through how this actually works from start to finish."
+      },
+      {
+        "start": 4.075,
+        "end": 11.45,
+        "text": "You begin with just a topic, and the AI helps sharpen it into a real research question, then hands you a brief to work from."
+      },
+      {
+        "start": 11.45,
+        "end": 17.225,
+        "text": "From there a coding agent builds a draft and turns it into a PDF that you read and comment on."
+      },
+      {
+        "start": 17.225,
+        "end": 23.562,
+        "text": "Here's the key part: those last three steps form a loop you repeat until the work is genuinely good."
+      },
+      {
+        "start": 23.562,
+        "end": 28.575,
+        "text": "The AI does the heavy lifting, but your judgement stays in charge the whole way."
+      }
+    ],
+    "bytes": 171792,
+    "model": "claude-opus-4-8"
+  },
+  "what-you-learn": {
+    "hash": "52da791356d806a4",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the thing I really want you to walk away with today: this whole process is training two skills that will serve you for life. The first is the skill of asking — learning to pick and sharpen a question that's specific, measurable, and actually answerable, because that choice shapes everything that follows. The second is the skill of judging — reading a draft and saying precisely what's strong, what's broken, and what to fix. AI can do the drafting for you, but it can't ask your question or defend your taste. Those stay human, and those are exactly what we grade.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.687,
+        "text": "Here's the thing I really want you to walk away with today: this whole process is training two skills that will serve you for life."
+      },
+      {
+        "start": 7.687,
+        "end": 18.375,
+        "text": "The first is the skill of asking — learning to pick and sharpen a question that's specific, measurable, and actually answerable, because that choice shapes everything that follows."
+      },
+      {
+        "start": 18.375,
+        "end": 26.2,
+        "text": "The second is the skill of judging — reading a draft and saying precisely what's strong, what's broken, and what to fix."
+      },
+      {
+        "start": 26.2,
+        "end": 31.075,
+        "text": "AI can do the drafting for you, but it can't ask your question or defend your taste."
+      },
+      {
+        "start": 31.075,
+        "end": 34.487,
+        "text": "Those stay human, and those are exactly what we grade."
+      }
+    ],
+    "bytes": 207216,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-workflow": {
+    "hash": "c9510d2941c90ab1",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's think about steps six, seven, and eight for a moment. You review the work, the AI revises based on your comments, and the document updates — and then you do it all over again. This isn't a one-time final step; it's a loop you keep repeating until the work is genuinely strong. And here's the key: your judgement is what drives the whole thing. The AI responds to you, not the other way around.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.987,
+        "text": "Let's think about steps six, seven, and eight for a moment."
+      },
+      {
+        "start": 3.987,
+        "end": 11.825,
+        "text": "You review the work, the AI revises based on your comments, and the document updates — and then you do it all over again."
+      },
+      {
+        "start": 11.825,
+        "end": 18.337,
+        "text": "This isn't a one-time final step; it's a loop you keep repeating until the work is genuinely strong."
+      },
+      {
+        "start": 18.337,
+        "end": 22.275,
+        "text": "And here's the key: your judgement is what drives the whole thing."
+      },
+      {
+        "start": 22.275,
+        "end": 25.462,
+        "text": "The AI responds to you, not the other way around."
+      }
+    ],
+    "bytes": 153072,
+    "model": "claude-opus-4-8"
+  },
+  "demo-chatgpt": {
+    "hash": "b1ccca81b2faf347",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's actually watch this in action. I'm going to ask it a few things — to explain some tricky concepts simply, to help brainstorm research questions, and to give real examples of AI in medicine. Watch how helpful and confident it sounds. But keep your eye on that last question about Australia's capital, because sometimes it answers with total confidence even when it's wrong — and that's exactly why we're going to cross-check everything in a moment.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.737,
+        "text": "Alright, let's actually watch this in action."
+      },
+      {
+        "start": 2.737,
+        "end": 12.825,
+        "text": "I'm going to ask it a few things — to explain some tricky concepts simply, to help brainstorm research questions, and to give real examples of AI in medicine."
+      },
+      {
+        "start": 12.825,
+        "end": 15.537,
+        "text": "Watch how helpful and confident it sounds."
+      },
+      {
+        "start": 15.537,
+        "end": 26.625,
+        "text": "But keep your eye on that last question about Australia's capital, because sometimes it answers with total confidence even when it's wrong — and that's exactly why we're going to cross-check everything in a moment."
+      }
+    ],
+    "bytes": 160128,
+    "model": "claude-opus-4-8"
+  },
+  "demo-perplexity": {
+    "hash": "063bf88f538f18ae",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Now let me show you a different tool called Perplexity. Think of it like ChatGPT, but with a superpower: it actually searches the web and shows you exactly where each answer came from. So when it tells you the capital of Australia, or how AI is helping climate scientists, you can click through and check the real source yourself. That's the golden rule with any AI — trust, but verify. Always open the link and see if the claim really holds up.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.287,
+        "text": "Now let me show you a different tool called Perplexity."
+      },
+      {
+        "start": 3.287,
+        "end": 11.45,
+        "text": "Think of it like ChatGPT, but with a superpower: it actually searches the web and shows you exactly where each answer came from."
+      },
+      {
+        "start": 11.45,
+        "end": 20.15,
+        "text": "So when it tells you the capital of Australia, or how AI is helping climate scientists, you can click through and check the real source yourself."
+      },
+      {
+        "start": 20.15,
+        "end": 24.512,
+        "text": "That's the golden rule with any AI — trust, but verify."
+      },
+      {
+        "start": 24.512,
+        "end": 28.137,
+        "text": "Always open the link and see if the claim really holds up."
+      }
+    ],
+    "bytes": 169200,
+    "model": "claude-opus-4-8"
+  },
+  "demo-scholarmind": {
+    "hash": "416972a3f1900151",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let me show you something we'll actually use all term long. Imagine you walk in with just a vague spark — \"I like animals and cameras\" — and this tool pushes you to turn that into three sharp, testable research questions. Then you pick one, and it helps you figure out what data you'd need, what model to build, and how you'd measure success. Finally, it hands you a research brief you can download and drop straight into a coding agent. Think of this as your personal lab bench for everything we do together.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.55,
+        "text": "Alright, let me show you something we'll actually use all term long."
+      },
+      {
+        "start": 3.55,
+        "end": 13.475,
+        "text": "Imagine you walk in with just a vague spark — \"I like animals and cameras\" — and this tool pushes you to turn that into three sharp, testable research questions."
+      },
+      {
+        "start": 13.475,
+        "end": 20.475,
+        "text": "Then you pick one, and it helps you figure out what data you'd need, what model to build, and how you'd measure success."
+      },
+      {
+        "start": 20.475,
+        "end": 26.4,
+        "text": "Finally, it hands you a research brief you can download and drop straight into a coding agent."
+      },
+      {
+        "start": 26.4,
+        "end": 31.175,
+        "text": "Think of this as your personal lab bench for everything we do together."
+      }
+    ],
+    "bytes": 187344,
+    "model": "claude-opus-4-8"
+  },
+  "lab-python-pattern": {
+    "hash": "af73885389b1d4a2",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, time to get our hands dirty with some real Python and a tiny slice of Titanic history. What we're doing here is exactly what a data scientist does — asking the data a question and letting it answer. Run the code and you'll see the survival rates for women, men, and first-class passengers pop out, just from counting patterns. Then take on the challenge: figure out the survival rate for third-class men, and don't be shy about asking the assistant to explain anything that feels tricky.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.725,
+        "text": "Alright, time to get our hands dirty with some real Python and a tiny slice of Titanic history."
+      },
+      {
+        "start": 5.725,
+        "end": 12.162,
+        "text": "What we're doing here is exactly what a data scientist does — asking the data a question and letting it answer."
+      },
+      {
+        "start": 12.162,
+        "end": 19.737,
+        "text": "Run the code and you'll see the survival rates for women, men, and first-class passengers pop out, just from counting patterns."
+      },
+      {
+        "start": 19.737,
+        "end": 29.562,
+        "text": "Then take on the challenge: figure out the survival rate for third-class men, and don't be shy about asking the assistant to explain anything that feels tricky."
+      }
+    ],
+    "bytes": 177696,
+    "model": "claude-opus-4-8"
+  },
+  "lab-model-learn": {
+    "hash": "f9b03e0b32b186bb",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's where it gets exciting — we're going to watch a model actually learn a rule all by itself. We give it some simple data: how many hours students studied, and whether they passed. Notice there's no if-statement telling it \"four hours means pass.\" Instead, it makes a guess, checks how wrong it was, and nudges itself two thousand times until it gets good. Run it, then ask the assistant to explain how it learns, and try the challenge of changing that learning rate.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.1370000000000005,
+        "text": "Alright, here's where it gets exciting — we're going to watch a model actually learn a rule all by itself."
+      },
+      {
+        "start": 6.1370000000000005,
+        "end": 11.437,
+        "text": "We give it some simple data: how many hours students studied, and whether they passed."
+      },
+      {
+        "start": 11.437,
+        "end": 15.887,
+        "text": "Notice there's no if-statement telling it \"four hours means pass.\""
+      },
+      {
+        "start": 15.887,
+        "end": 22.425,
+        "text": "Instead, it makes a guess, checks how wrong it was, and nudges itself two thousand times until it gets good."
+      },
+      {
+        "start": 22.425,
+        "end": 29.075,
+        "text": "Run it, then ask the assistant to explain how it learns, and try the challenge of changing that learning rate."
+      }
+    ],
+    "bytes": 174816,
+    "model": "claude-opus-4-8"
+  },
+  "case-study": {
+    "hash": "d5fb0d8035079e1f",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's follow one example through the whole course: teaching a car to drive itself. The car's brain really does three jobs. First it has to see the world — spot pedestrians, other cars, and street signs from camera images. Then it predicts where everything will move next, and finally it decides whether to brake, steer, or keep going. We're going to live in that first job, perception, because if the car sees wrong, even perfect prediction and planning can't keep anyone safe.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.162,
+        "text": "Let's follow one example through the whole course: teaching a car to drive itself."
+      },
+      {
+        "start": 5.162,
+        "end": 7.7620000000000005,
+        "text": "The car's brain really does three jobs."
+      },
+      {
+        "start": 7.7620000000000005,
+        "end": 13.6,
+        "text": "First it has to see the world — spot pedestrians, other cars, and street signs from camera images."
+      },
+      {
+        "start": 13.6,
+        "end": 20.737,
+        "text": "Then it predicts where everything will move next, and finally it decides whether to brake, steer, or keep going."
+      },
+      {
+        "start": 20.737,
+        "end": 28.837,
+        "text": "We're going to live in that first job, perception, because if the car sees wrong, even perfect prediction and planning can't keep anyone safe."
+      }
+    ],
+    "bytes": 173376,
+    "model": "claude-opus-4-8"
+  },
+  "discuss-pick-side": {
+    "hash": "7cf75471275eb918",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's where you get to do the thinking. Artificial intelligence can free us from boring, repetitive tasks, speed up scientific discovery, and personalize learning and healthcare—but it can also disrupt jobs, erode our privacy, bake in bias, and be misused in dangerous ways. So turn to the person next to you and pick a side: does the opportunity outweigh the risk, or the other way around? You've got three minutes, and I want specific reasons—not just gut feelings. Drop your take in the comments and let's see where you land.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.6,
+        "text": "Alright, here's where you get to do the thinking."
+      },
+      {
+        "start": 2.6,
+        "end": 18.262,
+        "text": "Artificial intelligence can free us from boring, repetitive tasks, speed up scientific discovery, and personalize learning and healthcare—but it can also disrupt jobs, erode our privacy, bake in bias, and be misused in dangerous ways."
+      },
+      {
+        "start": 18.262,
+        "end": 25.5,
+        "text": "So turn to the person next to you and pick a side: does the opportunity outweigh the risk, or the other way around?"
+      },
+      {
+        "start": 25.5,
+        "end": 30.887,
+        "text": "You've got three minutes, and I want specific reasons—not just gut feelings."
+      },
+      {
+        "start": 30.887,
+        "end": 34.05,
+        "text": "Drop your take in the comments and let's see where you land."
+      }
+    ],
+    "bytes": 204624,
+    "model": "claude-opus-4-8"
+  },
+  "your-project": {
+    "hash": "8510176a2dd39872",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's your mission, and it's exactly what real researchers do when they enter a new field. Pick a domain you genuinely care about — medicine, sport, music, climate, whatever excites you — and go hunt down three real AI systems working in it right now. Use the tools to dig, then sketch a mind map connecting them. But here's the catch: I don't want \"AI helps doctors.\" I want specifics, each one labeled with what goes in and what comes out — like Hawk-Eye takes ball footage and gives an in-or-out call.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.5,
+        "text": "Here's your mission, and it's exactly what real researchers do when they enter a new field."
+      },
+      {
+        "start": 5.5,
+        "end": 15.387,
+        "text": "Pick a domain you genuinely care about — medicine, sport, music, climate, whatever excites you — and go hunt down three real AI systems working in it right now."
+      },
+      {
+        "start": 15.387,
+        "end": 19.162,
+        "text": "Use the tools to dig, then sketch a mind map connecting them."
+      },
+      {
+        "start": 19.162,
+        "end": 22.9,
+        "text": "But here's the catch: I don't want \"AI helps doctors.\""
+      },
+      {
+        "start": 22.9,
+        "end": 30.337,
+        "text": "I want specifics, each one labeled with what goes in and what comes out — like Hawk-Eye takes ball footage and gives an in-or-out call."
+      }
+    ],
+    "bytes": 182448,
+    "model": "claude-opus-4-8"
+  },
+  "build-it-now": {
+    "hash": "056e98919e7e0ba0",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's actually build something right now. Open both ChatGPT and Perplexity, and ask them how AI is used in a field you care about — request three specific systems, with sources. Then here's the part I care about most: verify every single one. Open the source, check it's real, because Perplexity shows where its answers come from, which makes it perfect for fact-checking ChatGPT. Once you've confirmed they're real, sketch it all into a mind map — that's the skill of judging in action.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.7,
+        "text": "Alright, let's actually build something right now."
+      },
+      {
+        "start": 2.7,
+        "end": 13.212,
+        "text": "Open both ChatGPT and Perplexity, and ask them how AI is used in a field you care about — request three specific systems, with sources."
+      },
+      {
+        "start": 13.212,
+        "end": 17.825,
+        "text": "Then here's the part I care about most: verify every single one."
+      },
+      {
+        "start": 17.825,
+        "end": 26.387,
+        "text": "Open the source, check it's real, because Perplexity shows where its answers come from, which makes it perfect for fact-checking ChatGPT."
+      },
+      {
+        "start": 26.387,
+        "end": 32.237,
+        "text": "Once you've confirmed they're real, sketch it all into a mind map — that's the skill of judging in action."
+      }
+    ],
+    "bytes": 193824,
+    "model": "claude-opus-4-8"
+  },
+  "reference-key-terms": {
+    "hash": "77a92c04f47a3cb5",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's build our shared vocabulary, because these six words will follow us all semester. Artificial intelligence is simply machines doing tasks that usually need human smarts, and machine learning is when those systems pick up patterns from data instead of being told every rule. Deep learning takes that further with many-layered neural networks for really complex problems. Then we have perception, prediction, and planning — seeing, guessing, and deciding what to do next. Come back here whenever a term trips you up.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.325,
+        "text": "Let's build our shared vocabulary, because these six words will follow us all semester."
+      },
+      {
+        "start": 5.325,
+        "end": 17.312,
+        "text": "Artificial intelligence is simply machines doing tasks that usually need human smarts, and machine learning is when those systems pick up patterns from data instead of being told every rule."
+      },
+      {
+        "start": 17.312,
+        "end": 23.375,
+        "text": "Deep learning takes that further with many-layered neural networks for really complex problems."
+      },
+      {
+        "start": 23.375,
+        "end": 29.562,
+        "text": "Then we have perception, prediction, and planning — seeing, guessing, and deciding what to do next."
+      },
+      {
+        "start": 29.562,
+        "end": 31.962,
+        "text": "Come back here whenever a term trips you up."
+      }
+    ],
+    "bytes": 192096,
+    "model": "claude-opus-4-8"
+  },
+  "homework": {
+    "hash": "8889fb960c48c9d0",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Before we meet again, I'd love for you to finish your AI application map — pick three real cases and trace each one from input to output, because we'll share them together. Then explore a field you genuinely love, find a recent use of AI, and note what problem it actually solves. Go back to today's lab, change just one thing, and bring me a question about what happened. And if you're feeling adventurous, peek at the Titanic challenge — just skim how people move from data to a prediction. Bring curiosity, not perfection.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 11.037,
+        "text": "Before we meet again, I'd love for you to finish your AI application map — pick three real cases and trace each one from input to output, because we'll share them together."
+      },
+      {
+        "start": 11.037,
+        "end": 17.925,
+        "text": "Then explore a field you genuinely love, find a recent use of AI, and note what problem it actually solves."
+      },
+      {
+        "start": 17.925,
+        "end": 23.312,
+        "text": "Go back to today's lab, change just one thing, and bring me a question about what happened."
+      },
+      {
+        "start": 23.312,
+        "end": 30.45,
+        "text": "And if you're feeling adventurous, peek at the Titanic challenge — just skim how people move from data to a prediction."
+      },
+      {
+        "start": 30.45,
+        "end": 33.462,
+        "text": "Bring curiosity, not perfection."
+      }
+    ],
+    "bytes": 201168,
+    "model": "claude-opus-4-8"
+  },
+  "line-to-remember": {
+    "hash": "f898dd12a9706d81",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a line I want you to carry with you: \"The best way to predict the future is to invent it.\" Alan Kay said that, and it captures exactly what this course is about. We're not here just to guess where artificial intelligence is heading, and we're certainly not here just to consume what others build. We're here to create it, to shape it, to invent the future with our own hands. So let's get started.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.975,
+        "text": "Here's a line I want you to carry with you: \"The best way to predict the future is to invent it.\""
+      },
+      {
+        "start": 5.975,
+        "end": 10.45,
+        "text": "Alan Kay said that, and it captures exactly what this course is about."
+      },
+      {
+        "start": 10.45,
+        "end": 17.537,
+        "text": "We're not here just to guess where artificial intelligence is heading, and we're certainly not here just to consume what others build."
+      },
+      {
+        "start": 17.537,
+        "end": 22.987,
+        "text": "We're here to create it, to shape it, to invent the future with our own hands."
+      },
+      {
+        "start": 22.987,
+        "end": 24.225,
+        "text": "So let's get started."
+      }
+    ],
+    "bytes": 145728,
+    "model": "claude-opus-4-8"
+  },
+  "wrap-up": {
+    "hash": "662e934a8f13086f",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's pull together the three big ideas I want you to carry out of here today. First, remember that AI, machine learning, and deep learning are nested inside one another — they're not the same thing. Second, AI is already all around you and woven into every field of science. And third, it's just an instrument — you still own the real question and the judgment behind it. So before you go, drop me a comment naming one AI system you used today and take a guess at what data trained it. Next time, we'll turn a vague interest into a real research question.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.45,
+        "text": "Let's pull together the three big ideas I want you to carry out of here today."
+      },
+      {
+        "start": 4.45,
+        "end": 12.25,
+        "text": "First, remember that AI, machine learning, and deep learning are nested inside one another — they're not the same thing."
+      },
+      {
+        "start": 12.25,
+        "end": 18.112,
+        "text": "Second, AI is already all around you and woven into every field of science."
+      },
+      {
+        "start": 18.112,
+        "end": 24.075,
+        "text": "And third, it's just an instrument — you still own the real question and the judgment behind it."
+      },
+      {
+        "start": 24.075,
+        "end": 30.962,
+        "text": "So before you go, drop me a comment naming one AI system you used today and take a guess at what data trained it."
+      },
+      {
+        "start": 30.962,
+        "end": 35.512,
+        "text": "Next time, we'll turn a vague interest into a real research question."
+      }
+    ],
+    "bytes": 213408,
+    "model": "claude-opus-4-8"
+  },
+  "backup-material": {
+    "hash": "551d047335fa531f",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, so we've reached the bonus territory. Everything from here is extra—deeper dives, more practice, and a few fun detours if we've got the time. If your curiosity is really fired up today, we can explore how audiovisual perception actually works, dig into the tech behind AI seeing images, and even wrestle with some of the creativity and controversy in AI art. Think of these as your choose-your-own-adventure options.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.187,
+        "text": "Alright, so we've reached the bonus territory."
+      },
+      {
+        "start": 3.187,
+        "end": 10.25,
+        "text": "Everything from here is extra—deeper dives, more practice, and a few fun detours if we've got the time."
+      },
+      {
+        "start": 10.25,
+        "end": 25.187,
+        "text": "If your curiosity is really fired up today, we can explore how audiovisual perception actually works, dig into the tech behind AI seeing images, and even wrestle with some of the creativity and controversy in AI art."
+      },
+      {
+        "start": 25.187,
+        "end": 28.662,
+        "text": "Think of these as your choose-your-own-adventure options."
+      }
+    ],
+    "bytes": 172368,
+    "model": "claude-opus-4-8"
+  },
+  "backup-deep-dive": {
+    "hash": "de00c1a57d018a99",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's peek under the hood at the three jobs a self-driving car juggles every single second. First, perception: the car uses cameras and neural networks to spot pedestrians, lane markings, and road signs. Then prediction, where the car asks, \"Where will that cyclist be two seconds from now?\" And finally planning, deciding when to brake, steer, or accelerate for a smooth, safe ride. Perceive, predict, plan — that loop repeats many times a second, faster than you can blink.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.937,
+        "text": "Let's peek under the hood at the three jobs a self-driving car juggles every single second."
+      },
+      {
+        "start": 5.937,
+        "end": 13.525,
+        "text": "First, perception: the car uses cameras and neural networks to spot pedestrians, lane markings, and road signs."
+      },
+      {
+        "start": 13.525,
+        "end": 18.937,
+        "text": "Then prediction, where the car asks, \"Where will that cyclist be two seconds from now?\""
+      },
+      {
+        "start": 18.937,
+        "end": 25.987,
+        "text": "And finally planning, deciding when to brake, steer, or accelerate for a smooth, safe ride."
+      },
+      {
+        "start": 25.987,
+        "end": 33.137,
+        "text": "Perceive, predict, plan — that loop repeats many times a second, faster than you can blink."
+      }
+    ],
+    "bytes": 199152,
+    "model": "claude-opus-4-8"
+  },
+  "backup-creativity": {
+    "hash": "0ef83e2a837312fe",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's something fun to chew on. Today you can type a single sentence and an AI like Midjourney or DALL-E turns it into a full picture, no drawing skill required. AI can compose melodies, arrange the parts, even mimic a singer's voice, and it'll happily brainstorm plots and characters for a writer too. But here's the big question I want you thinking about: when an algorithm creates something, who's really the artist, and what does creativity even mean anymore?",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.812,
+        "text": "Here's something fun to chew on."
+      },
+      {
+        "start": 1.812,
+        "end": 10.4,
+        "text": "Today you can type a single sentence and an AI like Midjourney or DALL-E turns it into a full picture, no drawing skill required."
+      },
+      {
+        "start": 10.4,
+        "end": 19.75,
+        "text": "AI can compose melodies, arrange the parts, even mimic a singer's voice, and it'll happily brainstorm plots and characters for a writer too."
+      },
+      {
+        "start": 19.75,
+        "end": 28.8,
+        "text": "But here's the big question I want you thinking about: when an algorithm creates something, who's really the artist, and what does creativity even mean anymore?"
+      }
+    ],
+    "bytes": 173088,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-backup-bonus": {
+    "hash": "5e9bc16e17f997c7",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's do a quick gut check here. When AlphaFold cracked the puzzle of predicting protein structures, what kind of AI was that really? Think about it for a second — it wasn't a fun chatbot, and it wasn't some all-knowing general intelligence. It was AI acting as a powerful research instrument, one that solved a problem scientists had wrestled with for fifty years. So go ahead and tap the answer that captures AI as a tool that speeds up discovery.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.275,
+        "text": "Alright, let's do a quick gut check here."
+      },
+      {
+        "start": 2.275,
+        "end": 8.525,
+        "text": "When AlphaFold cracked the puzzle of predicting protein structures, what kind of AI was that really?"
+      },
+      {
+        "start": 8.525,
+        "end": 14.75,
+        "text": "Think about it for a second — it wasn't a fun chatbot, and it wasn't some all-knowing general intelligence."
+      },
+      {
+        "start": 14.75,
+        "end": 22.887,
+        "text": "It was AI acting as a powerful research instrument, one that solved a problem scientists had wrestled with for fifty years."
+      },
+      {
+        "start": 22.887,
+        "end": 27.975,
+        "text": "So go ahead and tap the answer that captures AI as a tool that speeds up discovery."
+      }
+    ],
+    "bytes": 168192,
+    "model": "claude-opus-4-8"
+  }
+}

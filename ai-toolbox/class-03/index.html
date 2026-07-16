@@ -1,0 +1,1192 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Class 03 · The AI Research Pipeline — The AI Toolbox</title>
+<link rel="icon" type="image/png" href="/meritpoint-slides/assets/favicon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+<style>
+:root{--navy:#0C2D52;--navy2:#12386A;--blue:#1769C0;--teal:#0F9DB0;--tealb:#2BC4D4;--coral:#EE6B36;--amber:#F2A93B;--green:#1FA37A;--ink:#21303F;--muted:#5E7183;--line:#D7E2EC;--cloud:#EEF4FA;--cloud2:#F6F9FC}
+.reveal{font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);font-size:30px}
+.reveal h1,.reveal h2,.reveal h3{font-family:Georgia,serif;color:var(--navy);text-transform:none;letter-spacing:0;font-weight:700;line-height:1.12}
+.reveal h1{font-size:1.55em}.reveal h2{font-size:1.12em}.reveal h3{font-size:.9em}
+.reveal .kicker{color:var(--teal);font-weight:700;letter-spacing:3px;font-size:.44em;text-transform:uppercase;margin-bottom:.35em;font-family:-apple-system,sans-serif}
+.reveal section{text-align:left}.reveal section.center{text-align:center}
+.reveal ul,.reveal ol{margin-left:1.05em}.reveal li{margin:.28em 0;font-size:.7em;line-height:1.38}
+.reveal p{font-size:.74em;line-height:1.42}.reveal .lead{font-size:.82em}.reveal .muted{color:var(--muted)}
+.reveal .callout{background:var(--cloud);border-left:6px solid var(--teal);border-radius:8px;padding:.45em .8em;margin-top:.5em;font-size:.7em}
+.reveal .callout b{color:var(--teal)}
+.reveal .pill{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:999px;padding:.16em .7em;font-size:.55em;color:var(--navy);margin:.12em .18em}
+.reveal .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.65em}.reveal .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6em}
+.reveal .box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.6em .75em;box-shadow:0 4px 14px rgba(20,40,70,.06)}
+.reveal .box h3{margin:.05em 0 .2em}.reveal .box p{font-size:.58em;margin:0}
+.reveal .feature{display:inline-block;font-size:.55em;font-weight:700;color:#fff;background:var(--navy);border-radius:6px;padding:.1em .55em;margin-top:.25em}
+.reveal .rate{display:inline-block;font-weight:800;color:#fff;border-radius:5px;padding:.05em .4em;font-size:.92em;line-height:1.3}
+.reveal .rate.r-g{background:var(--green)}.reveal .rate.r-pg{background:var(--blue)}.reveal .rate.r-r{background:var(--coral)}
+.reveal .vid{display:grid;grid-template-columns:1.5fr 1fr;gap:1em;align-items:center}
+.reveal .poster{border-radius:12px;height:2.7em;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1.25em;text-align:center;box-shadow:0 8px 24px rgba(20,40,70,.18);position:relative}
+.reveal .poster .play{position:absolute;width:1em;height:1em;border-radius:50%;background:rgba(255,255,255,.92);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:.5em}
+.reveal .qr{width:1.6em;height:1.6em;border:1px solid var(--line);border-radius:8px;background:#fff;padding:4px}
+.reveal .qrwrap{text-align:center;font-size:.5em;color:var(--muted)}.reveal .qrwrap a{color:var(--teal);word-break:break-all}
+.reveal a.btn{display:inline-block;background:#fff;border:1px solid var(--teal);color:var(--teal);border-radius:8px;padding:.16em .7em;font-size:.58em;font-weight:600}
+.reveal .src{font-size:.5em;color:var(--muted);margin-top:.5em}
+.reveal blockquote{border:none;box-shadow:none;background:var(--cloud2);border-left:6px solid var(--teal);border-radius:8px;font-size:.76em;font-style:normal;width:100%;padding:.65em 1em}
+.reveal .speak{cursor:pointer;display:inline-flex;align-items:center;gap:.4em;background:var(--teal);color:#fff;border:none;border-radius:999px;padding:.28em .85em;font-size:.52em;font-weight:700;font-family:-apple-system,sans-serif;box-shadow:0 4px 12px rgba(15,157,176,.3)}
+.reveal .speak:hover{background:#0d8a9b}.reveal .speak.playing{background:var(--coral)}
+/* timeline */
+.reveal .tl{display:flex;gap:.4em;align-items:stretch;margin-top:.5em}
+.reveal .tl .ev{flex:1;background:#fff;border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:10px;padding:.45em .5em}
+.reveal .tl .ev.winter{border-top-color:#7FA8D0}.reveal .tl .ev.boom{border-top-color:var(--coral)}
+.reveal .tl .yr{font-family:Georgia,serif;font-weight:800;color:var(--navy);font-size:.72em}
+.reveal .tl .ev b{font-size:.56em;color:var(--navy);display:block;margin:.1em 0}.reveal .tl .ev span{font-size:.5em;color:var(--muted);line-height:1.25;display:block}
+/* flow steps */
+.reveal .flow{display:flex;flex-wrap:wrap;gap:.4em;align-items:stretch}
+.reveal .step{flex:1 1 0;min-width:2.3em;background:#fff;border:1px solid var(--line);border-radius:10px;padding:.38em .42em;position:relative}
+.reveal .step .n{position:absolute;top:-.5em;left:-.3em;width:1em;height:1em;border-radius:50%;background:var(--teal);color:#fff;font-size:.5em;font-weight:800;display:flex;align-items:center;justify-content:center}
+.reveal .step b{font-size:.56em;color:var(--navy);display:block;line-height:1.15}.reveal .step span{font-size:.48em;color:var(--muted)}
+.reveal .step.loop{border-color:var(--coral);border-style:dashed}
+/* prompt cards */
+.reveal .prompt{background:#0f2742;color:#dfeaf6;border-radius:9px;padding:.4em .65em;font-family:Consolas,monospace;font-size:.54em;margin:.26em 0;line-height:1.38}
+.reveal .prompt .you{color:var(--tealb);font-weight:700}
+/* skills */
+.reveal .skillcard{background:linear-gradient(135deg,#fff,var(--cloud));border:1px solid var(--line);border-radius:14px;padding:.65em .8em}
+.reveal .skillcard .cn{font-size:.95em;color:var(--navy);font-weight:700;font-family:Georgia,serif}
+/* QUIZ */
+.reveal .quiz{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.7em .85em;box-shadow:0 6px 18px rgba(20,40,70,.07);max-width:18em}
+.reveal .quiz .qq{font-size:.72em;font-weight:600;color:var(--navy);margin:0 0 .5em}
+.reveal .quiz .opt{display:block;width:100%;text-align:left;background:var(--cloud2);border:1px solid var(--line);border-radius:9px;padding:.4em .6em;margin:.25em 0;font-size:.6em;color:var(--ink);cursor:pointer;transition:.1s;font-family:-apple-system,sans-serif}
+.reveal .quiz .opt:hover{border-color:var(--teal);background:#fff}
+.reveal .quiz .opt.correct{background:#E6F4EE;border-color:var(--green);color:#0d6b4f;font-weight:600}
+.reveal .quiz .opt.wrong{background:#FBEAE7;border-color:var(--coral);color:#a23c1c}
+.reveal .quiz .opt[disabled]{cursor:default}
+.reveal .quiz-exp{font-size:.56em;color:var(--muted);margin:.4em 0 0;display:none}
+.reveal .quiz.answered .quiz-exp{display:block}
+.reveal .quiz-badge{font-size:.5em;color:var(--teal);font-weight:700;letter-spacing:1px}
+/* QUIZ LIVE DISTRIBUTION (shown once answered) */
+.reveal .qstats{display:none;margin-top:.5em;border-top:1px dashed var(--line);padding-top:.4em}
+.reveal .quiz.answered .qstats{display:block}
+.reveal .qhead{display:flex;justify-content:space-between;align-items:center;font-size:.5em;color:var(--muted);margin-bottom:.3em}
+.reveal .qm{border:1px solid var(--line);background:var(--cloud2);border-radius:999px;padding:.15em .7em;margin-left:.4em;font:inherit;font-size:.95em;cursor:pointer;color:var(--muted)}
+.reveal .qm.on{background:var(--teal);border-color:var(--teal);color:#fff;font-weight:700}
+.reveal .qrow{display:flex;align-items:center;gap:.4em;margin:.14em 0}
+.reveal .ql{font-size:.5em;font-weight:800;color:var(--navy);width:1.1em}
+.reveal .qbar{flex:1;height:.55em;background:var(--cloud2);border-radius:999px;overflow:hidden}
+.reveal .qfill{height:100%;background:var(--navy);border-radius:999px;transition:width .5s}
+.reveal .qfill.qok{background:var(--green)}
+.reveal .qp{font-size:.45em;color:var(--muted);min-width:4.2em;text-align:right}
+#liveChip{position:fixed;left:14px;bottom:46px;z-index:40;background:rgba(255,255,255,.92);border:1px solid var(--line);
+  border-radius:999px;padding:5px 12px;font:600 12px -apple-system,'Segoe UI',sans-serif;color:#1a9a6c;box-shadow:0 4px 14px rgba(20,40,70,.10)}
+/* CODE LAB */
+.reveal .lab{display:grid;grid-template-columns:1.55fr 1fr;gap:.6em;margin-top:.4em;height:11.2em}
+.reveal .lab-main{display:flex;flex-direction:column;min-width:0}
+.reveal .lab textarea.code{flex:1;width:100%;background:#0f2742;color:#e7f0fb;border:1px solid #21405f;border-radius:10px 10px 0 0;font-family:Consolas,"SF Mono",monospace;font-size:13px;line-height:1.4;padding:.5em .6em;resize:none;outline:none;tab-size:4}
+.reveal .lab-bar{display:flex;align-items:center;gap:.4em;background:#11314f;border:1px solid #21405f;border-top:none;padding:.3em .4em;flex-wrap:wrap}
+.reveal .lab-bar button{font-family:-apple-system,sans-serif;font-size:11px;font-weight:600;border:none;border-radius:7px;padding:.4em .7em;cursor:pointer}
+.reveal .lab-bar .run{background:var(--green);color:#fff}.reveal .lab-bar .run:hover{background:#178a64}
+.reveal .lab-bar .ai-explain,.reveal .lab-bar .ai-debug,.reveal .lab-bar .ai-improve{background:#1b3e5e;color:#cfe0ef}
+.reveal .lab-bar .ai-explain:hover,.reveal .lab-bar .ai-debug:hover,.reveal .lab-bar .ai-improve:hover{background:#27557d}
+.reveal .lab-status{font-size:10.5px;color:#9db8d6;margin-left:auto;font-family:-apple-system,sans-serif}
+.reveal .lab pre.out{background:#08192b;color:#bfe3c7;border:1px solid #21405f;border-top:none;border-radius:0 0 10px 10px;margin:0;padding:.5em .6em;font-family:Consolas,monospace;font-size:11.5px;line-height:1.4;overflow:auto;min-height:2.4em;max-height:4.2em;white-space:pre-wrap}
+.reveal .lab pre.out .err{color:#ff9b8a}
+.reveal .assist{display:flex;flex-direction:column;background:linear-gradient(135deg,#fff,#f1f7fb);border:1px solid var(--line);border-radius:11px;overflow:hidden;min-width:0}
+.reveal .assist-head{background:linear-gradient(90deg,#0F9DB0,#2BC4D4);color:#fff;font-size:12px;font-weight:700;padding:.45em .7em;font-family:-apple-system,sans-serif;display:flex;align-items:center;justify-content:space-between;gap:.5em}
+.reveal .assist-head .ai-model{font-family:-apple-system,sans-serif;font-size:11px;font-weight:600;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.5);border-radius:6px;padding:.15em .3em;cursor:pointer;outline:none}
+.reveal .assist-head .ai-model option{color:var(--ink)}
+.reveal .assist-body{flex:1;overflow:auto;padding:.5em .65em;font-size:12px;line-height:1.46;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .assist-body p{font-size:12px;margin:.3em 0}.reveal .assist-body code{background:#eef3f8;border-radius:4px;padding:0 .25em;font-family:Consolas,monospace;font-size:11px}
+.reveal .assist-body pre{background:#0f2742;color:#e7f0fb;border-radius:8px;padding:.5em .6em;font-size:11px;overflow:auto;white-space:pre}
+.reveal .assist-body pre code{background:none;color:inherit}
+.reveal .assist-body .apply{background:var(--teal);color:#fff;border:none;border-radius:6px;padding:.25em .6em;font-size:11px;font-weight:600;cursor:pointer;margin-top:.2em}
+.reveal .assist-ask{display:flex;gap:.3em;border-top:1px solid var(--line);padding:.4em}
+.reveal .assist-ask input{flex:1;border:1px solid var(--line);border-radius:7px;padding:.4em .5em;font-size:12px;font-family:-apple-system,sans-serif;outline:none}
+.reveal .assist-ask button{background:var(--navy);color:#fff;border:none;border-radius:7px;padding:.4em .7em;font-size:12px;font-weight:600;cursor:pointer}
+/* HEAP / TOP-K VISUALIZER */
+.reveal .heapviz{margin-top:.35em;font-family:-apple-system,sans-serif}
+.reveal .hv-top{display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
+.reveal .hv-code{background:#0f2742;border-radius:10px 10px 0 0;padding:8px 12px;border:1px solid #21405f;border-bottom:none}
+.reveal .hv-code-title{color:#9db8d6;font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:4px}
+.reveal .hv-code pre.hv-pre{margin:0;color:#e7f0fb;font-family:Consolas,"SF Mono",monospace;font-size:11.5px;line-height:1.5;max-height:150px;overflow:auto;white-space:pre}
+.reveal .hv-info{background:#eef4fa;border:1px solid #21405f22;border-top:none;border-radius:0 0 10px 10px;padding:6px 12px;font-size:11px;color:var(--muted)}
+.reveal .hv-panel{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:6px}
+.reveal .hv-panel label{font-size:10.5px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin-top:4px}
+.reveal .hv-panel label:first-child{margin-top:0}
+.reveal .hv-row{display:flex;gap:6px}
+.reveal .hv-input{flex:1;border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:13px;font-family:-apple-system,sans-serif;min-width:0}
+.reveal .hv-insert{background:var(--green);color:#fff;border:none;border-radius:7px;padding:6px 12px;font-size:12.5px;font-weight:700;cursor:pointer}
+.reveal .hv-quick{display:flex;gap:5px;flex-wrap:wrap}
+.reveal .hv-quick-btn{background:var(--cloud);border:1px solid var(--line);border-radius:7px;padding:4px 10px;font-size:12px;font-weight:600;cursor:pointer;color:var(--ink)}
+.reveal .hv-quick-btn:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .hv-arr-now{background:var(--cloud2);border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-family:Consolas,monospace;font-size:12.5px}
+.reveal .hv-status,.reveal .hv-action{font-size:12px;color:var(--ink)}
+.reveal .hv-frames-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin:10px 0 4px}
+.reveal .hv-frames{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.reveal .hv-frame{flex:0 0 auto;min-width:150px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 8px;text-align:center}
+.reveal .hv-frame-active{border-color:var(--teal);box-shadow:0 0 0 2px rgba(15,157,176,.18)}
+.reveal .hv-frame-title{font-size:11px;font-weight:700;color:var(--navy)}
+.reveal .hv-frame-desc{font-size:9.5px;color:var(--muted);min-height:1.6em;line-height:1.25;margin:2px 0}
+.reveal .hv-tree-svg{width:100%;height:80px}
+.reveal .hv-empty{color:var(--muted);font-size:10.5px;padding:20px 0}
+.reveal .hv-node{fill:#D6ECEF;stroke:#0B7E8A;stroke-width:1.5}
+.reveal .hv-node-hi{fill:#F2A93B;stroke:#c07f1a}
+.reveal .hv-node-text{font-size:9px;font-weight:700;fill:#0C2D52;text-anchor:middle;font-family:-apple-system,sans-serif}
+.reveal .hv-edge{stroke:#c7d6e4;stroke-width:1.5}
+.reveal .hv-swap{stroke:#C0392B;stroke-width:2;stroke-dasharray:3,2}
+.reveal .hv-arrs{display:flex;gap:8px;overflow-x:auto;margin-top:6px}
+.reveal .hv-arr{flex:0 0 auto;min-width:150px;text-align:center;font-family:Consolas,monospace;font-size:11.5px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:5px 8px;color:var(--ink)}
+.reveal .hv-arr-active{border-color:var(--teal)}
+.reveal .hv-arr-hi{color:#C0392B;font-weight:700}
+.reveal .hv-controls{display:flex;align-items:center;gap:6px;margin-top:8px;flex-wrap:wrap}
+.reveal .hv-controls button{background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 10px;font-size:11.5px;font-weight:600;cursor:pointer;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .hv-controls button:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .hv-play{background:var(--teal)!important;color:#fff!important;border-color:var(--teal)!important}
+.reveal .hv-speed-label{font-size:11px;color:var(--muted);margin-left:6px}
+/* convolution visualizer */
+.reveal .cv-top{display:grid;grid-template-columns:1fr 1.05fr 1fr;gap:14px;align-items:start;justify-items:center}
+.reveal .cv-col{display:flex;flex-direction:column;align-items:center}
+.reveal .cv-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin-bottom:5px;text-align:center}
+.reveal .cv-grid{display:grid;gap:2px;width:max-content}
+.reveal .cv-in{grid-template-columns:repeat(8,25px)}
+.reveal .cv-out{grid-template-columns:repeat(6,33px)}
+.reveal .cv-cell{width:25px;height:25px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:9px;font-weight:700;cursor:pointer;user-select:none;border:1px solid rgba(12,45,82,.14)}
+.reveal .cv-ocell{width:33px;height:33px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:10.5px;font-weight:700;background:var(--cloud);color:#b9c6d4;border:1px solid var(--line)}
+.reveal .cv-win{outline:2.5px solid var(--coral);outline-offset:-1px;z-index:1}
+.reveal .cv-kwrap{background:#0f2742;border-radius:10px;padding:10px 12px;border:1px solid #21405f;width:100%}
+.reveal .cv-kgrid{display:grid;grid-template-columns:repeat(3,36px);gap:2px;width:max-content;margin:0 auto}
+.reveal .cv-kcell{width:36px;height:28px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:11.5px;font-weight:700;background:#1a3a5f;color:#e7f0fb;border:1px solid #2c4d75}
+.reveal .cv-kdiv{text-align:center;color:#9db8d6;font-size:10px;margin-top:4px;font-family:Consolas,monospace}
+.reveal .cv-calc{margin-top:8px;font-family:Consolas,monospace;font-size:10px;line-height:1.55;color:#cfe0ef;min-height:60px;text-align:center}
+.reveal .cv-calc .cv-sum{color:#F2A93B;font-weight:700}
+.reveal .cv-chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px;justify-content:center}
+.reveal .cv-chip{background:var(--cloud);border:1px solid var(--line);border-radius:7px;padding:4px 9px;font-size:11px;font-weight:600;cursor:pointer;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .cv-chip:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .cv-chip.sel{background:var(--teal);border-color:var(--teal);color:#fff}
+.reveal .cv-status{font-size:12px;color:var(--ink);margin-top:7px}
+.reveal .cv-controls{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;flex-wrap:wrap}
+.reveal .cv-controls button{background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 10px;font-size:11.5px;font-weight:600;cursor:pointer;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .cv-controls button:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .cv-play{background:var(--teal)!important;color:#fff!important;border-color:var(--teal)!important}
+/* comments */
+/* bottom-right toolbar (CC | Listen | Comment) — top-right belongs to the
+   signed-in profile chip (#mpAuth, assets/auth.js), which used to cover this */
+#commentBtn{position:fixed;right:16px;bottom:14px;z-index:60;background:var(--teal);color:#fff;border:none;border-radius:999px;padding:9px 15px;font-size:13px;font-weight:700;font-family:-apple-system,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(15,157,176,.4)}
+#commentBtn:hover{background:#0d8a9b}#commentBtn .cnum{background:#fff;color:var(--teal);border-radius:999px;padding:0 6px;margin-left:5px;font-size:11px}
+#listenBtn{--p:0%;position:fixed;right:168px;bottom:14px;z-index:60;min-width:128px;justify-content:center;color:#fff;border:none;border-radius:999px;padding:9px 15px;font-size:13px;font-weight:700;font-family:-apple-system,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(20,40,70,.34);display:none;align-items:center;gap:.45em;background:linear-gradient(to right,var(--teal) var(--p),var(--navy) var(--p));transition:background .15s linear}
+#listenBtn:hover{filter:brightness(1.1)}
+#listenBtn.playing{background:linear-gradient(to right,var(--coral) var(--p),#16406e var(--p))}
+#listenBtn .li-ic{font-size:12px;line-height:1}#listenBtn .li-tx{font-variant-numeric:tabular-nums;font-size:11.5px;opacity:.92}
+#ccBtn{position:fixed;right:306px;bottom:14px;z-index:60;background:var(--navy);color:#fff;border:none;border-radius:999px;padding:9px 12px;font-size:11.5px;font-weight:800;letter-spacing:.03em;font-family:-apple-system,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(20,40,70,.34);display:none;opacity:.5}
+#ccBtn:hover{opacity:.8}#ccBtn.on{opacity:1;background:var(--teal)}
+#capBar{position:fixed;left:50%;bottom:58px;transform:translateX(-50%);max-width:70%;background:rgba(8,16,30,.88);color:#fff;padding:.4em 1em;border-radius:9px;font-size:13.5px;line-height:1.35;text-align:center;z-index:59;display:none;font-family:-apple-system,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+#commentPanel{position:fixed;right:16px;bottom:60px;width:340px;max-height:64vh;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 44px rgba(20,40,70,.22);z-index:61;display:none;flex-direction:column;font-family:-apple-system,sans-serif;overflow:hidden}
+#commentPanel.open{display:flex}
+#commentPanel .ph{background:var(--navy);color:#fff;padding:10px 14px;font-size:13px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+#commentPanel .ph .x{cursor:pointer;opacity:.8}#commentPanel .ph .x:hover{opacity:1}
+#commentList{flex:1;overflow:auto;padding:10px 14px}
+#commentList .c{border-bottom:1px solid var(--cloud);padding:7px 0}#commentList .c:last-child{border:none}
+#commentList .c .cn{font-size:12px;font-weight:700;color:var(--navy)}#commentList .c .ct{font-size:10px;color:var(--muted);margin-left:6px}
+#commentList .c .cb{font-size:13px;color:var(--ink);margin-top:2px;white-space:pre-wrap;word-break:break-word}
+#commentList .none{color:var(--muted);font-size:12.5px;text-align:center;padding:14px 0}
+#commentForm{border-top:1px solid var(--line);padding:10px 12px;display:flex;flex-direction:column;gap:6px}
+#commentForm input,#commentForm textarea{border:1px solid var(--line);border-radius:8px;padding:7px 9px;font-size:13px;font-family:-apple-system,sans-serif;outline:none}
+#commentForm textarea{resize:vertical;min-height:46px}
+#commentForm .row{display:flex;gap:6px;align-items:center}
+#commentForm button{background:var(--teal);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:700;cursor:pointer}
+#commentForm .msg{font-size:11px;color:var(--muted)}
+/* donate */
+#donateBtn{position:fixed;left:70px;top:19px;z-index:60;background:var(--coral);color:#fff;border-radius:999px;padding:8px 16px;font-size:12.5px;font-weight:700;font-family:-apple-system,sans-serif;text-decoration:none;box-shadow:0 6px 18px rgba(238,107,54,.4)}
+#donateBtn:hover{background:#d85a28;text-decoration:none}
+/* MPA logo badge — top-left of every slide, next to Donate (top-right holds the auth chip) */
+#mpaLogo{position:fixed;left:16px;top:14px;z-index:50;display:block;width:44px;height:44px;border-radius:10px;background:#fff;box-shadow:0 4px 14px rgba(20,40,70,.25);opacity:.92;transition:opacity .15s}
+#mpaLogo:hover{opacity:1}
+#mpaLogo img{width:100%;height:100%;object-fit:contain;display:block}
+/* slide number: default bottom-right collides with the comment/listen/cc button row, so move it to bottom-left */
+.reveal .slide-number{left:14px;right:auto;bottom:14px;z-index:58;background:rgba(255,255,255,.85);padding:2px 8px;border-radius:6px;color:var(--muted)}
+/* PDF download — top-left row, after Donate */
+#pdfBtn{position:fixed;left:178px;top:19px;z-index:60;background:#fff;color:var(--navy);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:12.5px;font-weight:700;font-family:-apple-system,sans-serif;text-decoration:none;box-shadow:0 4px 14px rgba(20,40,70,.18)}
+#pdfBtn:hover{border-color:var(--teal);color:var(--teal);text-decoration:none}
+/* keep screen-only chrome out of print / the exported PDF (fixed elements repeat on every page) */
+@media print{#donateBtn,#mpaLogo,#pdfBtn,#ccBtn,#listenBtn,#commentBtn,#commentPanel,#capBar,#mpAuth{display:none!important}}
+</style></head><body>
+<div class="reveal"><div class="slides">
+<section id="title" data-sid="title" class="center" data-background-gradient="linear-gradient(135deg,#0C2D52,#16406e)">
+<div class="kicker" style="color:#7fd3df">The AI Toolbox · Class 03</div>
+    <h1 style="color:#fff">The AI Research Pipeline</h1>
+    <p style="color:#cfe0ef;margin-top:.5em">See the whole research journey before walking a single step.</p>
+    <p style="color:#9db8d6;font-size:.58em;margin-top:1.1em">Merit Point Academy · 60 min · press <b>S</b> notes · <b>→</b> next · 💬 to comment</p>
+    <aside class="notes">Welcome back. Classes 1–2 gave us AI literacy and a strong research question. Today: the map — the complete journey a question travels from idea to result. By the end each student draws their own pipeline diagram, and every later class in this course gets its place on that map.</aside>
+</section>
+<section id="recap-class02" data-sid="recap-class02">
+<div class="kicker">Recap · where we left off</div>
+    <h2>Last class in 60 seconds</h2>
+    <div class="grid3" style="margin-top:.35em">
+      <div class="box"><h3 style="color:var(--navy)">The question ladder</h3><p>Vague → better → <b>strong</b>. A strong question names what you'll measure and what counts as success.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">The recipe</h3><p><b>Input + output + metric</b> = an AI research question. If you can't picture the data table, it's not a question yet.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">Generate, then verify</h3><p>Funnel · SCAMPER · ChatGPT to generate; Google Scholar · dataset check to verify.</p></div>
+    </div>
+    <div class="callout"><b>Peer review (5 min):</b> swap your three homework questions with a neighbor. Check their <b>strong</b> one: does it name input, output, metric? Would it pass the picture test? One sentence of feedback each.</div>
+    <aside class="notes">Class 2's homework promised group peer review — keep it tight: pairs, one sentence of feedback, focus only on the strong question's recipe. The best 1-2 questions can serve as live examples through today's pipeline walk.</aside>
+</section>
+<section id="agenda" data-sid="agenda">
+<div class="kicker">Agenda · how this hour runs</div>
+    <h2>Where we're going</h2>
+    <div class="grid2" style="margin-top:.4em">
+      <ul>
+        <li><b>0–8'</b> Peer review + the dataset that woke up AI</li>
+        <li><b>8–18'</b> The pipeline: Data → Model → Experiment → Conclusion</li>
+        <li><b>18–32'</b> The five steps, one by one — and where projects go wrong</li>
+        <li><b>32–40'</b> Data-driven thinking · supervised vs. unsupervised</li>
+      </ul>
+      <ul>
+        <li><b>40–46'</b> Tools: Google Colab · Kaggle</li>
+        <li><b>46–54'</b> Two labs: the whole pipeline in 25 lines · overfitting live</li>
+        <li><b>54–60'</b> Your pipeline diagram, homework &amp; wrap-up</li>
+        <li>Quizzes &amp; 💬 comments throughout</li>
+      </ul>
+    </div>
+    <div class="callout"><b>By the end:</b> name the four stages of the pipeline, tell supervised from unsupervised, and place every later class of this course on the map you drew.</div>
+    <aside class="notes">Same interactive format. Today's spine: one loop, five steps, two tools, two labs, one diagram. The diagram is the deliverable — everything else feeds it.</aside>
+</section>
+<section id="quiz-warmup" data-sid="quiz-warmup">
+<div class="kicker">Warm-up · activate</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="1">
+    <p class="qq">Between the question 'Can a car detect pedestrians at night?' and the result 'it finds 92% of them' sits a whole machine. What is that machine?</p>
+    <div class="opts"><button class="opt" data-i="0">Luck — some models just work</button><button class="opt" data-i="1">A research pipeline: data → model → experiment → conclusion</button><button class="opt" data-i="2">A single genius programmer typing very fast</button><button class="opt" data-i="3">Buying a bigger computer</button></div>
+    <p class="quiz-exp">Every ML study runs the same loop: gather data, fit a model, measure it fairly, conclude only what the numbers support. Today you learn to see — and draw — that machine.</p>
+  </div>
+  <aside class="notes">Opener bridges directly from Class 2's strong question to today's topic. The '92%' echoes the recall idea from last class.</aside>
+</section>
+<section id="story-imagenet" data-sid="story-imagenet">
+<div class="kicker">The Story</div>
+    <h2>The dataset that woke up AI</h2>
+    <blockquote id="quote">For decades, researchers tweaked algorithms and stayed stuck. In 2009, <b>Fei-Fei Li</b> bet on the opposite idea: maybe the bottleneck was <b>data, not models</b>. Her team labeled <b>millions of images by hand</b> to build ImageNet. In 2012, a neural network trained on it crushed every competitor — and the deep-learning era began. The breakthrough wasn't a cleverer model. <b>It was the data stage of the pipeline.</b></blockquote>
+    <div style="margin-top:.4em;display:flex;align-items:center;gap:1em">
+      <button class="speak" data-audio="audio/quote.mp3">🔊 <span>Speak this story</span></button>
+      <span class="muted" style="font-size:.52em">Neural voice · click to play / pause</span></div>
+    <p class="src">Remember Class 1's history: the 2010s boom came from data + compute, not just cleverer math. ImageNet is that lesson with a name and a face.</p>
+    <aside class="notes">Tell it as a bet that paid off: everyone optimized one pipeline stage (model) while the real bottleneck was another (data). This seeds pitfall #1 later — spend half your time on data — and connects to Class 1's history slide.</aside>
+</section>
+<section id="concept-pipeline" data-sid="concept-pipeline">
+<div class="kicker">Concept 1 · the spine of this course</div>
+    <h2>Data → Model → Experiment → Conclusion</h2>
+    <p class="lead" style="margin:0 0 .3em">Every ML study — a student project or a billion-dollar lab — walks the same four stages:</p>
+    <div class="flow" style="margin-top:.4em">
+      <div class="step"><div class="n">1</div><b>Data</b><span>Examples to learn from — gathered, cleaned, split.</span></div>
+      <div class="step"><div class="n">2</div><b>Model</b><span>The thing that learns a pattern from the examples.</span></div>
+      <div class="step"><div class="n">3</div><b>Experiment</b><span>A fair measurement on data the model hasn't seen.</span></div>
+      <div class="step"><div class="n">4</div><b>Conclusion</b><span>Only what the numbers support — no more.</span></div>
+    </div>
+    <div class="callout"><b>KEY IDEA</b> — every later class of this course is <b>one stage of this loop, in depth</b>: data (7–9), models (10–13), experiments (14), presentation (15). Learn the map today; walk it for twelve weeks.</div>
+    <aside class="notes">The course-map framing is the point: students should leave able to say 'Class 8 is a Data-stage class.' Keep the four words drilled — they label the diagram they'll draw and reappear on every project slide for the rest of the course.</aside>
+</section>
+<section id="concept-lifecycle" data-sid="concept-lifecycle">
+<div class="kicker">Concept 2 · zoom in: the professional version</div>
+    <h2>Not a line — a cycle</h2>
+    <p class="lead" style="margin:0 0 .3em">Real projects run the loop with five named steps — and the arrow bends back:</p>
+    <div class="flow" style="margin-top:.4em">
+      <div class="step"><div class="n">1</div><b>Define the problem</b><span>task type, metric, scope</span></div>
+      <div class="step"><div class="n">2</div><b>Get &amp; prep data</b><span>collect, clean, split</span></div>
+      <div class="step"><div class="n">3</div><b>Build &amp; train model</b><span>select, train, tune</span></div>
+      <div class="step"><div class="n">4</div><b>Evaluate &amp; optimize</b><span>measure, diagnose, improve</span></div>
+      <div class="step loop"><div class="n">5</div><b>Test &amp; present</b><span>final exam → share → <b>new questions</b> ↩</span></div>
+    </div>
+    <div class="callout">Step 5's feedback <b style="color:var(--coral)">loops back to step 1</b>: presenting results surfaces new questions, and the cycle runs again. Research isn't a one-way road — it's laps around a track, each lap better than the last.</div>
+    <aside class="notes">Same loop as concept 1, professionally labeled — problem definition split out front (that was Class 2!) and evaluate/present split at the back. The dashed step-5 styling marks the loop-back. Next: each step gets its own slide.</aside>
+</section>
+<section id="quiz-pipeline" data-sid="quiz-pipeline">
+<div class="kicker">Check · the loop</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="2">
+    <p class="qq">Your model scores badly in the experiment stage. In a healthy research cycle, what happens next?</p>
+    <div class="opts"><button class="opt" data-i="0">The project is dead — pick a new topic</button><button class="opt" data-i="1">Hide the bad number and present something else</button><button class="opt" data-i="2">Loop back: diagnose whether the problem is the data, the model, or the question — then iterate</button><button class="opt" data-i="3">Buy a GPU and hope</button></div>
+    <p class="quiz-exp">Bad numbers are information, not failure. The cycle exists precisely so you can loop back, fix the weak stage, and run another lap. Every strong project you'll ever read went through many laps.</p>
+  </div>
+  <aside class="notes">Normalizes iteration before students hit their own bad first results. Links to the wrap-up message: research is laps, not a line.</aside>
+</section>
+<section id="step1-problem" data-sid="step1-problem">
+<div class="kicker">Step 1 of 5 · problem definition</div>
+    <h2>Decide what game you're playing</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">🎯 Task type</h3><p>Is the output a <b>category</b> (classification), a <b>number</b> (regression), or <b>groups with no labels</b> (clustering)? This one choice picks your models and metrics.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">📏 Success metric</h3><p>Classification → accuracy, recall, F1. Regression → error (MSE/MAE). Set the <b>target number</b> up front: "accuracy ≥ 95% = success."</p></div>
+      <div class="box"><h3 style="color:var(--coral)">🧱 Scope</h3><p>What data can you actually get? What hardware and time do you have? Boundaries make the project <b>finishable</b>.</p></div>
+    </div>
+    <div class="callout"><b>Sound familiar?</b> This is Class 2's <b>input → output → metric</b> recipe, now wearing engineering clothes. Your strong question already did step 1 — that's why we wrote it first.</div>
+    <aside class="notes">The explicit bridge from Class 2: a strong research question IS a completed step 1. Drill the task-type question orally: pedestrian boxes (classification+detection), house price (regression), grouping students by study style (clustering).</aside>
+</section>
+<section id="step2-data" data-sid="step2-data">
+<div class="kicker">Step 2 of 5 · data acquisition &amp; preprocessing</div>
+    <h2>"Garbage in, garbage out"</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1fr;margin-top:.3em">
+      <div class="box"><h3 style="color:var(--teal)">📥 Get the data</h3>
+        <p><b>Public:</b> Kaggle, UCI, Hugging Face — free, labeled, ready. <b>Your own:</b> sensors, forms, photos, scraping. Most student projects should start public — collection is a project in itself.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">🧹 Prep the data</h3>
+        <p><b>Clean:</b> fix noise, fill or drop missing values. <b>Engineer features:</b> pick and transform the useful columns. <b>Split:</b> train / validation / test — three piles with three different jobs.</p></div>
+    </div>
+    <div class="callout"><b>Why it's step 2 and not an afterthought:</b> the model can only ever be as good as what it eats. ImageNet won 2012 at this step, not step 3 — and pitfall #1 (coming up) says spend <b>half your time here</b>.</div>
+    <aside class="notes">GIGO is the slide's soul. The three-pile split gets fully explained in step 4/5 and lab 2 — here just name it. Data classes 7-9 expand every phrase on this slide.</aside>
+</section>
+<section id="step3-model" data-sid="step3-model">
+<div class="kicker">Step 3 of 5 · model construction &amp; training</div>
+    <h2>Pick a learner, let it learn, tune the knobs</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">🗡️ Select</h3><p>Match the tool to the task: simple problems → linear regression, decision trees. Messy, complex data → random forests, neural networks. <b>Start simple</b> — always.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">🏋️ Train</h3><p>Feed the training pile to the model. Through many iterations it <b>learns the mapping</b> from features to answers — exactly Class 1's "learn from data, not rules."</p></div>
+      <div class="box"><h3 style="color:var(--coral)">🎛️ Tune</h3><p>Models have knobs — learning rate, tree depth. Adjust, re-measure, repeat. Like tuning an instrument: small turns, listen each time.</p></div>
+    </div>
+    <div class="callout">Classes 10–13 live entirely inside this box: regression → trees → forests → neural nets, each one hands-on.</div>
+    <aside class="notes">Keep this light — four full classes cover it later. The 'start simple' seed grows into pitfall #2 (baseline first). Lab 1 today lets everyone actually train a model in the browser.</aside>
+</section>
+<section id="step4-evaluate" data-sid="step4-evaluate">
+<div class="kicker">Step 4 of 5 · evaluation &amp; optimization</div>
+    <h2>Diagnose like a doctor: two classic diseases</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1fr;margin-top:.3em">
+      <div class="box" style="border-top:4px solid #7FA8D0"><h3 style="color:var(--blue)">🥶 Underfitting — too simple</h3>
+        <p>The model can't even learn the training data. <b>Symptom:</b> bad scores everywhere.<br><b>Treatment:</b> a more capable model, or better features.</p></div>
+      <div class="box" style="border-top:4px solid var(--coral)"><h3 style="color:var(--coral)">🤒 Overfitting — too complex</h3>
+        <p>The model <b>memorized</b> the training data, noise and all. <b>Symptom:</b> great on training data, bad on new data.<br><b>Treatment:</b> more data, regularization, or a simpler model.</p></div>
+    </div>
+    <div class="callout"><b>The tell:</b> always compare <b>training score vs. unseen-data score</b>. A big gap = overfitting. You'll see this live in Lab 2 — a model that scores perfectly on what it saw and falls apart on what it didn't.</div>
+    <aside class="notes">The most important new vocabulary of the day. The doctor framing keeps it memorable: symptom → diagnosis → treatment. Lab 2 makes the train-vs-test gap tangible with polynomial degrees.</aside>
+</section>
+<section id="step5-present" data-sid="step5-present">
+<div class="kicker">Step 5 of 5 · final test &amp; presentation</div>
+    <h2>The final exam — then tell the world</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1fr;margin-top:.3em">
+      <div class="box"><h3 style="color:var(--teal)">🔒 Final test</h3><p>One last measurement on the <b>test set</b> — data the model has <b>never</b> seen, not even during tuning. This is the honest, unbiased answer to your research question. <b>Used once.</b></p></div>
+      <div class="box"><h3 style="color:var(--coral)">📣 Present</h3><p>Paper, report, slides, or blog: problem → method → results → conclusion → future work. Class 2's tip: that "future work" section is where <b>someone else's next question</b> comes from — now you're writing one.</p></div>
+    </div>
+    <div class="callout"><b>Golden rule:</b> the test set is sacred. Tune on it even once and its score becomes a lie — that's "data leakage," pitfall #3. Train on the train pile, tune on the validation pile, touch the test pile <b>once</b>.</div>
+    <aside class="notes">The three-pile discipline lands here fully. 'Future work' bridges back to Class 2's literature method — students now see both sides of that paragraph. Presentation gets its own class (15).</aside>
+</section>
+<section id="quiz-overfitting" data-sid="quiz-overfitting">
+<div class="kicker">Check · diagnosis</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="1">
+    <p class="qq">A student's model scores 99% on the training data but only 62% on new data. What's the diagnosis, and one sensible treatment?</p>
+    <div class="opts"><button class="opt" data-i="0">Underfitting — use a much bigger model</button><button class="opt" data-i="1">Overfitting — get more data, regularize, or simplify the model</button><button class="opt" data-i="2">Perfect health — report the 99%</button><button class="opt" data-i="3">The computer is broken</button></div>
+    <p class="quiz-exp">A huge train-vs-new gap is the overfitting signature: the model memorized instead of learning. And reporting the 99% would be dishonest — the 62% is the truth about new data.</p>
+  </div>
+  <aside class="notes">Checks the day's key vocabulary. Option C is the trap worth discussing — reporting the training score is pitfall #3 in disguise.</aside>
+</section>
+<section id="concept-data-driven" data-sid="concept-data-driven">
+<div class="kicker">Concept 3 · why the pipeline looks like this</div>
+    <h2>Rules in — or rules out?</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1fr;margin-top:.25em">
+      <div class="box" style="border-top:4px solid #7FA8D0"><h3 style="color:var(--blue)">Traditional programming</h3>
+        <p style="font-family:Consolas,monospace;font-size:.6em;background:var(--cloud2);border-radius:6px;padding:.4em .5em;margin:.2em 0">data + <b>rules</b> → answers</p>
+        <p>A human writes every rule by hand. The computer just executes. (Deep Blue, calculators, thermostats.)</p></div>
+      <div class="box" style="border-top:4px solid var(--teal)"><h3 style="color:var(--teal)">Machine learning</h3>
+        <p style="font-family:Consolas,monospace;font-size:.6em;background:var(--cloud2);border-radius:6px;padding:.4em .5em;margin:.2em 0">data + <b>answers</b> → rules</p>
+        <p>Show examples with known answers; the machine <b>infers the rules itself</b> — including rules no human could write down.</p></div>
+    </div>
+    <div class="callout"><b>This is why data is a pipeline stage at all:</b> in ML, data isn't fuel for a program — data <b>is</b> the program's teacher. The essence of AI research: automatically discovering patterns in data that humans can't perceive.</div>
+    <aside class="notes">One-line inversion: rules are an input in traditional programming, an OUTPUT in ML. Connects Class 1's Deep-Blue-vs-ChatGPT distinction to today's pipeline: no data stage, nothing to learn from.</aside>
+</section>
+<section id="concept-supervised" data-sid="concept-supervised">
+<div class="kicker">Concept 4 · two ways to learn</div>
+    <h2>Supervised vs. unsupervised</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1fr;margin-top:.25em">
+      <div class="box" style="border-top:4px solid var(--teal)"><h3 style="color:var(--teal)">👩‍🏫 Supervised — with answer key</h3>
+        <p>Every example comes <b>labeled</b>: this image is a pedestrian, this house sold for $340k. The model learns to map input → label.<br><i>Classification and regression both live here.</i></p></div>
+      <div class="box" style="border-top:4px solid var(--amber)"><h3 style="color:#8a6114">🧭 Unsupervised — no answer key</h3>
+        <p>No labels at all. The model finds <b>structure on its own</b>: clusters of similar customers, groups of similar songs.<br><i>Clustering is the classic example.</i></p></div>
+    </div>
+    <div class="callout"><b>Our running example is supervised:</b> pedestrian detection learns from boxes <b>humans drew</b> — that hand-labeling is exactly what made ImageNet valuable, and it's why the data stage costs real effort. Most of this course is supervised learning.</div>
+    <aside class="notes">Tie all three threads: ImageNet story (labels cost millions of hours), AV case (who drew the boxes?), and course scope (mostly supervised). Quiz next.</aside>
+</section>
+<section id="quiz-supervised" data-sid="quiz-supervised">
+<div class="kicker">Check · two ways to learn</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="1">
+    <p class="qq">You have 10,000 customer records and want to discover natural groups of similar shoppers — no predefined categories. Which kind of learning is this?</p>
+    <div class="opts"><button class="opt" data-i="0">Supervised — the records are the labels</button><button class="opt" data-i="1">Unsupervised — finding structure without an answer key</button><button class="opt" data-i="2">Neither; this isn't machine learning</button><button class="opt" data-i="3">Both at once, always</button></div>
+    <p class="quiz-exp">No predefined answer to learn from = unsupervised. If instead you wanted to predict 'will this customer buy again? yes/no' with historical answers, THAT would be supervised classification.</p>
+  </div>
+  <aside class="notes">The explanation's contrast (same data, different question → different paradigm) is the deeper lesson: the QUESTION picks the paradigm, echoing step 1.</aside>
+</section>
+<section id="case-av-pipeline" data-sid="case-av-pipeline">
+<div class="kicker">Case study · the strong question walks the pipeline</div>
+    <h2>Teaching a car to see, end to end</h2>
+    <p class="lead" style="margin:0 0 .25em">Take Class 2's strong question — "do low-light training images raise night recall without hurting day accuracy?" — and walk it through all four stages:</p>
+    <div class="flow" style="margin-top:.3em">
+      <div class="step"><div class="n">1</div><b>Data</b><span>Road images, day + night, with boxes humans drew around pedestrians.</span></div>
+      <div class="step"><div class="n">2</div><b>Model</b><span>An object detector trained twice: with and without the low-light images.</span></div>
+      <div class="step"><div class="n">3</div><b>Experiment</b><span>Both models measured on the same unseen test set: night recall, day accuracy.</span></div>
+      <div class="step"><div class="n">4</div><b>Conclusion</b><span>"Low-light data raised night recall +19% with no day loss" — nothing more.</span></div>
+    </div>
+    <div class="callout"><b>Deja vu?</b> You already ran stages 3–4 of exactly this study — Lab 2 of Class 2 computed those recalls from toy data. Today's Lab 1 runs the <i>whole</i> loop. Prefer another domain? Same four stages, any field.</div>
+    <aside class="notes">The continuity payoff: last class's question + last class's lab were secretly pipeline stages. The 'trained twice' detail plants fair-comparison intuition for Class 14 (experiment design).</aside>
+</section>
+<section id="case-house-prices" data-sid="case-house-prices">
+<div class="kicker">Case study 2 · same loop, different game</div>
+    <h2>Predicting house prices — a regression lap</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">1–2 · Problem &amp; data</h3><p>Predict a <b>number</b> (price) → regression. Data: a classic housing dataset — hundreds of homes, features like rooms, age, neighborhood crime rate.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">3–4 · Model &amp; evaluate</h3><p>Baseline first: <b>linear regression</b>. Then a <b>random forest</b> for the nonlinear patterns. Metric: prediction error (MSE) — lower is better. Tune, compare, iterate.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">5 · Present</h3><p>Report the error — and the <b>feature importances</b>: which factors actually drive price? That insight is often worth more than the prediction.</p></div>
+    </div>
+    <div class="callout">Notice what changed (task type, metric, models) and what didn't (<b>the loop</b>). Classification or regression, cars or houses — same pipeline. This exact project is your stretch homework on Kaggle.</div>
+    <aside class="notes">Regression companion to the AV classification case — proves pipeline universality and pre-sells the Kaggle House Prices homework. Feature importance foreshadows interpretability in Class 12.</aside>
+</section>
+<section id="tool-colab" data-sid="tool-colab">
+<div class="kicker">AI ON SCREEN · TOOLBOX · YOUR CLOUD LAB</div>
+  <h2>Google Colab — a free AI lab in your browser</h2>
+  <div class="vid" style="margin-top:.3em">
+    <div><span class="feature">FEATURE: ZERO SETUP · FREE GPU · SHARE LIKE A DOC</span>
+      <p style="margin-top:.3em">A free cloud notebook from Google: <b>Python pre-installed</b>, nothing to configure, runs on Google's machines — including <b>free GPUs</b> that train models many times faster than your laptop. Share a notebook like a Google Doc. This is where your real projects will live from Class 5 on.</p>
+      <a class="btn" href="https://colab.research.google.com/" target="_blank" rel="noopener">▶ Watch the clip</a></div>
+    <div class="qrwrap"><div class="poster" style="background:linear-gradient(135deg,#F2A93B,#EE6B36)">CO<br>LAB<div class="play">▶</div></div>
+      <img class="qr" src="assets/qr-colab.png" alt="QR"><br><a href="https://colab.research.google.com/" target="_blank" rel="noopener">scan / tap to open</a></div>
+  </div><aside class="notes">Colab = the course's real lab bench (the in-deck labs are for quick class moments; Colab is for projects). Demo live if time: New notebook → print('hello') → runs in the cloud. Free GPU is the wow-fact for students with old laptops. Homework has them open it tonight.</aside>
+</section>
+<section id="tool-kaggle" data-sid="tool-kaggle">
+<div class="kicker">AI ON SCREEN · TOOLBOX · DATA & COMPETITION</div>
+  <h2>Kaggle — datasets, competitions, and other people's code</h2>
+  <div class="vid" style="margin-top:.3em">
+    <div><span class="feature">FEATURE: DATA + COMPETITIONS + LEARN FROM THE BEST</span>
+      <p style="margin-top:.3em">The world's largest data-science community. Three things you'll use: <b>datasets</b> (thousands, free, labeled — your step-2 shortcut), <b>competitions</b> (real problems, live leaderboards), and <b>notebooks</b> — top competitors publish their full code, so you can <b>read how experts run the pipeline</b>.</p>
+      <a class="btn" href="https://www.kaggle.com/" target="_blank" rel="noopener">▶ Watch the clip</a></div>
+    <div class="qrwrap"><div class="poster" style="background:linear-gradient(135deg,#0F9DB0,#2BC4D4)">KAGGLE<div class="play">▶</div></div>
+      <img class="qr" src="assets/qr-kaggle.png" alt="QR"><br><a href="https://www.kaggle.com/" target="_blank" rel="noopener">scan / tap to open</a></div>
+  </div><aside class="notes">Kaggle already appeared twice (Class 1 Titanic stretch, Class 2 QUEST stretch) — now it gets a formal introduction. The 'read winners' notebooks' habit is the deepest value: it's literature review for code. Tonight's stretch: House Prices.</aside>
+</section>
+<section id="lab-pipeline" data-sid="lab-pipeline">
+<div class="kicker">Hands-on lab 1 · run the whole loop</div>
+  <h2>The entire pipeline in 25 lines</h2>
+  <p class="lead" style="margin:.1em 0 .25em">Data → model → experiment → conclusion — <b>for real</b>, right here. We teach a model to name iris flowers from four measurements. Watch which comment each stage lives under.</p>
+  <div class="lab" data-packages="scikit-learn">
+    <div class="lab-main">
+      <textarea class="code" spellcheck="false"># THE WHOLE RESEARCH PIPELINE - in your browser
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+
+# --- 1. DATA: 150 real flowers, 4 measurements each, 3 species ---
+X, y = load_iris(return_X_y=True)
+names = ["setosa", "versicolor", "virginica"]
+
+# split: train pile to learn from, test pile for the honest exam
+X_tr, X_te, y_tr, y_te = train_test_split(
+    X, y, test_size=0.3, random_state=42)
+
+# --- 2. MODEL: a decision tree learns the patterns ---
+model = DecisionTreeClassifier(max_depth=3)
+model.fit(X_tr, y_tr)
+
+# --- 3. EXPERIMENT: measure on flowers it has NEVER seen ---
+accuracy = model.score(X_te, y_te)
+
+# --- 4. CONCLUSION: only what the numbers support ---
+print(f"Accuracy on unseen flowers: {accuracy:.0%}")
+flower = [[5.1, 3.5, 1.4, 0.2]]  # a brand-new flower's measurements
+print("Prediction for it:", names[model.predict(flower)[0]])
+
+# CHALLENGE 1: change max_depth=3 to 1. What happens to accuracy? Why?
+# CHALLENGE 2: change test_size to 0.9 - now the model learns from
+#              only 15 flowers. Does the conclusion still feel trustworthy?
+</textarea>
+      <div class="lab-bar">
+        <button class="run">▶ Run</button>
+        <button class="ai-explain">✨ Explain</button>
+        <button class="ai-debug">🐞 Debug</button>
+        <button class="ai-improve">⚡ Improve</button>
+        <span class="lab-status">Python loads on first Run</span>
+      </div>
+      <pre class="out">▶ Run the code to see the output here.</pre>
+    </div>
+    <div class="assist">
+      <div class="assist-head"><span>✨ AI Assistant</span><select class="ai-model" title="Choose the AI model"><option value="haiku">⚡ Haiku · fastest</option><option value="sonnet">Sonnet · balanced</option><option value="opus">Opus · most capable</option></select></div>
+      <div class="assist-body">Hi! Edit the code and hit <b>Run</b>. Stuck? I can <b>Explain</b>, <b>Debug</b>, or <b>Improve</b> it — or just ask me below.</div>
+      <div class="assist-ask"><input class="ask-in" placeholder="Ask about this code…"><button class="ask-btn">Ask</button></div>
+    </div>
+  </div><aside class="notes">First run loads scikit-learn (~15-30s) — narrate the pipeline stages while it loads. ~93-98% accuracy typical. Challenge 1 previews underfitting (depth-1 tree); challenge 2 builds sample-size intuition, continuing Class 2 lab 2's seed. Every comment header is a stage of today's diagram.</aside>
+</section>
+<section id="lab-overfitting" data-sid="lab-overfitting">
+<div class="kicker">Hands-on lab 2 · see the disease</div>
+  <h2>Watch overfitting happen (train vs. test)</h2>
+  <p class="lead" style="margin:.1em 0 .25em">The same data, three models of growing complexity. Watch the <b>training error</b> fall while the <b>unseen-data error</b> turns around and climbs — that turn is overfitting, live.</p>
+  <div class="lab" data-packages="numpy">
+    <div class="lab-main">
+      <textarea class="code" spellcheck="false">import numpy as np
+
+# The true relationship is a gentle curve + noise
+rng = np.random.default_rng(7)
+x = np.linspace(0, 1, 30)
+y = np.sin(2 * np.pi * x) + rng.normal(0, 0.25, 30)
+
+# three piles? two today: shuffle, then 20 points train / 10 test
+idx = rng.permutation(30)
+x_tr, y_tr = x[idx[:20]], y[idx[:20]]
+x_te, y_te = x[idx[20:]], y[idx[20:]]
+
+def fit_poly(degree):
+    coeffs = np.polyfit(x_tr, y_tr, degree)      # MODEL: fit polynomial
+    err_tr = np.mean((np.polyval(coeffs, x_tr) - y_tr) ** 2)
+    err_te = np.mean((np.polyval(coeffs, x_te) - y_te) ** 2)
+    return err_tr, err_te
+
+print("degree   train error   test error")
+for d in [1, 3, 15]:
+    tr, te = fit_poly(d)
+    tag = " &lt;- underfit" if d == 1 else (" &lt;- OVERFIT!" if d == 15 else " &lt;- healthy")
+    print(f"  {d:2d}       {tr:7.3f}      {te:7.3f}{tag}")
+
+# degree 1: too simple - bad everywhere        (underfitting)
+# degree 3: matches the true curve - best test error
+# degree 15: memorizes noise - train ~0, test explodes (overfitting)
+
+# CHALLENGE: try degrees 2,4,6,8,10 - where exactly does test error
+#            bottom out? That sweet spot is what tuning searches for.
+</textarea>
+      <div class="lab-bar">
+        <button class="run">▶ Run</button>
+        <button class="ai-explain">✨ Explain</button>
+        <button class="ai-debug">🐞 Debug</button>
+        <button class="ai-improve">⚡ Improve</button>
+        <span class="lab-status">Python loads on first Run</span>
+      </div>
+      <pre class="out">▶ Run the code to see the output here.</pre>
+    </div>
+    <div class="assist">
+      <div class="assist-head"><span>✨ AI Assistant</span><select class="ai-model" title="Choose the AI model"><option value="haiku">⚡ Haiku · fastest</option><option value="sonnet">Sonnet · balanced</option><option value="opus">Opus · most capable</option></select></div>
+      <div class="assist-body">Hi! Edit the code and hit <b>Run</b>. Stuck? I can <b>Explain</b>, <b>Debug</b>, or <b>Improve</b> it — or just ask me below.</div>
+      <div class="assist-ask"><input class="ask-in" placeholder="Ask about this code…"><button class="ask-btn">Ask</button></div>
+    </div>
+  </div><aside class="notes">Step 4's under/overfitting made numeric. Degree 15's test error explodes dramatically — the punchline. The challenge IS hyperparameter tuning (step 3's knobs) discovered by hand. If asked why only two piles: validation pile appears properly in Class 14.</aside>
+</section>
+<section id="your-project" data-sid="your-project">
+<div class="kicker">Your project</div>
+    <h2>Draw your research pipeline</h2>
+    <div class="grid2" style="grid-template-columns:1.3fr 1fr">
+      <div><p class="lead">Turn <b>your</b> strong question from Class 2 into a diagram of the whole journey — so you always know which stage you're standing on.</p>
+        <ul><li>Draw the four stages, left to right: <b>Data → Model → Experiment → Conclusion</b></li>
+          <li>Under each stage, write what happens <b>for your question</b> — concretely</li>
+          <li>Mark ⚠ where you predict the hard part will be</li></ul></div>
+      <div class="box"><h3 style="color:var(--teal)">Deliverable</h3><p>A labeled pipeline diagram for your chosen question.</p>
+        <h3 style="color:var(--coral);margin-top:.35em">Success looks like</h3><p>All four stages, in order — and each names a <b>concrete artifact</b>: a dataset, a model, a number.</p></div>
+    </div>
+    <aside class="notes">The curriculum deliverable: their own AI research-pipeline diagram. 'Concrete artifact' is the quality bar — 'get data' fails, '500 labeled night images from Kaggle X' passes. The ⚠ mark makes them think ahead; most should land on data. They'll point at this diagram weekly.</aside>
+</section>
+<section id="build-it-now" data-sid="build-it-now">
+<div class="kicker">Build it now · hands-on</div>
+    <h2>From diagram to mini research plan</h2>
+    <ol style="font-size:.72em;margin-left:1.05em">
+      <li>Re-run <b>Lab 1</b> and name the four stages out loud from the code comments</li>
+      <li>Sketch your pipeline diagram — paper, slides, or whiteboard (photo it!)</li>
+      <li>Upgrade it to a <b>mini research plan</b> — one line per step: problem restated · target metric &amp; threshold · data source · model path (baseline → better) · how you'll split &amp; evaluate</li>
+      <li>Mark ⚠ on the hardest stage, and write <i>one sentence</i> on why</li></ol>
+    <div style="margin-top:.2em"><span class="pill">Google Colab</span><span class="pill">Kaggle</span><span class="pill">ScholarMind</span></div>
+    <div class="callout"><b>Tip:</b> a plan that says "baseline first, fancy model second" is already smarter than half the internet. Steal that structure from the template on the next slide.</div>
+    <aside class="notes">Circulate; the checkpoint is step 3's one-line-per-step plan — it's the research-plan template in miniature. ScholarMind can suggest datasets for step 3's data line if students are stuck.</aside>
+</section>
+<section id="benchmark-plan-template" data-sid="benchmark-plan-template">
+<div class="kicker">Benchmark · judge against this</div>
+    <h2>What a finished mini-plan looks like</h2>
+    <p class="lead" style="margin:0 0 .25em">Example question: <i>"Can a model tell cats from dogs in photos?"</i></p>
+    <div class="grid2" style="margin-top:.25em">
+      <div class="box"><p><b>1 · Problem:</b> binary image classification — photo in, cat/dog out.</p></div>
+      <div class="box"><p><b>2 · Success metric:</b> accuracy ≥ 95% on unseen photos (F1 as backup).</p></div>
+      <div class="box"><p><b>3 · Data plan:</b> Kaggle cats-vs-dogs dataset; resize all images; augment; split 70/10/20.</p></div>
+      <div class="box"><p><b>4 · Model path:</b> baseline = small CNN → then fine-tune a pretrained ResNet50.</p></div>
+      <div class="box"><p><b>5 · Evaluation:</b> tune on the validation pile only; touch the test pile once, at the end.</p></div>
+      <div class="box" style="border-top:4px solid var(--coral)"><p><b>⚠ Predicted hard part:</b> data — photos vary wildly in lighting and pose; augmentation will matter.</p></div>
+    </div>
+    <div class="callout">Every line is <b>concrete</b>: a named dataset, a number to beat, a model path from simple to strong, an evaluation discipline. Measure your plan against this bar.</div>
+    <aside class="notes">The Lesson-3 template distilled to six cards. Don't fear the unexplained names (CNN, ResNet, augmentation) — say 'you'll meet these in classes 10-13; today only the STRUCTURE matters.'</aside>
+</section>
+<section id="pitfalls" data-sid="pitfalls">
+<div class="kicker">Field guide · how projects actually die</div>
+    <h2>Four classic pitfalls (and the fix)</h2>
+    <div class="grid2" style="margin-top:.3em">
+      <div class="box" style="border-top:4px solid var(--coral)"><h3>1 · Worshipping models, ignoring data</h3><p>Weeks on a fancy model fed garbage data. <b>Fix:</b> spend ~<b>half your time</b> on understanding and cleaning data. (ImageNet's whole lesson.)</p></div>
+      <div class="box" style="border-top:4px solid var(--amber)"><h3>2 · Starting with the fanciest model</h3><p>Jumping straight to the deep end. <b>Fix:</b> baseline first — a simple model that sets the bar and reveals how hard the problem really is.</p></div>
+      <div class="box" style="border-top:4px solid var(--navy)"><h3>3 · Grading on the training data</h3><p>"99% accuracy!" …on data it memorized. <b>Fix:</b> the three piles. Report only unseen-data scores; touch the test set once.</p></div>
+      <div class="box" style="border-top:4px solid var(--teal)"><h3>4 · Numbers with no picture</h3><p>A wall of metrics nobody understands. <b>Fix:</b> visualize — one honest chart beats a table of digits. (Class 9 is all about this.)</p></div>
+    </div>
+    <aside class="notes">Each pitfall now has hooks: #1 ImageNet, #2 the plan template's baseline line, #3 quiz-overfitting's trap option, #4 forward to Class 9. Frame as 'the four ways your project will TRY to die — now you know the vaccines.'</aside>
+</section>
+<section id="reference-key-terms" data-sid="reference-key-terms">
+<div class="kicker">Reference · key terms</div>
+    <h2>Today's vocabulary</h2>
+    <div class="grid2" style="margin-top:.3em">
+      <div class="box"><p><b>Pipeline</b> — the loop every study walks: data → model → experiment → conclusion.</p></div>
+      <div class="box"><p><b>Supervised / unsupervised</b> — learning with labeled answers vs. finding structure without labels.</p></div>
+      <div class="box"><p><b>Train / validation / test sets</b> — three piles: learn from, tune on, final-exam once.</p></div>
+      <div class="box"><p><b>Baseline</b> — the simple model you build first; everything fancier must beat it.</p></div>
+      <div class="box"><p><b>Underfitting / overfitting</b> — too simple to learn vs. memorized the noise; diagnose via the train-vs-test gap.</p></div>
+      <div class="box"><p><b>Data leakage</b> — test information sneaking into training or tuning; makes scores lie.</p></div>
+    </div>
+    <aside class="notes">Reference slide — point back here all course. The three-pile and leakage entries earn their keep in Class 14.</aside>
+</section>
+<section id="homework" data-sid="homework">
+<div class="kicker">Recommended homework</div>
+    <h2>Before next class</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1fr">
+      <div><ol style="font-size:.66em;margin-left:1.05em">
+        <li><b>Finish your pipeline diagram</b> + mini plan (photo or doc) and submit in Google Classroom — all four stages, each with a concrete artifact, ⚠ on the hard part.</li>
+        <li><b>Open Google Colab</b> tonight: new notebook, load any dataset (iris from Lab 1 is fine), print its shape and first rows. First lap, tiny scale — done is the goal.</li>
+        <li><b>Re-run Lab 2</b> and find the degree where test error bottoms out — bring the number.</li>
+      </ol></div>
+      <div class="box"><h3 style="color:var(--teal)">⭐ Stretch (optional)</h3>
+        <p>Kaggle's <b>"House Prices — Advanced Regression Techniques"</b>: skim the data page and one high-voted notebook. Spot the pipeline stages in someone else's real code.</p>
+        <a class="btn" href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques" target="_blank" rel="noopener">kaggle.com · House Prices</a></div>
+    </div>
+    <div class="callout">"An ounce of practice…" — the Colab task is deliberately tiny. Starting is the assignment. Questions → 💬 on any slide.</div>
+    <aside class="notes">Task 1 is the graded deliverable (Classroom: 'Your own AI research-workflow diagram'). Task 2 makes homework touch Colab before Class 5 needs it. The stretch mirrors today's case study 2.</aside>
+</section>
+<section id="line-to-remember" data-sid="line-to-remember" class="center" data-background-gradient="linear-gradient(135deg,#0B7E8A,#0F9DB0)">
+<div class="kicker">Today's line to remember</div>
+    <h2 style="color:#fff">"An ounce of practice is worth a pound of theory."</h2>
+    <p style="color:#cfe0ef;margin-top:.3em">— Henry David Thoreau</p>
+    <p style="color:#eaf2fb;font-size:.8em;margin-top:.5em">You now hold the map. Next: walk it — one small lap tonight in Colab.</p>
+    <div style="margin-top:.5em"><button class="speak" data-audio="audio/quote2.mp3">🔊 <span>Speak this</span></button></div>
+    <aside class="notes">Thoreau seals the homework's message: the tiny Colab task tonight IS the point. Theory got its hour; practice gets the semester.</aside>
+</section>
+<section id="wrap-up" data-sid="wrap-up" class="center" data-background-gradient="linear-gradient(135deg,#0C2D52,#16406e)">
+<div class="kicker" style="color:#7fd3df">Wrap-up</div>
+    <h2 style="color:#fff">Three things to keep</h2>
+    <ul style="display:inline-block;text-align:left;color:#eaf2fb">
+      <li>One loop rules them all: <b>data → model → experiment → conclusion</b> — and it cycles</li>
+      <li>Supervised = learning with an answer key; the answer key is <b>expensive and precious</b></li>
+      <li>The test set is sacred: three piles, honest numbers, baseline first</li></ul>
+    <p style="color:#cfe0ef;margin-top:.6em"><b>Exit ticket:</b> which pipeline stage do you predict will be hardest for <i>your</i> project, and why? Post it in 💬.</p>
+    <p style="color:#9db8d6;font-size:.6em;margin-top:.7em">Next · Class 4 — ChatGPT for research: put an AI assistant to work on every stage of this pipeline.</p>
+    <aside class="notes">Exit tickets again preview every student's thinking. Tease Class 4 by pointing at the map they just drew: next week an AI assistant accelerates every box on it.</aside>
+</section>
+<section id="backup-material" data-sid="backup-material">
+<div class="kicker" style="color:var(--coral)">Backup material</div>
+    <h2>Extra slides — if there's time</h2>
+    <p class="lead">Deeper dives and extra practice. Skip in a tight hour; pull up on demand or for a longer session.</p>
+    <div class="flow" style="margin-top:.4em">
+      <div class="step"><b>Research ethics</b><span>privacy, bias, impact</span></div>
+      <div class="step"><b>The three piles, illustrated</b><span>train / validation / test</span></div>
+      <div class="step"><b>Bonus quiz</b><span>one more check</span></div>
+    </div>
+    <aside class="notes">Ethics deserves airtime if the hour allows — it returns formally in later classes. The three-piles slide is a rescue visual if the split confused anyone.</aside>
+</section>
+<section id="backup-ethics" data-sid="backup-ethics">
+<div class="kicker">Backup · extended thinking</div>
+    <h2>The pipeline has a conscience: research ethics</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">🔐 Data privacy</h3><p>Is your data legally sourced and properly authorized? Faces, health records, chat logs — being <i>available</i> doesn't make them <i>fair game</i>. (A data-stage question.)</p></div>
+      <div class="box"><h3 style="color:var(--teal)">⚖️ Algorithmic bias</h3><p>If the training data under-represents a group, the model fails them — a detector trained mostly on daytime images misses at night. (A model-stage question.)</p></div>
+      <div class="box"><h3 style="color:var(--coral)">🌍 Social impact</h3><p>Could your results be misused, or widen inequality? Anticipating harm is part of the conclusion stage — not someone else's job.</p></div>
+    </div>
+    <div class="callout">"As researchers we are not only creators of technology but bearers of responsibility." Notice each concern maps to a pipeline stage — ethics isn't a separate box, it rides <b>inside every box</b>.</div>
+    <aside class="notes">The stage-mapping makes ethics concrete rather than preachy. The bias example deliberately reuses the day/night imbalance — the SAME fact that motivated the strong question is also a fairness issue.</aside>
+</section>
+<section id="backup-three-piles" data-sid="backup-three-piles">
+<div class="kicker">Backup · the split, illustrated</div>
+    <h2>Three piles, three jobs</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box" style="border-top:4px solid var(--teal)"><h3 style="color:var(--teal)">📚 Training set (~70%)</h3><p>The textbook. The model <b>learns</b> from this pile — it may read it as many times as it likes.</p></div>
+      <div class="box" style="border-top:4px solid var(--amber)"><h3 style="color:#8a6114">📝 Validation set (~10%)</h3><p>The practice quiz. You <b>tune knobs</b> against this pile — compare models, pick settings.</p></div>
+      <div class="box" style="border-top:4px solid var(--coral)"><h3 style="color:var(--coral)">🔒 Test set (~20%)</h3><p>The final exam, sealed until the end. Opened <b>once</b>. Its score is the number you report.</p></div>
+    </div>
+    <div class="callout"><b>Why so strict?</b> Anything you optimize against, you slowly memorize — a student who practices on the final exam hasn't learned, just leaked. Same for models: that's <b>data leakage</b>.</div>
+    <aside class="notes">The student-exam analogy is the strongest one available — use it if the piles confused anyone in step 5 or lab 2. Classic split 70/10/20 (the Lesson-3 deck's 7:1:2).</aside>
+</section>
+<section id="quiz-backup-bonus" data-sid="quiz-backup-bonus">
+<div class="kicker">Backup · bonus check</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="1">
+    <p class="qq">A researcher tries 50 different model settings, each time checking the score on the test set, and reports the best one. What went wrong?</p>
+    <div class="opts"><button class="opt" data-i="0">Nothing — trying many settings is good practice</button><button class="opt" data-i="1">They used data leakage: tuning against the test set means its score no longer measures unseen data</button><button class="opt" data-i="2">They should have tried 500 settings</button><button class="opt" data-i="3">Models may only be tuned once by law</button></div>
+    <p class="quiz-exp">Tuning is fine — against the VALIDATION pile. By checking the test set 50 times they optimized for it, so the reported score is quietly inflated. The test set answers honestly only if you ask it once.</p>
+  </div>
+  <aside class="notes">The subtlest form of pitfall #3 — leakage without touching training. If students get this one, the three-pile discipline has truly landed.</aside>
+</section>
+</div></div>
+
+<a id="donateBtn" href="https://buy.stripe.com/14AbIT26kfUzbqjbGv4ow00" target="_blank" rel="noopener">♥ Donate</a>
+<a id="pdfBtn" href="slides.pdf" download title="Download these slides as a PDF">⬇ PDF</a>
+<a id="mpaLogo" href="/meritpoint-slides/" title="Merit Point Academy — all courses"><img src="/meritpoint-slides/assets/mpa-logo.png" alt="Merit Point Academy"></a>
+<!-- per-slide comments -->
+<audio id="narratorAudio" preload="none" style="display:none"></audio>
+<div id="capBar"></div>
+<button id="ccBtn" title="Toggle captions">CC</button>
+<button id="listenBtn" title="Listen to this slide narrated"><span class="li-ic">▶</span><span class="li-tx">Listen</span></button>
+<button id="commentBtn" title="Comment on this slide">💬 Comment<span class="cnum" id="cnum">0</span></button>
+<div id="commentPanel">
+  <div class="ph"><span id="cph">Comments</span><span class="x" id="cclose">✕</span></div>
+  <div id="commentList"></div>
+  <form id="commentForm">
+    <div class="row"><input id="cname" placeholder="Your name (optional)" maxlength="40"></div>
+    <textarea id="cbody" placeholder="Leave a comment or question about this slide…" maxlength="2000"></textarea>
+    <div class="row"><button type="submit">Post</button><span class="msg" id="cmsg">Visible to your instructor &amp; classmates.</span></div>
+  </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+<script>
+const DECK = "ai-toolbox/class-03";
+Reveal.initialize({ hash:true, slideNumber:'c/t', controls:true, progress:true,
+  width:1280, height:720, margin:0.04, transition:'slide',
+  keyboardCondition:'focused', plugins:[ RevealNotes ] });
+
+/* ---------- Shared audio player ----------
+ * One audio element, already attached to the DOM (see markup above), reused
+ * for every play. A bare detached Audio object is never used: on at least one
+ * real browser/profile that made Chrome abort play() within milliseconds
+ * ("interrupted because the media was removed from the document") — audio
+ * never audibly played and the button silently reset to idle before anyone
+ * noticed. Reusing an attached element avoids that path. */
+const _audio=document.getElementById('narratorAudio');
+let _btn=null,_playToken=0;
+function fmtClock(s){ s=Math.max(0,Math.floor(s||0)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
+function resetListenUI(){ listenBtn.style.setProperty('--p','0%'); listenBtn.querySelector('.li-ic').textContent='▶'; listenBtn.querySelector('.li-tx').textContent='Listen'; }
+function stopAudio(){
+  _playToken++; // invalidate any in-flight play() for the old src
+  _audio.pause(); _audio.currentTime=0; _audio.removeAttribute('src'); _audio.load();
+  _audio.removeEventListener('timeupdate',onListenTimeupdate); // else it'd animate listenBtn during a .speak clip
+  capBar.style.display='none';
+  if(_btn){
+    _btn.classList.remove('playing');
+    if(_btn===listenBtn) resetListenUI();
+    else if(_btn.querySelector('span')) _btn.querySelector('span').textContent=_btn.dataset.label||'Speak';
+  }
+  _btn=null;
+}
+document.addEventListener('click',function(e){
+  const b=e.target.closest('.speak'); if(!b) return;
+  if(_btn===b && !_audio.paused){ stopAudio(); return; }
+  stopAudio();
+  const token=_playToken;
+  _btn=b; b.dataset.label=b.dataset.label||b.querySelector('span').textContent;
+  b.classList.add('playing'); b.querySelector('span').textContent='Pause';
+  _audio.src=b.dataset.audio;
+  _audio.addEventListener('ended',stopAudio,{once:true});
+  _audio.play().catch(function(){ if(token===_playToken) stopAudio(); });
+});
+
+/* ---------- Per-slide narration ("Listen") + captions ---------- */
+const listenBtn=document.getElementById('listenBtn');
+const ccBtn=document.getElementById('ccBtn');
+const capBar=document.getElementById('capBar');
+let _narrationData=null; // { [sid]: { script, cues:[{start,end,text}], ... } }
+let _ccOn=localStorage.getItem('cc_captions')!=='0'; // on by default
+function updateCcBtn(){ ccBtn.classList.toggle('on',_ccOn); ccBtn.title=_ccOn?'Captions on — click to hide':'Captions off — click to show'; }
+async function loadNarrated(){
+  try{ const r=await fetch('audio/narration.json',{cache:'no-cache'}); if(!r.ok) throw 0;
+    _narrationData=await r.json(); }
+  catch(e){ _narrationData={}; }
+  updateCcBtn();
+  updateListen();
+}
+function updateListen(){
+  if(!_narrationData){ return; }
+  const has=!!_narrationData[curSid];
+  listenBtn.style.display=has?'inline-flex':'none';
+  ccBtn.style.display=has?'inline-flex':'none';
+  if(!has && _btn===listenBtn) stopAudio();
+}
+function cueAt(cues,t){ for(const c of cues) if(t>=c.start && t<c.end) return c; return null; }
+function updateCaption(){
+  const data=_narrationData && _narrationData[curSid];
+  const cues=data && data.cues;
+  if(!_ccOn || _btn!==listenBtn || !cues || !cues.length){ capBar.style.display='none'; return; }
+  const cue=cueAt(cues,_audio.currentTime);
+  if(cue){ capBar.textContent=cue.text; capBar.style.display='block'; }
+  else capBar.style.display='none'; // brief gap between sentences
+}
+ccBtn.addEventListener('click',function(){
+  _ccOn=!_ccOn; localStorage.setItem('cc_captions',_ccOn?'1':'0'); updateCcBtn(); updateCaption();
+});
+function onListenTimeupdate(){
+  if(_audio.duration) listenBtn.style.setProperty('--p',(_audio.currentTime/_audio.duration*100)+'%');
+  listenBtn.querySelector('.li-tx').textContent=fmtClock(_audio.currentTime)+' / '+fmtClock(_audio.duration);
+  updateCaption();
+}
+listenBtn.addEventListener('click',function(){
+  if(_btn===listenBtn && !_audio.paused){ stopAudio(); return; } // toggles play/stop even mid-buffer
+  stopAudio();
+  const token=_playToken;
+  _btn=listenBtn;
+  listenBtn.classList.add('playing');
+  listenBtn.querySelector('.li-ic').textContent='⏹';
+  listenBtn.querySelector('.li-tx').textContent='loading…';
+  _audio.src='audio/'+encodeURIComponent(curSid)+'.mp3';
+  _audio.addEventListener('timeupdate',onListenTimeupdate);
+  _audio.addEventListener('ended',stopAudio,{once:true});
+  _audio.play().catch(function(){
+    if(token!==_playToken) return; // superseded by a newer click/stop — ignore
+    _audio.removeEventListener('timeupdate',onListenTimeupdate);
+    stopAudio();
+    listenBtn.querySelector('.li-tx').textContent='tap to retry';
+    setTimeout(resetListenUI,2200);
+  });
+});
+
+/* ---------- Quizzes (answers feed the live class distribution) ---------- */
+function renderQuizStats(quiz,data){
+  quiz._qstats=data;
+  let box=quiz.querySelector('.qstats');
+  if(!box){ box=document.createElement('div'); box.className='qstats'; quiz.appendChild(box); }
+  const mode=quiz._qmode||'today';
+  const st=(data&&data[mode])||{counts:{},total:0};
+  const opts=quiz.querySelectorAll('.opt'), correct=parseInt(quiz.dataset.correct,10);
+  let bars='';
+  for(let i=0;i<opts.length;i++){
+    const c=st.counts[i]||0, pct=st.total?Math.round(c*100/st.total):0;
+    bars+='<div class="qrow"><span class="ql">'+String.fromCharCode(65+i)+'</span>'
+      +'<div class="qbar"><div class="qfill'+(i===correct?' qok':'')+'" style="width:'+pct+'%"></div></div>'
+      +'<span class="qp">'+pct+'% ('+c+')</span></div>';
+  }
+  box.innerHTML='<div class="qhead"><span>Class results · '+st.total+' answered</span>'
+    +'<span><button class="qm'+(mode==='today'?' on':'')+'" data-m="today">Today</button>'
+    +'<button class="qm'+(mode==='all'?' on':'')+'" data-m="all">All time</button></span></div>'+bars;
+}
+document.addEventListener('click',function(e){
+  const m=e.target.closest('.qstats .qm');
+  if(m){ const q=m.closest('.quiz'); q._qmode=m.dataset.m; renderQuizStats(q,q._qstats); return; }
+  const opt=e.target.closest('.quiz .opt'); if(!opt) return;
+  const quiz=opt.closest('.quiz'); if(quiz.classList.contains('answered')) return;
+  const correct=parseInt(quiz.dataset.correct,10);
+  quiz.querySelectorAll('.opt').forEach(function(o){o.setAttribute('disabled','');});
+  const chosen=parseInt(opt.dataset.i,10);
+  quiz.querySelectorAll('.opt')[correct].classList.add('correct');
+  if(chosen!==correct) opt.classList.add('wrong');
+  quiz.classList.add('answered');
+  const sec=quiz.closest('section');
+  const sid=(sec&&sec.dataset.sid)||_hashSid(sec);
+  fetch('/api/quiz/answer',{method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({deck:DECK,slide:sid,choice:chosen,correct:chosen===correct})})
+    .then(function(r){return r.json();})
+    .then(function(j){ if(j&&j.today) renderQuizStats(quiz,{today:j.today,all:j.all}); })
+    .catch(function(){ fetch('/api/quiz/stats?deck='+encodeURIComponent(DECK)+'&slide='+encodeURIComponent(sid))
+      .then(function(r){return r.json();}).then(function(j){renderQuizStats(quiz,j);}).catch(function(){}); });
+});
+
+/* ---------- Heap / Top-K insertion visualizer ---------- */
+function hvState(el){
+  if(!el._hv){ el._hv={ frames:[{heap:[],action:'Ready. Insert a value to see the animation.',hi:[]}], cur:0, playing:false, timer:null }; }
+  return el._hv;
+}
+function hvTree(arr,hi){
+  if(!arr.length) return '<div class="hv-empty">(empty)</div>';
+  const W=200,H=140; const depthOf=(i)=>Math.floor(Math.log2(i+1)); const maxDepth=depthOf(arr.length-1);
+  const nodes=arr.map(function(v,i){ const d=depthOf(i); const levelStart=Math.pow(2,d)-1; const pos=i-levelStart; const cnt=Math.pow(2,d);
+    return { i:i, v:v, x:((pos+0.5)/cnt)*W, y:16+d*((H-24)/Math.max(1,maxDepth)) }; });
+  let svg='<svg viewBox="0 0 '+W+' '+(H+16)+'" class="hv-tree-svg">';
+  nodes.forEach(function(n){ if(n.i===0) return; const p=nodes[Math.floor((n.i-1)/2)];
+    svg+='<line x1="'+p.x+'" y1="'+p.y+'" x2="'+n.x+'" y2="'+n.y+'" class="hv-edge"/>'; });
+  (hi||[]).forEach(function(pair){ if(pair.length===2 && nodes[pair[0]] && nodes[pair[1]]){
+    svg+='<line x1="'+nodes[pair[0]].x+'" y1="'+nodes[pair[0]].y+'" x2="'+nodes[pair[1]].x+'" y2="'+nodes[pair[1]].y+'" class="hv-swap"/>'; } });
+  const hiIdx=(hi||[]).flat();
+  nodes.forEach(function(n){ const isHi=hiIdx.indexOf(n.i)>-1;
+    svg+='<circle cx="'+n.x+'" cy="'+n.y+'" r="13" class="hv-node'+(isHi?' hv-node-hi':'')+'"/><text x="'+n.x+'" y="'+(n.y+4)+'" class="hv-node-text">'+n.v+'</text>'; });
+  return svg+'</svg>';
+}
+function hvRender(el){
+  const st=hvState(el);
+  el.querySelector('.hv-arr-now').textContent='['+st.frames[st.cur].heap.join(', ')+']';
+  el.querySelector('.hv-step').textContent=st.cur+' / '+(st.frames.length-1);
+  el.querySelector('.hv-action-text').textContent=st.frames[st.cur].action;
+  const framesEl=el.querySelector('.hv-frames'), arrsEl=el.querySelector('.hv-arrs');
+  framesEl.innerHTML=''; arrsEl.innerHTML='';
+  st.frames.forEach(function(f,idx){
+    const hiIdx=(f.hi||[]).flat();
+    const card=document.createElement('div'); card.className='hv-frame'+(idx===st.cur?' hv-frame-active':'');
+    card.innerHTML='<div class="hv-frame-title">Step '+idx+'</div><div class="hv-frame-desc">'+(idx===0?'(empty)':f.action)+'</div>'+hvTree(f.heap,f.hi);
+    framesEl.appendChild(card);
+    const a=document.createElement('div'); a.className='hv-arr'+(idx===st.cur?' hv-arr-active':'');
+    a.innerHTML='['+f.heap.map(function(v,i){ return hiIdx.indexOf(i)>-1?'<span class="hv-arr-hi">'+v+'</span>':v; }).join(', ')+']';
+    arrsEl.appendChild(a);
+  });
+  const active=framesEl.querySelector('.hv-frame-active');
+  if(active) active.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
+}
+function hvInsert(el,val){
+  const st=hvState(el);
+  if(st.cur!==st.frames.length-1) st.frames=st.frames.slice(0,st.cur+1); // drop redo history on a fresh insert
+  const heap=st.frames[st.frames.length-1].heap.slice();
+  const idx=heap.length; heap.push(val);
+  let i=idx, hi=[[idx,idx]];
+  while(i>0){ const p=Math.floor((i-1)/2);
+    if(heap[p]>heap[i]){ const t=heap[p]; heap[p]=heap[i]; heap[i]=t; hi=[[p,i]]; i=p; } else break; }
+  st.frames.push({ heap:heap, action:'Insert '+val+' at index '+idx, hi:hi });
+  st.cur=st.frames.length-1; hvRender(el);
+}
+function hvGoto(el,idx){ const st=hvState(el); st.cur=Math.max(0,Math.min(st.frames.length-1,idx)); hvRender(el); }
+function hvStop(el){ const st=hvState(el); if(st.timer){ clearInterval(st.timer); st.timer=null; } st.playing=false;
+  const b=el.querySelector('.hv-play'); if(b) b.textContent='▶ Play'; }
+function hvPlay(el){ const st=hvState(el); if(st.playing){ hvStop(el); return; }
+  if(st.cur>=st.frames.length-1) hvGoto(el,0);
+  st.playing=true; const b=el.querySelector('.hv-play'); if(b) b.textContent='⏸ Pause';
+  const speed=parseInt(el.querySelector('.hv-speed').value,10)||3, delay=Math.max(280,1300-speed*220);
+  st.timer=setInterval(function(){ if(st.cur>=st.frames.length-1){ hvStop(el); return; } hvGoto(el,st.cur+1); },delay);
+}
+document.addEventListener('click',function(e){
+  const hv=e.target.closest('.heapviz'); if(!hv) return;
+  if(e.target.closest('.hv-insert')){ const inp=hv.querySelector('.hv-input'); const v=parseInt(inp.value,10);
+    if(!isNaN(v)){ hvStop(hv); hvInsert(hv,v); inp.value=''; } }
+  else if(e.target.closest('.hv-quick-btn')){ hvStop(hv); hvInsert(hv,parseInt(e.target.closest('.hv-quick-btn').dataset.v,10)); }
+  else if(e.target.closest('.hv-first')){ hvStop(hv); hvGoto(hv,0); }
+  else if(e.target.closest('.hv-prev')){ hvStop(hv); hvGoto(hv,hvState(hv).cur-1); }
+  else if(e.target.closest('.hv-next')){ hvStop(hv); hvGoto(hv,hvState(hv).cur+1); }
+  else if(e.target.closest('.hv-last')){ hvStop(hv); hvGoto(hv,hvState(hv).frames.length-1); }
+  else if(e.target.closest('.hv-play')){ hvPlay(hv); }
+});
+document.addEventListener('keydown',function(e){
+  if(e.target.classList&&e.target.classList.contains('hv-input')&&e.key==='Enter'){
+    e.preventDefault(); const hv=e.target.closest('.heapviz'); const v=parseInt(e.target.value,10);
+    if(!isNaN(v)){ hvStop(hv); hvInsert(hv,v); e.target.value=''; }
+  }
+});
+document.querySelectorAll('.heapviz').forEach(function(hv){
+  const preset=(hv.dataset.preset||'').split(',').map(function(s){return s.trim();}).filter(Boolean);
+  const q=hv.querySelector('.hv-quick');
+  preset.forEach(function(v){ const b=document.createElement('button'); b.type='button'; b.className='hv-quick-btn'; b.dataset.v=v; b.textContent=v; q.appendChild(b); });
+  hvRender(hv);
+});
+
+/* ---------- Convolution (sliding-window) visualizer ---------- */
+const CV_IMGS={
+  edge:['11110000','11110000','11110000','11110000','11110000','11110000','11110000','11110000'],
+  hedge:['11111111','11111111','11111111','11111111','00000000','00000000','00000000','00000000'],
+  diag:['11000000','11100000','01110000','00111000','00011100','00001110','00000111','00000011'],
+  smiley:['00000000','01100110','01100110','00000000','10000001','01000010','00111100','00000000'],
+  x:['10000001','11000011','01100110','00111100','00111100','01100110','11000011','10000001'],
+  clear:['00000000','00000000','00000000','00000000','00000000','00000000','00000000','00000000']
+};
+const CV_IMG_NAMES=[['edge','Vertical edge'],['hedge','Horizontal edge'],['diag','Diagonal'],['smiley','Smiley'],['x','X'],['clear','Clear']];
+const CV_KERNELS=[
+  {name:'Vertical edge',k:[[1,0,-1],[1,0,-1],[1,0,-1]],div:1},
+  {name:'Horizontal edge',k:[[1,1,1],[0,0,0],[-1,-1,-1]],div:1},
+  {name:'Blur (average)',k:[[1,1,1],[1,1,1],[1,1,1]],div:9},
+  {name:'Sharpen',k:[[0,-1,0],[-1,5,-1],[0,-1,0]],div:1}
+];
+function cvState(el){
+  if(!el._cv){
+    const rows=CV_IMGS[el.dataset.img||'edge'];
+    el._cv={ img:rows.map(function(r){return r.split('').map(Number);}), ki:0, cur:0, playing:false, timer:null };
+  }
+  return el._cv;
+}
+function cvOutputs(st){
+  const K=CV_KERNELS[st.ki], out=[];
+  for(let r=0;r<6;r++){ const row=[];
+    for(let c=0;c<6;c++){ let s=0;
+      for(let i=0;i<3;i++) for(let j=0;j<3;j++) s+=st.img[r+i][c+j]*K.k[i][j];
+      row.push(s); }
+    out.push(row); }
+  return out;
+}
+function cvFmt(v){ return String(Math.round(v*10)/10); }
+function cvRender(el){
+  const st=cvState(el), K=CV_KERNELS[st.ki], out=cvOutputs(st);
+  const wr=Math.floor(st.cur/6), wc=st.cur%6;
+  const inEl=el.querySelector('.cv-in'); inEl.innerHTML='';
+  for(let r=0;r<8;r++) for(let c=0;c<8;c++){
+    const d=document.createElement('div'); d.className='cv-cell'; d.dataset.r=r; d.dataset.c=c;
+    const v=st.img[r][c];
+    d.style.background=v?'#F2A93B':'#132A47';
+    d.style.color=v?'#5c3d05':'#3d5878';
+    d.textContent=v;
+    if(r>=wr&&r<wr+3&&c>=wc&&c<wc+3) d.classList.add('cv-win');
+    inEl.appendChild(d);
+  }
+  const kg=el.querySelector('.cv-kgrid'); kg.innerHTML='';
+  for(let i=0;i<3;i++) for(let j=0;j<3;j++){ const d=document.createElement('div'); d.className='cv-kcell'; d.textContent=K.k[i][j]; kg.appendChild(d); }
+  el.querySelector('.cv-kdiv').textContent=K.div>1?'output = sum ÷ '+K.div:'output = sum of the 9 products';
+  let maxAbs=1; out.forEach(function(row){ row.forEach(function(v){ maxAbs=Math.max(maxAbs,Math.abs(v/K.div)); }); });
+  const lines=[]; let s=0;
+  for(let i=0;i<3;i++){ const terms=[];
+    for(let j=0;j<3;j++){ s+=st.img[wr+i][wc+j]*K.k[i][j];
+      terms.push(st.img[wr+i][wc+j]+'×'+(K.k[i][j]<0?'('+K.k[i][j]+')':K.k[i][j])); }
+    lines.push(terms.join(' + ')); }
+  el.querySelector('.cv-calc').innerHTML=lines.join('<br>')+'<br><span class="cv-sum">= '+cvFmt(s/K.div)+'</span>';
+  const outEl=el.querySelector('.cv-out'); outEl.innerHTML='';
+  for(let r=0;r<6;r++) for(let c=0;c<6;c++){
+    const d=document.createElement('div'); d.className='cv-ocell'; const idx=r*6+c;
+    if(idx<=st.cur){ const v=out[r][c]/K.div, t=Math.min(1,Math.abs(v)/maxAbs);
+      d.textContent=cvFmt(v);
+      if(v>0) d.style.background='rgba(15,157,176,'+(0.12+0.88*t).toFixed(2)+')';
+      else if(v<0) d.style.background='rgba(238,107,54,'+(0.12+0.88*t).toFixed(2)+')';
+      d.style.color=t>0.5&&v!==0?'#fff':'#21303F';
+    }
+    if(idx===st.cur) d.classList.add('cv-win');
+    outEl.appendChild(d);
+  }
+  el.querySelector('.cv-step').textContent=(st.cur+1)+' / 36 · row '+(wr+1)+', col '+(wc+1);
+  el.querySelectorAll('.cv-kchips .cv-chip').forEach(function(ch,i){ ch.classList.toggle('sel',i===st.ki); });
+}
+function cvGoto(el,idx){ const st=cvState(el); st.cur=Math.max(0,Math.min(35,idx)); cvRender(el); }
+function cvStop(el){ const st=cvState(el); if(st.timer){ clearInterval(st.timer); st.timer=null; } st.playing=false;
+  const b=el.querySelector('.cv-play'); if(b) b.textContent='▶ Play'; }
+function cvPlay(el){ const st=cvState(el); if(st.playing){ cvStop(el); return; }
+  if(st.cur>=35) cvGoto(el,0);
+  st.playing=true; const b=el.querySelector('.cv-play'); if(b) b.textContent='⏸ Pause';
+  const speed=parseInt(el.querySelector('.cv-speed').value,10)||3, delay=Math.max(120,900-speed*160);
+  st.timer=setInterval(function(){ if(st.cur>=35){ cvStop(el); return; } cvGoto(el,st.cur+1); },delay);
+}
+document.addEventListener('click',function(e){
+  const cv=e.target.closest('.convviz'); if(!cv) return;
+  const cell=e.target.closest('.cv-cell');
+  if(cell){ const st=cvState(cv); cvStop(cv);
+    const r=parseInt(cell.dataset.r,10), c=parseInt(cell.dataset.c,10);
+    st.img[r][c]=st.img[r][c]?0:1; cvRender(cv); return; }
+  const chip=e.target.closest('.cv-chip');
+  if(chip){ cvStop(cv); const st=cvState(cv);
+    if(chip.dataset.k!==undefined){ st.ki=parseInt(chip.dataset.k,10); }
+    else if(chip.dataset.img){ st.img=CV_IMGS[chip.dataset.img].map(function(r){return r.split('').map(Number);}); st.cur=0; }
+    cvRender(cv); return; }
+  if(e.target.closest('.cv-first')){ cvStop(cv); cvGoto(cv,0); }
+  else if(e.target.closest('.cv-prev')){ cvStop(cv); cvGoto(cv,cvState(cv).cur-1); }
+  else if(e.target.closest('.cv-next')){ cvStop(cv); cvGoto(cv,cvState(cv).cur+1); }
+  else if(e.target.closest('.cv-last')){ cvStop(cv); cvGoto(cv,35); }
+  else if(e.target.closest('.cv-play')){ cvPlay(cv); }
+});
+document.querySelectorAll('.convviz').forEach(function(cv){
+  const pr=cv.querySelector('.cv-presets');
+  CV_IMG_NAMES.forEach(function(p){ const b=document.createElement('button'); b.type='button'; b.className='cv-chip'; b.dataset.img=p[0]; b.textContent=p[1]; pr.appendChild(b); });
+  const kc=cv.querySelector('.cv-kchips');
+  CV_KERNELS.forEach(function(k,i){ const b=document.createElement('button'); b.type='button'; b.className='cv-chip'; b.dataset.k=i; b.textContent=k.name; kc.appendChild(b); });
+  cvRender(cv);
+});
+
+/* ---------- Pyodide code labs ---------- */
+let _py=null,_pyLoading=null;
+async function getPy(statusEl){
+  if(_py) return _py;
+  if(!_pyLoading){ if(statusEl)statusEl.textContent='Loading Python…';
+    _pyLoading=loadPyodide({indexURL:'https://cdn.jsdelivr.net/pyodide/v0.26.2/full/'}); }
+  _py=await _pyLoading; return _py;
+}
+function labOf(el){ return el.closest('.lab'); }
+async function runLab(lab){
+  const code=lab.querySelector('.code').value;
+  const out=lab.querySelector('.out'); const status=lab.querySelector('.lab-status');
+  out.textContent=''; out.classList.remove('has-err'); lab.dataset.lastError='';
+  try{
+    const py=await getPy(status);
+    const pkgs=(lab.dataset.packages||'').split(',').map(s=>s.trim()).filter(Boolean);
+    if(pkgs.length){ status.textContent='Loading '+pkgs.join(', ')+'…'; await py.loadPackage(pkgs); }
+    status.textContent='Running…';
+    let buf='';
+    py.setStdout({batched:(s)=>{buf+=s+'\n';}});
+    py.setStderr({batched:(s)=>{buf+=s+'\n';}});
+    await py.runPythonAsync(code);
+    out.textContent=buf||'(no output — add a print(...) )';
+    status.textContent='✓ done';
+  }catch(err){
+    const msg=(err&&err.message)?err.message:String(err);
+    out.innerHTML='<span class="err">'+msg.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))+'</span>';
+    lab.dataset.lastError=msg; status.textContent='✗ error — try 🐞 Debug';
+  }
+}
+/* very small markdown -> html for assistant replies */
+function mdToHtml(md){
+  const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  let html=''; const parts=md.split(/```/);
+  parts.forEach(function(p,i){
+    if(i%2===1){ const code=p.replace(/^python\n?/i,''); html+='<pre data-code="'+encodeURIComponent(code.trim())+'"><code>'+esc(code.trim())+'</code></pre>'+
+      '<button class="apply">↧ Use this code</button>'; }
+    else { let t=esc(p).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/`(.+?)`/g,'<code>$1</code>').replace(/\n{2,}/g,'</p><p>').replace(/\n/g,'<br>'); if(t.trim())html+='<p>'+t+'</p>'; }
+  });
+  return html;
+}
+async function askAssistant(lab,action,question){
+  const body=lab.querySelector('.assist-body');
+  const sel=lab.querySelector('.ai-model');
+  const model=(sel&&sel.value)||'haiku';
+  body.innerHTML='<p class="muted">✨ Thinking…</p>';
+  try{
+    const r=await fetch('/api/assistant',{method:'POST',headers:{'content-type':'application/json'},
+      body:JSON.stringify({action:action,question:question||'',code:lab.querySelector('.code').value,error:lab.dataset.lastError||'',model:model})});
+    const j=await r.json();
+    body.innerHTML=mdToHtml(j.text||'(no response)');
+  }catch(e){ body.innerHTML='<p class="muted">Assistant unavailable right now. Try again shortly.</p>'; }
+}
+document.addEventListener('click',function(e){
+  const t=e.target;
+  if(t.closest('.lab .run')){ runLab(labOf(t.closest('.run'))); }
+  else if(t.closest('.lab .ai-explain')){ askAssistant(labOf(t.closest('.ai-explain')),'explain'); }
+  else if(t.closest('.lab .ai-debug')){ askAssistant(labOf(t.closest('.ai-debug')),'debug'); }
+  else if(t.closest('.lab .ai-improve')){ askAssistant(labOf(t.closest('.ai-improve')),'improve'); }
+  else if(t.closest('.lab .ask-btn')){ const lab=labOf(t.closest('.ask-btn')); const inp=lab.querySelector('.ask-in'); if(inp.value.trim()){ askAssistant(lab,'ask',inp.value.trim()); inp.value=''; } }
+  else if(t.classList&&t.classList.contains('apply')){ const pre=t.previousElementSibling; const lab=t.closest('.lab'); if(pre&&lab){ lab.querySelector('.code').value=decodeURIComponent(pre.dataset.code); } }
+});
+/* Tab key inserts spaces in code editors; keep typing inside textareas from triggering reveal nav */
+document.addEventListener('keydown',function(e){
+  const ta=e.target;
+  if(ta.classList&&ta.classList.contains('code')&&e.key==='Tab'){ e.preventDefault(); const s=ta.selectionStart,en=ta.selectionEnd; ta.value=ta.value.slice(0,s)+'    '+ta.value.slice(en); ta.selectionStart=ta.selectionEnd=s+4; }
+},true);
+/* allow Enter to submit the assistant question */
+document.addEventListener('keydown',function(e){ if(e.target.classList&&e.target.classList.contains('ask-in')&&e.key==='Enter'){ e.preventDefault(); const lab=labOf(e.target); if(e.target.value.trim()){ askAssistant(lab,'ask',e.target.value.trim()); e.target.value=''; } } });
+
+/* ---------- Per-slide comments ---------- */
+const btn=document.getElementById('commentBtn'),panel=document.getElementById('commentPanel'),
+  listEl=document.getElementById('commentList'),cnum=document.getElementById('cnum'),
+  cph=document.getElementById('cph'),form=document.getElementById('commentForm');
+let counts={}, curSid='title';
+// Comment identity = the slide's stable data-sid slug. Never positional:
+// a positional key would re-point old comments to a different slide whenever
+// the deck is reordered. Every slide is built with a sid (asserted at build);
+// the content-hash fallback below stays position-independent just in case.
+function _hashSid(s){ const t=((s&&s.textContent)||'').replace(/s+/g,' ').trim().slice(0,400); let h=0; for(let i=0;i<t.length;i++){ h=(h*31+t.charCodeAt(i))|0; } return 'auto-'+(h>>>0).toString(36); }
+function sidOf(){ const s=Reveal.getCurrentSlide(); if(s&&s.dataset.sid) return s.dataset.sid; console.warn('slide has no data-sid; using content-hash key'); return _hashSid(s); }
+function fmtTime(ts){ const d=new Date(ts); return d.toLocaleDateString()+' '+d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}); }
+function escc(s){ return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+async function loadCounts(){ try{ const r=await fetch('/api/comments/counts?deck='+encodeURIComponent(DECK)); const j=await r.json(); counts=j.counts||{}; updateBadge(); }catch(e){} }
+function updateBadge(){ cnum.textContent=counts[curSid]||0; }
+async function loadComments(){ listEl.innerHTML='<div class="none">Loading…</div>';
+  try{ const r=await fetch('/api/comments?deck='+encodeURIComponent(DECK)+'&slide='+encodeURIComponent(curSid)); const j=await r.json();
+    const cs=j.comments||[]; counts[curSid]=cs.length; updateBadge();
+    listEl.innerHTML=cs.length?cs.map(c=>'<div class="c"><span class="cn">'+escc(c.name)+'</span><span class="ct">'+fmtTime(c.created)+'</span><div class="cb">'+escc(c.body)+'</div></div>').join(''):'<div class="none">No comments yet — be the first!</div>';
+  }catch(e){ listEl.innerHTML='<div class="none">Could not load comments.</div>'; }
+}
+function openPanel(){ curSid=sidOf(); cph.textContent='Comments · '+curSid; panel.classList.add('open'); loadComments(); }
+btn.onclick=function(){ panel.classList.contains('open')?panel.classList.remove('open'):openPanel(); };
+document.getElementById('cclose').onclick=function(){ panel.classList.remove('open'); };
+form.onsubmit=async function(e){ e.preventDefault();
+  const name=document.getElementById('cname').value, body=document.getElementById('cbody').value.trim();
+  const msg=document.getElementById('cmsg'); if(!body){ msg.textContent='Write something first.'; return; }
+  msg.textContent='Posting…';
+  try{ const r=await fetch('/api/comments',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({deck:DECK,slide:curSid,name:name,body:body})});
+    const j=await r.json(); if(j.ok){ document.getElementById('cbody').value=''; msg.textContent='Posted! Thanks.'; loadComments(); } else { msg.textContent=j.error||'Could not post.'; }
+  }catch(e){ msg.textContent='Network error — try again.'; }
+};
+Reveal.on('slidechanged',function(){ stopAudio(); curSid=sidOf(); updateBadge(); updateListen(); sendSlide(); if(panel.classList.contains('open')){ cph.textContent='Comments · '+curSid; loadComments(); } });
+Reveal.on('ready',function(){ curSid=sidOf(); loadCounts(); loadNarrated(); });
+
+/* ---------- Live classroom: presence chip + quiz stream (SSE) ---------- */
+let liveId=null;
+const liveChip=document.createElement('div');
+liveChip.id='liveChip'; liveChip.style.display='none'; document.body.appendChild(liveChip);
+function setOnline(n){ liveChip.style.display=''; liveChip.textContent='🟢 '+n+' online'; }
+function sendSlide(){
+  if(!liveId) return;
+  fetch('/api/presence',{method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({id:liveId,slide:curSid})}).catch(function(){});
+}
+function quizBySid(sid){
+  const secs=document.querySelectorAll('section[data-sid]');
+  for(const s of secs) if(s.dataset.sid===sid) return s.querySelector('.quiz');
+  return null;
+}
+function pollLive(){ // fallback when EventSource can't stream through a proxy
+  const tick=function(){ fetch('/api/presence/count?deck='+encodeURIComponent(DECK))
+    .then(function(r){return r.json();}).then(function(j){setOnline(j.online);}).catch(function(){}); };
+  tick(); setInterval(tick,20000);
+}
+(function connectLive(){
+  if(typeof EventSource==='undefined') return pollLive();
+  const es=new EventSource('/api/live?deck='+encodeURIComponent(DECK));
+  let opened=false;
+  es.onopen=function(){ opened=true; };
+  es.onmessage=function(ev){
+    let d; try{ d=JSON.parse(ev.data); }catch(e){ return; }
+    if(d.type==='hello'){ liveId=d.id; setOnline(d.online); sendSlide(); }
+    else if(d.type==='presence'){ setOnline(d.online); }
+    else if(d.type==='quiz'){ // live-update the chart on the quiz slide (only visible once answered)
+      const q=quizBySid(d.slide); if(q) renderQuizStats(q,{today:d.today,all:d.all});
+    }
+  };
+  es.onerror=function(){ if(!opened){ es.close(); pollLive(); } };
+})();
+</script>
+<script defer src="/meritpoint-slides/assets/auth.js"></script>
+</body></html>

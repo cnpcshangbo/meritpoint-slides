@@ -1,0 +1,1292 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Class 01 · What Is AI? — The AI Toolbox</title>
+<link rel="icon" type="image/png" href="/meritpoint-slides/assets/favicon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+<style>
+:root{--navy:#0C2D52;--navy2:#12386A;--blue:#1769C0;--teal:#0F9DB0;--tealb:#2BC4D4;--coral:#EE6B36;--amber:#F2A93B;--green:#1FA37A;--ink:#21303F;--muted:#5E7183;--line:#D7E2EC;--cloud:#EEF4FA;--cloud2:#F6F9FC}
+.reveal{font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);font-size:30px}
+.reveal h1,.reveal h2,.reveal h3{font-family:Georgia,serif;color:var(--navy);text-transform:none;letter-spacing:0;font-weight:700;line-height:1.12}
+.reveal h1{font-size:1.55em}.reveal h2{font-size:1.12em}.reveal h3{font-size:.9em}
+.reveal .kicker{color:var(--teal);font-weight:700;letter-spacing:3px;font-size:.44em;text-transform:uppercase;margin-bottom:.35em;font-family:-apple-system,sans-serif}
+.reveal section{text-align:left}.reveal section.center{text-align:center}
+.reveal ul,.reveal ol{margin-left:1.05em}.reveal li{margin:.28em 0;font-size:.7em;line-height:1.38}
+.reveal p{font-size:.74em;line-height:1.42}.reveal .lead{font-size:.82em}.reveal .muted{color:var(--muted)}
+.reveal .callout{background:var(--cloud);border-left:6px solid var(--teal);border-radius:8px;padding:.45em .8em;margin-top:.5em;font-size:.7em}
+.reveal .callout b{color:var(--teal)}
+.reveal .pill{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:999px;padding:.16em .7em;font-size:.55em;color:var(--navy);margin:.12em .18em}
+.reveal .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.65em}.reveal .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6em}
+.reveal .box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.6em .75em;box-shadow:0 4px 14px rgba(20,40,70,.06)}
+.reveal .box h3{margin:.05em 0 .2em}.reveal .box p{font-size:.58em;margin:0}
+.reveal .feature{display:inline-block;font-size:.55em;font-weight:700;color:#fff;background:var(--navy);border-radius:6px;padding:.1em .55em;margin-top:.25em}
+.reveal .rate{display:inline-block;font-weight:800;color:#fff;border-radius:5px;padding:.05em .4em;font-size:.92em;line-height:1.3}
+.reveal .rate.r-g{background:var(--green)}.reveal .rate.r-pg{background:var(--blue)}.reveal .rate.r-r{background:var(--coral)}
+.reveal .vid{display:grid;grid-template-columns:1.5fr 1fr;gap:1em;align-items:center}
+.reveal .poster{border-radius:12px;height:2.7em;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1.25em;text-align:center;box-shadow:0 8px 24px rgba(20,40,70,.18);position:relative}
+.reveal .poster .play{position:absolute;width:1em;height:1em;border-radius:50%;background:rgba(255,255,255,.92);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:.5em}
+.reveal .qr{width:1.6em;height:1.6em;border:1px solid var(--line);border-radius:8px;background:#fff;padding:4px}
+.reveal .qrwrap{text-align:center;font-size:.5em;color:var(--muted)}.reveal .qrwrap a{color:var(--teal);word-break:break-all}
+.reveal a.btn{display:inline-block;background:#fff;border:1px solid var(--teal);color:var(--teal);border-radius:8px;padding:.16em .7em;font-size:.58em;font-weight:600}
+.reveal .src{font-size:.5em;color:var(--muted);margin-top:.5em}
+.reveal blockquote{border:none;box-shadow:none;background:var(--cloud2);border-left:6px solid var(--teal);border-radius:8px;font-size:.76em;font-style:normal;width:100%;padding:.65em 1em}
+.reveal .speak{cursor:pointer;display:inline-flex;align-items:center;gap:.4em;background:var(--teal);color:#fff;border:none;border-radius:999px;padding:.28em .85em;font-size:.52em;font-weight:700;font-family:-apple-system,sans-serif;box-shadow:0 4px 12px rgba(15,157,176,.3)}
+.reveal .speak:hover{background:#0d8a9b}.reveal .speak.playing{background:var(--coral)}
+/* timeline */
+.reveal .tl{display:flex;gap:.4em;align-items:stretch;margin-top:.5em}
+.reveal .tl .ev{flex:1;background:#fff;border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:10px;padding:.45em .5em}
+.reveal .tl .ev.winter{border-top-color:#7FA8D0}.reveal .tl .ev.boom{border-top-color:var(--coral)}
+.reveal .tl .yr{font-family:Georgia,serif;font-weight:800;color:var(--navy);font-size:.72em}
+.reveal .tl .ev b{font-size:.56em;color:var(--navy);display:block;margin:.1em 0}.reveal .tl .ev span{font-size:.5em;color:var(--muted);line-height:1.25;display:block}
+/* flow steps */
+.reveal .flow{display:flex;flex-wrap:wrap;gap:.4em;align-items:stretch}
+.reveal .step{flex:1 1 0;min-width:2.3em;background:#fff;border:1px solid var(--line);border-radius:10px;padding:.38em .42em;position:relative}
+.reveal .step .n{position:absolute;top:-.5em;left:-.3em;width:1em;height:1em;border-radius:50%;background:var(--teal);color:#fff;font-size:.5em;font-weight:800;display:flex;align-items:center;justify-content:center}
+.reveal .step b{font-size:.56em;color:var(--navy);display:block;line-height:1.15}.reveal .step span{font-size:.48em;color:var(--muted)}
+.reveal .step.loop{border-color:var(--coral);border-style:dashed}
+/* prompt cards */
+.reveal .prompt{background:#0f2742;color:#dfeaf6;border-radius:9px;padding:.4em .65em;font-family:Consolas,monospace;font-size:.54em;margin:.26em 0;line-height:1.38}
+.reveal .prompt .you{color:var(--tealb);font-weight:700}
+/* skills */
+.reveal .skillcard{background:linear-gradient(135deg,#fff,var(--cloud));border:1px solid var(--line);border-radius:14px;padding:.65em .8em}
+.reveal .skillcard .cn{font-size:.95em;color:var(--navy);font-weight:700;font-family:Georgia,serif}
+/* QUIZ */
+.reveal .quiz{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.7em .85em;box-shadow:0 6px 18px rgba(20,40,70,.07);max-width:18em}
+.reveal .quiz .qq{font-size:.72em;font-weight:600;color:var(--navy);margin:0 0 .5em}
+.reveal .quiz .opt{display:block;width:100%;text-align:left;background:var(--cloud2);border:1px solid var(--line);border-radius:9px;padding:.4em .6em;margin:.25em 0;font-size:.6em;color:var(--ink);cursor:pointer;transition:.1s;font-family:-apple-system,sans-serif}
+.reveal .quiz .opt:hover{border-color:var(--teal);background:#fff}
+.reveal .quiz .opt.correct{background:#E6F4EE;border-color:var(--green);color:#0d6b4f;font-weight:600}
+.reveal .quiz .opt.wrong{background:#FBEAE7;border-color:var(--coral);color:#a23c1c}
+.reveal .quiz .opt[disabled]{cursor:default}
+.reveal .quiz-exp{font-size:.56em;color:var(--muted);margin:.4em 0 0;display:none}
+.reveal .quiz.answered .quiz-exp{display:block}
+.reveal .quiz-badge{font-size:.5em;color:var(--teal);font-weight:700;letter-spacing:1px}
+/* QUIZ LIVE DISTRIBUTION (shown once answered) */
+.reveal .qstats{display:none;margin-top:.5em;border-top:1px dashed var(--line);padding-top:.4em}
+.reveal .quiz.answered .qstats{display:block}
+.reveal .qhead{display:flex;justify-content:space-between;align-items:center;font-size:.5em;color:var(--muted);margin-bottom:.3em}
+.reveal .qm{border:1px solid var(--line);background:var(--cloud2);border-radius:999px;padding:.15em .7em;margin-left:.4em;font:inherit;font-size:.95em;cursor:pointer;color:var(--muted)}
+.reveal .qm.on{background:var(--teal);border-color:var(--teal);color:#fff;font-weight:700}
+.reveal .qrow{display:flex;align-items:center;gap:.4em;margin:.14em 0}
+.reveal .ql{font-size:.5em;font-weight:800;color:var(--navy);width:1.1em}
+.reveal .qbar{flex:1;height:.55em;background:var(--cloud2);border-radius:999px;overflow:hidden}
+.reveal .qfill{height:100%;background:var(--navy);border-radius:999px;transition:width .5s}
+.reveal .qfill.qok{background:var(--green)}
+.reveal .qp{font-size:.45em;color:var(--muted);min-width:4.2em;text-align:right}
+#liveChip{position:fixed;left:14px;bottom:46px;z-index:40;background:rgba(255,255,255,.92);border:1px solid var(--line);
+  border-radius:999px;padding:5px 12px;font:600 12px -apple-system,'Segoe UI',sans-serif;color:#1a9a6c;box-shadow:0 4px 14px rgba(20,40,70,.10)}
+/* CODE LAB */
+.reveal .lab{display:grid;grid-template-columns:1.55fr 1fr;gap:.6em;margin-top:.4em;height:11.2em}
+.reveal .lab-main{display:flex;flex-direction:column;min-width:0}
+.reveal .lab textarea.code{flex:1;width:100%;background:#0f2742;color:#e7f0fb;border:1px solid #21405f;border-radius:10px 10px 0 0;font-family:Consolas,"SF Mono",monospace;font-size:13px;line-height:1.4;padding:.5em .6em;resize:none;outline:none;tab-size:4}
+.reveal .lab-bar{display:flex;align-items:center;gap:.4em;background:#11314f;border:1px solid #21405f;border-top:none;padding:.3em .4em;flex-wrap:wrap}
+.reveal .lab-bar button{font-family:-apple-system,sans-serif;font-size:11px;font-weight:600;border:none;border-radius:7px;padding:.4em .7em;cursor:pointer}
+.reveal .lab-bar .run{background:var(--green);color:#fff}.reveal .lab-bar .run:hover{background:#178a64}
+.reveal .lab-bar .ai-explain,.reveal .lab-bar .ai-debug,.reveal .lab-bar .ai-improve{background:#1b3e5e;color:#cfe0ef}
+.reveal .lab-bar .ai-explain:hover,.reveal .lab-bar .ai-debug:hover,.reveal .lab-bar .ai-improve:hover{background:#27557d}
+.reveal .lab-status{font-size:10.5px;color:#9db8d6;margin-left:auto;font-family:-apple-system,sans-serif}
+.reveal .lab pre.out{background:#08192b;color:#bfe3c7;border:1px solid #21405f;border-top:none;border-radius:0 0 10px 10px;margin:0;padding:.5em .6em;font-family:Consolas,monospace;font-size:11.5px;line-height:1.4;overflow:auto;min-height:2.4em;max-height:4.2em;white-space:pre-wrap}
+.reveal .lab pre.out .err{color:#ff9b8a}
+.reveal .assist{display:flex;flex-direction:column;background:linear-gradient(135deg,#fff,#f1f7fb);border:1px solid var(--line);border-radius:11px;overflow:hidden;min-width:0}
+.reveal .assist-head{background:linear-gradient(90deg,#0F9DB0,#2BC4D4);color:#fff;font-size:12px;font-weight:700;padding:.45em .7em;font-family:-apple-system,sans-serif;display:flex;align-items:center;justify-content:space-between;gap:.5em}
+.reveal .assist-head .ai-model{font-family:-apple-system,sans-serif;font-size:11px;font-weight:600;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.5);border-radius:6px;padding:.15em .3em;cursor:pointer;outline:none}
+.reveal .assist-head .ai-model option{color:var(--ink)}
+.reveal .assist-body{flex:1;overflow:auto;padding:.5em .65em;font-size:12px;line-height:1.46;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .assist-body p{font-size:12px;margin:.3em 0}.reveal .assist-body code{background:#eef3f8;border-radius:4px;padding:0 .25em;font-family:Consolas,monospace;font-size:11px}
+.reveal .assist-body pre{background:#0f2742;color:#e7f0fb;border-radius:8px;padding:.5em .6em;font-size:11px;overflow:auto;white-space:pre}
+.reveal .assist-body pre code{background:none;color:inherit}
+.reveal .assist-body .apply{background:var(--teal);color:#fff;border:none;border-radius:6px;padding:.25em .6em;font-size:11px;font-weight:600;cursor:pointer;margin-top:.2em}
+.reveal .assist-ask{display:flex;gap:.3em;border-top:1px solid var(--line);padding:.4em}
+.reveal .assist-ask input{flex:1;border:1px solid var(--line);border-radius:7px;padding:.4em .5em;font-size:12px;font-family:-apple-system,sans-serif;outline:none}
+.reveal .assist-ask button{background:var(--navy);color:#fff;border:none;border-radius:7px;padding:.4em .7em;font-size:12px;font-weight:600;cursor:pointer}
+/* HEAP / TOP-K VISUALIZER */
+.reveal .heapviz{margin-top:.35em;font-family:-apple-system,sans-serif}
+.reveal .hv-top{display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
+.reveal .hv-code{background:#0f2742;border-radius:10px 10px 0 0;padding:8px 12px;border:1px solid #21405f;border-bottom:none}
+.reveal .hv-code-title{color:#9db8d6;font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:4px}
+.reveal .hv-code pre.hv-pre{margin:0;color:#e7f0fb;font-family:Consolas,"SF Mono",monospace;font-size:11.5px;line-height:1.5;max-height:150px;overflow:auto;white-space:pre}
+.reveal .hv-info{background:#eef4fa;border:1px solid #21405f22;border-top:none;border-radius:0 0 10px 10px;padding:6px 12px;font-size:11px;color:var(--muted)}
+.reveal .hv-panel{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:6px}
+.reveal .hv-panel label{font-size:10.5px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin-top:4px}
+.reveal .hv-panel label:first-child{margin-top:0}
+.reveal .hv-row{display:flex;gap:6px}
+.reveal .hv-input{flex:1;border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:13px;font-family:-apple-system,sans-serif;min-width:0}
+.reveal .hv-insert{background:var(--green);color:#fff;border:none;border-radius:7px;padding:6px 12px;font-size:12.5px;font-weight:700;cursor:pointer}
+.reveal .hv-quick{display:flex;gap:5px;flex-wrap:wrap}
+.reveal .hv-quick-btn{background:var(--cloud);border:1px solid var(--line);border-radius:7px;padding:4px 10px;font-size:12px;font-weight:600;cursor:pointer;color:var(--ink)}
+.reveal .hv-quick-btn:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .hv-arr-now{background:var(--cloud2);border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-family:Consolas,monospace;font-size:12.5px}
+.reveal .hv-status,.reveal .hv-action{font-size:12px;color:var(--ink)}
+.reveal .hv-frames-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin:10px 0 4px}
+.reveal .hv-frames{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.reveal .hv-frame{flex:0 0 auto;min-width:150px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 8px;text-align:center}
+.reveal .hv-frame-active{border-color:var(--teal);box-shadow:0 0 0 2px rgba(15,157,176,.18)}
+.reveal .hv-frame-title{font-size:11px;font-weight:700;color:var(--navy)}
+.reveal .hv-frame-desc{font-size:9.5px;color:var(--muted);min-height:1.6em;line-height:1.25;margin:2px 0}
+.reveal .hv-tree-svg{width:100%;height:80px}
+.reveal .hv-empty{color:var(--muted);font-size:10.5px;padding:20px 0}
+.reveal .hv-node{fill:#D6ECEF;stroke:#0B7E8A;stroke-width:1.5}
+.reveal .hv-node-hi{fill:#F2A93B;stroke:#c07f1a}
+.reveal .hv-node-text{font-size:9px;font-weight:700;fill:#0C2D52;text-anchor:middle;font-family:-apple-system,sans-serif}
+.reveal .hv-edge{stroke:#c7d6e4;stroke-width:1.5}
+.reveal .hv-swap{stroke:#C0392B;stroke-width:2;stroke-dasharray:3,2}
+.reveal .hv-arrs{display:flex;gap:8px;overflow-x:auto;margin-top:6px}
+.reveal .hv-arr{flex:0 0 auto;min-width:150px;text-align:center;font-family:Consolas,monospace;font-size:11.5px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:5px 8px;color:var(--ink)}
+.reveal .hv-arr-active{border-color:var(--teal)}
+.reveal .hv-arr-hi{color:#C0392B;font-weight:700}
+.reveal .hv-controls{display:flex;align-items:center;gap:6px;margin-top:8px;flex-wrap:wrap}
+.reveal .hv-controls button{background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 10px;font-size:11.5px;font-weight:600;cursor:pointer;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .hv-controls button:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .hv-play{background:var(--teal)!important;color:#fff!important;border-color:var(--teal)!important}
+.reveal .hv-speed-label{font-size:11px;color:var(--muted);margin-left:6px}
+/* convolution visualizer */
+.reveal .cv-top{display:grid;grid-template-columns:1fr 1.05fr 1fr;gap:14px;align-items:start;justify-items:center}
+.reveal .cv-col{display:flex;flex-direction:column;align-items:center}
+.reveal .cv-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin-bottom:5px;text-align:center}
+.reveal .cv-grid{display:grid;gap:2px;width:max-content}
+.reveal .cv-in{grid-template-columns:repeat(8,25px)}
+.reveal .cv-out{grid-template-columns:repeat(6,33px)}
+.reveal .cv-cell{width:25px;height:25px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:9px;font-weight:700;cursor:pointer;user-select:none;border:1px solid rgba(12,45,82,.14)}
+.reveal .cv-ocell{width:33px;height:33px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:10.5px;font-weight:700;background:var(--cloud);color:#b9c6d4;border:1px solid var(--line)}
+.reveal .cv-win{outline:2.5px solid var(--coral);outline-offset:-1px;z-index:1}
+.reveal .cv-kwrap{background:#0f2742;border-radius:10px;padding:10px 12px;border:1px solid #21405f;width:100%}
+.reveal .cv-kgrid{display:grid;grid-template-columns:repeat(3,36px);gap:2px;width:max-content;margin:0 auto}
+.reveal .cv-kcell{width:36px;height:28px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:11.5px;font-weight:700;background:#1a3a5f;color:#e7f0fb;border:1px solid #2c4d75}
+.reveal .cv-kdiv{text-align:center;color:#9db8d6;font-size:10px;margin-top:4px;font-family:Consolas,monospace}
+.reveal .cv-calc{margin-top:8px;font-family:Consolas,monospace;font-size:10px;line-height:1.55;color:#cfe0ef;min-height:60px;text-align:center}
+.reveal .cv-calc .cv-sum{color:#F2A93B;font-weight:700}
+.reveal .cv-chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px;justify-content:center}
+.reveal .cv-chip{background:var(--cloud);border:1px solid var(--line);border-radius:7px;padding:4px 9px;font-size:11px;font-weight:600;cursor:pointer;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .cv-chip:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .cv-chip.sel{background:var(--teal);border-color:var(--teal);color:#fff}
+.reveal .cv-status{font-size:12px;color:var(--ink);margin-top:7px}
+.reveal .cv-controls{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;flex-wrap:wrap}
+.reveal .cv-controls button{background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 10px;font-size:11.5px;font-weight:600;cursor:pointer;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .cv-controls button:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .cv-play{background:var(--teal)!important;color:#fff!important;border-color:var(--teal)!important}
+/* comments */
+/* bottom-right toolbar (CC | Listen | Comment) — top-right belongs to the
+   signed-in profile chip (#mpAuth, assets/auth.js), which used to cover this */
+#commentBtn{position:fixed;right:16px;bottom:14px;z-index:60;background:var(--teal);color:#fff;border:none;border-radius:999px;padding:9px 15px;font-size:13px;font-weight:700;font-family:-apple-system,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(15,157,176,.4)}
+#commentBtn:hover{background:#0d8a9b}#commentBtn .cnum{background:#fff;color:var(--teal);border-radius:999px;padding:0 6px;margin-left:5px;font-size:11px}
+#listenBtn{--p:0%;position:fixed;right:168px;bottom:14px;z-index:60;min-width:128px;justify-content:center;color:#fff;border:none;border-radius:999px;padding:9px 15px;font-size:13px;font-weight:700;font-family:-apple-system,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(20,40,70,.34);display:none;align-items:center;gap:.45em;background:linear-gradient(to right,var(--teal) var(--p),var(--navy) var(--p));transition:background .15s linear}
+#listenBtn:hover{filter:brightness(1.1)}
+#listenBtn.playing{background:linear-gradient(to right,var(--coral) var(--p),#16406e var(--p))}
+#listenBtn .li-ic{font-size:12px;line-height:1}#listenBtn .li-tx{font-variant-numeric:tabular-nums;font-size:11.5px;opacity:.92}
+#ccBtn{position:fixed;right:306px;bottom:14px;z-index:60;background:var(--navy);color:#fff;border:none;border-radius:999px;padding:9px 12px;font-size:11.5px;font-weight:800;letter-spacing:.03em;font-family:-apple-system,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(20,40,70,.34);display:none;opacity:.5}
+#ccBtn:hover{opacity:.8}#ccBtn.on{opacity:1;background:var(--teal)}
+#capBar{position:fixed;left:50%;bottom:58px;transform:translateX(-50%);max-width:70%;background:rgba(8,16,30,.88);color:#fff;padding:.4em 1em;border-radius:9px;font-size:13.5px;line-height:1.35;text-align:center;z-index:59;display:none;font-family:-apple-system,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+#commentPanel{position:fixed;right:16px;bottom:60px;width:340px;max-height:64vh;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 44px rgba(20,40,70,.22);z-index:61;display:none;flex-direction:column;font-family:-apple-system,sans-serif;overflow:hidden}
+#commentPanel.open{display:flex}
+#commentPanel .ph{background:var(--navy);color:#fff;padding:10px 14px;font-size:13px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+#commentPanel .ph .x{cursor:pointer;opacity:.8}#commentPanel .ph .x:hover{opacity:1}
+#commentList{flex:1;overflow:auto;padding:10px 14px}
+#commentList .c{border-bottom:1px solid var(--cloud);padding:7px 0}#commentList .c:last-child{border:none}
+#commentList .c .cn{font-size:12px;font-weight:700;color:var(--navy)}#commentList .c .ct{font-size:10px;color:var(--muted);margin-left:6px}
+#commentList .c .cb{font-size:13px;color:var(--ink);margin-top:2px;white-space:pre-wrap;word-break:break-word}
+#commentList .none{color:var(--muted);font-size:12.5px;text-align:center;padding:14px 0}
+#commentForm{border-top:1px solid var(--line);padding:10px 12px;display:flex;flex-direction:column;gap:6px}
+#commentForm input,#commentForm textarea{border:1px solid var(--line);border-radius:8px;padding:7px 9px;font-size:13px;font-family:-apple-system,sans-serif;outline:none}
+#commentForm textarea{resize:vertical;min-height:46px}
+#commentForm .row{display:flex;gap:6px;align-items:center}
+#commentForm button{background:var(--teal);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:700;cursor:pointer}
+#commentForm .msg{font-size:11px;color:var(--muted)}
+/* donate */
+#donateBtn{position:fixed;left:70px;top:19px;z-index:60;background:var(--coral);color:#fff;border-radius:999px;padding:8px 16px;font-size:12.5px;font-weight:700;font-family:-apple-system,sans-serif;text-decoration:none;box-shadow:0 6px 18px rgba(238,107,54,.4)}
+#donateBtn:hover{background:#d85a28;text-decoration:none}
+/* MPA logo badge — top-left of every slide, next to Donate (top-right holds the auth chip) */
+#mpaLogo{position:fixed;left:16px;top:14px;z-index:50;display:block;width:44px;height:44px;border-radius:10px;background:#fff;box-shadow:0 4px 14px rgba(20,40,70,.25);opacity:.92;transition:opacity .15s}
+#mpaLogo:hover{opacity:1}
+#mpaLogo img{width:100%;height:100%;object-fit:contain;display:block}
+/* slide number: default bottom-right collides with the comment/listen/cc button row, so move it to bottom-left */
+.reveal .slide-number{left:14px;right:auto;bottom:14px;z-index:58;background:rgba(255,255,255,.85);padding:2px 8px;border-radius:6px;color:var(--muted)}
+/* PDF download — top-left row, after Donate */
+#pdfBtn{position:fixed;left:178px;top:19px;z-index:60;background:#fff;color:var(--navy);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:12.5px;font-weight:700;font-family:-apple-system,sans-serif;text-decoration:none;box-shadow:0 4px 14px rgba(20,40,70,.18)}
+#pdfBtn:hover{border-color:var(--teal);color:var(--teal);text-decoration:none}
+/* keep screen-only chrome out of print / the exported PDF (fixed elements repeat on every page) */
+@media print{#donateBtn,#mpaLogo,#pdfBtn,#ccBtn,#listenBtn,#commentBtn,#commentPanel,#capBar,#mpAuth{display:none!important}}
+</style></head><body>
+<div class="reveal"><div class="slides">
+<section id="title" data-sid="title" class="center" data-background-gradient="linear-gradient(135deg,#0C2D52,#16406e)">
+<div class="kicker" style="color:#7fd3df">The AI Toolbox · Class 01</div>
+    <h1 style="color:#fff">What Is AI?<br>What Can AI Actually Do?</h1>
+    <p style="color:#cfe0ef;margin-top:.5em">From science fiction to reality — understanding AI, machine learning &amp; deep learning.</p>
+    <p style="color:#9db8d6;font-size:.58em;margin-top:1.1em">Merit Point Academy · 60 min · press <b>S</b> notes · <b>→</b> next · 💬 to comment</p>
+    <aside class="notes">Welcome. Two questions a young researcher needs: what IS AI, and what can it really do? We'll cover its 70-year history, traditional vs. current vs. future AI, use it as a research tool, take quizzes, run real Python, and you can leave comments on any slide.</aside>
+</section>
+<section id="instructor-intro" data-sid="instructor-intro">
+<div class="kicker">Your instructor</div>
+    <h2>Bo Shang (商博)</h2>
+    <div class="grid2" style="grid-template-columns:1.15fr 1fr;align-items:center">
+      <div>
+        <p class="lead" style="margin:0 0 .3em"><b>Postdoctoral Scholar</b>, AI &amp; Mobility Research Lab, CUNY City College of New York.</p>
+        <ul>
+          <li><b>PhD</b>, Pattern Recognition &amp; Intelligent Systems — Northeastern University (China), with an exchange PhD stint at <b>UC Merced</b>.</li>
+          <li>Research: <b>robotics &amp; autonomous systems</b>, LiDAR–camera sensor fusion, computer vision, bridge-inspection automation, traffic monitoring, unmanned aerial systems.</li>
+          <li>Previously taught/researched at UC Merced, Missouri S&amp;T, Vaughn College, and CCNY before joining Merit Point Academy (恒点学术).</li>
+        </ul>
+      </div>
+      <div class="box" style="text-align:center">
+        <div style="font-size:1.4em">🚗🔍</div>
+        <p style="margin-top:.3em"><b>Why this matters to you:</b><br>the autonomous-vehicle perception example running through this course is my own research world — not a textbook toy.</p>
+      </div>
+    </div>
+    <div class="callout"><b>My teaching approach:</b> every concept lands on something you build and run — I'd rather you leave with one working result than ten memorized definitions.</div>
+    <aside class="notes">Keep this brief and personal — 60-90 seconds. The AV-perception tie-in is genuine, not invented for the course; it primes credibility for the running case study used across all 15 classes.</aside>
+</section>
+<section id="syllabus-overview" data-sid="syllabus-overview">
+<div class="kicker">Course syllabus · The AI Toolbox</div>
+    <h2>15 classes, one research pipeline</h2>
+    <p class="lead" style="margin:0 0 .3em">Every class delivers <b>one tangible result + one research skill + one AI-tool workout</b>, building toward one arc: <b>idea → data → model → experiment → presentation.</b></p>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">Stage 1–2 · Classes 1–6</h3><p>AI literacy, finding a research question, and the AI toolbox (ChatGPT, Elicit, Semantic Scholar, Kaggle).</p></div>
+      <div class="box"><h3 style="color:var(--teal)">Stage 3 · Classes 7–9</h3><p>Data science: finding, cleaning, and visualizing real datasets in Python/Colab.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">Stage 4–5 · Classes 10–15</h3><p>ML models (regression → trees → neural nets), a fair experiment, and a final mini-study — paper + slides.</p></div>
+    </div>
+    <div class="callout"><b>Anchor case:</b> every data/model class also lands on one running example — teaching a car to see (autonomous-vehicle perception) — so ideas are never just abstract. Prefer a different domain? Swap it in — the case study is the example, not the requirement.</div>
+    <aside class="notes">From syllabus_ai_toolbox.md. Don't read every class title — the point is the arc and the weekly promise (result + skill + tool). Mention students may carry their own domain through the same pipeline.</aside>
+</section>
+<section id="assignment-requirements" data-sid="assignment-requirements">
+<div class="kicker">How you'll be assessed</div>
+    <h2>Assignments &amp; grading — project-based, no exams</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1fr">
+      <div class="box"><p><b>35%</b> — Weekly tangible results (your growing research portfolio)</p></div>
+      <div class="box"><p><b>20%</b> — Data work: selection, cleaning &amp; visualization</p></div>
+      <div class="box"><p><b>25%</b> — Modeling &amp; experiment: fair comparison, honest metrics</p></div>
+      <div class="box"><p><b>20%</b> — Final mini-study: paper + presentation</p></div>
+    </div>
+    <div class="callout"><b>Every class ends with homework</b> before the next session — usually finishing that day's tangible result, plus an optional "stretch" task. Bring questions to class or post them with 💬.</div>
+    <div class="callout" style="border-left-color:var(--coral)"><b>Using AI honestly:</b> brainstorm, search, and debug with AI freely — but verify every claim and citation, never paste private data into AI tools, and disclose how you used AI in your work.</div>
+    <aside class="notes">From syllabus_ai_toolbox.md's "How you're assessed" and "Being a smart, responsible AI researcher" sections. The grade isn't the point — completing one full pipeline is. Today's specific homework appears later, on the "Recommended homework" slide.</aside>
+</section>
+<section id="join-classroom" data-sid="join-classroom">
+<div class="kicker">Join our Google Classroom</div>
+    <h2>Where slides, homework &amp; grades live</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1fr;align-items:center">
+      <div class="box">
+        <h3 style="color:var(--teal)">📋 Class code</h3>
+        <p style="font-family:Consolas,monospace;font-size:1.1em;font-weight:700;color:var(--navy);margin:.2em 0">kday73zp</p>
+        <p>classroom.google.com → tap <b>+</b> → <b>Join class</b> → enter the code above.</p>
+      </div>
+      <div class="box">
+        <h3 style="color:var(--coral)">📌 What's posted there</h3>
+        <ul>
+          <li>Every class's slide deck, under <b>Classwork → Class Materials</b></li>
+          <li>Every homework assignment, under <b>Classwork → Assignments</b> — submit your work (Colab link, doc, or file) there</li>
+          <li>Grades &amp; feedback, under <b>Grades</b> — this is also where you'll see graded homework</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">Join before next class so you can submit today's homework there. Questions about Classroom itself → ask your instructor, not 💬 on a slide.</div>
+    <aside class="notes">Join code comes from classroom/setup-course.js — update the CLASSROOM_CODE constant at the top of buildClass01() once you've run it, then rebuild. Keep this slide brief; most students just need the code and where to look.</aside>
+</section>
+<section id="agenda" data-sid="agenda">
+<div class="kicker">Agenda · how this hour runs</div>
+    <h2>Where we're going</h2>
+    <div class="grid2" style="margin-top:.4em">
+      <ul>
+        <li><b>0–10'</b> Warm-up + a 70-year history of AI</li>
+        <li><b>10–22'</b> AI on screen: traditional → current → future</li>
+        <li><b>22–34'</b> AI ⊃ ML ⊃ DL, and where AI hides</li>
+        <li><b>34–42'</b> AI's application map + AI as a research tool</li>
+      </ul>
+      <ul>
+        <li><b>42–50'</b> Live demos: ChatGPT · Perplexity · ScholarMind</li>
+        <li><b>50–58'</b> Two hands-on Python labs (with an AI helper)</li>
+        <li><b>58–60'</b> Project, homework &amp; wrap-up</li>
+        <li>Quizzes &amp; 💬 comments throughout</li>
+      </ul>
+    </div>
+    <div class="callout"><b>By the end:</b> tell AI/ML/DL apart, name AI in a field you love, and explain why AI is an instrument for research — not just a product.</div>
+    <aside class="notes">Set expectations: it's interactive. Point out the 💬 comment button (bottom-right) and that they'll write and run Python in the browser.</aside>
+</section>
+<section id="quiz-warmup" data-sid="quiz-warmup">
+<div class="kicker">Warm-up · activate</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="2">
+    <p class="qq">You woke up, unlocked your phone with your face, and your music app suggested a song. How many AI systems was that?</p>
+    <div class="opts"><button class="opt" data-i="0">Zero — those are just normal phone features</button><button class="opt" data-i="1">One — only the face unlock</button><button class="opt" data-i="2">At least two — face unlock and the recommendation</button><button class="opt" data-i="3">None of these count unless a robot is involved</button></div>
+    <p class="quiz-exp">Both are AI: face unlock is a trained vision model, and song suggestions come from a recommendation model. AI is already woven into your morning.</p>
+  </div>
+  <aside class="notes">Low-stakes opener. The point: AI is invisible and everywhere. Lead into the history of how we got here.</aside>
+</section>
+<section id="story-teach-by-examples" data-sid="story-teach-by-examples">
+<div class="kicker">The Story</div>
+    <h2>A summer that became 70 years</h2>
+    <blockquote id="quote">In 1956, ten scientists gathered at Dartmouth for what they expected to be a single summer's work: build a machine that could <b>"use language, form abstractions, and solve problems reserved for humans."</b> They coined the name <b>"artificial intelligence"</b> — and wildly underestimated the problem. Three years later, Arthur Samuel wrote a checkers program that got better the more it played against itself. He called what it did <b>"machine learning."</b></blockquote>
+    <div style="margin-top:.4em;display:flex;align-items:center;gap:1em">
+      <button class="speak" data-audio="audio/quote.mp3">🔊 <span>Speak this quote</span></button>
+      <span class="muted" style="font-size:.52em">Neural voice · click to play / pause</span></div>
+    <p class="src">The founders thought intelligence was a summer project. Samuel's self-improving checkers player was the first hint: don't <i>program</i> intelligence — let a machine <i>learn</i> from examples.</p>
+    <aside class="notes">Tell it conversationally. The trick isn't to PROGRAM intelligence but to let a machine LEARN from examples — that's ML. Use the Speak button to let the room just listen. Bridge to Arthur Samuel.</aside>
+</section>
+<section id="origin-ml-1959" data-sid="origin-ml-1959">
+<div class="kicker">Origin story · 1959 · the first "machine learning"</div>
+    <h2>The program that taught itself checkers</h2>
+    <div class="grid2" style="grid-template-columns:1.25fr 1fr;align-items:center;margin-top:.2em">
+      <div>
+        <p class="lead" style="margin:0 0 .25em">Arthur Samuel, an engineer at <b>IBM</b>, built a checkers (draughts) program on the room-sized <b>IBM 701</b> — and did something radical: he let it <b>improve on its own</b>.</p>
+        <ul>
+          <li>It played <b>thousands of games against itself</b>, remembering which positions led to wins.</li>
+          <li>It tuned its own scoring of board positions — an early ancestor of today's <b>reinforcement learning</b>.</li>
+          <li>Samuel coined the term <b>"machine learning"</b> to describe it (1959).</li>
+          <li>By <b>1962</b> it beat a strong human amateur — an early, very public win for AI.</li>
+        </ul>
+        <a class="btn" href="https://www.youtube.com/results?search_query=Arthur+Samuel+checkers+IBM+machine+learning+1956" target="_blank" rel="noopener">▶ Watch: Samuel's checkers on the IBM 701</a>
+      </div>
+      <div class="qrwrap" style="align-self:center">
+        <svg viewBox="0 0 200 200" style="width:100%;max-width:200px;border-radius:10px;box-shadow:0 8px 24px rgba(20,40,70,.18)">
+          <rect width="200" height="200" fill="#7A1F1F"/>
+          <rect x="0" y="0" width="25" height="25" fill="#E8D6B0"/><rect x="50" y="0" width="25" height="25" fill="#E8D6B0"/><rect x="100" y="0" width="25" height="25" fill="#E8D6B0"/><rect x="150" y="0" width="25" height="25" fill="#E8D6B0"/><rect x="25" y="25" width="25" height="25" fill="#E8D6B0"/><rect x="75" y="25" width="25" height="25" fill="#E8D6B0"/><rect x="125" y="25" width="25" height="25" fill="#E8D6B0"/><rect x="175" y="25" width="25" height="25" fill="#E8D6B0"/><rect x="0" y="50" width="25" height="25" fill="#E8D6B0"/><rect x="50" y="50" width="25" height="25" fill="#E8D6B0"/><rect x="100" y="50" width="25" height="25" fill="#E8D6B0"/><rect x="150" y="50" width="25" height="25" fill="#E8D6B0"/><rect x="25" y="75" width="25" height="25" fill="#E8D6B0"/><rect x="75" y="75" width="25" height="25" fill="#E8D6B0"/><rect x="125" y="75" width="25" height="25" fill="#E8D6B0"/><rect x="175" y="75" width="25" height="25" fill="#E8D6B0"/><rect x="0" y="100" width="25" height="25" fill="#E8D6B0"/><rect x="50" y="100" width="25" height="25" fill="#E8D6B0"/><rect x="100" y="100" width="25" height="25" fill="#E8D6B0"/><rect x="150" y="100" width="25" height="25" fill="#E8D6B0"/><rect x="25" y="125" width="25" height="25" fill="#E8D6B0"/><rect x="75" y="125" width="25" height="25" fill="#E8D6B0"/><rect x="125" y="125" width="25" height="25" fill="#E8D6B0"/><rect x="175" y="125" width="25" height="25" fill="#E8D6B0"/><rect x="0" y="150" width="25" height="25" fill="#E8D6B0"/><rect x="50" y="150" width="25" height="25" fill="#E8D6B0"/><rect x="100" y="150" width="25" height="25" fill="#E8D6B0"/><rect x="150" y="150" width="25" height="25" fill="#E8D6B0"/><rect x="25" y="175" width="25" height="25" fill="#E8D6B0"/><rect x="75" y="175" width="25" height="25" fill="#E8D6B0"/><rect x="125" y="175" width="25" height="25" fill="#E8D6B0"/><rect x="175" y="175" width="25" height="25" fill="#E8D6B0"/>
+          <circle cx="37.5" cy="12.5" r="9" fill="#C0392B" stroke="#7A1F1F" stroke-width="2"/><circle cx="87.5" cy="12.5" r="9" fill="#C0392B" stroke="#7A1F1F" stroke-width="2"/><circle cx="137.5" cy="12.5" r="9" fill="#C0392B" stroke="#7A1F1F" stroke-width="2"/><circle cx="12.5" cy="37.5" r="9" fill="#C0392B" stroke="#7A1F1F" stroke-width="2"/><circle cx="62.5" cy="37.5" r="9" fill="#C0392B" stroke="#7A1F1F" stroke-width="2"/><circle cx="162.5" cy="37.5" r="9" fill="#C0392B" stroke="#7A1F1F" stroke-width="2"/><circle cx="37.5" cy="62.5" r="9" fill="#C0392B" stroke="#7A1F1F" stroke-width="2"/>
+          <circle cx="62.5" cy="187.5" r="9" fill="#1B2733" stroke="#000" stroke-width="2"/><circle cx="112.5" cy="187.5" r="9" fill="#1B2733" stroke="#000" stroke-width="2"/><circle cx="162.5" cy="187.5" r="9" fill="#1B2733" stroke="#000" stroke-width="2"/><circle cx="87.5" cy="162.5" r="9" fill="#1B2733" stroke="#000" stroke-width="2"/><circle cx="137.5" cy="162.5" r="9" fill="#1B2733" stroke="#000" stroke-width="2"/><circle cx="187.5" cy="162.5" r="9" fill="#1B2733" stroke="#000" stroke-width="2"/><circle cx="162.5" cy="137.5" r="9" fill="#1B2733" stroke="#000" stroke-width="2"/>
+        </svg>
+        <div style="margin-top:.3em">🔁 <b style="color:var(--navy)">learns by self-play</b></div>
+        <img class="qr" src="assets/qr-samuel.png" alt="QR" style="margin-top:.3em"><br>
+        <a href="https://www.youtube.com/results?search_query=Arthur+Samuel+checkers+IBM+machine+learning+1956" target="_blank" rel="noopener">scan / tap to open</a>
+      </div>
+    </div>
+    <div class="callout"><b>Why it mattered:</b> the first convincing proof a machine could get better from <b>experience</b>, not just follow fixed rules. That single idea — learn from data — is the seed of every system in this course.</div>
+    <aside class="notes">Concrete detail behind the quote on the previous slide. Samuel = IBM, IBM 701, 1959 coined "machine learning". Self-play → it improved without being reprogrammed. The 1962 win over Robert Nealey made headlines. Contrast directly with Deep Blue two slides later: Deep Blue searched with hand-written rules and never learned; Samuel's program learned. The video link is a curated YouTube search (pick the IBM archival clip); the board is an illustration. Bridge to the long history next.</aside>
+</section>
+<section id="history-long-road" data-sid="history-long-road">
+<div class="kicker">Extended history · the long road</div>
+    <h2>70 years of winters and springs</h2>
+    <p class="lead">AI didn't arrive overnight. It boomed, froze, and boomed again — each cycle banking hard-won lessons.</p>
+    <div class="tl">
+      <div class="ev"><div class="yr">1956</div><b>Dartmouth meeting</b><span>The term "artificial intelligence" is coined — the field is born.</span></div>
+      <div class="ev winter"><div class="yr">1970s</div><b>First AI winter</b><span>Too little compute and data; early systems stall, funding dries up.</span></div>
+      <div class="ev"><div class="yr">1980s</div><b>Expert systems</b><span>Rule-based systems find real business use — a short, bright spring.</span></div>
+      <div class="ev winter"><div class="yr">1990s</div><b>Second AI winter</b><span>Expert systems are costly and brittle; enthusiasm cools again.</span></div>
+      <div class="ev boom"><div class="yr">2010s+</div><b>Big data + deep learning</b><span>Compute + huge datasets ignite neural nets — today's golden era.</span></div>
+    </div>
+    <div class="callout">Knowing this history keeps you <b>level-headed</b> about hype: every boom looked unstoppable, and every winter looked permanent. <b>Today is a real boom — but ask what's hype.</b></div>
+    <aside class="notes">From the Chinese deck's history slide. Two winters, two springs. The lesson is calibration: neither doom nor hype. Deep learning's spark was data + compute, not just cleverer math.</aside>
+</section>
+<section id="hook-think-pair-share" data-sid="hook-think-pair-share">
+<div class="kicker">Hook · think–pair–share</div>
+    <h2>Which of these is AI?</h2>
+    <p class="lead">Face unlock · autocomplete · a thermostat · a chess app · a calculator —<br>which ones count as "AI", and <b>how can you tell?</b></p>
+    <div class="flow" style="margin-top:.4em"><div class="step"><b>Face unlock</b></div><div class="step"><b>Autocomplete</b></div><div class="step"><b>Thermostat</b></div><div class="step"><b>Chess app</b></div><div class="step"><b>Calculator</b></div></div>
+    <div class="callout" style="margin-top:.6em">Hold your answer — the next three clips give you a rule for deciding.</div>
+    <aside class="notes">Let them argue 60 seconds; don't resolve. The three clips give the vocabulary (rules vs. learning vs. general) to answer it themselves.</aside>
+</section>
+<section id="video-deep-blue" data-sid="video-deep-blue">
+<div class="kicker">AI ON SCREEN · TRADITIONAL AI · ~1950–2000</div>
+  <h2>Deep Blue beats Kasparov (1997)</h2>
+  <div class="vid" style="margin-top:.3em">
+    <div><span class="feature">FEATURE: SEARCH + HAND-WRITTEN RULES</span>
+      <p style="margin-top:.3em">A chess machine that <b>never learned</b> — it searched ~200 million positions per second using rules experts wrote by hand. This is <b>"good old-fashioned AI"</b>: smart because humans coded the cleverness in.</p>
+      <a class="btn" href="https://www.youtube.com/results?search_query=Deep+Blue+vs+Kasparov+1997" target="_blank" rel="noopener">▶ Watch the clip</a></div>
+    <div class="qrwrap"><div class="poster" style="background:linear-gradient(135deg,#1B2733,#33506E)">DEEP<br>BLUE<div class="play">▶</div></div>
+      <img class="qr" src="assets/qr-deepblue.png" alt="QR"><br><a href="https://www.youtube.com/results?search_query=Deep+Blue+vs+Kasparov+1997" target="_blank" rel="noopener">scan / tap to open</a></div>
+  </div><aside class="notes">Traditional/symbolic AI = search + rules. A monster at one task, useless elsewhere. It did not learn. Tie to the thermostat/calculator: rules, but we don't call them intelligent — the line is fuzzy.</aside>
+</section>
+<section id="video-chatgpt" data-sid="video-chatgpt">
+<div class="kicker">AI ON SCREEN · CURRENT AI · 2012–now</div>
+  <h2>ChatGPT writes, explains, and codes</h2>
+  <div class="vid" style="margin-top:.3em">
+    <div><span class="feature">FEATURE: LEARNING FROM DATA (MACHINE LEARNING)</span>
+      <p style="margin-top:.3em">Today's AI <b>learns patterns from oceans of examples</b> instead of following hand-written rules. One model can chat, summarize, translate, and code — because it learned language, not chess. <b>This is machine learning at scale.</b></p>
+      <a class="btn" href="https://chatgpt.com/" target="_blank" rel="noopener">▶ Watch the clip</a></div>
+    <div class="qrwrap"><div class="poster" style="background:linear-gradient(135deg,#0F9DB0,#2BC4D4)">Chat<br>GPT<div class="play">▶</div></div>
+      <img class="qr" src="assets/qr-chatgpt.png" alt="QR"><br><a href="https://chatgpt.com/" target="_blank" rel="noopener">scan / tap to open</a></div>
+  </div><aside class="notes">Current AI = machine learning, especially large language models. Nobody wrote grammar rules — it learned from data. General across language tasks, still narrow and makes things up. Live demo coming.</aside>
+</section>
+<section id="video-her-agi" data-sid="video-her-agi">
+<div class="kicker">AI ON SCREEN · FUTURE AI · the open question</div>
+  <h2>“Her” — a glimpse of AGI</h2>
+  <div style="margin-top:.3em"><span class="feature">FEATURE: GENERAL, AUTONOMOUS, HUMAN-LEVEL (AGI)</span>
+    <p style="margin-top:.3em;font-size:.74em">Sci-fi like <i>Her</i> imagines <b>Artificial General Intelligence</b>: one system that learns <b>any</b> task, sets its own goals, and reasons across everything. <b>It doesn't exist yet</b> — separating real from movie is itself a research skill.</p>
+  </div>
+  <table style="width:100%;border-collapse:collapse;margin-top:.4em;font-size:.5em;font-family:-apple-system,sans-serif">
+    <thead><tr style="background:var(--navy);color:#fff">
+      <th style="text-align:left;padding:.4em .6em;border-radius:6px 0 0 0">Film</th>
+      <th style="text-align:center;padding:.4em .5em">Year</th>
+      <th style="text-align:center;padding:.4em .5em">Rating</th>
+      <th style="text-align:left;padding:.4em .6em;border-radius:0 6px 0 0">AGI angle</th>
+    </tr></thead>
+    <tbody>
+      <tr style="background:var(--cloud2)"><td style="padding:.35em .6em;font-weight:700;color:var(--navy)"><i>Her</i></td><td style="text-align:center">2013</td><td style="text-align:center"><span class="rate r-r">R</span></td><td style="padding:.35em .6em">Emotionally intelligent AGI that learns, grows, then surpasses human cognition</td></tr>
+      <tr><td style="padding:.35em .6em;font-weight:700;color:var(--navy)">2001: A Space Odyssey</td><td style="text-align:center">1968</td><td style="text-align:center"><span class="rate r-g">G</span></td><td style="padding:.35em .6em">HAL 9000 — an AI that reasons, then turns against its crew</td></tr>
+      <tr style="background:var(--cloud2)"><td style="padding:.35em .6em;font-weight:700;color:var(--navy)">I, Robot</td><td style="text-align:center">2004</td><td style="text-align:center"><span class="rate r-pg">PG-13</span></td><td style="padding:.35em .6em">Robots developing free will and emergent consciousness</td></tr>
+      <tr><td style="padding:.35em .6em;font-weight:700;color:var(--navy)">The Imitation Game</td><td style="text-align:center">2014</td><td style="text-align:center"><span class="rate r-pg">PG-13</span></td><td style="padding:.35em .6em">Turing &amp; the foundational question: can machines think?</td></tr>
+      <tr style="background:var(--cloud2)"><td style="padding:.35em .6em;font-weight:700;color:var(--navy)">WALL·E</td><td style="text-align:center">2008</td><td style="text-align:center"><span class="rate r-g">G</span></td><td style="padding:.35em .6em">Gentle machine consciousness and emotion</td></tr>
+      <tr><td style="padding:.35em .6em;font-weight:700;color:var(--navy)">Ex Machina</td><td style="text-align:center">2014</td><td style="text-align:center"><span class="rate r-r">R</span></td><td style="padding:.35em .6em">The Turing test dramatized; AI deception and self-preservation</td></tr>
+      <tr style="background:var(--cloud2)"><td style="padding:.35em .6em;font-weight:700;color:var(--navy)">Blade Runner 2049</td><td style="text-align:center">2017</td><td style="text-align:center"><span class="rate r-r">R</span></td><td style="padding:.35em .6em">Synthetic beings, identity, and what counts as "alive"</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:.46em;color:var(--muted);margin-top:.4em"><span class="rate r-g">G</span>/<span class="rate r-pg">PG-13</span> = screen clips in class · <span class="rate r-r">R</span> = mature themes, optional further watching</p>
+  <aside class="notes">Future AI = AGI: general, autonomous, human-level. Stress it's aspirational/fictional today. Teach skepticism — a movie is not evidence. Lead the discussion with the G / PG-13 titles; the R-rated films (Her, Ex Machina, Blade Runner 2049) contain mature content — recommend as optional outside viewing, screen clips only. Now they can sort the five hook items into rules vs. learned.</aside>
+</section>
+<section id="quiz-after-clips" data-sid="quiz-after-clips">
+<div class="kicker">Check · after the clips</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="1">
+    <p class="qq">Deep Blue searched millions of chess moves with rules experts wrote by hand. Which kind of AI is that?</p>
+    <div class="opts"><button class="opt" data-i="0">Modern machine learning — it learned from data</button><button class="opt" data-i="1">Traditional AI — search and hand-written rules</button><button class="opt" data-i="2">AGI — general human-level intelligence</button><button class="opt" data-i="3">It isn't AI at all</button></div>
+    <p class="quiz-exp">Deep Blue is classic traditional AI: brute-force search + human-written rules. It never learned from data — that's what makes today's ML different.</p>
+  </div>
+  <aside class="notes">Reinforce the traditional vs. learned distinction before moving to the nested-circles concept.</aside>
+</section>
+<section id="concept-ai-ml-dl" data-sid="concept-ai-ml-dl">
+<div class="kicker">Concept 1</div>
+    <h2>AI ⊃ Machine Learning ⊃ Deep Learning</h2>
+    <div class="grid2" style="grid-template-columns:1.2fr 1fr;align-items:center">
+      <ul><li><b>AI</b> — the whole field of machine intelligence</li>
+        <li><b>ML</b> — systems that improve from <i>data</i>, not hand-written rules</li>
+        <li><b>DL</b> — machine learning using many-layered neural networks</li></ul>
+      <div style="text-align:center"><svg viewBox="0 0 300 230" style="width:100%;max-width:320px">
+        <circle cx="150" cy="120" r="105" fill="#EAF4F6" stroke="#0F9DB0"/><circle cx="150" cy="135" r="72" fill="#D6ECEF" stroke="#0B7E8A"/><circle cx="150" cy="150" r="40" fill="#0F9DB0"/>
+        <text x="150" y="38" text-anchor="middle" font-size="17" font-weight="700" fill="#0C2D52">AI</text>
+        <text x="150" y="92" text-anchor="middle" font-size="14" font-weight="700" fill="#0B7E8A">ML</text>
+        <text x="150" y="155" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">DL</text></svg></div>
+    </div>
+    <div class="callout"><b>KEY IDEA</b> — When people say "AI" today, they usually mean <b>machine learning</b>. Deep Blue was AI but not ML; ChatGPT is all three.</div>
+    <aside class="notes">Nested circles, not synonyms. Every DL system is ML; every ML system is AI — not the reverse.</aside>
+</section>
+<section id="concept-layer-tech" data-sid="concept-layer-tech">
+<div class="kicker">Concept 2 · what powers each layer</div>
+    <h2>Different tools at each ring</h2>
+    <div class="grid3" style="margin-top:.4em">
+      <div class="box"><h3 style="color:var(--navy)">AI</h3><p><b>Broadest vision.</b> Less data-driven. Key tech: <b>expert systems, search algorithms.</b> (Deep Blue lives here.)</p></div>
+      <div class="box"><h3 style="color:var(--teal)">ML</h3><p><b>Learns from data.</b> Tunes a model's parameters. Key tech: <b>decision trees, SVMs.</b> Used for prediction &amp; classification.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">DL</h3><p><b>Neural networks.</b> Needs big data + compute. Key tech: <b>CNNs, RNNs, Transformers.</b> Powers vision &amp; language.</p></div>
+    </div>
+    <div class="callout">AI is the grand vision · ML is the path that got us there · DL is ML's strongest tool for hard, messy data.</div>
+    <aside class="notes">From the Chinese deck. Don't drill the acronyms — the point is each ring uses different machinery, and DL's rise is what made the 2010s boom.</aside>
+</section>
+<section id="concept-3" data-sid="concept-3">
+<div class="kicker">Concept 3</div>
+    <h2>AI is already everywhere</h2>
+    <p class="lead">You use a dozen AI systems before lunch. Naming them is the first research skill — seeing the AI hiding in plain sight.</p>
+    <div class="grid3" style="margin-top:.4em"><div class="box"><div style="font-size:1.05em">📲</div><b style="font-size:.58em;color:var(--navy)">Recommendation feeds</b></div><div class="box"><div style="font-size:1.05em">✉️</div><b style="font-size:.58em;color:var(--navy)">Spam filters</b></div><div class="box"><div style="font-size:1.05em">🗺️</div><b style="font-size:.58em;color:var(--navy)">Navigation & maps</b></div><div class="box"><div style="font-size:1.05em">🔓</div><b style="font-size:.58em;color:var(--navy)">Face unlock</b></div><div class="box"><div style="font-size:1.05em">🎙️</div><b style="font-size:.58em;color:var(--navy)">Voice assistants</b></div><div class="box"><div style="font-size:1.05em">🖼️</div><b style="font-size:.58em;color:var(--navy)">Photo search & tagging</b></div></div>
+    <div class="callout">Each one is a <b>model trained on data</b> — not a person, not magic, not hand-coded rules.</div>
+    <aside class="notes">Have them add their own before you reveal. Skill: spot the AI, then ask 'what data trained it?'</aside>
+</section>
+<section id="quiz-concepts" data-sid="quiz-concepts">
+<div class="kicker">Check · concepts</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="1">
+    <p class="qq">Which statement is TRUE about AI, ML, and DL?</p>
+    <div class="opts"><button class="opt" data-i="0">They all mean the same thing</button><button class="opt" data-i="1">Every machine-learning system is AI, but not every AI is machine learning</button><button class="opt" data-i="2">Deep learning is bigger than machine learning</button><button class="opt" data-i="3">AI is a kind of deep learning</button></div>
+    <p class="quiz-exp">They're nested: DL ⊂ ML ⊂ AI. So every ML system is AI, but traditional rule-based AI (like Deep Blue) is not machine learning.</p>
+  </div>
+  <aside class="notes">If they miss this, re-show the circles. This is the single most-tested idea of the lesson.</aside>
+</section>
+<section id="application-map" data-sid="application-map">
+<div class="kicker">AI's application map · real fields</div>
+    <h2>Where AI already works</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3>🩺 Medicine</h3><p>Reads CT/MRI scans for tumors; <b>Google Health</b> matched experts at breast-cancer screening.</p></div>
+      <div class="box"><h3>🧬 Biology</h3><p><b>AlphaFold</b> predicted 98.5% of human protein structures — a 50-year problem.</p></div>
+      <div class="box"><h3>🌍 Climate</h3><p>Forecasts extreme weather, models warming scenarios, optimizes renewable grids.</p></div>
+      <div class="box"><h3>💳 Finance</h3><p>High-frequency trading, credit scoring, and real-time fraud detection.</p></div>
+      <div class="box"><h3>🎨 Art</h3><p>Midjourney &amp; DALL·E turn text into images; AI composes music and drafts scripts.</p></div>
+      <div class="box"><h3>🚗 Mobility</h3><p>Self-driving perception — our running example for the whole course.</p></div>
+    </div>
+    <div class="callout">Same core idea — <b>learn patterns from data</b> — reshaped a dozen industries. Which field is yours?</div>
+    <aside class="notes">Condensed from five PPTX domain slides. Don't read every cell — let students pick one that excites them; it seeds their project.</aside>
+</section>
+<section id="spotlight-science" data-sid="spotlight-science">
+<div class="kicker">Spotlight · science breakthrough</div>
+    <h2>AlphaFold: a 50-year problem, solved</h2>
+    <div class="grid2" style="grid-template-columns:1.3fr 1fr;align-items:center">
+      <div><p class="lead">Proteins fold into 3-D shapes that decide what they do. Predicting that shape stumped biology for <b>50 years</b>.</p>
+        <ul><li>DeepMind's <b>AlphaFold</b> predicted structures at near-atomic accuracy</li>
+          <li>Covered <b>98.5%</b> of all human proteins</li>
+          <li>Freely released — now used by labs worldwide for disease &amp; drug research</li></ul></div>
+      <div class="box" style="text-align:center"><div style="font-size:1.6em">🧬→🔬</div><p style="margin-top:.3em"><b>Sequence → 3-D structure</b><br>What took months in a lab now takes seconds.</p></div>
+    </div>
+    <div class="callout">This is AI as an <b>instrument of discovery</b> — not a chatbot, but a microscope for life itself.</div>
+    <aside class="notes">From the biology slide. Great concrete proof that AI accelerates real science. Bridge: AI as a research tool.</aside>
+</section>
+<section id="concept-research-tool" data-sid="concept-research-tool">
+<div class="kicker">Concept 4</div>
+    <h2>AI as your research super-assistant</h2>
+    <p class="lead">Beyond products, AI is an <b>instrument</b>. It speeds up every stage of research.</p>
+    <div class="grid2" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--teal)">📚 Literature review</h3><p>Scan and summarize hundreds of papers; map a field fast.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">💡 Hypothesis ideas</h3><p>Surface hidden links across data to suggest what to test.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">📊 Data analysis</h3><p>Crunch huge, high-dimensional data; spot patterns &amp; outliers.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">💻 Code help</h3><p>Write, explain, and debug research code — even for non-programmers.</p></div>
+    </div>
+    <div class="callout">Next: a concrete workflow that turns a vague topic into a finished, reviewed PDF.</div>
+    <aside class="notes">From the PPTX research-tool slide. The microscope analogy: it doesn't do the science for you, it lets you see what you couldn't. Note 'code help' previews today's labs.</aside>
+</section>
+<section id="research-workflow" data-sid="research-workflow">
+<div class="kicker">AI as a research tool · the workflow</div>
+    <h2>From a topic to a reviewed PDF</h2>
+    <div class="flow" style="margin-top:.4em"><div class="step "><div class="n">1</div><b>ScholarMind AI</b><span>topic → research question</span></div><div class="step "><div class="n">2</div><b>ScholarMind AI</b><span>analyze the question</span></div><div class="step "><div class="n">3</div><b>Download</b><span>the research brief</span></div><div class="step "><div class="n">4</div><b>Claude / Codex</b><span>work to brief.md</span></div><div class="step "><div class="n">5</div><b>Export</b><span>a draft PDF</span></div><div class="step loop"><div class="n">6</div><b>Human review</b><span>read & comment</span></div><div class="step loop"><div class="n">7</div><b>Claude / Codex</b><span>revise to comments</span></div><div class="step loop"><div class="n">8</div><b>Update PDF</b><span>→ back to review</span></div></div>
+    <div class="callout" style="margin-top:.7em">Steps <b>6 → 7 → 8</b> form a <b style="color:var(--coral)">review loop</b> — repeat <i>review → revise → update</i> until it's good. The human stays in charge; AI does the heavy lifting.</div>
+    <aside class="notes">ScholarMind frames the question and hands you a brief; a coding agent builds from brief.md; a PDF comes out; you review/comment; the agent revises; loop. Research is iteration, driven by your judgement.</aside>
+</section>
+<section id="what-you-learn" data-sid="what-you-learn">
+<div class="kicker">What YOU actually learn</div>
+    <h2>Two skills this workflow trains</h2>
+    <div class="grid2" style="margin-top:.4em">
+      <div class="skillcard"><div class="cn">The Skill of Asking</div><b style="color:var(--teal)">Choosing the right question</b>
+        <p style="font-size:.6em;margin:.25em 0 0">Picking and sharpening the <b>right question</b> (steps 1–2). A good question is specific, measurable, and answerable — it decides everything downstream.</p></div>
+      <div class="skillcard"><div class="cn">The Skill of Judging</div><b style="color:var(--coral)">Telling good work from weak</b>
+        <p style="font-size:.6em;margin:.25em 0 0">Reading a draft (steps 6–8) and saying precisely what's strong, what's wrong, and what to fix — <b>taste you can defend</b>.</p></div>
+    </div>
+    <div class="callout">AI can draft for you. It <b>cannot</b> ask your question or judge your taste — those stay human, and they're what we grade.</div>
+    <aside class="notes">The heart of the pedagogy. Machine handles production; the student owns asking and judging. Both are transferable life skills.</aside>
+</section>
+<section id="quiz-workflow" data-sid="quiz-workflow">
+<div class="kicker">Check · the workflow</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="1">
+    <p class="qq">In the research workflow, what do steps 6 → 7 → 8 (review → revise → update) form?</p>
+    <div class="opts"><button class="opt" data-i="0">A one-time final step</button><button class="opt" data-i="1">A review loop you repeat until the work is good</button><button class="opt" data-i="2">The very first thing you do</button><button class="opt" data-i="3">A part only the AI controls</button></div>
+    <p class="quiz-exp">6→7→8 is a loop: you review, the AI revises to your comments, the PDF updates — repeat until it's strong. Your judgement drives it.</p>
+  </div>
+  <aside class="notes">Reinforce that research is iterative and human-led. Then move to live demos.</aside>
+</section>
+<section id="demo-chatgpt" data-sid="demo-chatgpt">
+<div class="kicker">Live demo 1</div>
+  <h2>ChatGPT — your thinking partner</h2>
+  <p class="lead" style="margin:.15em 0 .35em">A large language model that drafts, explains, and brainstorms. Watch it help — then watch us check it.</p>
+  <div class="grid2" style="grid-template-columns:2.3fr 1fr;align-items:start">
+    <div><div class="prompt"><span class="you">You ▸</span> Explain AI vs. machine learning vs. deep learning to a 10-year-old, with one example each.</div><div class="prompt"><span class="you">You ▸</span> I'm interested in self-driving cars. Give me 3 research questions a high-schooler could test.</div><div class="prompt"><span class="you">You ▸</span> List 3 specific ways AI is used in medicine — name the system, its input, and its output.</div><div class="prompt"><span class="you">You ▸</span> What's the capital of Australia — and how confident are you?</div></div>
+    <div class="qrwrap" style="margin-top:.2em"><img class="qr" src="assets/qr-chatgpt.png" alt="QR"><br><a href="https://chatgpt.com/" target="_blank" rel="noopener">chatgpt.com</a></div>
+  </div><aside class="notes">Demo live. Last prompt is the teaching moment: it sounds confident even when it shouldn't — why we cross-check with Perplexity next.</aside>
+</section>
+<section id="demo-perplexity" data-sid="demo-perplexity">
+<div class="kicker">Live demo 2</div>
+  <h2>Perplexity — answers with sources</h2>
+  <p class="lead" style="margin:.15em 0 .35em">Like ChatGPT, but it searches the web and shows where each claim came from. Use it to fact-check.</p>
+  <div class="grid2" style="grid-template-columns:2.3fr 1fr;align-items:start">
+    <div><div class="prompt"><span class="you">You ▸</span> What's the capital of Australia — and cite a source.</div><div class="prompt"><span class="you">You ▸</span> How is AI used in climate science? Give 3 examples with links.</div><div class="prompt"><span class="you">You ▸</span> Did a New York lawyer really get sanctioned for citing fake AI cases? Source it.</div><div class="prompt"><span class="you">You ▸</span> Latest accuracy of AI at detecting pedestrians at night — with citations.</div></div>
+    <div class="qrwrap" style="margin-top:.2em"><img class="qr" src="assets/qr-perplexity.png" alt="QR"><br><a href="https://www.perplexity.ai/" target="_blank" rel="noopener">perplexity.ai</a></div>
+  </div><aside class="notes">Side-by-side with ChatGPT is the killer demo: same question, Perplexity shows sources. Trust, but verify — open a source.</aside>
+</section>
+<section id="demo-scholarmind" data-sid="demo-scholarmind">
+<div class="kicker">Live demo 3</div>
+  <h2>ScholarMind AI — topic → research brief</h2>
+  <p class="lead" style="margin:.15em 0 .35em">Our research platform. It turns a rough interest into a sharp question and a downloadable brief (steps 1–3 of the workflow).</p>
+  <div class="grid2" style="grid-template-columns:2.3fr 1fr;align-items:start">
+    <div><div class="prompt"><span class="you">You ▸</span> Topic: 'I like animals and cameras.' → propose 3 testable research questions.</div><div class="prompt"><span class="you">You ▸</span> Analyze: 'Can a model detect birds from photos?' — what data, model, and metric?</div><div class="prompt"><span class="you">You ▸</span> Generate a research brief I can hand to a coding agent.</div><div class="prompt"><span class="you">You ▸</span> Download brief.md and open it in Claude / Codex.</div></div>
+    <div class="qrwrap" style="margin-top:.2em"><img class="qr" src="assets/qr-scholarmind.png" alt="QR"><br><a href="https://academic.hopeembark.org/" target="_blank" rel="noopener">academic.hopeembark.org</a></div>
+  </div><aside class="notes">Closes the loop to the workflow. The brief it produces is the brief.md a coding agent builds from. This is the student's lab bench for the course.</aside>
+</section>
+<section id="lab-python-pattern" data-sid="lab-python-pattern">
+<div class="kicker">Hands-on lab 1 · run real Python</div>
+  <h2>Find a pattern in data — like a data scientist</h2>
+  <p class="lead" style="margin:.1em 0 .25em">On the Titanic, who was more likely to survive? Let's let the <b>data</b> answer. Edit the code, hit Run, and ask the assistant anything.</p>
+  <div class="lab" data-packages="">
+    <div class="lab-main">
+      <textarea class="code" spellcheck="false"># Titanic survivors — a tiny real dataset
+# Each person: (sex, passenger_class, survived?)
+people = [
+    ("female", 1, 1), ("female", 1, 1), ("female", 3, 0),
+    ("male",   1, 0), ("male",   3, 0), ("female", 2, 1),
+    ("male",   2, 0), ("female", 3, 1), ("male",   1, 1),
+    ("female", 2, 1), ("male",   3, 0), ("female", 1, 1),
+]
+
+def survival_rate(group):
+    members = [p for p in people if group(p)]
+    if not members:
+        return 0.0
+    survived = sum(p[2] for p in members)
+    return survived / len(members)
+
+# Try changing these groups!
+print("Women survival rate:", survival_rate(lambda p: p[0] == "female"))
+print("Men survival rate:  ", survival_rate(lambda p: p[0] == "male"))
+print("1st-class survival: ", survival_rate(lambda p: p[1] == 1))
+
+# CHALLENGE: what is the survival rate for 3rd-class men?
+</textarea>
+      <div class="lab-bar">
+        <button class="run">▶ Run</button>
+        <button class="ai-explain">✨ Explain</button>
+        <button class="ai-debug">🐞 Debug</button>
+        <button class="ai-improve">⚡ Improve</button>
+        <span class="lab-status">Python loads on first Run</span>
+      </div>
+      <pre class="out">▶ Run the code to see the output here.</pre>
+    </div>
+    <div class="assist">
+      <div class="assist-head"><span>✨ AI Assistant</span><select class="ai-model" title="Choose the AI model"><option value="haiku">⚡ Haiku · fastest</option><option value="sonnet">Sonnet · balanced</option><option value="opus">Opus · most capable</option></select></div>
+      <div class="assist-body">Hi! Edit the code and hit <b>Run</b>. Stuck? I can <b>Explain</b>, <b>Debug</b>, or <b>Improve</b> it — or just ask me below.</div>
+      <div class="assist-ask"><input class="ask-in" placeholder="Ask about this code…"><button class="ask-btn">Ask</button></div>
+    </div>
+  </div><aside class="notes">Lab 1 needs no packages — runs instantly. The 'aha': the model is just counting patterns in data. Encourage edits; the assistant explains/debugs. Answer to challenge: 3rd-class men = 0.0 here.</aside>
+</section>
+<section id="lab-model-learn" data-sid="lab-model-learn">
+<div class="kicker">Hands-on lab 2 · teach a model to learn</div>
+  <h2>Watch a model learn from data (numpy)</h2>
+  <p class="lead" style="margin:.1em 0 .25em">This tiny model <b>learns</b> a rule from examples — no hand-written if-statements. It improves each step, exactly like real machine learning. Run it, then ask the assistant to explain how it learns.</p>
+  <div class="lab" data-packages="numpy">
+    <div class="lab-main">
+      <textarea class="code" spellcheck="false">import numpy as np
+
+# Data: hours studied -&gt; passed the test? (0/1)
+hours  = np.array([1, 2, 3, 4, 5, 6, 7, 8], dtype=float)
+passed = np.array([0, 0, 0, 1, 1, 1, 1, 1], dtype=float)
+
+# A simple model: probability = sigmoid(w*hours + b)
+def sigmoid(z): return 1 / (1 + np.exp(-z))
+
+w, b = 0.0, 0.0
+lr = 0.1
+for step in range(2000):
+    pred = sigmoid(w * hours + b)
+    error = pred - passed
+    w -= lr * np.mean(error * hours)
+    b -= lr * np.mean(error)
+
+print("Learned weight:", round(float(w), 3), " bias:", round(float(b), 3))
+for h in [2, 4, 6]:
+    print(f"Study {h}h -&gt; pass chance: {sigmoid(w*h + b):.0%}")
+
+# CHALLENGE: change lr to 0.01 — does it still learn well?
+</textarea>
+      <div class="lab-bar">
+        <button class="run">▶ Run</button>
+        <button class="ai-explain">✨ Explain</button>
+        <button class="ai-debug">🐞 Debug</button>
+        <button class="ai-improve">⚡ Improve</button>
+        <span class="lab-status">Python loads on first Run</span>
+      </div>
+      <pre class="out">▶ Run the code to see the output here.</pre>
+    </div>
+    <div class="assist">
+      <div class="assist-head"><span>✨ AI Assistant</span><select class="ai-model" title="Choose the AI model"><option value="haiku">⚡ Haiku · fastest</option><option value="sonnet">Sonnet · balanced</option><option value="opus">Opus · most capable</option></select></div>
+      <div class="assist-body">Hi! Edit the code and hit <b>Run</b>. Stuck? I can <b>Explain</b>, <b>Debug</b>, or <b>Improve</b> it — or just ask me below.</div>
+      <div class="assist-ask"><input class="ask-in" placeholder="Ask about this code…"><button class="ask-btn">Ask</button></div>
+    </div>
+  </div><aside class="notes">Lab 2 loads numpy on first run (a few seconds). It's logistic regression by gradient descent in ~12 lines — fully visible. The model LEARNS w,b from data. Ask the assistant 'how does this learn?' as a demo of the helper.</aside>
+</section>
+<section id="case-study" data-sid="case-study">
+<div class="kicker">Case study · our running example</div>
+    <h2>Teaching a car to see</h2>
+    <p class="lead">Autonomous driving threads the whole course. The car's AI splits into three jobs — and this course lives in the first one.</p>
+    <div class="grid3" style="margin-top:.4em">
+      <div class="box"><h3>1 · Perception</h3><p>See the world — detect pedestrians, cars, signs from camera images. <i>(CNNs)</i></p></div>
+      <div class="box"><h3>2 · Prediction</h3><p>Forecast where each object moves next. <i>(RNNs / Transformers)</i></p></div>
+      <div class="box"><h3>3 · Planning</h3><p>Decide: brake, steer, or keep going. <i>(reinforcement learning)</i></p></div>
+    </div>
+    <div class="callout">Perception is the foundation: if the car sees wrong, perfect prediction and planning can't keep it safe.</div>
+    <aside class="notes">From the AV slides. We spend the course on perception. The tech labels connect back to the DL slide.</aside>
+</section>
+<section id="discuss-pick-side" data-sid="discuss-pick-side">
+<div class="kicker">Discuss · 3 minutes · pick a side</div>
+    <h2>AI: more opportunity, or more risk?</h2>
+    <div class="grid2" style="margin-top:.3em">
+      <div class="box" style="border-top:4px solid var(--green)"><h3 style="color:var(--green)">👍 The upside</h3><p>Frees us from repetitive work, supercharges science, and personalizes learning, health, and services.</p></div>
+      <div class="box" style="border-top:4px solid var(--coral)"><h3 style="color:var(--coral)">⚠️ The risks</h3><p>Job disruption, privacy loss, algorithmic bias, and misuse of powerful tools.</p></div>
+    </div>
+    <p class="lead" style="margin-top:.4em">Turn to a neighbor: where does the balance tip for <b>you</b> — and why? Drop your take in 💬.</p>
+    <aside class="notes">From the PPTX debate slide. No right answer; reward specific reasoning. Invite them to post their stance as a comment on this slide."
+</section>
+<section id="your-project" data-sid="your-project">
+<div class="kicker">Your project</div>
+    <h2>Build an AI application map</h2>
+    <div class="grid2" style="grid-template-columns:1.3fr 1fr">
+      <div><p class="lead">Pick one domain you care about and map where AI already works in it — the first move of any researcher entering a field.</p>
+        <ul><li>Choose a domain (medicine, sport, music, climate…)</li><li>Use ChatGPT + Perplexity to find 3 real systems</li><li>Sketch a mind map linking them</li></ul></div>
+      <div class="box"><h3 style="color:var(--teal)">Deliverable</h3><p>A one-page mind map + 3 captioned cases.</p>
+        <h3 style="color:var(--coral);margin-top:.35em">Success looks like</h3><p>3 specific examples (not "AI helps doctors"), each labeled with its <b>input</b> and <b>output</b>.</p></div>
+    </div>
+    <aside class="notes">'Input and output' labels force precision and preview the ML mindset. Reject vague ones on purpose. Example: Sport → Hawk-Eye (input: ball video → output: in/out call).</aside>
+</section>
+<section id="build-it-now" data-sid="build-it-now">
+<div class="kicker">Build it now · hands-on</div>
+    <h2>Map it with ChatGPT + Perplexity</h2>
+    <ol style="font-size:.72em;margin-left:1.05em">
+      <li>Open ChatGPT and Perplexity</li>
+      <li>Ask: "How is AI used in <i>&lt;your domain&gt;</i>? Give 3 specific systems with sources."</li>
+      <li>Verify each one is real — open a source</li>
+      <li>Draw the mind map (paper, slides, or a whiteboard tool)</li></ol>
+    <div style="margin-top:.2em"><span class="pill">ChatGPT</span><span class="pill">Perplexity AI</span><span class="pill">ScholarMind</span></div>
+    <div class="callout"><b>Tip:</b> Perplexity shows its sources — use it to fact-check ChatGPT. That's the Skill of Judging in action.</div>
+    <aside class="notes">Circulate. The verification step is non-negotiable — the habit the whole course is built on.</aside>
+</section>
+<section id="reference-key-terms" data-sid="reference-key-terms">
+<div class="kicker">Reference · key terms</div>
+    <h2>Today's vocabulary</h2>
+    <div class="grid2" style="margin-top:.3em">
+      <div class="box"><p><b>AI</b> — machines doing tasks that normally need human intelligence.</p></div>
+      <div class="box"><p><b>Machine Learning</b> — systems that learn patterns from data instead of explicit rules.</p></div>
+      <div class="box"><p><b>Deep Learning</b> — ML with many-layered neural networks for complex data.</p></div>
+      <div class="box"><p><b>Perception</b> — turning sensor input (images, sound) into understanding.</p></div>
+      <div class="box"><p><b>Prediction</b> — using a trained model to estimate future or unknown values.</p></div>
+      <div class="box"><p><b>Planning</b> — choosing a sequence of actions to reach a goal.</p></div>
+    </div>
+    <aside class="notes">From the PPTX glossary. Keep it as a reference slide — point students here when a term comes up later in the course.</aside>
+</section>
+<section id="homework" data-sid="homework">
+<div class="kicker">Recommended homework</div>
+    <h2>Before next class</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1fr">
+      <div><ol style="font-size:.66em;margin-left:1.05em">
+        <li><b>Finish your AI application map</b> — 3 real cases, each with input → output. Be ready to share.</li>
+        <li><b>Explore one field</b> you love: find a recent AI use and note what problem it solves.</li>
+        <li><b>Re-run a lab</b> from today and change one thing — bring a question for the AI assistant.</li>
+      </ol></div>
+      <div class="box"><h3 style="color:var(--teal)">⭐ Stretch (optional)</h3>
+        <p>Open Kaggle's classic <b>"Titanic — Machine Learning from Disaster"</b>. Skim how others predict who survived: data → features → model → score.</p>
+        <a class="btn" href="https://www.kaggle.com/competitions/titanic" target="_blank" rel="noopener">kaggle.com · Titanic</a></div>
+    </div>
+    <div class="callout">Bring curiosity, not perfection. Post questions on any slide with 💬 — your instructor will see them.</div>
+    <aside class="notes">From the PPTX homework + Kaggle slides. The Titanic link connects directly to Lab 1. Encourage comments as the channel for questions."
+</section>
+<section id="line-to-remember" data-sid="line-to-remember" class="center" data-background-gradient="linear-gradient(135deg,#0B7E8A,#0F9DB0)">
+<div class="kicker">Today's line to remember</div>
+    <h2 style="color:#fff">"The best way to predict the future is to invent it."</h2>
+    <p style="color:#cfe0ef;margin-top:.3em">— Alan Kay</p>
+    <p style="color:#eaf2fb;font-size:.8em;margin-top:.5em">Use AI to <b>create</b> the future, not just to predict it.</p>
+    <div style="margin-top:.5em"><button class="speak" data-audio="audio/quote2.mp3">🔊 <span>Speak this</span></button></div>
+    <aside class="notes">From the PPTX closing quote. A nice springboard: this course is about inventing, not just consuming, AI.</aside>
+</section>
+<section id="wrap-up" data-sid="wrap-up" class="center" data-background-gradient="linear-gradient(135deg,#0C2D52,#16406e)">
+<div class="kicker" style="color:#7fd3df">Wrap-up</div>
+    <h2 style="color:#fff">Three things to keep</h2>
+    <ul style="display:inline-block;text-align:left;color:#eaf2fb">
+      <li>AI ⊃ ML ⊃ DL — nested, not equal</li>
+      <li>AI is already all around you — and across every science</li>
+      <li>AI is an <b>instrument</b> for research — you own the question &amp; the judgement</li></ul>
+    <p style="color:#cfe0ef;margin-top:.6em"><b>Exit ticket:</b> name one AI system you used today, and guess what data trained it. Post it in 💬.</p>
+    <p style="color:#9db8d6;font-size:.6em;margin-top:.7em">Next · Class 2 — turn a vague interest into a real research question.</p>
+    <aside class="notes">Collect exit tickets via comments. Tease Class 2: the Skill of Asking gets its own full hour.</aside>
+</section>
+<section id="backup-material" data-sid="backup-material">
+<div class="kicker" style="color:var(--coral)">Backup material</div>
+    <h2>Extra slides — if there's time</h2>
+    <p class="lead">Deeper dives and extra practice. Skip in a tight hour; pull up on demand or for a longer session.</p>
+    <div class="flow" style="margin-top:.4em">
+      <div class="step"><b>AV perception, in depth</b><span>the tech behind seeing</span></div>
+      <div class="step"><b>AI in art</b><span>creativity &amp; controversy</span></div>
+      <div class="step"><b>Bonus quiz</b><span>one more check</span></div>
+    </div>
+    <aside class="notes">These are optional. Use them for fast classes, curious students, or a 90-minute version.</aside>
+</section>
+<section id="backup-deep-dive" data-sid="backup-deep-dive">
+<div class="kicker">Backup · deep dive</div>
+    <h2>Inside the car's three jobs</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3>Perception</h3><p><b>Computer vision</b> with CNNs extracts features from camera frames to detect pedestrians, lanes, and signs.</p></div>
+      <div class="box"><h3>Prediction</h3><p><b>RNNs / Transformers</b> model time: where will that cyclist be in 2 seconds?</p></div>
+      <div class="box"><h3>Planning</h3><p><b>Reinforcement learning</b> searches for a safe, comfortable path — when to brake, steer, go.</p></div>
+    </div>
+    <div class="callout">Perceive → Predict → Plan is a closed loop running many times per second.</div>
+    <aside class="notes">From the PPTX AV deep-dive. Only for students who want the machinery."
+</section>
+<section id="backup-creativity" data-sid="backup-creativity">
+<div class="kicker">Backup · creativity</div>
+    <h2>AI in art — tool or artist?</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3>🖼️ Images</h3><p>Midjourney &amp; DALL·E turn a sentence into a picture — no drawing skill needed.</p></div>
+      <div class="box"><h3>🎵 Music</h3><p>AI composes melodies, arranges parts, even mimics a singer's voice.</p></div>
+      <div class="box"><h3>✍️ Writing</h3><p>Helps brainstorm plots, characters, and copy — a partner for writers.</p></div>
+    </div>
+    <div class="callout">Open question: when an algorithm creates, who is the <b>artist</b> — and what is "creativity"?</div>
+    <aside class="notes">From the PPTX art slide. Great discussion fodder if time allows."
+</section>
+<section id="quiz-backup-bonus" data-sid="quiz-backup-bonus">
+<div class="kicker">Backup · bonus check</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="1">
+    <p class="qq">AlphaFold predicting protein structures is an example of AI as…</p>
+    <div class="opts"><button class="opt" data-i="0">A chatbot for fun</button><button class="opt" data-i="1">An instrument that accelerates scientific discovery</button><button class="opt" data-i="2">Traditional rule-based AI</button><button class="opt" data-i="3">Artificial general intelligence</button></div>
+    <p class="quiz-exp">AlphaFold is AI as a research instrument — it solved a 50-year science problem, the same idea as 'AI as a research tool'.</p>
+  </div>
+  <aside class="notes">Optional reinforcement of the research-tool theme.</aside>
+</section>
+</div></div>
+
+<a id="donateBtn" href="https://buy.stripe.com/14AbIT26kfUzbqjbGv4ow00" target="_blank" rel="noopener">♥ Donate</a>
+<a id="pdfBtn" href="slides.pdf" download title="Download these slides as a PDF">⬇ PDF</a>
+<a id="mpaLogo" href="/meritpoint-slides/" title="Merit Point Academy — all courses"><img src="/meritpoint-slides/assets/mpa-logo.png" alt="Merit Point Academy"></a>
+<!-- per-slide comments -->
+<audio id="narratorAudio" preload="none" style="display:none"></audio>
+<div id="capBar"></div>
+<button id="ccBtn" title="Toggle captions">CC</button>
+<button id="listenBtn" title="Listen to this slide narrated"><span class="li-ic">▶</span><span class="li-tx">Listen</span></button>
+<button id="commentBtn" title="Comment on this slide">💬 Comment<span class="cnum" id="cnum">0</span></button>
+<div id="commentPanel">
+  <div class="ph"><span id="cph">Comments</span><span class="x" id="cclose">✕</span></div>
+  <div id="commentList"></div>
+  <form id="commentForm">
+    <div class="row"><input id="cname" placeholder="Your name (optional)" maxlength="40"></div>
+    <textarea id="cbody" placeholder="Leave a comment or question about this slide…" maxlength="2000"></textarea>
+    <div class="row"><button type="submit">Post</button><span class="msg" id="cmsg">Visible to your instructor &amp; classmates.</span></div>
+  </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+<script>
+const DECK = "ai-toolbox/class-01";
+Reveal.initialize({ hash:true, slideNumber:'c/t', controls:true, progress:true,
+  width:1280, height:720, margin:0.04, transition:'slide',
+  keyboardCondition:'focused', plugins:[ RevealNotes ] });
+
+/* ---------- Shared audio player ----------
+ * One audio element, already attached to the DOM (see markup above), reused
+ * for every play. A bare detached Audio object is never used: on at least one
+ * real browser/profile that made Chrome abort play() within milliseconds
+ * ("interrupted because the media was removed from the document") — audio
+ * never audibly played and the button silently reset to idle before anyone
+ * noticed. Reusing an attached element avoids that path. */
+const _audio=document.getElementById('narratorAudio');
+let _btn=null,_playToken=0;
+function fmtClock(s){ s=Math.max(0,Math.floor(s||0)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
+function resetListenUI(){ listenBtn.style.setProperty('--p','0%'); listenBtn.querySelector('.li-ic').textContent='▶'; listenBtn.querySelector('.li-tx').textContent='Listen'; }
+function stopAudio(){
+  _playToken++; // invalidate any in-flight play() for the old src
+  _audio.pause(); _audio.currentTime=0; _audio.removeAttribute('src'); _audio.load();
+  _audio.removeEventListener('timeupdate',onListenTimeupdate); // else it'd animate listenBtn during a .speak clip
+  capBar.style.display='none';
+  if(_btn){
+    _btn.classList.remove('playing');
+    if(_btn===listenBtn) resetListenUI();
+    else if(_btn.querySelector('span')) _btn.querySelector('span').textContent=_btn.dataset.label||'Speak';
+  }
+  _btn=null;
+}
+document.addEventListener('click',function(e){
+  const b=e.target.closest('.speak'); if(!b) return;
+  if(_btn===b && !_audio.paused){ stopAudio(); return; }
+  stopAudio();
+  const token=_playToken;
+  _btn=b; b.dataset.label=b.dataset.label||b.querySelector('span').textContent;
+  b.classList.add('playing'); b.querySelector('span').textContent='Pause';
+  _audio.src=b.dataset.audio;
+  _audio.addEventListener('ended',stopAudio,{once:true});
+  _audio.play().catch(function(){ if(token===_playToken) stopAudio(); });
+});
+
+/* ---------- Per-slide narration ("Listen") + captions ---------- */
+const listenBtn=document.getElementById('listenBtn');
+const ccBtn=document.getElementById('ccBtn');
+const capBar=document.getElementById('capBar');
+let _narrationData=null; // { [sid]: { script, cues:[{start,end,text}], ... } }
+let _ccOn=localStorage.getItem('cc_captions')!=='0'; // on by default
+function updateCcBtn(){ ccBtn.classList.toggle('on',_ccOn); ccBtn.title=_ccOn?'Captions on — click to hide':'Captions off — click to show'; }
+async function loadNarrated(){
+  try{ const r=await fetch('audio/narration.json',{cache:'no-cache'}); if(!r.ok) throw 0;
+    _narrationData=await r.json(); }
+  catch(e){ _narrationData={}; }
+  updateCcBtn();
+  updateListen();
+}
+function updateListen(){
+  if(!_narrationData){ return; }
+  const has=!!_narrationData[curSid];
+  listenBtn.style.display=has?'inline-flex':'none';
+  ccBtn.style.display=has?'inline-flex':'none';
+  if(!has && _btn===listenBtn) stopAudio();
+}
+function cueAt(cues,t){ for(const c of cues) if(t>=c.start && t<c.end) return c; return null; }
+function updateCaption(){
+  const data=_narrationData && _narrationData[curSid];
+  const cues=data && data.cues;
+  if(!_ccOn || _btn!==listenBtn || !cues || !cues.length){ capBar.style.display='none'; return; }
+  const cue=cueAt(cues,_audio.currentTime);
+  if(cue){ capBar.textContent=cue.text; capBar.style.display='block'; }
+  else capBar.style.display='none'; // brief gap between sentences
+}
+ccBtn.addEventListener('click',function(){
+  _ccOn=!_ccOn; localStorage.setItem('cc_captions',_ccOn?'1':'0'); updateCcBtn(); updateCaption();
+});
+function onListenTimeupdate(){
+  if(_audio.duration) listenBtn.style.setProperty('--p',(_audio.currentTime/_audio.duration*100)+'%');
+  listenBtn.querySelector('.li-tx').textContent=fmtClock(_audio.currentTime)+' / '+fmtClock(_audio.duration);
+  updateCaption();
+}
+listenBtn.addEventListener('click',function(){
+  if(_btn===listenBtn && !_audio.paused){ stopAudio(); return; } // toggles play/stop even mid-buffer
+  stopAudio();
+  const token=_playToken;
+  _btn=listenBtn;
+  listenBtn.classList.add('playing');
+  listenBtn.querySelector('.li-ic').textContent='⏹';
+  listenBtn.querySelector('.li-tx').textContent='loading…';
+  _audio.src='audio/'+encodeURIComponent(curSid)+'.mp3';
+  _audio.addEventListener('timeupdate',onListenTimeupdate);
+  _audio.addEventListener('ended',stopAudio,{once:true});
+  _audio.play().catch(function(){
+    if(token!==_playToken) return; // superseded by a newer click/stop — ignore
+    _audio.removeEventListener('timeupdate',onListenTimeupdate);
+    stopAudio();
+    listenBtn.querySelector('.li-tx').textContent='tap to retry';
+    setTimeout(resetListenUI,2200);
+  });
+});
+
+/* ---------- Quizzes (answers feed the live class distribution) ---------- */
+function renderQuizStats(quiz,data){
+  quiz._qstats=data;
+  let box=quiz.querySelector('.qstats');
+  if(!box){ box=document.createElement('div'); box.className='qstats'; quiz.appendChild(box); }
+  const mode=quiz._qmode||'today';
+  const st=(data&&data[mode])||{counts:{},total:0};
+  const opts=quiz.querySelectorAll('.opt'), correct=parseInt(quiz.dataset.correct,10);
+  let bars='';
+  for(let i=0;i<opts.length;i++){
+    const c=st.counts[i]||0, pct=st.total?Math.round(c*100/st.total):0;
+    bars+='<div class="qrow"><span class="ql">'+String.fromCharCode(65+i)+'</span>'
+      +'<div class="qbar"><div class="qfill'+(i===correct?' qok':'')+'" style="width:'+pct+'%"></div></div>'
+      +'<span class="qp">'+pct+'% ('+c+')</span></div>';
+  }
+  box.innerHTML='<div class="qhead"><span>Class results · '+st.total+' answered</span>'
+    +'<span><button class="qm'+(mode==='today'?' on':'')+'" data-m="today">Today</button>'
+    +'<button class="qm'+(mode==='all'?' on':'')+'" data-m="all">All time</button></span></div>'+bars;
+}
+document.addEventListener('click',function(e){
+  const m=e.target.closest('.qstats .qm');
+  if(m){ const q=m.closest('.quiz'); q._qmode=m.dataset.m; renderQuizStats(q,q._qstats); return; }
+  const opt=e.target.closest('.quiz .opt'); if(!opt) return;
+  const quiz=opt.closest('.quiz'); if(quiz.classList.contains('answered')) return;
+  const correct=parseInt(quiz.dataset.correct,10);
+  quiz.querySelectorAll('.opt').forEach(function(o){o.setAttribute('disabled','');});
+  const chosen=parseInt(opt.dataset.i,10);
+  quiz.querySelectorAll('.opt')[correct].classList.add('correct');
+  if(chosen!==correct) opt.classList.add('wrong');
+  quiz.classList.add('answered');
+  const sec=quiz.closest('section');
+  const sid=(sec&&sec.dataset.sid)||_hashSid(sec);
+  fetch('/api/quiz/answer',{method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({deck:DECK,slide:sid,choice:chosen,correct:chosen===correct})})
+    .then(function(r){return r.json();})
+    .then(function(j){ if(j&&j.today) renderQuizStats(quiz,{today:j.today,all:j.all}); })
+    .catch(function(){ fetch('/api/quiz/stats?deck='+encodeURIComponent(DECK)+'&slide='+encodeURIComponent(sid))
+      .then(function(r){return r.json();}).then(function(j){renderQuizStats(quiz,j);}).catch(function(){}); });
+});
+
+/* ---------- Heap / Top-K insertion visualizer ---------- */
+function hvState(el){
+  if(!el._hv){ el._hv={ frames:[{heap:[],action:'Ready. Insert a value to see the animation.',hi:[]}], cur:0, playing:false, timer:null }; }
+  return el._hv;
+}
+function hvTree(arr,hi){
+  if(!arr.length) return '<div class="hv-empty">(empty)</div>';
+  const W=200,H=140; const depthOf=(i)=>Math.floor(Math.log2(i+1)); const maxDepth=depthOf(arr.length-1);
+  const nodes=arr.map(function(v,i){ const d=depthOf(i); const levelStart=Math.pow(2,d)-1; const pos=i-levelStart; const cnt=Math.pow(2,d);
+    return { i:i, v:v, x:((pos+0.5)/cnt)*W, y:16+d*((H-24)/Math.max(1,maxDepth)) }; });
+  let svg='<svg viewBox="0 0 '+W+' '+(H+16)+'" class="hv-tree-svg">';
+  nodes.forEach(function(n){ if(n.i===0) return; const p=nodes[Math.floor((n.i-1)/2)];
+    svg+='<line x1="'+p.x+'" y1="'+p.y+'" x2="'+n.x+'" y2="'+n.y+'" class="hv-edge"/>'; });
+  (hi||[]).forEach(function(pair){ if(pair.length===2 && nodes[pair[0]] && nodes[pair[1]]){
+    svg+='<line x1="'+nodes[pair[0]].x+'" y1="'+nodes[pair[0]].y+'" x2="'+nodes[pair[1]].x+'" y2="'+nodes[pair[1]].y+'" class="hv-swap"/>'; } });
+  const hiIdx=(hi||[]).flat();
+  nodes.forEach(function(n){ const isHi=hiIdx.indexOf(n.i)>-1;
+    svg+='<circle cx="'+n.x+'" cy="'+n.y+'" r="13" class="hv-node'+(isHi?' hv-node-hi':'')+'"/><text x="'+n.x+'" y="'+(n.y+4)+'" class="hv-node-text">'+n.v+'</text>'; });
+  return svg+'</svg>';
+}
+function hvRender(el){
+  const st=hvState(el);
+  el.querySelector('.hv-arr-now').textContent='['+st.frames[st.cur].heap.join(', ')+']';
+  el.querySelector('.hv-step').textContent=st.cur+' / '+(st.frames.length-1);
+  el.querySelector('.hv-action-text').textContent=st.frames[st.cur].action;
+  const framesEl=el.querySelector('.hv-frames'), arrsEl=el.querySelector('.hv-arrs');
+  framesEl.innerHTML=''; arrsEl.innerHTML='';
+  st.frames.forEach(function(f,idx){
+    const hiIdx=(f.hi||[]).flat();
+    const card=document.createElement('div'); card.className='hv-frame'+(idx===st.cur?' hv-frame-active':'');
+    card.innerHTML='<div class="hv-frame-title">Step '+idx+'</div><div class="hv-frame-desc">'+(idx===0?'(empty)':f.action)+'</div>'+hvTree(f.heap,f.hi);
+    framesEl.appendChild(card);
+    const a=document.createElement('div'); a.className='hv-arr'+(idx===st.cur?' hv-arr-active':'');
+    a.innerHTML='['+f.heap.map(function(v,i){ return hiIdx.indexOf(i)>-1?'<span class="hv-arr-hi">'+v+'</span>':v; }).join(', ')+']';
+    arrsEl.appendChild(a);
+  });
+  const active=framesEl.querySelector('.hv-frame-active');
+  if(active) active.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
+}
+function hvInsert(el,val){
+  const st=hvState(el);
+  if(st.cur!==st.frames.length-1) st.frames=st.frames.slice(0,st.cur+1); // drop redo history on a fresh insert
+  const heap=st.frames[st.frames.length-1].heap.slice();
+  const idx=heap.length; heap.push(val);
+  let i=idx, hi=[[idx,idx]];
+  while(i>0){ const p=Math.floor((i-1)/2);
+    if(heap[p]>heap[i]){ const t=heap[p]; heap[p]=heap[i]; heap[i]=t; hi=[[p,i]]; i=p; } else break; }
+  st.frames.push({ heap:heap, action:'Insert '+val+' at index '+idx, hi:hi });
+  st.cur=st.frames.length-1; hvRender(el);
+}
+function hvGoto(el,idx){ const st=hvState(el); st.cur=Math.max(0,Math.min(st.frames.length-1,idx)); hvRender(el); }
+function hvStop(el){ const st=hvState(el); if(st.timer){ clearInterval(st.timer); st.timer=null; } st.playing=false;
+  const b=el.querySelector('.hv-play'); if(b) b.textContent='▶ Play'; }
+function hvPlay(el){ const st=hvState(el); if(st.playing){ hvStop(el); return; }
+  if(st.cur>=st.frames.length-1) hvGoto(el,0);
+  st.playing=true; const b=el.querySelector('.hv-play'); if(b) b.textContent='⏸ Pause';
+  const speed=parseInt(el.querySelector('.hv-speed').value,10)||3, delay=Math.max(280,1300-speed*220);
+  st.timer=setInterval(function(){ if(st.cur>=st.frames.length-1){ hvStop(el); return; } hvGoto(el,st.cur+1); },delay);
+}
+document.addEventListener('click',function(e){
+  const hv=e.target.closest('.heapviz'); if(!hv) return;
+  if(e.target.closest('.hv-insert')){ const inp=hv.querySelector('.hv-input'); const v=parseInt(inp.value,10);
+    if(!isNaN(v)){ hvStop(hv); hvInsert(hv,v); inp.value=''; } }
+  else if(e.target.closest('.hv-quick-btn')){ hvStop(hv); hvInsert(hv,parseInt(e.target.closest('.hv-quick-btn').dataset.v,10)); }
+  else if(e.target.closest('.hv-first')){ hvStop(hv); hvGoto(hv,0); }
+  else if(e.target.closest('.hv-prev')){ hvStop(hv); hvGoto(hv,hvState(hv).cur-1); }
+  else if(e.target.closest('.hv-next')){ hvStop(hv); hvGoto(hv,hvState(hv).cur+1); }
+  else if(e.target.closest('.hv-last')){ hvStop(hv); hvGoto(hv,hvState(hv).frames.length-1); }
+  else if(e.target.closest('.hv-play')){ hvPlay(hv); }
+});
+document.addEventListener('keydown',function(e){
+  if(e.target.classList&&e.target.classList.contains('hv-input')&&e.key==='Enter'){
+    e.preventDefault(); const hv=e.target.closest('.heapviz'); const v=parseInt(e.target.value,10);
+    if(!isNaN(v)){ hvStop(hv); hvInsert(hv,v); e.target.value=''; }
+  }
+});
+document.querySelectorAll('.heapviz').forEach(function(hv){
+  const preset=(hv.dataset.preset||'').split(',').map(function(s){return s.trim();}).filter(Boolean);
+  const q=hv.querySelector('.hv-quick');
+  preset.forEach(function(v){ const b=document.createElement('button'); b.type='button'; b.className='hv-quick-btn'; b.dataset.v=v; b.textContent=v; q.appendChild(b); });
+  hvRender(hv);
+});
+
+/* ---------- Convolution (sliding-window) visualizer ---------- */
+const CV_IMGS={
+  edge:['11110000','11110000','11110000','11110000','11110000','11110000','11110000','11110000'],
+  hedge:['11111111','11111111','11111111','11111111','00000000','00000000','00000000','00000000'],
+  diag:['11000000','11100000','01110000','00111000','00011100','00001110','00000111','00000011'],
+  smiley:['00000000','01100110','01100110','00000000','10000001','01000010','00111100','00000000'],
+  x:['10000001','11000011','01100110','00111100','00111100','01100110','11000011','10000001'],
+  clear:['00000000','00000000','00000000','00000000','00000000','00000000','00000000','00000000']
+};
+const CV_IMG_NAMES=[['edge','Vertical edge'],['hedge','Horizontal edge'],['diag','Diagonal'],['smiley','Smiley'],['x','X'],['clear','Clear']];
+const CV_KERNELS=[
+  {name:'Vertical edge',k:[[1,0,-1],[1,0,-1],[1,0,-1]],div:1},
+  {name:'Horizontal edge',k:[[1,1,1],[0,0,0],[-1,-1,-1]],div:1},
+  {name:'Blur (average)',k:[[1,1,1],[1,1,1],[1,1,1]],div:9},
+  {name:'Sharpen',k:[[0,-1,0],[-1,5,-1],[0,-1,0]],div:1}
+];
+function cvState(el){
+  if(!el._cv){
+    const rows=CV_IMGS[el.dataset.img||'edge'];
+    el._cv={ img:rows.map(function(r){return r.split('').map(Number);}), ki:0, cur:0, playing:false, timer:null };
+  }
+  return el._cv;
+}
+function cvOutputs(st){
+  const K=CV_KERNELS[st.ki], out=[];
+  for(let r=0;r<6;r++){ const row=[];
+    for(let c=0;c<6;c++){ let s=0;
+      for(let i=0;i<3;i++) for(let j=0;j<3;j++) s+=st.img[r+i][c+j]*K.k[i][j];
+      row.push(s); }
+    out.push(row); }
+  return out;
+}
+function cvFmt(v){ return String(Math.round(v*10)/10); }
+function cvRender(el){
+  const st=cvState(el), K=CV_KERNELS[st.ki], out=cvOutputs(st);
+  const wr=Math.floor(st.cur/6), wc=st.cur%6;
+  const inEl=el.querySelector('.cv-in'); inEl.innerHTML='';
+  for(let r=0;r<8;r++) for(let c=0;c<8;c++){
+    const d=document.createElement('div'); d.className='cv-cell'; d.dataset.r=r; d.dataset.c=c;
+    const v=st.img[r][c];
+    d.style.background=v?'#F2A93B':'#132A47';
+    d.style.color=v?'#5c3d05':'#3d5878';
+    d.textContent=v;
+    if(r>=wr&&r<wr+3&&c>=wc&&c<wc+3) d.classList.add('cv-win');
+    inEl.appendChild(d);
+  }
+  const kg=el.querySelector('.cv-kgrid'); kg.innerHTML='';
+  for(let i=0;i<3;i++) for(let j=0;j<3;j++){ const d=document.createElement('div'); d.className='cv-kcell'; d.textContent=K.k[i][j]; kg.appendChild(d); }
+  el.querySelector('.cv-kdiv').textContent=K.div>1?'output = sum ÷ '+K.div:'output = sum of the 9 products';
+  let maxAbs=1; out.forEach(function(row){ row.forEach(function(v){ maxAbs=Math.max(maxAbs,Math.abs(v/K.div)); }); });
+  const lines=[]; let s=0;
+  for(let i=0;i<3;i++){ const terms=[];
+    for(let j=0;j<3;j++){ s+=st.img[wr+i][wc+j]*K.k[i][j];
+      terms.push(st.img[wr+i][wc+j]+'×'+(K.k[i][j]<0?'('+K.k[i][j]+')':K.k[i][j])); }
+    lines.push(terms.join(' + ')); }
+  el.querySelector('.cv-calc').innerHTML=lines.join('<br>')+'<br><span class="cv-sum">= '+cvFmt(s/K.div)+'</span>';
+  const outEl=el.querySelector('.cv-out'); outEl.innerHTML='';
+  for(let r=0;r<6;r++) for(let c=0;c<6;c++){
+    const d=document.createElement('div'); d.className='cv-ocell'; const idx=r*6+c;
+    if(idx<=st.cur){ const v=out[r][c]/K.div, t=Math.min(1,Math.abs(v)/maxAbs);
+      d.textContent=cvFmt(v);
+      if(v>0) d.style.background='rgba(15,157,176,'+(0.12+0.88*t).toFixed(2)+')';
+      else if(v<0) d.style.background='rgba(238,107,54,'+(0.12+0.88*t).toFixed(2)+')';
+      d.style.color=t>0.5&&v!==0?'#fff':'#21303F';
+    }
+    if(idx===st.cur) d.classList.add('cv-win');
+    outEl.appendChild(d);
+  }
+  el.querySelector('.cv-step').textContent=(st.cur+1)+' / 36 · row '+(wr+1)+', col '+(wc+1);
+  el.querySelectorAll('.cv-kchips .cv-chip').forEach(function(ch,i){ ch.classList.toggle('sel',i===st.ki); });
+}
+function cvGoto(el,idx){ const st=cvState(el); st.cur=Math.max(0,Math.min(35,idx)); cvRender(el); }
+function cvStop(el){ const st=cvState(el); if(st.timer){ clearInterval(st.timer); st.timer=null; } st.playing=false;
+  const b=el.querySelector('.cv-play'); if(b) b.textContent='▶ Play'; }
+function cvPlay(el){ const st=cvState(el); if(st.playing){ cvStop(el); return; }
+  if(st.cur>=35) cvGoto(el,0);
+  st.playing=true; const b=el.querySelector('.cv-play'); if(b) b.textContent='⏸ Pause';
+  const speed=parseInt(el.querySelector('.cv-speed').value,10)||3, delay=Math.max(120,900-speed*160);
+  st.timer=setInterval(function(){ if(st.cur>=35){ cvStop(el); return; } cvGoto(el,st.cur+1); },delay);
+}
+document.addEventListener('click',function(e){
+  const cv=e.target.closest('.convviz'); if(!cv) return;
+  const cell=e.target.closest('.cv-cell');
+  if(cell){ const st=cvState(cv); cvStop(cv);
+    const r=parseInt(cell.dataset.r,10), c=parseInt(cell.dataset.c,10);
+    st.img[r][c]=st.img[r][c]?0:1; cvRender(cv); return; }
+  const chip=e.target.closest('.cv-chip');
+  if(chip){ cvStop(cv); const st=cvState(cv);
+    if(chip.dataset.k!==undefined){ st.ki=parseInt(chip.dataset.k,10); }
+    else if(chip.dataset.img){ st.img=CV_IMGS[chip.dataset.img].map(function(r){return r.split('').map(Number);}); st.cur=0; }
+    cvRender(cv); return; }
+  if(e.target.closest('.cv-first')){ cvStop(cv); cvGoto(cv,0); }
+  else if(e.target.closest('.cv-prev')){ cvStop(cv); cvGoto(cv,cvState(cv).cur-1); }
+  else if(e.target.closest('.cv-next')){ cvStop(cv); cvGoto(cv,cvState(cv).cur+1); }
+  else if(e.target.closest('.cv-last')){ cvStop(cv); cvGoto(cv,35); }
+  else if(e.target.closest('.cv-play')){ cvPlay(cv); }
+});
+document.querySelectorAll('.convviz').forEach(function(cv){
+  const pr=cv.querySelector('.cv-presets');
+  CV_IMG_NAMES.forEach(function(p){ const b=document.createElement('button'); b.type='button'; b.className='cv-chip'; b.dataset.img=p[0]; b.textContent=p[1]; pr.appendChild(b); });
+  const kc=cv.querySelector('.cv-kchips');
+  CV_KERNELS.forEach(function(k,i){ const b=document.createElement('button'); b.type='button'; b.className='cv-chip'; b.dataset.k=i; b.textContent=k.name; kc.appendChild(b); });
+  cvRender(cv);
+});
+
+/* ---------- Pyodide code labs ---------- */
+let _py=null,_pyLoading=null;
+async function getPy(statusEl){
+  if(_py) return _py;
+  if(!_pyLoading){ if(statusEl)statusEl.textContent='Loading Python…';
+    _pyLoading=loadPyodide({indexURL:'https://cdn.jsdelivr.net/pyodide/v0.26.2/full/'}); }
+  _py=await _pyLoading; return _py;
+}
+function labOf(el){ return el.closest('.lab'); }
+async function runLab(lab){
+  const code=lab.querySelector('.code').value;
+  const out=lab.querySelector('.out'); const status=lab.querySelector('.lab-status');
+  out.textContent=''; out.classList.remove('has-err'); lab.dataset.lastError='';
+  try{
+    const py=await getPy(status);
+    const pkgs=(lab.dataset.packages||'').split(',').map(s=>s.trim()).filter(Boolean);
+    if(pkgs.length){ status.textContent='Loading '+pkgs.join(', ')+'…'; await py.loadPackage(pkgs); }
+    status.textContent='Running…';
+    let buf='';
+    py.setStdout({batched:(s)=>{buf+=s+'\n';}});
+    py.setStderr({batched:(s)=>{buf+=s+'\n';}});
+    await py.runPythonAsync(code);
+    out.textContent=buf||'(no output — add a print(...) )';
+    status.textContent='✓ done';
+  }catch(err){
+    const msg=(err&&err.message)?err.message:String(err);
+    out.innerHTML='<span class="err">'+msg.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))+'</span>';
+    lab.dataset.lastError=msg; status.textContent='✗ error — try 🐞 Debug';
+  }
+}
+/* very small markdown -> html for assistant replies */
+function mdToHtml(md){
+  const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  let html=''; const parts=md.split(/```/);
+  parts.forEach(function(p,i){
+    if(i%2===1){ const code=p.replace(/^python\n?/i,''); html+='<pre data-code="'+encodeURIComponent(code.trim())+'"><code>'+esc(code.trim())+'</code></pre>'+
+      '<button class="apply">↧ Use this code</button>'; }
+    else { let t=esc(p).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/`(.+?)`/g,'<code>$1</code>').replace(/\n{2,}/g,'</p><p>').replace(/\n/g,'<br>'); if(t.trim())html+='<p>'+t+'</p>'; }
+  });
+  return html;
+}
+async function askAssistant(lab,action,question){
+  const body=lab.querySelector('.assist-body');
+  const sel=lab.querySelector('.ai-model');
+  const model=(sel&&sel.value)||'haiku';
+  body.innerHTML='<p class="muted">✨ Thinking…</p>';
+  try{
+    const r=await fetch('/api/assistant',{method:'POST',headers:{'content-type':'application/json'},
+      body:JSON.stringify({action:action,question:question||'',code:lab.querySelector('.code').value,error:lab.dataset.lastError||'',model:model})});
+    const j=await r.json();
+    body.innerHTML=mdToHtml(j.text||'(no response)');
+  }catch(e){ body.innerHTML='<p class="muted">Assistant unavailable right now. Try again shortly.</p>'; }
+}
+document.addEventListener('click',function(e){
+  const t=e.target;
+  if(t.closest('.lab .run')){ runLab(labOf(t.closest('.run'))); }
+  else if(t.closest('.lab .ai-explain')){ askAssistant(labOf(t.closest('.ai-explain')),'explain'); }
+  else if(t.closest('.lab .ai-debug')){ askAssistant(labOf(t.closest('.ai-debug')),'debug'); }
+  else if(t.closest('.lab .ai-improve')){ askAssistant(labOf(t.closest('.ai-improve')),'improve'); }
+  else if(t.closest('.lab .ask-btn')){ const lab=labOf(t.closest('.ask-btn')); const inp=lab.querySelector('.ask-in'); if(inp.value.trim()){ askAssistant(lab,'ask',inp.value.trim()); inp.value=''; } }
+  else if(t.classList&&t.classList.contains('apply')){ const pre=t.previousElementSibling; const lab=t.closest('.lab'); if(pre&&lab){ lab.querySelector('.code').value=decodeURIComponent(pre.dataset.code); } }
+});
+/* Tab key inserts spaces in code editors; keep typing inside textareas from triggering reveal nav */
+document.addEventListener('keydown',function(e){
+  const ta=e.target;
+  if(ta.classList&&ta.classList.contains('code')&&e.key==='Tab'){ e.preventDefault(); const s=ta.selectionStart,en=ta.selectionEnd; ta.value=ta.value.slice(0,s)+'    '+ta.value.slice(en); ta.selectionStart=ta.selectionEnd=s+4; }
+},true);
+/* allow Enter to submit the assistant question */
+document.addEventListener('keydown',function(e){ if(e.target.classList&&e.target.classList.contains('ask-in')&&e.key==='Enter'){ e.preventDefault(); const lab=labOf(e.target); if(e.target.value.trim()){ askAssistant(lab,'ask',e.target.value.trim()); e.target.value=''; } } });
+
+/* ---------- Per-slide comments ---------- */
+const btn=document.getElementById('commentBtn'),panel=document.getElementById('commentPanel'),
+  listEl=document.getElementById('commentList'),cnum=document.getElementById('cnum'),
+  cph=document.getElementById('cph'),form=document.getElementById('commentForm');
+let counts={}, curSid='title';
+// Comment identity = the slide's stable data-sid slug. Never positional:
+// a positional key would re-point old comments to a different slide whenever
+// the deck is reordered. Every slide is built with a sid (asserted at build);
+// the content-hash fallback below stays position-independent just in case.
+function _hashSid(s){ const t=((s&&s.textContent)||'').replace(/s+/g,' ').trim().slice(0,400); let h=0; for(let i=0;i<t.length;i++){ h=(h*31+t.charCodeAt(i))|0; } return 'auto-'+(h>>>0).toString(36); }
+function sidOf(){ const s=Reveal.getCurrentSlide(); if(s&&s.dataset.sid) return s.dataset.sid; console.warn('slide has no data-sid; using content-hash key'); return _hashSid(s); }
+function fmtTime(ts){ const d=new Date(ts); return d.toLocaleDateString()+' '+d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}); }
+function escc(s){ return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+async function loadCounts(){ try{ const r=await fetch('/api/comments/counts?deck='+encodeURIComponent(DECK)); const j=await r.json(); counts=j.counts||{}; updateBadge(); }catch(e){} }
+function updateBadge(){ cnum.textContent=counts[curSid]||0; }
+async function loadComments(){ listEl.innerHTML='<div class="none">Loading…</div>';
+  try{ const r=await fetch('/api/comments?deck='+encodeURIComponent(DECK)+'&slide='+encodeURIComponent(curSid)); const j=await r.json();
+    const cs=j.comments||[]; counts[curSid]=cs.length; updateBadge();
+    listEl.innerHTML=cs.length?cs.map(c=>'<div class="c"><span class="cn">'+escc(c.name)+'</span><span class="ct">'+fmtTime(c.created)+'</span><div class="cb">'+escc(c.body)+'</div></div>').join(''):'<div class="none">No comments yet — be the first!</div>';
+  }catch(e){ listEl.innerHTML='<div class="none">Could not load comments.</div>'; }
+}
+function openPanel(){ curSid=sidOf(); cph.textContent='Comments · '+curSid; panel.classList.add('open'); loadComments(); }
+btn.onclick=function(){ panel.classList.contains('open')?panel.classList.remove('open'):openPanel(); };
+document.getElementById('cclose').onclick=function(){ panel.classList.remove('open'); };
+form.onsubmit=async function(e){ e.preventDefault();
+  const name=document.getElementById('cname').value, body=document.getElementById('cbody').value.trim();
+  const msg=document.getElementById('cmsg'); if(!body){ msg.textContent='Write something first.'; return; }
+  msg.textContent='Posting…';
+  try{ const r=await fetch('/api/comments',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({deck:DECK,slide:curSid,name:name,body:body})});
+    const j=await r.json(); if(j.ok){ document.getElementById('cbody').value=''; msg.textContent='Posted! Thanks.'; loadComments(); } else { msg.textContent=j.error||'Could not post.'; }
+  }catch(e){ msg.textContent='Network error — try again.'; }
+};
+Reveal.on('slidechanged',function(){ stopAudio(); curSid=sidOf(); updateBadge(); updateListen(); sendSlide(); if(panel.classList.contains('open')){ cph.textContent='Comments · '+curSid; loadComments(); } });
+Reveal.on('ready',function(){ curSid=sidOf(); loadCounts(); loadNarrated(); });
+
+/* ---------- Live classroom: presence chip + quiz stream (SSE) ---------- */
+let liveId=null;
+const liveChip=document.createElement('div');
+liveChip.id='liveChip'; liveChip.style.display='none'; document.body.appendChild(liveChip);
+function setOnline(n){ liveChip.style.display=''; liveChip.textContent='🟢 '+n+' online'; }
+function sendSlide(){
+  if(!liveId) return;
+  fetch('/api/presence',{method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({id:liveId,slide:curSid})}).catch(function(){});
+}
+function quizBySid(sid){
+  const secs=document.querySelectorAll('section[data-sid]');
+  for(const s of secs) if(s.dataset.sid===sid) return s.querySelector('.quiz');
+  return null;
+}
+function pollLive(){ // fallback when EventSource can't stream through a proxy
+  const tick=function(){ fetch('/api/presence/count?deck='+encodeURIComponent(DECK))
+    .then(function(r){return r.json();}).then(function(j){setOnline(j.online);}).catch(function(){}); };
+  tick(); setInterval(tick,20000);
+}
+(function connectLive(){
+  if(typeof EventSource==='undefined') return pollLive();
+  const es=new EventSource('/api/live?deck='+encodeURIComponent(DECK));
+  let opened=false;
+  es.onopen=function(){ opened=true; };
+  es.onmessage=function(ev){
+    let d; try{ d=JSON.parse(ev.data); }catch(e){ return; }
+    if(d.type==='hello'){ liveId=d.id; setOnline(d.online); sendSlide(); }
+    else if(d.type==='presence'){ setOnline(d.online); }
+    else if(d.type==='quiz'){ // live-update the chart on the quiz slide (only visible once answered)
+      const q=quizBySid(d.slide); if(q) renderQuizStats(q,{today:d.today,all:d.all});
+    }
+  };
+  es.onerror=function(){ if(!opened){ es.close(); pollLive(); } };
+})();
+</script>
+<script defer src="/meritpoint-slides/assets/auth.js"></script>
+</body></html>

@@ -1,0 +1,1089 @@
+{
+  "title": {
+    "hash": "572722a2340076c2",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Welcome back, everyone — this is our final class in the foundations stage before we roll up our sleeves and dive into real data work. Here's my promise for today: by the time we finish, none of you will ever start research by staring blankly at a search box again. We're going to assemble a toolkit of five tools that transform \"I have a question\" into \"I know exactly which papers matter and how they connect.\" And you'll walk away with something concrete — a literature map that bridges the question you built earlier to the data work coming next.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 8.4,
+        "text": "Welcome back, everyone — this is our final class in the foundations stage before we roll up our sleeves and dive into real data work."
+      },
+      {
+        "start": 8.4,
+        "end": 16.012,
+        "text": "Here's my promise for today: by the time we finish, none of you will ever start research by staring blankly at a search box again."
+      },
+      {
+        "start": 16.012,
+        "end": 24.325,
+        "text": "We're going to assemble a toolkit of five tools that transform \"I have a question\" into \"I know exactly which papers matter and how they connect.\""
+      },
+      {
+        "start": 24.325,
+        "end": 32.15,
+        "text": "And you'll walk away with something concrete — a literature map that bridges the question you built earlier to the data work coming next."
+      }
+    ],
+    "bytes": 193248,
+    "model": "claude-opus-4-8"
+  },
+  "recap-class05": {
+    "hash": "8c89fceca4065be3",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's take sixty seconds to remember where we landed last time. Everything is a table—rows are your examples, columns are your variables—and once you can picture that, the code gets simple. You practiced four verbs: load, inspect, select, and summarize, which is honestly most of the job, and you learned to be honest about missing data instead of hiding it. I loved seeing your first charts and those debugging wins where the error actually taught you something. Today we zoom back out—from how to compute to how to find what's actually worth computing on.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.575,
+        "text": "Let's take sixty seconds to remember where we landed last time."
+      },
+      {
+        "start": 3.575,
+        "end": 11.137,
+        "text": "Everything is a table—rows are your examples, columns are your variables—and once you can picture that, the code gets simple."
+      },
+      {
+        "start": 11.137,
+        "end": 22.3,
+        "text": "You practiced four verbs: load, inspect, select, and summarize, which is honestly most of the job, and you learned to be honest about missing data instead of hiding it."
+      },
+      {
+        "start": 22.3,
+        "end": 27.987,
+        "text": "I loved seeing your first charts and those debugging wins where the error actually taught you something."
+      },
+      {
+        "start": 27.987,
+        "end": 33.625,
+        "text": "Today we zoom back out—from how to compute to how to find what's actually worth computing on."
+      }
+    ],
+    "bytes": 202176,
+    "model": "claude-opus-4-8"
+  },
+  "agenda": {
+    "hash": "d47bdd22875d6dba",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's how our hour together is going to flow. We'll start by sharing homework and I'll tell you about a cure that was actually hiding in the gap between two libraries, then we'll dive into the modern research toolkit and learn to read citation graphs. After that, I'll show you four discovery tools live, we'll run two hands-on labs, and you'll finish by building your own small literature map. By the end you'll be able to find the papers that matter fast and map out a question you actually care about.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.762,
+        "text": "Here's how our hour together is going to flow."
+      },
+      {
+        "start": 2.762,
+        "end": 13.9,
+        "text": "We'll start by sharing homework and I'll tell you about a cure that was actually hiding in the gap between two libraries, then we'll dive into the modern research toolkit and learn to read citation graphs."
+      },
+      {
+        "start": 13.9,
+        "end": 22.662,
+        "text": "After that, I'll show you four discovery tools live, we'll run two hands-on labs, and you'll finish by building your own small literature map."
+      },
+      {
+        "start": 22.662,
+        "end": 28.812,
+        "text": "By the end you'll be able to find the papers that matter fast and map out a question you actually care about."
+      }
+    ],
+    "bytes": 173232,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-warmup": {
+    "hash": "958d027da61d9474",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Imagine you're a researcher, and there are ten thousand papers out there on just one topic. You can't possibly read them all, so how do you find the five that actually matter? The trick isn't hoping the first Google results are good, or trusting an AI to hand you a citation list — remember, those get invented. Instead, you use tools that search by meaning, summarize the findings, and map who builds on whom. They narrow ten thousand down to a handful, and then you read those five yourself.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.1370000000000005,
+        "text": "Imagine you're a researcher, and there are ten thousand papers out there on just one topic."
+      },
+      {
+        "start": 5.1370000000000005,
+        "end": 9.412,
+        "text": "You can't possibly read them all, so how do you find the five that actually matter?"
+      },
+      {
+        "start": 9.412,
+        "end": 18.275,
+        "text": "The trick isn't hoping the first Google results are good, or trusting an AI to hand you a citation list — remember, those get invented."
+      },
+      {
+        "start": 18.275,
+        "end": 24.875,
+        "text": "Instead, you use tools that search by meaning, summarize the findings, and map who builds on whom."
+      },
+      {
+        "start": 24.875,
+        "end": 30.462,
+        "text": "They narrow ten thousand down to a handful, and then you read those five yourself."
+      }
+    ],
+    "bytes": 183168,
+    "model": "claude-opus-4-8"
+  },
+  "story-swanson": {
+    "hash": "41a1c6c4b073cb91",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's one of my favorite stories in all of science. Back in 1986, a librarian named Don Swanson noticed that one group of medical papers said fish oil thins your blood and improves circulation, while a totally separate group described a disease caused by poor circulation. Nobody had ever put those two ideas together, so he did — just by reading — and proposed that fish oil might help. And when they finally ran the trials, he was right. No lab, no experiment; the discovery was already sitting in the library, in the gap between two fields that never talked to each other.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.337,
+        "text": "Here's one of my favorite stories in all of science."
+      },
+      {
+        "start": 3.337,
+        "end": 17.887,
+        "text": "Back in 1986, a librarian named Don Swanson noticed that one group of medical papers said fish oil thins your blood and improves circulation, while a totally separate group described a disease caused by poor circulation."
+      },
+      {
+        "start": 17.887,
+        "end": 25.462,
+        "text": "Nobody had ever put those two ideas together, so he did — just by reading — and proposed that fish oil might help."
+      },
+      {
+        "start": 25.462,
+        "end": 28.65,
+        "text": "And when they finally ran the trials, he was right."
+      },
+      {
+        "start": 28.65,
+        "end": 37.437,
+        "text": "No lab, no experiment; the discovery was already sitting in the library, in the gap between two fields that never talked to each other."
+      }
+    ],
+    "bytes": 224928,
+    "model": "claude-opus-4-8"
+  },
+  "concept-research-stack": {
+    "hash": "422ce0c3694a208f",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the good news: you no longer have to start your research from a blank, intimidating box. Instead, you've got four specialized tools, each brilliant at a different part of the hunt. Google Scholar casts the widest net; Elicit answers a plain-English question with a table of findings; Semantic Scholar searches by meaning and gives you quick summaries; and Connected Papers draws you a visual map of related work. But here's the rule that never changes: these tools help you find papers, and then you read them yourself. Never cite what you haven't actually opened.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.612,
+        "text": "Here's the good news: you no longer have to start your research from a blank, intimidating box."
+      },
+      {
+        "start": 5.612,
+        "end": 10.987,
+        "text": "Instead, you've got four specialized tools, each brilliant at a different part of the hunt."
+      },
+      {
+        "start": 10.987,
+        "end": 25.025,
+        "text": "Google Scholar casts the widest net; Elicit answers a plain-English question with a table of findings; Semantic Scholar searches by meaning and gives you quick summaries; and Connected Papers draws you a visual map of related work."
+      },
+      {
+        "start": 25.025,
+        "end": 31.325,
+        "text": "But here's the rule that never changes: these tools help you find papers, and then you read them yourself."
+      },
+      {
+        "start": 31.325,
+        "end": 33.525,
+        "text": "Never cite what you haven't actually opened."
+      }
+    ],
+    "bytes": 201456,
+    "model": "claude-opus-4-8"
+  },
+  "concept-citation-graph": {
+    "hash": "5a39148a20682653",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Picture a single paper sitting in the middle — that's your seed. Follow the arrows backward and you reach the roots, the older papers it stands on; follow them forward and you hit the frontier, the newer work that built on it. When you zoom out, you start seeing tight knots of papers all citing each other, and those clusters are actually whole sub-fields. Here's the exciting part: remember Swanson's fish-oil discovery? It lived in a missing link between two clusters, and a map like this makes those gaps visible — and gaps are where the opportunities hide.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.237,
+        "text": "Picture a single paper sitting in the middle — that's your seed."
+      },
+      {
+        "start": 4.237,
+        "end": 14.512,
+        "text": "Follow the arrows backward and you reach the roots, the older papers it stands on; follow them forward and you hit the frontier, the newer work that built on it."
+      },
+      {
+        "start": 14.512,
+        "end": 21.912,
+        "text": "When you zoom out, you start seeing tight knots of papers all citing each other, and those clusters are actually whole sub-fields."
+      },
+      {
+        "start": 21.912,
+        "end": 26.2,
+        "text": "Here's the exciting part: remember Swanson's fish-oil discovery?"
+      },
+      {
+        "start": 26.2,
+        "end": 34.525,
+        "text": "It lived in a missing link between two clusters, and a map like this makes those gaps visible — and gaps are where the opportunities hide."
+      }
+    ],
+    "bytes": 207504,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-citation": {
+    "hash": "b9913ede50e0e5b0",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "So you've got your one perfect paper, and now you want to find the newest research growing out of it. Here's the key question: do you look at the papers it cites, or the papers that cite it? The answer is forward — those \"cited by\" links point to the frontier, the newer work standing on your paper's shoulders. Backward citations show you the foundations it was built on. Master both directions from a single seed, and you can sketch the skeleton of an entire field.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.562,
+        "text": "So you've got your one perfect paper, and now you want to find the newest research growing out of it."
+      },
+      {
+        "start": 5.562,
+        "end": 10.95,
+        "text": "Here's the key question: do you look at the papers it cites, or the papers that cite it?"
+      },
+      {
+        "start": 10.95,
+        "end": 18.125,
+        "text": "The answer is forward — those \"cited by\" links point to the frontier, the newer work standing on your paper's shoulders."
+      },
+      {
+        "start": 18.125,
+        "end": 21.825,
+        "text": "Backward citations show you the foundations it was built on."
+      },
+      {
+        "start": 21.825,
+        "end": 27.812,
+        "text": "Master both directions from a single seed, and you can sketch the skeleton of an entire field."
+      }
+    ],
+    "bytes": 167184,
+    "model": "claude-opus-4-8"
+  },
+  "tool-scholar": {
+    "hash": "2473c14e260fc0bb",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's start with a tool you already know well: Google Scholar. You've been using it to verify citations, but today I want you to see it as your launching pad — the widest net you cast first. It covers nearly every field, gives you quick impact signals through citation counts, and that little \"cited by\" link? That's your gateway to tracing ideas forward through time. Master the quotes for exact phrases, the author and year filters, and set alerts so new work finds you automatically.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.162,
+        "text": "Let's start with a tool you already know well: Google Scholar."
+      },
+      {
+        "start": 3.162,
+        "end": 10.9,
+        "text": "You've been using it to verify citations, but today I want you to see it as your launching pad — the widest net you cast first."
+      },
+      {
+        "start": 10.9,
+        "end": 18.687,
+        "text": "It covers nearly every field, gives you quick impact signals through citation counts, and that little \"cited by\" link?"
+      },
+      {
+        "start": 18.687,
+        "end": 22.862,
+        "text": "That's your gateway to tracing ideas forward through time."
+      },
+      {
+        "start": 22.862,
+        "end": 30.6,
+        "text": "Master the quotes for exact phrases, the author and year filters, and set alerts so new work finds you automatically."
+      }
+    ],
+    "bytes": 183888,
+    "model": "claude-opus-4-8"
+  },
+  "tool-elicit": {
+    "hash": "653987e3b3c3b05e",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the second tool in our kit, and it's the one most of you probably haven't met yet. With Elicit, you don't guess keywords — you type your actual research question, like \"does adding night-time images improve pedestrian detection at night,\" and it hands you back a table of papers with columns for method, dataset, main finding, and limitation. That's exactly the summary framework we built in Class 4, just automated across a whole shelf of papers at once. One warning though: those summaries are leads to verify, not gospel — open the paper before you trust the row. Use the table to scan twenty, then actually read the five that matter.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.1,
+        "text": "Here's the second tool in our kit, and it's the one most of you probably haven't met yet."
+      },
+      {
+        "start": 5.1,
+        "end": 20.537,
+        "text": "With Elicit, you don't guess keywords — you type your actual research question, like \"does adding night-time images improve pedestrian detection at night,\" and it hands you back a table of papers with columns for method, dataset, main finding, and limitation."
+      },
+      {
+        "start": 20.537,
+        "end": 27.787,
+        "text": "That's exactly the summary framework we built in Class 4, just automated across a whole shelf of papers at once."
+      },
+      {
+        "start": 27.787,
+        "end": 35.312,
+        "text": "One warning though: those summaries are leads to verify, not gospel — open the paper before you trust the row."
+      },
+      {
+        "start": 35.312,
+        "end": 40.025,
+        "text": "Use the table to scan twenty, then actually read the five that matter."
+      }
+    ],
+    "bytes": 240480,
+    "model": "claude-opus-4-8"
+  },
+  "tool-semantic": {
+    "hash": "57121b1e623bd4d5",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the third tool in our kit, and it works a bit differently. Semantic Scholar searches by meaning, not just keywords, so it can find papers that describe your idea using totally different words. That's a lifesaver when you're new to a field and don't yet know the jargon everyone uses. It also gives you a one-sentence AI summary on each result, so you can size up a whole page in seconds, and it ranks papers by their real influence so the important work floats to the top.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.637,
+        "text": "Here's the third tool in our kit, and it works a bit differently."
+      },
+      {
+        "start": 3.637,
+        "end": 11.775,
+        "text": "Semantic Scholar searches by meaning, not just keywords, so it can find papers that describe your idea using totally different words."
+      },
+      {
+        "start": 11.775,
+        "end": 17.162,
+        "text": "That's a lifesaver when you're new to a field and don't yet know the jargon everyone uses."
+      },
+      {
+        "start": 17.162,
+        "end": 28.662,
+        "text": "It also gives you a one-sentence AI summary on each result, so you can size up a whole page in seconds, and it ranks papers by their real influence so the important work floats to the top."
+      }
+    ],
+    "bytes": 172368,
+    "model": "claude-opus-4-8"
+  },
+  "tool-connected": {
+    "hash": "3b24e3e260043b96",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the last tool in our stack, and honestly it's my favorite to watch in action. You paste in one paper you like, and it builds you a whole map of related work — connected not just by who cites who, but by what they share underneath. You get three ways to look at it: the full graph where you can spot clusters, a tree that runs from foundations out to the newest work, and a simple ranked list. And here's the exciting part — where two clusters almost touch but don't quite connect, that gap might be a discovery waiting for someone like you.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.95,
+        "text": "Here's the last tool in our stack, and honestly it's my favorite to watch in action."
+      },
+      {
+        "start": 4.95,
+        "end": 13.412,
+        "text": "You paste in one paper you like, and it builds you a whole map of related work — connected not just by who cites who, but by what they share underneath."
+      },
+      {
+        "start": 13.412,
+        "end": 23.6,
+        "text": "You get three ways to look at it: the full graph where you can spot clusters, a tree that runs from foundations out to the newest work, and a simple ranked list."
+      },
+      {
+        "start": 23.6,
+        "end": 32.012,
+        "text": "And here's the exciting part — where two clusters almost touch but don't quite connect, that gap might be a discovery waiting for someone like you."
+      }
+    ],
+    "bytes": 192384,
+    "model": "claude-opus-4-8"
+  },
+  "concept-choose-tool": {
+    "hash": "80f4495349f93977",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the big idea I really want you to walk away with: there's no single best tool, only the right tool for the step you're on. If you're doing a broad first sweep, reach for something like Google Scholar; if you don't even know a field's vocabulary yet, start somewhere that helps you learn the language; and when you want to see how ideas connect, use a citation map. The real skill isn't mastering one tool — it's chaining them, like a relay team passing the baton. One search feeds the next, which feeds your reading list. Remember, the tools serve you; don't become a slave to any of them.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.775,
+        "text": "Here's the big idea I really want you to walk away with: there's no single best tool, only the right tool for the step you're on."
+      },
+      {
+        "start": 7.775,
+        "end": 21.325,
+        "text": "If you're doing a broad first sweep, reach for something like Google Scholar; if you don't even know a field's vocabulary yet, start somewhere that helps you learn the language; and when you want to see how ideas connect, use a citation map."
+      },
+      {
+        "start": 21.325,
+        "end": 28.037,
+        "text": "The real skill isn't mastering one tool — it's chaining them, like a relay team passing the baton."
+      },
+      {
+        "start": 28.037,
+        "end": 31.537,
+        "text": "One search feeds the next, which feeds your reading list."
+      },
+      {
+        "start": 31.537,
+        "end": 36.225,
+        "text": "Remember, the tools serve you; don't become a slave to any of them."
+      }
+    ],
+    "bytes": 217728,
+    "model": "claude-opus-4-8"
+  },
+  "workflow-literature": {
+    "hash": "03d71b90eca35682",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's how the whole thing fits together, like runners passing a baton. You start broad with an overview to see the landscape, find your core papers, map out the neighborhood around them, summarize the findings, and finally save your best five with notes. That last step matters most: an organized, annotated library beats forty open browser tabs every single time. And notice how those notes spark fresh questions that loop you right back to the start — that's exactly the project we're doing today.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.287,
+        "text": "Here's how the whole thing fits together, like runners passing a baton."
+      },
+      {
+        "start": 4.287,
+        "end": 14.437,
+        "text": "You start broad with an overview to see the landscape, find your core papers, map out the neighborhood around them, summarize the findings, and finally save your best five with notes."
+      },
+      {
+        "start": 14.437,
+        "end": 22.612,
+        "text": "That last step matters most: an organized, annotated library beats forty open browser tabs every single time."
+      },
+      {
+        "start": 22.612,
+        "end": 30.437,
+        "text": "And notice how those notes spark fresh questions that loop you right back to the start — that's exactly the project we're doing today."
+      }
+    ],
+    "bytes": 183024,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-workflow": {
+    "hash": "a20ddbb7d05be914",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the tricky part: imagine you're stepping into a brand new field and you don't even know the right words to search yet. So which tool do you reach for first? The trap is picking something powerful like Connected Papers or Zotero — but those need inputs you don't have yet, a seed paper or something to organize. When you're starting blind, you want a meaning-based tool that teaches you the vocabulary and hands you that first seed. Get the order right, and everything else falls into place.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.787,
+        "text": "Here's the tricky part: imagine you're stepping into a brand new field and you don't even know the right words to search yet."
+      },
+      {
+        "start": 6.787,
+        "end": 9.062,
+        "text": "So which tool do you reach for first?"
+      },
+      {
+        "start": 9.062,
+        "end": 18.862,
+        "text": "The trap is picking something powerful like Connected Papers or Zotero — but those need inputs you don't have yet, a seed paper or something to organize."
+      },
+      {
+        "start": 18.862,
+        "end": 25.537,
+        "text": "When you're starting blind, you want a meaning-based tool that teaches you the vocabulary and hands you that first seed."
+      },
+      {
+        "start": 25.537,
+        "end": 29.325,
+        "text": "Get the order right, and everything else falls into place."
+      }
+    ],
+    "bytes": 176256,
+    "model": "claude-opus-4-8"
+  },
+  "case-av-map": {
+    "hash": "87c4559ebcb02775",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's watch everything come together. We start from one seminal paper, YOLO, the same detector you summarized back in Class 4, and we treat it as our seed. From there we follow the citations forward into recent robustness work, detection at night, in rain, in crowds, and we let the tool draw how those papers relate. Suddenly a night-detection cluster appears, and that's exactly where the recall question you asked in Class 2 slots right into the real field. Five classes, one thread — and if your interest lies in another domain, the same three steps carry you there.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.85,
+        "text": "Let's watch everything come together."
+      },
+      {
+        "start": 1.85,
+        "end": 10.075,
+        "text": "We start from one seminal paper, YOLO, the same detector you summarized back in Class 4, and we treat it as our seed."
+      },
+      {
+        "start": 10.075,
+        "end": 20.35,
+        "text": "From there we follow the citations forward into recent robustness work, detection at night, in rain, in crowds, and we let the tool draw how those papers relate."
+      },
+      {
+        "start": 20.35,
+        "end": 29.637,
+        "text": "Suddenly a night-detection cluster appears, and that's exactly where the recall question you asked in Class 2 slots right into the real field."
+      },
+      {
+        "start": 29.637,
+        "end": 37.475,
+        "text": "Five classes, one thread — and if your interest lies in another domain, the same three steps carry you there."
+      }
+    ],
+    "bytes": 225216,
+    "model": "claude-opus-4-8"
+  },
+  "tool-github": {
+    "hash": "d1e3710ec444c2a0",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let me introduce you to a tool you'll be using for the rest of this course, and honestly, for the rest of your careers if you keep coding. It's called GitHub, and it solves three problems at once. First, it saves every single change to your code so you never end up with files named \"final version three really final\" again. Second, it lets many people work on one project without emailing zip files around. And third, a clean public repository becomes your research shopfront, a real portfolio that anyone can see and reproduce. Tonight, your homework is simple: go create your own.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.2,
+        "text": "Let me introduce you to a tool you'll be using for the rest of this course, and honestly, for the rest of your careers if you keep coding."
+      },
+      {
+        "start": 7.2,
+        "end": 10.925,
+        "text": "It's called GitHub, and it solves three problems at once."
+      },
+      {
+        "start": 10.925,
+        "end": 19.55,
+        "text": "First, it saves every single change to your code so you never end up with files named \"final version three really final\" again."
+      },
+      {
+        "start": 19.55,
+        "end": 24.987,
+        "text": "Second, it lets many people work on one project without emailing zip files around."
+      },
+      {
+        "start": 24.987,
+        "end": 33.85,
+        "text": "And third, a clean public repository becomes your research shopfront, a real portfolio that anyone can see and reproduce."
+      },
+      {
+        "start": 33.85,
+        "end": 37.475,
+        "text": "Tonight, your homework is simple: go create your own."
+      }
+    ],
+    "bytes": 225216,
+    "model": "claude-opus-4-8"
+  },
+  "demo-elicit": {
+    "hash": "965af79630614f8e",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let me show you something that'll genuinely impress you. You type in a real research question — say, whether adding low-light training data helps detect pedestrians at night — and instantly you get a table comparing papers, with columns for the dataset, the metric, the improvement, and the limitations. But here's the crucial habit: those summaries are just leads, so open the top three and check the abstracts actually match. Then hunt for the limitation closest to your own question — that's where your next project begins.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.5869999999999997,
+        "text": "Alright, let me show you something that'll genuinely impress you."
+      },
+      {
+        "start": 3.5869999999999997,
+        "end": 18.962,
+        "text": "You type in a real research question — say, whether adding low-light training data helps detect pedestrians at night — and instantly you get a table comparing papers, with columns for the dataset, the metric, the improvement, and the limitations."
+      },
+      {
+        "start": 18.962,
+        "end": 26.612,
+        "text": "But here's the crucial habit: those summaries are just leads, so open the top three and check the abstracts actually match."
+      },
+      {
+        "start": 26.612,
+        "end": 32.337,
+        "text": "Then hunt for the limitation closest to your own question — that's where your next project begins."
+      }
+    ],
+    "bytes": 194400,
+    "model": "claude-opus-4-8"
+  },
+  "demo-semantic": {
+    "hash": "6938122399b138f3",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Okay, watch what happens here. Instead of guessing the exact keywords, I'm going to search by the idea itself — \"making object detectors robust to bad weather\" — and let the tool understand what I mean. Then I'll read three of those little TL;DR summaries and decide in about five seconds which papers are worth my time. I'll open a high-influence one, follow its citations forward and references backward, and save the best one — because that becomes our seed paper for the very next demo.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.85,
+        "text": "Okay, watch what happens here."
+      },
+      {
+        "start": 1.85,
+        "end": 11.825,
+        "text": "Instead of guessing the exact keywords, I'm going to search by the idea itself — \"making object detectors robust to bad weather\" — and let the tool understand what I mean."
+      },
+      {
+        "start": 11.825,
+        "end": 18.475,
+        "text": "Then I'll read three of those little TL;DR summaries and decide in about five seconds which papers are worth my time."
+      },
+      {
+        "start": 18.475,
+        "end": 28.937,
+        "text": "I'll open a high-influence one, follow its citations forward and references backward, and save the best one — because that becomes our seed paper for the very next demo."
+      }
+    ],
+    "bytes": 173952,
+    "model": "claude-opus-4-8"
+  },
+  "demo-connected": {
+    "hash": "7997761edabf59b8",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's watch this come alive. Take the seed paper from our last demo, drop it in, and the whole neighborhood of related work draws itself right in front of you. Look for the clusters — those tight knots of papers reveal the sub-fields around your question, and where two clusters almost touch, that's a hint of a hidden gap worth exploring. Then flip to the tree view to spot the roots, the foundational work, and the frontier, the newest ideas. Your job is to pick five papers that best surround your question — that's your literature map, built live.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.187,
+        "text": "Alright, let's watch this come alive."
+      },
+      {
+        "start": 2.187,
+        "end": 9.875,
+        "text": "Take the seed paper from our last demo, drop it in, and the whole neighborhood of related work draws itself right in front of you."
+      },
+      {
+        "start": 9.875,
+        "end": 21.012,
+        "text": "Look for the clusters — those tight knots of papers reveal the sub-fields around your question, and where two clusters almost touch, that's a hint of a hidden gap worth exploring."
+      },
+      {
+        "start": 21.012,
+        "end": 27.775,
+        "text": "Then flip to the tree view to spot the roots, the foundational work, and the frontier, the newest ideas."
+      },
+      {
+        "start": 27.775,
+        "end": 33.687,
+        "text": "Your job is to pick five papers that best surround your question — that's your literature map, built live."
+      }
+    ],
+    "bytes": 202464,
+    "model": "claude-opus-4-8"
+  },
+  "lab-citation-graph": {
+    "hash": "35b0bd2d268d5e62",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's make citation graphs real by actually reading some code. Here we've got a tiny network of object-detection papers, and each connection just means one paper cites an older one. Notice how the roots are the papers everyone builds on, while the frontier papers are the newest ones nobody has cited yet. And look at that little function that traces a paper back to its origins — that's literally Tree view in about four lines. Try the second challenge: invent a paper linking night and rain detection, and you've just proposed a study that bridges two separate clusters.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.15,
+        "text": "Alright, let's make citation graphs real by actually reading some code."
+      },
+      {
+        "start": 4.15,
+        "end": 11.5,
+        "text": "Here we've got a tiny network of object-detection papers, and each connection just means one paper cites an older one."
+      },
+      {
+        "start": 11.5,
+        "end": 19.312,
+        "text": "Notice how the roots are the papers everyone builds on, while the frontier papers are the newest ones nobody has cited yet."
+      },
+      {
+        "start": 19.312,
+        "end": 26.887,
+        "text": "And look at that little function that traces a paper back to its origins — that's literally Tree view in about four lines."
+      },
+      {
+        "start": 26.887,
+        "end": 35.325,
+        "text": "Try the second challenge: invent a paper linking night and rain detection, and you've just proposed a study that bridges two separate clusters."
+      }
+    ],
+    "bytes": 212256,
+    "model": "claude-opus-4-8"
+  },
+  "lab-relevance": {
+    "hash": "833534cd8150886d",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Imagine you're facing ten thousand papers and you need the five that actually matter. Here's the simplest possible idea: just count how many words your question shares with each paper's title, and rank by that overlap. Run it and watch — the movie sentiment paper scores basically zero, which is exactly what we want. But look closely at paper D: it says \"darkness\" where you wrote \"night,\" so the ranker under-rates it even though it's a perfect match. That gap right there is precisely why real search tools rank by meaning, not just matching letters.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.212,
+        "text": "Imagine you're facing ten thousand papers and you need the five that actually matter."
+      },
+      {
+        "start": 5.212,
+        "end": 13.05,
+        "text": "Here's the simplest possible idea: just count how many words your question shares with each paper's title, and rank by that overlap."
+      },
+      {
+        "start": 13.05,
+        "end": 19.55,
+        "text": "Run it and watch — the movie sentiment paper scores basically zero, which is exactly what we want."
+      },
+      {
+        "start": 19.55,
+        "end": 28.212,
+        "text": "But look closely at paper D: it says \"darkness\" where you wrote \"night,\" so the ranker under-rates it even though it's a perfect match."
+      },
+      {
+        "start": 28.212,
+        "end": 35.012,
+        "text": "That gap right there is precisely why real search tools rank by meaning, not just matching letters."
+      }
+    ],
+    "bytes": 210384,
+    "model": "claude-opus-4-8"
+  },
+  "your-project": {
+    "hash": "d04064616837e337",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's where everything comes together in your first real project. I want you to take that question from Class 2 and turn it into a map of five key papers, showing how they actually connect. Use the tools we've talked about to find your papers, then plug a seed into Connected Papers to see the web of links between them. And here's the crucial part — you must open each paper yourself, because I want real research, no phantom sources, and your graph needs at least one clear \"builds on\" link showing who's standing on whose shoulders.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.412,
+        "text": "Alright, here's where everything comes together in your first real project."
+      },
+      {
+        "start": 4.412,
+        "end": 12,
+        "text": "I want you to take that question from Class 2 and turn it into a map of five key papers, showing how they actually connect."
+      },
+      {
+        "start": 12,
+        "end": 18.887,
+        "text": "Use the tools we've talked about to find your papers, then plug a seed into Connected Papers to see the web of links between them."
+      },
+      {
+        "start": 18.887,
+        "end": 31.3,
+        "text": "And here's the crucial part — you must open each paper yourself, because I want real research, no phantom sources, and your graph needs at least one clear \"builds on\" link showing who's standing on whose shoulders."
+      }
+    ],
+    "bytes": 188208,
+    "model": "claude-opus-4-8"
+  },
+  "build-it-now": {
+    "hash": "a2c82f5d84eb2653",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, now it's your turn to run this whole relay for a question you actually care about. Start broad with Perplexity to get oriented, then hunt down five promising papers and — this is the part that matters — read every abstract before you keep it. I'd rather you have five papers you truly understand than fifty you skimmed, because each one you've genuinely read is a citation you can stand behind and defend. Finally, map your best paper to find its cluster, and sketch me a five-node graph with one line per paper and at least one \"builds on\" arrow. Cut ruthlessly — relevance beats quantity every time.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.2,
+        "text": "Alright, now it's your turn to run this whole relay for a question you actually care about."
+      },
+      {
+        "start": 5.2,
+        "end": 15.9,
+        "text": "Start broad with Perplexity to get oriented, then hunt down five promising papers and — this is the part that matters — read every abstract before you keep it."
+      },
+      {
+        "start": 15.9,
+        "end": 25.125,
+        "text": "I'd rather you have five papers you truly understand than fifty you skimmed, because each one you've genuinely read is a citation you can stand behind and defend."
+      },
+      {
+        "start": 25.125,
+        "end": 34.287,
+        "text": "Finally, map your best paper to find its cluster, and sketch me a five-node graph with one line per paper and at least one \"builds on\" arrow."
+      },
+      {
+        "start": 34.287,
+        "end": 38.525,
+        "text": "Cut ruthlessly — relevance beats quantity every time."
+      }
+    ],
+    "bytes": 231552,
+    "model": "claude-opus-4-8"
+  },
+  "benchmark-litmap": {
+    "hash": "64821d6594366bce",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's what a finished literature map actually looks like — five real papers on night-time pedestrian detection, each with a single line telling you its job. Notice the story: YOLO is the root, YOLOv3 builds on it, synthetic night data builds on both, and off to the side you've got two rival approaches — brightening images versus ditching visible light for thermal cameras. Then comes the payoff: nobody has combined low-light enhancement with synthetic data, and that empty space right there is a research question you can point to. That's the whole method converging on your own topic.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 8.625,
+        "text": "Here's what a finished literature map actually looks like — five real papers on night-time pedestrian detection, each with a single line telling you its job."
+      },
+      {
+        "start": 8.625,
+        "end": 23.187,
+        "text": "Notice the story: YOLO is the root, YOLOv3 builds on it, synthetic night data builds on both, and off to the side you've got two rival approaches — brightening images versus ditching visible light for thermal cameras."
+      },
+      {
+        "start": 23.187,
+        "end": 32.45,
+        "text": "Then comes the payoff: nobody has combined low-light enhancement with synthetic data, and that empty space right there is a research question you can point to."
+      },
+      {
+        "start": 32.45,
+        "end": 35.65,
+        "text": "That's the whole method converging on your own topic."
+      }
+    ],
+    "bytes": 214272,
+    "model": "claude-opus-4-8"
+  },
+  "reference-key-terms": {
+    "hash": "a9fa72cd8bf84f51",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let me give you the vocabulary that will anchor everything we do today. A literature review is your systematic map of what's already known, and we can picture it as a citation graph, where each paper is a dot and every \"cites\" link is a line connecting them. Backward citations point to the foundations a paper stands on, while forward citations show who built on it later. Semantic search finds papers by meaning rather than exact words, and that helps you spot the research gap — that unanswered space, often sitting quietly between two different fields. And please, start using a reference manager now; it's the habit that will outlast this entire course.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.125,
+        "text": "Let me give you the vocabulary that will anchor everything we do today."
+      },
+      {
+        "start": 4.125,
+        "end": 16.037,
+        "text": "A literature review is your systematic map of what's already known, and we can picture it as a citation graph, where each paper is a dot and every \"cites\" link is a line connecting them."
+      },
+      {
+        "start": 16.037,
+        "end": 23.212,
+        "text": "Backward citations point to the foundations a paper stands on, while forward citations show who built on it later."
+      },
+      {
+        "start": 23.212,
+        "end": 34.287,
+        "text": "Semantic search finds papers by meaning rather than exact words, and that helps you spot the research gap — that unanswered space, often sitting quietly between two different fields."
+      },
+      {
+        "start": 34.287,
+        "end": 40.937,
+        "text": "And please, start using a reference manager now; it's the habit that will outlast this entire course."
+      }
+    ],
+    "bytes": 245952,
+    "model": "claude-opus-4-8"
+  },
+  "homework": {
+    "hash": "8ad384f96b627f18",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's what I'd like you to do before we meet again. First, finish your literature map with five real papers on your topic, connect them in a graph with at least one \"builds on\" link, and flag the one closest to your own question — that one's your graded piece, so give it real care. Second, set up a research repo online with a short note about your direction and plan, because this becomes your project's home for the rest of the course. Then try two tools you've never used and tell me in one line whether each helped. And if you're feeling adventurous, hunt for a Swanson gap — two areas on your map that almost never talk to each other — and ask what question lives in between.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.487,
+        "text": "Alright, here's what I'd like you to do before we meet again."
+      },
+      {
+        "start": 3.487,
+        "end": 16.762,
+        "text": "First, finish your literature map with five real papers on your topic, connect them in a graph with at least one \"builds on\" link, and flag the one closest to your own question — that one's your graded piece, so give it real care."
+      },
+      {
+        "start": 16.762,
+        "end": 25.775,
+        "text": "Second, set up a research repo online with a short note about your direction and plan, because this becomes your project's home for the rest of the course."
+      },
+      {
+        "start": 25.775,
+        "end": 30.562,
+        "text": "Then try two tools you've never used and tell me in one line whether each helped."
+      },
+      {
+        "start": 30.562,
+        "end": 39.875,
+        "text": "And if you're feeling adventurous, hunt for a Swanson gap — two areas on your map that almost never talk to each other — and ask what question lives in between."
+      }
+    ],
+    "bytes": 239616,
+    "model": "claude-opus-4-8"
+  },
+  "line-to-remember": {
+    "hash": "a2a7b75786bf30f3",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a line I want you to carry with you: Lincoln said give him six hours to chop down a tree, and he'd spend the first four sharpening the axe. Everything we did today was that sharpening. It might feel slow, like we're not getting to the \"real\" work yet, but preparation isn't procrastination — it's what turns six hours of frustrated searching into a single clean cut. Build your tools first, and the heavy lifting later becomes almost easy.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 8.7,
+        "text": "Here's a line I want you to carry with you: Lincoln said give him six hours to chop down a tree, and he'd spend the first four sharpening the axe."
+      },
+      {
+        "start": 8.7,
+        "end": 11.525,
+        "text": "Everything we did today was that sharpening."
+      },
+      {
+        "start": 11.525,
+        "end": 22.675,
+        "text": "It might feel slow, like we're not getting to the \"real\" work yet, but preparation isn't procrastination — it's what turns six hours of frustrated searching into a single clean cut."
+      },
+      {
+        "start": 22.675,
+        "end": 27.625,
+        "text": "Build your tools first, and the heavy lifting later becomes almost easy."
+      }
+    ],
+    "bytes": 166176,
+    "model": "claude-opus-4-8"
+  },
+  "wrap-up": {
+    "hash": "c7fd3a6829b68152",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's pull together the big ideas from today. First, specialized tools like Elicit, Semantic Scholar, and Connected Papers help you find and link the right papers fast. Second, citation graphs let you trace a field both backward to its roots and forward to its cutting edge. And third, remember that five papers you actually read beat fifty you merely skimmed. So for your exit ticket, tell me which of your five papers sits closest to your own question, and what gap you noticed. Next time we start Stage 3 and ask where data comes from and whether it's any good.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.5,
+        "text": "Let's pull together the big ideas from today."
+      },
+      {
+        "start": 2.5,
+        "end": 10.425,
+        "text": "First, specialized tools like Elicit, Semantic Scholar, and Connected Papers help you find and link the right papers fast."
+      },
+      {
+        "start": 10.425,
+        "end": 17.875,
+        "text": "Second, citation graphs let you trace a field both backward to its roots and forward to its cutting edge."
+      },
+      {
+        "start": 17.875,
+        "end": 23.425,
+        "text": "And third, remember that five papers you actually read beat fifty you merely skimmed."
+      },
+      {
+        "start": 23.425,
+        "end": 30.137,
+        "text": "So for your exit ticket, tell me which of your five papers sits closest to your own question, and what gap you noticed."
+      },
+      {
+        "start": 30.137,
+        "end": 35.3,
+        "text": "Next time we start Stage 3 and ask where data comes from and whether it's any good."
+      }
+    ],
+    "bytes": 212112,
+    "model": "claude-opus-4-8"
+  },
+  "backup-material": {
+    "hash": "5ae080dd06876fc0",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, everything from here on is bonus material, the stuff we dig into if we've got a little extra time together. We'll wrestle with a really juicy question — are these tools amplifying your creativity, or are they becoming a crutch you lean on too hard? I'll also give you a peek at a few more tools worth knowing, like Roboflow, which we'll use down the road for labeling images, plus Zotero and Perplexity. And if we're feeling energetic, there's one more quick quiz to test yourselves.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.35,
+        "text": "Alright, everything from here on is bonus material, the stuff we dig into if we've got a little extra time together."
+      },
+      {
+        "start": 6.35,
+        "end": 14.85,
+        "text": "We'll wrestle with a really juicy question — are these tools amplifying your creativity, or are they becoming a crutch you lean on too hard?"
+      },
+      {
+        "start": 14.85,
+        "end": 23.9,
+        "text": "I'll also give you a peek at a few more tools worth knowing, like Roboflow, which we'll use down the road for labeling images, plus Zotero and Perplexity."
+      },
+      {
+        "start": 23.9,
+        "end": 28.762,
+        "text": "And if we're feeling energetic, there's one more quick quiz to test yourselves."
+      }
+    ],
+    "bytes": 172944,
+    "model": "claude-opus-4-8"
+  },
+  "backup-tools-creativity": {
+    "hash": "34d7669dc776a307",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a question worth sitting with: do these tools make us lazy thinkers, or do they set our minds free? There's a real worry — if the tool always finds the papers for you, do you ever learn to navigate a field yourself? But here's the case for them: they clear away the tedious hours so your energy goes to what actually matters — the question, the connection, the gap nobody's noticed. And notice the refrain we keep returning to all term: a tool should amplify your thinking, never replace it. You steer; the tools row.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.937,
+        "text": "Here's a question worth sitting with: do these tools make us lazy thinkers, or do they set our minds free?"
+      },
+      {
+        "start": 6.937,
+        "end": 14,
+        "text": "There's a real worry — if the tool always finds the papers for you, do you ever learn to navigate a field yourself?"
+      },
+      {
+        "start": 14,
+        "end": 24.387,
+        "text": "But here's the case for them: they clear away the tedious hours so your energy goes to what actually matters — the question, the connection, the gap nobody's noticed."
+      },
+      {
+        "start": 24.387,
+        "end": 31.425,
+        "text": "And notice the refrain we keep returning to all term: a tool should amplify your thinking, never replace it."
+      },
+      {
+        "start": 31.425,
+        "end": 33.6,
+        "text": "You steer; the tools row."
+      }
+    ],
+    "bytes": 201888,
+    "model": "claude-opus-4-8"
+  },
+  "backup-more-tools": {
+    "hash": "b32ec53e1b47c107",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let me leave you with three more tools worth knowing. Roboflow is how you label images for computer vision — you draw boxes around objects and export them straight to a model, which is exactly how those boxes in our self-driving car example got made. Zotero is your reference shoebox: one click saves a paper and formats your whole bibliography. And Perplexity, our fact-checker from day one, doubles as a search engine that answers with real cited sources. But here's the thing — don't chase every shiny new tool. Pick a handful, chain them together, and go do the research. The tool is never the point.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.987,
+        "text": "Let me leave you with three more tools worth knowing."
+      },
+      {
+        "start": 2.987,
+        "end": 14.887,
+        "text": "Roboflow is how you label images for computer vision — you draw boxes around objects and export them straight to a model, which is exactly how those boxes in our self-driving car example got made."
+      },
+      {
+        "start": 14.887,
+        "end": 21.312,
+        "text": "Zotero is your reference shoebox: one click saves a paper and formats your whole bibliography."
+      },
+      {
+        "start": 21.312,
+        "end": 28.512,
+        "text": "And Perplexity, our fact-checker from day one, doubles as a search engine that answers with real cited sources."
+      },
+      {
+        "start": 28.512,
+        "end": 32.125,
+        "text": "But here's the thing — don't chase every shiny new tool."
+      },
+      {
+        "start": 32.125,
+        "end": 36,
+        "text": "Pick a handful, chain them together, and go do the research."
+      },
+      {
+        "start": 36,
+        "end": 37.875,
+        "text": "The tool is never the point."
+      }
+    ],
+    "bytes": 227664,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-backup-bonus": {
+    "hash": "5c50ea3cbffa4600",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Imagine you're up against a deadline and a tool hands you a beautiful table summarizing twelve papers. Tempting to just cite straight from it, right? But here's the mature move: open the five you'll actually cite and check each summary against the real paper. The table is a brilliant filter for finding what matters, not a shortcut past reading — yet throwing the tool away entirely wastes its power too. Filter with the tool, cite from the source.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.612,
+        "text": "Imagine you're up against a deadline and a tool hands you a beautiful table summarizing twelve papers."
+      },
+      {
+        "start": 6.612,
+        "end": 9.337,
+        "text": "Tempting to just cite straight from it, right?"
+      },
+      {
+        "start": 9.337,
+        "end": 15.787,
+        "text": "But here's the mature move: open the five you'll actually cite and check each summary against the real paper."
+      },
+      {
+        "start": 15.787,
+        "end": 25.325,
+        "text": "The table is a brilliant filter for finding what matters, not a shortcut past reading — yet throwing the tool away entirely wastes its power too."
+      },
+      {
+        "start": 25.325,
+        "end": 28.187,
+        "text": "Filter with the tool, cite from the source."
+      }
+    ],
+    "bytes": 169488,
+    "model": "claude-opus-4-8"
+  }
+}

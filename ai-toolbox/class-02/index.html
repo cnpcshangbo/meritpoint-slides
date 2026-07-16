@@ -1,0 +1,1244 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Class 02 · What Is Research? Finding an AI Question — The AI Toolbox</title>
+<link rel="icon" type="image/png" href="/meritpoint-slides/assets/favicon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+<style>
+:root{--navy:#0C2D52;--navy2:#12386A;--blue:#1769C0;--teal:#0F9DB0;--tealb:#2BC4D4;--coral:#EE6B36;--amber:#F2A93B;--green:#1FA37A;--ink:#21303F;--muted:#5E7183;--line:#D7E2EC;--cloud:#EEF4FA;--cloud2:#F6F9FC}
+.reveal{font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);font-size:30px}
+.reveal h1,.reveal h2,.reveal h3{font-family:Georgia,serif;color:var(--navy);text-transform:none;letter-spacing:0;font-weight:700;line-height:1.12}
+.reveal h1{font-size:1.55em}.reveal h2{font-size:1.12em}.reveal h3{font-size:.9em}
+.reveal .kicker{color:var(--teal);font-weight:700;letter-spacing:3px;font-size:.44em;text-transform:uppercase;margin-bottom:.35em;font-family:-apple-system,sans-serif}
+.reveal section{text-align:left}.reveal section.center{text-align:center}
+.reveal ul,.reveal ol{margin-left:1.05em}.reveal li{margin:.28em 0;font-size:.7em;line-height:1.38}
+.reveal p{font-size:.74em;line-height:1.42}.reveal .lead{font-size:.82em}.reveal .muted{color:var(--muted)}
+.reveal .callout{background:var(--cloud);border-left:6px solid var(--teal);border-radius:8px;padding:.45em .8em;margin-top:.5em;font-size:.7em}
+.reveal .callout b{color:var(--teal)}
+.reveal .pill{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:999px;padding:.16em .7em;font-size:.55em;color:var(--navy);margin:.12em .18em}
+.reveal .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.65em}.reveal .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6em}
+.reveal .box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.6em .75em;box-shadow:0 4px 14px rgba(20,40,70,.06)}
+.reveal .box h3{margin:.05em 0 .2em}.reveal .box p{font-size:.58em;margin:0}
+.reveal .feature{display:inline-block;font-size:.55em;font-weight:700;color:#fff;background:var(--navy);border-radius:6px;padding:.1em .55em;margin-top:.25em}
+.reveal .rate{display:inline-block;font-weight:800;color:#fff;border-radius:5px;padding:.05em .4em;font-size:.92em;line-height:1.3}
+.reveal .rate.r-g{background:var(--green)}.reveal .rate.r-pg{background:var(--blue)}.reveal .rate.r-r{background:var(--coral)}
+.reveal .vid{display:grid;grid-template-columns:1.5fr 1fr;gap:1em;align-items:center}
+.reveal .poster{border-radius:12px;height:2.7em;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1.25em;text-align:center;box-shadow:0 8px 24px rgba(20,40,70,.18);position:relative}
+.reveal .poster .play{position:absolute;width:1em;height:1em;border-radius:50%;background:rgba(255,255,255,.92);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:.5em}
+.reveal .qr{width:1.6em;height:1.6em;border:1px solid var(--line);border-radius:8px;background:#fff;padding:4px}
+.reveal .qrwrap{text-align:center;font-size:.5em;color:var(--muted)}.reveal .qrwrap a{color:var(--teal);word-break:break-all}
+.reveal a.btn{display:inline-block;background:#fff;border:1px solid var(--teal);color:var(--teal);border-radius:8px;padding:.16em .7em;font-size:.58em;font-weight:600}
+.reveal .src{font-size:.5em;color:var(--muted);margin-top:.5em}
+.reveal blockquote{border:none;box-shadow:none;background:var(--cloud2);border-left:6px solid var(--teal);border-radius:8px;font-size:.76em;font-style:normal;width:100%;padding:.65em 1em}
+.reveal .speak{cursor:pointer;display:inline-flex;align-items:center;gap:.4em;background:var(--teal);color:#fff;border:none;border-radius:999px;padding:.28em .85em;font-size:.52em;font-weight:700;font-family:-apple-system,sans-serif;box-shadow:0 4px 12px rgba(15,157,176,.3)}
+.reveal .speak:hover{background:#0d8a9b}.reveal .speak.playing{background:var(--coral)}
+/* timeline */
+.reveal .tl{display:flex;gap:.4em;align-items:stretch;margin-top:.5em}
+.reveal .tl .ev{flex:1;background:#fff;border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:10px;padding:.45em .5em}
+.reveal .tl .ev.winter{border-top-color:#7FA8D0}.reveal .tl .ev.boom{border-top-color:var(--coral)}
+.reveal .tl .yr{font-family:Georgia,serif;font-weight:800;color:var(--navy);font-size:.72em}
+.reveal .tl .ev b{font-size:.56em;color:var(--navy);display:block;margin:.1em 0}.reveal .tl .ev span{font-size:.5em;color:var(--muted);line-height:1.25;display:block}
+/* flow steps */
+.reveal .flow{display:flex;flex-wrap:wrap;gap:.4em;align-items:stretch}
+.reveal .step{flex:1 1 0;min-width:2.3em;background:#fff;border:1px solid var(--line);border-radius:10px;padding:.38em .42em;position:relative}
+.reveal .step .n{position:absolute;top:-.5em;left:-.3em;width:1em;height:1em;border-radius:50%;background:var(--teal);color:#fff;font-size:.5em;font-weight:800;display:flex;align-items:center;justify-content:center}
+.reveal .step b{font-size:.56em;color:var(--navy);display:block;line-height:1.15}.reveal .step span{font-size:.48em;color:var(--muted)}
+.reveal .step.loop{border-color:var(--coral);border-style:dashed}
+/* prompt cards */
+.reveal .prompt{background:#0f2742;color:#dfeaf6;border-radius:9px;padding:.4em .65em;font-family:Consolas,monospace;font-size:.54em;margin:.26em 0;line-height:1.38}
+.reveal .prompt .you{color:var(--tealb);font-weight:700}
+/* skills */
+.reveal .skillcard{background:linear-gradient(135deg,#fff,var(--cloud));border:1px solid var(--line);border-radius:14px;padding:.65em .8em}
+.reveal .skillcard .cn{font-size:.95em;color:var(--navy);font-weight:700;font-family:Georgia,serif}
+/* QUIZ */
+.reveal .quiz{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.7em .85em;box-shadow:0 6px 18px rgba(20,40,70,.07);max-width:18em}
+.reveal .quiz .qq{font-size:.72em;font-weight:600;color:var(--navy);margin:0 0 .5em}
+.reveal .quiz .opt{display:block;width:100%;text-align:left;background:var(--cloud2);border:1px solid var(--line);border-radius:9px;padding:.4em .6em;margin:.25em 0;font-size:.6em;color:var(--ink);cursor:pointer;transition:.1s;font-family:-apple-system,sans-serif}
+.reveal .quiz .opt:hover{border-color:var(--teal);background:#fff}
+.reveal .quiz .opt.correct{background:#E6F4EE;border-color:var(--green);color:#0d6b4f;font-weight:600}
+.reveal .quiz .opt.wrong{background:#FBEAE7;border-color:var(--coral);color:#a23c1c}
+.reveal .quiz .opt[disabled]{cursor:default}
+.reveal .quiz-exp{font-size:.56em;color:var(--muted);margin:.4em 0 0;display:none}
+.reveal .quiz.answered .quiz-exp{display:block}
+.reveal .quiz-badge{font-size:.5em;color:var(--teal);font-weight:700;letter-spacing:1px}
+/* QUIZ LIVE DISTRIBUTION (shown once answered) */
+.reveal .qstats{display:none;margin-top:.5em;border-top:1px dashed var(--line);padding-top:.4em}
+.reveal .quiz.answered .qstats{display:block}
+.reveal .qhead{display:flex;justify-content:space-between;align-items:center;font-size:.5em;color:var(--muted);margin-bottom:.3em}
+.reveal .qm{border:1px solid var(--line);background:var(--cloud2);border-radius:999px;padding:.15em .7em;margin-left:.4em;font:inherit;font-size:.95em;cursor:pointer;color:var(--muted)}
+.reveal .qm.on{background:var(--teal);border-color:var(--teal);color:#fff;font-weight:700}
+.reveal .qrow{display:flex;align-items:center;gap:.4em;margin:.14em 0}
+.reveal .ql{font-size:.5em;font-weight:800;color:var(--navy);width:1.1em}
+.reveal .qbar{flex:1;height:.55em;background:var(--cloud2);border-radius:999px;overflow:hidden}
+.reveal .qfill{height:100%;background:var(--navy);border-radius:999px;transition:width .5s}
+.reveal .qfill.qok{background:var(--green)}
+.reveal .qp{font-size:.45em;color:var(--muted);min-width:4.2em;text-align:right}
+#liveChip{position:fixed;left:14px;bottom:46px;z-index:40;background:rgba(255,255,255,.92);border:1px solid var(--line);
+  border-radius:999px;padding:5px 12px;font:600 12px -apple-system,'Segoe UI',sans-serif;color:#1a9a6c;box-shadow:0 4px 14px rgba(20,40,70,.10)}
+/* CODE LAB */
+.reveal .lab{display:grid;grid-template-columns:1.55fr 1fr;gap:.6em;margin-top:.4em;height:11.2em}
+.reveal .lab-main{display:flex;flex-direction:column;min-width:0}
+.reveal .lab textarea.code{flex:1;width:100%;background:#0f2742;color:#e7f0fb;border:1px solid #21405f;border-radius:10px 10px 0 0;font-family:Consolas,"SF Mono",monospace;font-size:13px;line-height:1.4;padding:.5em .6em;resize:none;outline:none;tab-size:4}
+.reveal .lab-bar{display:flex;align-items:center;gap:.4em;background:#11314f;border:1px solid #21405f;border-top:none;padding:.3em .4em;flex-wrap:wrap}
+.reveal .lab-bar button{font-family:-apple-system,sans-serif;font-size:11px;font-weight:600;border:none;border-radius:7px;padding:.4em .7em;cursor:pointer}
+.reveal .lab-bar .run{background:var(--green);color:#fff}.reveal .lab-bar .run:hover{background:#178a64}
+.reveal .lab-bar .ai-explain,.reveal .lab-bar .ai-debug,.reveal .lab-bar .ai-improve{background:#1b3e5e;color:#cfe0ef}
+.reveal .lab-bar .ai-explain:hover,.reveal .lab-bar .ai-debug:hover,.reveal .lab-bar .ai-improve:hover{background:#27557d}
+.reveal .lab-status{font-size:10.5px;color:#9db8d6;margin-left:auto;font-family:-apple-system,sans-serif}
+.reveal .lab pre.out{background:#08192b;color:#bfe3c7;border:1px solid #21405f;border-top:none;border-radius:0 0 10px 10px;margin:0;padding:.5em .6em;font-family:Consolas,monospace;font-size:11.5px;line-height:1.4;overflow:auto;min-height:2.4em;max-height:4.2em;white-space:pre-wrap}
+.reveal .lab pre.out .err{color:#ff9b8a}
+.reveal .assist{display:flex;flex-direction:column;background:linear-gradient(135deg,#fff,#f1f7fb);border:1px solid var(--line);border-radius:11px;overflow:hidden;min-width:0}
+.reveal .assist-head{background:linear-gradient(90deg,#0F9DB0,#2BC4D4);color:#fff;font-size:12px;font-weight:700;padding:.45em .7em;font-family:-apple-system,sans-serif;display:flex;align-items:center;justify-content:space-between;gap:.5em}
+.reveal .assist-head .ai-model{font-family:-apple-system,sans-serif;font-size:11px;font-weight:600;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.5);border-radius:6px;padding:.15em .3em;cursor:pointer;outline:none}
+.reveal .assist-head .ai-model option{color:var(--ink)}
+.reveal .assist-body{flex:1;overflow:auto;padding:.5em .65em;font-size:12px;line-height:1.46;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .assist-body p{font-size:12px;margin:.3em 0}.reveal .assist-body code{background:#eef3f8;border-radius:4px;padding:0 .25em;font-family:Consolas,monospace;font-size:11px}
+.reveal .assist-body pre{background:#0f2742;color:#e7f0fb;border-radius:8px;padding:.5em .6em;font-size:11px;overflow:auto;white-space:pre}
+.reveal .assist-body pre code{background:none;color:inherit}
+.reveal .assist-body .apply{background:var(--teal);color:#fff;border:none;border-radius:6px;padding:.25em .6em;font-size:11px;font-weight:600;cursor:pointer;margin-top:.2em}
+.reveal .assist-ask{display:flex;gap:.3em;border-top:1px solid var(--line);padding:.4em}
+.reveal .assist-ask input{flex:1;border:1px solid var(--line);border-radius:7px;padding:.4em .5em;font-size:12px;font-family:-apple-system,sans-serif;outline:none}
+.reveal .assist-ask button{background:var(--navy);color:#fff;border:none;border-radius:7px;padding:.4em .7em;font-size:12px;font-weight:600;cursor:pointer}
+/* HEAP / TOP-K VISUALIZER */
+.reveal .heapviz{margin-top:.35em;font-family:-apple-system,sans-serif}
+.reveal .hv-top{display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
+.reveal .hv-code{background:#0f2742;border-radius:10px 10px 0 0;padding:8px 12px;border:1px solid #21405f;border-bottom:none}
+.reveal .hv-code-title{color:#9db8d6;font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:4px}
+.reveal .hv-code pre.hv-pre{margin:0;color:#e7f0fb;font-family:Consolas,"SF Mono",monospace;font-size:11.5px;line-height:1.5;max-height:150px;overflow:auto;white-space:pre}
+.reveal .hv-info{background:#eef4fa;border:1px solid #21405f22;border-top:none;border-radius:0 0 10px 10px;padding:6px 12px;font-size:11px;color:var(--muted)}
+.reveal .hv-panel{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:6px}
+.reveal .hv-panel label{font-size:10.5px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin-top:4px}
+.reveal .hv-panel label:first-child{margin-top:0}
+.reveal .hv-row{display:flex;gap:6px}
+.reveal .hv-input{flex:1;border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:13px;font-family:-apple-system,sans-serif;min-width:0}
+.reveal .hv-insert{background:var(--green);color:#fff;border:none;border-radius:7px;padding:6px 12px;font-size:12.5px;font-weight:700;cursor:pointer}
+.reveal .hv-quick{display:flex;gap:5px;flex-wrap:wrap}
+.reveal .hv-quick-btn{background:var(--cloud);border:1px solid var(--line);border-radius:7px;padding:4px 10px;font-size:12px;font-weight:600;cursor:pointer;color:var(--ink)}
+.reveal .hv-quick-btn:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .hv-arr-now{background:var(--cloud2);border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-family:Consolas,monospace;font-size:12.5px}
+.reveal .hv-status,.reveal .hv-action{font-size:12px;color:var(--ink)}
+.reveal .hv-frames-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin:10px 0 4px}
+.reveal .hv-frames{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.reveal .hv-frame{flex:0 0 auto;min-width:150px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 8px;text-align:center}
+.reveal .hv-frame-active{border-color:var(--teal);box-shadow:0 0 0 2px rgba(15,157,176,.18)}
+.reveal .hv-frame-title{font-size:11px;font-weight:700;color:var(--navy)}
+.reveal .hv-frame-desc{font-size:9.5px;color:var(--muted);min-height:1.6em;line-height:1.25;margin:2px 0}
+.reveal .hv-tree-svg{width:100%;height:80px}
+.reveal .hv-empty{color:var(--muted);font-size:10.5px;padding:20px 0}
+.reveal .hv-node{fill:#D6ECEF;stroke:#0B7E8A;stroke-width:1.5}
+.reveal .hv-node-hi{fill:#F2A93B;stroke:#c07f1a}
+.reveal .hv-node-text{font-size:9px;font-weight:700;fill:#0C2D52;text-anchor:middle;font-family:-apple-system,sans-serif}
+.reveal .hv-edge{stroke:#c7d6e4;stroke-width:1.5}
+.reveal .hv-swap{stroke:#C0392B;stroke-width:2;stroke-dasharray:3,2}
+.reveal .hv-arrs{display:flex;gap:8px;overflow-x:auto;margin-top:6px}
+.reveal .hv-arr{flex:0 0 auto;min-width:150px;text-align:center;font-family:Consolas,monospace;font-size:11.5px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:5px 8px;color:var(--ink)}
+.reveal .hv-arr-active{border-color:var(--teal)}
+.reveal .hv-arr-hi{color:#C0392B;font-weight:700}
+.reveal .hv-controls{display:flex;align-items:center;gap:6px;margin-top:8px;flex-wrap:wrap}
+.reveal .hv-controls button{background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 10px;font-size:11.5px;font-weight:600;cursor:pointer;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .hv-controls button:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .hv-play{background:var(--teal)!important;color:#fff!important;border-color:var(--teal)!important}
+.reveal .hv-speed-label{font-size:11px;color:var(--muted);margin-left:6px}
+/* convolution visualizer */
+.reveal .cv-top{display:grid;grid-template-columns:1fr 1.05fr 1fr;gap:14px;align-items:start;justify-items:center}
+.reveal .cv-col{display:flex;flex-direction:column;align-items:center}
+.reveal .cv-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin-bottom:5px;text-align:center}
+.reveal .cv-grid{display:grid;gap:2px;width:max-content}
+.reveal .cv-in{grid-template-columns:repeat(8,25px)}
+.reveal .cv-out{grid-template-columns:repeat(6,33px)}
+.reveal .cv-cell{width:25px;height:25px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:9px;font-weight:700;cursor:pointer;user-select:none;border:1px solid rgba(12,45,82,.14)}
+.reveal .cv-ocell{width:33px;height:33px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:10.5px;font-weight:700;background:var(--cloud);color:#b9c6d4;border:1px solid var(--line)}
+.reveal .cv-win{outline:2.5px solid var(--coral);outline-offset:-1px;z-index:1}
+.reveal .cv-kwrap{background:#0f2742;border-radius:10px;padding:10px 12px;border:1px solid #21405f;width:100%}
+.reveal .cv-kgrid{display:grid;grid-template-columns:repeat(3,36px);gap:2px;width:max-content;margin:0 auto}
+.reveal .cv-kcell{width:36px;height:28px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:11.5px;font-weight:700;background:#1a3a5f;color:#e7f0fb;border:1px solid #2c4d75}
+.reveal .cv-kdiv{text-align:center;color:#9db8d6;font-size:10px;margin-top:4px;font-family:Consolas,monospace}
+.reveal .cv-calc{margin-top:8px;font-family:Consolas,monospace;font-size:10px;line-height:1.55;color:#cfe0ef;min-height:60px;text-align:center}
+.reveal .cv-calc .cv-sum{color:#F2A93B;font-weight:700}
+.reveal .cv-chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px;justify-content:center}
+.reveal .cv-chip{background:var(--cloud);border:1px solid var(--line);border-radius:7px;padding:4px 9px;font-size:11px;font-weight:600;cursor:pointer;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .cv-chip:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .cv-chip.sel{background:var(--teal);border-color:var(--teal);color:#fff}
+.reveal .cv-status{font-size:12px;color:var(--ink);margin-top:7px}
+.reveal .cv-controls{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;flex-wrap:wrap}
+.reveal .cv-controls button{background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 10px;font-size:11.5px;font-weight:600;cursor:pointer;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .cv-controls button:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .cv-play{background:var(--teal)!important;color:#fff!important;border-color:var(--teal)!important}
+/* comments */
+/* bottom-right toolbar (CC | Listen | Comment) — top-right belongs to the
+   signed-in profile chip (#mpAuth, assets/auth.js), which used to cover this */
+#commentBtn{position:fixed;right:16px;bottom:14px;z-index:60;background:var(--teal);color:#fff;border:none;border-radius:999px;padding:9px 15px;font-size:13px;font-weight:700;font-family:-apple-system,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(15,157,176,.4)}
+#commentBtn:hover{background:#0d8a9b}#commentBtn .cnum{background:#fff;color:var(--teal);border-radius:999px;padding:0 6px;margin-left:5px;font-size:11px}
+#listenBtn{--p:0%;position:fixed;right:168px;bottom:14px;z-index:60;min-width:128px;justify-content:center;color:#fff;border:none;border-radius:999px;padding:9px 15px;font-size:13px;font-weight:700;font-family:-apple-system,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(20,40,70,.34);display:none;align-items:center;gap:.45em;background:linear-gradient(to right,var(--teal) var(--p),var(--navy) var(--p));transition:background .15s linear}
+#listenBtn:hover{filter:brightness(1.1)}
+#listenBtn.playing{background:linear-gradient(to right,var(--coral) var(--p),#16406e var(--p))}
+#listenBtn .li-ic{font-size:12px;line-height:1}#listenBtn .li-tx{font-variant-numeric:tabular-nums;font-size:11.5px;opacity:.92}
+#ccBtn{position:fixed;right:306px;bottom:14px;z-index:60;background:var(--navy);color:#fff;border:none;border-radius:999px;padding:9px 12px;font-size:11.5px;font-weight:800;letter-spacing:.03em;font-family:-apple-system,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(20,40,70,.34);display:none;opacity:.5}
+#ccBtn:hover{opacity:.8}#ccBtn.on{opacity:1;background:var(--teal)}
+#capBar{position:fixed;left:50%;bottom:58px;transform:translateX(-50%);max-width:70%;background:rgba(8,16,30,.88);color:#fff;padding:.4em 1em;border-radius:9px;font-size:13.5px;line-height:1.35;text-align:center;z-index:59;display:none;font-family:-apple-system,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+#commentPanel{position:fixed;right:16px;bottom:60px;width:340px;max-height:64vh;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 44px rgba(20,40,70,.22);z-index:61;display:none;flex-direction:column;font-family:-apple-system,sans-serif;overflow:hidden}
+#commentPanel.open{display:flex}
+#commentPanel .ph{background:var(--navy);color:#fff;padding:10px 14px;font-size:13px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+#commentPanel .ph .x{cursor:pointer;opacity:.8}#commentPanel .ph .x:hover{opacity:1}
+#commentList{flex:1;overflow:auto;padding:10px 14px}
+#commentList .c{border-bottom:1px solid var(--cloud);padding:7px 0}#commentList .c:last-child{border:none}
+#commentList .c .cn{font-size:12px;font-weight:700;color:var(--navy)}#commentList .c .ct{font-size:10px;color:var(--muted);margin-left:6px}
+#commentList .c .cb{font-size:13px;color:var(--ink);margin-top:2px;white-space:pre-wrap;word-break:break-word}
+#commentList .none{color:var(--muted);font-size:12.5px;text-align:center;padding:14px 0}
+#commentForm{border-top:1px solid var(--line);padding:10px 12px;display:flex;flex-direction:column;gap:6px}
+#commentForm input,#commentForm textarea{border:1px solid var(--line);border-radius:8px;padding:7px 9px;font-size:13px;font-family:-apple-system,sans-serif;outline:none}
+#commentForm textarea{resize:vertical;min-height:46px}
+#commentForm .row{display:flex;gap:6px;align-items:center}
+#commentForm button{background:var(--teal);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:700;cursor:pointer}
+#commentForm .msg{font-size:11px;color:var(--muted)}
+/* donate */
+#donateBtn{position:fixed;left:70px;top:19px;z-index:60;background:var(--coral);color:#fff;border-radius:999px;padding:8px 16px;font-size:12.5px;font-weight:700;font-family:-apple-system,sans-serif;text-decoration:none;box-shadow:0 6px 18px rgba(238,107,54,.4)}
+#donateBtn:hover{background:#d85a28;text-decoration:none}
+/* MPA logo badge — top-left of every slide, next to Donate (top-right holds the auth chip) */
+#mpaLogo{position:fixed;left:16px;top:14px;z-index:50;display:block;width:44px;height:44px;border-radius:10px;background:#fff;box-shadow:0 4px 14px rgba(20,40,70,.25);opacity:.92;transition:opacity .15s}
+#mpaLogo:hover{opacity:1}
+#mpaLogo img{width:100%;height:100%;object-fit:contain;display:block}
+/* slide number: default bottom-right collides with the comment/listen/cc button row, so move it to bottom-left */
+.reveal .slide-number{left:14px;right:auto;bottom:14px;z-index:58;background:rgba(255,255,255,.85);padding:2px 8px;border-radius:6px;color:var(--muted)}
+/* PDF download — top-left row, after Donate */
+#pdfBtn{position:fixed;left:178px;top:19px;z-index:60;background:#fff;color:var(--navy);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:12.5px;font-weight:700;font-family:-apple-system,sans-serif;text-decoration:none;box-shadow:0 4px 14px rgba(20,40,70,.18)}
+#pdfBtn:hover{border-color:var(--teal);color:var(--teal);text-decoration:none}
+/* keep screen-only chrome out of print / the exported PDF (fixed elements repeat on every page) */
+@media print{#donateBtn,#mpaLogo,#pdfBtn,#ccBtn,#listenBtn,#commentBtn,#commentPanel,#capBar,#mpAuth{display:none!important}}
+</style></head><body>
+<div class="reveal"><div class="slides">
+<section id="title" data-sid="title" class="center" data-background-gradient="linear-gradient(135deg,#0C2D52,#16406e)">
+<div class="kicker" style="color:#7fd3df">The AI Toolbox · Class 02</div>
+    <h1 style="color:#fff">What Is Research?<br>Finding an AI Question</h1>
+    <p style="color:#cfe0ef;margin-top:.5em">Turn "I'm interested in X" into a question you could actually study.</p>
+    <p style="color:#9db8d6;font-size:.58em;margin-top:1.1em">Merit Point Academy · 60 min · press <b>S</b> notes · <b>→</b> next · 💬 to comment</p>
+    <aside class="notes">Welcome back. Last class: what AI is. Today the most important skill of the entire course: asking a good research question. Everything downstream — data, model, experiment, paper — inherits its quality from the question. By the end each student drafts three questions at rising quality and we stress-test the best one.</aside>
+</section>
+<section id="recap-class01" data-sid="recap-class01">
+<div class="kicker">Recap · where we left off</div>
+    <h2>Last class in 60 seconds</h2>
+    <div class="grid3" style="margin-top:.35em">
+      <div class="box"><h3 style="color:var(--navy)">AI ⊃ ML ⊃ DL</h3><p>Nested circles, not synonyms. Deep Blue was AI but not ML; ChatGPT is all three.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">AI is everywhere</h3><p>Face unlock, feeds, maps — each one a <b>model trained on data</b>, not magic.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">AI is an instrument</h3><p>A microscope for research. You own the <b>question</b> and the <b>judgement</b>.</p></div>
+    </div>
+    <div class="callout"><b>Homework share:</b> your AI application map — 2–3 volunteers, 30 seconds each: your domain, your favorite system, its <b>input → output</b>. Keep your map handy; today you'll turn it into a research question.</div>
+    <aside class="notes">Fast recap, then let 2-3 students show their maps. Praise precise input→output labels — that exact discipline becomes the input/output/metric recipe later this hour. The map each student made is the seed for today's project.</aside>
+</section>
+<section id="agenda" data-sid="agenda">
+<div class="kicker">Agenda · how this hour runs</div>
+    <h2>Where we're going</h2>
+    <div class="grid2" style="margin-top:.4em">
+      <ul>
+        <li><b>0–8'</b> Warm-up + the race no car could finish</li>
+        <li><b>8–20'</b> What research really is · what makes a question "researchable"</li>
+        <li><b>20–30'</b> Good vs. bad questions · the input → output → metric recipe</li>
+        <li><b>30–38'</b> Three ways to find a question: funnel · SCAMPER · literature</li>
+      </ul>
+      <ul>
+        <li><b>38–46'</b> Live demos: ChatGPT · Google Scholar · ScholarMind</li>
+        <li><b>46–54'</b> Two hands-on Python labs (with an AI helper)</li>
+        <li><b>54–60'</b> Your 3 questions, homework &amp; wrap-up</li>
+        <li>Quizzes &amp; 💬 comments throughout</li>
+      </ul>
+    </div>
+    <div class="callout"><b>By the end:</b> say what makes a question researchable, tell a strong question from a weak one, and turn your own interest into a specific, measurable AI question.</div>
+    <aside class="notes">Same interactive format as Class 1: quizzes, live demos, in-browser Python. The hour's spine: understand research → judge questions → generate questions → write your own three.</aside>
+</section>
+<section id="quiz-warmup" data-sid="quiz-warmup">
+<div class="kicker">Warm-up · activate</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="1">
+    <p class="qq">Your phone's autocorrect keeps 'fixing' a slang word you like. You wonder why, read how autocorrect learns, then type the word ten times to see if it adapts. What did you just do?</p>
+    <div class="opts"><button class="opt" data-i="0">Wasted ten minutes of your life</button><button class="opt" data-i="1">A complete micro-research project — observe, question, explore, test</button><button class="opt" data-i="2">Programming — you changed the phone's code</button><button class="opt" data-i="3">Nothing special; research needs a lab and a white coat</button></div>
+    <p class="quiz-exp">That's the whole research loop in miniature: you observed something odd, asked why, gathered information, and ran a small experiment. Research is curiosity made systematic — no lab coat required.</p>
+  </div>
+  <aside class="notes">Low-stakes opener mirroring Class 1's. The point: everyone already does 'micro research' — today we make it deliberate. Ask who has done something like this in the past week.</aside>
+</section>
+<section id="story-darpa" data-sid="story-darpa">
+<div class="kicker">The Story</div>
+    <h2>The race no car could finish</h2>
+    <blockquote id="quote">In 2004, DARPA offered <b>one million dollars</b> to any team whose car could drive itself 150 miles across the Mojave Desert. <b>Not one car finished.</b> The best managed 7.4 miles before getting stuck. People called it a failure. One year later — with the challenge sharpened and the teams focused on <b>specific, measurable sub-problems</b> — five cars finished the entire course. That second race launched the modern self-driving industry.</blockquote>
+    <div style="margin-top:.4em;display:flex;align-items:center;gap:1em">
+      <button class="speak" data-audio="audio/quote.mp3">🔊 <span>Speak this story</span></button>
+      <span class="muted" style="font-size:.52em">Neural voice · click to play / pause</span></div>
+    <p class="src">2004's question was a wish: "can a car drive itself?" 2005's teams asked answerable questions — "can we keep GPS lock in a tunnel?", "can we tell a rock from a shadow at 30 mph?" — and the wish became engineering.</p>
+    <aside class="notes">Tell it as drama: same teams, same desert, one year apart. What changed wasn't mainly the hardware — it was the questions. Vague ambition became a stack of specific, testable sub-problems. That is today's whole lesson in one story. Bridge: so what IS research, exactly?</aside>
+</section>
+<section id="curiosity-loop" data-sid="curiosity-loop">
+<div class="kicker">From curiosity to research</div>
+    <h2>Curiosity, made systematic</h2>
+    <p class="lead" style="margin:0 0 .3em">Every real study starts the way your autocorrect experiment did. Watch one curiosity grow up:</p>
+    <div class="flow" style="margin-top:.4em">
+      <div class="step"><div class="n">1</div><b>Observe</b><span>Parrots and mynas can mimic human speech. Odd!</span></div>
+      <div class="step"><div class="n">2</div><b>Question</b><span>Why? How do they control their vocal sounds?</span></div>
+      <div class="step"><div class="n">3</div><b>Explore</b><span>Read what's known: songbird vocal organs, brain regions.</span></div>
+      <div class="step"><div class="n">4</div><b>Focus</b><span>"Is myna song learning linked to neural plasticity?"</span></div>
+    </div>
+    <div class="callout"><b>Core insight:</b> research is not a distant academic ritual — it is <b>innate curiosity transformed into purposeful, organized, systematic exploration</b>. The magic step is 4: narrowing wonder into one testable question.</div>
+    <aside class="notes">From the Lesson-2 deck's curiosity slide. Walk the four steps with the myna example, then ask students to name where their autocorrect warm-up hit each step. Notice most people stop at step 3 (googling); researchers push to step 4.</aside>
+</section>
+<section id="concept-what-is-research" data-sid="concept-what-is-research">
+<div class="kicker">Concept 1</div>
+    <h2>What research actually is</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">Not just Googling</h3><p>Searching finds <i>existing</i> answers. Research <b>critically filters, evaluates, and integrates</b> — it doesn't passively receive.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">A systematic loop</h3><p>Clear question, scientific method, <b>reproducible</b> validation, honest analysis — a closed loop, not random trial-and-error.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">Creates new knowledge</h3><p>The goal: knowledge or insight that <b>didn't exist before</b> and can withstand review by others.</p></div>
+    </div>
+    <div class="flow" style="margin-top:.5em">
+      <div class="step"><div class="n">1</div><b>Ask the question</b><span>from observation &amp; curiosity</span></div>
+      <div class="step"><div class="n">2</div><b>Form a hypothesis</b><span>a testable expectation</span></div>
+      <div class="step"><div class="n">3</div><b>Design the experiment</b><span>variables, samples, method</span></div>
+      <div class="step loop"><div class="n">4</div><b>Evidence &amp; analysis</b><span>collect data, conclude — or loop back</span></div>
+    </div>
+    <aside class="notes">The three boxes kill the 'research = googling' myth. The four steps preview Class 3's full pipeline — today we live entirely inside step 1, because steps 2-4 inherit everything from it. The dashed step 4: results often send you back to sharpen the question.</aside>
+</section>
+<section id="quiz-research-nature" data-sid="quiz-research-nature">
+<div class="kicker">Check · what research is</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="2">
+    <p class="qq">Four classmates describe their weekend. Who actually did research?</p>
+    <div class="opts"><button class="opt" data-i="0">Copied three websites about volcanoes into one document</button><button class="opt" data-i="1">Googled 'best phone 2026' and read the first answer</button><button class="opt" data-i="2">Wondered if music helps homework, formed a guess, and timed themselves for a week with and without music</button><button class="opt" data-i="3">Watched nine documentaries about space back-to-back</button></div>
+    <p class="quiz-exp">Only C ran the loop: question → hypothesis → experiment → evidence. The others gathered existing information — useful, but nothing new was created or tested.</p>
+  </div>
+  <aside class="notes">Reinforces concept 1 before we zoom into the question itself. Point out C's design even has a comparison — with vs. without music — previewing experiment design in Class 14.</aside>
+</section>
+<section id="concept-research-question" data-sid="concept-research-question">
+<div class="kicker">Concept 2</div>
+    <h2>What makes a question "researchable"</h2>
+    <div class="grid2" style="grid-template-columns:1.25fr 1fr;align-items:center">
+      <div>
+        <p class="lead" style="margin:0 0 .3em">A research question is a <b>single, answerable question that a study can settle with evidence.</b></p>
+        <ul>
+          <li><b>Specific</b> — names a scenario, not a sweeping theme</li>
+          <li><b>Measurable</b> — you can collect data on it</li>
+          <li><b>Answerable</b> — within your time, skills, and resources</li>
+        </ul>
+      </div>
+      <div class="box" style="text-align:center">
+        <div style="font-size:1.4em">🔍→📊</div>
+        <p style="margin-top:.3em"><b>The picture test:</b><br>close your eyes and picture the <b>table of data</b> that would answer your question. Can't see it? Not a research question yet.</p>
+      </div>
+    </div>
+    <div class="callout"><b>KEY IDEA</b> — If you can't picture the data that would answer it, it's not a research question yet.</div>
+    <aside class="notes">The picture test is the single most reusable tool of the hour — students will apply it in the labs and the project. Run it live: 'Is AI good?' → no imaginable table. 'Does night-photo training raise night recall?' → you can literally sketch the columns.</aside>
+</section>
+<section id="concept-question-ladder" data-sid="concept-question-ladder">
+<div class="kicker">Concept 3 · the idea in one picture</div>
+    <h2>The question ladder: vague → better → strong</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1.15fr;align-items:center;margin-top:.2em">
+      <div>
+        <ul>
+          <li><b style="color:var(--coral)">Vague</b> — "Is self-driving good?" Nothing here can be measured.</li>
+          <li><b style="color:var(--amber)">Better</b> — "Can a model detect pedestrians at night?" Testable, but broad.</li>
+          <li><b style="color:var(--green)">Strong</b> — "Do low-light training images raise night recall <i>without hurting day accuracy</i>?"</li>
+        </ul>
+        <p class="src">Bad questions are vague, unfalsifiable, or already answered. Good ones are narrow enough to test, open enough to be interesting.</p>
+      </div>
+      <div style="text-align:center"><svg viewBox="0 0 340 220" style="width:100%;max-width:360px">
+        <defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5E7183"/></marker></defs>
+        <line x1="20" y1="200" x2="320" y2="200" stroke="#D7E2EC" stroke-width="2"/>
+        <rect x="24" y="150" width="92" height="46" rx="9" fill="#FBEAE7" stroke="#EE6B36"/>
+        <text x="70" y="170" text-anchor="middle" font-size="12.5" font-weight="700" fill="#a23c1c">VAGUE</text>
+        <text x="70" y="186" text-anchor="middle" font-size="9" fill="#a23c1c">"Is it good?"</text>
+        <rect x="124" y="96" width="92" height="46" rx="9" fill="#FCF3E3" stroke="#F2A93B"/>
+        <text x="170" y="116" text-anchor="middle" font-size="12.5" font-weight="700" fill="#8a6114">BETTER</text>
+        <text x="170" y="132" text-anchor="middle" font-size="9" fill="#8a6114">"Can it detect X?"</text>
+        <rect x="224" y="42" width="96" height="46" rx="9" fill="#E6F4EE" stroke="#1FA37A"/>
+        <text x="272" y="62" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0d6b4f">STRONG</text>
+        <text x="272" y="78" text-anchor="middle" font-size="9" fill="#0d6b4f">"Does A raise M?"</text>
+        <line x1="116" y1="160" x2="132" y2="130" stroke="#5E7183" stroke-width="2" marker-end="url(#arr)"/>
+        <line x1="216" y1="106" x2="232" y2="76" stroke="#5E7183" stroke-width="2" marker-end="url(#arr)"/>
+        <text x="30" y="30" font-size="10.5" fill="#5E7183">each rung adds: a scenario, a measurement, a trade-off</text>
+      </svg></div>
+    </div>
+    <div class="callout"><b>Takeaway:</b> a strong question names <b>what you'll measure</b> and <b>what would count as success</b>. Notice the strong rung even guards against a side effect — "without hurting day accuracy."</div>
+    <aside class="notes">The course's signature visual for question quality. Climb it aloud with the AV example. The trade-off clause in the strong rung is what separates student questions from publishable ones — improvement claims need a 'without breaking X' guard.</aside>
+</section>
+<section id="concept-input-output-metric" data-sid="concept-input-output-metric">
+<div class="kicker">Concept 4 · from interest to AI problem</div>
+    <h2>The AI-question recipe: input → output → metric</h2>
+    <p class="lead" style="margin:0 0 .3em">Abstracting turns a feeling into a model. Name three things and any interest becomes an AI question:</p>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">📥 Input</h3><p>What the model <b>sees</b> — an image, a sentence, a row of sensor data.<br><i>Night camera frames.</i></p></div>
+      <div class="box"><h3 style="color:var(--teal)">📤 Output</h3><p>What it <b>predicts</b> — a label, a number, a box.<br><i>"Pedestrian here" boxes.</i></p></div>
+      <div class="box"><h3 style="color:var(--coral)">📏 Metric</h3><p>How you'll <b>know it worked</b> — one honest number.<br><i>Recall: share of real pedestrians found.</i></p></div>
+    </div>
+    <div class="callout"><b>KEY IDEA</b> — <b>input + output + metric = an AI research question.</b> This triple is the seed of every ML study you'll run in this course — and it's exactly what AI research questions demand: data-centric, model-building, quantifiable.</div>
+    <aside class="notes">The operational recipe behind concept 2's picture test: the input/output pair IS the data table, the metric is its score column. Drill fast orally: essay grading (essay → grade → agreement with teachers), bird app (photo → species → top-1 accuracy). Students reuse this on every project slide for 13 more classes.</aside>
+</section>
+<section id="quiz-ladder" data-sid="quiz-ladder">
+<div class="kicker">Check · question quality</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="1">
+    <p class="qq">“Do low-light training images raise night-time pedestrian recall without hurting daytime accuracy?” — what makes this a STRONG research question?</p>
+    <div class="opts"><button class="opt" data-i="0">It's about self-driving cars, which are exciting</button><button class="opt" data-i="1">It names the data, the measurement, and what success looks like — including a trade-off guard</button><button class="opt" data-i="2">It's longer than the other questions</button><button class="opt" data-i="3">It's impossible to answer, which makes it ambitious</button></div>
+    <p class="quiz-exp">Strong = specific data (low-light images), a measurable outcome (night recall), and a success condition with a guard (day accuracy must not drop). Excitement and length are irrelevant.</p>
+  </div>
+  <aside class="notes">If students miss this, re-climb the ladder slide. The trade-off guard is the subtlest part — worth repeating.</aside>
+</section>
+<section id="case-av-questions" data-sid="case-av-questions">
+<div class="kicker">Case study 1 · autonomous driving</div>
+    <h2>"I want to make cars safer" — sharpened twice</h2>
+    <p class="lead" style="margin:0 0 .25em">A valuable vision, but too broad to act on. Real AV teams split it into layer-specific, measurable questions:</p>
+    <div class="grid2" style="margin-top:.3em">
+      <div class="box" style="border-top:4px solid var(--teal)"><h3 style="color:var(--teal)">Perception layer</h3>
+        <p><b>Q:</b> How can a CNN detect pedestrians more accurately in <b>low-light night conditions</b>?<br>
+        <b>Input:</b> night camera frames · <b>Output:</b> pedestrian boxes · <b>Metric:</b> accuracy &amp; recall.</p></div>
+      <div class="box" style="border-top:4px solid var(--coral)"><h3 style="color:var(--coral)">Prediction layer</h3>
+        <p><b>Q:</b> How can an RNN predict other vehicles' trajectories <b>5 seconds ahead</b> more accurately?<br>
+        <b>Input:</b> recent motion tracks · <b>Output:</b> future path · <b>Metric:</b> error vs. the real trajectory.</p></div>
+    </div>
+    <div class="callout">Same recipe both times: <b>specific scenario + model + metric</b>. Abstract safety became two testable studies — this is our running AV example wearing its research-question hat.</div>
+    <aside class="notes">Connects to Class 1's perceive/predict/plan case study — each layer generates its own research questions. Note both questions pass the picture test: you can sketch the data table for each.</aside>
+</section>
+<section id="case-medical-questions" data-sid="case-medical-questions">
+<div class="kicker">Case study 2 · medical imaging</div>
+    <h2>"Use AI to help doctors" — sharpened twice</h2>
+    <div class="grid2" style="margin-top:.3em">
+      <div class="box" style="border-top:4px solid var(--teal)"><h3 style="color:var(--teal)">🫁 Lung nodule screening</h3>
+        <p><b>Q:</b> Can a deep model tell malignant from benign nodules in <b>low-dose CT</b> scans?<br>
+        <b>Metric:</b> classification accuracy — while <b>controlling false positives</b>, so doctors aren't flooded with false alarms.</p></div>
+      <div class="box" style="border-top:4px solid var(--coral)"><h3 style="color:var(--coral)">🧠 Brain tumor segmentation</h3>
+        <p><b>Q:</b> Can a U-Net segment MRI tumor regions <b>pixel-precisely</b> for surgery planning?<br>
+        <b>Metric:</b> Dice coefficient — overlap between the model's region and expert annotation.</p></div>
+    </div>
+    <div class="callout">New field, same recipe. Notice each question carries its own <b>honest metric</b> — and a guard (false positives) just like the ladder's strong rung. Every domain you care about has questions shaped exactly like these.</div>
+    <aside class="notes">Second domain proves the recipe generalizes. Dice and recall get proper treatment in later classes — today they're just 'the one honest number'. Ask: what would the input/output table look like for each? (CT slice → benign/malignant; MRI voxels → tumor mask.)</aside>
+</section>
+<section id="method-funnel" data-sid="method-funnel">
+<div class="kicker">Finding your question · method 1</div>
+    <h2>The funnel: interest → sub-field → pain point → AI question</h2>
+    <div class="flow" style="margin-top:.4em">
+      <div class="step"><div class="n">1</div><b>Broad field</b><span>"Environmental protection" — what you care about</span></div>
+      <div class="step"><div class="n">2</div><b>Sub-field</b><span>"Wildlife conservation" — where your interest sharpens</span></div>
+      <div class="step"><div class="n">3</div><b>Real pain point</b><span>"How to monitor endangered species without disturbing them?"</span></div>
+      <div class="step loop"><div class="n">4</div><b>AI angle</b><span>"Can computer vision count snow leopards in drone images?"</span></div>
+    </div>
+    <div class="prompt" style="margin-top:.6em"><span class="you">Result ▸</span> How can a YOLOv8 model detect and count snow leopards in complex mountainous drone images — despite vegetation, lighting changes, and camouflage?</div>
+    <div class="callout">Each step <b>narrows</b>: field → direction → problem → testable question. If your question still feels foggy, you stopped narrowing too early.</div>
+    <aside class="notes">Method 1 of 3 — the default path from the Lesson-2 deck. Walk the snow-leopard chain, then have students run their own Class-1 domain through steps 1-2 right now (30 seconds, out loud). The prompt-styled result shows what 'done' looks like: model, data, task, and difficulties all named.</aside>
+</section>
+<section id="method-scamper" data-sid="method-scamper">
+<div class="kicker">Finding your question · method 2</div>
+    <h2>SCAMPER: seven angles on any process</h2>
+    <p class="lead" style="margin:0 0 .25em">Stuck? Point these seven prompts at any existing product or process — each angle can expose a research question.</p>
+    <div class="grid3" style="margin-top:.25em">
+      <div class="box"><h3 style="color:var(--teal)">S · Substitute</h3><p>Can AI replace a manual process or tool?</p></div>
+      <div class="box"><h3 style="color:var(--teal)">C · Combine</h3><p>Can AI + another technology create something new?</p></div>
+      <div class="box"><h3 style="color:var(--teal)">A · Adapt</h3><p>Can a model from one field work in a totally different one?</p></div>
+      <div class="box"><h3 style="color:var(--coral)">M · Modify</h3><p>Can we tune a model's structure or inputs to do better?</p></div>
+      <div class="box"><h3 style="color:var(--coral)">P · Put to other uses</h3><p>What <i>else</i> could this existing AI system do?</p></div>
+      <div class="box"><h3 style="color:var(--coral)">E · Eliminate</h3><p>Can AI remove a step, a cost, or a risk entirely?</p></div>
+    </div>
+    <div class="callout"><b>R · Reverse</b> — flip the roles or the order: instead of "librarians label books for readers," what if <b>readers' AI tags label books for the library</b>? The seventh angle is often the weirdest — and the most original.</div>
+    <aside class="notes">Method 2 — for when the funnel stalls. Don't memorize the acronym; the skill is deliberately shifting angles instead of staring harder. R gets the callout both for layout (7th box) and because reversal questions are often the most novel. Concrete application next slide.</aside>
+</section>
+<section id="scamper-library" data-sid="scamper-library">
+<div class="kicker">SCAMPER · applied to one boring place</div>
+    <h2>Seven research questions hiding in a library</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3>🤖 S</h3><p>Can a robot <b>classify and reshelve</b> books as well as a librarian?</p></div>
+      <div class="box"><h3>😊 C</h3><p>Face recognition + borrowing system = <b>"face-scan checkout"</b>?</p></div>
+      <div class="box"><h3>🛒 A</h3><p>Can e-commerce <b>"you may also like"</b> tech recommend library books?</p></div>
+      <div class="box"><h3>🗣️ M</h3><p>Can search understand <b>"that dragon book from last summer"</b> — not just keywords?</p></div>
+      <div class="box"><h3>📈 P</h3><p>Can borrowing data <b>predict community reading trends</b> and guide purchasing?</p></div>
+      <div class="box"><h3>🚫 E</h3><p>Can AI sorting <b>eliminate misplaced books</b> at the source?</p></div>
+    </div>
+    <div class="callout">One quiet building, seven possible studies — and each still needs the recipe: <b>what's the input, the output, the metric?</b> (Try it: the recommender's would be borrow history → suggested titles → % of suggestions borrowed.)</div>
+    <aside class="notes">Proof SCAMPER works on deliberately unglamorous settings — students don't need an exotic topic. Pick one box and run the recipe aloud with the class. R appears on the previous slide, so only six boxes here.</aside>
+</section>
+<section id="quiz-scamper" data-sid="quiz-scamper">
+<div class="kicker">Check · SCAMPER</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="2">
+    <p class="qq">Taking the 'you may also like' recommendation engine from online shopping and making it suggest library books is which SCAMPER move?</p>
+    <div class="opts"><button class="opt" data-i="0">S — Substitute: AI replaces the librarian</button><button class="opt" data-i="1">C — Combine: merging two technologies</button><button class="opt" data-i="2">A — Adapt: borrowing a technique from a different field</button><button class="opt" data-i="3">E — Eliminate: removing a step</button></div>
+    <p class="quiz-exp">Adapt takes something that already works in one domain (e-commerce recommendations) and transplants it to another (libraries). Nothing is replaced or removed — the technique just moves house.</p>
+  </div>
+  <aside class="notes">Common confusion is S vs. A: Substitute swaps out the doer of a task; Adapt transplants a technique across domains. If they get this, SCAMPER has landed.</aside>
+</section>
+<section id="method-literature" data-sid="method-literature">
+<div class="kicker">Finding your question · method 3</div>
+    <h2>Stand on shoulders: search the literature</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">Why read papers?</h3><p><b>Status quo</b> — what's been done. <b>Gaps</b> — what hasn't. <b>Direction</b> — where the field says "future work should…"</p></div>
+      <div class="box"><h3 style="color:var(--teal)">The tools</h3><p><b>Google Scholar</b> — search everything. <b>Semantic Scholar</b> &amp; <b>Connected Papers</b> — see citation maps, find related work visually.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">The 3-step loop</h3><p><b>Anchor</b> — find one good survey paper. <b>Extend</b> — follow its citation graph. <b>Lock</b> — read "Future Work" sections for unexplored directions.</p></div>
+    </div>
+    <div class="callout"><b>The secret:</b> the "Future Work" paragraph at the end of a paper is a list of research questions the authors <b>couldn't get to</b> — free, expert-approved gaps waiting for someone. Research gaps live at the boundary between known and unknown.</div>
+    <div style="margin-top:.2em"><span class="pill">Google Scholar</span><span class="pill">Semantic Scholar</span><span class="pill">Connected Papers</span></div>
+    <aside class="notes">Method 3 — the professional route, demoed live shortly. High-schoolers CAN read abstracts and Future Work sections without following the math. Homework has them practice on 3 abstracts. Frame Scholar-finds-it-answered as good news: narrow it or add a twist.</aside>
+</section>
+<section id="demo-chatgpt" data-sid="demo-chatgpt">
+<div class="kicker">Live demo 1</div>
+  <h2>ChatGPT — brainstorm &amp; refine</h2>
+  <p class="lead" style="margin:.15em 0 .35em">Not an answer machine today — a thinking partner. Watch it widen options, then sharpen the best one.</p>
+  <div class="grid2" style="grid-template-columns:2.3fr 1fr;align-items:start">
+    <div><div class="prompt"><span class="you">You ▸</span> I'm interested in AI in education. Brainstorm 5 research questions a high-schooler could actually test.</div><div class="prompt"><span class="you">You ▸</span> Break 'AI essay grading' into 3 specific, researchable sub-questions.</div><div class="prompt"><span class="you">You ▸</span> Rewrite my best question in input → output → metric form.</div><div class="prompt"><span class="you">You ▸</span> What data would I need for this question — and where could I realistically get it?</div></div>
+    <div class="qrwrap" style="margin-top:.2em"><img class="qr" src="assets/qr-chatgpt.png" alt="QR"><br><a href="https://chatgpt.com/" target="_blank" rel="noopener">chatgpt.com</a></div>
+  </div><aside class="notes">Demo live. Prompt 1 diverges, 2 narrows, 3 forces the recipe, 4 reality-checks data access — the funnel, automated. Remind them from Class 1: it sounds confident even when wrong, so questions it proposes still need the Scholar check next.</aside>
+</section>
+<section id="demo-scholar" data-sid="demo-scholar">
+<div class="kicker">Live demo 2</div>
+  <h2>Google Scholar — has it been answered?</h2>
+  <p class="lead" style="margin:.15em 0 .35em">The researcher's search engine. Every result is a paper — use it to check your question against what's already known.</p>
+  <div class="grid2" style="grid-template-columns:2.3fr 1fr;align-items:start">
+    <div><div class="prompt"><span class="you">You ▸</span> Search: phishing email detection deep learning — skim the first page of titles.</div><div class="prompt"><span class="you">You ▸</span> Open one paper. Read ONLY the abstract: what question did they ask? What did they find?</div><div class="prompt"><span class="you">You ▸</span> Find the 'Future Work' or 'Limitations' paragraph — copy one unexplored direction.</div><div class="prompt"><span class="you">You ▸</span> Now search your own question's keywords. Answered already? Great — narrow it or add a twist.</div></div>
+    <div class="qrwrap" style="margin-top:.2em"><img class="qr" src="assets/qr-scholar.png" alt="QR"><br><a href="https://scholar.google.com/" target="_blank" rel="noopener">scholar.google.com</a></div>
+  </div><aside class="notes">Show that abstracts are readable by high-schoolers. The Future-Work trick lands here live. Model the reaction to 'it's been done': that's validation your question matters — sharpen, don't abandon. Semantic Scholar / Connected Papers get a 10-second cameo if time allows.</aside>
+</section>
+<section id="demo-scholarmind" data-sid="demo-scholarmind">
+<div class="kicker">Live demo 3</div>
+  <h2>ScholarMind AI — question + real datasets</h2>
+  <p class="lead" style="margin:.15em 0 .35em">Our research platform, step 1 of the workflow from Class 1: it grounds your topic in real, downloadable datasets and drafts the brief.</p>
+  <div class="grid2" style="grid-template-columns:2.3fr 1fr;align-items:start">
+    <div><div class="prompt"><span class="you">You ▸</span> Topic: 'wildlife + drones' → propose 3 testable research questions.</div><div class="prompt"><span class="you">You ▸</span> It searches real datasets (Hugging Face, UCI, Kaggle) — check: does data for YOUR question actually exist?</div><div class="prompt"><span class="you">You ▸</span> Analyze the best question: what data, model, and metric does it suggest?</div><div class="prompt"><span class="you">You ▸</span> Generate the research brief — this brief.md is what a coding agent builds from in later classes.</div></div>
+    <div class="qrwrap" style="margin-top:.2em"><img class="qr" src="assets/qr-scholarmind.png" alt="QR"><br><a href="https://academic.hopeembark.org/" target="_blank" rel="noopener">academic.hopeembark.org</a></div>
+  </div><aside class="notes">Closes the tool loop: ChatGPT brainstorms, Scholar checks novelty, ScholarMind checks data reality and produces the brief. The dataset grounding is the differentiator — a question with no reachable data fails the picture test in practice. Students saw the full workflow map in Class 1.</aside>
+</section>
+<section id="lab-question-checker" data-sid="lab-question-checker">
+<div class="kicker">Hands-on lab 1 · run real Python</div>
+  <h2>Build a research-question quality checker</h2>
+  <p class="lead" style="margin:.1em 0 .25em">Can code judge a question? A little. This checker looks for the <b>ingredients of a strong question</b> — data words, metric words, vague words. Run it on the ladder, then on <b>your own</b> question.</p>
+  <div class="lab" data-packages="">
+    <div class="lab-main">
+      <textarea class="code" spellcheck="false"># A tiny research-question checker.
+# Strong questions name their DATA and their METRIC - and avoid mush.
+
+DATA_WORDS   = ["image", "images", "photo", "audio", "text", "dataset",
+                "video", "recordings", "scans", "sensor", "data"]
+METRIC_WORDS = ["accuracy", "recall", "precision", "error", "f1",
+                "dice", "rate", "percent", "score"]
+TASK_WORDS   = ["detect", "predict", "classify", "segment",
+                "recognize", "count", "recommend", "translate"]
+VAGUE_WORDS  = ["good", "bad", "smart", "smarter", "best ever",
+                "replace humans", "change the world"]
+
+def check(question):
+    q = question.lower()
+    points, notes = 0, []
+    if any(w in q for w in TASK_WORDS):
+        points += 1; notes.append("+ names a concrete task")
+    if any(w in q for w in DATA_WORDS):
+        points += 1; notes.append("+ names its data")
+    if any(w in q for w in METRIC_WORDS):
+        points += 1; notes.append("+ names a metric")
+    if len(q.split()) &gt;= 10:
+        points += 1; notes.append("+ specific enough to picture the study")
+    if any(w in q for w in VAGUE_WORDS):
+        points -= 1; notes.append("- contains vague words")
+    label = ["VAGUE", "GETTING THERE", "GOOD", "STRONG"][max(0, min(points, 3))]
+    print(f"[{label:&gt;13}] {question}")
+    for n in notes:
+        print("               ", n)
+
+check("Is AI good?")
+check("Can a model detect pedestrians at night?")
+check("Do low-light training images raise night-time pedestrian "
+      "recall without hurting daytime accuracy?")
+
+# CHALLENGE 1: check() your own question. Can you reach STRONG honestly?
+# CHALLENGE 2: fool the checker with a terrible question that scores STRONG.
+#              What does that tell you about who must judge questions?
+</textarea>
+      <div class="lab-bar">
+        <button class="run">▶ Run</button>
+        <button class="ai-explain">✨ Explain</button>
+        <button class="ai-debug">🐞 Debug</button>
+        <button class="ai-improve">⚡ Improve</button>
+        <span class="lab-status">Python loads on first Run</span>
+      </div>
+      <pre class="out">▶ Run the code to see the output here.</pre>
+    </div>
+    <div class="assist">
+      <div class="assist-head"><span>✨ AI Assistant</span><select class="ai-model" title="Choose the AI model"><option value="haiku">⚡ Haiku · fastest</option><option value="sonnet">Sonnet · balanced</option><option value="opus">Opus · most capable</option></select></div>
+      <div class="assist-body">Hi! Edit the code and hit <b>Run</b>. Stuck? I can <b>Explain</b>, <b>Debug</b>, or <b>Improve</b> it — or just ask me below.</div>
+      <div class="assist-ask"><input class="ask-in" placeholder="Ask about this code…"><button class="ask-btn">Ask</button></div>
+    </div>
+  </div><aside class="notes">Runs instantly, no packages. The ladder's three questions score VAGUE / GETTING THERE / STRONG — the code agrees with the concept. Challenge 2 is the deep one: keyword-stuffing fools the checker, so judgement stays human — Class 1's 'Skill of Judging'. Let them try to break it; the assistant can explain any line.</aside>
+</section>
+<section id="lab-answer-question" data-sid="lab-answer-question">
+<div class="kicker">Hands-on lab 2 · settle it with data</div>
+  <h2>Actually answer the strong question (toy data)</h2>
+  <p class="lead" style="margin:.1em 0 .25em">The strong question promised an answer from evidence — so let's get one. Two toy models, ten test photos each: did low-light training <b>raise night recall</b> without <b>hurting day accuracy</b>?</p>
+  <div class="lab" data-packages="">
+    <div class="lab-main">
+      <textarea class="code" spellcheck="false"># The STRONG question, answered with (toy) data:
+# "Do low-light training images raise night recall
+#  without hurting day accuracy?"
+# Each result: (time_of_day, found_the_pedestrian?)  1 = found, 0 = missed
+
+model_A = [  # trained on daytime photos only
+    ("day", 1), ("day", 1), ("day", 1), ("day", 1), ("day", 0),
+    ("night", 1), ("night", 0), ("night", 0), ("night", 0), ("night", 0),
+]
+model_B = [  # same model + extra low-light training photos
+    ("day", 1), ("day", 1), ("day", 1), ("day", 0), ("day", 1),
+    ("night", 1), ("night", 1), ("night", 1), ("night", 0), ("night", 1),
+]
+
+def recall(results, when):
+    found = [ok for t, ok in results if t == when]
+    return sum(found) / len(found)
+
+print("            day     night")
+for name, m in [("Model A", model_A), ("Model B", model_B)]:
+    print(f"{name}:    {recall(m, 'day'):.0%}     {recall(m, 'night'):.0%}")
+
+night_gain = recall(model_B, "night") - recall(model_A, "night")
+day_change = recall(model_B, "day")   - recall(model_A, "day")
+print()
+print("Night recall change:", f"{night_gain:+.0%}")
+print("Day accuracy change:", f"{day_change:+.0%}")
+print("Answer:", "YES - gains at night, day held up!"
+      if night_gain &gt; 0 and day_change &gt;= 0 else "Not proven here.")
+
+# CHALLENGE: flip two of model B's night 1s to 0s. When does the answer flip?
+# With only 5 night photos, ONE photo swings recall by 20% - real studies
+# need far more data. (Experiment design: Class 14.)
+</textarea>
+      <div class="lab-bar">
+        <button class="run">▶ Run</button>
+        <button class="ai-explain">✨ Explain</button>
+        <button class="ai-debug">🐞 Debug</button>
+        <button class="ai-improve">⚡ Improve</button>
+        <span class="lab-status">Python loads on first Run</span>
+      </div>
+      <pre class="out">▶ Run the code to see the output here.</pre>
+    </div>
+    <div class="assist">
+      <div class="assist-head"><span>✨ AI Assistant</span><select class="ai-model" title="Choose the AI model"><option value="haiku">⚡ Haiku · fastest</option><option value="sonnet">Sonnet · balanced</option><option value="opus">Opus · most capable</option></select></div>
+      <div class="assist-body">Hi! Edit the code and hit <b>Run</b>. Stuck? I can <b>Explain</b>, <b>Debug</b>, or <b>Improve</b> it — or just ask me below.</div>
+      <div class="assist-ask"><input class="ask-in" placeholder="Ask about this code…"><button class="ask-btn">Ask</button></div>
+    </div>
+  </div><aside class="notes">Runs instantly. The payoff slide: the question defined the exact table (concept 2's picture test) and the table yields the answer. The challenge plants sample-size intuition for Class 14 — one flipped photo swings recall 20%, so ten photos prove little. That honesty IS research culture.</aside>
+</section>
+<section id="your-project" data-sid="your-project">
+<div class="kicker">Your project</div>
+    <h2>Write three research questions</h2>
+    <div class="grid2" style="grid-template-columns:1.3fr 1fr">
+      <div><p class="lead">Take a topic you love — ideally from your Class-1 application map — and write <b>three questions at rising quality</b>: one simple, one medium, one strong.</p>
+        <ul><li>Pick your topic (any domain — sport, music, climate, games…)</li>
+          <li>Write a <b>simple</b>, a <b>medium</b>, and a <b>strong</b> AI question</li>
+          <li>Label <i>why</i> each sits at its level — which ingredient is missing or present?</li></ul></div>
+      <div class="box"><h3 style="color:var(--teal)">Deliverable</h3><p>3 labeled research questions, each with a one-line justification.</p>
+        <h3 style="color:var(--coral);margin-top:.35em">Success looks like</h3><p>The strong one names an <b>input</b>, an <b>output</b>, and a <b>metric</b> — and is answerable with data you could realistically get.</p></div>
+    </div>
+    <aside class="notes">The deliverable from the curriculum: 3 questions at simple/medium/strong. Writing all three levels — not just the strong one — trains the ladder as a skill: they must know WHY the weak ones are weak. The justification line is where learning is visible; grade that, not topic glamour.</aside>
+</section>
+<section id="build-it-now" data-sid="build-it-now">
+<div class="kicker">Build it now · hands-on</div>
+    <h2>Draft, sharpen, and reality-check your questions</h2>
+    <ol style="font-size:.72em;margin-left:1.05em">
+      <li>Pick your topic — open your Class-1 application map for candidates</li>
+      <li>SCAMPER it, or run the funnel: field → sub-field → pain point → AI angle</li>
+      <li>Ask ChatGPT: "Give me 5 research questions about <i>&lt;topic&gt;</i>" — then sort them weak → strong</li>
+      <li>Rewrite the best one in <b>input → output → metric</b> form</li>
+      <li>Check Google Scholar — has someone already answered it? Narrow or twist.</li></ol>
+    <div style="margin-top:.2em"><span class="pill">ChatGPT</span><span class="pill">Google Scholar</span><span class="pill">ScholarMind</span></div>
+    <div class="callout"><b>Tip:</b> if Scholar shows it's been done, that's <b>good news</b> — the topic matters and data exists. Add a twist: a new scenario, a new input, a stricter guard.</div>
+    <aside class="notes">Circulate; push every student through step 4 — the recipe rewrite is the checkpoint. Fast finishers: run the picture test, then the Lab-1 checker on their strong question. Steps 3+5 together are the judging skill: generate widely, verify ruthlessly.</aside>
+</section>
+<section id="benchmark-good-question" data-sid="benchmark-good-question">
+<div class="kicker">Benchmark · judge against this</div>
+    <h2>What a finished strong question looks like</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1fr;margin-top:.25em">
+      <div class="box" style="border-top:4px solid var(--coral)"><h3 style="color:var(--coral)">❌ Not research questions</h3>
+        <p>"How can we make AI smarter?" — no domain, no data, no metric.<br><br>"Will AI replace humans?" — a debate topic; no experiment can settle it.</p></div>
+      <div class="box" style="border-top:4px solid var(--green)"><h3 style="color:var(--green)">✅ A real one (student-reachable)</h3>
+        <p>"Phishing emails keep mutating past old filters. Can an <b>attention-based</b> model beat a classic keyword filter on <b>detection accuracy and F1</b> — especially on <b>never-seen-before</b> phishing styles?"</p></div>
+    </div>
+    <div class="grid3" style="margin-top:.4em">
+      <div class="box"><h3 style="color:var(--navy)">Specific domain</h3><p>Phishing detection — not "cybersecurity" in general.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">Honest metrics</h3><p>Accuracy, F1 — and a hard test: unseen phishing styles.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">Real value</h3><p>A live security pain point — the answer would matter.</p></div>
+    </div>
+    <aside class="notes">Calibration before wrap-up: measure your strong question against this bar. The 'never-seen-before styles' clause parallels the ladder's trade-off guard — strong questions bake the HARD test into the question itself. It passes the checker, the picture test, and the value test.</aside>
+</section>
+<section id="reference-key-terms" data-sid="reference-key-terms">
+<div class="kicker">Reference · key terms</div>
+    <h2>Today's vocabulary</h2>
+    <div class="grid2" style="margin-top:.3em">
+      <div class="box"><p><b>Research question</b> — a single, answerable question a study can settle with evidence.</p></div>
+      <div class="box"><p><b>Hypothesis</b> — your testable expectation of the answer, made before looking.</p></div>
+      <div class="box"><p><b>Metric</b> — the honest number that says how well it worked (accuracy, recall, error…).</p></div>
+      <div class="box"><p><b>Recall</b> — of all the real positives out there, the share your model actually found.</p></div>
+      <div class="box"><p><b>Literature review</b> — systematically reading prior work to map the known and unknown.</p></div>
+      <div class="box"><p><b>Research gap</b> — a question at the edge of the known that nobody has answered yet.</p></div>
+    </div>
+    <aside class="notes">Reference slide — point students back here whenever a term resurfaces. Recall gets a precise definition in the metrics class; today's version is deliberately intuitive and matches Lab 2's usage.</aside>
+</section>
+<section id="homework" data-sid="homework">
+<div class="kicker">Recommended homework</div>
+    <h2>Before next class</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1fr">
+      <div><ol style="font-size:.66em;margin-left:1.05em">
+        <li><b>Finalize your three questions</b> in a short doc — next class opens with group peer review. Make the strong one pass the recipe: input, output, metric.</li>
+        <li><b>Read 3 abstracts</b> on Google Scholar near your strong question. For each, jot one line: their method, their finding, and one gap you noticed.</li>
+        <li><b>Re-run Lab 1</b> on your final question — did it score STRONG? Should it?</li>
+      </ol></div>
+      <div class="box"><h3 style="color:var(--teal)">⭐ Stretch (optional)</h3>
+        <p>Skim Kaggle's <b>"Google QUEST Q&amp;A Labeling"</b> — watch how a mushy question ("is this a good answer?") was turned into <b>measurable labels</b>. That's today's lesson, industrial-scale.</p>
+        <a class="btn" href="https://www.kaggle.com/c/google-quest-challenge" target="_blank" rel="noopener">kaggle.com · Google QUEST</a></div>
+    </div>
+    <div class="callout">Submit the doc in Google Classroom (Classwork → Assignments). Stuck? Post your draft question on any slide with 💬 — your instructor will see it.</div>
+    <aside class="notes">Task 1 feeds next class's peer review directly. Task 2 is deliberately tiny — 3 abstracts, one line each — to make Scholar a habit, not homework dread. QUEST shows 'operationalize the fuzzy thing' at industrial scale."
+</section>
+<section id="line-to-remember" data-sid="line-to-remember" class="center" data-background-gradient="linear-gradient(135deg,#0B7E8A,#0F9DB0)">
+<div class="kicker">Today's line to remember</div>
+    <h2 style="color:#fff">"The formulation of a problem is often more essential than its solution."</h2>
+    <p style="color:#cfe0ef;margin-top:.3em">— Albert Einstein</p>
+    <p style="color:#eaf2fb;font-size:.8em;margin-top:.5em">Ask first. Answers are downstream of good questions.</p>
+    <div style="margin-top:.5em"><button class="speak" data-audio="audio/quote2.mp3">🔊 <span>Speak this</span></button></div>
+    <aside class="notes">Einstein's line is the whole class in one sentence. Connect it back to DARPA: the 2005 solution existed inside the 2004 teams — the reformulated problem let it out.</aside>
+</section>
+<section id="wrap-up" data-sid="wrap-up" class="center" data-background-gradient="linear-gradient(135deg,#0C2D52,#16406e)">
+<div class="kicker" style="color:#7fd3df">Wrap-up</div>
+    <h2 style="color:#fff">Three things to keep</h2>
+    <ul style="display:inline-block;text-align:left;color:#eaf2fb">
+      <li>Research = curiosity made <b>systematic</b> — a loop, not a lucky search</li>
+      <li>A strong question names its <b>input, output, and metric</b> — and guards a trade-off</li>
+      <li>Generate widely (funnel · SCAMPER · ChatGPT), then <b>verify ruthlessly</b> (Scholar · data check)</li></ul>
+    <p style="color:#cfe0ef;margin-top:.6em"><b>Exit ticket:</b> post your strongest question in 💬 on this slide — first feedback is free.</p>
+    <p style="color:#9db8d6;font-size:.6em;margin-top:.7em">Next · Class 3 — the AI research pipeline: the road your question now travels.</p>
+    <aside class="notes">Exit tickets via comments give you a preview of every student's question before next class — skim them and open Class 3 with the best (and most fixable) ones. Tease Class 3: your question is a seed; next week, the whole pipeline it grows through.</aside>
+</section>
+<section id="backup-material" data-sid="backup-material">
+<div class="kicker" style="color:var(--coral)">Backup material</div>
+    <h2>Extra slides — if there's time</h2>
+    <p class="lead">Deeper dives and extra practice. Skip in a tight hour; pull up on demand or for a longer session.</p>
+    <div class="flow" style="margin-top:.4em">
+      <div class="step"><b>The value of a question</b><span>three dimensions of worth</span></div>
+      <div class="step"><b>Question first-aid clinic</b><span>fix the four common failures</span></div>
+      <div class="step"><b>Bonus quiz</b><span>one more check</span></div>
+    </div>
+    <aside class="notes">Optional. The clinic slide doubles as a rubric when reviewing student questions in office hours or next class's peer review.</aside>
+</section>
+<section id="backup-question-value" data-sid="backup-question-value">
+<div class="kicker">Backup · extended thinking</div>
+    <h2>What makes a question worth asking?</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">🎓 Academic value</h3><p>Does it fill a theoretical gap or push the boundary of what's known?</p></div>
+      <div class="box"><h3 style="color:var(--teal)">🌍 Practical value</h3><p>Does it address a real social need or a genuine pain point someone has today?</p></div>
+      <div class="box"><h3 style="color:var(--coral)">💡 Innovation value</h3><p>Does it bring a new method, a new angle, or a new framing to an old problem?</p></div>
+    </div>
+    <div class="callout"><b>Self-check:</b> score your strong question 1–5 on each dimension. It doesn't need three 5s — but three 1s means keep looking. Most great student projects score high on <b>practical</b> value first.</div>
+    <aside class="notes">From the Lesson-2 extended-thinking slide. Useful for students whose questions are technically well-formed but bland — form (recipe) and worth (these three) are different axes.</aside>
+</section>
+<section id="backup-question-clinic" data-sid="backup-question-clinic">
+<div class="kicker">Backup · question first-aid</div>
+    <h2>The four ways questions fail — and the fix</h2>
+    <div class="grid2" style="margin-top:.3em">
+      <div class="box" style="border-top:4px solid var(--coral)"><h3>1 · Too broad</h3><p>"How can AI improve education?" → <b>Fix:</b> run the funnel one more turn. Which subject? Which task? Which learners?</p></div>
+      <div class="box" style="border-top:4px solid var(--amber)"><h3>2 · Not measurable</h3><p>"Can AI make music more beautiful?" → <b>Fix:</b> find the proxy metric. Listener ratings? Skip rate? Define the number.</p></div>
+      <div class="box" style="border-top:4px solid var(--teal)"><h3>3 · Already answered</h3><p>Scholar's first page settles it → <b>Fix:</b> add a twist — new scenario, new data, stricter guard. ("…but does it hold for <i>Mandarin</i> emails?")</p></div>
+      <div class="box" style="border-top:4px solid var(--navy)"><h3>4 · Data out of reach</h3><p>"…using hospital MRI records" you'll never access → <b>Fix:</b> hunt public datasets first (Kaggle, UCI, Hugging Face — or ScholarMind), then shape the question around what exists.</p></div>
+    </div>
+    <aside class="notes">Diagnosis chart for peer review: every weak student question lands in one of these four bins, and each has a mechanical fix. Failure 4 is the sneakiest — perfect on paper, impossible in practice; that's why ScholarMind checks datasets up front.</aside>
+</section>
+<section id="quiz-backup-bonus" data-sid="quiz-backup-bonus">
+<div class="kicker">Backup · bonus check</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="2">
+    <p class="qq">“Will AI replace humans?” is a weak research question mainly because…</p>
+    <div class="opts"><button class="opt" data-i="0">It isn't about technology</button><button class="opt" data-i="1">Nobody is interested in the answer</button><button class="opt" data-i="2">No experiment or dataset could settle it — it isn't measurable or falsifiable</button><button class="opt" data-i="3">It's too short to be a question</button></div>
+    <p class="quiz-exp">It's a fascinating debate — but no input, output, or metric exists that would settle it with evidence. Interesting ≠ researchable. Slice off a measurable piece instead: 'Which tasks in job X can current models do at human accuracy?'</p>
+  </div>
+  <aside class="notes">Optional reinforcement. The upgrade in the explanation shows the rescue move: carve a measurable sub-question out of a philosophical one.</aside>
+</section>
+</div></div>
+
+<a id="donateBtn" href="https://buy.stripe.com/14AbIT26kfUzbqjbGv4ow00" target="_blank" rel="noopener">♥ Donate</a>
+<a id="pdfBtn" href="slides.pdf" download title="Download these slides as a PDF">⬇ PDF</a>
+<a id="mpaLogo" href="/meritpoint-slides/" title="Merit Point Academy — all courses"><img src="/meritpoint-slides/assets/mpa-logo.png" alt="Merit Point Academy"></a>
+<!-- per-slide comments -->
+<audio id="narratorAudio" preload="none" style="display:none"></audio>
+<div id="capBar"></div>
+<button id="ccBtn" title="Toggle captions">CC</button>
+<button id="listenBtn" title="Listen to this slide narrated"><span class="li-ic">▶</span><span class="li-tx">Listen</span></button>
+<button id="commentBtn" title="Comment on this slide">💬 Comment<span class="cnum" id="cnum">0</span></button>
+<div id="commentPanel">
+  <div class="ph"><span id="cph">Comments</span><span class="x" id="cclose">✕</span></div>
+  <div id="commentList"></div>
+  <form id="commentForm">
+    <div class="row"><input id="cname" placeholder="Your name (optional)" maxlength="40"></div>
+    <textarea id="cbody" placeholder="Leave a comment or question about this slide…" maxlength="2000"></textarea>
+    <div class="row"><button type="submit">Post</button><span class="msg" id="cmsg">Visible to your instructor &amp; classmates.</span></div>
+  </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+<script>
+const DECK = "ai-toolbox/class-02";
+Reveal.initialize({ hash:true, slideNumber:'c/t', controls:true, progress:true,
+  width:1280, height:720, margin:0.04, transition:'slide',
+  keyboardCondition:'focused', plugins:[ RevealNotes ] });
+
+/* ---------- Shared audio player ----------
+ * One audio element, already attached to the DOM (see markup above), reused
+ * for every play. A bare detached Audio object is never used: on at least one
+ * real browser/profile that made Chrome abort play() within milliseconds
+ * ("interrupted because the media was removed from the document") — audio
+ * never audibly played and the button silently reset to idle before anyone
+ * noticed. Reusing an attached element avoids that path. */
+const _audio=document.getElementById('narratorAudio');
+let _btn=null,_playToken=0;
+function fmtClock(s){ s=Math.max(0,Math.floor(s||0)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
+function resetListenUI(){ listenBtn.style.setProperty('--p','0%'); listenBtn.querySelector('.li-ic').textContent='▶'; listenBtn.querySelector('.li-tx').textContent='Listen'; }
+function stopAudio(){
+  _playToken++; // invalidate any in-flight play() for the old src
+  _audio.pause(); _audio.currentTime=0; _audio.removeAttribute('src'); _audio.load();
+  _audio.removeEventListener('timeupdate',onListenTimeupdate); // else it'd animate listenBtn during a .speak clip
+  capBar.style.display='none';
+  if(_btn){
+    _btn.classList.remove('playing');
+    if(_btn===listenBtn) resetListenUI();
+    else if(_btn.querySelector('span')) _btn.querySelector('span').textContent=_btn.dataset.label||'Speak';
+  }
+  _btn=null;
+}
+document.addEventListener('click',function(e){
+  const b=e.target.closest('.speak'); if(!b) return;
+  if(_btn===b && !_audio.paused){ stopAudio(); return; }
+  stopAudio();
+  const token=_playToken;
+  _btn=b; b.dataset.label=b.dataset.label||b.querySelector('span').textContent;
+  b.classList.add('playing'); b.querySelector('span').textContent='Pause';
+  _audio.src=b.dataset.audio;
+  _audio.addEventListener('ended',stopAudio,{once:true});
+  _audio.play().catch(function(){ if(token===_playToken) stopAudio(); });
+});
+
+/* ---------- Per-slide narration ("Listen") + captions ---------- */
+const listenBtn=document.getElementById('listenBtn');
+const ccBtn=document.getElementById('ccBtn');
+const capBar=document.getElementById('capBar');
+let _narrationData=null; // { [sid]: { script, cues:[{start,end,text}], ... } }
+let _ccOn=localStorage.getItem('cc_captions')!=='0'; // on by default
+function updateCcBtn(){ ccBtn.classList.toggle('on',_ccOn); ccBtn.title=_ccOn?'Captions on — click to hide':'Captions off — click to show'; }
+async function loadNarrated(){
+  try{ const r=await fetch('audio/narration.json',{cache:'no-cache'}); if(!r.ok) throw 0;
+    _narrationData=await r.json(); }
+  catch(e){ _narrationData={}; }
+  updateCcBtn();
+  updateListen();
+}
+function updateListen(){
+  if(!_narrationData){ return; }
+  const has=!!_narrationData[curSid];
+  listenBtn.style.display=has?'inline-flex':'none';
+  ccBtn.style.display=has?'inline-flex':'none';
+  if(!has && _btn===listenBtn) stopAudio();
+}
+function cueAt(cues,t){ for(const c of cues) if(t>=c.start && t<c.end) return c; return null; }
+function updateCaption(){
+  const data=_narrationData && _narrationData[curSid];
+  const cues=data && data.cues;
+  if(!_ccOn || _btn!==listenBtn || !cues || !cues.length){ capBar.style.display='none'; return; }
+  const cue=cueAt(cues,_audio.currentTime);
+  if(cue){ capBar.textContent=cue.text; capBar.style.display='block'; }
+  else capBar.style.display='none'; // brief gap between sentences
+}
+ccBtn.addEventListener('click',function(){
+  _ccOn=!_ccOn; localStorage.setItem('cc_captions',_ccOn?'1':'0'); updateCcBtn(); updateCaption();
+});
+function onListenTimeupdate(){
+  if(_audio.duration) listenBtn.style.setProperty('--p',(_audio.currentTime/_audio.duration*100)+'%');
+  listenBtn.querySelector('.li-tx').textContent=fmtClock(_audio.currentTime)+' / '+fmtClock(_audio.duration);
+  updateCaption();
+}
+listenBtn.addEventListener('click',function(){
+  if(_btn===listenBtn && !_audio.paused){ stopAudio(); return; } // toggles play/stop even mid-buffer
+  stopAudio();
+  const token=_playToken;
+  _btn=listenBtn;
+  listenBtn.classList.add('playing');
+  listenBtn.querySelector('.li-ic').textContent='⏹';
+  listenBtn.querySelector('.li-tx').textContent='loading…';
+  _audio.src='audio/'+encodeURIComponent(curSid)+'.mp3';
+  _audio.addEventListener('timeupdate',onListenTimeupdate);
+  _audio.addEventListener('ended',stopAudio,{once:true});
+  _audio.play().catch(function(){
+    if(token!==_playToken) return; // superseded by a newer click/stop — ignore
+    _audio.removeEventListener('timeupdate',onListenTimeupdate);
+    stopAudio();
+    listenBtn.querySelector('.li-tx').textContent='tap to retry';
+    setTimeout(resetListenUI,2200);
+  });
+});
+
+/* ---------- Quizzes (answers feed the live class distribution) ---------- */
+function renderQuizStats(quiz,data){
+  quiz._qstats=data;
+  let box=quiz.querySelector('.qstats');
+  if(!box){ box=document.createElement('div'); box.className='qstats'; quiz.appendChild(box); }
+  const mode=quiz._qmode||'today';
+  const st=(data&&data[mode])||{counts:{},total:0};
+  const opts=quiz.querySelectorAll('.opt'), correct=parseInt(quiz.dataset.correct,10);
+  let bars='';
+  for(let i=0;i<opts.length;i++){
+    const c=st.counts[i]||0, pct=st.total?Math.round(c*100/st.total):0;
+    bars+='<div class="qrow"><span class="ql">'+String.fromCharCode(65+i)+'</span>'
+      +'<div class="qbar"><div class="qfill'+(i===correct?' qok':'')+'" style="width:'+pct+'%"></div></div>'
+      +'<span class="qp">'+pct+'% ('+c+')</span></div>';
+  }
+  box.innerHTML='<div class="qhead"><span>Class results · '+st.total+' answered</span>'
+    +'<span><button class="qm'+(mode==='today'?' on':'')+'" data-m="today">Today</button>'
+    +'<button class="qm'+(mode==='all'?' on':'')+'" data-m="all">All time</button></span></div>'+bars;
+}
+document.addEventListener('click',function(e){
+  const m=e.target.closest('.qstats .qm');
+  if(m){ const q=m.closest('.quiz'); q._qmode=m.dataset.m; renderQuizStats(q,q._qstats); return; }
+  const opt=e.target.closest('.quiz .opt'); if(!opt) return;
+  const quiz=opt.closest('.quiz'); if(quiz.classList.contains('answered')) return;
+  const correct=parseInt(quiz.dataset.correct,10);
+  quiz.querySelectorAll('.opt').forEach(function(o){o.setAttribute('disabled','');});
+  const chosen=parseInt(opt.dataset.i,10);
+  quiz.querySelectorAll('.opt')[correct].classList.add('correct');
+  if(chosen!==correct) opt.classList.add('wrong');
+  quiz.classList.add('answered');
+  const sec=quiz.closest('section');
+  const sid=(sec&&sec.dataset.sid)||_hashSid(sec);
+  fetch('/api/quiz/answer',{method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({deck:DECK,slide:sid,choice:chosen,correct:chosen===correct})})
+    .then(function(r){return r.json();})
+    .then(function(j){ if(j&&j.today) renderQuizStats(quiz,{today:j.today,all:j.all}); })
+    .catch(function(){ fetch('/api/quiz/stats?deck='+encodeURIComponent(DECK)+'&slide='+encodeURIComponent(sid))
+      .then(function(r){return r.json();}).then(function(j){renderQuizStats(quiz,j);}).catch(function(){}); });
+});
+
+/* ---------- Heap / Top-K insertion visualizer ---------- */
+function hvState(el){
+  if(!el._hv){ el._hv={ frames:[{heap:[],action:'Ready. Insert a value to see the animation.',hi:[]}], cur:0, playing:false, timer:null }; }
+  return el._hv;
+}
+function hvTree(arr,hi){
+  if(!arr.length) return '<div class="hv-empty">(empty)</div>';
+  const W=200,H=140; const depthOf=(i)=>Math.floor(Math.log2(i+1)); const maxDepth=depthOf(arr.length-1);
+  const nodes=arr.map(function(v,i){ const d=depthOf(i); const levelStart=Math.pow(2,d)-1; const pos=i-levelStart; const cnt=Math.pow(2,d);
+    return { i:i, v:v, x:((pos+0.5)/cnt)*W, y:16+d*((H-24)/Math.max(1,maxDepth)) }; });
+  let svg='<svg viewBox="0 0 '+W+' '+(H+16)+'" class="hv-tree-svg">';
+  nodes.forEach(function(n){ if(n.i===0) return; const p=nodes[Math.floor((n.i-1)/2)];
+    svg+='<line x1="'+p.x+'" y1="'+p.y+'" x2="'+n.x+'" y2="'+n.y+'" class="hv-edge"/>'; });
+  (hi||[]).forEach(function(pair){ if(pair.length===2 && nodes[pair[0]] && nodes[pair[1]]){
+    svg+='<line x1="'+nodes[pair[0]].x+'" y1="'+nodes[pair[0]].y+'" x2="'+nodes[pair[1]].x+'" y2="'+nodes[pair[1]].y+'" class="hv-swap"/>'; } });
+  const hiIdx=(hi||[]).flat();
+  nodes.forEach(function(n){ const isHi=hiIdx.indexOf(n.i)>-1;
+    svg+='<circle cx="'+n.x+'" cy="'+n.y+'" r="13" class="hv-node'+(isHi?' hv-node-hi':'')+'"/><text x="'+n.x+'" y="'+(n.y+4)+'" class="hv-node-text">'+n.v+'</text>'; });
+  return svg+'</svg>';
+}
+function hvRender(el){
+  const st=hvState(el);
+  el.querySelector('.hv-arr-now').textContent='['+st.frames[st.cur].heap.join(', ')+']';
+  el.querySelector('.hv-step').textContent=st.cur+' / '+(st.frames.length-1);
+  el.querySelector('.hv-action-text').textContent=st.frames[st.cur].action;
+  const framesEl=el.querySelector('.hv-frames'), arrsEl=el.querySelector('.hv-arrs');
+  framesEl.innerHTML=''; arrsEl.innerHTML='';
+  st.frames.forEach(function(f,idx){
+    const hiIdx=(f.hi||[]).flat();
+    const card=document.createElement('div'); card.className='hv-frame'+(idx===st.cur?' hv-frame-active':'');
+    card.innerHTML='<div class="hv-frame-title">Step '+idx+'</div><div class="hv-frame-desc">'+(idx===0?'(empty)':f.action)+'</div>'+hvTree(f.heap,f.hi);
+    framesEl.appendChild(card);
+    const a=document.createElement('div'); a.className='hv-arr'+(idx===st.cur?' hv-arr-active':'');
+    a.innerHTML='['+f.heap.map(function(v,i){ return hiIdx.indexOf(i)>-1?'<span class="hv-arr-hi">'+v+'</span>':v; }).join(', ')+']';
+    arrsEl.appendChild(a);
+  });
+  const active=framesEl.querySelector('.hv-frame-active');
+  if(active) active.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
+}
+function hvInsert(el,val){
+  const st=hvState(el);
+  if(st.cur!==st.frames.length-1) st.frames=st.frames.slice(0,st.cur+1); // drop redo history on a fresh insert
+  const heap=st.frames[st.frames.length-1].heap.slice();
+  const idx=heap.length; heap.push(val);
+  let i=idx, hi=[[idx,idx]];
+  while(i>0){ const p=Math.floor((i-1)/2);
+    if(heap[p]>heap[i]){ const t=heap[p]; heap[p]=heap[i]; heap[i]=t; hi=[[p,i]]; i=p; } else break; }
+  st.frames.push({ heap:heap, action:'Insert '+val+' at index '+idx, hi:hi });
+  st.cur=st.frames.length-1; hvRender(el);
+}
+function hvGoto(el,idx){ const st=hvState(el); st.cur=Math.max(0,Math.min(st.frames.length-1,idx)); hvRender(el); }
+function hvStop(el){ const st=hvState(el); if(st.timer){ clearInterval(st.timer); st.timer=null; } st.playing=false;
+  const b=el.querySelector('.hv-play'); if(b) b.textContent='▶ Play'; }
+function hvPlay(el){ const st=hvState(el); if(st.playing){ hvStop(el); return; }
+  if(st.cur>=st.frames.length-1) hvGoto(el,0);
+  st.playing=true; const b=el.querySelector('.hv-play'); if(b) b.textContent='⏸ Pause';
+  const speed=parseInt(el.querySelector('.hv-speed').value,10)||3, delay=Math.max(280,1300-speed*220);
+  st.timer=setInterval(function(){ if(st.cur>=st.frames.length-1){ hvStop(el); return; } hvGoto(el,st.cur+1); },delay);
+}
+document.addEventListener('click',function(e){
+  const hv=e.target.closest('.heapviz'); if(!hv) return;
+  if(e.target.closest('.hv-insert')){ const inp=hv.querySelector('.hv-input'); const v=parseInt(inp.value,10);
+    if(!isNaN(v)){ hvStop(hv); hvInsert(hv,v); inp.value=''; } }
+  else if(e.target.closest('.hv-quick-btn')){ hvStop(hv); hvInsert(hv,parseInt(e.target.closest('.hv-quick-btn').dataset.v,10)); }
+  else if(e.target.closest('.hv-first')){ hvStop(hv); hvGoto(hv,0); }
+  else if(e.target.closest('.hv-prev')){ hvStop(hv); hvGoto(hv,hvState(hv).cur-1); }
+  else if(e.target.closest('.hv-next')){ hvStop(hv); hvGoto(hv,hvState(hv).cur+1); }
+  else if(e.target.closest('.hv-last')){ hvStop(hv); hvGoto(hv,hvState(hv).frames.length-1); }
+  else if(e.target.closest('.hv-play')){ hvPlay(hv); }
+});
+document.addEventListener('keydown',function(e){
+  if(e.target.classList&&e.target.classList.contains('hv-input')&&e.key==='Enter'){
+    e.preventDefault(); const hv=e.target.closest('.heapviz'); const v=parseInt(e.target.value,10);
+    if(!isNaN(v)){ hvStop(hv); hvInsert(hv,v); e.target.value=''; }
+  }
+});
+document.querySelectorAll('.heapviz').forEach(function(hv){
+  const preset=(hv.dataset.preset||'').split(',').map(function(s){return s.trim();}).filter(Boolean);
+  const q=hv.querySelector('.hv-quick');
+  preset.forEach(function(v){ const b=document.createElement('button'); b.type='button'; b.className='hv-quick-btn'; b.dataset.v=v; b.textContent=v; q.appendChild(b); });
+  hvRender(hv);
+});
+
+/* ---------- Convolution (sliding-window) visualizer ---------- */
+const CV_IMGS={
+  edge:['11110000','11110000','11110000','11110000','11110000','11110000','11110000','11110000'],
+  hedge:['11111111','11111111','11111111','11111111','00000000','00000000','00000000','00000000'],
+  diag:['11000000','11100000','01110000','00111000','00011100','00001110','00000111','00000011'],
+  smiley:['00000000','01100110','01100110','00000000','10000001','01000010','00111100','00000000'],
+  x:['10000001','11000011','01100110','00111100','00111100','01100110','11000011','10000001'],
+  clear:['00000000','00000000','00000000','00000000','00000000','00000000','00000000','00000000']
+};
+const CV_IMG_NAMES=[['edge','Vertical edge'],['hedge','Horizontal edge'],['diag','Diagonal'],['smiley','Smiley'],['x','X'],['clear','Clear']];
+const CV_KERNELS=[
+  {name:'Vertical edge',k:[[1,0,-1],[1,0,-1],[1,0,-1]],div:1},
+  {name:'Horizontal edge',k:[[1,1,1],[0,0,0],[-1,-1,-1]],div:1},
+  {name:'Blur (average)',k:[[1,1,1],[1,1,1],[1,1,1]],div:9},
+  {name:'Sharpen',k:[[0,-1,0],[-1,5,-1],[0,-1,0]],div:1}
+];
+function cvState(el){
+  if(!el._cv){
+    const rows=CV_IMGS[el.dataset.img||'edge'];
+    el._cv={ img:rows.map(function(r){return r.split('').map(Number);}), ki:0, cur:0, playing:false, timer:null };
+  }
+  return el._cv;
+}
+function cvOutputs(st){
+  const K=CV_KERNELS[st.ki], out=[];
+  for(let r=0;r<6;r++){ const row=[];
+    for(let c=0;c<6;c++){ let s=0;
+      for(let i=0;i<3;i++) for(let j=0;j<3;j++) s+=st.img[r+i][c+j]*K.k[i][j];
+      row.push(s); }
+    out.push(row); }
+  return out;
+}
+function cvFmt(v){ return String(Math.round(v*10)/10); }
+function cvRender(el){
+  const st=cvState(el), K=CV_KERNELS[st.ki], out=cvOutputs(st);
+  const wr=Math.floor(st.cur/6), wc=st.cur%6;
+  const inEl=el.querySelector('.cv-in'); inEl.innerHTML='';
+  for(let r=0;r<8;r++) for(let c=0;c<8;c++){
+    const d=document.createElement('div'); d.className='cv-cell'; d.dataset.r=r; d.dataset.c=c;
+    const v=st.img[r][c];
+    d.style.background=v?'#F2A93B':'#132A47';
+    d.style.color=v?'#5c3d05':'#3d5878';
+    d.textContent=v;
+    if(r>=wr&&r<wr+3&&c>=wc&&c<wc+3) d.classList.add('cv-win');
+    inEl.appendChild(d);
+  }
+  const kg=el.querySelector('.cv-kgrid'); kg.innerHTML='';
+  for(let i=0;i<3;i++) for(let j=0;j<3;j++){ const d=document.createElement('div'); d.className='cv-kcell'; d.textContent=K.k[i][j]; kg.appendChild(d); }
+  el.querySelector('.cv-kdiv').textContent=K.div>1?'output = sum ÷ '+K.div:'output = sum of the 9 products';
+  let maxAbs=1; out.forEach(function(row){ row.forEach(function(v){ maxAbs=Math.max(maxAbs,Math.abs(v/K.div)); }); });
+  const lines=[]; let s=0;
+  for(let i=0;i<3;i++){ const terms=[];
+    for(let j=0;j<3;j++){ s+=st.img[wr+i][wc+j]*K.k[i][j];
+      terms.push(st.img[wr+i][wc+j]+'×'+(K.k[i][j]<0?'('+K.k[i][j]+')':K.k[i][j])); }
+    lines.push(terms.join(' + ')); }
+  el.querySelector('.cv-calc').innerHTML=lines.join('<br>')+'<br><span class="cv-sum">= '+cvFmt(s/K.div)+'</span>';
+  const outEl=el.querySelector('.cv-out'); outEl.innerHTML='';
+  for(let r=0;r<6;r++) for(let c=0;c<6;c++){
+    const d=document.createElement('div'); d.className='cv-ocell'; const idx=r*6+c;
+    if(idx<=st.cur){ const v=out[r][c]/K.div, t=Math.min(1,Math.abs(v)/maxAbs);
+      d.textContent=cvFmt(v);
+      if(v>0) d.style.background='rgba(15,157,176,'+(0.12+0.88*t).toFixed(2)+')';
+      else if(v<0) d.style.background='rgba(238,107,54,'+(0.12+0.88*t).toFixed(2)+')';
+      d.style.color=t>0.5&&v!==0?'#fff':'#21303F';
+    }
+    if(idx===st.cur) d.classList.add('cv-win');
+    outEl.appendChild(d);
+  }
+  el.querySelector('.cv-step').textContent=(st.cur+1)+' / 36 · row '+(wr+1)+', col '+(wc+1);
+  el.querySelectorAll('.cv-kchips .cv-chip').forEach(function(ch,i){ ch.classList.toggle('sel',i===st.ki); });
+}
+function cvGoto(el,idx){ const st=cvState(el); st.cur=Math.max(0,Math.min(35,idx)); cvRender(el); }
+function cvStop(el){ const st=cvState(el); if(st.timer){ clearInterval(st.timer); st.timer=null; } st.playing=false;
+  const b=el.querySelector('.cv-play'); if(b) b.textContent='▶ Play'; }
+function cvPlay(el){ const st=cvState(el); if(st.playing){ cvStop(el); return; }
+  if(st.cur>=35) cvGoto(el,0);
+  st.playing=true; const b=el.querySelector('.cv-play'); if(b) b.textContent='⏸ Pause';
+  const speed=parseInt(el.querySelector('.cv-speed').value,10)||3, delay=Math.max(120,900-speed*160);
+  st.timer=setInterval(function(){ if(st.cur>=35){ cvStop(el); return; } cvGoto(el,st.cur+1); },delay);
+}
+document.addEventListener('click',function(e){
+  const cv=e.target.closest('.convviz'); if(!cv) return;
+  const cell=e.target.closest('.cv-cell');
+  if(cell){ const st=cvState(cv); cvStop(cv);
+    const r=parseInt(cell.dataset.r,10), c=parseInt(cell.dataset.c,10);
+    st.img[r][c]=st.img[r][c]?0:1; cvRender(cv); return; }
+  const chip=e.target.closest('.cv-chip');
+  if(chip){ cvStop(cv); const st=cvState(cv);
+    if(chip.dataset.k!==undefined){ st.ki=parseInt(chip.dataset.k,10); }
+    else if(chip.dataset.img){ st.img=CV_IMGS[chip.dataset.img].map(function(r){return r.split('').map(Number);}); st.cur=0; }
+    cvRender(cv); return; }
+  if(e.target.closest('.cv-first')){ cvStop(cv); cvGoto(cv,0); }
+  else if(e.target.closest('.cv-prev')){ cvStop(cv); cvGoto(cv,cvState(cv).cur-1); }
+  else if(e.target.closest('.cv-next')){ cvStop(cv); cvGoto(cv,cvState(cv).cur+1); }
+  else if(e.target.closest('.cv-last')){ cvStop(cv); cvGoto(cv,35); }
+  else if(e.target.closest('.cv-play')){ cvPlay(cv); }
+});
+document.querySelectorAll('.convviz').forEach(function(cv){
+  const pr=cv.querySelector('.cv-presets');
+  CV_IMG_NAMES.forEach(function(p){ const b=document.createElement('button'); b.type='button'; b.className='cv-chip'; b.dataset.img=p[0]; b.textContent=p[1]; pr.appendChild(b); });
+  const kc=cv.querySelector('.cv-kchips');
+  CV_KERNELS.forEach(function(k,i){ const b=document.createElement('button'); b.type='button'; b.className='cv-chip'; b.dataset.k=i; b.textContent=k.name; kc.appendChild(b); });
+  cvRender(cv);
+});
+
+/* ---------- Pyodide code labs ---------- */
+let _py=null,_pyLoading=null;
+async function getPy(statusEl){
+  if(_py) return _py;
+  if(!_pyLoading){ if(statusEl)statusEl.textContent='Loading Python…';
+    _pyLoading=loadPyodide({indexURL:'https://cdn.jsdelivr.net/pyodide/v0.26.2/full/'}); }
+  _py=await _pyLoading; return _py;
+}
+function labOf(el){ return el.closest('.lab'); }
+async function runLab(lab){
+  const code=lab.querySelector('.code').value;
+  const out=lab.querySelector('.out'); const status=lab.querySelector('.lab-status');
+  out.textContent=''; out.classList.remove('has-err'); lab.dataset.lastError='';
+  try{
+    const py=await getPy(status);
+    const pkgs=(lab.dataset.packages||'').split(',').map(s=>s.trim()).filter(Boolean);
+    if(pkgs.length){ status.textContent='Loading '+pkgs.join(', ')+'…'; await py.loadPackage(pkgs); }
+    status.textContent='Running…';
+    let buf='';
+    py.setStdout({batched:(s)=>{buf+=s+'\n';}});
+    py.setStderr({batched:(s)=>{buf+=s+'\n';}});
+    await py.runPythonAsync(code);
+    out.textContent=buf||'(no output — add a print(...) )';
+    status.textContent='✓ done';
+  }catch(err){
+    const msg=(err&&err.message)?err.message:String(err);
+    out.innerHTML='<span class="err">'+msg.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))+'</span>';
+    lab.dataset.lastError=msg; status.textContent='✗ error — try 🐞 Debug';
+  }
+}
+/* very small markdown -> html for assistant replies */
+function mdToHtml(md){
+  const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  let html=''; const parts=md.split(/```/);
+  parts.forEach(function(p,i){
+    if(i%2===1){ const code=p.replace(/^python\n?/i,''); html+='<pre data-code="'+encodeURIComponent(code.trim())+'"><code>'+esc(code.trim())+'</code></pre>'+
+      '<button class="apply">↧ Use this code</button>'; }
+    else { let t=esc(p).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/`(.+?)`/g,'<code>$1</code>').replace(/\n{2,}/g,'</p><p>').replace(/\n/g,'<br>'); if(t.trim())html+='<p>'+t+'</p>'; }
+  });
+  return html;
+}
+async function askAssistant(lab,action,question){
+  const body=lab.querySelector('.assist-body');
+  const sel=lab.querySelector('.ai-model');
+  const model=(sel&&sel.value)||'haiku';
+  body.innerHTML='<p class="muted">✨ Thinking…</p>';
+  try{
+    const r=await fetch('/api/assistant',{method:'POST',headers:{'content-type':'application/json'},
+      body:JSON.stringify({action:action,question:question||'',code:lab.querySelector('.code').value,error:lab.dataset.lastError||'',model:model})});
+    const j=await r.json();
+    body.innerHTML=mdToHtml(j.text||'(no response)');
+  }catch(e){ body.innerHTML='<p class="muted">Assistant unavailable right now. Try again shortly.</p>'; }
+}
+document.addEventListener('click',function(e){
+  const t=e.target;
+  if(t.closest('.lab .run')){ runLab(labOf(t.closest('.run'))); }
+  else if(t.closest('.lab .ai-explain')){ askAssistant(labOf(t.closest('.ai-explain')),'explain'); }
+  else if(t.closest('.lab .ai-debug')){ askAssistant(labOf(t.closest('.ai-debug')),'debug'); }
+  else if(t.closest('.lab .ai-improve')){ askAssistant(labOf(t.closest('.ai-improve')),'improve'); }
+  else if(t.closest('.lab .ask-btn')){ const lab=labOf(t.closest('.ask-btn')); const inp=lab.querySelector('.ask-in'); if(inp.value.trim()){ askAssistant(lab,'ask',inp.value.trim()); inp.value=''; } }
+  else if(t.classList&&t.classList.contains('apply')){ const pre=t.previousElementSibling; const lab=t.closest('.lab'); if(pre&&lab){ lab.querySelector('.code').value=decodeURIComponent(pre.dataset.code); } }
+});
+/* Tab key inserts spaces in code editors; keep typing inside textareas from triggering reveal nav */
+document.addEventListener('keydown',function(e){
+  const ta=e.target;
+  if(ta.classList&&ta.classList.contains('code')&&e.key==='Tab'){ e.preventDefault(); const s=ta.selectionStart,en=ta.selectionEnd; ta.value=ta.value.slice(0,s)+'    '+ta.value.slice(en); ta.selectionStart=ta.selectionEnd=s+4; }
+},true);
+/* allow Enter to submit the assistant question */
+document.addEventListener('keydown',function(e){ if(e.target.classList&&e.target.classList.contains('ask-in')&&e.key==='Enter'){ e.preventDefault(); const lab=labOf(e.target); if(e.target.value.trim()){ askAssistant(lab,'ask',e.target.value.trim()); e.target.value=''; } } });
+
+/* ---------- Per-slide comments ---------- */
+const btn=document.getElementById('commentBtn'),panel=document.getElementById('commentPanel'),
+  listEl=document.getElementById('commentList'),cnum=document.getElementById('cnum'),
+  cph=document.getElementById('cph'),form=document.getElementById('commentForm');
+let counts={}, curSid='title';
+// Comment identity = the slide's stable data-sid slug. Never positional:
+// a positional key would re-point old comments to a different slide whenever
+// the deck is reordered. Every slide is built with a sid (asserted at build);
+// the content-hash fallback below stays position-independent just in case.
+function _hashSid(s){ const t=((s&&s.textContent)||'').replace(/s+/g,' ').trim().slice(0,400); let h=0; for(let i=0;i<t.length;i++){ h=(h*31+t.charCodeAt(i))|0; } return 'auto-'+(h>>>0).toString(36); }
+function sidOf(){ const s=Reveal.getCurrentSlide(); if(s&&s.dataset.sid) return s.dataset.sid; console.warn('slide has no data-sid; using content-hash key'); return _hashSid(s); }
+function fmtTime(ts){ const d=new Date(ts); return d.toLocaleDateString()+' '+d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}); }
+function escc(s){ return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+async function loadCounts(){ try{ const r=await fetch('/api/comments/counts?deck='+encodeURIComponent(DECK)); const j=await r.json(); counts=j.counts||{}; updateBadge(); }catch(e){} }
+function updateBadge(){ cnum.textContent=counts[curSid]||0; }
+async function loadComments(){ listEl.innerHTML='<div class="none">Loading…</div>';
+  try{ const r=await fetch('/api/comments?deck='+encodeURIComponent(DECK)+'&slide='+encodeURIComponent(curSid)); const j=await r.json();
+    const cs=j.comments||[]; counts[curSid]=cs.length; updateBadge();
+    listEl.innerHTML=cs.length?cs.map(c=>'<div class="c"><span class="cn">'+escc(c.name)+'</span><span class="ct">'+fmtTime(c.created)+'</span><div class="cb">'+escc(c.body)+'</div></div>').join(''):'<div class="none">No comments yet — be the first!</div>';
+  }catch(e){ listEl.innerHTML='<div class="none">Could not load comments.</div>'; }
+}
+function openPanel(){ curSid=sidOf(); cph.textContent='Comments · '+curSid; panel.classList.add('open'); loadComments(); }
+btn.onclick=function(){ panel.classList.contains('open')?panel.classList.remove('open'):openPanel(); };
+document.getElementById('cclose').onclick=function(){ panel.classList.remove('open'); };
+form.onsubmit=async function(e){ e.preventDefault();
+  const name=document.getElementById('cname').value, body=document.getElementById('cbody').value.trim();
+  const msg=document.getElementById('cmsg'); if(!body){ msg.textContent='Write something first.'; return; }
+  msg.textContent='Posting…';
+  try{ const r=await fetch('/api/comments',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({deck:DECK,slide:curSid,name:name,body:body})});
+    const j=await r.json(); if(j.ok){ document.getElementById('cbody').value=''; msg.textContent='Posted! Thanks.'; loadComments(); } else { msg.textContent=j.error||'Could not post.'; }
+  }catch(e){ msg.textContent='Network error — try again.'; }
+};
+Reveal.on('slidechanged',function(){ stopAudio(); curSid=sidOf(); updateBadge(); updateListen(); sendSlide(); if(panel.classList.contains('open')){ cph.textContent='Comments · '+curSid; loadComments(); } });
+Reveal.on('ready',function(){ curSid=sidOf(); loadCounts(); loadNarrated(); });
+
+/* ---------- Live classroom: presence chip + quiz stream (SSE) ---------- */
+let liveId=null;
+const liveChip=document.createElement('div');
+liveChip.id='liveChip'; liveChip.style.display='none'; document.body.appendChild(liveChip);
+function setOnline(n){ liveChip.style.display=''; liveChip.textContent='🟢 '+n+' online'; }
+function sendSlide(){
+  if(!liveId) return;
+  fetch('/api/presence',{method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({id:liveId,slide:curSid})}).catch(function(){});
+}
+function quizBySid(sid){
+  const secs=document.querySelectorAll('section[data-sid]');
+  for(const s of secs) if(s.dataset.sid===sid) return s.querySelector('.quiz');
+  return null;
+}
+function pollLive(){ // fallback when EventSource can't stream through a proxy
+  const tick=function(){ fetch('/api/presence/count?deck='+encodeURIComponent(DECK))
+    .then(function(r){return r.json();}).then(function(j){setOnline(j.online);}).catch(function(){}); };
+  tick(); setInterval(tick,20000);
+}
+(function connectLive(){
+  if(typeof EventSource==='undefined') return pollLive();
+  const es=new EventSource('/api/live?deck='+encodeURIComponent(DECK));
+  let opened=false;
+  es.onopen=function(){ opened=true; };
+  es.onmessage=function(ev){
+    let d; try{ d=JSON.parse(ev.data); }catch(e){ return; }
+    if(d.type==='hello'){ liveId=d.id; setOnline(d.online); sendSlide(); }
+    else if(d.type==='presence'){ setOnline(d.online); }
+    else if(d.type==='quiz'){ // live-update the chart on the quiz slide (only visible once answered)
+      const q=quizBySid(d.slide); if(q) renderQuizStats(q,{today:d.today,all:d.all});
+    }
+  };
+  es.onerror=function(){ if(!opened){ es.close(); pollLive(); } };
+})();
+</script>
+<script defer src="/meritpoint-slides/assets/auth.js"></script>
+</body></html>

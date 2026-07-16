@@ -1,0 +1,1099 @@
+{
+  "recap-class03": {
+    "hash": "102f115f7cc6cda0",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's take sixty seconds to remember where we left off. We talked about the research loop: data becomes a model, which you test through experiments, and that leads to conclusions that send you right back around again. We split our data into three piles, and remember the golden rule, the test set is sacred, you touch it exactly once. Now hold up those pipeline diagrams you drew and show me where you put that warning sign on the hard part. Today's tool speeds up every single box on that map, and that's exactly why it needs a seatbelt.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.9,
+        "text": "Let's take sixty seconds to remember where we left off."
+      },
+      {
+        "start": 2.9,
+        "end": 11.95,
+        "text": "We talked about the research loop: data becomes a model, which you test through experiments, and that leads to conclusions that send you right back around again."
+      },
+      {
+        "start": 11.95,
+        "end": 20.125,
+        "text": "We split our data into three piles, and remember the golden rule, the test set is sacred, you touch it exactly once."
+      },
+      {
+        "start": 20.125,
+        "end": 25.737,
+        "text": "Now hold up those pipeline diagrams you drew and show me where you put that warning sign on the hard part."
+      },
+      {
+        "start": 25.737,
+        "end": 31.712,
+        "text": "Today's tool speeds up every single box on that map, and that's exactly why it needs a seatbelt."
+      }
+    ],
+    "bytes": 190656,
+    "model": "claude-opus-4-8"
+  },
+  "agenda": {
+    "hash": "f74e3d9e2653cf1f",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's how our hour is going to flow. We'll start by sharing homework and looking at a real story of a lawyer who trusted a chatbot a little too much, then move into how these language models actually work and how to write prompts that get you serious, research-grade answers. From there we'll tackle summarizing papers and, crucially, catching the moments when the AI just makes things up. We'll do live demos and two hands-on labs, including one where you'll build your own tiny language model to see exactly where hallucinations come from. By the end, you'll write sharp prompts, summarize any paper cleanly, and spot a fake claim before it fools you.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.05,
+        "text": "Here's how our hour is going to flow."
+      },
+      {
+        "start": 2.05,
+        "end": 14.875,
+        "text": "We'll start by sharing homework and looking at a real story of a lawyer who trusted a chatbot a little too much, then move into how these language models actually work and how to write prompts that get you serious, research-grade answers."
+      },
+      {
+        "start": 14.875,
+        "end": 22.975,
+        "text": "From there we'll tackle summarizing papers and, crucially, catching the moments when the AI just makes things up."
+      },
+      {
+        "start": 22.975,
+        "end": 33.05,
+        "text": "We'll do live demos and two hands-on labs, including one where you'll build your own tiny language model to see exactly where hallucinations come from."
+      },
+      {
+        "start": 33.05,
+        "end": 40.212,
+        "text": "By the end, you'll write sharp prompts, summarize any paper cleanly, and spot a fake claim before it fools you."
+      }
+    ],
+    "bytes": 241632,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-warmup": {
+    "hash": "47f4d38d3d5e6b24",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a scenario for you: an AI confidently tells you that a 2021 study by Smith proved exactly your point, and even gives you a year. So what should you actually do? Here's the trap I want you to notice — asking the AI \"are you sure?\" feels smart, but it just hands you more confident-sounding text. These models have no fact-checker inside; they state inventions in the exact same tone as facts. The only real test is opening that source yourself, and if you can't find it, it doesn't exist for your purposes.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 9.262,
+        "text": "Here's a scenario for you: an AI confidently tells you that a 2021 study by Smith proved exactly your point, and even gives you a year."
+      },
+      {
+        "start": 9.262,
+        "end": 10.887,
+        "text": "So what should you actually do?"
+      },
+      {
+        "start": 10.887,
+        "end": 19.012,
+        "text": "Here's the trap I want you to notice — asking the AI \"are you sure?\" feels smart, but it just hands you more confident-sounding text."
+      },
+      {
+        "start": 19.012,
+        "end": 25.375,
+        "text": "These models have no fact-checker inside; they state inventions in the exact same tone as facts."
+      },
+      {
+        "start": 25.375,
+        "end": 32.725,
+        "text": "The only real test is opening that source yourself, and if you can't find it, it doesn't exist for your purposes."
+      }
+    ],
+    "bytes": 196704,
+    "model": "claude-opus-4-8"
+  },
+  "story-lawyer": {
+    "hash": "f9d81022599e022b",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let me tell you about a lawyer who learned a very expensive lesson. Back in 2023, he filed a court brief citing six perfect-looking cases — names, quotes, citations, all flawless. The trouble was, ChatGPT had invented every single one of them, and the judge sanctioned him for it. Here's the crucial part: the AI wasn't lying on purpose — it was simply doing what these models do, predicting plausible text. Today we'll uncover the machinery behind those six fake cases and the two-minute routine that would have caught them.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.85,
+        "text": "Let me tell you about a lawyer who learned a very expensive lesson."
+      },
+      {
+        "start": 3.85,
+        "end": 12.425,
+        "text": "Back in 2023, he filed a court brief citing six perfect-looking cases — names, quotes, citations, all flawless."
+      },
+      {
+        "start": 12.425,
+        "end": 18.65,
+        "text": "The trouble was, ChatGPT had invented every single one of them, and the judge sanctioned him for it."
+      },
+      {
+        "start": 18.65,
+        "end": 27.225,
+        "text": "Here's the crucial part: the AI wasn't lying on purpose — it was simply doing what these models do, predicting plausible text."
+      },
+      {
+        "start": 27.225,
+        "end": 33.962,
+        "text": "Today we'll uncover the machinery behind those six fake cases and the two-minute routine that would have caught them."
+      }
+    ],
+    "bytes": 204192,
+    "model": "claude-opus-4-8"
+  },
+  "concept-five-hats": {
+    "hash": "a416681294c3471e",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's something that surprised me when I first understood it: calling these tools a \"chatbot\" really sells them short. At heart, an LLM is a text-processing engine that will play whatever role you give it. It can be your researcher, your programmer, your data analyst, your mentor, or your writing partner — and each of those hats fits a different stage of your project pipeline. But here's the catch: the tool doesn't pick the hat for you. You do, through your prompt — and that's exactly the skill we're about to learn.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6,
+        "text": "Here's something that surprised me when I first understood it: calling these tools a \"chatbot\" really sells them short."
+      },
+      {
+        "start": 6,
+        "end": 11.775,
+        "text": "At heart, an LLM is a text-processing engine that will play whatever role you give it."
+      },
+      {
+        "start": 11.775,
+        "end": 21.787,
+        "text": "It can be your researcher, your programmer, your data analyst, your mentor, or your writing partner — and each of those hats fits a different stage of your project pipeline."
+      },
+      {
+        "start": 21.787,
+        "end": 25.362,
+        "text": "But here's the catch: the tool doesn't pick the hat for you."
+      },
+      {
+        "start": 25.362,
+        "end": 29.937,
+        "text": "You do, through your prompt — and that's exactly the skill we're about to learn."
+      }
+    ],
+    "bytes": 180000,
+    "model": "claude-opus-4-8"
+  },
+  "concept-prompt-anatomy": {
+    "hash": "ba7dba87e78b075d",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a simple truth about talking to AI: vague in, vague out. If you just ask \"summarize this paper,\" you'll get something mushy. But watch what happens when you build your request from four parts — you give it a role, you give it context, you name the exact format you want, and then you add constraints. That last part, the constraints, is the one almost everyone forgets, and it's the most powerful. When you say \"quote the exact sentence behind each claim,\" those quotes become your handles for checking whether the answer is actually true.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.4,
+        "text": "Here's a simple truth about talking to AI: vague in, vague out."
+      },
+      {
+        "start": 4.4,
+        "end": 8.475,
+        "text": "If you just ask \"summarize this paper,\" you'll get something mushy."
+      },
+      {
+        "start": 8.475,
+        "end": 18.15,
+        "text": "But watch what happens when you build your request from four parts — you give it a role, you give it context, you name the exact format you want, and then you add constraints."
+      },
+      {
+        "start": 18.15,
+        "end": 24.125,
+        "text": "That last part, the constraints, is the one almost everyone forgets, and it's the most powerful."
+      },
+      {
+        "start": 24.125,
+        "end": 32.475,
+        "text": "When you say \"quote the exact sentence behind each claim,\" those quotes become your handles for checking whether the answer is actually true."
+      }
+    ],
+    "bytes": 195264,
+    "model": "claude-opus-4-8"
+  },
+  "prompt-tip-specific": {
+    "hash": "cec9a3b15aa32827",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Watch what happens when we go from vague to specific. If I just type \"explain AI,\" I get a bland, generic essay that helps absolutely nobody. But if I say \"explain artificial intelligence to a ten-year-old, using two everyday analogies, in under a hundred words,\" suddenly I get something targeted and vivid I can actually use. The trick is answering who, what, why, and how right inside your prompt. And honestly, this is the same question ladder we climbed back in Class 2, just pointed at a new target.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.25,
+        "text": "Watch what happens when we go from vague to specific."
+      },
+      {
+        "start": 3.25,
+        "end": 9.075,
+        "text": "If I just type \"explain AI,\" I get a bland, generic essay that helps absolutely nobody."
+      },
+      {
+        "start": 9.075,
+        "end": 20.325,
+        "text": "But if I say \"explain artificial intelligence to a ten-year-old, using two everyday analogies, in under a hundred words,\" suddenly I get something targeted and vivid I can actually use."
+      },
+      {
+        "start": 20.325,
+        "end": 25.05,
+        "text": "The trick is answering who, what, why, and how right inside your prompt."
+      },
+      {
+        "start": 25.05,
+        "end": 31.15,
+        "text": "And honestly, this is the same question ladder we climbed back in Class 2, just pointed at a new target."
+      }
+    ],
+    "bytes": 187200,
+    "model": "claude-opus-4-8"
+  },
+  "prompt-tip-role": {
+    "hash": "82c61399b8bd3dca",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a small trick that makes a huge difference: give the AI a role to play. If you just ask \"how do I write a linear-regression function,\" you'll get bare code with no explanation, no warnings, nothing. But if you start with \"Act as a patient data-science tutor,\" suddenly it explains the idea first, comments every line, and even warns you about a common mistake. That opening role sets the depth and tone, turning a search engine into a teacher who actually guides you.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.662,
+        "text": "Here's a small trick that makes a huge difference: give the AI a role to play."
+      },
+      {
+        "start": 5.662,
+        "end": 14.175,
+        "text": "If you just ask \"how do I write a linear-regression function,\" you'll get bare code with no explanation, no warnings, nothing."
+      },
+      {
+        "start": 14.175,
+        "end": 24.262,
+        "text": "But if you start with \"Act as a patient data-science tutor,\" suddenly it explains the idea first, comments every line, and even warns you about a common mistake."
+      },
+      {
+        "start": 24.262,
+        "end": 31.437,
+        "text": "That opening role sets the depth and tone, turning a search engine into a teacher who actually guides you."
+      }
+    ],
+    "bytes": 188928,
+    "model": "claude-opus-4-8"
+  },
+  "prompt-tip-example": {
+    "hash": "49c043b3e27d1b9e",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the last upgrade, and it's my favorite: show, don't describe. If you ask for something \"creative,\" you're basically buying a lottery ticket — you might get a poem, a story, almost never what you had in mind. But watch what happens when you paste one worked example, like turning a sentence into a haiku. That single example locks in the format, the tone, and the length all at once. The pros call this few-shot prompting, and for your three-part paper summary, drop in one example and watch the consistency jump.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.612,
+        "text": "Here's the last upgrade, and it's my favorite: show, don't describe."
+      },
+      {
+        "start": 4.612,
+        "end": 12.825,
+        "text": "If you ask for something \"creative,\" you're basically buying a lottery ticket — you might get a poem, a story, almost never what you had in mind."
+      },
+      {
+        "start": 12.825,
+        "end": 19.075,
+        "text": "But watch what happens when you paste one worked example, like turning a sentence into a haiku."
+      },
+      {
+        "start": 19.075,
+        "end": 24.162,
+        "text": "That single example locks in the format, the tone, and the length all at once."
+      },
+      {
+        "start": 24.162,
+        "end": 31.975,
+        "text": "The pros call this few-shot prompting, and for your three-part paper summary, drop in one example and watch the consistency jump."
+      }
+    ],
+    "bytes": 192240,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-prompting": {
+    "hash": "c13d89ef543dcaf4",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a question worth sitting with: you want the AI's answer to be easy to fact-check later, so which part of your prompt does that work? It's tempting to pick \"you are a very honest assistant,\" but that changes nothing — the model already believes it's being honest. The real move is a constraint: tell it to quote the exact sentence behind each claim. That gives you a handle, something concrete you can hold up against the actual document and verify.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.425,
+        "text": "Here's a question worth sitting with: you want the AI's answer to be easy to fact-check later, so which part of your prompt does that work?"
+      },
+      {
+        "start": 7.425,
+        "end": 15.4,
+        "text": "It's tempting to pick \"you are a very honest assistant,\" but that changes nothing — the model already believes it's being honest."
+      },
+      {
+        "start": 15.4,
+        "end": 20.8,
+        "text": "The real move is a constraint: tell it to quote the exact sentence behind each claim."
+      },
+      {
+        "start": 20.8,
+        "end": 26.9,
+        "text": "That gives you a handle, something concrete you can hold up against the actual document and verify."
+      }
+    ],
+    "bytes": 161712,
+    "model": "claude-opus-4-8"
+  },
+  "concept-scl": {
+    "hash": "284da8f31c353106",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a simple way to make sense of any research paper: three things always matter. First, the summary — what did they actually do, in words a friend would get. Second, the contribution — not that they studied something, but what we can now do that we couldn't before. And third, the limitation — where it falls short, because that gap is exactly where your own project ideas are hiding. Ask an LLM to give you all three with a quoted sentence for each, then you go verify it yourself.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.95,
+        "text": "Here's a simple way to make sense of any research paper: three things always matter."
+      },
+      {
+        "start": 5.95,
+        "end": 10.55,
+        "text": "First, the summary — what did they actually do, in words a friend would get."
+      },
+      {
+        "start": 10.55,
+        "end": 16.875,
+        "text": "Second, the contribution — not that they studied something, but what we can now do that we couldn't before."
+      },
+      {
+        "start": 16.875,
+        "end": 24.612,
+        "text": "And third, the limitation — where it falls short, because that gap is exactly where your own project ideas are hiding."
+      },
+      {
+        "start": 24.612,
+        "end": 31.25,
+        "text": "Ask an LLM to give you all three with a quoted sentence for each, then you go verify it yourself."
+      }
+    ],
+    "bytes": 187920,
+    "model": "claude-opus-4-8"
+  },
+  "application-map": {
+    "hash": "73daee1b3ee403db",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the big picture: one AI assistant can help you at every single stage of your research journey. When you're reading, it can summarize dense papers and spark research questions in minutes instead of hours. When you're coding or analyzing data, it drops that syntax barrier so your brain stays on the actual research logic. And when you're writing, it drafts and polishes from start to finish. Grab these prompts exactly as written tonight, then make them sharper by adding a role, a format, and clear constraints.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.412,
+        "text": "Here's the big picture: one AI assistant can help you at every single stage of your research journey."
+      },
+      {
+        "start": 6.412,
+        "end": 13.587,
+        "text": "When you're reading, it can summarize dense papers and spark research questions in minutes instead of hours."
+      },
+      {
+        "start": 13.587,
+        "end": 20.937,
+        "text": "When you're coding or analyzing data, it drops that syntax barrier so your brain stays on the actual research logic."
+      },
+      {
+        "start": 20.937,
+        "end": 24.937,
+        "text": "And when you're writing, it drafts and polishes from start to finish."
+      },
+      {
+        "start": 24.937,
+        "end": 32.337,
+        "text": "Grab these prompts exactly as written tonight, then make them sharper by adding a role, a format, and clear constraints."
+      }
+    ],
+    "bytes": 194400,
+    "model": "claude-opus-4-8"
+  },
+  "concept-hallucination": {
+    "hash": "2967e2fcb5820488",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's something that trips up almost everyone who uses these tools. When a language model gives you a fake study or an invented statistic in a totally confident voice, it isn't lying to you on purpose — it's doing exactly what it always does, predicting the next likely word, over and over. It never looks anything up, so when the truth isn't strong in its training, the most plausible-sounding continuation just wins. That's why your rule has to be ironclad: never cite anything you haven't opened yourself. In Lab 1 you'll build this mechanism from scratch and see why it simply can't help itself.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.862,
+        "text": "Here's something that trips up almost everyone who uses these tools."
+      },
+      {
+        "start": 3.862,
+        "end": 17.912,
+        "text": "When a language model gives you a fake study or an invented statistic in a totally confident voice, it isn't lying to you on purpose — it's doing exactly what it always does, predicting the next likely word, over and over."
+      },
+      {
+        "start": 17.912,
+        "end": 26.562,
+        "text": "It never looks anything up, so when the truth isn't strong in its training, the most plausible-sounding continuation just wins."
+      },
+      {
+        "start": 26.562,
+        "end": 32.1,
+        "text": "That's why your rule has to be ironclad: never cite anything you haven't opened yourself."
+      },
+      {
+        "start": 32.1,
+        "end": 38.225,
+        "text": "In Lab 1 you'll build this mechanism from scratch and see why it simply can't help itself."
+      }
+    ],
+    "bytes": 229680,
+    "model": "claude-opus-4-8"
+  },
+  "case-alice-smith": {
+    "hash": "682a8b06c1ce3d2c",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Look at what happens here. I asked about a breakthrough by Dr. Alice Smith — someone who doesn't exist — and the AI didn't blink. It gave me a thousand qubits, three hours, a Nature paper in March, all wonderfully specific and completely invented. And that's the trap: my question assumed she was real, and the model just built a whole world to match. So the fix takes ninety seconds — search the name, the place, the claim, and when nothing credible shows up, you've caught a hallucination.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.312,
+        "text": "Look at what happens here."
+      },
+      {
+        "start": 1.312,
+        "end": 7.537,
+        "text": "I asked about a breakthrough by Dr. Alice Smith — someone who doesn't exist — and the AI didn't blink."
+      },
+      {
+        "start": 7.537,
+        "end": 16.612,
+        "text": "It gave me a thousand qubits, three hours, a Nature paper in March, all wonderfully specific and completely invented."
+      },
+      {
+        "start": 16.612,
+        "end": 23.125,
+        "text": "And that's the trap: my question assumed she was real, and the model just built a whole world to match."
+      },
+      {
+        "start": 23.125,
+        "end": 32.775,
+        "text": "So the fix takes ninety seconds — search the name, the place, the claim, and when nothing credible shows up, you've caught a hallucination."
+      }
+    ],
+    "bytes": 196992,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-hallucination": {
+    "hash": "e84662c2a1e5f739",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a question worth sitting with: why does an AI give you a fake citation in the exact same confident voice it uses for a real one? It's not lying on purpose, and it's not about databases. The truth is simpler and stranger — it's just predicting the next plausible word, with no inner fact-checker separating what it remembers from what it invents. Real facts and pure inventions flow out of the same pipe with the same smoothness. That's why the tone tells you nothing, and only opening the source tells you everything.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 8,
+        "text": "Here's a question worth sitting with: why does an AI give you a fake citation in the exact same confident voice it uses for a real one?"
+      },
+      {
+        "start": 8,
+        "end": 11.712,
+        "text": "It's not lying on purpose, and it's not about databases."
+      },
+      {
+        "start": 11.712,
+        "end": 21.675,
+        "text": "The truth is simpler and stranger — it's just predicting the next plausible word, with no inner fact-checker separating what it remembers from what it invents."
+      },
+      {
+        "start": 21.675,
+        "end": 27.7,
+        "text": "Real facts and pure inventions flow out of the same pipe with the same smoothness."
+      },
+      {
+        "start": 27.7,
+        "end": 32.487,
+        "text": "That's why the tone tells you nothing, and only opening the source tells you everything."
+      }
+    ],
+    "bytes": 195264,
+    "model": "claude-opus-4-8"
+  },
+  "discuss-verify-routine": {
+    "hash": "cb97bf96aa728b9e",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's your challenge. Remember that lawyer who submitted six fake citations and got caught? I want you to design the two-minute routine that would have saved him. Where do you search first, what actually counts as verified, and crucially, what do you do with a claim you just can't confirm? And think about the edge cases too, because not everything needs the same scrutiny. Grab a partner, three minutes, then drop your best step in the chat and we'll build the class routine together.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.037,
+        "text": "Alright, here's your challenge."
+      },
+      {
+        "start": 2.037,
+        "end": 6.15,
+        "text": "Remember that lawyer who submitted six fake citations and got caught?"
+      },
+      {
+        "start": 6.15,
+        "end": 9.612,
+        "text": "I want you to design the two-minute routine that would have saved him."
+      },
+      {
+        "start": 9.612,
+        "end": 16.625,
+        "text": "Where do you search first, what actually counts as verified, and crucially, what do you do with a claim you just can't confirm?"
+      },
+      {
+        "start": 16.625,
+        "end": 21.987,
+        "text": "And think about the edge cases too, because not everything needs the same scrutiny."
+      },
+      {
+        "start": 21.987,
+        "end": 28.325,
+        "text": "Grab a partner, three minutes, then drop your best step in the chat and we'll build the class routine together."
+      }
+    ],
+    "bytes": 170352,
+    "model": "claude-opus-4-8"
+  },
+  "demo-chatgpt": {
+    "hash": "e7ecbba1d3333c09",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's put everything together on a real abstract and watch it work. Notice how the first prompt asks for exactly three bullets — summary, contribution, and limitation — and demands a quoted sentence to back up each one. Those quotes matter, because later we'll verify them rather than just trust them. Then we chain the prompts: we push back like a skeptical reviewer, turn the weakest limitation into a proper research question with input, output, and metric, and finally ask for a dataset to test it on. That's a question factory running right in front of you.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.562,
+        "text": "Alright, let's put everything together on a real abstract and watch it work."
+      },
+      {
+        "start": 4.562,
+        "end": 14.575,
+        "text": "Notice how the first prompt asks for exactly three bullets — summary, contribution, and limitation — and demands a quoted sentence to back up each one."
+      },
+      {
+        "start": 14.575,
+        "end": 19.012,
+        "text": "Those quotes matter, because later we'll verify them rather than just trust them."
+      },
+      {
+        "start": 19.012,
+        "end": 32.15,
+        "text": "Then we chain the prompts: we push back like a skeptical reviewer, turn the weakest limitation into a proper research question with input, output, and metric, and finally ask for a dataset to test it on."
+      },
+      {
+        "start": 32.15,
+        "end": 35.075,
+        "text": "That's a question factory running right in front of you."
+      }
+    ],
+    "bytes": 210816,
+    "model": "claude-opus-4-8"
+  },
+  "demo-claude": {
+    "hash": "69fe23a47fbfab56",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Now let's bring in a second opinion. Claude is a different model with its own strengths, especially handling long documents and careful step-by-step reasoning. Watch what happens when I give it the exact same abstract and prompt from before: if both models flag the same limitation, our confidence goes up, but if they disagree, that's a signal to dig deeper. And here's the clever part — I can have one model audit the other's summary, then upload the full PDF and ask Claude to walk me through the method as if I'm just starting out.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.1,
+        "text": "Now let's bring in a second opinion."
+      },
+      {
+        "start": 2.1,
+        "end": 9.962,
+        "text": "Claude is a different model with its own strengths, especially handling long documents and careful step-by-step reasoning."
+      },
+      {
+        "start": 9.962,
+        "end": 22.45,
+        "text": "Watch what happens when I give it the exact same abstract and prompt from before: if both models flag the same limitation, our confidence goes up, but if they disagree, that's a signal to dig deeper."
+      },
+      {
+        "start": 22.45,
+        "end": 32.012,
+        "text": "And here's the clever part — I can have one model audit the other's summary, then upload the full PDF and ask Claude to walk me through the method as if I'm just starting out."
+      }
+    ],
+    "bytes": 192384,
+    "model": "claude-opus-4-8"
+  },
+  "demo-verify": {
+    "hash": "89053d30815fa930",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Now let's close the loop and actually hunt these claims down together. First, paste the exact paper title into Google Scholar—does it even exist, at the right venue, in the right year? Then open the PDF and hit Ctrl-F on a distinctive phrase from that quoted sentence; that's the killer trick, just seconds per claim. Check the claimed contribution against the real abstract, then give each claim a verdict. And here's the rule: if you can't confirm it, treat that question mark as flat-out wrong—unverifiable is unusable.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.975,
+        "text": "Now let's close the loop and actually hunt these claims down together."
+      },
+      {
+        "start": 3.975,
+        "end": 10.937,
+        "text": "First, paste the exact paper title into Google Scholar—does it even exist, at the right venue, in the right year?"
+      },
+      {
+        "start": 10.937,
+        "end": 19.187,
+        "text": "Then open the PDF and hit Ctrl-F on a distinctive phrase from that quoted sentence; that's the killer trick, just seconds per claim."
+      },
+      {
+        "start": 19.187,
+        "end": 25.025,
+        "text": "Check the claimed contribution against the real abstract, then give each claim a verdict."
+      },
+      {
+        "start": 25.025,
+        "end": 32.55,
+        "text": "And here's the rule: if you can't confirm it, treat that question mark as flat-out wrong—unverifiable is unusable."
+      }
+    ],
+    "bytes": 195696,
+    "model": "claude-opus-4-8"
+  },
+  "lab-tiny-llm": {
+    "hash": "8cb6f2ac465fc60f",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, we're about to build a real language model in just twenty-five lines of code. Here's the whole trick: it learns which word tends to follow which other word, and then it just keeps picking a plausible next word — over and over. Watch what happens when you run it, because it produces text that sounds confident but means nothing at all. That's not a bug, that's exactly how the giant models work too, just with trillions more words. So add your own facts to that little corpus and watch it remix them into things you never actually said.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.05,
+        "text": "Alright, we're about to build a real language model in just twenty-five lines of code."
+      },
+      {
+        "start": 5.05,
+        "end": 13.75,
+        "text": "Here's the whole trick: it learns which word tends to follow which other word, and then it just keeps picking a plausible next word — over and over."
+      },
+      {
+        "start": 13.75,
+        "end": 19.762,
+        "text": "Watch what happens when you run it, because it produces text that sounds confident but means nothing at all."
+      },
+      {
+        "start": 19.762,
+        "end": 25.687,
+        "text": "That's not a bug, that's exactly how the giant models work too, just with trillions more words."
+      },
+      {
+        "start": 25.687,
+        "end": 32.275,
+        "text": "So add your own facts to that little corpus and watch it remix them into things you never actually said."
+      }
+    ],
+    "bytes": 193968,
+    "model": "claude-opus-4-8"
+  },
+  "lab-prompt-scorer": {
+    "hash": "ea2bc2ec7538aed6",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Remember the question checker from last class? Here's its sibling, but for prompts — it hunts for the four anatomy parts we've been talking about: role, context, format, and constraints. Watch what happens when we run the three demos: one scores zero, one scores one, and the last one hits four, the full ladder right in front of you. Then it's your turn to write and score your own. And notice the sneaky bit — you can fool this checker just by stuffing in the right keywords, which is exactly why judgement stays human.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.55,
+        "text": "Remember the question checker from last class?"
+      },
+      {
+        "start": 2.55,
+        "end": 11.512,
+        "text": "Here's its sibling, but for prompts — it hunts for the four anatomy parts we've been talking about: role, context, format, and constraints."
+      },
+      {
+        "start": 11.512,
+        "end": 20.487,
+        "text": "Watch what happens when we run the three demos: one scores zero, one scores one, and the last one hits four, the full ladder right in front of you."
+      },
+      {
+        "start": 20.487,
+        "end": 23.025,
+        "text": "Then it's your turn to write and score your own."
+      },
+      {
+        "start": 23.025,
+        "end": 31.137,
+        "text": "And notice the sneaky bit — you can fool this checker just by stuffing in the right keywords, which is exactly why judgement stays human."
+      }
+    ],
+    "bytes": 187200,
+    "model": "claude-opus-4-8"
+  },
+  "your-project": {
+    "hash": "eae9c787b6e5a94d",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's your project, and it's a fun one. You're going to use an AI tool to summarize a real paper into three parts that actually matter: its contribution, its limitation, and the core summary. But here's the catch, and it's the whole point — you have to fact-check every single claim against the source paper itself. An unverified summary is just a draft; those little checkmarks are what turn it into real work. And that specific limitation you find? That becomes the seed of your very own research question.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.5,
+        "text": "Here's your project, and it's a fun one."
+      },
+      {
+        "start": 2.5,
+        "end": 12.112,
+        "text": "You're going to use an AI tool to summarize a real paper into three parts that actually matter: its contribution, its limitation, and the core summary."
+      },
+      {
+        "start": 12.112,
+        "end": 19.287,
+        "text": "But here's the catch, and it's the whole point — you have to fact-check every single claim against the source paper itself."
+      },
+      {
+        "start": 19.287,
+        "end": 25.35,
+        "text": "An unverified summary is just a draft; those little checkmarks are what turn it into real work."
+      },
+      {
+        "start": 25.35,
+        "end": 27.625,
+        "text": "And that specific limitation you find?"
+      },
+      {
+        "start": 27.625,
+        "end": 30.937,
+        "text": "That becomes the seed of your very own research question."
+      }
+    ],
+    "bytes": 186048,
+    "model": "claude-opus-4-8"
+  },
+  "build-it-now": {
+    "hash": "14d20cffbf8d01c9",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, now it's your turn to actually do this. Grab your paper's abstract, drop it into ChatGPT or Claude with that full anatomy prompt from earlier, and then run the two-minute verify on all three parts. Here's my favorite trick: when the model quotes a sentence, just take a distinctive four-word phrase and search for it in the PDF — found means it's real, not found means you just caught a hallucination red-handed. And if you catch one, screenshot it, because I want to celebrate the first person who spots a fake!",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.975,
+        "text": "Alright, now it's your turn to actually do this."
+      },
+      {
+        "start": 2.975,
+        "end": 13.462,
+        "text": "Grab your paper's abstract, drop it into ChatGPT or Claude with that full anatomy prompt from earlier, and then run the two-minute verify on all three parts."
+      },
+      {
+        "start": 13.462,
+        "end": 25.9,
+        "text": "Here's my favorite trick: when the model quotes a sentence, just take a distinctive four-word phrase and search for it in the PDF — found means it's real, not found means you just caught a hallucination red-handed."
+      },
+      {
+        "start": 25.9,
+        "end": 31.225,
+        "text": "And if you catch one, screenshot it, because I want to celebrate the first person who spots a fake!"
+      }
+    ],
+    "bytes": 187776,
+    "model": "claude-opus-4-8"
+  },
+  "benchmark-summary": {
+    "hash": "7b89c4a5933221be",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let me show you what a properly verified summary actually looks like, using a real paper — the original YOLO detection work, which is the ancestor of the self-driving case we keep coming back to. Notice how every single claim carries a checkmark and tells you exactly where it was verified: the abstract, section one, table one, even the limitation the authors admit themselves. That \"check plus where you checked it\" pattern is the bar you'll be graded against. And see how the mined question names an input, an output, a metric, and a trade-off guard — that's the strong-question shape from before, taking us from paper to project in one hour.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 11.025,
+        "text": "Let me show you what a properly verified summary actually looks like, using a real paper — the original YOLO detection work, which is the ancestor of the self-driving case we keep coming back to."
+      },
+      {
+        "start": 11.025,
+        "end": 23.275,
+        "text": "Notice how every single claim carries a checkmark and tells you exactly where it was verified: the abstract, section one, table one, even the limitation the authors admit themselves."
+      },
+      {
+        "start": 23.275,
+        "end": 27.987,
+        "text": "That \"check plus where you checked it\" pattern is the bar you'll be graded against."
+      },
+      {
+        "start": 27.987,
+        "end": 40.112,
+        "text": "And see how the mined question names an input, an output, a metric, and a trade-off guard — that's the strong-question shape from before, taking us from paper to project in one hour."
+      }
+    ],
+    "bytes": 241056,
+    "model": "claude-opus-4-8"
+  },
+  "reference-key-terms": {
+    "hash": "acbcb7f3a36fca06",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's lock in a few key terms you'll hear all day. A large language model is basically a very sophisticated next-word predictor trained on huge amounts of text, and prompt engineering is how we shape our input to get quality output. Watch out for hallucinations, which are answers that sound confident but are simply wrong, so we always cross-validate against trusted sources. One heads-up: \"cross-validation\" here means checking claims, but in Class 14 that same phrase means something totally different in machine learning, so don't get them tangled.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.95,
+        "text": "Let's lock in a few key terms you'll hear all day."
+      },
+      {
+        "start": 2.95,
+        "end": 14.6,
+        "text": "A large language model is basically a very sophisticated next-word predictor trained on huge amounts of text, and prompt engineering is how we shape our input to get quality output."
+      },
+      {
+        "start": 14.6,
+        "end": 23.075,
+        "text": "Watch out for hallucinations, which are answers that sound confident but are simply wrong, so we always cross-validate against trusted sources."
+      },
+      {
+        "start": 23.075,
+        "end": 33.675,
+        "text": "One heads-up: \"cross-validation\" here means checking claims, but in Class 14 that same phrase means something totally different in machine learning, so don't get them tangled."
+      }
+    ],
+    "bytes": 202464,
+    "model": "claude-opus-4-8"
+  },
+  "homework": {
+    "hash": "afc781a520bcb56a",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's what I'd like you to do before we meet again. First, finish that verified paper summary — summary, contribution, and limitation, each with a checkmark showing where you actually confirmed it, and submit it online. Then design five prompts for your own project and run them through our Lab 2 checker until all four parts light up. And here's the one that really matters: paste your research plan into an AI, ask for three weaknesses, and then decide which criticisms you genuinely accept and why — because judging AI's feedback is exactly the skill we started building in Class 1, now leveled up.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.35,
+        "text": "Alright, here's what I'd like you to do before we meet again."
+      },
+      {
+        "start": 3.35,
+        "end": 13.975,
+        "text": "First, finish that verified paper summary — summary, contribution, and limitation, each with a checkmark showing where you actually confirmed it, and submit it online."
+      },
+      {
+        "start": 13.975,
+        "end": 20.825,
+        "text": "Then design five prompts for your own project and run them through our Lab 2 checker until all four parts light up."
+      },
+      {
+        "start": 20.825,
+        "end": 37.712,
+        "text": "And here's the one that really matters: paste your research plan into an AI, ask for three weaknesses, and then decide which criticisms you genuinely accept and why — because judging AI's feedback is exactly the skill we started building in Class 1, now leveled up."
+      }
+    ],
+    "bytes": 226656,
+    "model": "claude-opus-4-8"
+  },
+  "line-to-remember": {
+    "hash": "b192c8f4309a1127",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a line I want you to carry with you: the goal is to turn data into information, and information into insight. Think of it as a ladder. A language model can climb the first two rungs incredibly fast, sorting raw data into something organized and readable. But that final step — turning information into real insight, with judgment and verification — that part stays firmly in your hands.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.412,
+        "text": "Here's a line I want you to carry with you: the goal is to turn data into information, and information into insight."
+      },
+      {
+        "start": 7.412,
+        "end": 8.937,
+        "text": "Think of it as a ladder."
+      },
+      {
+        "start": 8.937,
+        "end": 17.087,
+        "text": "A language model can climb the first two rungs incredibly fast, sorting raw data into something organized and readable."
+      },
+      {
+        "start": 17.087,
+        "end": 26.312,
+        "text": "But that final step — turning information into real insight, with judgment and verification — that part stays firmly in your hands."
+      }
+    ],
+    "bytes": 158256,
+    "model": "claude-opus-4-8"
+  },
+  "wrap-up": {
+    "hash": "43ca093b87d58f63",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's lock in three things before we go. First, structure your prompts deliberately—give the role, the context, the format you want, and the limits. Second, read every paper in three parts, and remember that the limitation is where your own idea gets mined. And third, these models predict plausible text, so if you can't verify a claim, you can't use it. Before you leave, drop one limitation you spotted today into the chat—that could be your research project. Next time we get gentle with Python and real data, and the assistant you built becomes your co-pilot.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.437,
+        "text": "Let's lock in three things before we go."
+      },
+      {
+        "start": 2.437,
+        "end": 9.212,
+        "text": "First, structure your prompts deliberately—give the role, the context, the format you want, and the limits."
+      },
+      {
+        "start": 9.212,
+        "end": 17.137,
+        "text": "Second, read every paper in three parts, and remember that the limitation is where your own idea gets mined."
+      },
+      {
+        "start": 17.137,
+        "end": 24.137,
+        "text": "And third, these models predict plausible text, so if you can't verify a claim, you can't use it."
+      },
+      {
+        "start": 24.137,
+        "end": 30.675,
+        "text": "Before you leave, drop one limitation you spotted today into the chat—that could be your research project."
+      },
+      {
+        "start": 30.675,
+        "end": 36.737,
+        "text": "Next time we get gentle with Python and real data, and the assistant you built becomes your co-pilot."
+      }
+    ],
+    "bytes": 220752,
+    "model": "claude-opus-4-8"
+  },
+  "backup-material": {
+    "hash": "b5d9db4e704c5169",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, everything from here on is bonus material — extra slides we'll pull up if we've got the time, or if you want to dig a little deeper. There's a section on the skills that AI simply can't replace, which really speaks to where your value lies in this new era. We've also got a worked example of a mentor dialogue reviewing a plan, plus one more quiz to test yourselves. So if we run long, these are here whenever you need them.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.975,
+        "text": "Alright, everything from here on is bonus material — extra slides we'll pull up if we've got the time, or if you want to dig a little deeper."
+      },
+      {
+        "start": 7.975,
+        "end": 15.875,
+        "text": "There's a section on the skills that AI simply can't replace, which really speaks to where your value lies in this new era."
+      },
+      {
+        "start": 15.875,
+        "end": 22.512,
+        "text": "We've also got a worked example of a mentor dialogue reviewing a plan, plus one more quiz to test yourselves."
+      },
+      {
+        "start": 22.512,
+        "end": 25.962,
+        "text": "So if we run long, these are here whenever you need them."
+      }
+    ],
+    "bytes": 156096,
+    "model": "claude-opus-4-8"
+  },
+  "backup-human-skills": {
+    "hash": "22f69bfffcd1ab54",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "So if the AI can draft almost anything, you might wonder what's actually left for you to do. Quite a lot, it turns out. You get to ask the good questions, because defining the right problem matters more than grinding out an answer. You bring the critical judgment to catch weak evidence and made-up facts, and the creativity to make leaps a prediction machine simply can't. And the one thing nobody can hand off — the ethical responsibility for your work. AI amplifies execution, but you own direction, judgment, and responsibility, and those are exactly what this course grades.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.912,
+        "text": "So if the AI can draft almost anything, you might wonder what's actually left for you to do."
+      },
+      {
+        "start": 5.912,
+        "end": 7.712,
+        "text": "Quite a lot, it turns out."
+      },
+      {
+        "start": 7.712,
+        "end": 13.537,
+        "text": "You get to ask the good questions, because defining the right problem matters more than grinding out an answer."
+      },
+      {
+        "start": 13.537,
+        "end": 23.312,
+        "text": "You bring the critical judgment to catch weak evidence and made-up facts, and the creativity to make leaps a prediction machine simply can't."
+      },
+      {
+        "start": 23.312,
+        "end": 28.287,
+        "text": "And the one thing nobody can hand off — the ethical responsibility for your work."
+      },
+      {
+        "start": 28.287,
+        "end": 37.212,
+        "text": "AI amplifies execution, but you own direction, judgment, and responsibility, and those are exactly what this course grades."
+      }
+    ],
+    "bytes": 223632,
+    "model": "claude-opus-4-8"
+  },
+  "backup-mentor-dialogue": {
+    "hash": "c45f59a91cc70b33",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the whole game in one example. You ask the AI to act as a research advisor and critique your plan, and it hands you three solid points about features, baselines, and evaluation. But look at what happens next — you don't just swallow it whole. You accept the baseline-first advice because it's sound, you adapt the \"add more features\" idea since sleep data might be impossible to collect, and you push back hard if it suggests deep learning for two hundred rows. That triage — accept, adapt, reject, each with a reason — is the actual skill. If you agree with everything the model says, you've learned nothing.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.487,
+        "text": "Here's the whole game in one example."
+      },
+      {
+        "start": 2.487,
+        "end": 12.212,
+        "text": "You ask the AI to act as a research advisor and critique your plan, and it hands you three solid points about features, baselines, and evaluation."
+      },
+      {
+        "start": 12.212,
+        "end": 15.512,
+        "text": "But look at what happens next — you don't just swallow it whole."
+      },
+      {
+        "start": 15.512,
+        "end": 28.425,
+        "text": "You accept the baseline-first advice because it's sound, you adapt the \"add more features\" idea since sleep data might be impossible to collect, and you push back hard if it suggests deep learning for two hundred rows."
+      },
+      {
+        "start": 28.425,
+        "end": 35.375,
+        "text": "That triage — accept, adapt, reject, each with a reason — is the actual skill."
+      },
+      {
+        "start": 35.375,
+        "end": 39.25,
+        "text": "If you agree with everything the model says, you've learned nothing."
+      }
+    ],
+    "bytes": 235872,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-backup-bonus": {
+    "hash": "a33c051c247267ff",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a real situation: your AI gives you a lovely summary with direct quotes, but one of those quoted sentences simply isn't in the paper. What do you do? The mature answer isn't blind trust, and it isn't panic-deleting everything either. You treat that one claim as unusable, go back and verify it yourself, and you double-check the quotes right next to it, since your trust just took a hit. And yes, models absolutely do invent direct quotes, so verify locally and keep what actually checks out.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 9.65,
+        "text": "Here's a real situation: your AI gives you a lovely summary with direct quotes, but one of those quoted sentences simply isn't in the paper."
+      },
+      {
+        "start": 9.65,
+        "end": 10.537,
+        "text": "What do you do?"
+      },
+      {
+        "start": 10.537,
+        "end": 16.125,
+        "text": "The mature answer isn't blind trust, and it isn't panic-deleting everything either."
+      },
+      {
+        "start": 16.125,
+        "end": 25.562,
+        "text": "You treat that one claim as unusable, go back and verify it yourself, and you double-check the quotes right next to it, since your trust just took a hit."
+      },
+      {
+        "start": 25.562,
+        "end": 32.65,
+        "text": "And yes, models absolutely do invent direct quotes, so verify locally and keep what actually checks out."
+      }
+    ],
+    "bytes": 196272,
+    "model": "claude-opus-4-8"
+  },
+  "title": {
+    "hash": "fb65ae0b5a3d8cae",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Welcome back, everyone — this might just be the most useful hour of the whole course, because today we take a tool most of you already use and learn to use it properly. We're going to turn ChatGPT into a genuine research assistant, one that helps you dig into papers and summarize them fast. But here's the twist: we're also going to learn to distrust it, productively. By the end you'll produce a verified summary — one where you've squeezed real value from the AI and checked every claim it made.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 9.15,
+        "text": "Welcome back, everyone — this might just be the most useful hour of the whole course, because today we take a tool most of you already use and learn to use it properly."
+      },
+      {
+        "start": 9.15,
+        "end": 17.687,
+        "text": "We're going to turn ChatGPT into a genuine research assistant, one that helps you dig into papers and summarize them fast."
+      },
+      {
+        "start": 17.687,
+        "end": 22.312,
+        "text": "But here's the twist: we're also going to learn to distrust it, productively."
+      },
+      {
+        "start": 22.312,
+        "end": 30.212,
+        "text": "By the end you'll produce a verified summary — one where you've squeezed real value from the AI and checked every claim it made."
+      }
+    ],
+    "bytes": 181584,
+    "model": "claude-opus-4-8"
+  }
+}

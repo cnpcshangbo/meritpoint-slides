@@ -1,0 +1,1051 @@
+{
+  "title": {
+    "hash": "f2521cfb894a8864",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Welcome back, everyone! Today we're stepping into something that might sound scary but really isn't — using a little Python to handle real data. Here's my promise to you: you don't need to learn all of programming, just about six simple moves, and we'll take them slowly together. Every bit of code we look at runs right in your browser, and that AI helper from last class is standing by whenever you get stuck. So take a breath — there's genuinely nothing to fear here.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.537,
+        "text": "Welcome back, everyone!"
+      },
+      {
+        "start": 1.537,
+        "end": 8.512,
+        "text": "Today we're stepping into something that might sound scary but really isn't — using a little Python to handle real data."
+      },
+      {
+        "start": 8.512,
+        "end": 15.9,
+        "text": "Here's my promise to you: you don't need to learn all of programming, just about six simple moves, and we'll take them slowly together."
+      },
+      {
+        "start": 15.9,
+        "end": 23.575,
+        "text": "Every bit of code we look at runs right in your browser, and that AI helper from last class is standing by whenever you get stuck."
+      },
+      {
+        "start": 23.575,
+        "end": 27.2,
+        "text": "So take a breath — there's genuinely nothing to fear here."
+      }
+    ],
+    "bytes": 163584,
+    "model": "claude-opus-4-8"
+  },
+  "recap-class04": {
+    "hash": "06e78d56c1d6640c",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's rewind to where we left off last time. Remember prompt anatomy — role, context, format, and constraints — where constraints are what make an answer something you can actually check. We looked at reading papers in three parts, and the limitation is where your own ideas start to grow. And the big one: these models predict plausible-sounding text, so if you can't verify a claim, you can't use it. So who caught a hallucination out in the wild? Today your assistant becomes a coding co-pilot — paste any error, ask what it means, then fix it yourself.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.487,
+        "text": "Let's rewind to where we left off last time."
+      },
+      {
+        "start": 2.487,
+        "end": 10.9,
+        "text": "Remember prompt anatomy — role, context, format, and constraints — where constraints are what make an answer something you can actually check."
+      },
+      {
+        "start": 10.9,
+        "end": 17.937,
+        "text": "We looked at reading papers in three parts, and the limitation is where your own ideas start to grow."
+      },
+      {
+        "start": 17.937,
+        "end": 25.275,
+        "text": "And the big one: these models predict plausible-sounding text, so if you can't verify a claim, you can't use it."
+      },
+      {
+        "start": 25.275,
+        "end": 27.912,
+        "text": "So who caught a hallucination out in the wild?"
+      },
+      {
+        "start": 27.912,
+        "end": 35.45,
+        "text": "Today your assistant becomes a coding co-pilot — paste any error, ask what it means, then fix it yourself."
+      }
+    ],
+    "bytes": 213120,
+    "model": "claude-opus-4-8"
+  },
+  "agenda": {
+    "hash": "d1483e547464b5fa",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's how our hour is going to flow. We'll start by sharing homework and meeting an analyst who built his own tool, then we'll learn that everything in data is really just a table. After that, I'll give you four simple verbs to work with, show you how to filter and clean messy data, and then we roll straight into demos and two hands-on labs. By the end, you'll read any dataset as rows and columns, run those verbs on real data, and produce your own cleaned dataset and chart — and honestly, this class is judged by what you run, not what you hear.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.137,
+        "text": "Here's how our hour is going to flow."
+      },
+      {
+        "start": 2.137,
+        "end": 10.525,
+        "text": "We'll start by sharing homework and meeting an analyst who built his own tool, then we'll learn that everything in data is really just a table."
+      },
+      {
+        "start": 10.525,
+        "end": 20.662,
+        "text": "After that, I'll give you four simple verbs to work with, show you how to filter and clean messy data, and then we roll straight into demos and two hands-on labs."
+      },
+      {
+        "start": 20.662,
+        "end": 34.187,
+        "text": "By the end, you'll read any dataset as rows and columns, run those verbs on real data, and produce your own cleaned dataset and chart — and honestly, this class is judged by what you run, not what you hear."
+      }
+    ],
+    "bytes": 205488,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-warmup": {
+    "hash": "6f7050e570da5134",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's start with a quick puzzle to warm up your thinking. Imagine a self-driving car that captures thirty frames every second, spotting several objects in each one. If you had to write down what just one second of its vision looks like, what form would that take? Take a guess and tap your answer. Here's the beautiful thing: every detection becomes a row, and every fact about it — which frame, what object, how confident, how far away — becomes a column. Today, you're going to hold exactly that table in your hands.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.537,
+        "text": "Let's start with a quick puzzle to warm up your thinking."
+      },
+      {
+        "start": 2.537,
+        "end": 9.762,
+        "text": "Imagine a self-driving car that captures thirty frames every second, spotting several objects in each one."
+      },
+      {
+        "start": 9.762,
+        "end": 15.1,
+        "text": "If you had to write down what just one second of its vision looks like, what form would that take?"
+      },
+      {
+        "start": 15.1,
+        "end": 17.112,
+        "text": "Take a guess and tap your answer."
+      },
+      {
+        "start": 17.112,
+        "end": 28.625,
+        "text": "Here's the beautiful thing: every detection becomes a row, and every fact about it — which frame, what object, how confident, how far away — becomes a column."
+      },
+      {
+        "start": 28.625,
+        "end": 31.925,
+        "text": "Today, you're going to hold exactly that table in your hands."
+      }
+    ],
+    "bytes": 191952,
+    "model": "claude-opus-4-8"
+  },
+  "story-pandas": {
+    "hash": "603ca1bf21b88e21",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let me tell you about a guy named Wes McKinney, who back in 2008 was buried under endless financial spreadsheets at a hedge fund. Python just didn't have a good way to work with tables of data, so instead of suffering, he built the tool himself and called it pandas. And here's the fun part: the name isn't the animal at all — it comes from \"panel data,\" an economist's word for tables over time. Think of it as a super-charged Excel that speaks Python, handling millions of rows automatically. It exists simply because one person got tired of wrestling messy tables by hand.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 8.175,
+        "text": "Let me tell you about a guy named Wes McKinney, who back in 2008 was buried under endless financial spreadsheets at a hedge fund."
+      },
+      {
+        "start": 8.175,
+        "end": 15.812,
+        "text": "Python just didn't have a good way to work with tables of data, so instead of suffering, he built the tool himself and called it pandas."
+      },
+      {
+        "start": 15.812,
+        "end": 23.912,
+        "text": "And here's the fun part: the name isn't the animal at all — it comes from \"panel data,\" an economist's word for tables over time."
+      },
+      {
+        "start": 23.912,
+        "end": 30.4,
+        "text": "Think of it as a super-charged Excel that speaks Python, handling millions of rows automatically."
+      },
+      {
+        "start": 30.4,
+        "end": 35.65,
+        "text": "It exists simply because one person got tired of wrestling messy tables by hand."
+      }
+    ],
+    "bytes": 214272,
+    "model": "claude-opus-4-8"
+  },
+  "concept-table": {
+    "hash": "44c2fc50b1ba4887",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the single most important idea of the whole hour: everything you'll work with is just a table. Each row is one thing — one detection, one house, one passenger, one day of your life. And each column is one fact about those things — a price, a confidence score, an age, hours you slept. In pandas we call this shape a DataFrame, and once you truly see your data this way, the code gets simple. Honestly, that's about ninety percent of data science right there.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.5120000000000005,
+        "text": "Here's the single most important idea of the whole hour: everything you'll work with is just a table."
+      },
+      {
+        "start": 6.5120000000000005,
+        "end": 13.037,
+        "text": "Each row is one thing — one detection, one house, one passenger, one day of your life."
+      },
+      {
+        "start": 13.037,
+        "end": 19.95,
+        "text": "And each column is one fact about those things — a price, a confidence score, an age, hours you slept."
+      },
+      {
+        "start": 19.95,
+        "end": 26.8,
+        "text": "In pandas we call this shape a DataFrame, and once you truly see your data this way, the code gets simple."
+      },
+      {
+        "start": 26.8,
+        "end": 30.687,
+        "text": "Honestly, that's about ninety percent of data science right there."
+      }
+    ],
+    "bytes": 184464,
+    "model": "claude-opus-4-8"
+  },
+  "concept-series-df": {
+    "hash": "bd3692046694bdcc",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, in pandas there are really just two containers you need to know. A Series is a single labeled column — like these scores tied to Alice, Bob, and Carl — and you can ask it questions, like \"what's the average?\" A DataFrame is the whole table, just a bunch of Series sharing the same rows, exactly like an Excel sheet. And here's the neat part: pull one column out of a DataFrame and you get a Series right back. That's the entire type system for this course — you already understand both.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.35,
+        "text": "Alright, in pandas there are really just two containers you need to know."
+      },
+      {
+        "start": 4.35,
+        "end": 12.637,
+        "text": "A Series is a single labeled column — like these scores tied to Alice, Bob, and Carl — and you can ask it questions, like \"what's the average?\""
+      },
+      {
+        "start": 12.637,
+        "end": 20.312,
+        "text": "A DataFrame is the whole table, just a bunch of Series sharing the same rows, exactly like an Excel sheet."
+      },
+      {
+        "start": 20.312,
+        "end": 25.375,
+        "text": "And here's the neat part: pull one column out of a DataFrame and you get a Series right back."
+      },
+      {
+        "start": 25.375,
+        "end": 30.137,
+        "text": "That's the entire type system for this course — you already understand both."
+      }
+    ],
+    "bytes": 181152,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-table": {
+    "hash": "d99432f434f34ee3",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's nail down something that trips up almost every beginner. Imagine you've been logging your study for a whole month, and each time you sit down you record the date, the subject, the minutes, and how focused you felt. So what counts as one row in that table? It's one single study session, with all four of those facts riding along together, while things like subject and minutes are the columns. Get this straight now, and every command we write later will just make sense.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.6,
+        "text": "Let's nail down something that trips up almost every beginner."
+      },
+      {
+        "start": 3.6,
+        "end": 12.537,
+        "text": "Imagine you've been logging your study for a whole month, and each time you sit down you record the date, the subject, the minutes, and how focused you felt."
+      },
+      {
+        "start": 12.537,
+        "end": 14.737,
+        "text": "So what counts as one row in that table?"
+      },
+      {
+        "start": 14.737,
+        "end": 22.512,
+        "text": "It's one single study session, with all four of those facts riding along together, while things like subject and minutes are the columns."
+      },
+      {
+        "start": 22.512,
+        "end": 27.037,
+        "text": "Get this straight now, and every command we write later will just make sense."
+      }
+    ],
+    "bytes": 162576,
+    "model": "claude-opus-4-8"
+  },
+  "concept-four-verbs": {
+    "hash": "70e6468de810b8e5",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a secret that took me years to learn: most of the data work you'll ever do comes down to just four moves. First, you load your file into a table with a single line. Then you inspect it — peek at the first few rows, check the column types, and get quick statistics. Next you select the columns you actually care about, and finally you summarize with averages or counts. Load, inspect, select, summarize — master those four verbs, and you've got eighty percent of the job covered.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.55,
+        "text": "Here's a secret that took me years to learn: most of the data work you'll ever do comes down to just four moves."
+      },
+      {
+        "start": 6.55,
+        "end": 10.275,
+        "text": "First, you load your file into a table with a single line."
+      },
+      {
+        "start": 10.275,
+        "end": 16.237,
+        "text": "Then you inspect it — peek at the first few rows, check the column types, and get quick statistics."
+      },
+      {
+        "start": 16.237,
+        "end": 22.212,
+        "text": "Next you select the columns you actually care about, and finally you summarize with averages or counts."
+      },
+      {
+        "start": 22.212,
+        "end": 29.4,
+        "text": "Load, inspect, select, summarize — master those four verbs, and you've got eighty percent of the job covered."
+      }
+    ],
+    "bytes": 176688,
+    "model": "claude-opus-4-8"
+  },
+  "concept-filter": {
+    "hash": "182b3c9bb9d66126",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's one of the most powerful ideas you'll use all term: filtering just means keeping only the rows that match what you care about. Read this from the inside out — first we mark every row true or false, like \"is the confidence above ninety percent?\", then we keep only the true ones. You can combine conditions too, using and, or, and not, just remember to wrap each piece in its own parentheses. And here's why it matters: every research question you'll ever ask is really a filter. \"How does our detector do on pedestrians at night?\" — that's just filter the rows, then summarize.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.687,
+        "text": "Here's one of the most powerful ideas you'll use all term: filtering just means keeping only the rows that match what you care about."
+      },
+      {
+        "start": 7.687,
+        "end": 17.95,
+        "text": "Read this from the inside out — first we mark every row true or false, like \"is the confidence above ninety percent?\", then we keep only the true ones."
+      },
+      {
+        "start": 17.95,
+        "end": 25.775,
+        "text": "You can combine conditions too, using and, or, and not, just remember to wrap each piece in its own parentheses."
+      },
+      {
+        "start": 25.775,
+        "end": 31.487,
+        "text": "And here's why it matters: every research question you'll ever ask is really a filter."
+      },
+      {
+        "start": 31.487,
+        "end": 34.512,
+        "text": "\"How does our detector do on pedestrians at night?\""
+      },
+      {
+        "start": 34.512,
+        "end": 37.662,
+        "text": "— that's just filter the rows, then summarize."
+      }
+    ],
+    "bytes": 226368,
+    "model": "claude-opus-4-8"
+  },
+  "concept-missing": {
+    "hash": "0073c1b4537ae8d7",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a truth about real-world data: it almost always has holes, missing values scattered through your columns. So the very first thing you do after loading a dataset is count those holes, column by column. Then you face a judgment call: if only a few rows are affected, just drop them, that's simple and honest. But if too many rows would vanish, you fill the gaps instead, usually with the median or mean. And here's the ethical part that really matters — filling values is quietly inventing data, so you must always disclose exactly what you filled.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.037,
+        "text": "Here's a truth about real-world data: it almost always has holes, missing values scattered through your columns."
+      },
+      {
+        "start": 7.037,
+        "end": 12.375,
+        "text": "So the very first thing you do after loading a dataset is count those holes, column by column."
+      },
+      {
+        "start": 12.375,
+        "end": 19.275,
+        "text": "Then you face a judgment call: if only a few rows are affected, just drop them, that's simple and honest."
+      },
+      {
+        "start": 19.275,
+        "end": 25.65,
+        "text": "But if too many rows would vanish, you fill the gaps instead, usually with the median or mean."
+      },
+      {
+        "start": 25.65,
+        "end": 35.312,
+        "text": "And here's the ethical part that really matters — filling values is quietly inventing data, so you must always disclose exactly what you filled."
+      }
+    ],
+    "bytes": 212256,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-missing": {
+    "hash": "fd2cf987de365303",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Okay, here's a real decision. You've got 900 rows, twelve missing a distance value and 400 missing an age. The trap answer is filling everything with zero — sure, your code runs, but now you've invented 400 newborns and quietly wrecked every age statistic, and nobody sees the damage. The smart move: those twelve holes are cheap, just drop them, but 400 is nearly half your data, so fill those with the median. And whatever you choose, write it down so others know.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.187,
+        "text": "Okay, here's a real decision."
+      },
+      {
+        "start": 2.187,
+        "end": 7.612,
+        "text": "You've got 900 rows, twelve missing a distance value and 400 missing an age."
+      },
+      {
+        "start": 7.612,
+        "end": 19.95,
+        "text": "The trap answer is filling everything with zero — sure, your code runs, but now you've invented 400 newborns and quietly wrecked every age statistic, and nobody sees the damage."
+      },
+      {
+        "start": 19.95,
+        "end": 28.362,
+        "text": "The smart move: those twelve holes are cheap, just drop them, but 400 is nearly half your data, so fill those with the median."
+      },
+      {
+        "start": 28.362,
+        "end": 31.95,
+        "text": "And whatever you choose, write it down so others know."
+      }
+    ],
+    "bytes": 192096,
+    "model": "claude-opus-4-8"
+  },
+  "why-python": {
+    "hash": "2ddb6943e6db750f",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's step back for a second and ask why we keep coming back to Python for everything we do. Honestly, it reads almost like English—when you see something that averages the ages in a table, you can practically guess what it does, so your brain stays on the real problem, not the punctuation. And it comes fully loaded: tables, math, charts, models, all in one connected toolkit. Best of all, whatever you learn today keeps paying off—the same language that opens a simple file will one day run your neural networks, with nothing to relearn.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.325,
+        "text": "Let's step back for a second and ask why we keep coming back to Python for everything we do."
+      },
+      {
+        "start": 5.325,
+        "end": 16.875,
+        "text": "Honestly, it reads almost like English—when you see something that averages the ages in a table, you can practically guess what it does, so your brain stays on the real problem, not the punctuation."
+      },
+      {
+        "start": 16.875,
+        "end": 23.662,
+        "text": "And it comes fully loaded: tables, math, charts, models, all in one connected toolkit."
+      },
+      {
+        "start": 23.662,
+        "end": 34.15,
+        "text": "Best of all, whatever you learn today keeps paying off—the same language that opens a simple file will one day run your neural networks, with nothing to relearn."
+      }
+    ],
+    "bytes": 205200,
+    "model": "claude-opus-4-8"
+  },
+  "case-detection-log": {
+    "hash": "f2f132b08afba38a",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Think of a self-driving car keeping a diary, and every time it spots something it writes one line: the frame, what it thinks the object is, how confident it is, the box size, and the distance. That's just a table, and we're going to walk it with our four verbs — look at it, describe it, filter it, and summarize it. We might ask what the average confidence is, or pull out only the pedestrians the car wasn't sure about, below seventy percent, because those are the risky ones. Real self-driving teams stare at exactly this kind of file all day, and in a moment you'll be holding these very rows yourself.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 12.25,
+        "text": "Think of a self-driving car keeping a diary, and every time it spots something it writes one line: the frame, what it thinks the object is, how confident it is, the box size, and the distance."
+      },
+      {
+        "start": 12.25,
+        "end": 18.9,
+        "text": "That's just a table, and we're going to walk it with our four verbs — look at it, describe it, filter it, and summarize it."
+      },
+      {
+        "start": 18.9,
+        "end": 27.687,
+        "text": "We might ask what the average confidence is, or pull out only the pedestrians the car wasn't sure about, below seventy percent, because those are the risky ones."
+      },
+      {
+        "start": 27.687,
+        "end": 35.712,
+        "text": "Real self-driving teams stare at exactly this kind of file all day, and in a moment you'll be holding these very rows yourself."
+      }
+    ],
+    "bytes": 214704,
+    "model": "claude-opus-4-8"
+  },
+  "discuss-life-dataset": {
+    "hash": "6360332901d0140c",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's your challenge: turn your own week into a dataset. Grab a partner and design the table — first decide what a single row represents. Is it one day? One meal? One study session? Then pick four to six columns worth tracking, like sleep, mood, or screen time. And here's the tricky part I want you to wrestle with: which column would be hardest to measure honestly? You've got three minutes, then let's hear a few out loud.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.5120000000000005,
+        "text": "Alright, here's your challenge: turn your own week into a dataset."
+      },
+      {
+        "start": 4.5120000000000005,
+        "end": 9.75,
+        "text": "Grab a partner and design the table — first decide what a single row represents."
+      },
+      {
+        "start": 9.75,
+        "end": 10.962,
+        "text": "Is it one day?"
+      },
+      {
+        "start": 10.962,
+        "end": 11.862,
+        "text": "One meal?"
+      },
+      {
+        "start": 11.862,
+        "end": 13.237,
+        "text": "One study session?"
+      },
+      {
+        "start": 13.237,
+        "end": 18.587,
+        "text": "Then pick four to six columns worth tracking, like sleep, mood, or screen time."
+      },
+      {
+        "start": 18.587,
+        "end": 24.3,
+        "text": "And here's the tricky part I want you to wrestle with: which column would be hardest to measure honestly?"
+      },
+      {
+        "start": 24.3,
+        "end": 27.362,
+        "text": "You've got three minutes, then let's hear a few out loud."
+      }
+    ],
+    "bytes": 164592,
+    "model": "claude-opus-4-8"
+  },
+  "demo-colab": {
+    "hash": "e4c3d76fa252313f",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Okay, watch closely, because this is exactly what you'll hand in tonight — going from a raw file all the way to a finished chart in just five moves. We start by getting the data in, either by uploading the file or pulling it straight from a link, and I'll go slow here because this first step trips up almost everyone. Then we peek at the data, count the missing values, and decide whether to drop them or fill them in with the median. We run one quick command for the statistics, and finally — the big finish — we draw a histogram of passenger ages and label those axes. Watch it once, then it's all yours.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 8.75,
+        "text": "Okay, watch closely, because this is exactly what you'll hand in tonight — going from a raw file all the way to a finished chart in just five moves."
+      },
+      {
+        "start": 8.75,
+        "end": 18.712,
+        "text": "We start by getting the data in, either by uploading the file or pulling it straight from a link, and I'll go slow here because this first step trips up almost everyone."
+      },
+      {
+        "start": 18.712,
+        "end": 25.537,
+        "text": "Then we peek at the data, count the missing values, and decide whether to drop them or fill them in with the median."
+      },
+      {
+        "start": 25.537,
+        "end": 34.687,
+        "text": "We run one quick command for the statistics, and finally — the big finish — we draw a histogram of passenger ages and label those axes."
+      },
+      {
+        "start": 34.687,
+        "end": 36.912,
+        "text": "Watch it once, then it's all yours."
+      }
+    ],
+    "bytes": 221904,
+    "model": "claude-opus-4-8"
+  },
+  "demo-titanic": {
+    "hash": "3eb735456049ef24",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Remember those twelve tidy little rows we played with last time? Well, here's the real thing — 891 actual passengers, 12 columns, and some genuine gaps in the Age data that we'll have to deal with. Before you touch a single row, go read the data dictionary; that's what professionals do first, every time. And notice these numbers — an average age of 29.7 and 342 survivors out of 891 — because in the next lab, you're going to compute those yourself and see if they hold up.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.8120000000000003,
+        "text": "Remember those twelve tidy little rows we played with last time?"
+      },
+      {
+        "start": 3.8120000000000003,
+        "end": 12.9,
+        "text": "Well, here's the real thing — 891 actual passengers, 12 columns, and some genuine gaps in the Age data that we'll have to deal with."
+      },
+      {
+        "start": 12.9,
+        "end": 19.425,
+        "text": "Before you touch a single row, go read the data dictionary; that's what professionals do first, every time."
+      },
+      {
+        "start": 19.425,
+        "end": 32.5,
+        "text": "And notice these numbers — an average age of 29.7 and 342 survivors out of 891 — because in the next lab, you're going to compute those yourself and see if they hold up."
+      }
+    ],
+    "bytes": 195408,
+    "model": "claude-opus-4-8"
+  },
+  "demo-ai-debug": {
+    "hash": "310ae5e22976927d",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a promise: you will hit errors tonight, and that's completely normal. What separates frustration from learning is the routine you use when that red message appears. First, paste the whole error and ask what it means in one sentence. Then share your code and ask for the smallest fix. And here's the magic step most people skip: once it works, ask why it worked, so you actually learn the pattern instead of just copying it.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.525,
+        "text": "Here's a promise: you will hit errors tonight, and that's completely normal."
+      },
+      {
+        "start": 4.525,
+        "end": 10.1,
+        "text": "What separates frustration from learning is the routine you use when that red message appears."
+      },
+      {
+        "start": 10.1,
+        "end": 14.687,
+        "text": "First, paste the whole error and ask what it means in one sentence."
+      },
+      {
+        "start": 14.687,
+        "end": 17.812,
+        "text": "Then share your code and ask for the smallest fix."
+      },
+      {
+        "start": 17.812,
+        "end": 25.512,
+        "text": "And here's the magic step most people skip: once it works, ask why it worked, so you actually learn the pattern instead of just copying it."
+      }
+    ],
+    "bytes": 153504,
+    "model": "claude-opus-4-8"
+  },
+  "lab-detection-log": {
+    "hash": "e670ee6c0bdd6967",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's the car's own diary — every row is one thing it spotted, with how confident it was and how far away. We're going to run four simple moves: look at the data, inspect what's most common, select just the rows we care about, and summarize with an average. The first run takes a few seconds to wake up, so watch how each verb answers a real question. Keep an eye on those risky pedestrians — the ones the car barely saw but that are actually close. That's the exact safety puzzle we'll wrestle with next class.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 8.512,
+        "text": "Alright, here's the car's own diary — every row is one thing it spotted, with how confident it was and how far away."
+      },
+      {
+        "start": 8.512,
+        "end": 18.087,
+        "text": "We're going to run four simple moves: look at the data, inspect what's most common, select just the rows we care about, and summarize with an average."
+      },
+      {
+        "start": 18.087,
+        "end": 24,
+        "text": "The first run takes a few seconds to wake up, so watch how each verb answers a real question."
+      },
+      {
+        "start": 24,
+        "end": 29.887,
+        "text": "Keep an eye on those risky pedestrians — the ones the car barely saw but that are actually close."
+      },
+      {
+        "start": 29.887,
+        "end": 33.637,
+        "text": "That's the exact safety puzzle we'll wrestle with next class."
+      }
+    ],
+    "bytes": 202176,
+    "model": "claude-opus-4-8"
+  },
+  "lab-titanic": {
+    "hash": "1cf188c840cc98f5",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Remember back in Class 1, when we counted twelve passengers by hand and wrote out loops just to get one survival number? Today we do the exact same question, but with real tools — we find the missing ages, fill them with the median and honestly announce that we did, and then one groupby line answers everything at once. Watch what happens: females survive at a much higher rate than males, but it's not a perfect split, so remember it's an association, not destiny. And tonight, your challenge is to run these same lines on the full 891 rows and see if the pattern holds.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7,
+        "text": "Remember back in Class 1, when we counted twelve passengers by hand and wrote out loops just to get one survival number?"
+      },
+      {
+        "start": 7,
+        "end": 19.237,
+        "text": "Today we do the exact same question, but with real tools — we find the missing ages, fill them with the median and honestly announce that we did, and then one groupby line answers everything at once."
+      },
+      {
+        "start": 19.237,
+        "end": 28.825,
+        "text": "Watch what happens: females survive at a much higher rate than males, but it's not a perfect split, so remember it's an association, not destiny."
+      },
+      {
+        "start": 28.825,
+        "end": 36.587,
+        "text": "And tonight, your challenge is to run these same lines on the full 891 rows and see if the pattern holds."
+      }
+    ],
+    "bytes": 219888,
+    "model": "claude-opus-4-8"
+  },
+  "your-project": {
+    "hash": "e91933781c441a49",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's where everything we've learned comes together into your first real project. You're going to take a messy CSV, load it up in Colab, find the holes in the data, and decide whether to drop or fill them — and be ready to explain your choice. Then you'll compute some basic statistics and build one clean chart, with a proper title and labeled axes. Before you hand it in, run it top-to-bottom with no errors, because that's the professional bar we're aiming for.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.05,
+        "text": "Alright, here's where everything we've learned comes together into your first real project."
+      },
+      {
+        "start": 5.05,
+        "end": 15.225,
+        "text": "You're going to take a messy CSV, load it up in Colab, find the holes in the data, and decide whether to drop or fill them — and be ready to explain your choice."
+      },
+      {
+        "start": 15.225,
+        "end": 21.937,
+        "text": "Then you'll compute some basic statistics and build one clean chart, with a proper title and labeled axes."
+      },
+      {
+        "start": 21.937,
+        "end": 28.75,
+        "text": "Before you hand it in, run it top-to-bottom with no errors, because that's the professional bar we're aiming for."
+      }
+    ],
+    "bytes": 172800,
+    "model": "claude-opus-4-8"
+  },
+  "build-it-now": {
+    "hash": "4fdb5ed23d130de2",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, this is where we actually build it. Open Colab, start a fresh notebook, and pull in that Titanic file from Kaggle — then run your four verbs to read it, peek at it, inspect it, and summarize it. Fill those missing ages with the median and print a line saying what you did, then pick one grouping that genuinely interests you and make one clean labeled chart. And here's the important part: when you hit an error, that's not failure, that's the lesson — paste it into your assistant, understand it, fix it yourself, and every bug you beat tonight becomes a pattern you own forever.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.25,
+        "text": "Alright, this is where we actually build it."
+      },
+      {
+        "start": 2.25,
+        "end": 12.55,
+        "text": "Open Colab, start a fresh notebook, and pull in that Titanic file from Kaggle — then run your four verbs to read it, peek at it, inspect it, and summarize it."
+      },
+      {
+        "start": 12.55,
+        "end": 22.275,
+        "text": "Fill those missing ages with the median and print a line saying what you did, then pick one grouping that genuinely interests you and make one clean labeled chart."
+      },
+      {
+        "start": 22.275,
+        "end": 35.025,
+        "text": "And here's the important part: when you hit an error, that's not failure, that's the lesson — paste it into your assistant, understand it, fix it yourself, and every bug you beat tonight becomes a pattern you own forever."
+      }
+    ],
+    "bytes": 210528,
+    "model": "claude-opus-4-8"
+  },
+  "benchmark-notebook": {
+    "hash": "df64077ef4b3e5ff",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let me show you what a finished data task actually looks like, because this is the standard I want you to judge your own work against. Notice three things: when you fill in missing values, you announce it out loud so a reader knows exactly what happened; you don't just dump every statistic, you pick one comparison and write a sentence saying what it means; and your chart has a title, labeled axes, and a plain-English takeaway underneath. The real test is simple — could someone who missed tonight open your notebook, press run, and understand what you found? If yes, that's a research artifact, not just homework.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.175,
+        "text": "Let me show you what a finished data task actually looks like, because this is the standard I want you to judge your own work against."
+      },
+      {
+        "start": 6.175,
+        "end": 24.2,
+        "text": "Notice three things: when you fill in missing values, you announce it out loud so a reader knows exactly what happened; you don't just dump every statistic, you pick one comparison and write a sentence saying what it means; and your chart has a title, labeled axes, and a plain-English takeaway underneath."
+      },
+      {
+        "start": 24.2,
+        "end": 31.525,
+        "text": "The real test is simple — could someone who missed tonight open your notebook, press run, and understand what you found?"
+      },
+      {
+        "start": 31.525,
+        "end": 35.362,
+        "text": "If yes, that's a research artifact, not just homework."
+      }
+    ],
+    "bytes": 212544,
+    "model": "claude-opus-4-8"
+  },
+  "reference-key-terms": {
+    "hash": "1e3bbc2f022b356c",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let me give you the vocabulary we'll be using from here on out. A DataFrame is just a table—rows are your examples, columns are your variables—and when you pull a single column out, that's called a Series. CSV is the plain-text format that every tool understands, and boolean indexing is how we filter rows using a true-or-false condition. NaN is pandas' way of flagging a missing value, and EDA—exploratory data analysis—is that inspect, summarize, and plot ritual you always do before building any model.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.412,
+        "text": "Let me give you the vocabulary we'll be using from here on out."
+      },
+      {
+        "start": 3.412,
+        "end": 12.012,
+        "text": "A DataFrame is just a table—rows are your examples, columns are your variables—and when you pull a single column out, that's called a Series."
+      },
+      {
+        "start": 12.012,
+        "end": 20.675,
+        "text": "CSV is the plain-text format that every tool understands, and boolean indexing is how we filter rows using a true-or-false condition."
+      },
+      {
+        "start": 20.675,
+        "end": 33.062,
+        "text": "NaN is pandas' way of flagging a missing value, and EDA—exploratory data analysis—is that inspect, summarize, and plot ritual you always do before building any model."
+      }
+    ],
+    "bytes": 198720,
+    "model": "claude-opus-4-8"
+  },
+  "homework": {
+    "hash": "6d595777ae7b969d",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's what I'd love you to do before we meet again. Finish your first real data task on the full Titanic dataset — clean it, run the stats, make a labeled chart, do a Run-all to make sure it works top to bottom, then drop the Colab link in Classroom. Look at survival by sex across all 891 passengers, count up the Embarked column, and fill the missing ages with the median to see if the numbers shift. And keep one debugging win: an error, the explanation, and your fix. If you're feeling bold, that Kaggle Titanic challenge I teased on day one is finally within your reach — go submit a real prediction.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.125,
+        "text": "Alright, here's what I'd love you to do before we meet again."
+      },
+      {
+        "start": 3.125,
+        "end": 16.05,
+        "text": "Finish your first real data task on the full Titanic dataset — clean it, run the stats, make a labeled chart, do a Run-all to make sure it works top to bottom, then drop the Colab link in Classroom."
+      },
+      {
+        "start": 16.05,
+        "end": 26.262,
+        "text": "Look at survival by sex across all 891 passengers, count up the Embarked column, and fill the missing ages with the median to see if the numbers shift."
+      },
+      {
+        "start": 26.262,
+        "end": 31.175,
+        "text": "And keep one debugging win: an error, the explanation, and your fix."
+      },
+      {
+        "start": 31.175,
+        "end": 39.225,
+        "text": "If you're feeling bold, that Kaggle Titanic challenge I teased on day one is finally within your reach — go submit a real prediction."
+      }
+    ],
+    "bytes": 235728,
+    "model": "claude-opus-4-8"
+  },
+  "line-to-remember": {
+    "hash": "fbc924fa644f616f",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a line I want you to carry with you tonight: \"Without data, you're just another person with an opinion.\" That's from W. Edwards Deming, and it's a little bit of a challenge, isn't it? Because opinions are cheap, but evidence changes minds. So tonight you stop being that person with just an opinion — we're going to work with four verbs, one chart, and real numbers to back up what you say.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.425,
+        "text": "Here's a line I want you to carry with you tonight: \"Without data, you're just another person with an opinion.\""
+      },
+      {
+        "start": 6.425,
+        "end": 11.412,
+        "text": "That's from W. Edwards Deming, and it's a little bit of a challenge, isn't it?"
+      },
+      {
+        "start": 11.412,
+        "end": 15.162,
+        "text": "Because opinions are cheap, but evidence changes minds."
+      },
+      {
+        "start": 15.162,
+        "end": 22.7,
+        "text": "So tonight you stop being that person with just an opinion — we're going to work with four verbs, one chart, and real numbers to back up what you say."
+      }
+    ],
+    "bytes": 136512,
+    "model": "claude-opus-4-8"
+  },
+  "wrap-up": {
+    "hash": "1829b9d191991534",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's pull together the big ideas worth keeping. First, data is just rows and columns — examples going down, variables going across — and once you see it that way, the code stops feeling scary. Second, four simple verbs do most of the job: load, inspect, select, summarize. And third, real data always has holes, so find them, decide whether to drop or fill them, and always say what you did. For your exit ticket, tell me one column you'd add to the car's detection log and what new question it would let you ask — post it in the chat. Next time we grab the research toolbox, the tools that hunt down the right papers and datasets for you.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.7,
+        "text": "Let's pull together the big ideas worth keeping."
+      },
+      {
+        "start": 2.7,
+        "end": 12.862,
+        "text": "First, data is just rows and columns — examples going down, variables going across — and once you see it that way, the code stops feeling scary."
+      },
+      {
+        "start": 12.862,
+        "end": 19.3,
+        "text": "Second, four simple verbs do most of the job: load, inspect, select, summarize."
+      },
+      {
+        "start": 19.3,
+        "end": 27.937,
+        "text": "And third, real data always has holes, so find them, decide whether to drop or fill them, and always say what you did."
+      },
+      {
+        "start": 27.937,
+        "end": 36.05,
+        "text": "For your exit ticket, tell me one column you'd add to the car's detection log and what new question it would let you ask — post it in the chat."
+      },
+      {
+        "start": 36.05,
+        "end": 42.1,
+        "text": "Next time we grab the research toolbox, the tools that hunt down the right papers and datasets for you."
+      }
+    ],
+    "bytes": 253008,
+    "model": "claude-opus-4-8"
+  },
+  "backup-material": {
+    "hash": "edaa1600dfb9aba3",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "So this is our backup stash, the extra material we'll dig into if we've got the time to spare. In here we break down the four core jobs of working with data: understanding it, cleaning it, engineering it, and validating it—which maps right onto the data stage of the pipeline we saw earlier. There's also a piece on why data literacy is genuinely a life skill, not just something for the workplace, plus one bonus quiz to test yourselves. If we're running tight, we'll skip it, but it's here whenever you want a deeper look.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.375,
+        "text": "So this is our backup stash, the extra material we'll dig into if we've got the time to spare."
+      },
+      {
+        "start": 5.375,
+        "end": 16.837,
+        "text": "In here we break down the four core jobs of working with data: understanding it, cleaning it, engineering it, and validating it—which maps right onto the data stage of the pipeline we saw earlier."
+      },
+      {
+        "start": 16.837,
+        "end": 26.112,
+        "text": "There's also a piece on why data literacy is genuinely a life skill, not just something for the workplace, plus one bonus quiz to test yourselves."
+      },
+      {
+        "start": 26.112,
+        "end": 30.25,
+        "text": "If we're running tight, we'll skip it, but it's here whenever you want a deeper look."
+      }
+    ],
+    "bytes": 181872,
+    "model": "claude-opus-4-8"
+  },
+  "backup-four-jobs": {
+    "hash": "1917628469f09839",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's step back and see the whole map for a second. Data analysis really has four jobs: first, understand your data—its shape, its quality—and that's exactly where we are today. Second, clean it. Third, engineer better features from the raw ones, and fourth, validate whether the data actually supports your hypothesis. Today we're tackling job one plus a little taste of job two, and all four of these live inside that Data box you flagged with a warning back in Class 3—which is exactly why it earns three full classes.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.9,
+        "text": "Let's step back and see the whole map for a second."
+      },
+      {
+        "start": 2.9,
+        "end": 11.862,
+        "text": "Data analysis really has four jobs: first, understand your data—its shape, its quality—and that's exactly where we are today."
+      },
+      {
+        "start": 11.862,
+        "end": 13.15,
+        "text": "Second, clean it."
+      },
+      {
+        "start": 13.15,
+        "end": 21.362,
+        "text": "Third, engineer better features from the raw ones, and fourth, validate whether the data actually supports your hypothesis."
+      },
+      {
+        "start": 21.362,
+        "end": 34.325,
+        "text": "Today we're tackling job one plus a little taste of job two, and all four of these live inside that Data box you flagged with a warning back in Class 3—which is exactly why it earns three full classes."
+      }
+    ],
+    "bytes": 206352,
+    "model": "claude-opus-4-8"
+  },
+  "backup-data-literacy": {
+    "hash": "a5e243eb64e130b6",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's why this matters even if you never become a scientist. When you see a number—in an ad, an article, a study—ask the same questions you'd ask an AI: Where did this come from? What's the sample? What are they not showing me? That same skepticism protects you everywhere. And whether you're picking a phone plan or a college, deciding with data beats deciding on vibes. Turning numbers into a sentence people understand? That's a skill careers are built on—and it's for everyone.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.575,
+        "text": "Here's why this matters even if you never become a scientist."
+      },
+      {
+        "start": 3.575,
+        "end": 12.137,
+        "text": "When you see a number—in an ad, an article, a study—ask the same questions you'd ask an AI: Where did this come from?"
+      },
+      {
+        "start": 12.137,
+        "end": 13.325,
+        "text": "What's the sample?"
+      },
+      {
+        "start": 13.325,
+        "end": 14.7,
+        "text": "What are they not showing me?"
+      },
+      {
+        "start": 14.7,
+        "end": 17.5,
+        "text": "That same skepticism protects you everywhere."
+      },
+      {
+        "start": 17.5,
+        "end": 23.337,
+        "text": "And whether you're picking a phone plan or a college, deciding with data beats deciding on vibes."
+      },
+      {
+        "start": 23.337,
+        "end": 26.537,
+        "text": "Turning numbers into a sentence people understand?"
+      },
+      {
+        "start": 26.537,
+        "end": 30.012,
+        "text": "That's a skill careers are built on—and it's for everyone."
+      }
+    ],
+    "bytes": 180432,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-backup-bonus": {
+    "hash": "36645088ee083087",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Look at these numbers: female passengers survived at 74 percent, male at just 19 percent. That's a huge gap, so it's tempting to say being female *caused* survival. But hold on — the table only shows a strong association, not the reason behind it. Things like \"women and children first,\" where cabins were located, or ticket class could all be driving this. And watch out for reading the 74 as \"74 percent of passengers were female\" — that's not what we grouped at all.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.9,
+        "text": "Look at these numbers: female passengers survived at 74 percent, male at just 19 percent."
+      },
+      {
+        "start": 6.9,
+        "end": 11.425,
+        "text": "That's a huge gap, so it's tempting to say being female *caused* survival."
+      },
+      {
+        "start": 11.425,
+        "end": 16.937,
+        "text": "But hold on — the table only shows a strong association, not the reason behind it."
+      },
+      {
+        "start": 16.937,
+        "end": 24.337,
+        "text": "Things like \"women and children first,\" where cabins were located, or ticket class could all be driving this."
+      },
+      {
+        "start": 24.337,
+        "end": 32.125,
+        "text": "And watch out for reading the 74 as \"74 percent of passengers were female\" — that's not what we grouped at all."
+      }
+    ],
+    "bytes": 193104,
+    "model": "claude-opus-4-8"
+  }
+}
