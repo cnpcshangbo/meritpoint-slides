@@ -1,0 +1,339 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guide 03 · Your First Video-Game Research Project — Merit Point Academy</title>
+<link rel="icon" type="image/png" href="/meritpoint-slides/assets/favicon.png"><link rel="stylesheet" href="/meritpoint-slides/assets/site.css">
+<style>
+main.wrap{max-width:860px;padding-bottom:60vh}
+.crumb{margin-top:18px}
+h2.sec{color:#0C2D52;font-size:22px;margin:44px 0 6px;padding-top:10px;border-top:3px solid #0F9DB0}
+h2.sec .no{color:#0F9DB0;margin-right:8px}
+h3{color:#0C2D52;font-size:16.5px;margin:26px 0 8px}
+p,li{font-size:15px}
+.lead{font-size:16px;color:#21303F}
+.why{background:#EEF4FA;border-left:4px solid #F2A93B;border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0;font-size:14.5px}
+.why b{color:#0C2D52}
+pre.cmd{position:relative;background:#0d1b2a;color:#d7e7f7;border-radius:10px;padding:13px 90px 13px 16px;font-size:13.5px;line-height:1.65;overflow-x:auto;font-family:"SF Mono",Menlo,Consolas,monospace}
+pre.cmd .c{color:#6d8aa5}
+pre.cmd .o{color:#8fb98f}
+pre.cmd button.copy{position:absolute;top:8px;right:8px;font:inherit;font-size:11.5px;background:#1b3a5c;color:#cfe0ef;border:1px solid #2c5580;border-radius:7px;padding:4px 10px;cursor:pointer}
+pre.cmd button.copy:hover{background:#24507e}
+.step{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid #D7E2EC;border-radius:10px;padding:11px 14px;margin:8px 0;cursor:pointer;font-size:14.5px}
+.step:hover{border-color:#0F9DB0}
+.step input{margin-top:3px;width:16px;height:16px;accent-color:#0F9DB0;flex:none}
+.step.done{background:#f2faf7;border-color:#bfe3d4}
+.step.done .t{color:#1FA37A}
+.step kbd,p kbd,li kbd{background:#EEF4FA;border:1px solid #D7E2EC;border-bottom-width:2px;border-radius:5px;padding:1px 6px;font-size:12.5px;font-family:inherit}
+.tryit{background:#eafcff;border:1.5px dashed #2BC4D4;border-radius:10px;padding:11px 14px;margin:14px 0;font-size:14.5px}
+.tryit b{color:#0F9DB0}
+.quiz{background:#fff;border:1px solid #D7E2EC;border-radius:12px;padding:14px 16px;margin:18px 0}
+.quiz .qq{font-weight:600;color:#0C2D52;margin:0 0 10px;font-size:14.5px}
+.quiz button{display:block;width:100%;text-align:left;font:inherit;font-size:14px;background:#F6F9FC;border:1px solid #D7E2EC;border-radius:9px;padding:9px 12px;margin:6px 0;cursor:pointer}
+.quiz button:hover{border-color:#0F9DB0}
+.quiz button.right{background:#e7f6ef;border-color:#1FA37A;color:#1FA37A;font-weight:600}
+.quiz button.wrong{background:#fdecea;border-color:#C0392B;color:#C0392B}
+.quiz .exp{display:none;margin:10px 0 0;font-size:13.5px;color:#5E7183;border-top:1px dashed #D7E2EC;padding-top:9px}
+.quiz.answered .exp{display:block}
+table.cheat{border-collapse:collapse;width:100%;margin:14px 0;font-size:14px}
+table.cheat th{background:#0C2D52;color:#fff;text-align:left;padding:8px 12px;font-size:13px}
+table.cheat td{border:1px solid #D7E2EC;padding:7px 12px;background:#fff}
+table.cheat td code{background:#EEF4FA;border-radius:5px;padding:1px 6px;font-size:12.5px}
+.pathpic{background:#fff;border:1px solid #D7E2EC;border-radius:12px;padding:14px 18px;margin:14px 0;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:13.5px;line-height:1.9;overflow-x:auto}
+.pathpic .d{color:#1769C0;font-weight:600}.pathpic .f{color:#21303F}.pathpic .hl{background:#fff3d6;border-radius:4px;padding:0 4px}
+.navchips{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 4px}
+.navchips a{font-size:13px;background:#fff;border:1px solid #D7E2EC;border-radius:999px;padding:6px 13px;color:#5E7183}
+.navchips a:hover{border-color:#0F9DB0;color:#0F9DB0;text-decoration:none}
+#pgbar{position:sticky;top:0;z-index:40;background:#F6F9FC;padding:10px 0 8px}
+#pgbar .lbl{font-size:12.5px;color:#5E7183;margin-bottom:5px}
+#pgbar .rail{height:9px;background:#D7E2EC;border-radius:999px;overflow:hidden}
+#pgbar .fill{height:100%;width:0;background:linear-gradient(90deg,#0F9DB0,#2BC4D4);border-radius:999px;transition:width .3s}
+/* ---------- practice terminal panel ---------- */
+#termBtn{position:fixed;right:18px;bottom:18px;z-index:60;font:inherit;font-weight:700;font-size:14.5px;background:#0C2D52;color:#fff;border:none;border-radius:999px;padding:13px 22px;cursor:pointer;box-shadow:0 8px 24px rgba(12,45,82,.35)}
+#termBtn:hover{background:#12386A}
+#termPanel{position:fixed;left:0;right:0;bottom:0;z-index:55;background:#0d1b2a;border-top:3px solid #2BC4D4;box-shadow:0 -10px 40px rgba(0,0,0,.35);display:none;height:46vh;min-height:300px}
+#termPanel.open{display:flex}
+#termCol{flex:1.4;display:flex;flex-direction:column;min-width:0}
+#termOut{flex:1;overflow-y:auto;padding:14px 16px 6px;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:13px;line-height:1.6;color:#d7e7f7;white-space:pre-wrap;word-break:break-all}
+#termOut .p{color:#6fd3e0}
+#termOut .err{color:#ff9d8a}
+#termOut .ok{color:#8fb98f}
+#termRow{display:flex;align-items:center;gap:8px;padding:8px 16px 12px;border-top:1px solid #1b3a5c}
+#termRow .pp{color:#6fd3e0;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:13px;white-space:nowrap}
+#termIn{flex:1;background:transparent;border:none;outline:none;color:#fff;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:14px}
+#missionCol{flex:1;border-left:1px solid #1b3a5c;overflow-y:auto;padding:12px 14px;min-width:230px}
+#missionCol h4{color:#6fd3e0;font-size:12px;letter-spacing:1.5px;margin:10px 0 6px;text-transform:uppercase}
+.mi{display:flex;gap:8px;align-items:flex-start;color:#9fb6cc;font-size:12.5px;margin:5px 0;font-family:"SF Mono",Menlo,Consolas,monospace}
+.mi .bx{flex:none;width:15px;height:15px;border:1.5px solid #3d6a94;border-radius:4px;margin-top:1px;text-align:center;line-height:13px;font-size:11px}
+.mi.done{color:#8fb98f}.mi.done .bx{background:#1FA37A;border-color:#1FA37A;color:#fff}
+.mi.done .bx::before{content:"✓"}
+#termClose{position:absolute;top:8px;right:12px;background:none;border:none;color:#6d8aa5;font-size:20px;cursor:pointer}
+#termClose:hover{color:#fff}
+@media(max-width:760px){#termPanel{height:62vh}#missionCol{display:none}}
+footer.site{margin-top:60px}
+/* ---- guide-03 extras: question builder, data explorer ---- */
+.qbuild{background:#fff;border:2px solid #0F9DB0;border-radius:14px;padding:16px 18px;margin:16px 0}
+.qbuild .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:15px}
+.qbuild select{font:inherit;font-size:14.5px;padding:7px 10px;border:1.5px solid #D7E2EC;border-radius:9px;background:#F6F9FC;color:#0C2D52;max-width:100%}
+.qbuild select:focus{border-color:#0F9DB0;outline:none}
+.qbuild .out{margin-top:12px;border-top:1px dashed #D7E2EC;padding-top:12px;font-size:15px}
+.qbuild .out b.q{color:#0C2D52;font-size:16px}
+.qbuild .out .ds{display:block;margin-top:7px;font-size:13.5px;color:#5E7183}
+table.data{border-collapse:collapse;width:100%;margin:12px 0;font-size:13.5px}
+table.data th{background:#0C2D52;color:#fff;text-align:left;padding:7px 10px;font-size:12.5px;cursor:pointer;user-select:none;white-space:nowrap}
+table.data th:hover{background:#12386A}
+table.data th .ar{opacity:.8;font-size:10px;margin-left:4px}
+table.data td{border:1px solid #D7E2EC;padding:5px 10px;background:#fff}
+table.data td.num{text-align:right;font-variant-numeric:tabular-nums}
+.tblwrap{overflow-x:auto}
+.bars{background:#fff;border:1px solid #D7E2EC;border-radius:12px;padding:14px 16px;margin:12px 0}
+.bars .brow{display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13px}
+.bars .lb{flex:none;width:110px;text-align:right;color:#0C2D52;font-weight:600}
+.bars .track{flex:1;background:#EEF4FA;border-radius:999px;height:20px;overflow:hidden}
+.bars .fillb{height:100%;background:linear-gradient(90deg,#0F9DB0,#2BC4D4);border-radius:999px;display:flex;align-items:center;justify-content:flex-end;color:#fff;font-size:11px;padding-right:7px;min-width:34px}
+.stars{color:#F2A93B;letter-spacing:1px}
+</style></head><body>
+<header class="site"><div class="wrap"><img class="logo" src="/meritpoint-slides/assets/mpa-logo.png" alt="Merit Point Academy logo"><div><h1>Guide 03 · Your First Video-Game Research Project 🎮📊</h1><p>Turn "I love games" into a real research question — with real data you can download today.</p></div>
+<div class="hdr-actions">
+<a class="asg-btn" href="https://academic.hopeembark.org/assignments">📝 Assignments · 作业</a>
+<a class="donate-btn" href="https://buy.stripe.com/14AbIT26kfUzbqjbGv4ow00" target="_blank" rel="noopener">♥ Donate</a></div></div></header>
+<main class="wrap">
+<p class="crumb"><a href="../">← All guides</a></p>
+
+<div id="pgbar"><div class="lbl"><span id="pgtxt">0%</span> of steps checked — your progress is saved in this browser</div><div class="rail"><div class="fill" id="pgfill"></div></div></div>
+
+<p class="lead">Scientists study video games <b>for real</b>: what makes them fun, why some sell 80 million copies and others 80, whether practice in a game transfers to real skills. You can do this kind of research too — because the game industry publishes <b>mountains of free data</b>. These notes help you pick a question, grab a real dataset, and run the same pipeline we use in class. You do <b>not</b> need to be a math genius. You need to be curious about games — and you already are.</p>
+
+<div class="navchips">
+<a href="#s1">1 · A real question</a><a href="#s2">2 · Question builder</a><a href="#s3">3 · Explore real data</a><a href="#s4">4 · Dataset chest</a><a href="#s5">5 · The pipeline</a><a href="#s6">6 · Level up</a>
+</div>
+
+<!-- ============================================================ -->
+<h2 class="sec" id="s1"><span class="no">1</span>What makes a question a <i>research</i> question?</h2>
+<p>There is a simple test. A research question is one that <b>data can answer</b>. Opinions can't be measured; numbers can:</p>
+<table class="cheat">
+<tr><th>Question</th><th>Research?</th><th>Why</th></tr>
+<tr><td>"Is Zelda the best game ever?"</td><td>❌ Opinion</td><td>"Best" means something different to everyone — no data can settle it.</td></tr>
+<tr><td>"Why are games fun?"</td><td>❌ Too big</td><td>A great mystery, but too huge to measure in one project.</td></tr>
+<tr><td>"Do Racing games sell more than Puzzle games?"</td><td>✅ Yes!</td><td>Two groups, one number (sales) — data answers this directly.</td></tr>
+<tr><td>"Do games with higher critic scores sell more copies?"</td><td>✅ Yes!</td><td>Two numbers per game — you can check if they move together.</td></tr>
+<tr><td>"Did game prices on Steam change after 2020?"</td><td>✅ Yes!</td><td>Compare before vs after — a classic research shape.</td></tr>
+</table>
+<div class="why"><b>The magic pattern:</b> almost every beginner research question has the shape <b>"Is ___ related to ___?"</b> or <b>"Does group A have more ___ than group B?"</b> If your question fits one of those shapes, you can research it. If it doesn't, reshape it until it does.</div>
+
+<div class="quiz"><p class="qq">Quiz — which one could YOU answer with a spreadsheet of game data?</p>
+<button data-x>"Is Minecraft better than Roblox?"</button><button data-ok>"Do games rated E (Everyone) sell more copies than games rated M (Mature)?"</button><button data-x>"Are video games art?"</button>
+<p class="exp">Only the middle one compares measurable numbers between clear groups. The other two are great debates — but debates, not data questions.</p></div>
+
+<!-- ============================================================ -->
+<h2 class="sec" id="s2"><span class="no">2</span>Build your research question 🛠️</h2>
+<p>Pick two ingredients — the builder writes the question and tells you which dataset can answer it:</p>
+<div class="qbuild">
+  <div class="row">Is a game's&nbsp;<select id="qbX"></select>&nbsp;related to its&nbsp;<select id="qbY"></select>&nbsp;?</div>
+  <div class="out"><b class="q" id="qbQ"></b><span class="ds" id="qbD"></span></div>
+</div>
+<label class="step"><input type="checkbox" data-k="q-pick"><span class="t">Play with the builder until one question makes you go "ooh, I actually want to know that." Write it at the top of a fresh page — that is your project title.</span></label>
+<div class="why"><b>Then sharpen it.</b> "Is genre related to sales?" is good; "Did Sports games outsell Action games on the Wii?" is better — smaller questions give sharper answers. Professional scientists shrink their questions on purpose.</div>
+
+<!-- ============================================================ -->
+<h2 class="sec" id="s3"><span class="no">3</span>Explore real data — right now, right here</h2>
+<p>This is a <b>real slice</b> of the famous <i>vgsales</i> dataset: the 25 best-selling games it records, with sales in <b>millions of copies</b>. <b>Click any column header to sort.</b> Sorting is baby's-first-analysis — and it already reveals patterns:</p>
+<div class="tblwrap"><table class="data" id="gtab">
+<thead><tr><th data-c="0">Game<span class="ar"></span></th><th data-c="1">Platform<span class="ar"></span></th><th data-c="2">Year<span class="ar"></span></th><th data-c="3">Genre<span class="ar"></span></th><th data-c="4">Sales (M)<span class="ar"></span></th></tr></thead>
+<tbody></tbody>
+</table></div>
+<p>Now the same 25 games, <b>added up by genre</b> — your first chart:</p>
+<div class="bars" id="gbars"></div>
+<label class="step"><input type="checkbox" data-k="e-sort"><span class="t">Sort the table by <b>Year</b>. What decade do most mega-hits come from? Now sort by <b>Platform</b> — which console dominates, and can you guess why? (Hint: it shipped with one of these games in the box.)</span></label>
+<label class="step"><input type="checkbox" data-k="e-notice"><span class="t">Look at the genre chart. Write down ONE thing that surprises you. Congratulations — noticing a surprise in data is literally how research papers begin.</span></label>
+
+<div class="quiz"><p class="qq">Quiz — Minecraft has sold 300+ million copies, yet it is nowhere near the top of this table. Why?</p>
+<button data-x>Minecraft is secretly unpopular</button><button data-x>The table is randomly wrong</button><button data-ok>This dataset counts mostly physical retail copies and stops around 2016 — Minecraft sells digitally</button>
+<p class="exp">Every dataset has limits: what it counts, and when it stopped counting. A real researcher always asks "what is my data NOT seeing?" Write your dataset's limits in your report — that honesty is what separates science from hot takes.</p></div>
+
+<!-- ============================================================ -->
+<h2 class="sec" id="s4"><span class="no">4</span>The dataset chest 📦 — real data you can download</h2>
+<p>All free. Kaggle needs a free account (ask a parent to help you sign up). Difficulty: <span class="stars">★</span> = start here.</p>
+<table class="cheat">
+<tr><th>Dataset</th><th>What's inside</th><th>Good for questions about…</th><th>Level</th></tr>
+<tr><td><a href="https://www.kaggle.com/datasets/gregorut/videogamesales" target="_blank" rel="noopener">Video Game Sales (vgsales)</a></td><td>16,500 games: platform, year, genre, sales by region</td><td>genres, platforms, decades, regions (NA vs Japan!)</td><td><span class="stars">★</span></td></tr>
+<tr><td><a href="https://www.kaggle.com/datasets/rush4ratio/video-game-sales-with-ratings" target="_blank" rel="noopener">Sales + Ratings</a></td><td>vgsales <i>plus</i> Metacritic critic &amp; user scores</td><td>"do good reviews mean big sales?"</td><td><span class="stars">★★</span></td></tr>
+<tr><td><a href="https://www.kaggle.com/datasets/nikdavis/steam-store-games" target="_blank" rel="noopener">Steam Store Games</a></td><td>27,000 PC games: price, genres, playtime, ratings</td><td>prices, free-to-play, what people actually play</td><td><span class="stars">★★</span></td></tr>
+<tr><td><a href="https://www.kaggle.com/datasets/rankirsh/esports-earnings" target="_blank" rel="noopener">Esports Earnings</a></td><td>prize money by game, player and country</td><td>which games/countries dominate esports</td><td><span class="stars">★★</span></td></tr>
+<tr><td><a href="https://www.kaggle.com/datasets/rankirsh/evolution-of-top-games-on-twitch" target="_blank" rel="noopener">Top Games on Twitch</a></td><td>monthly viewers &amp; streamers per game since 2016</td><td>watching vs playing, the rise and fall of hit games</td><td><span class="stars">★★</span></td></tr>
+<tr><td><a href="https://rawg.io/apidocs" target="_blank" rel="noopener">RAWG API</a></td><td>a live database of 500,000+ games, via code</td><td>anything — once you learn APIs (later!)</td><td><span class="stars">★★★</span></td></tr>
+</table>
+<label class="step"><input type="checkbox" data-k="d-dl"><span class="t">Download <b>vgsales.csv</b> from the first link (button "Download" on Kaggle). Put it somewhere you can find — remember Guide 01/02: you will need its <b>path</b> (coordinates!).</span></label>
+
+<!-- ============================================================ -->
+<h2 class="sec" id="s5"><span class="no">5</span>The pipeline — same 6 steps as class</h2>
+<p>Every research project in our course walks the same road: <b>Question → Data → Look → Analyze → Chart → Conclusion</b>. Here it is for the worked example <i>"Which genres sell most?"</i> — swap in your own question and dataset:</p>
+<pre class="cmd">import pandas as pd
+
+df = pd.read_csv(<span class="o">"/Users/you/data/vgsales.csv"</span>)   <span class="c"># ← YOUR path here (Guide 01, section 2!)</span>
+df.head()                    <span class="c"># LOOK: first 5 rows — always eyeball your data first</span>
+df.shape                     <span class="c"># how many games? (rows, columns)</span></pre>
+<pre class="cmd"><span class="c"># ANALYZE: total sales per genre, biggest first</span>
+totals = df.groupby(<span class="o">"Genre"</span>)[<span class="o">"Global_Sales"</span>].sum().sort_values(ascending=False)
+totals</pre>
+<pre class="cmd"><span class="c"># CHART: one line makes the picture</span>
+totals.plot(kind=<span class="o">"barh"</span>, title=<span class="o">"Total sales by genre (millions)"</span>)</pre>
+<label class="step"><input type="checkbox" data-k="p-load"><span class="t">Run the first block on your computer. If you get <code>FileNotFoundError</code> — you know exactly what that means now (wrong coordinates → fix the path).</span></label>
+<label class="step"><input type="checkbox" data-k="p-group"><span class="t">Run the <code>groupby</code>. Does the winner match the little chart in section 3? (It might not — you now have <b>16,500</b> games instead of 25. More data can change the answer. That's a finding!)</span></label>
+<label class="step"><input type="checkbox" data-k="p-chart"><span class="t">Make the chart, screenshot it, and write ONE sentence: "My data shows ___." That sentence is a research conclusion.</span></label>
+<div class="why"><b>Then be an honest scientist</b> — add one more sentence: "But my data can't see ___." (digital sales? mobile games? games after 2016?) Every real paper has a <i>limitations</i> section. Yours should too. It doesn't weaken your project — it's what makes it science.</div>
+
+<div class="quiz"><p class="qq">Quiz — your data shows games with more Twitch viewers also have more sales. Does watching <i>cause</i> buying?</p>
+<button data-x>Yes — the data proves it</button><button data-ok>Can't tell yet — maybe good games attract BOTH viewers and buyers</button><button data-x>No — data never means anything</button>
+<p class="exp">Two things moving together ("correlation") doesn't prove one causes the other. Maybe streaming sells games; maybe great games attract streamers; maybe both. Saying "these are related, and here are three possible reasons" is EXACTLY what good scientists write.</p></div>
+
+<!-- ============================================================ -->
+<h2 class="sec" id="s6"><span class="no">6</span>Level up — project ideas by difficulty</h2>
+<table class="cheat">
+<tr><th>Level</th><th>Project</th><th>Dataset</th></tr>
+<tr><td><span class="stars">★</span></td><td>Which genre ruled each decade? (group by year + genre)</td><td>vgsales</td></tr>
+<tr><td><span class="stars">★</span></td><td>Japan vs North America: do they love different genres?</td><td>vgsales (JP_Sales vs NA_Sales)</td></tr>
+<tr><td><span class="stars">★★</span></td><td>Do critic scores predict sales? (scatter plot!)</td><td>Sales + Ratings</td></tr>
+<tr><td><span class="stars">★★</span></td><td>Are free-to-play games rated better or worse than paid ones?</td><td>Steam</td></tr>
+<tr><td><span class="stars">★★</span></td><td>Rise and fall: chart one game's Twitch viewers over time. When did it peak, and what happened then?</td><td>Twitch</td></tr>
+<tr><td><span class="stars">★★★</span></td><td>Collect YOUR OWN data: survey 20 classmates (favorite genre, hours/week) and analyze it — real original research</td><td>you make it!</td></tr>
+</table>
+<p class="lead" style="margin-top:26px"><b>Homework:</b> ① build your question in section 2, ② download vgsales, ③ run the three code blocks with your own path, ④ bring your chart + your one-sentence finding + your one-sentence limitation to class. Need the terminal or paths again? They're one click away: <a href="../git-for-gamers/">Guide 02 (Video Game Edition)</a> · <a href="../github-terminal/">Guide 01 (full version)</a>. And when your project works — <code>git commit -m "my first research project"</code> 😉</p>
+</main>
+
+<footer class="site">Merit Point Academy · Guides</footer>
+<script>
+(function(){
+  /* ---------- progress checkboxes ---------- */
+  var KEY='mpa-guide-video-game-research';
+  var saved={}; try{saved=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){}
+  function persist(){try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){}}
+  var boxes=[].slice.call(document.querySelectorAll('.step input[type=checkbox]'));
+  function paint(){var n=boxes.filter(function(b){return b.checked;}).length;
+    var pct=boxes.length?Math.round(100*n/boxes.length):0;
+    document.getElementById('pgfill').style.width=pct+'%';
+    document.getElementById('pgtxt').textContent=pct+'%';}
+  boxes.forEach(function(b){
+    if(saved[b.dataset.k]){b.checked=true;b.closest('.step').classList.add('done');}
+    b.addEventListener('change',function(){
+      saved[b.dataset.k]=b.checked; b.closest('.step').classList.toggle('done',b.checked);
+      persist(); paint();});
+  });
+  paint();
+
+  /* ---------- copy buttons ---------- */
+  [].slice.call(document.querySelectorAll('pre.cmd')).forEach(function(pre){
+    var btn=document.createElement('button');btn.className='copy';btn.textContent='⧉ copy';
+    btn.addEventListener('click',function(){
+      var t=pre.cloneNode(true);
+      [].slice.call(t.querySelectorAll('.c,button')).forEach(function(x){x.remove();});
+      var txt=t.textContent.replace(/\n{2,}/g,'\n').split('\n').map(function(l){return l.replace(/\s+$/,'');}).filter(function(l){return l.trim();}).join('\n');
+      (navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject()).then(
+        function(){btn.textContent='✓ copied';setTimeout(function(){btn.textContent='⧉ copy';},1400);},
+        function(){btn.textContent='select + ⌘C';});
+    });
+    pre.appendChild(btn);
+  });
+
+  /* ---------- quizzes ---------- */
+  [].slice.call(document.querySelectorAll('.quiz')).forEach(function(q){
+    [].slice.call(q.querySelectorAll('button')).forEach(function(b){
+      b.addEventListener('click',function(){
+        if(q.classList.contains('answered'))return;
+        q.classList.add('answered');
+        if(b.hasAttribute('data-ok')){b.classList.add('right');}
+        else{b.classList.add('wrong');
+          var ok=q.querySelector('button[data-ok]');if(ok)ok.classList.add('right');}
+      });
+    });
+  });
+
+})();
+</script>
+<script>
+(function(){
+  /* ---------- data explorer: sortable table + genre bars ---------- */
+  var DATA=[["Wii Sports","Wii",2006,"Sports",82.74],["Super Mario Bros.","NES",1985,"Platform",40.24],["Mario Kart Wii","Wii",2008,"Racing",35.82],["Wii Sports Resort","Wii",2009,"Sports",33],["Pokemon Red/Blue","GB",1996,"Role-Playing",31.37],["Tetris","GB",1989,"Puzzle",30.26],["New Super Mario Bros.","DS",2006,"Platform",30.01],["Wii Play","Wii",2006,"Party",29.02],["New Super Mario Bros. Wii","Wii",2009,"Platform",28.62],["Duck Hunt","NES",1984,"Shooter",28.31],["Nintendogs","DS",2005,"Simulation",24.76],["Mario Kart DS","DS",2005,"Racing",23.42],["Pokemon Gold/Silver","GB",1999,"Role-Playing",23.1],["Wii Fit","Wii",2007,"Sports",22.72],["Wii Fit Plus","Wii",2009,"Sports",22],["Kinect Adventures!","X360",2010,"Party",21.82],["Grand Theft Auto V","PS3",2013,"Action",21.4],["Grand Theft Auto: San Andreas","PS2",2004,"Action",20.81],["Super Mario World","SNES",1990,"Platform",20.61],["Brain Age","DS",2005,"Puzzle",20.22],["Pokemon Diamond/Pearl","DS",2006,"Role-Playing",18.36],["Super Mario Land","GB",1989,"Platform",18.14],["Super Mario Bros. 3","NES",1988,"Platform",17.28],["Grand Theft Auto: Vice City","PS2",2002,"Action",16.15],["Pokemon Ruby/Sapphire","GBA",2002,"Role-Playing",15.85]];
+  var tbody=document.querySelector('#gtab tbody');
+  var sortCol=4, sortDir=-1;
+  function render(){
+    var rows=DATA.slice().sort(function(a,b){
+      var x=a[sortCol],y=b[sortCol];
+      if(typeof x==='string')return sortDir*x.localeCompare(y);
+      return sortDir*(x-y);
+    });
+    tbody.innerHTML='';
+    rows.forEach(function(r){
+      var tr=document.createElement('tr');
+      r.forEach(function(v,i){
+        var td=document.createElement('td');
+        if(i>=2)td.className='num';
+        td.textContent=(i===4)?v.toFixed(2):v;
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+    [].slice.call(document.querySelectorAll('#gtab th')).forEach(function(th){
+      th.querySelector('.ar').textContent=(+th.dataset.c===sortCol)?(sortDir<0?'▼':'▲'):'';
+    });
+  }
+  [].slice.call(document.querySelectorAll('#gtab th')).forEach(function(th){
+    th.addEventListener('click',function(){
+      var c=+th.dataset.c;
+      if(c===sortCol)sortDir=-sortDir;else{sortCol=c;sortDir=(c===0||c===1||c===3)?1:-1;}
+      render();
+    });
+  });
+  render();
+
+  var byGenre={};
+  DATA.forEach(function(r){byGenre[r[3]]=(byGenre[r[3]]||0)+r[4];});
+  var genres=Object.keys(byGenre).sort(function(a,b){return byGenre[b]-byGenre[a];});
+  var max=byGenre[genres[0]];
+  var bars=document.getElementById('gbars');
+  genres.forEach(function(g){
+    var row=document.createElement('div');row.className='brow';
+    var lb=document.createElement('span');lb.className='lb';lb.textContent=g;
+    var tr=document.createElement('div');tr.className='track';
+    var f=document.createElement('div');f.className='fillb';
+    f.style.width=Math.round(100*byGenre[g]/max)+'%';
+    f.textContent=byGenre[g].toFixed(0)+'M';
+    tr.appendChild(f);row.appendChild(lb);row.appendChild(tr);bars.appendChild(row);
+  });
+
+  /* ---------- research-question builder ---------- */
+  var XS=[
+    {v:'genre',t:'genre (Action, Sports…)',d:'vg'},
+    {v:'platform',t:'platform (Wii, PS5, PC…)',d:'vg'},
+    {v:'release year',t:'release year',d:'vg'},
+    {v:'critic score',t:'critic score (Metacritic)',d:'rate'},
+    {v:'price on Steam',t:'price on Steam',d:'steam'},
+    {v:'esports prize money',t:'esports prize money',d:'esports'}
+  ];
+  var YS=[
+    {v:'global sales',t:'global sales',d:'vg'},
+    {v:'sales in Japan vs America',t:'sales in Japan vs America',d:'vg'},
+    {v:'user review score',t:'user review score',d:'rate'},
+    {v:'average playtime',t:'average playtime',d:'steam'},
+    {v:'Twitch viewers',t:'Twitch viewers',d:'twitch'}
+  ];
+  var DS={
+    vg:'Video Game Sales (vgsales) — the ★ starter dataset',
+    rate:'Sales + Ratings (vgsales with Metacritic scores)',
+    steam:'Steam Store Games',
+    esports:'Esports Earnings (you may need to combine it with vgsales)',
+    twitch:'Top Games on Twitch (combine with a sales dataset for sales questions)'
+  };
+  var selX=document.getElementById('qbX'),selY=document.getElementById('qbY');
+  function fill(sel,arr){arr.forEach(function(o,i){
+    var op=document.createElement('option');op.value=i;op.textContent=o.t;sel.appendChild(op);});}
+  fill(selX,XS);fill(selY,YS);
+  selX.value=3;selY.value=0;
+  function upd(){
+    var x=XS[+selX.value],y=YS[+selY.value];
+    document.getElementById('qbQ').textContent='“Is a game\u2019s '+x.v+' related to its '+y.v+'?”';
+    var d=(x.d!=='vg')?x.d:y.d;
+    document.getElementById('qbD').textContent='📦 Best dataset: '+DS[d]+'. Sharpen it: limit to one platform, one decade, or two genres — smaller questions give sharper answers.';
+  }
+  selX.addEventListener('change',upd);selY.addEventListener('change',upd);
+  upd();
+})();
+</script>
+<script defer src="/meritpoint-slides/assets/auth.js"></script></body></html>

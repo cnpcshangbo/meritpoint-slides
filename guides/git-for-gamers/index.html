@@ -1,0 +1,508 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guide 02 · Git &amp; the Terminal — The Video Game Edition — Merit Point Academy</title>
+<link rel="icon" type="image/png" href="/meritpoint-slides/assets/favicon.png"><link rel="stylesheet" href="/meritpoint-slides/assets/site.css">
+<style>
+main.wrap{max-width:860px;padding-bottom:60vh}
+.crumb{margin-top:18px}
+h2.sec{color:#0C2D52;font-size:22px;margin:44px 0 6px;padding-top:10px;border-top:3px solid #0F9DB0}
+h2.sec .no{color:#0F9DB0;margin-right:8px}
+h3{color:#0C2D52;font-size:16.5px;margin:26px 0 8px}
+p,li{font-size:15px}
+.lead{font-size:16px;color:#21303F}
+.why{background:#EEF4FA;border-left:4px solid #F2A93B;border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0;font-size:14.5px}
+.why b{color:#0C2D52}
+pre.cmd{position:relative;background:#0d1b2a;color:#d7e7f7;border-radius:10px;padding:13px 90px 13px 16px;font-size:13.5px;line-height:1.65;overflow-x:auto;font-family:"SF Mono",Menlo,Consolas,monospace}
+pre.cmd .c{color:#6d8aa5}
+pre.cmd .o{color:#8fb98f}
+pre.cmd button.copy{position:absolute;top:8px;right:8px;font:inherit;font-size:11.5px;background:#1b3a5c;color:#cfe0ef;border:1px solid #2c5580;border-radius:7px;padding:4px 10px;cursor:pointer}
+pre.cmd button.copy:hover{background:#24507e}
+.step{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid #D7E2EC;border-radius:10px;padding:11px 14px;margin:8px 0;cursor:pointer;font-size:14.5px}
+.step:hover{border-color:#0F9DB0}
+.step input{margin-top:3px;width:16px;height:16px;accent-color:#0F9DB0;flex:none}
+.step.done{background:#f2faf7;border-color:#bfe3d4}
+.step.done .t{color:#1FA37A}
+.step kbd,p kbd,li kbd{background:#EEF4FA;border:1px solid #D7E2EC;border-bottom-width:2px;border-radius:5px;padding:1px 6px;font-size:12.5px;font-family:inherit}
+.tryit{background:#eafcff;border:1.5px dashed #2BC4D4;border-radius:10px;padding:11px 14px;margin:14px 0;font-size:14.5px}
+.tryit b{color:#0F9DB0}
+.quiz{background:#fff;border:1px solid #D7E2EC;border-radius:12px;padding:14px 16px;margin:18px 0}
+.quiz .qq{font-weight:600;color:#0C2D52;margin:0 0 10px;font-size:14.5px}
+.quiz button{display:block;width:100%;text-align:left;font:inherit;font-size:14px;background:#F6F9FC;border:1px solid #D7E2EC;border-radius:9px;padding:9px 12px;margin:6px 0;cursor:pointer}
+.quiz button:hover{border-color:#0F9DB0}
+.quiz button.right{background:#e7f6ef;border-color:#1FA37A;color:#1FA37A;font-weight:600}
+.quiz button.wrong{background:#fdecea;border-color:#C0392B;color:#C0392B}
+.quiz .exp{display:none;margin:10px 0 0;font-size:13.5px;color:#5E7183;border-top:1px dashed #D7E2EC;padding-top:9px}
+.quiz.answered .exp{display:block}
+table.cheat{border-collapse:collapse;width:100%;margin:14px 0;font-size:14px}
+table.cheat th{background:#0C2D52;color:#fff;text-align:left;padding:8px 12px;font-size:13px}
+table.cheat td{border:1px solid #D7E2EC;padding:7px 12px;background:#fff}
+table.cheat td code{background:#EEF4FA;border-radius:5px;padding:1px 6px;font-size:12.5px}
+.pathpic{background:#fff;border:1px solid #D7E2EC;border-radius:12px;padding:14px 18px;margin:14px 0;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:13.5px;line-height:1.9;overflow-x:auto}
+.pathpic .d{color:#1769C0;font-weight:600}.pathpic .f{color:#21303F}.pathpic .hl{background:#fff3d6;border-radius:4px;padding:0 4px}
+.navchips{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 4px}
+.navchips a{font-size:13px;background:#fff;border:1px solid #D7E2EC;border-radius:999px;padding:6px 13px;color:#5E7183}
+.navchips a:hover{border-color:#0F9DB0;color:#0F9DB0;text-decoration:none}
+#pgbar{position:sticky;top:0;z-index:40;background:#F6F9FC;padding:10px 0 8px}
+#pgbar .lbl{font-size:12.5px;color:#5E7183;margin-bottom:5px}
+#pgbar .rail{height:9px;background:#D7E2EC;border-radius:999px;overflow:hidden}
+#pgbar .fill{height:100%;width:0;background:linear-gradient(90deg,#0F9DB0,#2BC4D4);border-radius:999px;transition:width .3s}
+/* ---------- practice terminal panel ---------- */
+#termBtn{position:fixed;right:18px;bottom:18px;z-index:60;font:inherit;font-weight:700;font-size:14.5px;background:#0C2D52;color:#fff;border:none;border-radius:999px;padding:13px 22px;cursor:pointer;box-shadow:0 8px 24px rgba(12,45,82,.35)}
+#termBtn:hover{background:#12386A}
+#termPanel{position:fixed;left:0;right:0;bottom:0;z-index:55;background:#0d1b2a;border-top:3px solid #2BC4D4;box-shadow:0 -10px 40px rgba(0,0,0,.35);display:none;height:46vh;min-height:300px}
+#termPanel.open{display:flex}
+#termCol{flex:1.4;display:flex;flex-direction:column;min-width:0}
+#termOut{flex:1;overflow-y:auto;padding:14px 16px 6px;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:13px;line-height:1.6;color:#d7e7f7;white-space:pre-wrap;word-break:break-all}
+#termOut .p{color:#6fd3e0}
+#termOut .err{color:#ff9d8a}
+#termOut .ok{color:#8fb98f}
+#termRow{display:flex;align-items:center;gap:8px;padding:8px 16px 12px;border-top:1px solid #1b3a5c}
+#termRow .pp{color:#6fd3e0;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:13px;white-space:nowrap}
+#termIn{flex:1;background:transparent;border:none;outline:none;color:#fff;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:14px}
+#missionCol{flex:1;border-left:1px solid #1b3a5c;overflow-y:auto;padding:12px 14px;min-width:230px}
+#missionCol h4{color:#6fd3e0;font-size:12px;letter-spacing:1.5px;margin:10px 0 6px;text-transform:uppercase}
+.mi{display:flex;gap:8px;align-items:flex-start;color:#9fb6cc;font-size:12.5px;margin:5px 0;font-family:"SF Mono",Menlo,Consolas,monospace}
+.mi .bx{flex:none;width:15px;height:15px;border:1.5px solid #3d6a94;border-radius:4px;margin-top:1px;text-align:center;line-height:13px;font-size:11px}
+.mi.done{color:#8fb98f}.mi.done .bx{background:#1FA37A;border-color:#1FA37A;color:#fff}
+.mi.done .bx::before{content:"✓"}
+#termClose{position:absolute;top:8px;right:12px;background:none;border:none;color:#6d8aa5;font-size:20px;cursor:pointer}
+#termClose:hover{color:#fff}
+@media(max-width:760px){#termPanel{height:62vh}#missionCol{display:none}}
+footer.site{margin-top:60px}
+</style></head><body>
+<header class="site"><div class="wrap"><img class="logo" src="/meritpoint-slides/assets/mpa-logo.png" alt="Merit Point Academy logo"><div><h1>Guide 02 · Git &amp; the Terminal — The Video Game Edition 🎮</h1><p>Everything from Guide 01, explained the way a gamer already thinks: save points, cloud saves, creative mode.</p></div>
+<div class="hdr-actions">
+<a class="asg-btn" href="https://academic.hopeembark.org/assignments">📝 Assignments · 作业</a>
+<a class="donate-btn" href="https://buy.stripe.com/14AbIT26kfUzbqjbGv4ow00" target="_blank" rel="noopener">♥ Donate</a></div></div></header>
+<main class="wrap">
+<p class="crumb"><a href="../">← All guides</a></p>
+
+<div id="pgbar"><div class="lbl"><span id="pgtxt">0%</span> of steps checked — your progress is saved in this browser</div><div class="rail"><div class="fill" id="pgfill"></div></div></div>
+
+<p class="lead">Here is a secret: <b>if you play games, you already understand programming tools.</b> You just know them by different names. These notes translate five "grown-up" tools into gamer language. Short sections, lots of practice. When you see 🕹️ <b>Quest</b>, open the <b>🕹️ Practice Terminal</b> (button, bottom-right) — it is a sandbox world where <b>nothing can break, ever</b>.</p>
+
+<div class="navchips">
+<a href="#s1">1 · The command console</a><a href="#s2">2 · Coordinates</a><a href="#s3">3 · Save points</a><a href="#s4">4 · Cloud saves</a><a href="#s5">5 · Creative mode</a><a href="#s6">6 · Your keycard</a><a href="#s7">7 · Translation table</a>
+</div>
+
+<!-- ============================================================ -->
+<h2 class="sec" id="s1"><span class="no">1</span>The Terminal = the command console</h2>
+<p>Ever typed <code>/tp</code> or <code>/give</code> in Minecraft? Then you have already used a command console. The <b>terminal</b> is exactly that — but for your whole computer. You type an exact command, the computer does exactly that thing. No menus, no clicking around.</p>
+<p>There are really only <b>six moves</b>. Think of them like the buttons on a controller:</p>
+<table class="cheat">
+<tr><th>Move</th><th>Command</th><th>In game terms</th></tr>
+<tr><td>Where am I?</td><td><code>pwd</code></td><td>Open the map — shows your exact position</td></tr>
+<tr><td>What's here?</td><td><code>ls</code></td><td>Look around the room / open the chest</td></tr>
+<tr><td>Go there</td><td><code>cd world</code></td><td>Walk through the door called <code>world</code></td></tr>
+<tr><td>Go back</td><td><code>cd ..</code></td><td>Walk back out to the previous room</td></tr>
+<tr><td>Build a room</td><td><code>mkdir base</code></td><td>Place a new empty building called <code>base</code></td></tr>
+<tr><td>Craft an item</td><td><code>touch note.txt</code></td><td>Create a blank item; <code>cat note.txt</code> reads it</td></tr>
+</table>
+<div class="why"><b>The golden combo:</b> feeling lost is normal — even pros feel lost. The fix is always the same two buttons: <code>pwd</code> (where am I?) then <code>ls</code> (what's around me?). That combo is your minimap. Spam it as much as you want — it is free.</div>
+<label class="step"><input type="checkbox" data-k="c-open"><span class="t">Open a real terminal on your computer: <b>Mac:</b> <kbd>⌘</kbd>+<kbd>Space</kbd>, type <b>Terminal</b>. <b>Windows:</b> press <kbd>Win</kbd>, type <b>PowerShell</b>.</span></label>
+<label class="step"><input type="checkbox" data-k="c-tab"><span class="t">Learn the auto-complete cheat: type the first letters of a folder, press <kbd>Tab</kbd>, and the terminal finishes the name. Press <kbd>↑</kbd> to replay your last command. Speedrunners never type the whole thing.</span></label>
+
+<div class="tryit"><b>🕹️ Quest 1 · Learn to walk:</b> open the Practice Terminal and type <code>pwd</code>, <code>ls</code>, <code>cd world</code>, <code>cd ..</code>. The quest log on the right ticks itself. (On a phone the quest log is hidden — the commands still work.)</div>
+
+<div class="quiz"><p class="qq">Quiz — you have no idea where you are. Which combo saves you?</p>
+<button data-x><code>mkdir</code> then <code>touch</code></button><button data-ok><code>pwd</code> then <code>ls</code></button><button data-x>close the terminal and hide</button>
+<p class="exp"><code>pwd</code> = open the map. <code>ls</code> = look around. That's the whole trick — every programmer does this a hundred times a day.</p></div>
+
+<!-- ============================================================ -->
+<h2 class="sec" id="s2"><span class="no">2</span>File paths = coordinates</h2>
+<p>In Minecraft, every block has coordinates like <code>X=120 Y=64 Z=-340</code>. On a computer, every file has coordinates too — called a <b>path</b>. It lists the rooms you walk through to reach the file, joined by <code>/</code>:</p>
+<div class="pathpic">
+<span class="d">/</span> &nbsp;(spawn point — the very top of everything)<br>
+&nbsp;&nbsp;└─ <span class="d">home</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─ <span class="d">student</span> &nbsp;(your home base = <b>~</b>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─ <span class="d">data</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─ <span class="f hl">games.csv</span> &nbsp;→ its coordinates: <b>/home/student/data/games.csv</b>
+</div>
+<p>Two kinds of coordinates:</p>
+<table class="cheat">
+<tr><th>Kind</th><th>Example</th><th>Game version</th></tr>
+<tr><td><b>Absolute</b> (starts with <code>/</code>)</td><td><code>/home/student/data/games.csv</code></td><td>Full map coordinates — works from anywhere</td></tr>
+<tr><td><b>Relative</b></td><td><code>data/games.csv</code></td><td>"Two rooms to the left" — only works from where you're standing</td></tr>
+</table>
+<div class="why"><b>Why care?</b> When Python says <code>FileNotFoundError</code>, it means: "I walked to those coordinates and there was no chest there." The file isn't gone — you gave the wrong coordinates. Fix the path, and it works. Every. Single. Time.</div>
+
+<div class="tryit"><b>🕹️ Quest 2 · Loot the chest:</b> in the Practice Terminal, get into <code>data</code>, look around with <code>ls</code>, then open the loot with <code>cat games.csv</code>. That file is real video-game sales data — it comes back in <a href="../video-game-research/">Guide 03</a>.</div>
+
+<div class="quiz"><p class="qq">Quiz — your friend says "the file is in <code>data/games.csv</code>" but Python can't find it. Most likely reason?</p>
+<button data-ok>You are standing in a different folder than your friend was</button><button data-x>The computer is broken</button><button data-x>Python doesn't like games</button>
+<p class="exp"><code>data/games.csv</code> is relative — it depends on where you stand. Absolute coordinates (starting with <code>/</code>) work from anywhere. That's why we prefer them for data files.</p></div>
+
+<!-- ============================================================ -->
+<h2 class="sec" id="s3"><span class="no">3</span>Git = the save system</h2>
+<p>Imagine a game with <b>no save points</b>. You beat level 9, fall in lava on level 10, and restart from level 1. Horrible, right? Writing code without Git is exactly that. <b>Git gives your project save points.</b></p>
+<p>The save ritual has three buttons, always in the same order:</p>
+<pre class="cmd">git init                    <span class="c"># ① new save slot — do this ONCE per project</span>
+git add .                   <span class="c"># ② choose what goes into the save (everything, here)</span>
+git commit -m "beat level 3"  <span class="c"># ③ SAVE, with a note so future-you remembers</span>
+git log                     <span class="c"># the load-game menu: every save you ever made</span></pre>
+<div class="why"><b>Why the note (<code>-m "…"</code>)?</b> Imagine a load menu where every slot just says "Save". Which one has the castle finished? No idea. Good notes = "beat level 3", "fixed the jump bug". Future-you will say thank you.</div>
+<div class="why"><b>Why save often?</b> Same reason you save before a boss fight. Tried something and broke everything? Git can roll you back to any earlier save point. Brave experiments become free — that is the whole superpower.</div>
+
+<div class="tryit"><b>🕹️ Quest 3 · Save your game:</b> build a project (<code>mkdir my-game</code>, <code>cd my-game</code>), open a save slot (<code>git init</code>), craft an item (<code>touch player.txt</code>), then do the ritual: <code>git add .</code> → <code>git commit -m "level 1 done"</code> → <code>git log</code>. <b>This is THE quest to repeat 3 times.</b></div>
+
+<div class="quiz"><p class="qq">Quiz — <code>git commit -m "built the castle"</code> is like…</p>
+<button data-x>uploading a video of your castle</button><button data-ok>hitting SAVE and naming the save slot "built the castle"</button><button data-x>deleting the castle</button>
+<p class="exp">Commit = a local save point with a note. Nothing goes online yet — that is what <code>push</code> is for (next section).</p></div>
+
+<!-- ============================================================ -->
+<h2 class="sec" id="s4"><span class="no">4</span>GitHub = cloud saves + multiplayer</h2>
+<p>Your Git saves live on your own computer — like saves on one console. <b>GitHub is the cloud-save server.</b> Two commands talk to it:</p>
+<pre class="cmd">git push     <span class="c"># UPLOAD your newest save points to the cloud</span>
+git pull     <span class="c"># DOWNLOAD the newest save points from the cloud</span></pre>
+<p>Why bother?</p>
+<ul>
+<li><b>Cloud saves:</b> laptop dies, spills, gets lost — your project is safe online. Log in from any computer and keep playing.</li>
+<li><b>Multiplayer:</b> a friend can <code>pull</code> your project, build on it, and <code>push</code> their progress back. That is how every real software team on Earth works — including the people who made your favorite games.</li>
+</ul>
+<div class="why"><b>The multiplayer rule:</b> <code>pull</code> when you sit down, <code>push</code> when you stand up. If you skip the pull, you are playing on an old version of the world while your teammate already rebuilt half of it.</div>
+
+<div class="quiz"><p class="qq">Quiz — you sit down to work on a project you share with a friend. First command?</p>
+<button data-x><code>git push</code> — show them who's boss</button><button data-ok><code>git pull</code> — grab the newest version first</button><button data-x><code>git init</code> — start a new save slot</button>
+<p class="exp">Pull first, always — otherwise you build on yesterday's world. Push comes at the end to share what you did. And <code>init</code> is only for brand-new projects.</p></div>
+
+<!-- ============================================================ -->
+<h2 class="sec" id="s5"><span class="no">5</span>Branches = creative mode</h2>
+<p>You want to try a crazy build, but you don't want to wreck your survival world. So you copy the world and go wild in the copy. In Git that copy is called a <b>branch</b>:</p>
+<pre class="cmd">git checkout -b creative   <span class="c"># copy the world, jump into the copy</span>
+touch castle.txt           <span class="c"># build something wild…</span>
+git add .
+git commit -m "epic castle"
+git checkout main          <span class="c"># jump back to the real world — no castle here!</span>
+git merge creative         <span class="c"># liked it? copy the castle into the real world</span></pre>
+<div class="why"><b>The magic moment</b> is <code>git checkout main</code>: your castle <i>vanishes</i> — it only exists in the copy. Type <code>ls</code> and see for yourself. Then <code>git merge creative</code> brings it into the real world. If the experiment had gone badly, you would just… never merge. The real world stays untouched.</div>
+
+<div class="tryit"><b>🕹️ Quest 4 · Creative mode:</b> do exactly the six commands above in the Practice Terminal (you need a repo from Quest 3 first). Watch <code>castle.txt</code> disappear and come back — run <code>ls</code> after each checkout. Then <b>🕹️ Quest 5 · Cloud save:</b> <code>git push</code>, <code>git pull</code>, and test your keycard with <code>ssh -T git@github.com</code>.</div>
+
+<div class="quiz"><p class="qq">Quiz — your experiment on the <code>creative</code> branch went horribly wrong. What happens to <code>main</code>?</p>
+<button data-ok>Nothing — main is untouched until you merge</button><button data-x>main is ruined too</button><button data-x>the computer catches fire</button>
+<p class="exp">That's the whole point of branches: the real world (<code>main</code>) only changes when you choose to <code>merge</code>. Failed experiments cost you nothing.</p></div>
+
+<!-- ============================================================ -->
+<h2 class="sec" id="s6"><span class="no">6</span>SSH keys = your keycard</h2>
+<p>How does GitHub know it's really <i>you</i> pushing, and not some random player? A password every time would be annoying. Instead you get a <b>keycard</b> — an SSH key. You make it once:</p>
+<pre class="cmd">ssh-keygen -t ed25519 -C "you@example.com"   <span class="c"># press Enter at every question</span>
+cat ~/.ssh/id_ed25519.pub                    <span class="c"># show the PUBLIC half — copy it</span></pre>
+<label class="step"><input type="checkbox" data-k="k-add"><span class="t">On github.com: avatar → <b>Settings</b> → <b>SSH and GPG keys</b> → <b>New SSH key</b> → paste → Save. (Ask your teacher or parent to help the first time.)</span></label>
+<label class="step"><input type="checkbox" data-k="k-test"><span class="t">Test it: <code>ssh -T git@github.com</code> → "Hi YOURNAME! You've successfully authenticated." Achievement unlocked. 🏆</span></label>
+<div class="why"><b>How it works:</b> the key comes in two halves. The <b>public</b> half (<code>.pub</code>) is the <i>lock</i> — you hand it to GitHub. The <b>private</b> half stays in your backpack forever and is the only thing that opens that lock. Never share the private half with anyone. Not even a best friend. Not even for Robux.</div>
+
+<!-- ============================================================ -->
+<h2 class="sec" id="s7"><span class="no">7</span>The translation table — print me</h2>
+<table class="cheat">
+<tr><th>Gamer word</th><th>Real word</th><th>Command</th></tr>
+<tr><td>Command console</td><td>Terminal</td><td>—</td></tr>
+<tr><td>Open the map / look around</td><td>Where am I / list files</td><td><code>pwd</code> · <code>ls</code></td></tr>
+<tr><td>Coordinates</td><td>File path</td><td><code>/home/student/data/games.csv</code></td></tr>
+<tr><td>New save slot</td><td>New repository</td><td><code>git init</code></td></tr>
+<tr><td>Choose what to save</td><td>Stage changes</td><td><code>git add .</code></td></tr>
+<tr><td>Save point + note</td><td>Commit</td><td><code>git commit -m "note"</code></td></tr>
+<tr><td>Load-game menu</td><td>History</td><td><code>git log</code></td></tr>
+<tr><td>Cloud save upload / download</td><td>Push / pull</td><td><code>git push</code> · <code>git pull</code></td></tr>
+<tr><td>Creative-mode copy</td><td>Branch</td><td><code>git checkout -b name</code></td></tr>
+<tr><td>Copy build into the real world</td><td>Merge</td><td><code>git merge name</code></td></tr>
+<tr><td>Keycard</td><td>SSH key</td><td><code>ssh-keygen</code> → add to GitHub</td></tr>
+</table>
+<p class="lead" style="margin-top:26px"><b>Boss fight (homework):</b> close these notes and beat Quests 3, 4 and 5 from memory in the Practice Terminal. Tomorrow, do it once on your real computer. When the commands come out of your fingers without thinking — you've leveled up for real. Next: use your new powers on actual game data in <a href="../video-game-research/">Guide 03 · Video-Game Research</a> 🎮📊. Want the same material with more grown-up detail? It's in <a href="../github-terminal/">Guide 01</a>.</p>
+</main>
+
+<button id="termBtn">🕹️ Practice Terminal</button>
+<div id="termPanel">
+  <button id="termClose" title="Close">✕</button>
+  <div id="termCol">
+    <div id="termOut"></div>
+    <div id="termRow"><span class="pp" id="termPrompt">student@mpa:~$</span><input id="termIn" autocomplete="off" spellcheck="false" placeholder="type a command… (try: help)"></div>
+  </div>
+  <div id="missionCol"></div>
+</div>
+
+<footer class="site">Merit Point Academy · Guides</footer>
+<script>
+(function(){
+  /* ---------- progress checkboxes ---------- */
+  var KEY='mpa-guide-git-for-gamers';
+  var saved={}; try{saved=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){}
+  function persist(){try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){}}
+  var boxes=[].slice.call(document.querySelectorAll('.step input[type=checkbox]'));
+  function paint(){var n=boxes.filter(function(b){return b.checked;}).length;
+    var pct=boxes.length?Math.round(100*n/boxes.length):0;
+    document.getElementById('pgfill').style.width=pct+'%';
+    document.getElementById('pgtxt').textContent=pct+'%';}
+  boxes.forEach(function(b){
+    if(saved[b.dataset.k]){b.checked=true;b.closest('.step').classList.add('done');}
+    b.addEventListener('change',function(){
+      saved[b.dataset.k]=b.checked; b.closest('.step').classList.toggle('done',b.checked);
+      persist(); paint();});
+  });
+  paint();
+
+  /* ---------- copy buttons ---------- */
+  [].slice.call(document.querySelectorAll('pre.cmd')).forEach(function(pre){
+    var btn=document.createElement('button');btn.className='copy';btn.textContent='⧉ copy';
+    btn.addEventListener('click',function(){
+      var t=pre.cloneNode(true);
+      [].slice.call(t.querySelectorAll('.c,button')).forEach(function(x){x.remove();});
+      var txt=t.textContent.replace(/\n{2,}/g,'\n').split('\n').map(function(l){return l.replace(/\s+$/,'');}).filter(function(l){return l.trim();}).join('\n');
+      (navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject()).then(
+        function(){btn.textContent='✓ copied';setTimeout(function(){btn.textContent='⧉ copy';},1400);},
+        function(){btn.textContent='select + ⌘C';});
+    });
+    pre.appendChild(btn);
+  });
+
+  /* ---------- quizzes ---------- */
+  [].slice.call(document.querySelectorAll('.quiz')).forEach(function(q){
+    [].slice.call(q.querySelectorAll('button')).forEach(function(b){
+      b.addEventListener('click',function(){
+        if(q.classList.contains('answered'))return;
+        q.classList.add('answered');
+        if(b.hasAttribute('data-ok')){b.classList.add('right');}
+        else{b.classList.add('wrong');
+          var ok=q.querySelector('button[data-ok]');if(ok)ok.classList.add('right');}
+      });
+    });
+  });
+
+  /* =====================================================================
+   * PRACTICE TERMINAL — fake filesystem + fake git, all in the browser
+   * =================================================================== */
+  var HOME=['home','student'];
+  var FS={home:{student:{
+    world:{},
+    backpack:{'map.txt':'You are here: ~ (your home base)\nRooms: world/  backpack/  data/','sword.txt':'+5 attack. Very shiny.'},
+    data:{'games.csv':'Rank,Name,Platform,Year,Genre,GlobalSales(M)\n1,Wii Sports,Wii,2006,Sports,82.74\n2,Super Mario Bros.,NES,1985,Platform,40.24\n3,Mario Kart Wii,Wii,2008,Racing,35.82\n4,Wii Sports Resort,Wii,2009,Sports,33.00\n(…the full table is in Guide 03!)'},
+    'welcome.txt':'This terminal is a sandbox world. You cannot break ANYTHING.\nQuests are on the right →'
+  }}};
+  var cwd=HOME.slice();
+  var git=null;   // {root:'path', branch, branches:{name:{commits:[{msg,files}] }}, staged:[], head:{}}
+  var out=document.getElementById('termOut'),inp=document.getElementById('termIn'),
+      promptEl=document.getElementById('termPrompt'),panel=document.getElementById('termPanel');
+
+  function dirAt(parts){var d=FS;for(var i=0;i<parts.length;i++){if(typeof d!=='object'||!(parts[i] in d))return null;d=d[parts[i]];}return d;}
+  function resolve(p){
+    if(!p||p==='~')return HOME.slice();
+    var base=p.charAt(0)==='/'?[]:(p.slice(0,2)==='~/'?HOME.slice():cwd.slice());
+    if(p.slice(0,2)==='~/')p=p.slice(2); else if(p.charAt(0)==='/')p=p.slice(1);
+    p.split('/').forEach(function(seg){
+      if(!seg||seg==='.')return;
+      if(seg==='..'){if(base.length)base.pop();}
+      else base.push(seg);
+    });
+    return base;
+  }
+  function shortCwd(){var s='/'+cwd.join('/');var h='/'+HOME.join('/');
+    return s===h?'~':(s.indexOf(h+'/')===0?'~'+s.slice(h.length):s);}
+  function prompt(){var b=git&&inGit()?' ('+git.branch+')':'';
+    return 'student@mpa:'+shortCwd()+b+'$';}
+  function inGit(){if(!git)return false;var s='/'+cwd.join('/');return s===git.root||s.indexOf(git.root+'/')===0;}
+  function print(s,cls){var d=document.createElement('div');if(cls)d.className=cls;d.textContent=s;out.appendChild(d);out.scrollTop=out.scrollHeight;}
+  function echoCmd(c){var d=document.createElement('div');
+    var p=document.createElement('span');p.className='p';p.textContent=prompt()+' ';
+    d.appendChild(p);d.appendChild(document.createTextNode(c));out.appendChild(d);}
+
+  function lsNames(d){return Object.keys(d).sort().map(function(k){return typeof d[k]==='object'?k+'/':k;});}
+  function repoDirFiles(){var d=dirAt(git.root.slice(1).split('/'));var r=[];
+    (function walk(node,pre){Object.keys(node).forEach(function(k){
+      if(typeof node[k]==='object')walk(node[k],pre+k+'/');else r.push(pre+k);});})(d,'');
+    return r;}
+  function committedSet(){var s={};git.branches[git.branch].commits.forEach(function(c){c.files.forEach(function(f){s[f]=1;});});return s;}
+  function branchFiles(name){var s={};git.branches[name].commits.forEach(function(c){c.files.forEach(function(f){s[f]=1;});});return s;}
+  /* make the folder reflect the current branch — so "ls" on main really
+     doesn't show a file that only exists on the feature branch */
+  function syncWorktree(){
+    var d=dirAt(git.root.slice(1).split('/'));if(!d)return;
+    var cur=branchFiles(git.branch),all={};
+    Object.keys(git.branches).forEach(function(b){Object.assign(all,branchFiles(b));});
+    Object.keys(all).forEach(function(f){
+      if(f.indexOf('/')>=0)return;
+      if(cur[f]){if(!(f in d))d[f]='';}
+      else if(f in d&&git.staged.indexOf(f)<0)delete d[f];
+    });
+  }
+
+  var HELP='commands: pwd  ls  cd <dir>  mkdir <name>  touch <name>  cat <file>  clear\n'+
+           'git: init  status  add <file|.>  commit -m "msg"  log  branch [name]\n'+
+           '     checkout [-b] <name>  merge <name>  remote add origin <url>  push  pull\n'+
+           'ssh: ssh-keygen   ssh -T git@github.com';
+
+  function run(line){
+    var m=line.match(/"[^"]*"|\S+/g)||[];
+    var cmd=m[0],a1=m[1],a2=m[2];
+    if(!cmd)return;
+    if(cmd==='help')return print(HELP);
+    if(cmd==='clear'){out.innerHTML='';return;}
+    if(cmd==='pwd')return print('/'+cwd.join('/'));
+    if(cmd==='ls'){var d=dirAt(a1?resolve(a1):cwd);
+      if(d===null||typeof d!=='object')return print('ls: cannot access: no such directory','err');
+      var n=lsNames(d);return print(n.length?n.join('   '):'(empty)');}
+    if(cmd==='cd'){var t=resolve(a1||'~');var d2=dirAt(t);
+      if(d2===null||typeof d2!=='object')return print('cd: no such directory: '+(a1||'~'),'err');
+      cwd=t;return;}
+    if(cmd==='mkdir'){if(!a1)return print('mkdir: give a folder name, e.g.  mkdir my-project','err');
+      var d3=dirAt(cwd);if(a1 in d3)return print('mkdir: '+a1+': already exists','err');
+      d3[a1.replace(/\/+$/,'')]={};return;}
+    if(cmd==='touch'){if(!a1)return print('touch: give a file name, e.g.  touch README.md','err');
+      var d4=dirAt(cwd);if(typeof d4[a1]==='object')return print('touch: '+a1+' is a folder','err');
+      if(!(a1 in d4))d4[a1]='';return;}
+    if(cmd==='cat'){if(!a1)return print('cat: give a file name','err');
+      var t2=resolve(a1);var f=dirAt(t2);
+      if(f===null)return print('cat: '+a1+': no such file','err');
+      if(typeof f==='object')return print('cat: '+a1+': is a folder','err');
+      return print(f||'(empty file)');}
+    if(cmd==='ssh-keygen')return print('Generating public/private ed25519 key pair.\nYour identification has been saved in ~/.ssh/id_ed25519\nYour public key has been saved in ~/.ssh/id_ed25519.pub','ok');
+    if(cmd==='ssh'){if(a1==='-T'&&a2==='git@github.com')return print("Hi student! You've successfully authenticated, but GitHub does not provide shell access.",'ok');
+      return print('(simulated) Connecting to '+(a1||'?')+'… this practice terminal only simulates  ssh -T git@github.com');}
+    if(cmd!=='git')return print(cmd+': command not found — type  help','err');
+
+    /* ---------- git ---------- */
+    var sub=a1;
+    if(sub==='init'){
+      if(git&&inGit())return print('Reinitialized existing Git repository.');
+      git={root:'/'+cwd.join('/'),branch:'main',branches:{main:{commits:[]}},staged:[],remote:null};
+      return print('Initialized empty Git repository in /'+cwd.join('/')+'/.git/','ok');}
+    if(!git||!inGit())return print('fatal: not a git repository — cd into your project and run  git init','err');
+    if(sub==='status'){
+      var com=committedSet();
+      var untracked=repoDirFiles().filter(function(f){return git.staged.indexOf(f)<0&&!com[f];});
+      var s='On branch '+git.branch+'\n';
+      if(git.staged.length)s+='Changes to be committed:\n'+git.staged.map(function(f){return '        new file:   '+f;}).join('\n')+'\n';
+      if(untracked.length)s+='Untracked files:  (use "git add <file>" to include them)\n'+untracked.map(function(f){return '        '+f;}).join('\n')+'\n';
+      if(!git.staged.length&&!untracked.length)s+='nothing to commit, working tree clean';
+      return print(s);}
+    if(sub==='add'){
+      var com2=committedSet();
+      var pool=repoDirFiles().filter(function(f){return git.staged.indexOf(f)<0&&!com2[f];});
+      if(!a2)return print('git add: say WHAT to add:  git add README.md   or   git add .','err');
+      if(a2==='.'){if(!pool.length)return print('(nothing new to add)');
+        git.staged=git.staged.concat(pool);return;}
+      if(pool.indexOf(a2)<0)return print("git add: '"+a2+"' — no new file with that name here (try  git status )",'err');
+      git.staged.push(a2);return;}
+    if(sub==='commit'){
+      var msgi=m.indexOf('-m');var msg=msgi>0?(m[msgi+1]||''):'';
+      if(!msg)return print('git commit: add a message:  git commit -m "what I did"','err');
+      msg=msg.replace(/^"|"$/g,'');
+      if(!git.staged.length)return print('nothing to commit — first  git add  a file','err');
+      git.branches[git.branch].commits.push({msg:msg,files:git.staged.slice()});
+      var n=git.staged.length;git.staged=[];
+      return print('['+git.branch+' '+Math.random().toString(16).slice(2,9)+'] '+msg+'\n '+n+' file(s) changed','ok');}
+    if(sub==='log'){var cs=git.branches[git.branch].commits;
+      if(!cs.length)return print('fatal: no commits yet on '+git.branch,'err');
+      return print(cs.slice().reverse().map(function(c,i){
+        return 'commit '+Math.random().toString(16).slice(2,10)+'…\n    '+c.msg;}).join('\n'));}
+    if(sub==='branch'){
+      if(!a2)return print(Object.keys(git.branches).map(function(b){return (b===git.branch?'* ':'  ')+b;}).join('\n'));
+      if(git.branches[a2])return print("fatal: a branch named '"+a2+"' already exists",'err');
+      git.branches[a2]={commits:git.branches[git.branch].commits.slice()};return;}
+    if(sub==='checkout'){
+      var name=a2==='-b'?m[3]:a2;
+      if(!name)return print('git checkout: give a branch name','err');
+      if(a2==='-b'){if(git.branches[name])return print("fatal: branch '"+name+"' already exists",'err');
+        git.branches[name]={commits:git.branches[git.branch].commits.slice()};git.branch=name;
+        return print("Switched to a new branch '"+name+"'",'ok');}
+      if(!git.branches[name])return print("error: no branch called '"+name+"' (see  git branch )",'err');
+      git.branch=name;syncWorktree();return print("Switched to branch '"+name+"'",'ok');}
+    if(sub==='merge'){
+      if(!a2||!git.branches[a2])return print('git merge: give an existing branch name, e.g.  git merge feature','err');
+      if(a2===git.branch)return print('Already up to date (you are ON that branch).');
+      var mine=git.branches[git.branch].commits,theirs=git.branches[a2].commits;
+      var fresh=theirs.filter(function(c){return mine.indexOf(c)<0;});
+      if(!fresh.length)return print('Already up to date.');
+      git.branches[git.branch].commits=mine.concat(fresh);syncWorktree();
+      return print('Merge made: folded '+fresh.length+' commit(s) from '+a2+' into '+git.branch+'.','ok');}
+    if(sub==='remote'){if(a2==='add'&&m[3]==='origin'&&m[4]){git.remote=m[4];return;}
+      return print('usage: git remote add origin <url>','err');}
+    if(sub==='push'){
+      if(!git.branches[git.branch].commits.length)return print('error: nothing to push — commit something first','err');
+      git.pushed=true;
+      return print('Enumerating objects… done.\nTo '+(git.remote||'github.com:student/my-project.git')+'\n * ['+git.branch+'] pushed '+git.branches[git.branch].commits.length+' commit(s)  ✓ (simulated)','ok');}
+    if(sub==='pull'){git.pulled=true;return print('Already up to date. (simulated — in real life this downloads teammates\u2019 new commits)','ok');}
+    return print("git: '"+(sub||'')+"' is not a git command this practice terminal knows — type  help",'err');
+  }
+
+  /* ---------- missions ---------- */
+  function cwdIs(p){return '/'+cwd.join('/')===p;}
+  var MISSIONS=[
+    {title:'Quest 1 · Learn to walk',steps:[
+      {label:'pwd — where am I?',test:function(c){return c[0]==='pwd';}},
+      {label:'ls — what is here?',test:function(c){return c[0]==='ls';}},
+      {label:'cd world — walk into a room',test:function(c){return c[0]==='cd'&&cwdIs('/home/student/world');}},
+      {label:'cd .. — walk back out',test:function(c){return c[0]==='cd'&&cwdIs('/home/student');}}]},
+    {title:'Quest 2 · Loot the chest',steps:[
+      {label:'cd data',test:function(c){return c[0]==='cd'&&cwdIs('/home/student/data');}},
+      {label:'ls — peek inside',test:function(c){return c[0]==='ls'&&cwdIs('/home/student/data');}},
+      {label:'cat games.csv — read the loot',test:function(c){return c[0]==='cat'&&/games/.test(c[1]||'');}}]},
+    {title:'Quest 3 · Save your game',steps:[
+      {label:'mkdir my-game',test:function(c){return c[0]==='mkdir';}},
+      {label:'cd my-game',test:function(c,g){return c[0]==='cd'&&/game/.test(cwd[cwd.length-1]||'');}},
+      {label:'git init — new save slot',test:function(c,g){return c[0]==='git'&&c[1]==='init';}},
+      {label:'touch player.txt — craft an item',test:function(c){return c[0]==='touch';}},
+      {label:'git add . — pick what to save',test:function(c,g){return c[0]==='git'&&c[1]==='add'&&g&&g.staged.length>0;}},
+      {label:'git commit -m "level 1 done"',test:function(c,g){return c[0]==='git'&&c[1]==='commit'&&g&&g.branches[g.branch].commits.length>0;}},
+      {label:'git log — open the load menu',test:function(c,g){return c[0]==='git'&&c[1]==='log'&&g&&g.branches[g.branch].commits.length>0;}}]},
+    {title:'Quest 4 · Creative mode',steps:[
+      {label:'git checkout -b creative',test:function(c,g){return c[0]==='git'&&c[1]==='checkout'&&g&&g.branch!=='main';}},
+      {label:'touch castle.txt — build wild',test:function(c,g){return c[0]==='touch'&&g&&g.branch!=='main';}},
+      {label:'git add . + commit the build',test:function(c,g){return c[0]==='git'&&c[1]==='commit'&&g&&g.branch!=='main'&&g.branches[g.branch].commits.length>0;}},
+      {label:'git checkout main — castle gone!',test:function(c,g){return c[0]==='git'&&c[1]==='checkout'&&g&&g.branch==='main';}},
+      {label:'git merge creative — castle is back',test:function(c,g){return c[0]==='git'&&c[1]==='merge';}}]},
+    {title:'Quest 5 · Cloud save',steps:[
+      {label:'git push — upload your save',test:function(c,g){return c[0]==='git'&&c[1]==='push'&&g&&g.pushed;}},
+      {label:'git pull — download the newest',test:function(c,g){return c[0]==='git'&&c[1]==='pull';}},
+      {label:'ssh -T git@github.com — use your keycard',test:function(c){return c[0]==='ssh'&&c[1]==='-T';}}]}
+  ];
+  var mdone={}; try{mdone=JSON.parse(localStorage.getItem(KEY+'-missions')||'{}');}catch(e){}
+  function renderMissions(){
+    var col=document.getElementById('missionCol');col.innerHTML='';
+    MISSIONS.forEach(function(ms,mi){
+      var h=document.createElement('h4');h.textContent=ms.title;col.appendChild(h);
+      ms.steps.forEach(function(st,si){
+        var d=document.createElement('div');d.className='mi'+(mdone[mi+'-'+si]?' done':'');
+        d.innerHTML='<span class="bx"></span>';
+        d.appendChild(document.createTextNode(st.label));
+        col.appendChild(d);});});
+  }
+  function checkMissions(parts){
+    var hit=false;
+    MISSIONS.forEach(function(ms,mi){
+      for(var si=0;si<ms.steps.length;si++){
+        if(mdone[mi+'-'+si])continue;
+        try{if(ms.steps[si].test(parts,git)){mdone[mi+'-'+si]=1;hit=true;
+          if(si===ms.steps.length-1)print('★ '+ms.title+' COMPLETE! Nice.','ok');}}catch(e){}
+        break; /* only the next unfinished step of each mission is testable */
+      }});
+    if(hit){try{localStorage.setItem(KEY+'-missions',JSON.stringify(mdone));}catch(e){}
+      renderMissions();}
+  }
+
+  /* ---------- wire up ---------- */
+  var hist=[],hi=-1;
+  inp.addEventListener('keydown',function(e){
+    if(e.key==='Enter'){
+      var line=inp.value.trim();inp.value='';
+      if(!line)return;
+      echoCmd(line);hist.push(line);hi=hist.length;
+      run(line);
+      var parts=(line.match(/"[^"]*"|\S+/g)||[]);
+      checkMissions(parts);
+      promptEl.textContent=prompt();
+      out.scrollTop=out.scrollHeight;
+    }else if(e.key==='ArrowUp'){if(hi>0){hi--;inp.value=hist[hi];e.preventDefault();}}
+    else if(e.key==='ArrowDown'){if(hi<hist.length-1){hi++;inp.value=hist[hi];}else{hi=hist.length;inp.value='';}e.preventDefault();}
+  });
+  document.getElementById('termBtn').addEventListener('click',function(){
+    panel.classList.toggle('open');
+    if(panel.classList.contains('open')){inp.focus();
+      if(!out.childNodes.length){
+        print('Welcome to the sandbox world! Nothing here is real — go wild.');
+        print('Type  help  for every command. Your quest log is on the right →');}}
+  });
+  document.getElementById('termClose').addEventListener('click',function(){panel.classList.remove('open');});
+  panel.addEventListener('click',function(e){if(e.target===panel||e.target.id==='termCol'||e.target.id==='termOut')inp.focus();});
+  promptEl.textContent=prompt();
+  renderMissions();
+})();
+</script>
+<script defer src="/meritpoint-slides/assets/auth.js"></script></body></html>

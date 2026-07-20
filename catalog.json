@@ -410,6 +410,54 @@
           ],
           "duration": "self-paced",
           "status": "ready"
+        },
+        {
+          "id": "git-for-gamers",
+          "n": 2,
+          "numLabel": "GUIDE 02",
+          "noPdf": true,
+          "title": "Git & the Terminal — The Video Game Edition 🎮",
+          "summary": "Guide 01 retold entirely in gamer language for younger students: the terminal is a command console, commits are save points, GitHub is cloud saves + multiplayer, branches are creative-mode worlds, SSH keys are keycards — with 5 quests in the built-in practice terminal.",
+          "tags": [
+            "terminal",
+            "git",
+            "GitHub",
+            "video games",
+            "grade 6",
+            "kids",
+            "save point",
+            "cloud save",
+            "branch",
+            "merge",
+            "interactive",
+            "beginner"
+          ],
+          "duration": "self-paced",
+          "status": "ready"
+        },
+        {
+          "id": "video-game-research",
+          "n": 3,
+          "numLabel": "GUIDE 03",
+          "noPdf": true,
+          "title": "Your First Video-Game Research Project 🎮📊",
+          "summary": "Research methods for a student who loves games: what makes a data-answerable question, an interactive question builder, a sortable slice of the real vgsales dataset with a live genre chart, a catalog of free game datasets (Kaggle, Steam, esports, Twitch), and the 6-step pipeline with pandas starter code.",
+          "tags": [
+            "research",
+            "video games",
+            "dataset",
+            "vgsales",
+            "Steam",
+            "esports",
+            "Kaggle",
+            "pandas",
+            "grade 6",
+            "question",
+            "chart",
+            "interactive"
+          ],
+          "duration": "self-paced",
+          "status": "ready"
         }
       ]
     },
