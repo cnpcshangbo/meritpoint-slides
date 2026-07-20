@@ -220,6 +220,17 @@ cat ~/.ssh/id_ed25519.pub                    <span class="c"># show your PUBLIC 
 <label class="step"><input type="checkbox" data-k="s-test"><span class="t">Test it: <code>ssh -T git@github.com</code> — you should see <i>"Hi YOURNAME! You've successfully authenticated."</i></span></label>
 <div class="why"><b>How the key works:</b> the <b>public</b> key (<code>.pub</code>) is the lock — you give it to GitHub. The <b>private</b> key stays on your computer and never leaves — it is the only key that opens the lock. That's why there is no password to steal.</div>
 
+<h3>5.2 Mission 6 — log in to OUR real practice server</h3>
+<p>Merit Point Academy runs a <b>real Linux server</b> just for you to practice on. The same key trick from 5.1 gets you in — and everything from these notes (<code>pwd</code>, <code>ls</code>, <code>git</code>, <code>python3</code>) works there for real. You cannot break it, and your home folder is yours alone.</p>
+<label class="step"><input type="checkbox" data-k="s-realkey"><span class="t"><b>Step 1:</b> make your key (5.1 above), then copy the line printed by <code>cat ~/.ssh/id_ed25519.pub</code>.</span></label>
+<label class="step"><input type="checkbox" data-k="s-submit"><span class="t"><b>Step 2:</b> sign in with your class account at <a href="https://academic.hopeembark.org/sshbox" target="_blank" rel="noopener">academic.hopeembark.org/sshbox</a> and paste your <b>public</b> key there. The page tells you your username.</span></label>
+<label class="step"><input type="checkbox" data-k="s-login"><span class="t"><b>Step 3:</b> once your teacher confirms your account is ready, connect (use YOUR username):</span></label>
+<pre class="cmd">ssh -p 2222 yourname@academic.hopeembark.org
+<span class="c"># first time it asks about a "fingerprint" — type: yes</span>
+<span class="c"># no password needed. Your KEY is the password — that's the whole point!</span></pre>
+<label class="step"><input type="checkbox" data-k="s-explore"><span class="t"><b>Step 4:</b> you're on another computer now! Try <code>pwd</code>, <code>ls</code>, <code>cat notes.txt</code>, <code>cd data</code>, <code>cat titanic.csv</code> — then build a repo from memory: <code>mkdir my-project</code>, <code>git init</code>, <code>touch README.md</code>, <code>git add .</code>, <code>git commit -m "on a real server!"</code>. Type <code>exit</code> to come home.</span></label>
+<div class="why"><b>Why the fingerprint question?</b> The first time you connect, SSH shows the server's "fingerprint" and asks if you trust it. After you say yes once, SSH remembers it — and will loudly warn you if the server ever changes (which could mean someone is pretending to be it).</div>
+
 <!-- ============================================================ -->
 <h2 class="sec" id="s6"><span class="no">6</span>Cheat sheet — print me</h2>
 <table class="cheat">
@@ -234,8 +245,9 @@ cat ~/.ssh/id_ed25519.pub                    <span class="c"># show your PUBLIC 
 <tr><td>Upload / download vs GitHub</td><td><code>git push</code> · <code>git pull</code></td></tr>
 <tr><td>Experiment safely, then keep it</td><td><code>git checkout -b name</code> … <code>git checkout main</code> · <code>git merge name</code></td></tr>
 <tr><td>Control another computer</td><td><code>ssh user@address</code> (leave with <code>exit</code>)</td></tr>
+<tr><td>Log in to the MPA practice server</td><td><code>ssh -p 2222 yourname@academic.hopeembark.org</code></td></tr>
 </table>
-<p class="lead" style="margin-top:26px"><b>Your homework:</b> close these notes, open the ⚡ Practice Terminal, and redo Missions 3 and 4 from memory. Then do it once more tomorrow on your real computer. That's how it becomes yours.</p>
+<p class="lead" style="margin-top:26px"><b>Your homework:</b> close these notes, open the ⚡ Practice Terminal, and redo Missions 3 and 4 from memory. Then do Mission 6 (section 5.2) on the REAL practice server — same commands, real computer. That's how it becomes yours.</p>
 </main>
 
 <button id="termBtn">⚡ Practice Terminal</button>
