@@ -10,7 +10,7 @@
     cat.courses.forEach(function(co){var ds=shown.filter(function(it){return it.co.id===co.id});if(!ds.length)return;
       html+='<section class="course"><h2>'+esc(co.title)+'</h2><p class="sub">'+esc(co.subtitle||'')+'</p><div class="grid">';
       ds.forEach(function(it){var d=it.d,ready=d.status==='ready',href=ready?co.id+'/'+d.id+'/':'#';
-        var pdf=ready?'<span class="pdf-link" data-pdf="'+href+'slides.pdf" title="Download these slides as a PDF">⬇ PDF</span>':'';
+        var pdf=(ready&&!d.noPdf)?'<span class="pdf-link" data-pdf="'+href+'slides.pdf" title="Download these slides as a PDF">⬇ PDF</span>':'';
         html+='<a class="card '+(ready?'ready':'planned')+'" href="'+href+'"><div class="num">CLASS '+String(d.n).padStart(2,"0")+'</div><h3>'+esc(d.title||'')+'</h3><div class="asg-badge" data-deck="'+esc(d.id)+'"></div><p>'+esc(d.summary||'')+'</p><div class="ct">'+(d.tags||[]).slice(0,4).map(function(t){return '<span class="t">'+esc(t)+'</span>'}).join('')+pdf+'</div></a>'});
       html+='</div></section>'});
     resEl.innerHTML=html||'<p class="empty">No classes match. Try a different search or clear the tags.</p>';

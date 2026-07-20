@@ -377,6 +377,43 @@
       ]
     },
     {
+      "id": "guides",
+      "title": "Guides · Step-by-Step Notes",
+      "subtitle": "Interactive tutorial notes for the tools we use in class — read a step, do it, repeat until it sticks.",
+      "tags": [
+        "guide",
+        "tutorial",
+        "beginner",
+        "hands-on"
+      ],
+      "accent": "#1FA37A",
+      "decks": [
+        {
+          "id": "github-terminal",
+          "n": 1,
+          "numLabel": "GUIDE 01",
+          "noPdf": true,
+          "title": "The Terminal, File Paths, VS Code, Git & GitHub, SSH",
+          "summary": "Step-by-step notes with a built-in practice terminal: pwd/ls/cd, finding a file's path for read_csv, VS Code basics, git init → add → commit → push/pull, branch & merge, and SSH keys — with guided missions, quizzes, and saved progress.",
+          "tags": [
+            "terminal",
+            "command line",
+            "file path",
+            "VS Code",
+            "git",
+            "GitHub",
+            "commit",
+            "merge",
+            "SSH",
+            "interactive",
+            "beginner"
+          ],
+          "duration": "self-paced",
+          "status": "ready"
+        }
+      ]
+    },
+    {
       "id": "python",
       "title": "Python, Gently",
       "subtitle": "A beginner-friendly path to coding for data & research. (Coming soon.)",
