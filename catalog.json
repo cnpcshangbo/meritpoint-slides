@@ -460,8 +460,31 @@
           "status": "ready"
         },
         {
-          "id": "terminal-quest",
+          "id": "publish-research",
           "n": 4,
+          "numLabel": "GUIDE 04",
+          "noPdf": true,
+          "title": "Publish Your Research — a Real Website on GitHub Pages 🌐",
+          "summary": "Continue from Guide 03 (or start from zero): an interactive research-page builder (fill the form, watch a live preview, download index.html), modeled on a real academic companion site — then two publish paths: clicks-only upload, or the git ritual with a practice-terminal mission. Ends with a live link at USERNAME.github.io/my-research/.",
+          "tags": [
+            "GitHub Pages",
+            "publish",
+            "website",
+            "HTML",
+            "research",
+            "git",
+            "push",
+            "portfolio",
+            "grade 6",
+            "interactive",
+            "beginner"
+          ],
+          "duration": "self-paced",
+          "status": "ready"
+        },
+        {
+          "id": "terminal-quest",
+          "n": 5,
           "numLabel": "GAME 01",
           "noPdf": true,
           "title": "Terminal Quest — Launch Night 🕹️",

@@ -1,0 +1,534 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guide 04 · Publish Your Research on GitHub Pages — Merit Point Academy</title>
+<link rel="icon" type="image/png" href="/meritpoint-slides/assets/favicon.png"><link rel="stylesheet" href="/meritpoint-slides/assets/site.css">
+<style>
+main.wrap{max-width:860px;padding-bottom:60vh}
+.crumb{margin-top:18px}
+h2.sec{color:#0C2D52;font-size:22px;margin:44px 0 6px;padding-top:10px;border-top:3px solid #0F9DB0}
+h2.sec .no{color:#0F9DB0;margin-right:8px}
+h3{color:#0C2D52;font-size:16.5px;margin:26px 0 8px}
+p,li{font-size:15px}
+.lead{font-size:16px;color:#21303F}
+.why{background:#EEF4FA;border-left:4px solid #F2A93B;border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0;font-size:14.5px}
+.why b{color:#0C2D52}
+pre.cmd{position:relative;background:#0d1b2a;color:#d7e7f7;border-radius:10px;padding:13px 90px 13px 16px;font-size:13.5px;line-height:1.65;overflow-x:auto;font-family:"SF Mono",Menlo,Consolas,monospace}
+pre.cmd .c{color:#6d8aa5}
+pre.cmd .o{color:#8fb98f}
+pre.cmd button.copy{position:absolute;top:8px;right:8px;font:inherit;font-size:11.5px;background:#1b3a5c;color:#cfe0ef;border:1px solid #2c5580;border-radius:7px;padding:4px 10px;cursor:pointer}
+pre.cmd button.copy:hover{background:#24507e}
+.step{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid #D7E2EC;border-radius:10px;padding:11px 14px;margin:8px 0;cursor:pointer;font-size:14.5px}
+.step:hover{border-color:#0F9DB0}
+.step input{margin-top:3px;width:16px;height:16px;accent-color:#0F9DB0;flex:none}
+.step.done{background:#f2faf7;border-color:#bfe3d4}
+.step.done .t{color:#1FA37A}
+.step kbd,p kbd,li kbd{background:#EEF4FA;border:1px solid #D7E2EC;border-bottom-width:2px;border-radius:5px;padding:1px 6px;font-size:12.5px;font-family:inherit}
+.tryit{background:#eafcff;border:1.5px dashed #2BC4D4;border-radius:10px;padding:11px 14px;margin:14px 0;font-size:14.5px}
+.tryit b{color:#0F9DB0}
+.quiz{background:#fff;border:1px solid #D7E2EC;border-radius:12px;padding:14px 16px;margin:18px 0}
+.quiz .qq{font-weight:600;color:#0C2D52;margin:0 0 10px;font-size:14.5px}
+.quiz button{display:block;width:100%;text-align:left;font:inherit;font-size:14px;background:#F6F9FC;border:1px solid #D7E2EC;border-radius:9px;padding:9px 12px;margin:6px 0;cursor:pointer}
+.quiz button:hover{border-color:#0F9DB0}
+.quiz button.right{background:#e7f6ef;border-color:#1FA37A;color:#1FA37A;font-weight:600}
+.quiz button.wrong{background:#fdecea;border-color:#C0392B;color:#C0392B}
+.quiz .exp{display:none;margin:10px 0 0;font-size:13.5px;color:#5E7183;border-top:1px dashed #D7E2EC;padding-top:9px}
+.quiz.answered .exp{display:block}
+table.cheat{border-collapse:collapse;width:100%;margin:14px 0;font-size:14px}
+table.cheat th{background:#0C2D52;color:#fff;text-align:left;padding:8px 12px;font-size:13px}
+table.cheat td{border:1px solid #D7E2EC;padding:7px 12px;background:#fff}
+table.cheat td code{background:#EEF4FA;border-radius:5px;padding:1px 6px;font-size:12.5px}
+.pathpic{background:#fff;border:1px solid #D7E2EC;border-radius:12px;padding:14px 18px;margin:14px 0;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:13.5px;line-height:1.9;overflow-x:auto}
+.pathpic .d{color:#1769C0;font-weight:600}.pathpic .f{color:#21303F}.pathpic .hl{background:#fff3d6;border-radius:4px;padding:0 4px}
+.navchips{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 4px}
+.navchips a{font-size:13px;background:#fff;border:1px solid #D7E2EC;border-radius:999px;padding:6px 13px;color:#5E7183}
+.navchips a:hover{border-color:#0F9DB0;color:#0F9DB0;text-decoration:none}
+#pgbar{position:sticky;top:0;z-index:40;background:#F6F9FC;padding:10px 0 8px}
+#pgbar .lbl{font-size:12.5px;color:#5E7183;margin-bottom:5px}
+#pgbar .rail{height:9px;background:#D7E2EC;border-radius:999px;overflow:hidden}
+#pgbar .fill{height:100%;width:0;background:linear-gradient(90deg,#0F9DB0,#2BC4D4);border-radius:999px;transition:width .3s}
+/* ---------- practice terminal panel ---------- */
+#termBtn{position:fixed;right:18px;bottom:18px;z-index:60;font:inherit;font-weight:700;font-size:14.5px;background:#0C2D52;color:#fff;border:none;border-radius:999px;padding:13px 22px;cursor:pointer;box-shadow:0 8px 24px rgba(12,45,82,.35)}
+#termBtn:hover{background:#12386A}
+#termPanel{position:fixed;left:0;right:0;bottom:0;z-index:55;background:#0d1b2a;border-top:3px solid #2BC4D4;box-shadow:0 -10px 40px rgba(0,0,0,.35);display:none;height:46vh;min-height:300px}
+#termPanel.open{display:flex}
+#termCol{flex:1.4;display:flex;flex-direction:column;min-width:0}
+#termOut{flex:1;overflow-y:auto;padding:14px 16px 6px;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:13px;line-height:1.6;color:#d7e7f7;white-space:pre-wrap;word-break:break-all}
+#termOut .p{color:#6fd3e0}
+#termOut .err{color:#ff9d8a}
+#termOut .ok{color:#8fb98f}
+#termRow{display:flex;align-items:center;gap:8px;padding:8px 16px 12px;border-top:1px solid #1b3a5c}
+#termRow .pp{color:#6fd3e0;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:13px;white-space:nowrap}
+#termIn{flex:1;background:transparent;border:none;outline:none;color:#fff;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:14px}
+#missionCol{flex:1;border-left:1px solid #1b3a5c;overflow-y:auto;padding:12px 14px;min-width:230px}
+#missionCol h4{color:#6fd3e0;font-size:12px;letter-spacing:1.5px;margin:10px 0 6px;text-transform:uppercase}
+.mi{display:flex;gap:8px;align-items:flex-start;color:#9fb6cc;font-size:12.5px;margin:5px 0;font-family:"SF Mono",Menlo,Consolas,monospace}
+.mi .bx{flex:none;width:15px;height:15px;border:1.5px solid #3d6a94;border-radius:4px;margin-top:1px;text-align:center;line-height:13px;font-size:11px}
+.mi.done{color:#8fb98f}.mi.done .bx{background:#1FA37A;border-color:#1FA37A;color:#fff}
+.mi.done .bx::before{content:"✓"}
+#termClose{position:absolute;top:8px;right:12px;background:none;border:none;color:#6d8aa5;font-size:20px;cursor:pointer}
+#termClose:hover{color:#fff}
+@media(max-width:760px){#termPanel{height:62vh}#missionCol{display:none}}
+footer.site{margin-top:60px}
+/* ---- guide-04 extras: page builder ---- */
+.pb{background:#fff;border:2px solid #0F9DB0;border-radius:14px;padding:16px 18px;margin:16px 0}
+.pb .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px}
+.pb .full{grid-column:1/-1}
+.pb label.f{display:block;font-size:12.5px;color:#5E7183;font-weight:600;margin-bottom:3px}
+.pb input,.pb textarea{width:100%;font:inherit;font-size:14px;padding:7px 10px;border:1.5px solid #D7E2EC;border-radius:9px;background:#F6F9FC;color:#21303F}
+.pb input:focus,.pb textarea:focus{border-color:#0F9DB0;outline:none}
+.pb textarea{resize:vertical;min-height:58px}
+.pb .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.pb button{font:inherit;font-weight:700;font-size:14px;border:none;border-radius:10px;padding:10px 18px;cursor:pointer}
+#pbDl{background:#0F9DB0;color:#fff}#pbDl:hover{background:#2BC4D4}
+#pbCp{background:#EEF4FA;color:#0C2D52;border:1.5px solid #D7E2EC}#pbCp:hover{border-color:#0F9DB0}
+#pbFrame{width:100%;height:480px;border:2px solid #D7E2EC;border-radius:12px;background:#fff;margin-top:14px}
+@media(max-width:700px){.pb .grid{grid-template-columns:1fr}}
+</style></head><body>
+<header class="site"><div class="wrap"><img class="logo" src="/meritpoint-slides/assets/mpa-logo.png" alt="Merit Point Academy logo"><div><h1>Guide 04 · Publish Your Research — a Real Website on GitHub Pages 🌐</h1><p>Turn your Guide 03 project into a research page the whole world (and grandma) can visit.</p></div>
+<div class="hdr-actions">
+<a class="asg-btn" href="https://academic.hopeembark.org/assignments">📝 Assignments · 作业</a>
+<a class="donate-btn" href="https://buy.stripe.com/14AbIT26kfUzbqjbGv4ow00" target="_blank" rel="noopener">♥ Donate</a></div></div></header>
+<main class="wrap">
+<p class="crumb"><a href="../">← All guides</a></p>
+
+<div id="pgbar"><div class="lbl"><span id="pgtxt">0%</span> of steps checked — your progress is saved in this browser</div><div class="rail"><div class="fill" id="pgfill"></div></div></div>
+
+<p class="lead">Real scientists don't keep results in a drawer — they <b>publish</b>. This guide takes your <a href="../video-game-research/">Guide 03</a> project (question + chart + finding) and puts it on a <b>real public website</b>, hosted free by GitHub Pages. You will build the page with the generator in section 3 — no HTML knowledge needed — then publish it two ways: the click-only way (works from zero), or the engineer way with <code>git push</code>. At the end you'll have a link like <code>https://YOURNAME.github.io/my-research/</code> to send to anyone.</p>
+
+<div class="navchips">
+<a href="#s1">1 · The goal</a><a href="#s2">2 · Ingredients</a><a href="#s3">3 · Build the page</a><a href="#s4">4 · Publish (no code)</a><a href="#s5">5 · Publish (git)</a><a href="#s6">6 · Update &amp; share</a>
+</div>
+
+<!-- ============================================================ -->
+<h2 class="sec" id="s1"><span class="no">1</span>What you're about to make</h2>
+<p>A <b>research companion page</b> — the standard way scientists show work on the web. Here is a real one from a university research lab (your teacher's, actually): <a href="https://ai-mobility-research-lab.github.io/auditing-safety-observability-companion/" target="_blank" rel="noopener">a LiDAR traffic-safety study companion</a>. Notice its shape — yours will have the exact same skeleton:</p>
+<table class="cheat">
+<tr><th>Section</th><th>The lab's page</th><th>Your page</th></tr>
+<tr><td>Title + authors</td><td>"Roadside LiDAR for Cooperative Safety Auditing…" + two researchers</td><td>Your project title + your name</td></tr>
+<tr><td>The question / abstract</td><td>What the study investigates</td><td>Your research question + one-line answer</td></tr>
+<tr><td>Key figures</td><td>Point clouds, near-miss heatmaps</td><td>Your sales-by-genre chart</td></tr>
+<tr><td>Findings</td><td>Three core contributions</td><td>Your 2–3 findings</td></tr>
+<tr><td>Notes / limits</td><td>"lightweight visual companion…"</td><td>What your data can't see</td></tr>
+</table>
+<div class="why"><b>Why GitHub Pages?</b> It hosts websites <b>for free</b>, straight out of a GitHub repo — the same repos you learned in Guides 01/02. Push your files, flip one switch, and GitHub serves your page to the whole internet. Millions of real project sites work exactly this way (including the lab page above — and this very site you're reading).</div>
+
+<!-- ============================================================ -->
+<h2 class="sec" id="s2"><span class="no">2</span>Gather your three ingredients</h2>
+<label class="step"><input type="checkbox" data-k="i-q"><span class="t"><b>Your question &amp; answer</b> — from Guide 03: the research question, your one-sentence finding, and your one-sentence limitation.</span></label>
+<label class="step"><input type="checkbox" data-k="i-chart"><span class="t"><b>Your chart as a picture file.</b> In your Python from Guide 03, save the chart to a file — then find <code>chart.png</code> next to your script (path skills!):</span></label>
+<pre class="cmd">import matplotlib.pyplot as plt
+totals.plot(kind=<span class="o">"barh"</span>, title=<span class="o">"Total sales by genre (millions)"</span>)
+plt.tight_layout()
+plt.savefig(<span class="o">"chart.png"</span>, dpi=150)   <span class="c"># ← creates the picture file</span></pre>
+<label class="step"><input type="checkbox" data-k="i-gh"><span class="t"><b>A GitHub account</b> — free, at <a href="https://github.com/signup" target="_blank" rel="noopener">github.com/signup</a> (ask a parent to help; you'll need an email address).</span></label>
+
+<!-- ============================================================ -->
+<h2 class="sec" id="s3"><span class="no">3</span>Build your page — fill the form, watch it appear</h2>
+<p>Type your project into the form. The <b>live preview</b> below updates as you type — that is your actual website. When it looks right, hit <b>Download index.html</b>.</p>
+<div class="pb">
+  <div class="grid">
+    <div><label class="f">Project title</label><input id="fTitle" value="Do Critic Scores Predict Video Game Sales?"></div>
+    <div><label class="f">Your name</label><input id="fName" value="A. Student"></div>
+    <div><label class="f">School / program</label><input id="fAff" value="Merit Point Academy · The AI Toolbox"></div>
+    <div><label class="f">Dataset you used</label><input id="fData" value="Video Game Sales (vgsales), Kaggle"></div>
+    <div class="full"><label class="f">Research question</label><input id="fQ" value="Is a game's critic score related to how many copies it sells worldwide?"></div>
+    <div class="full"><label class="f">One-sentence answer (TL;DR)</label><input id="fTldr" value="Games with higher critic scores tend to sell more — but the pattern is much weaker than we expected."></div>
+    <div class="full"><label class="f">Key findings — one per line (2–3 lines)</label><textarea id="fFinds">Sports and Platform games dominate total sales in this dataset.
+Critic score and sales rise together, but many high-scoring games still sold few copies.
+The best-selling game (Wii Sports) came bundled with a console — an outlier!</textarea></div>
+    <div class="full"><label class="f">Chart caption</label><input id="fCap" value="Total global sales by genre, computed with pandas groupby."></div>
+    <div class="full"><label class="f">Honest limitation (what your data can't see)</label><input id="fLim" value="The dataset counts mostly physical copies and stops around 2016, so digital hits like Minecraft are undercounted."></div>
+  </div>
+  <div class="btns">
+    <button id="pbDl">⬇ Download index.html</button>
+    <button id="pbCp">⧉ Copy HTML</button>
+  </div>
+  <iframe id="pbFrame" title="Live preview of your research page"></iframe>
+</div>
+<label class="step"><input type="checkbox" data-k="b-dl"><span class="t">Download <code>index.html</code> and put it in a folder together with your <code>chart.png</code>. <b>The names matter</b>: the page looks for <code>chart.png</code> sitting right next to it.</span></label>
+
+<div class="quiz"><p class="qq">Quiz — why must chart.png sit in the SAME folder as index.html?</p>
+<button data-x>GitHub charges extra for folders</button><button data-ok>The page uses the relative path "chart.png" — it looks next to itself</button><button data-x>Pictures are shy</button>
+<p class="exp">Guide 01, section 2 strikes again: <code>chart.png</code> is a relative path — "look right here, next to me." Move the picture elsewhere and the page shows a broken image. Paths follow you everywhere in computing.</p></div>
+
+<!-- ============================================================ -->
+<h2 class="sec" id="s4"><span class="no">4</span>Publish — Path A: clicks only (works from zero)</h2>
+<label class="step"><input type="checkbox" data-k="a-repo"><span class="t">On <a href="https://github.com" target="_blank" rel="noopener">github.com</a>: <b>+</b> (top right) → <b>New repository</b> → name it <code>my-research</code> → keep it <b>Public</b> → tick <b>Add a README file</b> → <b>Create repository</b>.</span></label>
+<label class="step"><input type="checkbox" data-k="a-up"><span class="t">In your new repo: <b>Add file → Upload files</b> → drag in <code>index.html</code> and <code>chart.png</code> → green <b>Commit changes</b> button. (Look at that — you just made a commit, from the website!)</span></label>
+<label class="step"><input type="checkbox" data-k="a-pages"><span class="t">Turn on the website: <b>Settings</b> (repo top bar) → <b>Pages</b> (left menu) → under "Build and deployment", Source: <b>Deploy from a branch</b> → Branch: <b>main</b>, folder <b>/ (root)</b> → <b>Save</b>.</span></label>
+<label class="step"><input type="checkbox" data-k="a-visit"><span class="t">Wait ~1 minute, refresh the Pages settings — a box appears: <i>"Your site is live at https://YOURNAME.github.io/my-research/"</i>. Click it. That's YOUR research. On the internet. 🎉</span></label>
+
+<div class="quiz"><p class="qq">Quiz — your repo is called <code>my-research</code> and your username is <code>pixelkid</code>. Where does your site live?</p>
+<button data-x>https://github.com/pixelkid</button><button data-ok>https://pixelkid.github.io/my-research/</button><button data-x>https://my-research.com</button>
+<p class="exp">GitHub Pages addresses are always <code>USERNAME.github.io/REPONAME/</code>. The repo page (github.com/…) shows your <i>files</i>; the github.io address shows your <i>website</i>.</p></div>
+
+<!-- ============================================================ -->
+<h2 class="sec" id="s5"><span class="no">5</span>Publish — Path B: the engineer way (git)</h2>
+<p>Path A works, but engineers publish from the terminal — because they update sites <i>constantly</i>, and clicking through upload forms gets old fast. You already know every move from Guides 01/02; this just chains them:</p>
+<pre class="cmd">cd my-research-folder        <span class="c"># the folder with index.html + chart.png</span>
+git init                     <span class="c"># save slot (once)</span>
+git add .
+git commit -m "publish my research"
+git remote add origin git@github.com:YOURNAME/my-research.git   <span class="c"># connect the cloud (once)</span>
+git push -u origin main      <span class="c"># upload — then enable Pages as in Path A step 3</span></pre>
+<div class="tryit"><b>⚡ Try it now:</b> the Practice Terminal (bottom-right) has your <code>index.html</code> and <code>chart.png</code> waiting. Run the whole publish ritual — <b>Mission: The publish ritual</b> checks you off step by step. Do it twice until it's automatic.</div>
+<div class="why"><b>SSH key needed?</b> If <code>git push</code> asks for passwords or gets rejected, that's the keycard from Guide 01 section 5 / Guide 02 section 6: make a key with <code>ssh-keygen</code> and add it to GitHub once, and pushing works forever after.</div>
+
+<!-- ============================================================ -->
+<h2 class="sec" id="s6"><span class="no">6</span>Update it, show it off</h2>
+<p>Here is the beautiful part — <b>your site rebuilds itself every time you push</b>:</p>
+<pre class="cmd"><span class="c"># found a better chart? new finding? edit your files, then:</span>
+git add .
+git commit -m "add second chart"
+git push        <span class="c"># ~1 minute later the website shows the new version</span></pre>
+<label class="step"><input type="checkbox" data-k="u-edit"><span class="t">Test the cycle once: change one word in <code>index.html</code> (Path A: click the file on GitHub → ✏️ edit → commit; Path B: edit, add, commit, push). Refresh your site and watch the word change.</span></label>
+<label class="step"><input type="checkbox" data-k="u-share"><span class="t">Send your link to someone — teacher, parent, grandma. Their phone, their computer, another country: it works everywhere. That's what "published" means.</span></label>
+<table class="cheat">
+<tr><th>I want to…</th><th>How</th></tr>
+<tr><td>Make the page</td><td>Section 3 builder → <code>index.html</code> + your <code>chart.png</code></td></tr>
+<tr><td>Put it online (no code)</td><td>Upload to repo → Settings → Pages → main / root</td></tr>
+<tr><td>Put it online (git)</td><td><code>init → add → commit → remote add → push</code> → enable Pages</td></tr>
+<tr><td>Update it</td><td>edit → <code>add</code> → <code>commit</code> → <code>push</code> (site refreshes itself)</td></tr>
+<tr><td>Find my site</td><td><code>https://USERNAME.github.io/REPONAME/</code></td></tr>
+</table>
+<p class="lead" style="margin-top:26px"><b>Homework:</b> publish for real — builder page + your Guide 03 chart + Path A (or B if you're feeling like an engineer). Bring the live link to class. When it loads on the classroom screen, you are officially a published researcher. 🌐 Missing a chart? Do <a href="../video-game-research/">Guide 03</a> first. Rusty on commands? <a href="../git-for-gamers/">Guide 02</a> · <a href="../terminal-quest/">🕹️ Terminal Quest</a>.</p>
+</main>
+
+<button id="termBtn">⚡ Practice Terminal</button>
+<div id="termPanel">
+  <button id="termClose" title="Close">✕</button>
+  <div id="termCol">
+    <div id="termOut"></div>
+    <div id="termRow"><span class="pp" id="termPrompt">student@mpa:~$</span><input id="termIn" autocomplete="off" spellcheck="false" placeholder="type a command… (try: help)"></div>
+  </div>
+  <div id="missionCol"></div>
+</div>
+
+<footer class="site">Merit Point Academy · Guides</footer>
+<script>
+(function(){
+  /* ---------- progress checkboxes ---------- */
+  var KEY='mpa-guide-publish-research';
+  var saved={}; try{saved=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){}
+  function persist(){try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){}}
+  var boxes=[].slice.call(document.querySelectorAll('.step input[type=checkbox]'));
+  function paint(){var n=boxes.filter(function(b){return b.checked;}).length;
+    var pct=boxes.length?Math.round(100*n/boxes.length):0;
+    document.getElementById('pgfill').style.width=pct+'%';
+    document.getElementById('pgtxt').textContent=pct+'%';}
+  boxes.forEach(function(b){
+    if(saved[b.dataset.k]){b.checked=true;b.closest('.step').classList.add('done');}
+    b.addEventListener('change',function(){
+      saved[b.dataset.k]=b.checked; b.closest('.step').classList.toggle('done',b.checked);
+      persist(); paint();});
+  });
+  paint();
+
+  /* ---------- copy buttons ---------- */
+  [].slice.call(document.querySelectorAll('pre.cmd')).forEach(function(pre){
+    var btn=document.createElement('button');btn.className='copy';btn.textContent='⧉ copy';
+    btn.addEventListener('click',function(){
+      var t=pre.cloneNode(true);
+      [].slice.call(t.querySelectorAll('.c,button')).forEach(function(x){x.remove();});
+      var txt=t.textContent.replace(/\n{2,}/g,'\n').split('\n').map(function(l){return l.replace(/\s+$/,'');}).filter(function(l){return l.trim();}).join('\n');
+      (navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject()).then(
+        function(){btn.textContent='✓ copied';setTimeout(function(){btn.textContent='⧉ copy';},1400);},
+        function(){btn.textContent='select + ⌘C';});
+    });
+    pre.appendChild(btn);
+  });
+
+  /* ---------- quizzes ---------- */
+  [].slice.call(document.querySelectorAll('.quiz')).forEach(function(q){
+    [].slice.call(q.querySelectorAll('button')).forEach(function(b){
+      b.addEventListener('click',function(){
+        if(q.classList.contains('answered'))return;
+        q.classList.add('answered');
+        if(b.hasAttribute('data-ok')){b.classList.add('right');}
+        else{b.classList.add('wrong');
+          var ok=q.querySelector('button[data-ok]');if(ok)ok.classList.add('right');}
+      });
+    });
+  });
+
+  /* =====================================================================
+   * PRACTICE TERMINAL — fake filesystem + fake git, all in the browser
+   * =================================================================== */
+  var HOME=['home','student'];
+  var FS={home:{student:{
+    'index.html':'<!doctype html>… the research page you built in section 3 →',
+    'chart.png':'(your beautiful bar chart from Guide 03)'
+  }}};
+  var cwd=HOME.slice();
+  var git=null;   // {root:'path', branch, branches:{name:{commits:[{msg,files}] }}, staged:[], head:{}}
+  var out=document.getElementById('termOut'),inp=document.getElementById('termIn'),
+      promptEl=document.getElementById('termPrompt'),panel=document.getElementById('termPanel');
+
+  function dirAt(parts){var d=FS;for(var i=0;i<parts.length;i++){if(typeof d!=='object'||!(parts[i] in d))return null;d=d[parts[i]];}return d;}
+  function resolve(p){
+    if(!p||p==='~')return HOME.slice();
+    var base=p.charAt(0)==='/'?[]:(p.slice(0,2)==='~/'?HOME.slice():cwd.slice());
+    if(p.slice(0,2)==='~/')p=p.slice(2); else if(p.charAt(0)==='/')p=p.slice(1);
+    p.split('/').forEach(function(seg){
+      if(!seg||seg==='.')return;
+      if(seg==='..'){if(base.length)base.pop();}
+      else base.push(seg);
+    });
+    return base;
+  }
+  function shortCwd(){var s='/'+cwd.join('/');var h='/'+HOME.join('/');
+    return s===h?'~':(s.indexOf(h+'/')===0?'~'+s.slice(h.length):s);}
+  function prompt(){var b=git&&inGit()?' ('+git.branch+')':'';
+    return 'student@mpa:'+shortCwd()+b+'$';}
+  function inGit(){if(!git)return false;var s='/'+cwd.join('/');return s===git.root||s.indexOf(git.root+'/')===0;}
+  function print(s,cls){var d=document.createElement('div');if(cls)d.className=cls;d.textContent=s;out.appendChild(d);out.scrollTop=out.scrollHeight;}
+  function echoCmd(c){var d=document.createElement('div');
+    var p=document.createElement('span');p.className='p';p.textContent=prompt()+' ';
+    d.appendChild(p);d.appendChild(document.createTextNode(c));out.appendChild(d);}
+
+  function lsNames(d){return Object.keys(d).sort().map(function(k){return typeof d[k]==='object'?k+'/':k;});}
+  function repoDirFiles(){var d=dirAt(git.root.slice(1).split('/'));var r=[];
+    (function walk(node,pre){Object.keys(node).forEach(function(k){
+      if(typeof node[k]==='object')walk(node[k],pre+k+'/');else r.push(pre+k);});})(d,'');
+    return r;}
+  function committedSet(){var s={};git.branches[git.branch].commits.forEach(function(c){c.files.forEach(function(f){s[f]=1;});});return s;}
+  function branchFiles(name){var s={};git.branches[name].commits.forEach(function(c){c.files.forEach(function(f){s[f]=1;});});return s;}
+  /* make the folder reflect the current branch — so "ls" on main really
+     doesn't show a file that only exists on the feature branch */
+  function syncWorktree(){
+    var d=dirAt(git.root.slice(1).split('/'));if(!d)return;
+    var cur=branchFiles(git.branch),all={};
+    Object.keys(git.branches).forEach(function(b){Object.assign(all,branchFiles(b));});
+    Object.keys(all).forEach(function(f){
+      if(f.indexOf('/')>=0)return;
+      if(cur[f]){if(!(f in d))d[f]='';}
+      else if(f in d&&git.staged.indexOf(f)<0)delete d[f];
+    });
+  }
+
+  var HELP='commands: pwd  ls  cd <dir>  mkdir <name>  touch <name>  cat <file>  clear\n'+
+           'git: init  status  add <file|.>  commit -m "msg"  log  branch [name]\n'+
+           '     checkout [-b] <name>  merge <name>  remote add origin <url>  push  pull\n'+
+           'ssh: ssh-keygen   ssh -T git@github.com';
+
+  function run(line){
+    var m=line.match(/"[^"]*"|\S+/g)||[];
+    var cmd=m[0],a1=m[1],a2=m[2];
+    if(!cmd)return;
+    if(cmd==='help')return print(HELP);
+    if(cmd==='clear'){out.innerHTML='';return;}
+    if(cmd==='pwd')return print('/'+cwd.join('/'));
+    if(cmd==='ls'){var d=dirAt(a1?resolve(a1):cwd);
+      if(d===null||typeof d!=='object')return print('ls: cannot access: no such directory','err');
+      var n=lsNames(d);return print(n.length?n.join('   '):'(empty)');}
+    if(cmd==='cd'){var t=resolve(a1||'~');var d2=dirAt(t);
+      if(d2===null||typeof d2!=='object')return print('cd: no such directory: '+(a1||'~'),'err');
+      cwd=t;return;}
+    if(cmd==='mkdir'){if(!a1)return print('mkdir: give a folder name, e.g.  mkdir my-project','err');
+      var d3=dirAt(cwd);if(a1 in d3)return print('mkdir: '+a1+': already exists','err');
+      d3[a1.replace(/\/+$/,'')]={};return;}
+    if(cmd==='touch'){if(!a1)return print('touch: give a file name, e.g.  touch README.md','err');
+      var d4=dirAt(cwd);if(typeof d4[a1]==='object')return print('touch: '+a1+' is a folder','err');
+      if(!(a1 in d4))d4[a1]='';return;}
+    if(cmd==='cat'){if(!a1)return print('cat: give a file name','err');
+      var t2=resolve(a1);var f=dirAt(t2);
+      if(f===null)return print('cat: '+a1+': no such file','err');
+      if(typeof f==='object')return print('cat: '+a1+': is a folder','err');
+      return print(f||'(empty file)');}
+    if(cmd==='ssh-keygen')return print('Generating public/private ed25519 key pair.\nYour identification has been saved in ~/.ssh/id_ed25519\nYour public key has been saved in ~/.ssh/id_ed25519.pub','ok');
+    if(cmd==='ssh'){if(a1==='-T'&&a2==='git@github.com')return print("Hi student! You've successfully authenticated, but GitHub does not provide shell access.",'ok');
+      return print('(simulated) Connecting to '+(a1||'?')+'… this practice terminal only simulates  ssh -T git@github.com');}
+    if(cmd!=='git')return print(cmd+': command not found — type  help','err');
+
+    /* ---------- git ---------- */
+    var sub=a1;
+    if(sub==='init'){
+      if(git&&inGit())return print('Reinitialized existing Git repository.');
+      git={root:'/'+cwd.join('/'),branch:'main',branches:{main:{commits:[]}},staged:[],remote:null};
+      return print('Initialized empty Git repository in /'+cwd.join('/')+'/.git/','ok');}
+    if(!git||!inGit())return print('fatal: not a git repository — cd into your project and run  git init','err');
+    if(sub==='status'){
+      var com=committedSet();
+      var untracked=repoDirFiles().filter(function(f){return git.staged.indexOf(f)<0&&!com[f];});
+      var s='On branch '+git.branch+'\n';
+      if(git.staged.length)s+='Changes to be committed:\n'+git.staged.map(function(f){return '        new file:   '+f;}).join('\n')+'\n';
+      if(untracked.length)s+='Untracked files:  (use "git add <file>" to include them)\n'+untracked.map(function(f){return '        '+f;}).join('\n')+'\n';
+      if(!git.staged.length&&!untracked.length)s+='nothing to commit, working tree clean';
+      return print(s);}
+    if(sub==='add'){
+      var com2=committedSet();
+      var pool=repoDirFiles().filter(function(f){return git.staged.indexOf(f)<0&&!com2[f];});
+      if(!a2)return print('git add: say WHAT to add:  git add README.md   or   git add .','err');
+      if(a2==='.'){if(!pool.length)return print('(nothing new to add)');
+        git.staged=git.staged.concat(pool);return;}
+      if(pool.indexOf(a2)<0)return print("git add: '"+a2+"' — no new file with that name here (try  git status )",'err');
+      git.staged.push(a2);return;}
+    if(sub==='commit'){
+      var msgi=m.indexOf('-m');var msg=msgi>0?(m[msgi+1]||''):'';
+      if(!msg)return print('git commit: add a message:  git commit -m "what I did"','err');
+      msg=msg.replace(/^"|"$/g,'');
+      if(!git.staged.length)return print('nothing to commit — first  git add  a file','err');
+      git.branches[git.branch].commits.push({msg:msg,files:git.staged.slice()});
+      var n=git.staged.length;git.staged=[];
+      return print('['+git.branch+' '+Math.random().toString(16).slice(2,9)+'] '+msg+'\n '+n+' file(s) changed','ok');}
+    if(sub==='log'){var cs=git.branches[git.branch].commits;
+      if(!cs.length)return print('fatal: no commits yet on '+git.branch,'err');
+      return print(cs.slice().reverse().map(function(c,i){
+        return 'commit '+Math.random().toString(16).slice(2,10)+'…\n    '+c.msg;}).join('\n'));}
+    if(sub==='branch'){
+      if(!a2)return print(Object.keys(git.branches).map(function(b){return (b===git.branch?'* ':'  ')+b;}).join('\n'));
+      if(git.branches[a2])return print("fatal: a branch named '"+a2+"' already exists",'err');
+      git.branches[a2]={commits:git.branches[git.branch].commits.slice()};return;}
+    if(sub==='checkout'){
+      var name=a2==='-b'?m[3]:a2;
+      if(!name)return print('git checkout: give a branch name','err');
+      if(a2==='-b'){if(git.branches[name])return print("fatal: branch '"+name+"' already exists",'err');
+        git.branches[name]={commits:git.branches[git.branch].commits.slice()};git.branch=name;
+        return print("Switched to a new branch '"+name+"'",'ok');}
+      if(!git.branches[name])return print("error: no branch called '"+name+"' (see  git branch )",'err');
+      git.branch=name;syncWorktree();return print("Switched to branch '"+name+"'",'ok');}
+    if(sub==='merge'){
+      if(!a2||!git.branches[a2])return print('git merge: give an existing branch name, e.g.  git merge feature','err');
+      if(a2===git.branch)return print('Already up to date (you are ON that branch).');
+      var mine=git.branches[git.branch].commits,theirs=git.branches[a2].commits;
+      var fresh=theirs.filter(function(c){return mine.indexOf(c)<0;});
+      if(!fresh.length)return print('Already up to date.');
+      git.branches[git.branch].commits=mine.concat(fresh);syncWorktree();
+      return print('Merge made: folded '+fresh.length+' commit(s) from '+a2+' into '+git.branch+'.','ok');}
+    if(sub==='remote'){if(a2==='add'&&m[3]==='origin'&&m[4]){git.remote=m[4];return;}
+      return print('usage: git remote add origin <url>','err');}
+    if(sub==='push'){
+      if(!git.branches[git.branch].commits.length)return print('error: nothing to push — commit something first','err');
+      git.pushed=true;
+      return print('Enumerating objects… done.\nTo '+(git.remote||'github.com:student/my-project.git')+'\n * ['+git.branch+'] pushed '+git.branches[git.branch].commits.length+' commit(s)  ✓ (simulated)','ok');}
+    if(sub==='pull'){git.pulled=true;return print('Already up to date. (simulated — in real life this downloads teammates\u2019 new commits)','ok');}
+    return print("git: '"+(sub||'')+"' is not a git command this practice terminal knows — type  help",'err');
+  }
+
+  /* ---------- missions ---------- */
+  function cwdIs(p){return '/'+cwd.join('/')===p;}
+  var MISSIONS=[
+    {title:'Mission · The publish ritual',steps:[
+      {label:'ls — your two files are ready',test:function(c){return c[0]==='ls';}},
+      {label:'git init',test:function(c,g){return c[0]==='git'&&c[1]==='init';}},
+      {label:'git add .',test:function(c,g){return c[0]==='git'&&c[1]==='add'&&g&&g.staged.length>0;}},
+      {label:'git commit -m "publish my research"',test:function(c,g){return c[0]==='git'&&c[1]==='commit'&&g&&g.branches[g.branch].commits.length>0;}},
+      {label:'git remote add origin git@github.com:YOU/my-research.git',test:function(c,g){return c[0]==='git'&&c[1]==='remote'&&g&&g.remote;}},
+      {label:'git push — your site goes live!',test:function(c,g){return c[0]==='git'&&c[1]==='push'&&g&&g.pushed;}}]}
+  ];
+  var mdone={}; try{mdone=JSON.parse(localStorage.getItem(KEY+'-missions')||'{}');}catch(e){}
+  function renderMissions(){
+    var col=document.getElementById('missionCol');col.innerHTML='';
+    MISSIONS.forEach(function(ms,mi){
+      var h=document.createElement('h4');h.textContent=ms.title;col.appendChild(h);
+      ms.steps.forEach(function(st,si){
+        var d=document.createElement('div');d.className='mi'+(mdone[mi+'-'+si]?' done':'');
+        d.innerHTML='<span class="bx"></span>';
+        d.appendChild(document.createTextNode(st.label));
+        col.appendChild(d);});});
+  }
+  function checkMissions(parts){
+    var hit=false;
+    MISSIONS.forEach(function(ms,mi){
+      for(var si=0;si<ms.steps.length;si++){
+        if(mdone[mi+'-'+si])continue;
+        try{if(ms.steps[si].test(parts,git)){mdone[mi+'-'+si]=1;hit=true;
+          if(si===ms.steps.length-1)print('★ '+ms.title+' COMPLETE! Nice.','ok');}}catch(e){}
+        break; /* only the next unfinished step of each mission is testable */
+      }});
+    if(hit){try{localStorage.setItem(KEY+'-missions',JSON.stringify(mdone));}catch(e){}
+      renderMissions();}
+  }
+
+  /* ---------- wire up ---------- */
+  var hist=[],hi=-1;
+  inp.addEventListener('keydown',function(e){
+    if(e.key==='Enter'){
+      var line=inp.value.trim();inp.value='';
+      if(!line)return;
+      echoCmd(line);hist.push(line);hi=hist.length;
+      run(line);
+      var parts=(line.match(/"[^"]*"|\S+/g)||[]);
+      checkMissions(parts);
+      promptEl.textContent=prompt();
+      out.scrollTop=out.scrollHeight;
+    }else if(e.key==='ArrowUp'){if(hi>0){hi--;inp.value=hist[hi];e.preventDefault();}}
+    else if(e.key==='ArrowDown'){if(hi<hist.length-1){hi++;inp.value=hist[hi];}else{hi=hist.length;inp.value='';}e.preventDefault();}
+  });
+  document.getElementById('termBtn').addEventListener('click',function(){
+    panel.classList.toggle('open');
+    if(panel.classList.contains('open')){inp.focus();
+      if(!out.childNodes.length){
+        print('Your index.html and chart.png are here, ready to publish (try: ls).');
+        print('Run the publish ritual — the mission on the right checks each step →');}}
+  });
+  document.getElementById('termClose').addEventListener('click',function(){panel.classList.remove('open');});
+  panel.addEventListener('click',function(e){if(e.target===panel||e.target.id==='termCol'||e.target.id==='termOut')inp.focus();});
+  promptEl.textContent=prompt();
+  renderMissions();
+})();
+</script>
+<script>
+(function(){
+  /* ---------- research-page builder: form → live preview → download ---------- */
+  var F=function(id){return document.getElementById(id);};
+  var fields=['fTitle','fName','fAff','fData','fQ','fTldr','fFinds','fCap','fLim'];
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+  function gen(){
+    var t=esc(F('fTitle').value),nm=esc(F('fName').value),af=esc(F('fAff').value),
+        da=esc(F('fData').value),q=esc(F('fQ').value),tl=esc(F('fTldr').value),
+        cap=esc(F('fCap').value),lim=esc(F('fLim').value);
+    var finds=F('fFinds').value.split('\n').map(function(x){return x.trim();}).filter(Boolean)
+      .map(function(x){return '      <li>'+esc(x)+'</li>';}).join('\n');
+    var h='';
+    h+='<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n';
+    h+='<meta name="viewport" content="width=device-width,initial-scale=1">\n';
+    h+='<title>'+t+'</title>\n<style>\n';
+    h+='body{margin:0;font-family:Georgia,"Times New Roman",serif;color:#1c2b3a;background:#fdfcf9;line-height:1.65}\n';
+    h+='.wrap{max-width:760px;margin:0 auto;padding:48px 22px 80px}\n';
+    h+='h1{font-size:32px;line-height:1.25;color:#0c2d52;margin:0 0 10px}\n';
+    h+='.byline{font-size:16px;color:#456;margin:0 0 4px}\n';
+    h+='.aff{font-size:14px;color:#789;margin:0 0 18px}\n';
+    h+='.chip{display:inline-block;font-family:Helvetica,Arial,sans-serif;font-size:12.5px;background:#eef4f9;border:1px solid #cfdde9;border-radius:999px;padding:4px 12px;color:#2b5c8a;margin:0 6px 24px 0}\n';
+    h+='h2{font-family:Helvetica,Arial,sans-serif;font-size:14px;letter-spacing:2px;text-transform:uppercase;color:#177b8a;border-top:2px solid #177b8a;padding-top:12px;margin:36px 0 12px}\n';
+    h+='.abstract{background:#f2f7fa;border-left:4px solid #177b8a;padding:14px 18px;border-radius:0 10px 10px 0;font-size:17px}\n';
+    h+='.abstract .q{font-style:italic;color:#0c2d52}\n';
+    h+='.abstract .a{margin-top:8px;font-weight:bold}\n';
+    h+='figure{margin:18px 0}\n';
+    h+='figure img{max-width:100%;border:1px solid #dde;border-radius:10px}\n';
+    h+='figcaption{font-size:13.5px;color:#789;margin-top:8px}\n';
+    h+='ol.findings li{margin:10px 0;font-size:16.5px}\n';
+    h+='.limits{background:#fdf6e8;border-left:4px solid #e0a10b;padding:12px 18px;border-radius:0 10px 10px 0;font-size:15px}\n';
+    h+='footer{margin-top:56px;font-family:Helvetica,Arial,sans-serif;font-size:12.5px;color:#9ab}\n';
+    h+='</style>\n</head>\n<body>\n<div class="wrap">\n';
+    h+='<h1>'+t+'</h1>\n';
+    h+='<p class="byline">'+nm+'</p>\n<p class="aff">'+af+'</p>\n';
+    h+='<span class="chip">\uD83D\uDCE6 Data: '+da+'</span><span class="chip">\uD83D\uDD2C A student research project</span>\n';
+    h+='<h2>The question</h2>\n';
+    h+='<div class="abstract"><div class="q">'+q+'</div><div class="a">TL;DR \u2014 '+tl+'</div></div>\n';
+    h+='<h2>Key figure</h2>\n';
+    h+='<figure><img src="chart.png" alt="Main chart of this project"><figcaption>'+cap+'</figcaption></figure>\n';
+    h+='<h2>Findings</h2>\n<ol class="findings">\n'+finds+'\n</ol>\n';
+    h+='<h2>Limitations</h2>\n<div class="limits">'+lim+'</div>\n';
+    h+='<footer>Published with GitHub Pages \u00b7 built by '+nm+' \u00b7 '+af+'</footer>\n';
+    h+='</div>\n</body>\n</html>\n';
+    return h;
+  }
+  function refresh(){F('pbFrame').srcdoc=gen();}
+  fields.forEach(function(id){F(id).addEventListener('input',refresh);});
+  refresh();
+  F('pbDl').addEventListener('click',function(){
+    var blob=new Blob([gen()],{type:'text/html'});
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(blob);a.download='index.html';
+    document.body.appendChild(a);a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},400);
+  });
+  F('pbCp').addEventListener('click',function(){
+    var b=this;
+    (navigator.clipboard?navigator.clipboard.writeText(gen()):Promise.reject()).then(
+      function(){b.textContent='\u2713 copied';setTimeout(function(){b.textContent='\u29C9 Copy HTML';},1400);},
+      function(){b.textContent='select in preview + copy';});
+  });
+})();
+</script>
+<script defer src="/meritpoint-slides/assets/auth.js"></script></body></html>
