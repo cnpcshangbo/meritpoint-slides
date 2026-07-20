@@ -458,6 +458,29 @@
           ],
           "duration": "self-paced",
           "status": "ready"
+        },
+        {
+          "id": "terminal-quest",
+          "n": 4,
+          "numLabel": "GAME 01",
+          "noPdf": true,
+          "title": "Terminal Quest — Launch Night 🕹️",
+          "summary": "A 6-level command-line adventure game: you are the new engineer at a game studio on launch night. Find the door code with pwd/ls/cd, dig up a lost save file, make git save points, branch a risky fix — then the boss fight: SSH into the crashed game server, repair it with cp, and restart it. Real commands, XP, level map, saved progress.",
+          "tags": [
+            "game",
+            "terminal",
+            "SSH",
+            "git",
+            "quest",
+            "arcade",
+            "boss fight",
+            "grade 6",
+            "kids",
+            "interactive",
+            "command line"
+          ],
+          "duration": "45–60 min",
+          "status": "ready"
         }
       ]
     },

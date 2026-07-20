@@ -1,0 +1,504 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Terminal Quest · Launch Night — Merit Point Academy</title>
+<link rel="icon" type="image/png" href="/meritpoint-slides/assets/favicon.png">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:#0d1b2a;color:#d7e7f7;font-family:"SF Mono",Menlo,Consolas,"Courier New",monospace;display:flex;flex-direction:column}
+a{color:#6fd3e0}
+/* ---------- top bar ---------- */
+#bar{flex:none;display:flex;align-items:center;gap:14px;padding:10px 16px;background:#0a1523;border-bottom:3px solid #2BC4D4}
+#bar .ttl{font-weight:700;letter-spacing:2px;font-size:15px;color:#fff;text-transform:uppercase}
+#bar .ttl .coin{color:#F2A93B}
+#bar a.back{font-size:12px;text-decoration:none;color:#9fb6cc;border:1.5px solid #2c5580;border-radius:8px;padding:5px 10px}
+#bar a.back:hover{color:#fff;border-color:#6fd3e0}
+#xpwrap{margin-left:auto;display:flex;align-items:center;gap:8px;font-size:12px;color:#9fb6cc}
+#xprail{width:140px;height:12px;background:#1b3a5c;border:1.5px solid #2c5580;border-radius:3px;overflow:hidden}
+#xpfill{height:100%;width:0;background:linear-gradient(90deg,#0F9DB0,#F2A93B);transition:width .4s}
+#mapBtn{font:inherit;font-size:12px;background:#1b3a5c;color:#cfe0ef;border:1.5px solid #2c5580;border-radius:8px;padding:5px 12px;cursor:pointer}
+#mapBtn:hover{background:#24507e}
+/* ---------- level map ---------- */
+#map{flex:1;overflow-y:auto;padding:28px 18px;display:none}
+#map.on{display:block}
+#map .inner{max-width:880px;margin:0 auto}
+#map h2{color:#fff;letter-spacing:3px;font-size:18px;text-transform:uppercase;margin-bottom:6px}
+#map .sub{color:#9fb6cc;font-size:13px;margin-bottom:22px;line-height:1.6}
+.lvls{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.lv{border:3px solid #2c5580;border-radius:12px;padding:14px;background:#10233a;cursor:pointer;position:relative}
+.lv:hover{border-color:#6fd3e0}
+.lv.lock{opacity:.45;cursor:not-allowed}
+.lv.done{border-color:#1FA37A}
+.lv .no{font-size:11px;color:#6fd3e0;letter-spacing:2px}
+.lv .nm{color:#fff;font-weight:700;font-size:14.5px;margin:6px 0 8px;line-height:1.4}
+.lv .ds{font-size:12px;color:#9fb6cc;line-height:1.55}
+.lv .badge{position:absolute;top:10px;right:12px;font-size:16px}
+/* ---------- play screen ---------- */
+#play{flex:1;display:none;flex-direction:column;min-height:0}
+#play.on{display:flex}
+#story{flex:none;max-height:44%;overflow-y:auto;padding:16px 18px;border-bottom:2px solid #1b3a5c}
+#story .inner{max-width:880px;margin:0 auto}
+#story h2{color:#F2A93B;font-size:14px;letter-spacing:2px;text-transform:uppercase}
+#story h2 .lvno{color:#6fd3e0;margin-right:10px}
+#story p.tx{font-size:13.5px;line-height:1.7;color:#cfe0ef;margin:9px 0}
+#story p.tx b{color:#fff}
+#story code{background:#1b3a5c;border-radius:4px;padding:1px 6px;color:#aee6ff;font-size:12.5px}
+#objs{margin:10px 0 4px}
+.ob{display:flex;gap:8px;align-items:flex-start;color:#9fb6cc;font-size:12.5px;margin:5px 0}
+.ob .bx{flex:none;width:15px;height:15px;border:1.5px solid #3d6a94;border-radius:4px;margin-top:1px;text-align:center;line-height:13px;font-size:11px}
+.ob.done{color:#8fb98f}.ob.done .bx{background:#1FA37A;border-color:#1FA37A;color:#fff}
+.ob.done .bx::before{content:"✓"}
+#hintBtn{font:inherit;font-size:11.5px;background:none;border:1.5px dashed #3d6a94;color:#9fb6cc;border-radius:8px;padding:4px 10px;cursor:pointer;margin-top:6px}
+#hintBtn:hover{color:#fff;border-color:#6fd3e0}
+#hint{display:none;font-size:12.5px;color:#F2A93B;margin-top:8px;line-height:1.6}
+#hint.on{display:block}
+/* ---------- terminal ---------- */
+#twrap{flex:1;display:flex;flex-direction:column;min-height:0;background:#0a1320}
+#tout{flex:1;overflow-y:auto;padding:14px 18px 6px;font-size:13px;line-height:1.65;white-space:pre-wrap;word-break:break-all}
+#tout .p{color:#6fd3e0}
+#tout .err{color:#ff9d8a}
+#tout .ok{color:#8fb98f}
+#tout .sys{color:#F2A93B}
+#trow{flex:none;display:flex;align-items:center;gap:8px;padding:8px 18px 12px;border-top:1px solid #1b3a5c}
+#trow .pp{color:#6fd3e0;font-size:13px;white-space:nowrap}
+#tin{flex:1;background:transparent;border:none;outline:none;color:#fff;font:inherit;font-size:14px}
+/* ---------- banner ---------- */
+#banner{position:fixed;inset:0;background:rgba(6,14,24,.88);display:none;align-items:center;justify-content:center;z-index:80}
+#banner.on{display:flex}
+#banner .card{background:#10233a;border:3px solid #F2A93B;border-radius:16px;padding:34px 40px;text-align:center;max-width:520px;margin:16px}
+#banner .big{font-size:22px;color:#F2A93B;letter-spacing:3px;font-weight:700;text-transform:uppercase}
+#banner .stars{font-size:26px;margin:10px 0;letter-spacing:6px}
+#banner .msg{color:#cfe0ef;font-size:13.5px;line-height:1.7;margin:12px 0 18px}
+#banner button{font:inherit;font-weight:700;font-size:14px;background:#0F9DB0;color:#fff;border:none;border-radius:10px;padding:11px 26px;cursor:pointer;letter-spacing:1px}
+#banner button:hover{background:#2BC4D4}
+@media(max-width:700px){#story{max-height:52%}#xpwrap span.lb{display:none}}
+</style></head><body>
+
+<div id="bar">
+  <a class="back" href="../">← Guides</a>
+  <span class="ttl">🕹️ Terminal Quest <span class="coin">· Launch Night</span></span>
+  <div id="xpwrap"><span class="lb">XP</span><div id="xprail"><div id="xpfill"></div></div><span id="xptxt">0</span></div>
+  <button id="mapBtn">Level map</button>
+</div>
+
+<div id="map">
+  <div class="inner">
+    <h2>Pixel Forge Studios — Launch Night</h2>
+    <p class="sub">It is 6:00 PM. Our game <b>Super Pixel Rescue</b> goes live at midnight, and you are the new engineer. Everything that can break, will. Your only weapon: <b>the terminal</b>. Beat all 6 levels to ship the game. Real commands only — everything you type here works on a real computer too. Progress saves automatically.</p>
+    <div class="lvls" id="lvlCards"></div>
+  </div>
+</div>
+
+<div id="play">
+  <div id="story"><div class="inner">
+    <h2><span class="lvno" id="stLvno"></span><span id="stTitle"></span></h2>
+    <div id="stText"></div>
+    <div id="objs"></div>
+    <button id="hintBtn">💡 need a hint?</button>
+    <div id="hint"></div>
+  </div></div>
+  <div id="twrap">
+    <div id="tout"></div>
+    <div id="trow"><span class="pp" id="tprompt"></span><input id="tin" autocomplete="off" spellcheck="false" autocapitalize="off" placeholder="type a command… (try: help)"></div>
+  </div>
+</div>
+
+<div id="banner"><div class="card">
+  <div class="big" id="bnTitle">Level complete</div>
+  <div class="stars">★ ★ ★</div>
+  <div class="msg" id="bnMsg"></div>
+  <button id="bnBtn">Continue ▸</button>
+</div></div>
+
+<script>
+(function(){
+  var SKEY='mpa-terminal-quest';
+
+  /* ================= LEVELS ================= */
+  var LEVELS=[
+    {title:'Wake up, engineer',
+     desc:'Learn to move: pwd, ls, cd, cat.',
+     story:['6:02 PM. First day, launch day. Great timing.',
+       'Your boss yells across the room: "New kid! The door code for the build room is somewhere in the office — find it! And stop clicking around, use the terminal like an engineer!"',
+       'Remember the golden combo: <code>pwd</code> (where am I?) → <code>ls</code> (what is here?) → <code>cd name</code> (go there) → <code>cat file</code> (read it).'],
+     hint:'Type: pwd, then ls. See "desk/"? Then: cd desk, ls, cat note.txt — and follow what the note says. cd .. goes back.',
+     fs:{desk:{'note.txt':'Sticky note: the door code card fell behind the shelf\nin the STORAGE room. (Go back with  cd ..  then  cd storage)'},storage:{'door-code.txt':'DOOR CODE: 4-7-1-3\nWelcome aboard, engineer. Try not to break anything. — Boss'},'welcome.txt':'HR: your desk is the folder called desk. Obviously.'},
+     objectives:[
+       {label:'pwd — find out where you are',test:function(c){return c[0]==='pwd';}},
+       {label:'ls — look around the office',test:function(c){return c[0]==='ls';}},
+       {label:'cd desk — walk to your desk',test:function(c){return c[0]==='cd'&&here('/home/you/desk');}},
+       {label:'cat note.txt — read the sticky note',test:function(c){return c[0]==='cat'&&/note/.test(c[1]||'');}},
+       {label:'find and cat door-code.txt',test:function(c){return c[0]==='cat'&&/door-code/.test(c[1]||'');}}]},
+
+    {title:'The lost golden save',
+     desc:'Navigate deep folder paths and find a buried file.',
+     story:['6:40 PM. The lead tester is in tears: "My GOLDEN SAVE file! The one where I finished the whole game! It is somewhere in the backups folder, I don\u2019t remember where!"',
+       'Backups are folders inside folders inside folders. Dig with <code>ls</code> and <code>cd</code>. If you get lost: <code>pwd</code>. To climb back up: <code>cd ..</code>'],
+     hint:'cd backups, ls, then keep cd-ing into what you find (year, then month). The file is in 2025/june. Finish with: cat save-42.dat, then pwd.',
+     fs:{backups:{'2024':{'december':{'old-save.dat':'boring save. 3 coins.'}},'2025':{'may':{'notes.txt':'nothing here…'},'june':{'save-42.dat':'GOLDEN SAVE \u2014 all levels beaten, 999 coins, princess rescued.\nTester note: DO NOT LOSE THIS EVER AGAIN.'}}},'readme.txt':'Backups are sorted: backups/<year>/<month>/'},
+     objectives:[
+       {label:'cd backups',test:function(c){return c[0]==='cd'&&here('/home/you/backups');}},
+       {label:'ls — see the years',test:function(c){return c[0]==='ls'&&here('/home/you/backups');}},
+       {label:'dig down to 2025/june',test:function(c){return c[0]==='cd'&&here('/home/you/backups/2025/june');}},
+       {label:'cat save-42.dat — the golden save!',test:function(c){return c[0]==='cat'&&/save-42/.test(c[1]||'');}},
+       {label:'pwd — report the treasure\u2019s full path',test:function(c){return c[0]==='pwd'&&here('/home/you/backups/2025/june');}}]},
+
+    {title:'Save point',
+     desc:'Studio rule #1: git init, add, commit before touching code.',
+     story:['7:15 PM. Time to fix the famous double-jump bug in <code>game-code</code>.',
+       'The boss appears behind you: "Rule number ONE in this studio: nobody touches code without a SAVE POINT. If your fix explodes, we roll back. Git. Now."',
+       'The ritual, always in order: <code>git init</code> (once) → <code>git add .</code> (choose what to save) → <code>git commit -m "message"</code> (save!) → <code>git log</code> (see your saves).'],
+     hint:'cd game-code, then exactly: git init → git add . → git commit -m "safe point" → git log',
+     fs:{'game-code':{'player.py':'jump_height = 3  # TODO: double-jump is broken','engine.py':'# runs at 60 fps or the boss cries'}},
+     objectives:[
+       {label:'cd game-code',test:function(c){return c[0]==='cd'&&here('/home/you/game-code');}},
+       {label:'git init — open a save slot',test:function(c,g){return c[0]==='git'&&c[1]==='init';}},
+       {label:'git add . — choose what to save',test:function(c,g){return c[0]==='git'&&c[1]==='add'&&g&&g.staged.length>0;}},
+       {label:'git commit -m "safe point"',test:function(c,g){return c[0]==='git'&&c[1]==='commit'&&g&&g.branches[g.branch].commits.length>0;}},
+       {label:'git log — admire your save',test:function(c,g){return c[0]==='git'&&c[1]==='log'&&g&&g.branches[g.branch].commits.length>0;}}]},
+
+    {title:'The risky fix',
+     desc:'Branch = experiment safely. Merge = keep what works.',
+     story:['8:05 PM. Your double-jump idea is… wild. It might be genius. It might delete the player.',
+       'The boss: "Wild ideas go on a BRANCH — a creative-mode copy of the code. If it works, MERGE it back. If it explodes, main is untouched and we all keep our jobs."',
+       'You are already in <code>game-code</code> with a safe commit on <code>main</code> (we set that up for you — check <code>git log</code>).'],
+     hint:'git checkout -b double-jump → touch fix.py → git add . → git commit -m "wild fix" → git checkout main (fix.py vanishes! run ls) → git merge double-jump',
+     fs:{'game-code':{'player.py':'jump_height = 3  # TODO: double-jump is broken','engine.py':'# 60 fps'}},
+     setup:['cd game-code','git init','git add .','git commit -m "safe point"'],
+     objectives:[
+       {label:'git checkout -b double-jump',test:function(c,g){return c[0]==='git'&&c[1]==='checkout'&&g&&g.branch!=='main';}},
+       {label:'touch fix.py — build the wild fix',test:function(c,g){return c[0]==='touch'&&g&&g.branch!=='main';}},
+       {label:'git add . + git commit it',test:function(c,g){return c[0]==='git'&&c[1]==='commit'&&g&&g.branch!=='main'&&g.branches[g.branch].commits.length>1;}},
+       {label:'git checkout main — fix.py vanishes!',test:function(c,g){return c[0]==='git'&&c[1]==='checkout'&&g&&g.branch==='main';}},
+       {label:'git merge double-jump — it works. Keep it!',test:function(c,g){return c[0]==='git'&&c[1]==='merge';}}]},
+
+    {title:'BOSS: the crashed server',
+     desc:'SSH into the game server, repair it, restart it. The real deal.',
+     story:['8:59 PM. Every screen turns red. THE GAME SERVER IS DOWN. The whole studio goes silent and looks at… you.',
+       'Servers are computers in another building. You reach them with <code>ssh</code> — your terminal, their machine. The manual on your desk says how.',
+       'Get in, read the crash log, fix what broke, run the restart script, get out. Go go go!'],
+     hint:'cat server-manual.txt → ssh dev@game-server → ls, cat crash.log → the config is gone but there is a backup: cp backups/settings.bak settings.cfg → ./restart.sh → exit',
+     fs:{'server-manual.txt':'GAME SERVER MANUAL\nConnect:  ssh dev@game-server\nLeave:    exit\nIf it crashed: read crash.log on the server.'},
+     remote:{'crash.log':'FATAL 8:42 PM \u2014 settings.cfg NOT FOUND. Server cannot start.\n(someone deleted it\u2026 there should be a backup in backups/)','backups':{'settings.bak':'players=64\nworld=pixel_forge\nfun=maximum'},'restart.sh':'#!/bin/sh \u2014 run me with:  ./restart.sh'},
+     scripts:{'restart.sh':function(){
+       var d=rDir(['home','dev']);
+       if(d&&typeof d['settings.cfg']==='string'){flags.serverUp=true;
+         tprint('Reading settings.cfg\u2026 OK\nSpinning up world "pixel_forge"\u2026 OK\n\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 100%\nSERVER ONLINE. Players reconnecting. YOU DID IT.','ok');}
+       else tprint('restart failed: settings.cfg still missing.\n(the crash.log mentioned a backup\u2026 try  cp backups/settings.bak settings.cfg)','err');}},
+     objectives:[
+       {label:'ssh dev@game-server — get in',test:function(c){return c[0]==='ssh'&&inRemote;}},
+       {label:'cat crash.log — what broke?',test:function(c){return c[0]==='cat'&&/crash/.test(c[1]||'')&&inRemote;}},
+       {label:'cp backups/settings.bak settings.cfg',test:function(c){if(c[0]!=='cp')return false;var d=rDir(['home','dev']);return d&&typeof d['settings.cfg']==='string';}},
+       {label:'./restart.sh — bring it back up',test:function(c){return flags.serverUp===true;}},
+       {label:'exit — come home a hero',test:function(c){return c[0]==='exit'&&!inRemote&&flags.serverUp===true;}}]},
+
+    {title:'Ship it!',
+     desc:'Push the code to the cloud and hit the big red button.',
+     story:['11:47 PM. Server: online. Fix: merged. There is one thing left.',
+       'The code must go to the cloud (GitHub) so the whole team \u2014 and the update servers \u2014 can reach it: connect with <code>git remote add origin git@github.com:pixelforge/super-pixel-rescue.git</code>, then <code>git push</code>.',
+       'And then\u2026 the big red button. Its name is <code>launch-game</code>. You have earned the right to press it.'],
+     hint:'git remote add origin git@github.com:pixelforge/super-pixel-rescue.git → git push → launch-game',
+     fs:{'game-code':{'player.py':'jump_height = 3  # double-jump WORKS','engine.py':'# 60 fps, smooth as butter','fix.py':'# the wild fix that saved launch night'}},
+     setup:['cd game-code','git init','git add .','git commit -m "release candidate"'],
+     custom:{'launch-game':function(g){
+       if(!g||!g.pushed){tprint('launch-game: refused. The cloud does not have your code yet \u2014 git push first!','err');return;}
+       flags.won=true;
+       tprint('\nInitiating launch sequence\u2026\n3\u2026 2\u2026 1\u2026\n\n\uD83C\uDF86 SUPER PIXEL RESCUE IS LIVE \uD83C\uDF86\nPlayers online: 1\u2026 512\u2026 40,960\u2026\nThe studio is cheering. The boss is crying (happy tears).','ok');}},
+     objectives:[
+       {label:'git remote add origin <url> — connect the cloud',test:function(c,g){return c[0]==='git'&&c[1]==='remote'&&g&&g.remote;}},
+       {label:'git push — upload the game',test:function(c,g){return c[0]==='git'&&c[1]==='push'&&g&&g.pushed;}},
+       {label:'launch-game — press the big red button',test:function(c){return flags.won===true;}}]}
+  ];
+
+  /* ================= STATE ================= */
+  var S={done:{},xp:0};
+  try{S=JSON.parse(localStorage.getItem(SKEY))||S;}catch(e){}
+  function saveS(){try{localStorage.setItem(SKEY,JSON.stringify(S));}catch(e){}}
+  var MAXXP=0;LEVELS.forEach(function(L){MAXXP+=L.objectives.length*10+20;});
+  function unlocked(i){return i===0||!!S.done[i-1];}
+
+  var cur=-1, obj=[], flags={};
+  var localC=null, remoteC=null, inRemote=false;
+
+  /* ================= ENGINE ================= */
+  var tout=document.getElementById('tout'),tin=document.getElementById('tin'),tprEl=document.getElementById('tprompt');
+  function tprint(s,cls){var d=document.createElement('div');if(cls)d.className=cls;d.textContent=s;tout.appendChild(d);tout.scrollTop=tout.scrollHeight;}
+  function clone(o){return JSON.parse(JSON.stringify(o));}
+  function ctx(){return inRemote?remoteC:localC;}
+  function homeArr(){return inRemote?['home','dev']:['home','you'];}
+  function rDir(parts){var d=remoteC?remoteC.fs:null;if(!d)return null;for(var i=0;i<parts.length;i++){if(typeof d!=='object'||!(parts[i] in d))return null;d=d[parts[i]];}return d;}
+  function dirAt(parts){var d=ctx().fs;for(var i=0;i<parts.length;i++){if(typeof d!=='object'||!(parts[i] in d))return null;d=d[parts[i]];}return d;}
+  function resolve(p){
+    var HOME=homeArr(),cwd=ctx().cwd;
+    if(!p||p==='~')return HOME.slice();
+    var base=p.charAt(0)==='/'?[]:(p.slice(0,2)==='~/'?HOME.slice():cwd.slice());
+    if(p.slice(0,2)==='~/')p=p.slice(2); else if(p.charAt(0)==='/')p=p.slice(1);
+    p.split('/').forEach(function(seg){
+      if(!seg||seg==='.')return;
+      if(seg==='..'){if(base.length)base.pop();}
+      else base.push(seg);
+    });
+    return base;
+  }
+  function here(path){return !inRemote&&'/'+localC.cwd.join('/')===path;}
+  function shortCwd(){var s='/'+ctx().cwd.join('/');var h='/'+homeArr().join('/');
+    return s===h?'~':(s.indexOf(h+'/')===0?'~'+s.slice(h.length):s);}
+  function inGit(){var g=localC.git;if(!g||inRemote)return false;var s='/'+localC.cwd.join('/');return s===g.root||s.indexOf(g.root+'/')===0;}
+  function prompt(){
+    if(inRemote)return 'dev@game-server:'+shortCwd()+'$';
+    var b=localC&&localC.git&&inGit()?' ('+localC.git.branch+')':'';
+    return 'you@studio:'+shortCwd()+b+'$';}
+  function lsNames(d){return Object.keys(d).sort().map(function(k){return typeof d[k]==='object'?k+'/':k;});}
+  function repoDirFiles(){var g=localC.git;var d=(function(){var x=localC.fs,ps=g.root.slice(1).split('/');for(var i=0;i<ps.length;i++){x=x[ps[i]];}return x;})();var r=[];
+    (function walk(node,pre){Object.keys(node).forEach(function(k){
+      if(typeof node[k]==='object')walk(node[k],pre+k+'/');else r.push(pre+k);});})(d,'');
+    return r;}
+  function committedSet(){var g=localC.git,s={};g.branches[g.branch].commits.forEach(function(c){c.files.forEach(function(f){s[f]=1;});});return s;}
+  function branchFiles(g,name){var s={};g.branches[name].commits.forEach(function(c){c.files.forEach(function(f){s[f]=1;});});return s;}
+  function syncWorktree(){
+    var g=localC.git;var x=localC.fs,ps=g.root.slice(1).split('/');for(var i=0;i<ps.length;i++){x=x[ps[i]];}
+    if(!x)return;
+    var curB=branchFiles(g,g.branch),all={};
+    Object.keys(g.branches).forEach(function(b){Object.assign(all,branchFiles(g,b));});
+    Object.keys(all).forEach(function(f){
+      if(f.indexOf('/')>=0)return;
+      if(curB[f]){if(!(f in x))x[f]='';}
+      else if(f in x&&g.staged.indexOf(f)<0)delete x[f];
+    });
+  }
+
+  var HELP='moves: pwd  ls  cd <dir>  cat <file>  mkdir <name>  touch <name>  cp <from> <to>  clear\n'+
+           'git:   init  status  add <file|.>  commit -m "msg"  log  branch  checkout [-b] <name>\n'+
+           '       merge <name>  remote add origin <url>  push\n'+
+           'server: ssh dev@game-server   exit   ./restart.sh (on the server)\n'+
+           'other: help   hint';
+
+  function run(line){
+    var m=line.match(/"[^"]*"|\S+/g)||[];
+    var cmd=m[0],a1=m[1],a2=m[2];
+    if(!cmd)return;
+    if(cmd==='help')return tprint(HELP);
+    if(cmd==='hint'){document.getElementById('hint').classList.add('on');return tprint('(hint revealed up in the mission briefing \u2191)','sys');}
+    if(cmd==='clear'){tout.innerHTML='';return;}
+    if(cmd==='pwd')return tprint('/'+ctx().cwd.join('/'));
+    if(cmd==='ls'){var d=dirAt(a1?resolve(a1):ctx().cwd);
+      if(d===null||typeof d!=='object')return tprint('ls: cannot access: no such directory','err');
+      var n=lsNames(d);return tprint(n.length?n.join('   '):'(empty)');}
+    if(cmd==='cd'){var t=resolve(a1||'~');var d2=dirAt(t);
+      if(d2===null||typeof d2!=='object')return tprint('cd: no such directory: '+(a1||'~'),'err');
+      ctx().cwd=t;return;}
+    if(cmd==='mkdir'){if(!a1)return tprint('mkdir: give a folder name','err');
+      var d3=dirAt(ctx().cwd);if(a1 in d3)return tprint('mkdir: '+a1+': already exists','err');
+      d3[a1.replace(/\/+$/,'')]={};return;}
+    if(cmd==='touch'){if(!a1)return tprint('touch: give a file name, e.g.  touch fix.py','err');
+      var d4=dirAt(ctx().cwd);if(typeof d4[a1]==='object')return tprint('touch: '+a1+' is a folder','err');
+      if(!(a1 in d4))d4[a1]='';return;}
+    if(cmd==='cat'){if(!a1)return tprint('cat: give a file name','err');
+      var f=dirAt(resolve(a1));
+      if(f===null)return tprint('cat: '+a1+': no such file','err');
+      if(typeof f==='object')return tprint('cat: '+a1+': is a folder','err');
+      return tprint(f||'(empty file)');}
+    if(cmd==='cp'){if(!a1||!a2)return tprint('cp: usage:  cp <from> <to>   e.g.  cp backups/settings.bak settings.cfg','err');
+      var src=dirAt(resolve(a1));
+      if(src===null)return tprint('cp: '+a1+': no such file','err');
+      if(typeof src==='object')return tprint('cp: '+a1+': is a folder (this terminal only copies files)','err');
+      var dp=resolve(a2),name=dp.pop(),dd=dirAt(dp);
+      if(dd===null||typeof dd!=='object')return tprint('cp: '+a2+': no such destination folder','err');
+      dd[name]=src;return tprint('copied '+a1+' \u2192 '+a2,'ok');}
+    if(cmd==='ssh'){
+      var L=LEVELS[cur];
+      if(!L.remote)return tprint('ssh: no server to reach in this level (that comes later\u2026)','err');
+      if(a1!=='dev@game-server')return tprint('ssh: usage:  ssh dev@game-server   (it is written in the manual on your desk)','err');
+      if(inRemote)return tprint('ssh: you are already ON the server.','err');
+      inRemote=true;
+      return tprint('Connecting to game-server\u2026 connected.\nYou are now typing on ANOTHER computer. Look at the prompt change!\n(type  exit  to come home)','sys');}
+    if(cmd==='exit'){
+      if(!inRemote)return tprint('exit: you are already home. (exit leaves an ssh session)','err');
+      inRemote=false;
+      return tprint('Connection to game-server closed. Welcome home.','sys');}
+    if(cmd.slice(0,2)==='./'){
+      var L2=LEVELS[cur],sn=cmd.slice(2);
+      var dd2=dirAt(ctx().cwd);
+      if(!dd2||!(sn in dd2))return tprint(cmd+': no such script here (ls to see what exists)','err');
+      if(L2.scripts&&L2.scripts[sn])return L2.scripts[sn]();
+      return tprint(cmd+': this script refuses to run. Suspicious.','err');}
+    if(LEVELS[cur].custom&&LEVELS[cur].custom[cmd])return LEVELS[cur].custom[cmd](localC.git);
+    if(cmd!=='git')return tprint(cmd+': command not found \u2014 type  help','err');
+
+    /* ---- git (home machine only) ---- */
+    if(inRemote)return tprint('git: not installed on the server \u2014 your code work happens back home (exit first).','err');
+    var g=localC.git,sub=a1;
+    if(sub==='init'){
+      if(g&&inGit())return tprint('Reinitialized existing Git repository.');
+      localC.git={root:'/'+localC.cwd.join('/'),branch:'main',branches:{main:{commits:[]}},staged:[],remote:null};
+      return tprint('Initialized empty Git repository in /'+localC.cwd.join('/')+'/.git/','ok');}
+    if(!g||!inGit())return tprint('fatal: not a git repository \u2014 cd into the code folder and run  git init','err');
+    if(sub==='status'){
+      var com=committedSet();
+      var un=repoDirFiles().filter(function(f){return g.staged.indexOf(f)<0&&!com[f];});
+      var s='On branch '+g.branch+'\n';
+      if(g.staged.length)s+='Changes to be committed:\n'+g.staged.map(function(f){return '        new file:   '+f;}).join('\n')+'\n';
+      if(un.length)s+='Untracked files:\n'+un.map(function(f){return '        '+f;}).join('\n')+'\n';
+      if(!g.staged.length&&!un.length)s+='nothing to commit, working tree clean';
+      return tprint(s);}
+    if(sub==='add'){
+      var com2=committedSet();
+      var pool=repoDirFiles().filter(function(f){return g.staged.indexOf(f)<0&&!com2[f];});
+      if(!a2)return tprint('git add: say WHAT to add:  git add player.py   or   git add .','err');
+      if(a2==='.'){if(!pool.length)return tprint('(nothing new to add)');
+        g.staged=g.staged.concat(pool);return;}
+      if(pool.indexOf(a2)<0)return tprint("git add: '"+a2+"' \u2014 no new file with that name here",'err');
+      g.staged.push(a2);return;}
+    if(sub==='commit'){
+      var mi=m.indexOf('-m');var msg=mi>0?(m[mi+1]||''):'';
+      if(!msg)return tprint('git commit: add a message:  git commit -m "what I did"','err');
+      msg=msg.replace(/^"|"$/g,'');
+      if(!g.staged.length)return tprint('nothing to commit \u2014 first  git add  a file','err');
+      g.branches[g.branch].commits.push({msg:msg,files:g.staged.slice()});
+      var n=g.staged.length;g.staged=[];
+      return tprint('['+g.branch+' '+Math.random().toString(16).slice(2,9)+'] '+msg+'\n '+n+' file(s) changed','ok');}
+    if(sub==='log'){var cs=g.branches[g.branch].commits;
+      if(!cs.length)return tprint('fatal: no commits yet on '+g.branch,'err');
+      return tprint(cs.slice().reverse().map(function(c){
+        return 'commit '+Math.random().toString(16).slice(2,10)+'\u2026\n    '+c.msg;}).join('\n'));}
+    if(sub==='branch'){
+      if(!a2)return tprint(Object.keys(g.branches).map(function(b){return (b===g.branch?'* ':'  ')+b;}).join('\n'));
+      if(g.branches[a2])return tprint("fatal: a branch named '"+a2+"' already exists",'err');
+      g.branches[a2]={commits:g.branches[g.branch].commits.slice()};return;}
+    if(sub==='checkout'){
+      var name=a2==='-b'?m[3]:a2;
+      if(!name)return tprint('git checkout: give a branch name','err');
+      if(a2==='-b'){if(g.branches[name])return tprint("fatal: branch '"+name+"' already exists",'err');
+        g.branches[name]={commits:g.branches[g.branch].commits.slice()};g.branch=name;
+        return tprint("Switched to a new branch '"+name+"'",'ok');}
+      if(!g.branches[name])return tprint("error: no branch called '"+name+"'",'err');
+      g.branch=name;syncWorktree();return tprint("Switched to branch '"+name+"'",'ok');}
+    if(sub==='merge'){
+      if(!a2||!g.branches[a2])return tprint('git merge: give an existing branch name','err');
+      if(a2===g.branch)return tprint('Already up to date (you are ON that branch).');
+      var mine=g.branches[g.branch].commits,theirs=g.branches[a2].commits;
+      var fresh=theirs.filter(function(c){return mine.indexOf(c)<0;});
+      if(!fresh.length)return tprint('Already up to date.');
+      g.branches[g.branch].commits=mine.concat(fresh);syncWorktree();
+      return tprint('Merge made: folded '+fresh.length+' commit(s) from '+a2+' into '+g.branch+'.','ok');}
+    if(sub==='remote'){if(a2==='add'&&m[3]==='origin'&&m[4]){g.remote=m[4];return tprint('cloud connected: '+m[4],'ok');}
+      return tprint('usage: git remote add origin <url>','err');}
+    if(sub==='push'){
+      if(!g.remote)return tprint('error: no cloud connected \u2014 first  git remote add origin <url>','err');
+      if(!g.branches[g.branch].commits.length)return tprint('error: nothing to push \u2014 commit something first','err');
+      g.pushed=true;
+      return tprint('Enumerating objects\u2026 done.\nTo '+g.remote+'\n * ['+g.branch+'] pushed '+g.branches[g.branch].commits.length+' commit(s)  \u2713','ok');}
+    return tprint("git: '"+(sub||'')+"' is not a git command this terminal knows \u2014 type  help",'err');
+  }
+
+  /* ================= GAME FLOW ================= */
+  function startLevel(i){
+    cur=i;flags={};inRemote=false;
+    var L=LEVELS[i];
+    localC={fs:{home:{you:clone(L.fs)}},cwd:['home','you'],git:null};
+    remoteC=L.remote?{fs:{home:{dev:clone(L.remote)}},cwd:['home','dev']}:null;
+    obj=L.objectives.map(function(){return false;});
+    (L.setup||[]).forEach(runSilent);
+    document.getElementById('map').classList.remove('on');
+    document.getElementById('play').classList.add('on');
+    document.getElementById('stLvno').textContent='LEVEL '+(i+1)+'/'+LEVELS.length;
+    document.getElementById('stTitle').textContent=L.title;
+    var tx=document.getElementById('stText');tx.innerHTML='';
+    L.story.forEach(function(pp){var p=document.createElement('p');p.className='tx';p.innerHTML=pp;tx.appendChild(p);});
+    document.getElementById('hint').textContent='💡 '+L.hint;
+    document.getElementById('hint').classList.remove('on');
+    renderObjs();
+    tout.innerHTML='';
+    tprint('\u2500\u2500 LEVEL '+(i+1)+': '+L.title.toUpperCase()+' \u2500\u2500','sys');
+    tprint('Read the mission briefing above. Type  help  for your moves,  hint  if stuck.','sys');
+    tprEl.textContent=prompt();
+    tin.focus();
+  }
+  function runSilent(line){
+    try{run(line);}catch(e){}
+    tout.innerHTML='';   /* setup output never reaches the player */
+  }
+  function renderObjs(){
+    var col=document.getElementById('objs');col.innerHTML='';
+    LEVELS[cur].objectives.forEach(function(o,i){
+      var d=document.createElement('div');d.className='ob'+(obj[i]?' done':'');
+      d.innerHTML='<span class="bx"></span>';
+      d.appendChild(document.createTextNode(o.label));
+      col.appendChild(d);});
+  }
+  function paintXp(){
+    document.getElementById('xpfill').style.width=Math.round(100*S.xp/MAXXP)+'%';
+    document.getElementById('xptxt').textContent=S.xp;
+  }
+  function checkObjectives(parts){
+    var L=LEVELS[cur],hit=false;
+    for(var i=0;i<obj.length;i++){
+      if(obj[i])continue;
+      try{if(L.objectives[i].test(parts,localC.git)){obj[i]=true;hit=true;
+        if(!S.done[cur]){S.xp+=10;}
+        tprint('\u2605 objective complete: '+L.objectives[i].label,'ok');}}catch(e){}
+      break;
+    }
+    if(hit){renderObjs();
+      if(obj.every(function(x){return x;})){
+        var first=!S.done[cur];
+        if(first){S.xp+=20;S.done[cur]=true;}
+        saveS();paintXp();
+        setTimeout(function(){showBanner(first);},450);
+      } else {saveS();paintXp();}
+    }
+  }
+  function showBanner(first){
+    var last=cur===LEVELS.length-1;
+    document.getElementById('bnTitle').textContent=last?'YOU SHIPPED THE GAME!':'LEVEL '+(cur+1)+' COMPLETE';
+    document.getElementById('bnMsg').innerHTML=last
+      ?'Launch night: saved. Server: repaired over SSH. Code: branched, merged and pushed \u2014 by YOU, with real commands.<br><br>Total XP: <b>'+S.xp+' / '+MAXXP+'</b>. Every command you used tonight works on a real computer. That was not pretend \u2014 that was training.<br><br>Keep going: <a href="../git-for-gamers/">Guide 02</a> \u00b7 <a href="../video-game-research/">Guide 03 \u2014 research real game data</a>'
+      :(first?'+ '+(LEVELS[cur].objectives.length*10+20)+' XP! ':'(replay \u2014 no extra XP) ')+'Ready for the next one?';
+    document.getElementById('bnBtn').textContent=last?'Back to the level map':'Continue \u25b8';
+    document.getElementById('banner').classList.add('on');
+  }
+  document.getElementById('bnBtn').addEventListener('click',function(){
+    document.getElementById('banner').classList.remove('on');
+    if(cur<LEVELS.length-1)startLevel(cur+1);else showMap();
+  });
+
+  function showMap(){
+    document.getElementById('play').classList.remove('on');
+    document.getElementById('map').classList.add('on');
+    var col=document.getElementById('lvlCards');col.innerHTML='';
+    LEVELS.forEach(function(L,i){
+      var d=document.createElement('div');
+      var open=unlocked(i);
+      d.className='lv'+(open?'':' lock')+(S.done[i]?' done':'');
+      d.innerHTML='<div class="no">LEVEL '+(i+1)+'</div><div class="nm">'+L.title+'</div><div class="ds">'+L.desc+'</div>'+
+        '<div class="badge">'+(S.done[i]?'\u2705':(open?'\u25b6\uFE0F':'\uD83D\uDD12'))+'</div>';
+      if(open)d.addEventListener('click',function(){startLevel(i);});
+      col.appendChild(d);});
+  }
+  document.getElementById('mapBtn').addEventListener('click',showMap);
+  document.getElementById('hintBtn').addEventListener('click',function(){
+    document.getElementById('hint').classList.toggle('on');});
+
+  /* ---------- input ---------- */
+  var hist=[],hi=-1;
+  tin.addEventListener('keydown',function(e){
+    if(e.key==='Enter'){
+      var line=tin.value.trim();tin.value='';
+      if(!line)return;
+      var d=document.createElement('div');
+      var p=document.createElement('span');p.className='p';p.textContent=prompt()+' ';
+      d.appendChild(p);d.appendChild(document.createTextNode(line));tout.appendChild(d);
+      hist.push(line);hi=hist.length;
+      run(line);
+      checkObjectives(line.match(/"[^"]*"|\S+/g)||[]);
+      tprEl.textContent=prompt();
+      tout.scrollTop=tout.scrollHeight;
+    }else if(e.key==='ArrowUp'){if(hi>0){hi--;tin.value=hist[hi];e.preventDefault();}}
+    else if(e.key==='ArrowDown'){if(hi<hist.length-1){hi++;tin.value=hist[hi];}else{hi=hist.length;tin.value='';}e.preventDefault();}
+  });
+  document.getElementById('twrap').addEventListener('click',function(){tin.focus();});
+
+  paintXp();
+  showMap();
+})();
+</script>
+<script defer src="/meritpoint-slides/assets/auth.js"></script></body></html>
