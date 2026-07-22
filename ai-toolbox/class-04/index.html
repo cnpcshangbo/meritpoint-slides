@@ -75,30 +75,46 @@
 .reveal .qp{font-size:.45em;color:var(--muted);min-width:4.2em;text-align:right}
 #liveChip{position:fixed;left:14px;bottom:46px;z-index:40;background:rgba(255,255,255,.92);border:1px solid var(--line);
   border-radius:999px;padding:5px 12px;font:600 12px -apple-system,'Segoe UI',sans-serif;color:#1a9a6c;box-shadow:0 4px 14px rgba(20,40,70,.10)}
-/* CODE LAB */
-.reveal .lab{display:grid;grid-template-columns:1.55fr 1fr;gap:.6em;margin-top:.4em;height:11.2em}
-.reveal .lab-main{display:flex;flex-direction:column;min-width:0}
-.reveal .lab textarea.code{flex:1;width:100%;background:#0f2742;color:#e7f0fb;border:1px solid #21405f;border-radius:10px 10px 0 0;font-family:Consolas,"SF Mono",monospace;font-size:13px;line-height:1.4;padding:.5em .6em;resize:none;outline:none;tab-size:4}
-.reveal .lab-bar{display:flex;align-items:center;gap:.4em;background:#11314f;border:1px solid #21405f;border-top:none;padding:.3em .4em;flex-wrap:wrap}
-.reveal .lab-bar button{font-family:-apple-system,sans-serif;font-size:11px;font-weight:600;border:none;border-radius:7px;padding:.4em .7em;cursor:pointer}
+/* CODE LAB — compact header, editor/output get nearly the whole slide.
+   Assistant starts folded (.lab.folded) so the editor spans full width. */
+.reveal .labslide .kicker{margin-bottom:.15em}
+.reveal .labslide h2{font-size:1em;margin:0 0 .05em}
+.reveal .labslide p.lead{font-size:.6em;margin:.05em 0 .2em}
+.reveal .lab{display:grid;grid-template-columns:1.9fr 1fr;gap:.5em;margin-top:.25em;height:17.4em}
+.reveal .lab.folded{grid-template-columns:1fr}
+.reveal .lab.folded .assist{display:none}
+.reveal .lab-main{display:flex;flex-direction:column;min-width:0;min-height:0}
+.reveal .code-wrap{position:relative;display:flex;flex:1.55;min-height:0;background:#0f2742;border:1px solid #21405f;border-radius:10px 10px 0 0;overflow:hidden}
+.reveal .code-wrap .gutter{position:relative;z-index:2;flex:0 0 46px;overflow:hidden;text-align:right;padding:10px 9px 10px 0;background:rgba(8,25,43,.55);border-right:1px solid #21405f;color:#54759a;font-family:Consolas,"SF Mono",monospace;font-size:16px;line-height:1.45;white-space:pre;user-select:none}
+.reveal .lab textarea.code{position:relative;z-index:1;flex:1;width:100%;background:transparent;color:#e7f0fb;border:none;font-family:Consolas,"SF Mono",monospace;font-size:16px;line-height:1.45;padding:10px 12px;resize:none;outline:none;tab-size:4;white-space:pre;overflow:auto}
+.reveal .line-hi{position:absolute;left:0;right:0;z-index:0;display:none;background:rgba(242,169,59,.17);border-left:4px solid var(--amber);pointer-events:none;transition:top .18s ease,height .18s ease}
+.reveal .lab-bar{display:flex;align-items:center;gap:.4em;background:#11314f;border:1px solid #21405f;border-top:none;padding:.32em .5em;flex-wrap:wrap}
+.reveal .lab-bar button{font-family:-apple-system,sans-serif;font-size:13px;font-weight:600;border:none;border-radius:8px;padding:.42em .85em;cursor:pointer}
 .reveal .lab-bar .run{background:var(--green);color:#fff}.reveal .lab-bar .run:hover{background:#178a64}
-.reveal .lab-bar .ai-explain,.reveal .lab-bar .ai-debug,.reveal .lab-bar .ai-improve{background:#1b3e5e;color:#cfe0ef}
-.reveal .lab-bar .ai-explain:hover,.reveal .lab-bar .ai-debug:hover,.reveal .lab-bar .ai-improve:hover{background:#27557d}
-.reveal .lab-status{font-size:10.5px;color:#9db8d6;margin-left:auto;font-family:-apple-system,sans-serif}
-.reveal .lab pre.out{background:#08192b;color:#bfe3c7;border:1px solid #21405f;border-top:none;border-radius:0 0 10px 10px;margin:0;padding:.5em .6em;font-family:Consolas,monospace;font-size:11.5px;line-height:1.4;overflow:auto;min-height:2.4em;max-height:4.2em;white-space:pre-wrap}
+.reveal .lab-bar .walk{background:var(--amber);color:#4a3405}.reveal .lab-bar .walk:hover{background:#e09a20}
+.reveal .walk-controls{display:inline-flex;align-items:center;gap:.3em}
+.reveal .walk-controls[hidden]{display:none}
+.reveal .walk-controls button{background:#1b3e5e;color:#ffd98a;padding:.42em .6em}
+.reveal .walk-controls .walk-pause{background:var(--amber);color:#4a3405;min-width:2.6em}
+.reveal .walk-controls .walk-step{font-size:12px;color:#ffd98a;font-family:-apple-system,sans-serif;font-variant-numeric:tabular-nums}
+.reveal .lab-bar .ai-explain,.reveal .lab-bar .ai-debug,.reveal .lab-bar .ai-improve,.reveal .lab-bar .ai-toggle{background:#1b3e5e;color:#cfe0ef}
+.reveal .lab-bar .ai-explain:hover,.reveal .lab-bar .ai-debug:hover,.reveal .lab-bar .ai-improve:hover,.reveal .lab-bar .ai-toggle:hover{background:#27557d}
+.reveal .lab:not(.folded) .ai-toggle{background:var(--teal);color:#fff}
+.reveal .lab-status{font-size:12px;color:#9db8d6;margin-left:auto;font-family:-apple-system,sans-serif}
+.reveal .lab pre.out{flex:1;min-height:0;width:100%;background:#08192b;color:#bfe3c7;border:1px solid #21405f;border-top:none;border-radius:0 0 10px 10px;margin:0;padding:.5em .7em;font-family:Consolas,monospace;font-size:14px;line-height:1.45;overflow:auto;white-space:pre-wrap}
 .reveal .lab pre.out .err{color:#ff9b8a}
 .reveal .assist{display:flex;flex-direction:column;background:linear-gradient(135deg,#fff,#f1f7fb);border:1px solid var(--line);border-radius:11px;overflow:hidden;min-width:0}
-.reveal .assist-head{background:linear-gradient(90deg,#0F9DB0,#2BC4D4);color:#fff;font-size:12px;font-weight:700;padding:.45em .7em;font-family:-apple-system,sans-serif;display:flex;align-items:center;justify-content:space-between;gap:.5em}
-.reveal .assist-head .ai-model{font-family:-apple-system,sans-serif;font-size:11px;font-weight:600;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.5);border-radius:6px;padding:.15em .3em;cursor:pointer;outline:none}
+.reveal .assist-head{background:linear-gradient(90deg,#0F9DB0,#2BC4D4);color:#fff;font-size:13px;font-weight:700;padding:.45em .7em;font-family:-apple-system,sans-serif;display:flex;align-items:center;justify-content:space-between;gap:.5em}
+.reveal .assist-head .ai-model{font-family:-apple-system,sans-serif;font-size:12px;font-weight:600;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.5);border-radius:6px;padding:.15em .3em;cursor:pointer;outline:none}
 .reveal .assist-head .ai-model option{color:var(--ink)}
-.reveal .assist-body{flex:1;overflow:auto;padding:.5em .65em;font-size:12px;line-height:1.46;color:var(--ink);font-family:-apple-system,sans-serif}
-.reveal .assist-body p{font-size:12px;margin:.3em 0}.reveal .assist-body code{background:#eef3f8;border-radius:4px;padding:0 .25em;font-family:Consolas,monospace;font-size:11px}
-.reveal .assist-body pre{background:#0f2742;color:#e7f0fb;border-radius:8px;padding:.5em .6em;font-size:11px;overflow:auto;white-space:pre}
+.reveal .assist-body{flex:1;overflow:auto;padding:.5em .65em;font-size:13px;line-height:1.46;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .assist-body p{font-size:13px;margin:.3em 0}.reveal .assist-body code{background:#eef3f8;border-radius:4px;padding:0 .25em;font-family:Consolas,monospace;font-size:12px}
+.reveal .assist-body pre{background:#0f2742;color:#e7f0fb;border-radius:8px;padding:.5em .6em;font-size:12px;overflow:auto;white-space:pre}
 .reveal .assist-body pre code{background:none;color:inherit}
-.reveal .assist-body .apply{background:var(--teal);color:#fff;border:none;border-radius:6px;padding:.25em .6em;font-size:11px;font-weight:600;cursor:pointer;margin-top:.2em}
+.reveal .assist-body .apply{background:var(--teal);color:#fff;border:none;border-radius:6px;padding:.25em .6em;font-size:12px;font-weight:600;cursor:pointer;margin-top:.2em}
 .reveal .assist-ask{display:flex;gap:.3em;border-top:1px solid var(--line);padding:.4em}
-.reveal .assist-ask input{flex:1;border:1px solid var(--line);border-radius:7px;padding:.4em .5em;font-size:12px;font-family:-apple-system,sans-serif;outline:none}
-.reveal .assist-ask button{background:var(--navy);color:#fff;border:none;border-radius:7px;padding:.4em .7em;font-size:12px;font-weight:600;cursor:pointer}
+.reveal .assist-ask input{flex:1;border:1px solid var(--line);border-radius:7px;padding:.4em .5em;font-size:13px;font-family:-apple-system,sans-serif;outline:none}
+.reveal .assist-ask button{background:var(--navy);color:#fff;border:none;border-radius:7px;padding:.4em .7em;font-size:13px;font-weight:600;cursor:pointer}
 /* HEAP / TOP-K VISUALIZER */
 .reveal .heapviz{margin-top:.35em;font-family:-apple-system,sans-serif}
 .reveal .hv-top{display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
@@ -447,13 +463,16 @@
     <div class="qrwrap" style="margin-top:.2em"><img class="qr" src="assets/qr-scholar.png" alt="QR"><br><a href="https://scholar.google.com/" target="_blank" rel="noopener">scholar.google.com</a></div>
   </div><aside class="notes">The routine from the discussion slide, performed live with the class's own steps. Ctrl-F on a distinctive phrase is the killer trick — seconds per claim. End on '? = ✗': unverifiable claims are unusable claims, exactly what would have saved the lawyer.</aside>
 </section>
-<section id="lab-tiny-llm" data-sid="lab-tiny-llm">
+<section id="lab-tiny-llm" data-sid="lab-tiny-llm" class="labslide">
 <div class="kicker">Hands-on lab 1 · build the machine</div>
   <h2>Build a tiny 'language model' — and watch it hallucinate</h2>
-  <p class="lead" style="margin:.1em 0 .25em">LLMs predict the next word. That's the whole trick — and the whole problem. This 25-line model learns from a tiny corpus, then <b>generates confident text with zero understanding</b>. Sound familiar?</p>
-  <div class="lab" data-packages="">
+  <p class="lead">LLMs predict the next word. That's the whole trick — and the whole problem. This 25-line model learns from a tiny corpus, then <b>generates confident text with zero understanding</b>. Sound familiar?</p>
+  <div class="lab folded" data-packages="">
     <div class="lab-main">
-      <textarea class="code" spellcheck="false"># A tiny "language model": it ONLY predicts a likely next word.
+      <div class="code-wrap">
+        <div class="gutter"></div>
+        <div class="line-hi"></div>
+        <textarea class="code" spellcheck="false" wrap="off"># A tiny "language model": it ONLY predicts a likely next word.
 import random
 random.seed(4)
 
@@ -489,11 +508,21 @@ print("MODEL SAYS:", generate("plausible"))
 # CHALLENGE 2: add a sentence of YOUR OWN facts to the corpus and watch
 #              the model remix it into things you never said.
 </textarea>
+      </div>
       <div class="lab-bar">
         <button class="run">▶ Run</button>
+        <button class="walk" hidden>🎧 Explain each line</button>
+        <span class="walk-controls" hidden>
+          <button class="walk-prev" title="Previous step">⏮</button>
+          <button class="walk-pause" title="Pause / resume">⏸</button>
+          <button class="walk-next" title="Next step">⏭</button>
+          <button class="walk-stop" title="Stop walkthrough">✕</button>
+          <span class="walk-step"></span>
+        </span>
         <button class="ai-explain">✨ Explain</button>
         <button class="ai-debug">🐞 Debug</button>
         <button class="ai-improve">⚡ Improve</button>
+        <button class="ai-toggle" title="Show / hide the AI assistant">🤖 Assistant</button>
         <span class="lab-status">Python loads on first Run</span>
       </div>
       <pre class="out">▶ Run the code to see the output here.</pre>
@@ -505,13 +534,16 @@ print("MODEL SAYS:", generate("plausible"))
     </div>
   </div><aside class="notes">The hour's deepest moment: hallucination stops being a mystery and becomes an obvious property of next-word prediction. The generated text is grammatical-ish and meaning-free — exactly the point. Challenge 2 shows 'training data in, remixed claims out.' Big LLMs = this + trillions of words + attention, but the core loop is THIS.</aside>
 </section>
-<section id="lab-prompt-scorer" data-sid="lab-prompt-scorer">
+<section id="lab-prompt-scorer" data-sid="lab-prompt-scorer" class="labslide">
 <div class="kicker">Hands-on lab 2 · score your prompts</div>
   <h2>A prompt-anatomy checker</h2>
-  <p class="lead" style="margin:.1em 0 .25em">Class 2 had a question checker; here's its sibling for prompts. It looks for the four anatomy parts — <b>role, context, format, constraints</b>. Score the demos, then score <b>your own</b>.</p>
-  <div class="lab" data-packages="">
+  <p class="lead">Class 2 had a question checker; here's its sibling for prompts. It looks for the four anatomy parts — <b>role, context, format, constraints</b>. Score the demos, then score <b>your own</b>.</p>
+  <div class="lab folded" data-packages="">
     <div class="lab-main">
-      <textarea class="code" spellcheck="false"># Prompt-anatomy checker: does your prompt have the four parts?
+      <div class="code-wrap">
+        <div class="gutter"></div>
+        <div class="line-hi"></div>
+        <textarea class="code" spellcheck="false" wrap="off"># Prompt-anatomy checker: does your prompt have the four parts?
 
 ROLE_SIGNS       = ["you are", "act as", "as a "]
 CONTEXT_SIGNS    = ["here is", "abstract", "my data", "my plan",
@@ -544,11 +576,21 @@ check("You are a research assistant. Here is the abstract: [paste]. "
 # CHALLENGE 2: like Class 2's checker, this one can be fooled by
 #              keyword-stuffing. What does that remind you of?
 </textarea>
+      </div>
       <div class="lab-bar">
         <button class="run">▶ Run</button>
+        <button class="walk" hidden>🎧 Explain each line</button>
+        <span class="walk-controls" hidden>
+          <button class="walk-prev" title="Previous step">⏮</button>
+          <button class="walk-pause" title="Pause / resume">⏸</button>
+          <button class="walk-next" title="Next step">⏭</button>
+          <button class="walk-stop" title="Stop walkthrough">✕</button>
+          <span class="walk-step"></span>
+        </span>
         <button class="ai-explain">✨ Explain</button>
         <button class="ai-debug">🐞 Debug</button>
         <button class="ai-improve">⚡ Improve</button>
+        <button class="ai-toggle" title="Show / hide the AI assistant">🤖 Assistant</button>
         <span class="lab-status">Python loads on first Run</span>
       </div>
       <pre class="out">▶ Run the code to see the output here.</pre>
@@ -698,6 +740,7 @@ check("You are a research assistant. Here is the abstract: [paste]. "
 <a id="mpaLogo" href="/meritpoint-slides/" title="Merit Point Academy — all courses"><img src="/meritpoint-slides/assets/mpa-logo.png" alt="Merit Point Academy"></a>
 <!-- per-slide comments -->
 <audio id="narratorAudio" preload="none" style="display:none"></audio>
+<audio id="walkAudio" preload="none" style="display:none"></audio>
 <div id="capBar"></div>
 <button id="ccBtn" title="Toggle captions">CC</button>
 <button id="listenBtn" title="Listen to this slide narrated"><span class="li-ic">▶</span><span class="li-tx">Listen</span></button>
@@ -733,6 +776,7 @@ let _btn=null,_playToken=0;
 function fmtClock(s){ s=Math.max(0,Math.floor(s||0)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
 function resetListenUI(){ listenBtn.style.setProperty('--p','0%'); listenBtn.querySelector('.li-ic').textContent='▶'; listenBtn.querySelector('.li-tx').textContent='Listen'; }
 function stopAudio(){
+  stopWalk(); // lab walkthrough shares the stage with narration — never both
   _playToken++; // invalidate any in-flight play() for the old src
   _audio.pause(); _audio.currentTime=0; _audio.removeAttribute('src'); _audio.load();
   _audio.removeEventListener('timeupdate',onListenTimeupdate); // else it'd animate listenBtn during a .speak clip
@@ -1084,6 +1128,7 @@ function mdToHtml(md){
   return html;
 }
 async function askAssistant(lab,action,question){
+  lab.classList.remove('folded'); // assistant is folded by default — any AI action opens it
   const body=lab.querySelector('.assist-body');
   const sel=lab.querySelector('.ai-model');
   const model=(sel&&sel.value)||'haiku';
@@ -1098,12 +1143,110 @@ async function askAssistant(lab,action,question){
 document.addEventListener('click',function(e){
   const t=e.target;
   if(t.closest('.lab .run')){ runLab(labOf(t.closest('.run'))); }
+  else if(t.closest('.lab .walk')){ startWalk(labOf(t.closest('.walk'))); }
+  else if(t.closest('.lab .walk-pause')){ walkPauseResume(); }
+  else if(t.closest('.lab .walk-prev')){ if(_walk&&_walk.i>0){ _walk.i--; walkPlayStep(); } }
+  else if(t.closest('.lab .walk-next')){ if(_walk){ if(_walk.i<_walk.steps.length-1){ _walk.i++; walkPlayStep(); } else stopWalk(true); } }
+  else if(t.closest('.lab .walk-stop')){ stopWalk(); }
+  else if(t.closest('.lab .ai-toggle')){ t.closest('.lab').classList.toggle('folded'); }
   else if(t.closest('.lab .ai-explain')){ askAssistant(labOf(t.closest('.ai-explain')),'explain'); }
   else if(t.closest('.lab .ai-debug')){ askAssistant(labOf(t.closest('.ai-debug')),'debug'); }
   else if(t.closest('.lab .ai-improve')){ askAssistant(labOf(t.closest('.ai-improve')),'improve'); }
   else if(t.closest('.lab .ask-btn')){ const lab=labOf(t.closest('.ask-btn')); const inp=lab.querySelector('.ask-in'); if(inp.value.trim()){ askAssistant(lab,'ask',inp.value.trim()); inp.value=''; } }
-  else if(t.classList&&t.classList.contains('apply')){ const pre=t.previousElementSibling; const lab=t.closest('.lab'); if(pre&&lab){ lab.querySelector('.code').value=decodeURIComponent(pre.dataset.code); } }
+  else if(t.classList&&t.classList.contains('apply')){ const pre=t.previousElementSibling; const lab=t.closest('.lab'); if(pre&&lab){ lab.querySelector('.code').value=decodeURIComponent(pre.dataset.code); gutterSync(lab); } }
 });
+
+/* ---------- Lab line gutter + highlight overlay ---------- */
+function gutterSync(lab){
+  const ta=lab.querySelector('.code'), g=lab.querySelector('.gutter'); if(!ta||!g) return;
+  const n=ta.value.split('\n').length;
+  if(g._n!==n){ g._n=n; let s=''; for(let i=1;i<=n;i++) s+=i+'\n'; g.textContent=s; }
+  g.scrollTop=ta.scrollTop;
+  if(lab.dataset.hiStart) labHighlight(lab,+lab.dataset.hiStart,+lab.dataset.hiEnd);
+}
+function labMetrics(ta){ const cs=getComputedStyle(ta); return { lh:parseFloat(cs.lineHeight), pt:parseFloat(cs.paddingTop) }; }
+function labHighlight(lab,s,e){
+  const ta=lab.querySelector('.code'), hi=lab.querySelector('.line-hi'); if(!ta||!hi) return;
+  lab.dataset.hiStart=s; lab.dataset.hiEnd=e;
+  const m=labMetrics(ta);
+  hi.style.display='block';
+  hi.style.top=(m.pt+(s-1)*m.lh-ta.scrollTop)+'px';
+  hi.style.height=((e-s+1)*m.lh)+'px';
+}
+function labClearHi(lab){ const hi=lab.querySelector('.line-hi'); if(hi) hi.style.display='none'; delete lab.dataset.hiStart; delete lab.dataset.hiEnd; }
+document.addEventListener('input',function(e){ if(e.target.classList&&e.target.classList.contains('code')) gutterSync(labOf(e.target)); });
+document.addEventListener('scroll',function(e){ // scroll doesn't bubble — capture it
+  if(e.target.classList&&e.target.classList.contains('code')) gutterSync(labOf(e.target));
+},true);
+document.querySelectorAll('.lab').forEach(gutterSync);
+
+/* ---------- Guided audio walkthrough (per-line explanations) ----------
+ * audio/walkthrough.json (built by narrate-lab.js):
+ *   { <sid>: { steps:[ {lines:[start,end], text, file}, … ] } }
+ * Autoplay highlights the current line(s), scrolls them into view, shows the
+ * explanation in the caption bar, and advances when each clip ends. */
+const walkAudio=document.getElementById('walkAudio');
+let _walkData={},_walk=null;
+(async function(){
+  try{ const r=await fetch('audio/walkthrough.json',{cache:'no-cache'}); if(r.ok) _walkData=await r.json(); }catch(e){}
+  document.querySelectorAll('.lab').forEach(function(lab){
+    const sec=lab.closest('section'), sid=sec&&sec.dataset.sid;
+    const d=sid&&_walkData[sid];
+    if(d&&d.steps&&d.steps.length){ lab.dataset.walkSid=sid; lab.querySelector('.walk').hidden=false; }
+  });
+})();
+function walkUI(lab,on){
+  lab.querySelector('.walk').hidden=on||!lab.dataset.walkSid;
+  lab.querySelector('.walk-controls').hidden=!on;
+}
+function stopWalk(finished){
+  if(!_walk) return;
+  const w=_walk; _walk=null;
+  walkAudio.onended=null; walkAudio.pause(); walkAudio.removeAttribute('src'); walkAudio.load();
+  const ta=w.lab.querySelector('.code'); ta.readOnly=false;
+  if(w.saved!=null){ ta.value=w.saved; } // restore the student's edits
+  labClearHi(w.lab); gutterSync(w.lab); walkUI(w.lab,false);
+  capBar.style.display='none';
+  w.lab.querySelector('.lab-status').textContent=finished===true?'🎧 walkthrough finished — now make it yours':'';
+}
+function walkScrollTo(lab,s,e){
+  const ta=lab.querySelector('.code'), m=labMetrics(ta);
+  const top=m.pt+(s-1)*m.lh, bottom=m.pt+e*m.lh, vh=ta.clientHeight;
+  if(top<ta.scrollTop+m.lh||bottom>ta.scrollTop+vh-m.lh) ta.scrollTop=Math.max(0,top-vh*0.3);
+  gutterSync(lab);
+}
+function walkPlayStep(){
+  const w=_walk; if(!w) return;
+  const st=w.steps[w.i], s=st.lines[0], e=st.lines[1]||st.lines[0];
+  labHighlight(w.lab,s,e); walkScrollTo(w.lab,s,e);
+  w.lab.querySelector('.walk-step').textContent=(w.i+1)+' / '+w.steps.length+' · L'+s+(e>s?'–'+e:'');
+  capBar.textContent=st.text; capBar.style.display='block';
+  walkAudio.src='audio/'+encodeURIComponent(st.file);
+  walkAudio.load(); // some Chrome profiles stall a src-swap without an explicit load() (see narratorAudio note)
+  walkAudio.onended=function(){ if(!_walk) return; if(_walk.i<_walk.steps.length-1){ _walk.i++; walkPlayStep(); } else stopWalk(true); };
+  const tok=w.tok=(w.tok||0)+1; // a newer step's load() aborts this play() — only the latest step may flip the UI
+  w.playing=true; walkPauseBtn();
+  walkAudio.play().catch(function(){ if(_walk===w&&w.tok===tok){ w.playing=false; walkPauseBtn(); w.lab.querySelector('.lab-status').textContent='audio blocked — press ▶ to resume'; } });
+}
+function walkPauseBtn(){ if(_walk) _walk.lab.querySelector('.walk-pause').textContent=_walk.playing?'⏸':'▶'; }
+function walkPauseResume(){
+  if(!_walk) return;
+  if(_walk.playing){ walkAudio.pause(); _walk.playing=false; }
+  else { _walk.playing=true; walkAudio.play().catch(function(){}); }
+  walkPauseBtn();
+}
+function startWalk(lab){
+  stopAudio(); // also stops any previous walkthrough
+  const sid=lab.dataset.walkSid, data=_walkData[sid]; if(!data) return;
+  const ta=lab.querySelector('.code');
+  let saved=null;
+  if(ta.value!==ta.defaultValue){ saved=ta.value; ta.value=ta.defaultValue; } // walkthrough narrates the original code
+  ta.readOnly=true; gutterSync(lab);
+  _walk={ lab:lab, steps:data.steps, i:0, playing:false, saved:saved };
+  walkUI(lab,true);
+  lab.querySelector('.lab-status').textContent=saved!=null?'🎧 showing the original code — your edits come back after':'';
+  walkPlayStep();
+}
 /* Tab key inserts spaces in code editors; keep typing inside textareas from triggering reveal nav */
 document.addEventListener('keydown',function(e){
   const ta=e.target;

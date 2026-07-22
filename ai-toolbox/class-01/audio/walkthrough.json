@@ -1,0 +1,200 @@
+{
+  "lab-python-pattern": {
+    "hash": "f5a0614a27b05431",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          2
+        ],
+        "text": "These first two comments tell us what we're working with: a tiny slice of the real Titanic dataset. Each person is described by three things — their sex, their passenger class, and whether they survived.",
+        "file": "lab-python-pattern-w00.mp3"
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "Here we start building a list called people. Each entry inside will be one passenger, packed into a tuple.",
+        "file": "lab-python-pattern-w01.mp3"
+      },
+      {
+        "lines": [
+          4,
+          5
+        ],
+        "text": "These are our first passengers. Read each tuple as sex, then class, then survived — where one means they lived and zero means they didn't.",
+        "file": "lab-python-pattern-w02.mp3"
+      },
+      {
+        "lines": [
+          6,
+          7
+        ],
+        "text": "More passengers, following the exact same pattern. We're just typing out our little dataset row by row.",
+        "file": "lab-python-pattern-w03.mp3"
+      },
+      {
+        "lines": [
+          8,
+          8
+        ],
+        "text": "This closing bracket finishes the list. Now people holds all twelve passengers, ready for us to analyze.",
+        "file": "lab-python-pattern-w04.mp3"
+      },
+      {
+        "lines": [
+          10,
+          11
+        ],
+        "text": "Now we define a function called survival rate that takes a group. Inside, we build members by keeping only the people for whom the group test returns true.",
+        "file": "lab-python-pattern-w05.mp3"
+      },
+      {
+        "lines": [
+          12,
+          13
+        ],
+        "text": "This is a safety check. If nobody matches the group, the list is empty, so we return zero point zero to avoid dividing by nothing.",
+        "file": "lab-python-pattern-w06.mp3"
+      },
+      {
+        "lines": [
+          14,
+          14
+        ],
+        "text": "Here we count the survivors. We grab index two from each member — the survived flag — and add them all up, so ones become the total who lived.",
+        "file": "lab-python-pattern-w07.mp3"
+      },
+      {
+        "lines": [
+          15,
+          15
+        ],
+        "text": "Finally we return the fraction: survivors divided by the total number of members. That gives us the survival rate as a decimal.",
+        "file": "lab-python-pattern-w08.mp3"
+      },
+      {
+        "lines": [
+          17,
+          18
+        ],
+        "text": "The comment invites you to experiment. Then we print the women's survival rate, passing a little lambda that checks if the sex, at index zero, equals female.",
+        "file": "lab-python-pattern-w09.mp3"
+      },
+      {
+        "lines": [
+          19,
+          19
+        ],
+        "text": "Same idea for the men, but this time our lambda checks for male. Notice how easily we can swap in a different group.",
+        "file": "lab-python-pattern-w10.mp3"
+      },
+      {
+        "lines": [
+          20,
+          20
+        ],
+        "text": "And here we check first-class passengers, testing whether the class at index one equals one. The pattern is powerful — one function, many questions.",
+        "file": "lab-python-pattern-w11.mp3"
+      },
+      {
+        "lines": [
+          22,
+          22
+        ],
+        "text": "Finally, a challenge for you: write a group that finds the survival rate for third-class men. Try combining two conditions in your lambda!",
+        "file": "lab-python-pattern-w12.mp3"
+      }
+    ]
+  },
+  "lab-model-learn": {
+    "hash": "186aafebf686ca82",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "We start by importing numpy and nicknaming it np. Numpy lets us work with whole lists of numbers at once, which makes the math fast and clean.",
+        "file": "lab-model-learn-w00.mp3"
+      },
+      {
+        "lines": [
+          3,
+          5
+        ],
+        "text": "Here's our data. Hours is how long each student studied, and passed says whether they passed, one for yes and zero for no. We mark them as float so we can do decimal math later.",
+        "file": "lab-model-learn-w01.mp3"
+      },
+      {
+        "lines": [
+          7,
+          8
+        ],
+        "text": "This comment describes our model, and the sigmoid function makes it real. It squeezes any number into a value between zero and one, so we can read it as a probability of passing.",
+        "file": "lab-model-learn-w02.mp3"
+      },
+      {
+        "lines": [
+          10,
+          11
+        ],
+        "text": "We set our weight and bias both to zero as a starting guess. The learning rate, lr, controls how big a step we take each time we adjust them.",
+        "file": "lab-model-learn-w03.mp3"
+      },
+      {
+        "lines": [
+          12,
+          12
+        ],
+        "text": "Now we loop two thousand times. Each pass through this loop nudges the model a little closer to fitting the data.",
+        "file": "lab-model-learn-w04.mp3"
+      },
+      {
+        "lines": [
+          13,
+          14
+        ],
+        "text": "First we make predictions for every student using our current weight and bias. Then error measures how far off each prediction is from the real answer.",
+        "file": "lab-model-learn-w05.mp3"
+      },
+      {
+        "lines": [
+          15,
+          16
+        ],
+        "text": "These two lines are the actual learning. We shift the weight and bias in the direction that shrinks the error, scaled by the learning rate, averaging across all students.",
+        "file": "lab-model-learn-w06.mp3"
+      },
+      {
+        "lines": [
+          18,
+          18
+        ],
+        "text": "After training, we print the learned weight and bias, rounded to three decimals, so we can see what the model figured out on its own.",
+        "file": "lab-model-learn-w07.mp3"
+      },
+      {
+        "lines": [
+          19,
+          20
+        ],
+        "text": "Finally, we test the model on two, four, and six hours of study, printing each one as a pass chance percentage. This shows the model in action on fresh inputs.",
+        "file": "lab-model-learn-w08.mp3"
+      },
+      {
+        "lines": [
+          22,
+          22
+        ],
+        "text": "And here's your challenge: try changing the learning rate to point zero one and see if the model still learns well. Experimenting is the best way to build intuition.",
+        "file": "lab-model-learn-w09.mp3"
+      }
+    ]
+  }
+}

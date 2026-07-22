@@ -1,0 +1,272 @@
+{
+  "lab-tiny-llm": {
+    "hash": "03ad72b9eb5f8911",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "This comment sets our expectations. We're building a tiny language model, and all it does is predict a likely next word. It doesn't understand anything.",
+        "file": "lab-tiny-llm-w00.mp3"
+      },
+      {
+        "lines": [
+          2,
+          3
+        ],
+        "text": "We import the random module so we can make random choices. Then we seed it with the number four, which means the randomness is repeatable and everyone gets the same output.",
+        "file": "lab-tiny-llm-w01.mp3"
+      },
+      {
+        "lines": [
+          5,
+          9
+        ],
+        "text": "Here's our corpus, the text the model learns from. It's a triple-quoted string spanning several lines, packed with short sentences about a model, a lawyer, and some fake cases.",
+        "file": "lab-tiny-llm-w02.mp3"
+      },
+      {
+        "lines": [
+          11,
+          11
+        ],
+        "text": "We call split on the corpus, which breaks that big string into a list of individual words wherever there's whitespace. Now we can work word by word.",
+        "file": "lab-tiny-llm-w03.mp3"
+      },
+      {
+        "lines": [
+          13,
+          14
+        ],
+        "text": "This comment explains our plan: for every word, record which words follow it. We start with an empty dictionary called next words to hold that table.",
+        "file": "lab-tiny-llm-w04.mp3"
+      },
+      {
+        "lines": [
+          15,
+          16
+        ],
+        "text": "We zip the words list with itself shifted by one, giving us each word paired with the word right after it. For every pair, we grab the list for word a and append word b onto it.",
+        "file": "lab-tiny-llm-w05.mp3"
+      },
+      {
+        "lines": [
+          18,
+          19
+        ],
+        "text": "This comment says our generate step picks a plausible next word each time. We define a function generate that takes a starting word and n, which defaults to eighteen words.",
+        "file": "lab-tiny-llm-w06.mp3"
+      },
+      {
+        "lines": [
+          20,
+          20
+        ],
+        "text": "We set up two variables: w holds our current word, and out is our output list, already containing that first word so it shows up in the result.",
+        "file": "lab-tiny-llm-w07.mp3"
+      },
+      {
+        "lines": [
+          21,
+          23
+        ],
+        "text": "We loop n times. Each round we ask the table for words that followed our current word, then randomly pick one. If the word isn't found, we fall back to a period, and we append the choice to our output.",
+        "file": "lab-tiny-llm-w08.mp3"
+      },
+      {
+        "lines": [
+          24,
+          24
+        ],
+        "text": "Finally we join all the words in out with spaces between them, turning our list back into a readable sentence to return.",
+        "file": "lab-tiny-llm-w09.mp3"
+      },
+      {
+        "lines": [
+          26,
+          27
+        ],
+        "text": "Now we test it. We print what the model says starting from the word the, and again starting from plausible, so we can compare two different generated sentences.",
+        "file": "lab-tiny-llm-w10.mp3"
+      },
+      {
+        "lines": [
+          29,
+          30
+        ],
+        "text": "These comments drive home the big idea. The model never lies or tells the truth on purpose. It only continues text plausibly, just like the huge models, minus the scale.",
+        "file": "lab-tiny-llm-w11.mp3"
+      },
+      {
+        "lines": [
+          32,
+          33
+        ],
+        "text": "The first challenge invites you to remove the seed and run it a few times. Same corpus, but you'll get different confident nonsense every single run.",
+        "file": "lab-tiny-llm-w12.mp3"
+      },
+      {
+        "lines": [
+          34,
+          35
+        ],
+        "text": "The second challenge suggests adding a sentence of your own real facts to the corpus, then watching the model remix them into things you never actually said.",
+        "file": "lab-tiny-llm-w13.mp3"
+      }
+    ]
+  },
+  "lab-prompt-scorer": {
+    "hash": "e5cd34a85c0332fd",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "This comment tells us the whole idea. We're building a checker that looks at a prompt and asks: does it have the four parts of a good prompt?",
+        "file": "lab-prompt-scorer-w00.mp3"
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "Here's our first clue list, role signs. These are little phrases like 'you are' or 'act as' that hint the prompt is giving the AI a role to play.",
+        "file": "lab-prompt-scorer-w01.mp3"
+      },
+      {
+        "lines": [
+          4,
+          5
+        ],
+        "text": "Context signs are phrases that suggest you gave the AI something to work with, like 'here is' or 'my data'. Notice this list simply continues onto the next line.",
+        "file": "lab-prompt-scorer-w02.mp3"
+      },
+      {
+        "lines": [
+          6,
+          7
+        ],
+        "text": "Format signs are words asking for a specific shape of answer, like 'bullets', 'table', or 'summary'. If any of these appear, the prompt is describing the output format.",
+        "file": "lab-prompt-scorer-w03.mp3"
+      },
+      {
+        "lines": [
+          8,
+          9
+        ],
+        "text": "Constraint signs are limiting words like 'only', 'must', or 'at most'. These show the prompt is setting rules and boundaries for the answer.",
+        "file": "lab-prompt-scorer-w04.mp3"
+      },
+      {
+        "lines": [
+          11,
+          12
+        ],
+        "text": "Now we define a function called check that takes a prompt. First we make a lowercase copy called p, so our matching ignores capital letters.",
+        "file": "lab-prompt-scorer-w05.mp3"
+      },
+      {
+        "lines": [
+          13,
+          13
+        ],
+        "text": "We set up two things: parts, an empty list to collect our findings, and score, starting at zero to count how many of the four parts we find.",
+        "file": "lab-prompt-scorer-w06.mp3"
+      },
+      {
+        "lines": [
+          14,
+          15
+        ],
+        "text": "This loop walks through all four categories at once, pairing each name with its list of signs. So each turn we handle role, then context, then format, then constraints.",
+        "file": "lab-prompt-scorer-w07.mp3"
+      },
+      {
+        "lines": [
+          16,
+          17
+        ],
+        "text": "If any sign phrase appears in the prompt, we found that part. We add one to the score and record a plus with the part's name to celebrate the win.",
+        "file": "lab-prompt-scorer-w08.mp3"
+      },
+      {
+        "lines": [
+          18,
+          19
+        ],
+        "text": "Otherwise, none of the signs matched, so this part is missing. We add a minus and mark it MISSING, so the person can see what to add.",
+        "file": "lab-prompt-scorer-w09.mp3"
+      },
+      {
+        "lines": [
+          20,
+          20
+        ],
+        "text": "Now we turn the score into a friendly label. A score of zero says WISH, and it climbs up to RESEARCH-GRADE at four, using the score as an index into this list.",
+        "file": "lab-prompt-scorer-w10.mp3"
+      },
+      {
+        "lines": [
+          21,
+          21
+        ],
+        "text": "We print the label neatly right-aligned in fourteen spaces, followed by the first fifty-eight characters of the prompt and some dots, so long prompts don't flood the screen.",
+        "file": "lab-prompt-scorer-w11.mp3"
+      },
+      {
+        "lines": [
+          22,
+          22
+        ],
+        "text": "Then we loop through our parts list and print each finding, indented under the label, so you get a tidy checklist of what's present and what's missing.",
+        "file": "lab-prompt-scorer-w12.mp3"
+      },
+      {
+        "lines": [
+          24,
+          24
+        ],
+        "text": "Time to test it. This first call, 'Explain AI', is bare bones with none of the four parts, so watch it score low.",
+        "file": "lab-prompt-scorer-w13.mp3"
+      },
+      {
+        "lines": [
+          25,
+          25
+        ],
+        "text": "This second prompt asks to summarize a paper and pastes an abstract. It has context and a format word, so it should score a bit higher.",
+        "file": "lab-prompt-scorer-w14.mp3"
+      },
+      {
+        "lines": [
+          26,
+          28
+        ],
+        "text": "This third prompt is the full package: it gives a role, provides context, asks for three bullets, and demands exact quotes. These three lines join into one string, and it should hit the top label.",
+        "file": "lab-prompt-scorer-w15.mp3"
+      },
+      {
+        "lines": [
+          30,
+          30
+        ],
+        "text": "Here's your first challenge: write tonight's five homework prompts and run each through the checker to see how they score.",
+        "file": "lab-prompt-scorer-w16.mp3"
+      },
+      {
+        "lines": [
+          31,
+          32
+        ],
+        "text": "And a thinking challenge: this checker only spots keywords, so it can be tricked by stuffing in the right words. Ask yourself what that reminds you of in real life.",
+        "file": "lab-prompt-scorer-w17.mp3"
+      }
+    ]
+  }
+}

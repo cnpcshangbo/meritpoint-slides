@@ -1,0 +1,256 @@
+{
+  "lab-detection-log": {
+    "hash": "c717dd70ec1354e0",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "We start by importing pandas, the go-to library for working with tables of data. We nickname it pd so we can type less every time we use it.",
+        "file": "lab-detection-log-w00.mp3"
+      },
+      {
+        "lines": [
+          3,
+          4
+        ],
+        "text": "This comment tells us the story: it's the car's diary, where each row is one detected object. Now we build that table using a pandas DataFrame from a dictionary.",
+        "file": "lab-detection-log-w01.mp3"
+      },
+      {
+        "lines": [
+          5,
+          5
+        ],
+        "text": "The first column is called frame, holding the frame numbers. Notice some numbers repeat, meaning the car saw several objects in the same frame.",
+        "file": "lab-detection-log-w02.mp3"
+      },
+      {
+        "lines": [
+          6,
+          7
+        ],
+        "text": "The object column lists what was detected in each row, like pedestrian, car, or sign. It spills across two lines, but it's still one single list.",
+        "file": "lab-detection-log-w03.mp3"
+      },
+      {
+        "lines": [
+          8,
+          8
+        ],
+        "text": "The conf column stores the confidence for each detection, a number between zero and one. Higher means the car is more sure about what it saw.",
+        "file": "lab-detection-log-w04.mp3"
+      },
+      {
+        "lines": [
+          9,
+          10
+        ],
+        "text": "The dist m column holds the distance in meters to each object. The closing brace and parenthesis finish building our complete diary table.",
+        "file": "lab-detection-log-w05.mp3"
+      },
+      {
+        "lines": [
+          12,
+          12
+        ],
+        "text": "Here we peek at the data with head, which prints just the first few rows. It's a quick way to check that our table looks the way we expect.",
+        "file": "lab-detection-log-w06.mp3"
+      },
+      {
+        "lines": [
+          13,
+          14
+        ],
+        "text": "An empty print adds a blank line so the output isn't crammed together. Then we print a friendly label describing what comes next.",
+        "file": "lab-detection-log-w07.mp3"
+      },
+      {
+        "lines": [
+          15,
+          15
+        ],
+        "text": "We grab the object column and call value counts, which tallies how many times each object appears. This tells us what the car sees most often.",
+        "file": "lab-detection-log-w08.mp3"
+      },
+      {
+        "lines": [
+          16,
+          17
+        ],
+        "text": "After a blank line for breathing room, we compute the average of the conf column with mean, and round it to three decimals so it reads cleanly.",
+        "file": "lab-detection-log-w09.mp3"
+      },
+      {
+        "lines": [
+          19,
+          20
+        ],
+        "text": "As the comment says, every question is a filter plus a summary. Here we keep only the rows where object equals pedestrian, saving them in peds.",
+        "file": "lab-detection-log-w10.mp3"
+      },
+      {
+        "lines": [
+          21,
+          21
+        ],
+        "text": "Now we take just those pedestrian rows and find their average confidence. This shows how sure the car is specifically about people.",
+        "file": "lab-detection-log-w11.mp3"
+      },
+      {
+        "lines": [
+          23,
+          23
+        ],
+        "text": "This filter combines two conditions with the ampersand: object is pedestrian and confidence is below zero point seven. That gives us the shaky, low-confidence people detections.",
+        "file": "lab-detection-log-w12.mp3"
+      },
+      {
+        "lines": [
+          24,
+          25
+        ],
+        "text": "We print a heading, then print the risky table itself. Seeing these rows helps us spot moments where the car wasn't confident about a person.",
+        "file": "lab-detection-log-w13.mp3"
+      },
+      {
+        "lines": [
+          27,
+          30
+        ],
+        "text": "Finally, these comments are your challenges to try yourself: compare distances, find the busiest frame, and think about what the risky detections mean for the car. Give them a go!",
+        "file": "lab-detection-log-w14.mp3"
+      }
+    ]
+  },
+  "lab-titanic": {
+    "hash": "1d3c8aa94c9c707e",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          2
+        ],
+        "text": "We start by importing two libraries. Pandas, nicknamed pd, is our tool for working with tables of data. NumPy, called np, helps with numbers and, importantly here, missing values.",
+        "file": "lab-titanic-w00.mp3"
+      },
+      {
+        "lines": [
+          4,
+          5
+        ],
+        "text": "This comment tells us we're using a real slice of Titanic data, gaps and all. Then we build a DataFrame, which is basically a spreadsheet in code, from a dictionary of columns.",
+        "file": "lab-titanic-w01.mp3"
+      },
+      {
+        "lines": [
+          6,
+          7
+        ],
+        "text": "Our first column is name, holding the last names of twelve passengers. Each entry lines up as one row in our table.",
+        "file": "lab-titanic-w02.mp3"
+      },
+      {
+        "lines": [
+          8,
+          9
+        ],
+        "text": "The sex column records male or female for each passenger, in the same order as the names above.",
+        "file": "lab-titanic-w03.mp3"
+      },
+      {
+        "lines": [
+          10,
+          10
+        ],
+        "text": "The pclass column is the passenger class — first, second, or third. Class one was the fancy, expensive tickets; class three was the cheapest.",
+        "file": "lab-titanic-w04.mp3"
+      },
+      {
+        "lines": [
+          11,
+          11
+        ],
+        "text": "Here's the age column, and notice two entries say NaN, meaning not a number. Those are the missing ages — real data almost always has holes like these.",
+        "file": "lab-titanic-w05.mp3"
+      },
+      {
+        "lines": [
+          12,
+          13
+        ],
+        "text": "The survived column uses one for survived and zero for did not. The closing brace and parenthesis finish building our DataFrame.",
+        "file": "lab-titanic-w06.mp3"
+      },
+      {
+        "lines": [
+          15,
+          16
+        ],
+        "text": "We print a heading, then check for gaps. isnull marks every empty cell as true, and sum counts them per column, so we can see exactly where our data is missing.",
+        "file": "lab-titanic-w07.mp3"
+      },
+      {
+        "lines": [
+          18,
+          19
+        ],
+        "text": "We calculate the median age — the middle value — and use fillna to plug it into both missing spots. The median is a safe, typical choice that won't get skewed by extremes.",
+        "file": "lab-titanic-w08.mp3"
+      },
+      {
+        "lines": [
+          20,
+          20
+        ],
+        "text": "This print honestly announces what we just did — filled two ages with the median. Being transparent about changes to your data is a habit good analysts keep.",
+        "file": "lab-titanic-w09.mp3"
+      },
+      {
+        "lines": [
+          22,
+          23
+        ],
+        "text": "Now the interesting part. We group the rows by sex, then take the mean of survived for each group. Since survived is zeros and ones, the average is literally the survival rate.",
+        "file": "lab-titanic-w10.mp3"
+      },
+      {
+        "lines": [
+          25,
+          26
+        ],
+        "text": "Same move, but grouping by passenger class. This shows the survival rate for first, second, and third class, revealing how much your ticket mattered.",
+        "file": "lab-titanic-w11.mp3"
+      },
+      {
+        "lines": [
+          28,
+          29
+        ],
+        "text": "These comments make a point: doing one of these numbers by hand took eight lines of loops. Groupby handles every group at once — that's the whole reason pandas exists.",
+        "file": "lab-titanic-w12.mp3"
+      },
+      {
+        "lines": [
+          31,
+          32
+        ],
+        "text": "Here's your first challenge — find the average age of survivors versus non-survivors. The hint shows you just group by survived and take the mean of age.",
+        "file": "lab-titanic-w13.mp3"
+      },
+      {
+        "lines": [
+          33,
+          34
+        ],
+        "text": "And the bigger challenge: tonight, run these same lines on the full 891-row train file in Colab. See whether the patterns you found here still hold at full scale.",
+        "file": "lab-titanic-w14.mp3"
+      }
+    ]
+  }
+}

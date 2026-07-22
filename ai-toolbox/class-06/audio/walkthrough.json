@@ -1,0 +1,232 @@
+{
+  "lab-citation-graph": {
+    "hash": "957caae265a19937",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          2
+        ],
+        "text": "We start with comments explaining our data. We're building a tiny citation graph where an edge from paper A to paper B means paper A cites paper B. A is the newer work, B is an older root.",
+        "file": "lab-citation-graph-w00.mp3"
+      },
+      {
+        "lines": [
+          3,
+          9
+        ],
+        "text": "Here's our list of citation pairs. Each tuple links a newer paper to the older one it cites. So R-CNN cites SelectiveSearch, Fast-RCNN cites R-CNN, and so on. This is our whole graph.",
+        "file": "lab-citation-graph-w01.mp3"
+      },
+      {
+        "lines": [
+          11,
+          11
+        ],
+        "text": "Now we gather every unique paper name. We loop through each edge and each paper in that edge, and wrap it all in a set so duplicates disappear. This gives us our full list of papers.",
+        "file": "lab-citation-graph-w02.mp3"
+      },
+      {
+        "lines": [
+          13,
+          14
+        ],
+        "text": "These comments define two ideas. Forward citations are who cites me, my frontier. Backward citations are who I cite, my roots. Keeping these straight is key to the whole lab.",
+        "file": "lab-citation-graph-w03.mp3"
+      },
+      {
+        "lines": [
+          15,
+          16
+        ],
+        "text": "We create two dictionaries. Cited by will hold, for each paper, the newer papers pointing at it. Cites to holds the older papers it points to. Both start with empty lists for every paper.",
+        "file": "lab-citation-graph-w04.mp3"
+      },
+      {
+        "lines": [
+          17,
+          19
+        ],
+        "text": "Now we fill them in. For every edge, we unpack it into newer and older, then record that older is cited by newer, and newer cites to older. One loop builds both directions at once.",
+        "file": "lab-citation-graph-w05.mp3"
+      },
+      {
+        "lines": [
+          21,
+          22
+        ],
+        "text": "Time to find the roots — papers cited a lot but citing little themselves, the foundations. First we print a heading so the output is easy to read.",
+        "file": "lab-citation-graph-w06.mp3"
+      },
+      {
+        "lines": [
+          23,
+          24
+        ],
+        "text": "We sort papers by how many cite them, using negative length so the most-cited come first, and take the top three. For each, we print the name padded to sixteen spaces and its citation count.",
+        "file": "lab-citation-graph-w07.mp3"
+      },
+      {
+        "lines": [
+          26,
+          27
+        ],
+        "text": "Next we look for the frontier — the newest work that cites others but nobody cites yet. We print a heading, with a newline first for spacing.",
+        "file": "lab-citation-graph-w08.mp3"
+      },
+      {
+        "lines": [
+          28,
+          30
+        ],
+        "text": "We check every paper, and if its cited by list is empty, nobody cites it, so it's on the frontier. We print it along with the papers it builds on.",
+        "file": "lab-citation-graph-w09.mp3"
+      },
+      {
+        "lines": [
+          32,
+          34
+        ],
+        "text": "Now a function to trace a paper's roots backward. Roots of takes a paper and a depth for indentation. It prints the paper, indented with a little branch marker to show the tree structure.",
+        "file": "lab-citation-graph-w10.mp3"
+      },
+      {
+        "lines": [
+          35,
+          36
+        ],
+        "text": "Then for each older paper this one cites, we call roots of again, increasing depth by one. This recursion walks all the way down to the foundations.",
+        "file": "lab-citation-graph-w11.mp3"
+      },
+      {
+        "lines": [
+          38,
+          39
+        ],
+        "text": "Finally we print a heading and call roots of on CrowdPeds. This follows its citations backward and prints the full family tree of ideas it stands on.",
+        "file": "lab-citation-graph-w12.mp3"
+      },
+      {
+        "lines": [
+          41,
+          45
+        ],
+        "text": "These closing comments are your challenges. First, find the single paper whose removal would disconnect the most others. Second, add a paper citing both NightDetect and RainRobust, bridging two clusters into a robust all-conditions study.",
+        "file": "lab-citation-graph-w13.mp3"
+      }
+    ]
+  },
+  "lab-relevance": {
+    "hash": "a30f88871e341e85",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          2
+        ],
+        "text": "We start with a comment describing the goal: ranking papers by how well they overlap our research question. Then we store that question as a plain string so we can compare it later.",
+        "file": "lab-relevance-w00.mp3"
+      },
+      {
+        "lines": [
+          4,
+          11
+        ],
+        "text": "Here's our collection of papers, stored in a dictionary. Each key is a short paper ID like A or B, and each value is that paper's title. This is our pile to rank.",
+        "file": "lab-relevance-w01.mp3"
+      },
+      {
+        "lines": [
+          13,
+          13
+        ],
+        "text": "This is a set of stop words — tiny common words like a, of, and the. They appear everywhere and carry no meaning, so we'll want to ignore them.",
+        "file": "lab-relevance-w02.mp3"
+      },
+      {
+        "lines": [
+          14,
+          15
+        ],
+        "text": "We define a function called words that takes some text, lowercases it, turns dashes into spaces, splits it into words, and keeps only the meaningful ones, skipping stop words. It returns them as a set.",
+        "file": "lab-relevance-w03.mp3"
+      },
+      {
+        "lines": [
+          17,
+          17
+        ],
+        "text": "Now we call words on our question and save the result as q. This gives us the clean set of keywords we actually care about matching.",
+        "file": "lab-relevance-w04.mp3"
+      },
+      {
+        "lines": [
+          18,
+          20
+        ],
+        "text": "The score function compares a title against our question keywords. The ampersand finds words they share, then we return the fraction of the question that's covered, plus the shared words themselves.",
+        "file": "lab-relevance-w05.mp3"
+      },
+      {
+        "lines": [
+          22,
+          22
+        ],
+        "text": "We print our question keywords, sorted alphabetically so they're tidy. The backslash n adds a blank line afterward, giving us a little breathing room before the results.",
+        "file": "lab-relevance-w06.mp3"
+      },
+      {
+        "lines": [
+          23,
+          23
+        ],
+        "text": "Here we sort the papers by score. The key is a small lambda that scores each title and negates it, so the highest scores float to the top of the list.",
+        "file": "lab-relevance-w07.mp3"
+      },
+      {
+        "lines": [
+          24,
+          25
+        ],
+        "text": "Now we loop through the ranked papers. For each one we unpack its ID and title, then call score again to get the fraction covered and the shared words.",
+        "file": "lab-relevance-w08.mp3"
+      },
+      {
+        "lines": [
+          26,
+          26
+        ],
+        "text": "We build a little bar chart out of hash symbols. Multiplying the fraction by twenty and rounding gives a visual sense of how strong each match is.",
+        "file": "lab-relevance-w09.mp3"
+      },
+      {
+        "lines": [
+          27,
+          27
+        ],
+        "text": "We print each result: the score as a percentage, then the bar padded to a fixed width, then the ID and the first forty-four characters of the title so lines stay neat.",
+        "file": "lab-relevance-w10.mp3"
+      },
+      {
+        "lines": [
+          29,
+          29
+        ],
+        "text": "Finally we print a friendly reminder: read the top five and drop the obvious mismatch. The leading blank line separates this advice from the list above.",
+        "file": "lab-relevance-w11.mp3"
+      },
+      {
+        "lines": [
+          31,
+          37
+        ],
+        "text": "These challenge comments push your thinking. One paper scores near zero — spot it. And notice paper D loses points just for saying darkness instead of night, even though it means the same thing. That's why real search engines match meaning, not letters.",
+        "file": "lab-relevance-w12.mp3"
+      }
+    ]
+  }
+}

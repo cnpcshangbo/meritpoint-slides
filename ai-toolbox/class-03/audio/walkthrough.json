@@ -1,0 +1,224 @@
+{
+  "lab-pipeline": {
+    "hash": "2bf1a8d4bf9ab959",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "This top comment tells us the big idea: we're going to run an entire machine learning research pipeline right in the browser, in just twenty-five lines.",
+        "file": "lab-pipeline-w00.mp3"
+      },
+      {
+        "lines": [
+          2,
+          4
+        ],
+        "text": "Here we import our tools from scikit-learn. We grab the iris dataset, a helper to split our data, and a decision tree classifier, which is the model that will do the learning.",
+        "file": "lab-pipeline-w01.mp3"
+      },
+      {
+        "lines": [
+          6,
+          7
+        ],
+        "text": "Now we load the data. This gives us X, the four measurements for each flower, and y, the answer, which species each flower actually is. There are a hundred and fifty real flowers here.",
+        "file": "lab-pipeline-w02.mp3"
+      },
+      {
+        "lines": [
+          8,
+          8
+        ],
+        "text": "We store the three species names in a list. Later the model gives us numbers zero, one, or two, and this list turns those numbers back into real names.",
+        "file": "lab-pipeline-w03.mp3"
+      },
+      {
+        "lines": [
+          10,
+          12
+        ],
+        "text": "This comment explains the split, and the code does it. We divide our flowers into a training pile to learn from and a test pile for an honest exam. Thirty percent is held back for testing.",
+        "file": "lab-pipeline-w04.mp3"
+      },
+      {
+        "lines": [
+          14,
+          15
+        ],
+        "text": "Now the model itself: a decision tree. We limit its depth to three, so it stays simple and doesn't just memorize every tiny detail of the training data.",
+        "file": "lab-pipeline-w05.mp3"
+      },
+      {
+        "lines": [
+          16,
+          16
+        ],
+        "text": "Here's the actual learning. We call fit and hand it the training flowers and their answers, and the tree studies them to find patterns that separate the species.",
+        "file": "lab-pipeline-w06.mp3"
+      },
+      {
+        "lines": [
+          18,
+          19
+        ],
+        "text": "This is the real experiment. We score the model on the test flowers it has never seen before, and store how often it got the right answer as accuracy.",
+        "file": "lab-pipeline-w07.mp3"
+      },
+      {
+        "lines": [
+          21,
+          22
+        ],
+        "text": "Now we report our conclusion. We print the accuracy formatted as a percentage, so we can honestly say how well the model did on unseen flowers.",
+        "file": "lab-pipeline-w08.mp3"
+      },
+      {
+        "lines": [
+          23,
+          23
+        ],
+        "text": "Here we make up a brand-new flower with its four measurements, wrapped in a list because the model expects a batch of samples, even if it's just one.",
+        "file": "lab-pipeline-w09.mp3"
+      },
+      {
+        "lines": [
+          24,
+          24
+        ],
+        "text": "We ask the model to predict this flower's species, take the first result, and use our names list to print it as a readable word instead of a number.",
+        "file": "lab-pipeline-w10.mp3"
+      },
+      {
+        "lines": [
+          26,
+          28
+        ],
+        "text": "Finally, two challenges for you. Try lowering the tree's depth and see what happens to accuracy, then shrink the training data drastically and ask yourself if the results still feel trustworthy.",
+        "file": "lab-pipeline-w11.mp3"
+      }
+    ]
+  },
+  "lab-overfitting": {
+    "hash": "a86272eacae4539c",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "We start by importing NumPy, the number-crunching library, and nicknaming it np so we can call its tools with less typing.",
+        "file": "lab-overfitting-w00.mp3"
+      },
+      {
+        "lines": [
+          3,
+          4
+        ],
+        "text": "This comment tells us we're building fake data from a gentle curve plus noise. We create a random generator with seed seven, so everyone gets the same random numbers every time.",
+        "file": "lab-overfitting-w01.mp3"
+      },
+      {
+        "lines": [
+          5,
+          6
+        ],
+        "text": "We make thirty evenly spaced x values between zero and one, then build y as a sine wave with a little random noise added. This mimics messy real-world data around a smooth true pattern.",
+        "file": "lab-overfitting-w02.mp3"
+      },
+      {
+        "lines": [
+          8,
+          9
+        ],
+        "text": "The comment reminds us we're splitting our data. We shuffle the numbers zero through twenty-nine into a random order, which lets us pick training and test points fairly.",
+        "file": "lab-overfitting-w03.mp3"
+      },
+      {
+        "lines": [
+          10,
+          11
+        ],
+        "text": "We take the first twenty shuffled indices for the training set, and the last ten for the test set. The model learns from training data and gets checked on unseen test data.",
+        "file": "lab-overfitting-w04.mp3"
+      },
+      {
+        "lines": [
+          13,
+          14
+        ],
+        "text": "Now a function that takes a polynomial degree. Poly fit finds the best curve of that degree through the training points, giving us its coefficients — that's our model.",
+        "file": "lab-overfitting-w05.mp3"
+      },
+      {
+        "lines": [
+          15,
+          16
+        ],
+        "text": "We measure error two ways using poly val to predict values. The train error checks how well it fits data it learned from; the test error checks unseen data. Both are average squared differences.",
+        "file": "lab-overfitting-w06.mp3"
+      },
+      {
+        "lines": [
+          17,
+          17
+        ],
+        "text": "We return both errors together so the caller can compare how the model does on familiar versus new data.",
+        "file": "lab-overfitting-w07.mp3"
+      },
+      {
+        "lines": [
+          19,
+          19
+        ],
+        "text": "We print a header row with column labels, so the numbers below make sense at a glance.",
+        "file": "lab-overfitting-w08.mp3"
+      },
+      {
+        "lines": [
+          20,
+          21
+        ],
+        "text": "We loop over three chosen degrees: one, three, and fifteen. For each, we call our function to get the train and test errors.",
+        "file": "lab-overfitting-w09.mp3"
+      },
+      {
+        "lines": [
+          22,
+          22
+        ],
+        "text": "This picks a label for each result. Degree one is marked underfit, degree fifteen overfit, and anything else healthy — a quick verbal hint about what we're seeing.",
+        "file": "lab-overfitting-w10.mp3"
+      },
+      {
+        "lines": [
+          23,
+          23
+        ],
+        "text": "We print each degree with its two errors, neatly formatted to three decimals, plus that tag. Now we can watch the pattern unfold.",
+        "file": "lab-overfitting-w11.mp3"
+      },
+      {
+        "lines": [
+          25,
+          27
+        ],
+        "text": "These comments explain the story. Degree one is too simple and bad everywhere. Degree three matches the true curve best. Degree fifteen memorizes noise, so train error is tiny but test error explodes — that's overfitting.",
+        "file": "lab-overfitting-w12.mp3"
+      },
+      {
+        "lines": [
+          29,
+          30
+        ],
+        "text": "Finally, a challenge for you: try more degrees and find where test error bottoms out. That sweet spot between too simple and too complex is exactly what tuning a model is all about.",
+        "file": "lab-overfitting-w13.mp3"
+      }
+    ]
+  }
+}

@@ -1,0 +1,240 @@
+{
+  "lab-question-checker": {
+    "hash": "70200041f7b0ce0c",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          2
+        ],
+        "text": "We start with comments explaining the goal. This program checks research questions, and strong ones name their data and their metric while avoiding vague fluff.",
+        "file": "lab-question-checker-w00.mp3"
+      },
+      {
+        "lines": [
+          4,
+          5
+        ],
+        "text": "Here's our first list, DATA words. These are terms that suggest a question mentions what data it actually uses, like images, audio, or dataset.",
+        "file": "lab-question-checker-w01.mp3"
+      },
+      {
+        "lines": [
+          6,
+          7
+        ],
+        "text": "Next is METRIC words. A solid question says how success is measured, using terms like accuracy, recall, precision, or score.",
+        "file": "lab-question-checker-w02.mp3"
+      },
+      {
+        "lines": [
+          8,
+          9
+        ],
+        "text": "TASK words describe concrete actions a model might do, like detect, predict, classify, or segment. A real task keeps a question grounded.",
+        "file": "lab-question-checker-w03.mp3"
+      },
+      {
+        "lines": [
+          10,
+          11
+        ],
+        "text": "Finally VAGUE words. These are red flags, empty hype like good, smart, or change the world that hurt a question's clarity.",
+        "file": "lab-question-checker-w04.mp3"
+      },
+      {
+        "lines": [
+          13,
+          14
+        ],
+        "text": "Now we define our function called check, taking a question. First we make a lowercase copy called q, so our matching works no matter how the user capitalizes things.",
+        "file": "lab-question-checker-w05.mp3"
+      },
+      {
+        "lines": [
+          15,
+          15
+        ],
+        "text": "We set up two things: points starting at zero, and notes as an empty list. Points is our score, and notes will hold feedback messages.",
+        "file": "lab-question-checker-w06.mp3"
+      },
+      {
+        "lines": [
+          16,
+          17
+        ],
+        "text": "We check if any task word appears in the question. If so, we add a point and note that it names a concrete task.",
+        "file": "lab-question-checker-w07.mp3"
+      },
+      {
+        "lines": [
+          18,
+          19
+        ],
+        "text": "Same idea for data words. If the question mentions its data, it earns a point and a positive note.",
+        "file": "lab-question-checker-w08.mp3"
+      },
+      {
+        "lines": [
+          20,
+          21
+        ],
+        "text": "And again for metric words. Naming how you'll measure results earns another point and a note.",
+        "file": "lab-question-checker-w09.mp3"
+      },
+      {
+        "lines": [
+          22,
+          23
+        ],
+        "text": "Here we split the question into words and check if there are at least ten. Longer questions are usually specific enough to actually picture the study, so that's a point.",
+        "file": "lab-question-checker-w10.mp3"
+      },
+      {
+        "lines": [
+          24,
+          25
+        ],
+        "text": "Now the penalty. If any vague word shows up, we subtract a point and warn that it contains mushy language.",
+        "file": "lab-question-checker-w11.mp3"
+      },
+      {
+        "lines": [
+          26,
+          26
+        ],
+        "text": "We turn points into a label. We clamp the score between zero and three, then pick from vague, getting there, good, or strong.",
+        "file": "lab-question-checker-w12.mp3"
+      },
+      {
+        "lines": [
+          27,
+          27
+        ],
+        "text": "We print the result. The label is right-aligned in a neat column, followed by the original question so you can read it back.",
+        "file": "lab-question-checker-w13.mp3"
+      },
+      {
+        "lines": [
+          28,
+          29
+        ],
+        "text": "Then we loop through all our notes and print each one, indented, so the feedback lines up cleanly under the result.",
+        "file": "lab-question-checker-w14.mp3"
+      },
+      {
+        "lines": [
+          31,
+          32
+        ],
+        "text": "Now let's try it. The first question, is AI good, is weak. The second, about detecting pedestrians at night, is much sharper.",
+        "file": "lab-question-checker-w15.mp3"
+      },
+      {
+        "lines": [
+          33,
+          34
+        ],
+        "text": "This third call spans two lines. Python joins these adjacent strings into one long, very specific question about night-time recall and daytime accuracy.",
+        "file": "lab-question-checker-w16.mp3"
+      },
+      {
+        "lines": [
+          36,
+          38
+        ],
+        "text": "Finally, two challenges for you. Try writing your own question that reaches strong honestly, then try fooling the checker, and think about who really must judge good questions.",
+        "file": "lab-question-checker-w17.mp3"
+      }
+    ]
+  },
+  "lab-answer-question": {
+    "hash": "2879401c9839abbe",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          4
+        ],
+        "text": "These comments frame our whole experiment. We're asking a strong, testable question: do low-light training images improve night detection without wrecking daytime accuracy? Each result pairs a time of day with whether we found the pedestrian, one for found, zero for missed.",
+        "file": "lab-answer-question-w00.mp3"
+      },
+      {
+        "lines": [
+          6,
+          9
+        ],
+        "text": "Here's model A, trained only on daytime photos. It's a list of tuples: five day results and five night results. Notice it nails most days but misses almost every night.",
+        "file": "lab-answer-question-w01.mp3"
+      },
+      {
+        "lines": [
+          10,
+          13
+        ],
+        "text": "Model B is the same model, but with extra low-light training photos added. Same structure, ten results. Look how much better it does at night compared to model A.",
+        "file": "lab-answer-question-w02.mp3"
+      },
+      {
+        "lines": [
+          15,
+          17
+        ],
+        "text": "This function computes recall. It filters the results to keep only the ones matching the time of day we asked about, then divides the number found by the total. That gives us the fraction we correctly detected.",
+        "file": "lab-answer-question-w03.mp3"
+      },
+      {
+        "lines": [
+          19,
+          19
+        ],
+        "text": "This print sets up a header row with the labels day and night, spaced out so our numbers will line up neatly underneath.",
+        "file": "lab-answer-question-w04.mp3"
+      },
+      {
+        "lines": [
+          20,
+          21
+        ],
+        "text": "We loop over both models by name and data, then print each one's day and night recall. The percent format with zero decimals turns the fraction into a clean percentage.",
+        "file": "lab-answer-question-w05.mp3"
+      },
+      {
+        "lines": [
+          23,
+          24
+        ],
+        "text": "Now we measure the effect. Night gain is model B's night recall minus model A's, and day change does the same for daytime. These two numbers directly answer our question.",
+        "file": "lab-answer-question-w06.mp3"
+      },
+      {
+        "lines": [
+          25,
+          27
+        ],
+        "text": "We print a blank line for spacing, then show both changes. The plus sign in the format forces a leading plus or minus, so we can instantly see whether things went up or down.",
+        "file": "lab-answer-question-w07.mp3"
+      },
+      {
+        "lines": [
+          28,
+          29
+        ],
+        "text": "Finally, the verdict. If night gain is positive and day change didn't drop, we print yes, gains at night and day held up. Otherwise, we honestly say it's not proven here.",
+        "file": "lab-answer-question-w08.mp3"
+      },
+      {
+        "lines": [
+          31,
+          33
+        ],
+        "text": "A challenge for you: flip two of model B's night ones to zeros and see when the answer flips. With only five night photos, one photo swings recall by twenty percent, which is why real studies need far more data.",
+        "file": "lab-answer-question-w09.mp3"
+      }
+    ]
+  }
+}
