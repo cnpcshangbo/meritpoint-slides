@@ -158,19 +158,43 @@
           "id": "class-07",
           "n": 7,
           "title": "What Is Data? How to Obtain It",
+          "summary": "Understand where data comes from — and judge it before you trust it: structured vs. unstructured, quantitative vs. qualitative, the three data wells, crawlers & APIs, licenses & collection-story bias, the AV dataset shelf, and your project's dataset datasheet.",
           "tags": [
-            "data"
+            "data",
+            "datasets",
+            "license",
+            "Kaggle",
+            "Roboflow",
+            "KITTI",
+            "API",
+            "bias",
+            "quiz",
+            "interactive",
+            "Python"
           ],
-          "status": "planned"
+          "duration": "60 min",
+          "status": "ready"
         },
         {
           "id": "class-08",
           "n": 8,
           "title": "Data Cleaning & Preprocessing",
+          "summary": "Turn raw, messy data into something a model can actually learn from: the five enemies of clean data, the three moves (missing · normalize · encode), the one-hot trap, shortcut learning and the X-ray token story, feature engineering, and your own before/after cleaning report.",
           "tags": [
-            "data"
+            "data",
+            "cleaning",
+            "preprocessing",
+            "pandas",
+            "normalization",
+            "one-hot",
+            "outliers",
+            "feature engineering",
+            "quiz",
+            "interactive",
+            "Python"
           ],
-          "status": "planned"
+          "duration": "60 min",
+          "status": "ready"
         },
         {
           "id": "class-09",

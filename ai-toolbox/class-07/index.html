@@ -1,0 +1,1308 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Class 07 · What Is Data? How to Obtain It — The AI Toolbox</title>
+<link rel="icon" type="image/png" href="/meritpoint-slides/assets/favicon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+<style>
+:root{--navy:#0C2D52;--navy2:#12386A;--blue:#1769C0;--teal:#0F9DB0;--tealb:#2BC4D4;--coral:#EE6B36;--amber:#F2A93B;--green:#1FA37A;--ink:#21303F;--muted:#5E7183;--line:#D7E2EC;--cloud:#EEF4FA;--cloud2:#F6F9FC}
+.reveal{font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);font-size:30px}
+.reveal h1,.reveal h2,.reveal h3{font-family:Georgia,serif;color:var(--navy);text-transform:none;letter-spacing:0;font-weight:700;line-height:1.12}
+.reveal h1{font-size:1.55em}.reveal h2{font-size:1.12em}.reveal h3{font-size:.9em}
+.reveal .kicker{color:var(--teal);font-weight:700;letter-spacing:3px;font-size:.44em;text-transform:uppercase;margin-bottom:.35em;font-family:-apple-system,sans-serif}
+.reveal section{text-align:left}.reveal section.center{text-align:center}
+.reveal ul,.reveal ol{margin-left:1.05em}.reveal li{margin:.28em 0;font-size:.7em;line-height:1.38}
+.reveal p{font-size:.74em;line-height:1.42}.reveal .lead{font-size:.82em}.reveal .muted{color:var(--muted)}
+.reveal .callout{background:var(--cloud);border-left:6px solid var(--teal);border-radius:8px;padding:.45em .8em;margin-top:.5em;font-size:.7em}
+.reveal .callout b{color:var(--teal)}
+.reveal .pill{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:999px;padding:.16em .7em;font-size:.55em;color:var(--navy);margin:.12em .18em}
+.reveal .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.65em}.reveal .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6em}
+.reveal .box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.6em .75em;box-shadow:0 4px 14px rgba(20,40,70,.06)}
+.reveal .box h3{margin:.05em 0 .2em}.reveal .box p{font-size:.58em;margin:0}
+.reveal .feature{display:inline-block;font-size:.55em;font-weight:700;color:#fff;background:var(--navy);border-radius:6px;padding:.1em .55em;margin-top:.25em}
+.reveal .rate{display:inline-block;font-weight:800;color:#fff;border-radius:5px;padding:.05em .4em;font-size:.92em;line-height:1.3}
+.reveal .rate.r-g{background:var(--green)}.reveal .rate.r-pg{background:var(--blue)}.reveal .rate.r-r{background:var(--coral)}
+.reveal .vid{display:grid;grid-template-columns:1.5fr 1fr;gap:1em;align-items:center}
+.reveal .poster{border-radius:12px;height:2.7em;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1.25em;text-align:center;box-shadow:0 8px 24px rgba(20,40,70,.18);position:relative}
+.reveal .poster .play{position:absolute;width:1em;height:1em;border-radius:50%;background:rgba(255,255,255,.92);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:.5em}
+.reveal .qr{width:1.6em;height:1.6em;border:1px solid var(--line);border-radius:8px;background:#fff;padding:4px}
+.reveal .qrwrap{text-align:center;font-size:.5em;color:var(--muted)}.reveal .qrwrap a{color:var(--teal);word-break:break-all}
+.reveal a.btn{display:inline-block;background:#fff;border:1px solid var(--teal);color:var(--teal);border-radius:8px;padding:.16em .7em;font-size:.58em;font-weight:600}
+.reveal .src{font-size:.5em;color:var(--muted);margin-top:.5em}
+.reveal blockquote{border:none;box-shadow:none;background:var(--cloud2);border-left:6px solid var(--teal);border-radius:8px;font-size:.76em;font-style:normal;width:100%;padding:.65em 1em}
+.reveal .speak{cursor:pointer;display:inline-flex;align-items:center;gap:.4em;background:var(--teal);color:#fff;border:none;border-radius:999px;padding:.28em .85em;font-size:.52em;font-weight:700;font-family:-apple-system,sans-serif;box-shadow:0 4px 12px rgba(15,157,176,.3)}
+.reveal .speak:hover{background:#0d8a9b}.reveal .speak.playing{background:var(--coral)}
+/* timeline */
+.reveal .tl{display:flex;gap:.4em;align-items:stretch;margin-top:.5em}
+.reveal .tl .ev{flex:1;background:#fff;border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:10px;padding:.45em .5em}
+.reveal .tl .ev.winter{border-top-color:#7FA8D0}.reveal .tl .ev.boom{border-top-color:var(--coral)}
+.reveal .tl .yr{font-family:Georgia,serif;font-weight:800;color:var(--navy);font-size:.72em}
+.reveal .tl .ev b{font-size:.56em;color:var(--navy);display:block;margin:.1em 0}.reveal .tl .ev span{font-size:.5em;color:var(--muted);line-height:1.25;display:block}
+/* flow steps */
+.reveal .flow{display:flex;flex-wrap:wrap;gap:.4em;align-items:stretch}
+.reveal .step{flex:1 1 0;min-width:2.3em;background:#fff;border:1px solid var(--line);border-radius:10px;padding:.38em .42em;position:relative}
+.reveal .step .n{position:absolute;top:-.5em;left:-.3em;width:1em;height:1em;border-radius:50%;background:var(--teal);color:#fff;font-size:.5em;font-weight:800;display:flex;align-items:center;justify-content:center}
+.reveal .step b{font-size:.56em;color:var(--navy);display:block;line-height:1.15}.reveal .step span{font-size:.48em;color:var(--muted)}
+.reveal .step.loop{border-color:var(--coral);border-style:dashed}
+/* prompt cards */
+.reveal .prompt{background:#0f2742;color:#dfeaf6;border-radius:9px;padding:.4em .65em;font-family:Consolas,monospace;font-size:.54em;margin:.26em 0;line-height:1.38}
+.reveal .prompt .you{color:var(--tealb);font-weight:700}
+/* skills */
+.reveal .skillcard{background:linear-gradient(135deg,#fff,var(--cloud));border:1px solid var(--line);border-radius:14px;padding:.65em .8em}
+.reveal .skillcard .cn{font-size:.95em;color:var(--navy);font-weight:700;font-family:Georgia,serif}
+/* QUIZ */
+.reveal .quiz{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.7em .85em;box-shadow:0 6px 18px rgba(20,40,70,.07);max-width:18em}
+.reveal .quiz .qq{font-size:.72em;font-weight:600;color:var(--navy);margin:0 0 .5em}
+.reveal .quiz .opt{display:block;width:100%;text-align:left;background:var(--cloud2);border:1px solid var(--line);border-radius:9px;padding:.4em .6em;margin:.25em 0;font-size:.6em;color:var(--ink);cursor:pointer;transition:.1s;font-family:-apple-system,sans-serif}
+.reveal .quiz .opt:hover{border-color:var(--teal);background:#fff}
+.reveal .quiz .opt.correct{background:#E6F4EE;border-color:var(--green);color:#0d6b4f;font-weight:600}
+.reveal .quiz .opt.wrong{background:#FBEAE7;border-color:var(--coral);color:#a23c1c}
+.reveal .quiz .opt[disabled]{cursor:default}
+.reveal .quiz-exp{font-size:.56em;color:var(--muted);margin:.4em 0 0;display:none}
+.reveal .quiz.answered .quiz-exp{display:block}
+.reveal .quiz-badge{font-size:.5em;color:var(--teal);font-weight:700;letter-spacing:1px}
+/* QUIZ LIVE DISTRIBUTION (shown once answered) */
+.reveal .qstats{display:none;margin-top:.5em;border-top:1px dashed var(--line);padding-top:.4em}
+.reveal .quiz.answered .qstats{display:block}
+.reveal .qhead{display:flex;justify-content:space-between;align-items:center;font-size:.5em;color:var(--muted);margin-bottom:.3em}
+.reveal .qm{border:1px solid var(--line);background:var(--cloud2);border-radius:999px;padding:.15em .7em;margin-left:.4em;font:inherit;font-size:.95em;cursor:pointer;color:var(--muted)}
+.reveal .qm.on{background:var(--teal);border-color:var(--teal);color:#fff;font-weight:700}
+.reveal .qrow{display:flex;align-items:center;gap:.4em;margin:.14em 0}
+.reveal .ql{font-size:.5em;font-weight:800;color:var(--navy);width:1.1em}
+.reveal .qbar{flex:1;height:.55em;background:var(--cloud2);border-radius:999px;overflow:hidden}
+.reveal .qfill{height:100%;background:var(--navy);border-radius:999px;transition:width .5s}
+.reveal .qfill.qok{background:var(--green)}
+.reveal .qp{font-size:.45em;color:var(--muted);min-width:4.2em;text-align:right}
+#liveChip{position:fixed;left:14px;bottom:46px;z-index:40;background:rgba(255,255,255,.92);border:1px solid var(--line);
+  border-radius:999px;padding:5px 12px;font:600 12px -apple-system,'Segoe UI',sans-serif;color:#1a9a6c;box-shadow:0 4px 14px rgba(20,40,70,.10)}
+/* CODE LAB — compact header, editor/output get nearly the whole slide.
+   Assistant starts folded (.lab.folded) so the editor spans full width. */
+.reveal .labslide .kicker{margin-bottom:.15em}
+.reveal .labslide h2{font-size:1em;margin:0 0 .05em}
+.reveal .labslide p.lead{font-size:.6em;margin:.05em 0 .2em}
+.reveal .lab{display:grid;grid-template-columns:1.9fr 1fr;gap:.5em;margin-top:.25em;height:17.4em}
+.reveal .lab.folded{grid-template-columns:1fr}
+.reveal .lab.folded .assist{display:none}
+.reveal .lab-main{display:flex;flex-direction:column;min-width:0;min-height:0}
+.reveal .code-wrap{position:relative;display:flex;flex:1.55;min-height:0;background:#0f2742;border:1px solid #21405f;border-radius:10px 10px 0 0;overflow:hidden}
+.reveal .code-wrap .gutter{position:relative;z-index:2;flex:0 0 46px;overflow:hidden;text-align:right;padding:10px 9px 10px 0;background:rgba(8,25,43,.55);border-right:1px solid #21405f;color:#54759a;font-family:Consolas,"SF Mono",monospace;font-size:16px;line-height:1.45;white-space:pre;user-select:none}
+.reveal .lab textarea.code{position:relative;z-index:1;flex:1;width:100%;background:transparent;color:#e7f0fb;border:none;font-family:Consolas,"SF Mono",monospace;font-size:16px;line-height:1.45;padding:10px 12px;resize:none;outline:none;tab-size:4;white-space:pre;overflow:auto}
+.reveal .line-hi{position:absolute;left:0;right:0;z-index:0;display:none;background:rgba(242,169,59,.17);border-left:4px solid var(--amber);pointer-events:none;transition:top .18s ease,height .18s ease}
+.reveal .lab-bar{display:flex;align-items:center;gap:.4em;background:#11314f;border:1px solid #21405f;border-top:none;padding:.32em .5em;flex-wrap:wrap}
+.reveal .lab-bar button{font-family:-apple-system,sans-serif;font-size:13px;font-weight:600;border:none;border-radius:8px;padding:.42em .85em;cursor:pointer}
+.reveal .lab-bar .run{background:var(--green);color:#fff}.reveal .lab-bar .run:hover{background:#178a64}
+.reveal .lab-bar .walk{background:var(--amber);color:#4a3405}.reveal .lab-bar .walk:hover{background:#e09a20}
+.reveal .walk-controls{display:inline-flex;align-items:center;gap:.3em}
+.reveal .walk-controls[hidden]{display:none}
+.reveal .walk-controls button{background:#1b3e5e;color:#ffd98a;padding:.42em .6em}
+.reveal .walk-controls .walk-pause{background:var(--amber);color:#4a3405;min-width:2.6em}
+.reveal .walk-controls .walk-step{font-size:12px;color:#ffd98a;font-family:-apple-system,sans-serif;font-variant-numeric:tabular-nums}
+.reveal .lab-bar .ai-explain,.reveal .lab-bar .ai-debug,.reveal .lab-bar .ai-improve,.reveal .lab-bar .ai-toggle{background:#1b3e5e;color:#cfe0ef}
+.reveal .lab-bar .ai-explain:hover,.reveal .lab-bar .ai-debug:hover,.reveal .lab-bar .ai-improve:hover,.reveal .lab-bar .ai-toggle:hover{background:#27557d}
+.reveal .lab:not(.folded) .ai-toggle{background:var(--teal);color:#fff}
+.reveal .lab-status{font-size:12px;color:#9db8d6;margin-left:auto;font-family:-apple-system,sans-serif}
+.reveal .lab pre.out{flex:1;min-height:0;width:100%;background:#08192b;color:#bfe3c7;border:1px solid #21405f;border-top:none;border-radius:0 0 10px 10px;margin:0;padding:.5em .7em;font-family:Consolas,monospace;font-size:14px;line-height:1.45;overflow:auto;white-space:pre-wrap}
+.reveal .lab pre.out .err{color:#ff9b8a}
+.reveal .assist{display:flex;flex-direction:column;background:linear-gradient(135deg,#fff,#f1f7fb);border:1px solid var(--line);border-radius:11px;overflow:hidden;min-width:0}
+.reveal .assist-head{background:linear-gradient(90deg,#0F9DB0,#2BC4D4);color:#fff;font-size:13px;font-weight:700;padding:.45em .7em;font-family:-apple-system,sans-serif;display:flex;align-items:center;justify-content:space-between;gap:.5em}
+.reveal .assist-head .ai-model{font-family:-apple-system,sans-serif;font-size:12px;font-weight:600;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.5);border-radius:6px;padding:.15em .3em;cursor:pointer;outline:none}
+.reveal .assist-head .ai-model option{color:var(--ink)}
+.reveal .assist-body{flex:1;overflow:auto;padding:.5em .65em;font-size:13px;line-height:1.46;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .assist-body p{font-size:13px;margin:.3em 0}.reveal .assist-body code{background:#eef3f8;border-radius:4px;padding:0 .25em;font-family:Consolas,monospace;font-size:12px}
+.reveal .assist-body pre{background:#0f2742;color:#e7f0fb;border-radius:8px;padding:.5em .6em;font-size:12px;overflow:auto;white-space:pre}
+.reveal .assist-body pre code{background:none;color:inherit}
+.reveal .assist-body .apply{background:var(--teal);color:#fff;border:none;border-radius:6px;padding:.25em .6em;font-size:12px;font-weight:600;cursor:pointer;margin-top:.2em}
+.reveal .assist-ask{display:flex;gap:.3em;border-top:1px solid var(--line);padding:.4em}
+.reveal .assist-ask input{flex:1;border:1px solid var(--line);border-radius:7px;padding:.4em .5em;font-size:13px;font-family:-apple-system,sans-serif;outline:none}
+.reveal .assist-ask button{background:var(--navy);color:#fff;border:none;border-radius:7px;padding:.4em .7em;font-size:13px;font-weight:600;cursor:pointer}
+/* HEAP / TOP-K VISUALIZER */
+.reveal .heapviz{margin-top:.35em;font-family:-apple-system,sans-serif}
+.reveal .hv-top{display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
+.reveal .hv-code{background:#0f2742;border-radius:10px 10px 0 0;padding:8px 12px;border:1px solid #21405f;border-bottom:none}
+.reveal .hv-code-title{color:#9db8d6;font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:4px}
+.reveal .hv-code pre.hv-pre{margin:0;color:#e7f0fb;font-family:Consolas,"SF Mono",monospace;font-size:11.5px;line-height:1.5;max-height:150px;overflow:auto;white-space:pre}
+.reveal .hv-info{background:#eef4fa;border:1px solid #21405f22;border-top:none;border-radius:0 0 10px 10px;padding:6px 12px;font-size:11px;color:var(--muted)}
+.reveal .hv-panel{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:6px}
+.reveal .hv-panel label{font-size:10.5px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin-top:4px}
+.reveal .hv-panel label:first-child{margin-top:0}
+.reveal .hv-row{display:flex;gap:6px}
+.reveal .hv-input{flex:1;border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:13px;font-family:-apple-system,sans-serif;min-width:0}
+.reveal .hv-insert{background:var(--green);color:#fff;border:none;border-radius:7px;padding:6px 12px;font-size:12.5px;font-weight:700;cursor:pointer}
+.reveal .hv-quick{display:flex;gap:5px;flex-wrap:wrap}
+.reveal .hv-quick-btn{background:var(--cloud);border:1px solid var(--line);border-radius:7px;padding:4px 10px;font-size:12px;font-weight:600;cursor:pointer;color:var(--ink)}
+.reveal .hv-quick-btn:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .hv-arr-now{background:var(--cloud2);border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-family:Consolas,monospace;font-size:12.5px}
+.reveal .hv-status,.reveal .hv-action{font-size:12px;color:var(--ink)}
+.reveal .hv-frames-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin:10px 0 4px}
+.reveal .hv-frames{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.reveal .hv-frame{flex:0 0 auto;min-width:150px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 8px;text-align:center}
+.reveal .hv-frame-active{border-color:var(--teal);box-shadow:0 0 0 2px rgba(15,157,176,.18)}
+.reveal .hv-frame-title{font-size:11px;font-weight:700;color:var(--navy)}
+.reveal .hv-frame-desc{font-size:9.5px;color:var(--muted);min-height:1.6em;line-height:1.25;margin:2px 0}
+.reveal .hv-tree-svg{width:100%;height:80px}
+.reveal .hv-empty{color:var(--muted);font-size:10.5px;padding:20px 0}
+.reveal .hv-node{fill:#D6ECEF;stroke:#0B7E8A;stroke-width:1.5}
+.reveal .hv-node-hi{fill:#F2A93B;stroke:#c07f1a}
+.reveal .hv-node-text{font-size:9px;font-weight:700;fill:#0C2D52;text-anchor:middle;font-family:-apple-system,sans-serif}
+.reveal .hv-edge{stroke:#c7d6e4;stroke-width:1.5}
+.reveal .hv-swap{stroke:#C0392B;stroke-width:2;stroke-dasharray:3,2}
+.reveal .hv-arrs{display:flex;gap:8px;overflow-x:auto;margin-top:6px}
+.reveal .hv-arr{flex:0 0 auto;min-width:150px;text-align:center;font-family:Consolas,monospace;font-size:11.5px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:5px 8px;color:var(--ink)}
+.reveal .hv-arr-active{border-color:var(--teal)}
+.reveal .hv-arr-hi{color:#C0392B;font-weight:700}
+.reveal .hv-controls{display:flex;align-items:center;gap:6px;margin-top:8px;flex-wrap:wrap}
+.reveal .hv-controls button{background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 10px;font-size:11.5px;font-weight:600;cursor:pointer;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .hv-controls button:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .hv-play{background:var(--teal)!important;color:#fff!important;border-color:var(--teal)!important}
+.reveal .hv-speed-label{font-size:11px;color:var(--muted);margin-left:6px}
+/* convolution visualizer */
+.reveal .cv-top{display:grid;grid-template-columns:1fr 1.05fr 1fr;gap:14px;align-items:start;justify-items:center}
+.reveal .cv-col{display:flex;flex-direction:column;align-items:center}
+.reveal .cv-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin-bottom:5px;text-align:center}
+.reveal .cv-grid{display:grid;gap:2px;width:max-content}
+.reveal .cv-in{grid-template-columns:repeat(8,25px)}
+.reveal .cv-out{grid-template-columns:repeat(6,33px)}
+.reveal .cv-cell{width:25px;height:25px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:9px;font-weight:700;cursor:pointer;user-select:none;border:1px solid rgba(12,45,82,.14)}
+.reveal .cv-ocell{width:33px;height:33px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:10.5px;font-weight:700;background:var(--cloud);color:#b9c6d4;border:1px solid var(--line)}
+.reveal .cv-win{outline:2.5px solid var(--coral);outline-offset:-1px;z-index:1}
+.reveal .cv-kwrap{background:#0f2742;border-radius:10px;padding:10px 12px;border:1px solid #21405f;width:100%}
+.reveal .cv-kgrid{display:grid;grid-template-columns:repeat(3,36px);gap:2px;width:max-content;margin:0 auto}
+.reveal .cv-kcell{width:36px;height:28px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:11.5px;font-weight:700;background:#1a3a5f;color:#e7f0fb;border:1px solid #2c4d75}
+.reveal .cv-kdiv{text-align:center;color:#9db8d6;font-size:10px;margin-top:4px;font-family:Consolas,monospace}
+.reveal .cv-calc{margin-top:8px;font-family:Consolas,monospace;font-size:10px;line-height:1.55;color:#cfe0ef;min-height:60px;text-align:center}
+.reveal .cv-calc .cv-sum{color:#F2A93B;font-weight:700}
+.reveal .cv-chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px;justify-content:center}
+.reveal .cv-chip{background:var(--cloud);border:1px solid var(--line);border-radius:7px;padding:4px 9px;font-size:11px;font-weight:600;cursor:pointer;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .cv-chip:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .cv-chip.sel{background:var(--teal);border-color:var(--teal);color:#fff}
+.reveal .cv-status{font-size:12px;color:var(--ink);margin-top:7px}
+.reveal .cv-controls{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;flex-wrap:wrap}
+.reveal .cv-controls button{background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 10px;font-size:11.5px;font-weight:600;cursor:pointer;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .cv-controls button:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .cv-play{background:var(--teal)!important;color:#fff!important;border-color:var(--teal)!important}
+/* comments */
+/* bottom-right toolbar (CC | Listen | Comment) — top-right belongs to the
+   signed-in profile chip (#mpAuth, assets/auth.js), which used to cover this */
+#commentBtn{position:fixed;right:16px;bottom:14px;z-index:60;background:var(--teal);color:#fff;border:none;border-radius:999px;padding:9px 15px;font-size:13px;font-weight:700;font-family:-apple-system,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(15,157,176,.4)}
+#commentBtn:hover{background:#0d8a9b}#commentBtn .cnum{background:#fff;color:var(--teal);border-radius:999px;padding:0 6px;margin-left:5px;font-size:11px}
+#listenBtn{--p:0%;position:fixed;right:168px;bottom:14px;z-index:60;min-width:128px;justify-content:center;color:#fff;border:none;border-radius:999px;padding:9px 15px;font-size:13px;font-weight:700;font-family:-apple-system,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(20,40,70,.34);display:none;align-items:center;gap:.45em;background:linear-gradient(to right,var(--teal) var(--p),var(--navy) var(--p));transition:background .15s linear}
+#listenBtn:hover{filter:brightness(1.1)}
+#listenBtn.playing{background:linear-gradient(to right,var(--coral) var(--p),#16406e var(--p))}
+#listenBtn .li-ic{font-size:12px;line-height:1}#listenBtn .li-tx{font-variant-numeric:tabular-nums;font-size:11.5px;opacity:.92}
+#ccBtn{position:fixed;right:306px;bottom:14px;z-index:60;background:var(--navy);color:#fff;border:none;border-radius:999px;padding:9px 12px;font-size:11.5px;font-weight:800;letter-spacing:.03em;font-family:-apple-system,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(20,40,70,.34);display:none;opacity:.5}
+#ccBtn:hover{opacity:.8}#ccBtn.on{opacity:1;background:var(--teal)}
+#capBar{position:fixed;left:50%;bottom:58px;transform:translateX(-50%);max-width:70%;background:rgba(8,16,30,.88);color:#fff;padding:.4em 1em;border-radius:9px;font-size:13.5px;line-height:1.35;text-align:center;z-index:59;display:none;font-family:-apple-system,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+#commentPanel{position:fixed;right:16px;bottom:60px;width:340px;max-height:64vh;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 44px rgba(20,40,70,.22);z-index:61;display:none;flex-direction:column;font-family:-apple-system,sans-serif;overflow:hidden}
+#commentPanel.open{display:flex}
+#commentPanel .ph{background:var(--navy);color:#fff;padding:10px 14px;font-size:13px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+#commentPanel .ph .x{cursor:pointer;opacity:.8}#commentPanel .ph .x:hover{opacity:1}
+#commentList{flex:1;overflow:auto;padding:10px 14px}
+#commentList .c{border-bottom:1px solid var(--cloud);padding:7px 0}#commentList .c:last-child{border:none}
+#commentList .c .cn{font-size:12px;font-weight:700;color:var(--navy)}#commentList .c .ct{font-size:10px;color:var(--muted);margin-left:6px}
+#commentList .c .cb{font-size:13px;color:var(--ink);margin-top:2px;white-space:pre-wrap;word-break:break-word}
+#commentList .none{color:var(--muted);font-size:12.5px;text-align:center;padding:14px 0}
+#commentForm{border-top:1px solid var(--line);padding:10px 12px;display:flex;flex-direction:column;gap:6px}
+#commentForm input,#commentForm textarea{border:1px solid var(--line);border-radius:8px;padding:7px 9px;font-size:13px;font-family:-apple-system,sans-serif;outline:none}
+#commentForm textarea{resize:vertical;min-height:46px}
+#commentForm .row{display:flex;gap:6px;align-items:center}
+#commentForm button{background:var(--teal);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:700;cursor:pointer}
+#commentForm .msg{font-size:11px;color:var(--muted)}
+/* donate */
+#donateBtn{position:fixed;left:70px;top:19px;z-index:60;background:var(--coral);color:#fff;border-radius:999px;padding:8px 16px;font-size:12.5px;font-weight:700;font-family:-apple-system,sans-serif;text-decoration:none;box-shadow:0 6px 18px rgba(238,107,54,.4)}
+#donateBtn:hover{background:#d85a28;text-decoration:none}
+/* MPA logo badge — top-left of every slide, next to Donate (top-right holds the auth chip) */
+#mpaLogo{position:fixed;left:16px;top:14px;z-index:50;display:block;width:44px;height:44px;border-radius:10px;background:#fff;box-shadow:0 4px 14px rgba(20,40,70,.25);opacity:.92;transition:opacity .15s}
+#mpaLogo:hover{opacity:1}
+#mpaLogo img{width:100%;height:100%;object-fit:contain;display:block}
+/* slide number: default bottom-right collides with the comment/listen/cc button row, so move it to bottom-left */
+.reveal .slide-number{left:14px;right:auto;bottom:14px;z-index:58;background:rgba(255,255,255,.85);padding:2px 8px;border-radius:6px;color:var(--muted)}
+/* PDF download — top-left row, after Donate */
+#pdfBtn{position:fixed;left:178px;top:19px;z-index:60;background:#fff;color:var(--navy);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:12.5px;font-weight:700;font-family:-apple-system,sans-serif;text-decoration:none;box-shadow:0 4px 14px rgba(20,40,70,.18)}
+#pdfBtn:hover{border-color:var(--teal);color:var(--teal);text-decoration:none}
+/* keep screen-only chrome out of print / the exported PDF (fixed elements repeat on every page) */
+@media print{#donateBtn,#mpaLogo,#pdfBtn,#ccBtn,#listenBtn,#commentBtn,#commentPanel,#capBar,#mpAuth{display:none!important}}
+</style></head><body>
+<div class="reveal"><div class="slides">
+<section id="title" data-sid="title" class="center" data-background-gradient="linear-gradient(135deg,#0C2D52,#16406e)">
+<div class="kicker" style="color:#7fd3df">The AI Toolbox · Class 07</div>
+    <h1 style="color:#fff">What Is Data?<br>How to Obtain It</h1>
+    <p style="color:#cfe0ef;margin-top:.5em">Understand where data comes from — and <b>judge it before you trust it</b>.</p>
+    <p style="color:#9db8d6;font-size:.58em;margin-top:1.1em">Merit Point Academy · 60 min · press <b>S</b> notes · <b>→</b> next · 💬 to comment</p>
+    <aside class="notes">Stage 3 begins — the DATA stage of the pipeline students drew in Class 3 (where most ⚠ marks landed). Today: what data IS, where researchers actually get it, and the judgment layer (license, collection story, bias) that separates grabbing a file from choosing a dataset. Deliverable: a proper datasheet for THEIR project's dataset.</aside>
+</section>
+<section id="recap-class06" data-sid="recap-class06">
+<div class="kicker">Recap · where we left off</div>
+    <h2>Last class in 60 seconds</h2>
+    <div class="grid3" style="margin-top:.35em">
+      <div class="box"><h3 style="color:var(--navy)">The research stack</h3><p>Elicit · Semantic Scholar · Connected Papers — tools find papers, <b>you</b> read the five that matter.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">Citation graphs</h3><p>Back to the roots, forward to the frontier; gaps between clusters are opportunities (Swanson!).</p></div>
+      <div class="box"><h3 style="color:var(--coral)">Your literature map</h3><p>5 papers + who-builds-on-whom — your question now has a neighborhood.</p></div>
+    </div>
+    <div class="callout"><b>Homework share:</b> show your literature map and your GitHub repo README. Which paper is closest to your question? <b>Today that question goes hunting for its data</b> — Stage 3 of the pipeline starts now.</div>
+    <aside class="notes">Quick share; the GitHub repos matter — the datasheet they write today belongs IN that repo. Bridge: literature told them what's known; data is what lets them add something new.</aside>
+</section>
+<section id="agenda" data-sid="agenda">
+<div class="kicker">Agenda · how this hour runs</div>
+    <h2>Where we're going</h2>
+    <div class="grid2" style="margin-top:.4em">
+      <ul>
+        <li><b>0–8'</b> Homework share + the car that built a benchmark</li>
+        <li><b>8–18'</b> What data <i>is</i> · structured vs. unstructured</li>
+        <li><b>18–26'</b> Quantitative vs. qualitative — why the type picks the tools</li>
+        <li><b>26–38'</b> Where data comes from · crawlers &amp; APIs · <b>licenses &amp; bias</b></li>
+      </ul>
+      <ul>
+        <li><b>38–46'</b> Demos: Kaggle datasets · Roboflow Universe · ScholarMind</li>
+        <li><b>46–54'</b> Two labs: pixels → features · judge four datasets</li>
+        <li><b>54–60'</b> Your dataset datasheet, homework &amp; wrap-up</li>
+        <li>Quizzes &amp; 💬 comments throughout</li>
+      </ul>
+    </div>
+    <div class="callout"><b>By the end:</b> tell structured from unstructured data, name the places researchers get data, check a license before trusting a dataset, and document yours like a professional.</div>
+    <aside class="notes">The hour's deep theme is JUDGMENT: anyone can download a CSV; researchers ask who collected it, under what license, with what blind spots. That's Class 4's verify habit, applied to data.</aside>
+</section>
+<section id="quiz-warmup" data-sid="quiz-warmup">
+<div class="kicker">Warm-up · activate</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="1">
+    <p class="qq">You want to study night-time pedestrian detection. Thousands of labelled night-driving images already exist. What are the TWO questions to ask before using them?</p>
+    <div class="opts"><button class="opt" data-i="0">How big is the file, and will it fit on my laptop?</button><button class="opt" data-i="1">Who collected this data and how — and does its license allow me to use it?</button><button class="opt" data-i="2">Is it popular, and does it have a cool name?</button><button class="opt" data-i="3">None — public data on the internet is free to use however I want</button></div>
+    <p class="quiz-exp">Collection story and license are the researcher's first two questions. 'It's on the internet' is not a license — and how data was collected determines what biases it carries into your model.</p>
+  </div>
+  <aside class="notes">Option D is the misconception to kill early: findable ≠ usable. Both questions get full slides later; this primes them.</aside>
+</section>
+<section id="story-kitti" data-sid="story-kitti">
+<div class="kicker">The Story</div>
+    <h2>They drove a city to build a benchmark</h2>
+    <blockquote id="quote">In 2012, researchers in <b>Karlsruhe, Germany</b> bolted cameras, lasers, and GPS onto a station wagon and drove it around the city for hours. The result — the <b>KITTI dataset</b> — became the testing ground that self-driving perception research used <b>for the next decade</b>. Thousands of papers were built on data from one rigged-up car driving real streets.</blockquote>
+    <div style="margin-top:.4em;display:flex;align-items:center;gap:1em">
+      <button class="speak" data-audio="audio/quote.mp3">🔊 <span>Speak this story</span></button>
+      <span class="muted" style="font-size:.52em">Neural voice · click to play / pause</span></div>
+    <p class="src">Sound familiar? It's the ImageNet lesson (Class 3) on wheels: the field didn't advance because someone had a cleverer model — it advanced because someone <b>collected and shared the right data</b>. Datasets are research infrastructure.</p>
+    <aside class="notes">Second dataset-origin story of the course, deliberately rhyming with ImageNet — students should say 'that's ImageNet again' and that's the point: data collection IS a research contribution, sometimes the biggest one. KITTI reappears in the case study.</aside>
+</section>
+<section id="concept-what-is-data" data-sid="concept-what-is-data">
+<div class="kicker">Concept 1 · look around you</div>
+    <h2>Everything is data (once you record it)</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">📏 Your height &amp; weight?</h3><p><b>Data.</b> Quantified body measurements — numbers with units.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">💬 A social-media post?</h3><p><b>Data.</b> Text carries opinions; likes and reposts record relationships.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">📸 A phone photo?</h3><p><b>Data.</b> Millions of pixel values — a grid of numbers representing light.</p></div>
+    </div>
+    <div class="callout"><b>KEY IDEA</b> — data is a <b>recorded symbol of something real</b>: numbers, text, pixels, sounds. And AI's whole trick (Class 1!) is learning patterns from those symbols. No recording → no data → nothing to learn from. That's why researchers obsess over <i>collection</i>.</div>
+    <aside class="notes">The icebreaker from the Lesson deck, compressed. Have students name one thing they did today that produced data (paying, walking past a camera, this deck logging quiz answers…). Everything downstream of this slide is about recorded symbols.</aside>
+</section>
+<section id="concept-structured" data-sid="concept-structured">
+<div class="kicker">Concept 2 · the idea in one picture</div>
+    <h2>Structured vs. unstructured</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1.15fr;align-items:center;margin-top:.2em">
+      <div>
+        <ul>
+          <li><b>Structured</b> — fits a table: rows × columns, ready for pandas (Class 5's whole world).</li>
+          <li><b>Unstructured</b> — images, audio, video, free text: no rows and columns <i>yet</i>.</li>
+          <li><b>Perception is the bridge:</b> a model turns raw pixels into a structured table of detections.</li>
+        </ul>
+      </div>
+      <div class="box" style="padding:.5em .6em">
+        <div style="display:flex;align-items:center;gap:.4em">
+          <div style="text-align:center;flex:1"><div style="font-size:1.2em">🖼️🎤📄</div><p style="font-size:.5em;color:var(--muted);margin:.2em 0 0"><b>UNSTRUCTURED</b><br>raw pixels · audio · text</p></div>
+          <div style="font-size:.7em;color:var(--teal);font-weight:700;text-align:center">→ perception →</div>
+          <div style="flex:1.4"><table style="width:100%;border-collapse:collapse;font-family:Consolas,monospace;font-size:.46em">
+            <tr style="background:var(--cloud);color:var(--navy);font-weight:700"><td style="padding:.25em .4em">class</td><td>conf</td><td>dist</td></tr>
+            <tr><td style="padding:.2em .4em">ped</td><td>0.94</td><td>8.2</td></tr>
+            <tr style="background:var(--cloud2)"><td style="padding:.2em .4em">car</td><td>0.88</td><td>15</td></tr>
+            <tr><td style="padding:.2em .4em">sign</td><td>0.79</td><td>22</td></tr>
+          </table><p style="font-size:.48em;color:var(--muted);margin:.2em 0 0;text-align:center"><b>STRUCTURED</b></p></div>
+        </div>
+      </div>
+    </div>
+    <div class="callout"><b>Most of the world's exciting AI data starts unstructured</b> — that's exactly why deep learning matters (Class 1's DL ring). Lab 1 today: you'll perform this pixels→table transformation yourself, by hand.</div>
+    <aside class="notes">The signature visual — and it's literally the course thread: Class 5's detection log (structured) is what perception produces FROM camera frames (unstructured). Lab 1 makes students do the transformation manually so it stops being magic.</aside>
+</section>
+<section id="concept-quant-qual" data-sid="concept-quant-qual">
+<div class="kicker">Concept 3 · the second axis</div>
+    <h2>Quantitative vs. qualitative — the type picks the tools</h2>
+    <div class="grid2" style="margin-top:.25em">
+      <div class="box" style="border-top:4px solid var(--teal)"><h3 style="color:var(--teal)">🔢 Quantitative — "how much"</h3>
+        <p><b>Discrete:</b> counts — objects per frame, number of siblings.<br><b>Continuous:</b> any value in a range — distance_m, temperature, confidence.</p></div>
+      <div class="box" style="border-top:4px solid var(--amber)"><h3 style="color:#8a6114">🏷️ Qualitative — "what kind"</h3>
+        <p><b>Nominal:</b> categories, no order — pedestrian / car / sign, blood type.<br><b>Ordinal:</b> ordered, uneven gaps — grades A/B/C, satisfaction ★–★★★★★.</p></div>
+    </div>
+    <div class="callout"><b>Why care?</b> The type decides everything downstream: which <b>chart</b> (Class 9), which <b>statistic</b> (mean of nominal = nonsense), and which <b>encoding</b> a model needs (Class 8 turns "pedestrian" into numbers — carefully). Misread the type, and every later stage quietly breaks.</div>
+    <aside class="notes">Drill fast: object_class? nominal. conf? continuous. objects-per-frame? discrete. star rating? ordinal — and the trap: it LOOKS numeric but 4★−3★ ≠ 2★−1★. The encoding teaser sets up Class 8's one-hot gotcha perfectly.</aside>
+</section>
+<section id="quiz-types" data-sid="quiz-types">
+<div class="kicker">Check · classify it</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="2">
+    <p class="qq">Your study-tracker table has a column 'focus level' recorded as ⭐ to ⭐⭐⭐⭐⭐. What kind of data is that?</p>
+    <div class="opts"><button class="opt" data-i="0">Continuous quantitative — it's a number from 1 to 5</button><button class="opt" data-i="1">Nominal qualitative — just five categories</button><button class="opt" data-i="2">Ordinal qualitative — ordered levels, but the gaps between stars aren't equal units</button><button class="opt" data-i="3">Unstructured — stars aren't data</button></div>
+    <p class="quiz-exp">Star ratings are ordered (4★ &gt; 2★) but the distance between levels isn't a fixed unit — that's ordinal. Treating it as a plain number (averaging stars) is common but sneaky: it assumes equal gaps that were never measured.</p>
+  </div>
+  <aside class="notes">The subtlest of the four types, chosen deliberately — students' own life-datasets (Class 5 discussion) are full of ordinal columns. 'You can rank it but not subtract it' is the memorable test.</aside>
+</section>
+<section id="concept-sources" data-sid="concept-sources">
+<div class="kicker">Concept 4 · the three wells</div>
+    <h2>Where researchers actually get data</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box" style="border-top:4px solid var(--teal)"><h3 style="color:var(--teal)">🏛️ Public datasets</h3><p>Kaggle, Roboflow Universe, UCI, Hugging Face, government portals, academic benchmarks (KITTI!). Free, labeled, documented — <b>start here</b>, always.</p></div>
+      <div class="box" style="border-top:4px solid var(--navy)"><h3 style="color:var(--navy)">🔐 Your own / proprietary</h3><p>Data you collect (surveys, sensors, experiments) or a company's internal records. Highest relevance, highest cost — collection is a project in itself.</p></div>
+      <div class="box" style="border-top:4px solid var(--coral)"><h3 style="color:var(--coral)">🌐 The open web</h3><p>Crawlers scrape pages; <b>APIs</b> hand you structured data politely. Fresh and vast — but with rules (next slide).</p></div>
+    </div>
+    <div class="callout"><b>For this course:</b> public datasets are your well — your Class-5 skills work on them immediately, and their licenses are written down. Well-chosen public data beats painfully self-collected data for a first project, every time.</div>
+    <aside class="notes">Set expectations: nobody is scraping or running surveys for their course project — public data is the sanctioned path (and what the auto-graded deliverable assumes). The web well gets its ethics slide next because students WILL try it someday.</aside>
+</section>
+<section id="tool-crawler-api" data-sid="tool-crawler-api">
+<div class="kicker">The web well · two buckets, one rulebook</div>
+    <h2>Crawlers scrape; APIs ask nicely</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1fr;margin-top:.25em">
+      <div class="box"><h3 style="color:var(--navy)">🕷️ Web crawler</h3>
+        <p>A script that fetches pages and parses out the data (Python: <span style="font-family:Consolas,monospace;font-size:.82em">requests</span> + <span style="font-family:Consolas,monospace;font-size:.82em">BeautifulSoup</span>). Powerful — and easy to do rudely or illegally.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">🔌 API</h3>
+        <p>The site's official data door: get a key → read the docs → request → receive clean JSON. Stable, legal, structured — <b>always prefer the API if one exists</b> (weather, maps, social platforms…).</p></div>
+    </div>
+    <div class="callout" style="border-left-color:var(--coral)"><b>⚖️ The rulebook (non-negotiable):</b> respect <span style="font-family:Consolas,monospace;font-size:.85em">robots.txt</span> · throttle your request rate · never collect personal or private information · check the site's terms and data copyright. A crawler that ignores these isn't research — it's trespassing with extra steps.</div>
+    <aside class="notes">Awareness-level only — no crawling in this course, but the ethics block is the durable lesson. The API-first rule is professional practice. If asked 'can I scrape X for my project': the answer is 'does X have an API or an existing public dataset? use that.'</aside>
+</section>
+<section id="concept-licensing" data-sid="concept-licensing">
+<div class="kicker">Concept 5 · judge before you trust</div>
+    <h2>Every dataset has a license and a story</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">📜 The license</h3><p>CC0 / CC-BY: use freely (credit for BY). <b>Research-only:</b> no commercial use. <b>Unknown:</b> treat as <i>unusable</i>. The license is usually one click away — read it.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">📖 The collection story</h3><p>Who collected it, when, where, how? KITTI = one car, one German city, daytime, 2012. That story defines what the data can — and cannot — say.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">🕳️ The baked-in bias</h3><p>KITTI's story means: German roads, good weather, 2012-era cars. A model trained on it has <b>never seen</b> a snowy night in Shanghai. Bias isn't a scandal — it's a <i>documented limitation</i>… if you look.</p></div>
+    </div>
+    <div class="callout"><b>The instructor's rule:</b> if the license is unclear — <b>pick a different dataset. Don't guess.</b> And write the collection story into your datasheet: it's tomorrow's "limitations" section (Class 4!) writing itself.</div>
+    <aside class="notes">The hour's moral core. Bias framing matters: not gotcha-hunting but honest documentation — every dataset is a sample from somewhere, and knowing WHERE is what lets you claim honestly what your model can do. Ties to Class 3's ethics backup (bias = model-stage harm born at data stage).</aside>
+</section>
+<section id="quiz-license" data-sid="quiz-license">
+<div class="kicker">Check · the judgment layer</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="2">
+    <p class="qq">You find the perfect dataset for your project, but its page shows no license at all. What's the researcher's move?</p>
+    <div class="opts"><button class="opt" data-i="0">Use it — no license means no rules</button><button class="opt" data-i="1">Use it but don't tell anyone where the data came from</button><button class="opt" data-i="2">Treat it as unusable: pick a licensed alternative, or write the author to ask</button><button class="opt" data-i="3">Copy it to your own page and add a license yourself</button></div>
+    <p class="quiz-exp">No license = all rights reserved by default, not free-for-all. The professional moves are: find a licensed alternative (usually easy on Kaggle/Roboflow), or ask the author directly. Options B and D make it worse — hiding sources and license-laundering.</p>
+  </div>
+  <aside class="notes">Counter-intuitive legal default worth stating plainly: absence of a license is maximum restriction, not zero restriction. The 'ask the author' path is real and often works — datasets have humans behind them.</aside>
+</section>
+<section id="case-av-datasets" data-sid="case-av-datasets">
+<div class="kicker">Case study · our running example's data shelf</div>
+    <h2>The datasets self-driving research runs on</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">🚗 KITTI / nuScenes</h3><p>The classic benchmarks: camera + lidar + labeled boxes. KITTI (2012) started it; nuScenes added nights, rain, and 360° sensors — <i>because KITTI's story lacked them</i>.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">🌊 Waymo Open</h3><p>Industrial scale: ~2,000 hours, multi-sensor, many cities. Free for research — <b>license explicitly non-commercial</b>. Modern papers benchmark here.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">📦 Roboflow Universe</h3><p>Thousands of small, ready-to-train sets (including night-pedestrian ones!) — the practical shelf for a student project: download in YOLO format, train same-day.</p></div>
+    </div>
+    <div class="callout"><b>Read the shelf like a researcher:</b> each newer dataset exists to fix the previous one's <b>collection-story gaps</b> — nuScenes added the nights KITTI lacked. Dataset evolution IS the field saying "our data was biased; here's better." Prefer another domain? Same three-tier shelf exists everywhere.</div>
+    <aside class="notes">The 'datasets fix each other's biases' arc is the deep point — it turns slide 12's bias concept into visible history. For student projects, Roboflow tier is the realistic one; KITTI/Waymo are for reading papers about (their Class-6 literature maps likely cite them).</aside>
+</section>
+<section id="discuss-dream-dataset" data-sid="discuss-dream-dataset">
+<div class="kicker">Discuss · 5 minutes · your dream dataset</div>
+    <h2>Who has your data — and would they share it?</h2>
+    <p class="lead">Name the dataset your <b>dream project</b> would need. Not a course project — the real dream.</p>
+    <div class="grid2" style="margin-top:.4em">
+      <div class="box" style="border-top:4px solid var(--teal)"><h3 style="color:var(--teal)">Trace it</h3><p>Who would have collected it? Why did they collect it? Would they let <i>you</i> use it — and under what license?</p></div>
+      <div class="box" style="border-top:4px solid var(--coral)"><h3 style="color:var(--coral)">Stress-test it</h3><p>Structured or unstructured? And what bias is baked into <i>how</i> it was collected — who's missing from it?</p></div>
+    </div>
+    <p class="lead" style="margin-top:.4em">Pairs, 3 minutes — then a few dreams out loud. Post yours in 💬.</p>
+    <aside class="notes">The 'who's missing' question is where this gets real — hospital data misses people who never see doctors; app data misses people without phones. Every answer previews sampling bias without the jargon. Great exit-ticket fuel.</aside>
+</section>
+<section id="demo-kaggle-data" data-sid="demo-kaggle-data">
+<div class="kicker">Live demo 1</div>
+  <h2>Kaggle Datasets — read before you download</h2>
+  <p class="lead" style="margin:.15em 0 .35em">Not the competitions this time — the dataset library. Watch the researcher's reading order: license first, dictionary second, download last.</p>
+  <div class="grid2" style="grid-template-columns:2.3fr 1fr;align-items:start">
+    <div><div class="prompt"><span class="you">You ▸</span> kaggle.com/datasets → search your topic (try: pedestrian detection / air quality / your domain)</div><div class="prompt"><span class="you">You ▸</span> On a result: find the LICENSE field first — CC0? CC-BY? something scarier?</div><div class="prompt"><span class="you">You ▸</span> Read the data dictionary: every column's meaning and units (Class 5's dream)</div><div class="prompt"><span class="you">You ▸</span> Check 'Usability' score + the discussion tab: what problems have others hit?</div></div>
+    <div class="qrwrap" style="margin-top:.2em"><img class="qr" src="assets/qr-kaggle.png" alt="QR"><br><a href="https://www.kaggle.com/datasets" target="_blank" rel="noopener">kaggle.com/datasets</a></div>
+  </div><aside class="notes">The reading ORDER is the lesson: license → dictionary → community signals → only then download. The usability score aggregates exactly the datasheet fields students will write today. Their homework datasheet mirrors what a good Kaggle dataset page shows.</aside>
+</section>
+<section id="demo-roboflow" data-sid="demo-roboflow">
+<div class="kicker">Live demo 2</div>
+  <h2>Roboflow Universe — images and labels, side by side</h2>
+  <p class="lead" style="margin:.15em 0 .35em">For unstructured (vision) data: browse actual images WITH their boxes drawn — see exactly what 'labeled' means before committing.</p>
+  <div class="grid2" style="grid-template-columns:2.3fr 1fr;align-items:start">
+    <div><div class="prompt"><span class="you">You ▸</span> universe.roboflow.com → search: night pedestrian (yes, it exists — several sets)</div><div class="prompt"><span class="you">You ▸</span> Open one → browse images: are the boxes accurate? tight? consistent?</div><div class="prompt"><span class="you">You ▸</span> Check: image count · classes · license · when it was updated</div><div class="prompt"><span class="you">You ▸</span> Note the download formats (YOLO, COCO…) — this plugs straight into later classes</div></div>
+    <div class="qrwrap" style="margin-top:.2em"><img class="qr" src="assets/qr-roboflow.png" alt="QR"><br><a href="https://universe.roboflow.com/" target="_blank" rel="noopener">universe.roboflow.com</a></div>
+  </div><aside class="notes">The boxes-on-images browsing answers Class 6's 'who draws the boxes' concretely — and eyeballing label QUALITY (sloppy boxes exist!) is a judgment skill no metadata field captures. Roboflow reappears in Class 8 (annotation) per the Class-6 backup slide.</aside>
+</section>
+<section id="demo-scholarmind-data" data-sid="demo-scholarmind-data">
+<div class="kicker">Live demo 3</div>
+  <h2>ScholarMind — does data exist for YOUR question?</h2>
+  <p class="lead" style="margin:.15em 0 .35em">Our platform's dataset search covers Hugging Face + UCI + Kaggle at once — the fastest reality-check for a research question.</p>
+  <div class="grid2" style="grid-template-columns:2.3fr 1fr;align-items:start">
+    <div><div class="prompt"><span class="you">You ▸</span> Enter your research topic → it proposes questions grounded in real datasets</div><div class="prompt"><span class="you">You ▸</span> For your Class-2 strong question: which datasets does it surface? Any surprises?</div><div class="prompt"><span class="you">You ▸</span> Compare two candidates: size, labels, license — which passes today's judgment layer?</div><div class="prompt"><span class="you">You ▸</span> No dataset found? That's pitfall #4 (Class 3) knocking — adjust the question NOW, not in week 6.</div></div>
+    <div class="qrwrap" style="margin-top:.2em"><img class="qr" src="assets/qr-scholarmind.png" alt="QR"><br><a href="https://academic.hopeembark.org/" target="_blank" rel="noopener">academic.hopeembark.org</a></div>
+  </div><aside class="notes">ScholarMind's dataset grounding was teased in Classes 2 and 4 — today it's the featured act. The 'no dataset → adjust question' move closes the loop with the question-clinic backup from Class 2: data reach shapes questions, and better to learn it today.</aside>
+</section>
+<section id="lab-pixels" data-sid="lab-pixels" class="labslide">
+<div class="kicker">Hands-on lab 1 · be the perception system</div>
+  <h2>Turn unstructured pixels into a structured row</h2>
+  <p class="lead">An image is just numbers. Here's an 8×8 "photo" — <b>you</b> play the perception model: extract features, produce the structured row. Concept 2, by hand.</p>
+  <div class="lab folded" data-packages="">
+    <div class="lab-main">
+      <div class="code-wrap">
+        <div class="gutter"></div>
+        <div class="line-hi"></div>
+        <textarea class="code" spellcheck="false" wrap="off"># An "image" is just numbers: 8x8 grayscale, 0 = dark ... 9 = bright
+image = [
+    [0,0,0,9,9,0,0,0],
+    [0,0,9,9,9,9,0,0],
+    [0,0,9,9,9,9,0,0],
+    [0,0,0,9,9,0,0,0],
+    [0,0,0,9,9,0,0,0],
+    [0,0,9,9,9,9,0,0],
+    [0,9,9,0,0,9,9,0],
+    [0,9,0,0,0,0,9,0],
+]   # squint: a tiny pedestrian silhouette
+
+# UNSTRUCTURED: render the raw numbers as a picture
+for row in image:
+    print("".join("#" if px &gt; 5 else "." for px in row))
+
+# PERCEPTION: extract features -&gt; one STRUCTURED row
+bright   = sum(px &gt; 5 for row in image for px in row)
+top      = sum(px &gt; 5 for row in image[:4] for px in row)
+bottom   = sum(px &gt; 5 for row in image[4:] for px in row)
+widest   = max(sum(px &gt; 5 for px in row) for row in image)
+height   = sum(1 for row in image if any(px &gt; 5 for px in row))
+
+row_out = {"bright_px": bright, "top_vs_bottom": round(top / bottom, 2),
+           "widest_row": widest, "height_rows": height}
+print("\nStructured row:", row_out)
+
+# 64 raw pixels became 4 meaningful columns - a table a model can use.
+# Real perception does this millions of times a second, with LEARNED
+# features instead of our hand-made ones (that's the DL ring, Class 1).
+
+# CHALLENGE 1: redraw the pixels as a CAR (wide and low). Rerun -
+#              which features change the most?
+# CHALLENGE 2: invent one new feature that best separates your car
+#              from the pedestrian. (aspect ratio, anyone?)
+</textarea>
+      </div>
+      <div class="lab-bar">
+        <button class="run">▶ Run</button>
+        <button class="walk" hidden>🎧 Explain each line</button>
+        <span class="walk-controls" hidden>
+          <button class="walk-prev" title="Previous step">⏮</button>
+          <button class="walk-pause" title="Pause / resume">⏸</button>
+          <button class="walk-next" title="Next step">⏭</button>
+          <button class="walk-stop" title="Stop walkthrough">✕</button>
+          <span class="walk-step"></span>
+        </span>
+        <button class="ai-explain">✨ Explain</button>
+        <button class="ai-debug">🐞 Debug</button>
+        <button class="ai-improve">⚡ Improve</button>
+        <button class="ai-toggle" title="Show / hide the AI assistant">🤖 Assistant</button>
+        <span class="lab-status">Python loads on first Run</span>
+      </div>
+      <pre class="out">▶ Run the code to see the output here.</pre>
+    </div>
+    <div class="assist">
+      <div class="assist-head"><span>✨ AI Assistant</span><select class="ai-model" title="Choose the AI model"><option value="haiku">⚡ Haiku · fastest</option><option value="sonnet">Sonnet · balanced</option><option value="opus">Opus · most capable</option></select></div>
+      <div class="assist-body">Hi! Edit the code and hit <b>Run</b>. Stuck? I can <b>Explain</b>, <b>Debug</b>, or <b>Improve</b> it — or just ask me below.</div>
+      <div class="assist-ask"><input class="ask-in" placeholder="Ask about this code…"><button class="ask-btn">Ask</button></div>
+    </div>
+  </div><aside class="notes">Runs instantly. The ASCII render then the 4-column dict IS the concept-2 picture, executed. Challenge 1's car flips widest_row/height — aspect ratio emerges naturally as the discriminating feature (challenge 2), which is literally what early pedestrian detectors used. Hand-made vs learned features = the classical-CV vs deep-learning divide, planted.</aside>
+</section>
+<section id="lab-judge-datasets" data-sid="lab-judge-datasets" class="labslide">
+<div class="kicker">Hands-on lab 2 · the judgment layer, in code</div>
+  <h2>Four candidate datasets — which would a researcher use?</h2>
+  <p class="lead">Today's checklist as a script: license, labels, size, collection story. Four candidates for the night-pedestrian project — score them, then <b>argue with the scores</b>.</p>
+  <div class="lab folded" data-packages="">
+    <div class="lab-main">
+      <div class="code-wrap">
+        <div class="gutter"></div>
+        <div class="line-hi"></div>
+        <textarea class="code" spellcheck="false" wrap="off"># The datasheet checklist, as code. 4 candidates for a night-ped study:
+datasets = [
+ {"name": "NightPeds-500",  "license": "CC-BY 4.0",     "labeled": True,
+  "size": 500,     "collection": "dashcam, 3 cities, winter nights"},
+ {"name": "MegaDrive-1M",   "license": "unknown",       "labeled": True,
+  "size": 1000000, "collection": "scraped from video sites"},
+ {"name": "SunnyStreets",   "license": "CC0",           "labeled": False,
+  "size": 8000,    "collection": "one campus, daytime only"},
+ {"name": "CampusWalk",     "license": "research-only", "labeled": True,
+  "size": 120,     "collection": "10 students, one evening"},
+]
+
+OK_LICENSES = ["cc0", "cc-by 4.0", "research-only"]
+
+def judge(ds):
+    notes, ok = [], True
+    if ds["license"].lower() not in OK_LICENSES:
+        notes.append("license unclear -&gt; UNUSABLE (rule: don't guess)"); ok = False
+    if not ds["labeled"]:
+        notes.append("no labels -&gt; you'd label it yourself (a project in itself)")
+    if ds["size"] &lt; 300:
+        notes.append(f"only {ds['size']} examples -&gt; too small to trust results")
+    if "night" not in ds["collection"]:
+        notes.append("collection story has NO nights -&gt; wrong data for the question")
+    verdict = "SKIP" if not ok else ("USE" if not notes else "CAUTION")
+    print(f"{verdict:8s} {ds['name']:15s} {ds['collection']}")
+    for n in notes: print("         - " + n)
+
+for ds in datasets:
+    judge(ds)
+
+# The 1,000,000-image set loses to the 500-image set. Size isn't king -
+# fitness for YOUR question is.
+
+# CHALLENGE 1: 'research-only' passed the license check. Should it?
+#              What EXACTLY does your project count as?
+# CHALLENGE 2: add the dataset from YOUR datasheet as a 5th entry.
+#              What verdict does it get - and do you agree with the code?
+</textarea>
+      </div>
+      <div class="lab-bar">
+        <button class="run">▶ Run</button>
+        <button class="walk" hidden>🎧 Explain each line</button>
+        <span class="walk-controls" hidden>
+          <button class="walk-prev" title="Previous step">⏮</button>
+          <button class="walk-pause" title="Pause / resume">⏸</button>
+          <button class="walk-next" title="Next step">⏭</button>
+          <button class="walk-stop" title="Stop walkthrough">✕</button>
+          <span class="walk-step"></span>
+        </span>
+        <button class="ai-explain">✨ Explain</button>
+        <button class="ai-debug">🐞 Debug</button>
+        <button class="ai-improve">⚡ Improve</button>
+        <button class="ai-toggle" title="Show / hide the AI assistant">🤖 Assistant</button>
+        <span class="lab-status">Python loads on first Run</span>
+      </div>
+      <pre class="out">▶ Run the code to see the output here.</pre>
+    </div>
+    <div class="assist">
+      <div class="assist-head"><span>✨ AI Assistant</span><select class="ai-model" title="Choose the AI model"><option value="haiku">⚡ Haiku · fastest</option><option value="sonnet">Sonnet · balanced</option><option value="opus">Opus · most capable</option></select></div>
+      <div class="assist-body">Hi! Edit the code and hit <b>Run</b>. Stuck? I can <b>Explain</b>, <b>Debug</b>, or <b>Improve</b> it — or just ask me below.</div>
+      <div class="assist-ask"><input class="ask-in" placeholder="Ask about this code…"><button class="ask-btn">Ask</button></div>
+    </div>
+  </div><aside class="notes">Runs instantly. The punchline prints itself: MegaDrive-1M (huge, license unknown, scraped) = SKIP; NightPeds-500 = USE. Challenge 1 is a real judgment call (a class project is research… but a demo at a paid bootcamp?) — no clean answer, which is the point. Challenge 2 makes the lab grade their actual homework choice.</aside>
+</section>
+<section id="your-project" data-sid="your-project">
+<div class="kicker">Your project</div>
+    <h2>Choose and document your dataset</h2>
+    <div class="grid2" style="grid-template-columns:1.3fr 1fr">
+      <div><p class="lead">Pick the dataset your project will actually use — and document it the way a researcher would, in a <b>datasheet</b>.</p>
+        <ul><li>Browse Kaggle / Roboflow Universe for candidates matching your question</li>
+          <li>Check the <b>license</b> and the size — apply the judgment layer</li>
+          <li>Record the <b>source and collection story</b> (who, when, how)</li>
+          <li>Describe <b>every variable</b>: meaning, type (today's vocabulary!), units</li></ul></div>
+      <div class="box"><h3 style="color:var(--teal)">Deliverable</h3><p>A dataset datasheet: source, license, size, collection story, and a variable table.</p>
+        <h3 style="color:var(--coral);margin-top:.35em">Success looks like</h3><p>License and source clearly stated — and every variable has a meaning and units.</p></div>
+    </div>
+    <aside class="notes">The graded deliverable (Classroom: 'A chosen dataset with a documented variable sheet'). This is the real 'Datasheets for Datasets' practice, student-sized. The variable table doubles as their Class-8 cleaning worksheet — same columns, next week's mess.</aside>
+</section>
+<section id="build-it-now" data-sid="build-it-now">
+<div class="kicker">Build it now · hands-on</div>
+    <h2>Hunt, judge, document</h2>
+    <ol style="font-size:.72em;margin-left:1.05em">
+      <li>Search Kaggle Datasets and Roboflow Universe for your question's data (ScholarMind if stuck)</li>
+      <li>Shortlist 2 candidates → run the <b>judgment layer</b>: license · labels · size · collection story</li>
+      <li>Pick one. Download it (or note the access link)</li>
+      <li>Fill the datasheet: source · license · size · collection story · <b>variable table</b> (name / meaning / type / units)</li>
+      <li>Load it with Class-5 verbs — does <span style="font-family:Consolas,monospace">df.head()</span> match the dictionary's promises?</li></ol>
+    <div style="margin-top:.2em"><span class="pill">Kaggle</span><span class="pill">Roboflow Universe</span><span class="pill">ScholarMind</span><span class="pill">Colab</span></div>
+    <div class="callout"><b>Instructor's rule, again:</b> license unclear → different dataset. And step 5 catches the classic surprise: documentation says one thing, the actual columns say another. Trust <span style="font-family:Consolas,monospace">df.head()</span>.</div>
+    <aside class="notes">Step 5 fuses Class 5 with today — the datasheet isn't paperwork, it's a testable claim about the file. Circulate on step 2; students anchor on the first shiny dataset and skip the judgment layer.</aside>
+</section>
+<section id="benchmark-datasheet" data-sid="benchmark-datasheet">
+<div class="kicker">Benchmark · judge against this</div>
+    <h2>What a finished datasheet looks like</h2>
+    <p class="lead" style="margin:0 0 .25em">Dataset: <i>"Night-Time Pedestrians v2"</i> (Roboflow Universe)</p>
+    <div class="grid2" style="margin-top:.2em">
+      <div class="box"><p><b>Source:</b> universe.roboflow.com/… · <b>License:</b> CC-BY 4.0 ✓ · <b>Size:</b> 1,847 images, 4,210 boxes</p></div>
+      <div class="box"><p><b>Collection story:</b> dashcam footage, 2 US cities, Nov–Feb, dusk-to-night only; boxes drawn by the uploading team.</p></div>
+      <div class="box" style="grid-column:1/-1"><p style="font-family:Consolas,monospace;font-size:.55em"><b>Variables:</b> image (unstructured, 640×640 px) · class (nominal: pedestrian/cyclist) · x,y,w,h (continuous, 0–1 normalized box) · lighting (ordinal: dusk/night/deep-night)</p></div>
+      <div class="box" style="border-top:4px solid var(--coral);grid-column:1/-1"><p><b>Known limitations (from the story):</b> US cities only · winter clothing bias · no rain or snow nights · single labeling team, no cross-check. <i>Claims about other conditions are extrapolation.</i></p></div>
+    </div>
+    <div class="callout"><b>The bar:</b> every field filled from evidence, variable types named with today's vocabulary, and the limitation box <b>derived from the collection story</b> — not guessed. This page is the first section of your final paper's "Data" chapter, already written.</div>
+    <aside class="notes">The limitations-derived-from-story move is the sophistication marker — bias documented as geography/season/process facts, not vague worry. The 'final paper chapter' framing shows this work compounds into Class 15.</aside>
+</section>
+<section id="reference-key-terms" data-sid="reference-key-terms">
+<div class="kicker">Reference · key terms</div>
+    <h2>Today's vocabulary</h2>
+    <div class="grid2" style="margin-top:.3em">
+      <div class="box"><p><b>Structured / unstructured</b> — fits a table now vs. needs a model (perception) to get there.</p></div>
+      <div class="box"><p><b>Quantitative (discrete / continuous)</b> — "how much": counts vs. measurements.</p></div>
+      <div class="box"><p><b>Qualitative (nominal / ordinal)</b> — "what kind": unordered categories vs. ordered levels.</p></div>
+      <div class="box"><p><b>License (CC0 / CC-BY / research-only)</b> — the legal terms of use; unknown = unusable.</p></div>
+      <div class="box"><p><b>API</b> — a site's official structured-data door; prefer it over scraping.</p></div>
+      <div class="box"><p><b>Datasheet</b> — a dataset's documentation: source, license, collection story, variables, limitations.</p></div>
+    </div>
+    <aside class="notes">'Datasheet' as a term comes from Gebru et al.'s 'Datasheets for Datasets' — worth a name-drop for advanced students. The four data-type words return constantly in Classes 8-10.</aside>
+</section>
+<section id="homework" data-sid="homework">
+<div class="kicker">Recommended homework</div>
+    <h2>Before next class</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1fr">
+      <div><ol style="font-size:.66em;margin-left:1.05em">
+        <li><b>Finish your datasheet</b> and submit it in Google Classroom — and commit it to your GitHub repo from Class 6 (it's your project's first real artifact).</li>
+        <li><b>Name one bias</b> your chosen dataset inherits from its collection story — one honest sentence in the datasheet's limitation box.</li>
+        <li><b>Load it:</b> open your dataset in Colab, run the four verbs, and screenshot <span style="font-family:Consolas,monospace">df.head()</span> + <span style="font-family:Consolas,monospace">df.info()</span>. Do the columns match your variable table?</li>
+      </ol></div>
+      <div class="box"><h3 style="color:var(--teal)">⭐ Stretch (optional)</h3>
+        <p>Skim the original <b>KITTI paper's</b> dataset section ("Are we ready for autonomous driving?") — watch professionals write a datasheet at full scale: sensors, calibration, and admitted limitations.</p>
+        <a class="btn" href="https://www.cvlibs.net/datasets/kitti/" target="_blank" rel="noopener">cvlibs.net · KITTI</a></div>
+    </div>
+    <div class="callout">Task 3 matters most: next class starts from <b>your loaded dataset</b> — Class 8 cleans exactly what you chose today. Questions → 💬 on any slide.</div>
+    <aside class="notes">The homework chains directly into Class 8's deliverable (cleaning THEIR dataset). GitHub commit habit continues from Class 6. The KITTI stretch closes today's story loop with the primary source.</aside>
+</section>
+<section id="line-to-remember" data-sid="line-to-remember" class="center" data-background-gradient="linear-gradient(135deg,#0B7E8A,#0F9DB0)">
+<div class="kicker">Today's line to remember</div>
+    <h2 style="color:#fff">"Data is the new oil."</h2>
+    <p style="color:#cfe0ef;margin-top:.3em">— Clive Humby (2006)</p>
+    <p style="color:#eaf2fb;font-size:.8em;margin-top:.5em">…and Humby's next line is the part everyone forgets: like oil, it's <b>valueless until refined</b>. Refining is next week.</p>
+    <div style="margin-top:.5em"><button class="speak" data-audio="audio/quote2.mp3">🔊 <span>Speak this</span></button></div>
+    <aside class="notes">The full Humby quote does double duty: honors today (crude data is an asset) and is the perfect Class-8 tease (refinement = cleaning). Students who only know the bumper-sticker half get the real version.</aside>
+</section>
+<section id="wrap-up" data-sid="wrap-up" class="center" data-background-gradient="linear-gradient(135deg,#0C2D52,#16406e)">
+<div class="kicker" style="color:#7fd3df">Wrap-up</div>
+    <h2 style="color:#fff">Three things to keep</h2>
+    <ul style="display:inline-block;text-align:left;color:#eaf2fb">
+      <li>Structured fits a table; unstructured doesn't (yet) — <b>perception is the bridge</b></li>
+      <li>Data has a <b>license and a collection story</b> — judge both before you trust it</li>
+      <li>A <b>datasheet</b> documents your data: source, variables, and honest limitations</li></ul>
+    <p style="color:#cfe0ef;margin-top:.6em"><b>Exit ticket:</b> name one possible bias in the dataset you chose today. Post it in 💬.</p>
+    <p style="color:#9db8d6;font-size:.6em;margin-top:.7em">Next · Class 8 — refining the oil: turn your messy dataset into something a model can learn from.</p>
+    <aside class="notes">Exit tickets = a bias inventory across all projects; several will become genuine limitation sections. Class 8 opens with THEIR datasets loaded, so task 3 compliance matters — nudge stragglers.</aside>
+</section>
+<section id="backup-material" data-sid="backup-material">
+<div class="kicker" style="color:var(--coral)">Backup material</div>
+    <h2>Extra slides — if there's time</h2>
+    <p class="lead">Deeper dives and extra practice. Skip in a tight hour; pull up on demand or for a longer session.</p>
+    <div class="flow" style="margin-top:.4em">
+      <div class="step"><b>The datasets that made AI</b><span>a short hall of fame</span></div>
+      <div class="step"><b>Scraping ethics, expanded</b><span>the rulebook with reasons</span></div>
+      <div class="step"><b>Bonus quiz</b><span>one more check</span></div>
+    </div>
+    <aside class="notes">The hall-of-fame slide is great culture for curious students; the ethics expansion is there if scraping questions run long.</aside>
+</section>
+<section id="backup-dataset-hall" data-sid="backup-dataset-hall">
+<div class="kicker">Backup · a short hall of fame</div>
+    <h2>Datasets that changed AI</h2>
+    <div class="grid2" style="margin-top:.3em">
+      <div class="box"><p><b>MNIST (1998)</b> — 70k handwritten digits. The "hello world" every ML student still meets first.</p></div>
+      <div class="box"><p><b>ImageNet (2009)</b> — 14M labeled images; ignited deep learning (Class 3's story).</p></div>
+      <div class="box"><p><b>KITTI (2012)</b> — one station wagon, a decade of self-driving research (today's story).</p></div>
+      <div class="box"><p><b>COCO (2014)</b> — objects in messy, real scenes; YOLO's proving ground (your Class-4 paper!).</p></div>
+    </div>
+    <div class="callout"><b>The pattern:</b> each one is remembered not for an algorithm but for <b>collection + labels + open sharing</b>. Fields advance when someone does the unglamorous data work — a career hint hiding in plain sight.</div>
+    <aside class="notes">Every entry links back to a course moment (Class 3 ImageNet, Class 4 YOLO/COCO, today KITTI) — the hall of fame is secretly a course recap. The career hint is genuine: dataset papers rack up citations for decades.</aside>
+</section>
+<section id="backup-scraping-ethics" data-sid="backup-scraping-ethics">
+<div class="kicker">Backup · the rulebook, with reasons</div>
+    <h2>Why the crawler rules exist</h2>
+    <div class="grid2" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">robots.txt &amp; rate limits</h3><p>The site's stated rules + not overwhelming their servers. Ignoring them can take a small site down — that's harm, not research.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">Privacy</h3><p>Public ≠ fair game: names, faces, and posts belong to people. Scraped personal data can't be "un-collected" — the harm outlives the project.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">Copyright &amp; terms</h3><p>Text, images, and databases have owners; terms of service are agreements. "For research" is not a universal exemption.</p></div>
+      <div class="box"><h3 style="color:var(--amber)">The honest test</h3><p>Would you be comfortable telling the site's owner — and the people in the data — exactly what you collected and why? If not, stop.</p></div>
+    </div>
+    <aside class="notes">Reasons, not just rules — teenagers respect 'here's who gets hurt' over 'it's forbidden'. The honest test generalizes to all data ethics and echoes Class 3's ethics backup.</aside>
+</section>
+<section id="quiz-backup-bonus" data-sid="quiz-backup-bonus">
+<div class="kicker">Backup · bonus check</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="1">
+    <p class="qq">A 1,000,000-image dataset with an unknown license, versus a 500-image dataset with CC-BY and a documented collection story that matches your question. Which does the researcher pick?</p>
+    <div class="opts"><button class="opt" data-i="0">The big one — a million images always wins</button><button class="opt" data-i="1">The small one: usable license + right collection story beat raw size</button><button class="opt" data-i="2">Neither; wait for a perfect dataset</button><button class="opt" data-i="3">Both; merge them and hope</button></div>
+    <p class="quiz-exp">Lab 2's verdict, restated: unusable license disqualifies outright, and a collection story matching your question is worth more than a thousand-fold size advantage. Size matters only among datasets you may use and that fit.</p>
+  </div>
+  <aside class="notes">Reinforces the day's most counter-intuitive ranking. Option D quietly plants next class's issue — merging datasets multiplies cleaning problems.</aside>
+</section>
+</div></div>
+
+<a id="donateBtn" href="https://buy.stripe.com/14AbIT26kfUzbqjbGv4ow00" target="_blank" rel="noopener">♥ Donate</a>
+<a id="pdfBtn" href="slides.pdf" download title="Download these slides as a PDF">⬇ PDF</a>
+<a id="mpaLogo" href="/meritpoint-slides/" title="Merit Point Academy — all courses"><img src="/meritpoint-slides/assets/mpa-logo.png" alt="Merit Point Academy"></a>
+<!-- per-slide comments -->
+<audio id="narratorAudio" preload="none" style="display:none"></audio>
+<audio id="walkAudio" preload="none" style="display:none"></audio>
+<div id="capBar"></div>
+<button id="ccBtn" title="Toggle captions">CC</button>
+<button id="listenBtn" title="Listen to this slide narrated"><span class="li-ic">▶</span><span class="li-tx">Listen</span></button>
+<button id="commentBtn" title="Comment on this slide">💬 Comment<span class="cnum" id="cnum">0</span></button>
+<div id="commentPanel">
+  <div class="ph"><span id="cph">Comments</span><span class="x" id="cclose">✕</span></div>
+  <div id="commentList"></div>
+  <form id="commentForm">
+    <div class="row"><input id="cname" placeholder="Your name (optional)" maxlength="40"></div>
+    <textarea id="cbody" placeholder="Leave a comment or question about this slide…" maxlength="2000"></textarea>
+    <div class="row"><button type="submit">Post</button><span class="msg" id="cmsg">Visible to your instructor &amp; classmates.</span></div>
+  </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+<script>
+const DECK = "ai-toolbox/class-07";
+Reveal.initialize({ hash:true, slideNumber:'c/t', controls:true, progress:true,
+  width:1280, height:720, margin:0.04, transition:'slide',
+  keyboardCondition:'focused', plugins:[ RevealNotes ] });
+
+/* ---------- Shared audio player ----------
+ * One audio element, already attached to the DOM (see markup above), reused
+ * for every play. A bare detached Audio object is never used: on at least one
+ * real browser/profile that made Chrome abort play() within milliseconds
+ * ("interrupted because the media was removed from the document") — audio
+ * never audibly played and the button silently reset to idle before anyone
+ * noticed. Reusing an attached element avoids that path. */
+const _audio=document.getElementById('narratorAudio');
+let _btn=null,_playToken=0;
+function fmtClock(s){ s=Math.max(0,Math.floor(s||0)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
+function resetListenUI(){ listenBtn.style.setProperty('--p','0%'); listenBtn.querySelector('.li-ic').textContent='▶'; listenBtn.querySelector('.li-tx').textContent='Listen'; }
+function stopAudio(){
+  stopWalk(); // lab walkthrough shares the stage with narration — never both
+  _playToken++; // invalidate any in-flight play() for the old src
+  _audio.pause(); _audio.currentTime=0; _audio.removeAttribute('src'); _audio.load();
+  _audio.removeEventListener('timeupdate',onListenTimeupdate); // else it'd animate listenBtn during a .speak clip
+  capBar.style.display='none';
+  if(_btn){
+    _btn.classList.remove('playing');
+    if(_btn===listenBtn) resetListenUI();
+    else if(_btn.querySelector('span')) _btn.querySelector('span').textContent=_btn.dataset.label||'Speak';
+  }
+  _btn=null;
+}
+document.addEventListener('click',function(e){
+  const b=e.target.closest('.speak'); if(!b) return;
+  if(_btn===b && !_audio.paused){ stopAudio(); return; }
+  stopAudio();
+  const token=_playToken;
+  _btn=b; b.dataset.label=b.dataset.label||b.querySelector('span').textContent;
+  b.classList.add('playing'); b.querySelector('span').textContent='Pause';
+  _audio.src=b.dataset.audio;
+  _audio.addEventListener('ended',stopAudio,{once:true});
+  _audio.play().catch(function(){ if(token===_playToken) stopAudio(); });
+});
+
+/* ---------- Per-slide narration ("Listen") + captions ---------- */
+const listenBtn=document.getElementById('listenBtn');
+const ccBtn=document.getElementById('ccBtn');
+const capBar=document.getElementById('capBar');
+let _narrationData=null; // { [sid]: { script, cues:[{start,end,text}], ... } }
+let _ccOn=localStorage.getItem('cc_captions')!=='0'; // on by default
+function updateCcBtn(){ ccBtn.classList.toggle('on',_ccOn); ccBtn.title=_ccOn?'Captions on — click to hide':'Captions off — click to show'; }
+async function loadNarrated(){
+  try{ const r=await fetch('audio/narration.json',{cache:'no-cache'}); if(!r.ok) throw 0;
+    _narrationData=await r.json(); }
+  catch(e){ _narrationData={}; }
+  updateCcBtn();
+  updateListen();
+}
+function updateListen(){
+  if(!_narrationData){ return; }
+  const has=!!_narrationData[curSid];
+  listenBtn.style.display=has?'inline-flex':'none';
+  ccBtn.style.display=has?'inline-flex':'none';
+  if(!has && _btn===listenBtn) stopAudio();
+}
+function cueAt(cues,t){ for(const c of cues) if(t>=c.start && t<c.end) return c; return null; }
+function updateCaption(){
+  const data=_narrationData && _narrationData[curSid];
+  const cues=data && data.cues;
+  if(!_ccOn || _btn!==listenBtn || !cues || !cues.length){ capBar.style.display='none'; return; }
+  const cue=cueAt(cues,_audio.currentTime);
+  if(cue){ capBar.textContent=cue.text; capBar.style.display='block'; }
+  else capBar.style.display='none'; // brief gap between sentences
+}
+ccBtn.addEventListener('click',function(){
+  _ccOn=!_ccOn; localStorage.setItem('cc_captions',_ccOn?'1':'0'); updateCcBtn(); updateCaption();
+});
+function onListenTimeupdate(){
+  if(_audio.duration) listenBtn.style.setProperty('--p',(_audio.currentTime/_audio.duration*100)+'%');
+  listenBtn.querySelector('.li-tx').textContent=fmtClock(_audio.currentTime)+' / '+fmtClock(_audio.duration);
+  updateCaption();
+}
+listenBtn.addEventListener('click',function(){
+  if(_btn===listenBtn && !_audio.paused){ stopAudio(); return; } // toggles play/stop even mid-buffer
+  stopAudio();
+  const token=_playToken;
+  _btn=listenBtn;
+  listenBtn.classList.add('playing');
+  listenBtn.querySelector('.li-ic').textContent='⏹';
+  listenBtn.querySelector('.li-tx').textContent='loading…';
+  _audio.src='audio/'+encodeURIComponent(curSid)+'.mp3';
+  _audio.addEventListener('timeupdate',onListenTimeupdate);
+  _audio.addEventListener('ended',stopAudio,{once:true});
+  _audio.play().catch(function(){
+    if(token!==_playToken) return; // superseded by a newer click/stop — ignore
+    _audio.removeEventListener('timeupdate',onListenTimeupdate);
+    stopAudio();
+    listenBtn.querySelector('.li-tx').textContent='tap to retry';
+    setTimeout(resetListenUI,2200);
+  });
+});
+
+/* ---------- Quizzes (answers feed the live class distribution) ---------- */
+function renderQuizStats(quiz,data){
+  quiz._qstats=data;
+  let box=quiz.querySelector('.qstats');
+  if(!box){ box=document.createElement('div'); box.className='qstats'; quiz.appendChild(box); }
+  const mode=quiz._qmode||'today';
+  const st=(data&&data[mode])||{counts:{},total:0};
+  const opts=quiz.querySelectorAll('.opt'), correct=parseInt(quiz.dataset.correct,10);
+  let bars='';
+  for(let i=0;i<opts.length;i++){
+    const c=st.counts[i]||0, pct=st.total?Math.round(c*100/st.total):0;
+    bars+='<div class="qrow"><span class="ql">'+String.fromCharCode(65+i)+'</span>'
+      +'<div class="qbar"><div class="qfill'+(i===correct?' qok':'')+'" style="width:'+pct+'%"></div></div>'
+      +'<span class="qp">'+pct+'% ('+c+')</span></div>';
+  }
+  box.innerHTML='<div class="qhead"><span>Class results · '+st.total+' answered</span>'
+    +'<span><button class="qm'+(mode==='today'?' on':'')+'" data-m="today">Today</button>'
+    +'<button class="qm'+(mode==='all'?' on':'')+'" data-m="all">All time</button></span></div>'+bars;
+}
+document.addEventListener('click',function(e){
+  const m=e.target.closest('.qstats .qm');
+  if(m){ const q=m.closest('.quiz'); q._qmode=m.dataset.m; renderQuizStats(q,q._qstats); return; }
+  const opt=e.target.closest('.quiz .opt'); if(!opt) return;
+  const quiz=opt.closest('.quiz'); if(quiz.classList.contains('answered')) return;
+  const correct=parseInt(quiz.dataset.correct,10);
+  quiz.querySelectorAll('.opt').forEach(function(o){o.setAttribute('disabled','');});
+  const chosen=parseInt(opt.dataset.i,10);
+  quiz.querySelectorAll('.opt')[correct].classList.add('correct');
+  if(chosen!==correct) opt.classList.add('wrong');
+  quiz.classList.add('answered');
+  const sec=quiz.closest('section');
+  const sid=(sec&&sec.dataset.sid)||_hashSid(sec);
+  fetch('/api/quiz/answer',{method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({deck:DECK,slide:sid,choice:chosen,correct:chosen===correct})})
+    .then(function(r){return r.json();})
+    .then(function(j){ if(j&&j.today) renderQuizStats(quiz,{today:j.today,all:j.all}); })
+    .catch(function(){ fetch('/api/quiz/stats?deck='+encodeURIComponent(DECK)+'&slide='+encodeURIComponent(sid))
+      .then(function(r){return r.json();}).then(function(j){renderQuizStats(quiz,j);}).catch(function(){}); });
+});
+
+/* ---------- Heap / Top-K insertion visualizer ---------- */
+function hvState(el){
+  if(!el._hv){ el._hv={ frames:[{heap:[],action:'Ready. Insert a value to see the animation.',hi:[]}], cur:0, playing:false, timer:null }; }
+  return el._hv;
+}
+function hvTree(arr,hi){
+  if(!arr.length) return '<div class="hv-empty">(empty)</div>';
+  const W=200,H=140; const depthOf=(i)=>Math.floor(Math.log2(i+1)); const maxDepth=depthOf(arr.length-1);
+  const nodes=arr.map(function(v,i){ const d=depthOf(i); const levelStart=Math.pow(2,d)-1; const pos=i-levelStart; const cnt=Math.pow(2,d);
+    return { i:i, v:v, x:((pos+0.5)/cnt)*W, y:16+d*((H-24)/Math.max(1,maxDepth)) }; });
+  let svg='<svg viewBox="0 0 '+W+' '+(H+16)+'" class="hv-tree-svg">';
+  nodes.forEach(function(n){ if(n.i===0) return; const p=nodes[Math.floor((n.i-1)/2)];
+    svg+='<line x1="'+p.x+'" y1="'+p.y+'" x2="'+n.x+'" y2="'+n.y+'" class="hv-edge"/>'; });
+  (hi||[]).forEach(function(pair){ if(pair.length===2 && nodes[pair[0]] && nodes[pair[1]]){
+    svg+='<line x1="'+nodes[pair[0]].x+'" y1="'+nodes[pair[0]].y+'" x2="'+nodes[pair[1]].x+'" y2="'+nodes[pair[1]].y+'" class="hv-swap"/>'; } });
+  const hiIdx=(hi||[]).flat();
+  nodes.forEach(function(n){ const isHi=hiIdx.indexOf(n.i)>-1;
+    svg+='<circle cx="'+n.x+'" cy="'+n.y+'" r="13" class="hv-node'+(isHi?' hv-node-hi':'')+'"/><text x="'+n.x+'" y="'+(n.y+4)+'" class="hv-node-text">'+n.v+'</text>'; });
+  return svg+'</svg>';
+}
+function hvRender(el){
+  const st=hvState(el);
+  el.querySelector('.hv-arr-now').textContent='['+st.frames[st.cur].heap.join(', ')+']';
+  el.querySelector('.hv-step').textContent=st.cur+' / '+(st.frames.length-1);
+  el.querySelector('.hv-action-text').textContent=st.frames[st.cur].action;
+  const framesEl=el.querySelector('.hv-frames'), arrsEl=el.querySelector('.hv-arrs');
+  framesEl.innerHTML=''; arrsEl.innerHTML='';
+  st.frames.forEach(function(f,idx){
+    const hiIdx=(f.hi||[]).flat();
+    const card=document.createElement('div'); card.className='hv-frame'+(idx===st.cur?' hv-frame-active':'');
+    card.innerHTML='<div class="hv-frame-title">Step '+idx+'</div><div class="hv-frame-desc">'+(idx===0?'(empty)':f.action)+'</div>'+hvTree(f.heap,f.hi);
+    framesEl.appendChild(card);
+    const a=document.createElement('div'); a.className='hv-arr'+(idx===st.cur?' hv-arr-active':'');
+    a.innerHTML='['+f.heap.map(function(v,i){ return hiIdx.indexOf(i)>-1?'<span class="hv-arr-hi">'+v+'</span>':v; }).join(', ')+']';
+    arrsEl.appendChild(a);
+  });
+  const active=framesEl.querySelector('.hv-frame-active');
+  if(active) active.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
+}
+function hvInsert(el,val){
+  const st=hvState(el);
+  if(st.cur!==st.frames.length-1) st.frames=st.frames.slice(0,st.cur+1); // drop redo history on a fresh insert
+  const heap=st.frames[st.frames.length-1].heap.slice();
+  const idx=heap.length; heap.push(val);
+  let i=idx, hi=[[idx,idx]];
+  while(i>0){ const p=Math.floor((i-1)/2);
+    if(heap[p]>heap[i]){ const t=heap[p]; heap[p]=heap[i]; heap[i]=t; hi=[[p,i]]; i=p; } else break; }
+  st.frames.push({ heap:heap, action:'Insert '+val+' at index '+idx, hi:hi });
+  st.cur=st.frames.length-1; hvRender(el);
+}
+function hvGoto(el,idx){ const st=hvState(el); st.cur=Math.max(0,Math.min(st.frames.length-1,idx)); hvRender(el); }
+function hvStop(el){ const st=hvState(el); if(st.timer){ clearInterval(st.timer); st.timer=null; } st.playing=false;
+  const b=el.querySelector('.hv-play'); if(b) b.textContent='▶ Play'; }
+function hvPlay(el){ const st=hvState(el); if(st.playing){ hvStop(el); return; }
+  if(st.cur>=st.frames.length-1) hvGoto(el,0);
+  st.playing=true; const b=el.querySelector('.hv-play'); if(b) b.textContent='⏸ Pause';
+  const speed=parseInt(el.querySelector('.hv-speed').value,10)||3, delay=Math.max(280,1300-speed*220);
+  st.timer=setInterval(function(){ if(st.cur>=st.frames.length-1){ hvStop(el); return; } hvGoto(el,st.cur+1); },delay);
+}
+document.addEventListener('click',function(e){
+  const hv=e.target.closest('.heapviz'); if(!hv) return;
+  if(e.target.closest('.hv-insert')){ const inp=hv.querySelector('.hv-input'); const v=parseInt(inp.value,10);
+    if(!isNaN(v)){ hvStop(hv); hvInsert(hv,v); inp.value=''; } }
+  else if(e.target.closest('.hv-quick-btn')){ hvStop(hv); hvInsert(hv,parseInt(e.target.closest('.hv-quick-btn').dataset.v,10)); }
+  else if(e.target.closest('.hv-first')){ hvStop(hv); hvGoto(hv,0); }
+  else if(e.target.closest('.hv-prev')){ hvStop(hv); hvGoto(hv,hvState(hv).cur-1); }
+  else if(e.target.closest('.hv-next')){ hvStop(hv); hvGoto(hv,hvState(hv).cur+1); }
+  else if(e.target.closest('.hv-last')){ hvStop(hv); hvGoto(hv,hvState(hv).frames.length-1); }
+  else if(e.target.closest('.hv-play')){ hvPlay(hv); }
+});
+document.addEventListener('keydown',function(e){
+  if(e.target.classList&&e.target.classList.contains('hv-input')&&e.key==='Enter'){
+    e.preventDefault(); const hv=e.target.closest('.heapviz'); const v=parseInt(e.target.value,10);
+    if(!isNaN(v)){ hvStop(hv); hvInsert(hv,v); e.target.value=''; }
+  }
+});
+document.querySelectorAll('.heapviz').forEach(function(hv){
+  const preset=(hv.dataset.preset||'').split(',').map(function(s){return s.trim();}).filter(Boolean);
+  const q=hv.querySelector('.hv-quick');
+  preset.forEach(function(v){ const b=document.createElement('button'); b.type='button'; b.className='hv-quick-btn'; b.dataset.v=v; b.textContent=v; q.appendChild(b); });
+  hvRender(hv);
+});
+
+/* ---------- Convolution (sliding-window) visualizer ---------- */
+const CV_IMGS={
+  edge:['11110000','11110000','11110000','11110000','11110000','11110000','11110000','11110000'],
+  hedge:['11111111','11111111','11111111','11111111','00000000','00000000','00000000','00000000'],
+  diag:['11000000','11100000','01110000','00111000','00011100','00001110','00000111','00000011'],
+  smiley:['00000000','01100110','01100110','00000000','10000001','01000010','00111100','00000000'],
+  x:['10000001','11000011','01100110','00111100','00111100','01100110','11000011','10000001'],
+  clear:['00000000','00000000','00000000','00000000','00000000','00000000','00000000','00000000']
+};
+const CV_IMG_NAMES=[['edge','Vertical edge'],['hedge','Horizontal edge'],['diag','Diagonal'],['smiley','Smiley'],['x','X'],['clear','Clear']];
+const CV_KERNELS=[
+  {name:'Vertical edge',k:[[1,0,-1],[1,0,-1],[1,0,-1]],div:1},
+  {name:'Horizontal edge',k:[[1,1,1],[0,0,0],[-1,-1,-1]],div:1},
+  {name:'Blur (average)',k:[[1,1,1],[1,1,1],[1,1,1]],div:9},
+  {name:'Sharpen',k:[[0,-1,0],[-1,5,-1],[0,-1,0]],div:1}
+];
+function cvState(el){
+  if(!el._cv){
+    const rows=CV_IMGS[el.dataset.img||'edge'];
+    el._cv={ img:rows.map(function(r){return r.split('').map(Number);}), ki:0, cur:0, playing:false, timer:null };
+  }
+  return el._cv;
+}
+function cvOutputs(st){
+  const K=CV_KERNELS[st.ki], out=[];
+  for(let r=0;r<6;r++){ const row=[];
+    for(let c=0;c<6;c++){ let s=0;
+      for(let i=0;i<3;i++) for(let j=0;j<3;j++) s+=st.img[r+i][c+j]*K.k[i][j];
+      row.push(s); }
+    out.push(row); }
+  return out;
+}
+function cvFmt(v){ return String(Math.round(v*10)/10); }
+function cvRender(el){
+  const st=cvState(el), K=CV_KERNELS[st.ki], out=cvOutputs(st);
+  const wr=Math.floor(st.cur/6), wc=st.cur%6;
+  const inEl=el.querySelector('.cv-in'); inEl.innerHTML='';
+  for(let r=0;r<8;r++) for(let c=0;c<8;c++){
+    const d=document.createElement('div'); d.className='cv-cell'; d.dataset.r=r; d.dataset.c=c;
+    const v=st.img[r][c];
+    d.style.background=v?'#F2A93B':'#132A47';
+    d.style.color=v?'#5c3d05':'#3d5878';
+    d.textContent=v;
+    if(r>=wr&&r<wr+3&&c>=wc&&c<wc+3) d.classList.add('cv-win');
+    inEl.appendChild(d);
+  }
+  const kg=el.querySelector('.cv-kgrid'); kg.innerHTML='';
+  for(let i=0;i<3;i++) for(let j=0;j<3;j++){ const d=document.createElement('div'); d.className='cv-kcell'; d.textContent=K.k[i][j]; kg.appendChild(d); }
+  el.querySelector('.cv-kdiv').textContent=K.div>1?'output = sum ÷ '+K.div:'output = sum of the 9 products';
+  let maxAbs=1; out.forEach(function(row){ row.forEach(function(v){ maxAbs=Math.max(maxAbs,Math.abs(v/K.div)); }); });
+  const lines=[]; let s=0;
+  for(let i=0;i<3;i++){ const terms=[];
+    for(let j=0;j<3;j++){ s+=st.img[wr+i][wc+j]*K.k[i][j];
+      terms.push(st.img[wr+i][wc+j]+'×'+(K.k[i][j]<0?'('+K.k[i][j]+')':K.k[i][j])); }
+    lines.push(terms.join(' + ')); }
+  el.querySelector('.cv-calc').innerHTML=lines.join('<br>')+'<br><span class="cv-sum">= '+cvFmt(s/K.div)+'</span>';
+  const outEl=el.querySelector('.cv-out'); outEl.innerHTML='';
+  for(let r=0;r<6;r++) for(let c=0;c<6;c++){
+    const d=document.createElement('div'); d.className='cv-ocell'; const idx=r*6+c;
+    if(idx<=st.cur){ const v=out[r][c]/K.div, t=Math.min(1,Math.abs(v)/maxAbs);
+      d.textContent=cvFmt(v);
+      if(v>0) d.style.background='rgba(15,157,176,'+(0.12+0.88*t).toFixed(2)+')';
+      else if(v<0) d.style.background='rgba(238,107,54,'+(0.12+0.88*t).toFixed(2)+')';
+      d.style.color=t>0.5&&v!==0?'#fff':'#21303F';
+    }
+    if(idx===st.cur) d.classList.add('cv-win');
+    outEl.appendChild(d);
+  }
+  el.querySelector('.cv-step').textContent=(st.cur+1)+' / 36 · row '+(wr+1)+', col '+(wc+1);
+  el.querySelectorAll('.cv-kchips .cv-chip').forEach(function(ch,i){ ch.classList.toggle('sel',i===st.ki); });
+}
+function cvGoto(el,idx){ const st=cvState(el); st.cur=Math.max(0,Math.min(35,idx)); cvRender(el); }
+function cvStop(el){ const st=cvState(el); if(st.timer){ clearInterval(st.timer); st.timer=null; } st.playing=false;
+  const b=el.querySelector('.cv-play'); if(b) b.textContent='▶ Play'; }
+function cvPlay(el){ const st=cvState(el); if(st.playing){ cvStop(el); return; }
+  if(st.cur>=35) cvGoto(el,0);
+  st.playing=true; const b=el.querySelector('.cv-play'); if(b) b.textContent='⏸ Pause';
+  const speed=parseInt(el.querySelector('.cv-speed').value,10)||3, delay=Math.max(120,900-speed*160);
+  st.timer=setInterval(function(){ if(st.cur>=35){ cvStop(el); return; } cvGoto(el,st.cur+1); },delay);
+}
+document.addEventListener('click',function(e){
+  const cv=e.target.closest('.convviz'); if(!cv) return;
+  const cell=e.target.closest('.cv-cell');
+  if(cell){ const st=cvState(cv); cvStop(cv);
+    const r=parseInt(cell.dataset.r,10), c=parseInt(cell.dataset.c,10);
+    st.img[r][c]=st.img[r][c]?0:1; cvRender(cv); return; }
+  const chip=e.target.closest('.cv-chip');
+  if(chip){ cvStop(cv); const st=cvState(cv);
+    if(chip.dataset.k!==undefined){ st.ki=parseInt(chip.dataset.k,10); }
+    else if(chip.dataset.img){ st.img=CV_IMGS[chip.dataset.img].map(function(r){return r.split('').map(Number);}); st.cur=0; }
+    cvRender(cv); return; }
+  if(e.target.closest('.cv-first')){ cvStop(cv); cvGoto(cv,0); }
+  else if(e.target.closest('.cv-prev')){ cvStop(cv); cvGoto(cv,cvState(cv).cur-1); }
+  else if(e.target.closest('.cv-next')){ cvStop(cv); cvGoto(cv,cvState(cv).cur+1); }
+  else if(e.target.closest('.cv-last')){ cvStop(cv); cvGoto(cv,35); }
+  else if(e.target.closest('.cv-play')){ cvPlay(cv); }
+});
+document.querySelectorAll('.convviz').forEach(function(cv){
+  const pr=cv.querySelector('.cv-presets');
+  CV_IMG_NAMES.forEach(function(p){ const b=document.createElement('button'); b.type='button'; b.className='cv-chip'; b.dataset.img=p[0]; b.textContent=p[1]; pr.appendChild(b); });
+  const kc=cv.querySelector('.cv-kchips');
+  CV_KERNELS.forEach(function(k,i){ const b=document.createElement('button'); b.type='button'; b.className='cv-chip'; b.dataset.k=i; b.textContent=k.name; kc.appendChild(b); });
+  cvRender(cv);
+});
+
+/* ---------- Pyodide code labs ---------- */
+let _py=null,_pyLoading=null;
+async function getPy(statusEl){
+  if(_py) return _py;
+  if(!_pyLoading){ if(statusEl)statusEl.textContent='Loading Python…';
+    _pyLoading=loadPyodide({indexURL:'https://cdn.jsdelivr.net/pyodide/v0.26.2/full/'}); }
+  _py=await _pyLoading; return _py;
+}
+function labOf(el){ return el.closest('.lab'); }
+async function runLab(lab){
+  const code=lab.querySelector('.code').value;
+  const out=lab.querySelector('.out'); const status=lab.querySelector('.lab-status');
+  out.textContent=''; out.classList.remove('has-err'); lab.dataset.lastError='';
+  try{
+    const py=await getPy(status);
+    const pkgs=(lab.dataset.packages||'').split(',').map(s=>s.trim()).filter(Boolean);
+    if(pkgs.length){ status.textContent='Loading '+pkgs.join(', ')+'…'; await py.loadPackage(pkgs); }
+    status.textContent='Running…';
+    let buf='';
+    py.setStdout({batched:(s)=>{buf+=s+'\n';}});
+    py.setStderr({batched:(s)=>{buf+=s+'\n';}});
+    await py.runPythonAsync(code);
+    out.textContent=buf||'(no output — add a print(...) )';
+    status.textContent='✓ done';
+  }catch(err){
+    const msg=(err&&err.message)?err.message:String(err);
+    out.innerHTML='<span class="err">'+msg.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))+'</span>';
+    lab.dataset.lastError=msg; status.textContent='✗ error — try 🐞 Debug';
+  }
+}
+/* very small markdown -> html for assistant replies */
+function mdToHtml(md){
+  const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  let html=''; const parts=md.split(/```/);
+  parts.forEach(function(p,i){
+    if(i%2===1){ const code=p.replace(/^python\n?/i,''); html+='<pre data-code="'+encodeURIComponent(code.trim())+'"><code>'+esc(code.trim())+'</code></pre>'+
+      '<button class="apply">↧ Use this code</button>'; }
+    else { let t=esc(p).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/`(.+?)`/g,'<code>$1</code>').replace(/\n{2,}/g,'</p><p>').replace(/\n/g,'<br>'); if(t.trim())html+='<p>'+t+'</p>'; }
+  });
+  return html;
+}
+async function askAssistant(lab,action,question){
+  lab.classList.remove('folded'); // assistant is folded by default — any AI action opens it
+  const body=lab.querySelector('.assist-body');
+  const sel=lab.querySelector('.ai-model');
+  const model=(sel&&sel.value)||'haiku';
+  body.innerHTML='<p class="muted">✨ Thinking…</p>';
+  try{
+    const r=await fetch('/api/assistant',{method:'POST',headers:{'content-type':'application/json'},
+      body:JSON.stringify({action:action,question:question||'',code:lab.querySelector('.code').value,error:lab.dataset.lastError||'',model:model})});
+    const j=await r.json();
+    body.innerHTML=mdToHtml(j.text||'(no response)');
+  }catch(e){ body.innerHTML='<p class="muted">Assistant unavailable right now. Try again shortly.</p>'; }
+}
+document.addEventListener('click',function(e){
+  const t=e.target;
+  if(t.closest('.lab .run')){ runLab(labOf(t.closest('.run'))); }
+  else if(t.closest('.lab .walk')){ startWalk(labOf(t.closest('.walk'))); }
+  else if(t.closest('.lab .walk-pause')){ walkPauseResume(); }
+  else if(t.closest('.lab .walk-prev')){ if(_walk&&_walk.i>0){ _walk.i--; walkPlayStep(); } }
+  else if(t.closest('.lab .walk-next')){ if(_walk){ if(_walk.i<_walk.steps.length-1){ _walk.i++; walkPlayStep(); } else stopWalk(true); } }
+  else if(t.closest('.lab .walk-stop')){ stopWalk(); }
+  else if(t.closest('.lab .ai-toggle')){ t.closest('.lab').classList.toggle('folded'); }
+  else if(t.closest('.lab .ai-explain')){ askAssistant(labOf(t.closest('.ai-explain')),'explain'); }
+  else if(t.closest('.lab .ai-debug')){ askAssistant(labOf(t.closest('.ai-debug')),'debug'); }
+  else if(t.closest('.lab .ai-improve')){ askAssistant(labOf(t.closest('.ai-improve')),'improve'); }
+  else if(t.closest('.lab .ask-btn')){ const lab=labOf(t.closest('.ask-btn')); const inp=lab.querySelector('.ask-in'); if(inp.value.trim()){ askAssistant(lab,'ask',inp.value.trim()); inp.value=''; } }
+  else if(t.classList&&t.classList.contains('apply')){ const pre=t.previousElementSibling; const lab=t.closest('.lab'); if(pre&&lab){ lab.querySelector('.code').value=decodeURIComponent(pre.dataset.code); gutterSync(lab); } }
+});
+
+/* ---------- Lab line gutter + highlight overlay ---------- */
+function gutterSync(lab){
+  const ta=lab.querySelector('.code'), g=lab.querySelector('.gutter'); if(!ta||!g) return;
+  const n=ta.value.split('\n').length;
+  if(g._n!==n){ g._n=n; let s=''; for(let i=1;i<=n;i++) s+=i+'\n'; g.textContent=s; }
+  g.scrollTop=ta.scrollTop;
+  if(lab.dataset.hiStart) labHighlight(lab,+lab.dataset.hiStart,+lab.dataset.hiEnd);
+}
+function labMetrics(ta){ const cs=getComputedStyle(ta); return { lh:parseFloat(cs.lineHeight), pt:parseFloat(cs.paddingTop) }; }
+function labHighlight(lab,s,e){
+  const ta=lab.querySelector('.code'), hi=lab.querySelector('.line-hi'); if(!ta||!hi) return;
+  lab.dataset.hiStart=s; lab.dataset.hiEnd=e;
+  const m=labMetrics(ta);
+  hi.style.display='block';
+  hi.style.top=(m.pt+(s-1)*m.lh-ta.scrollTop)+'px';
+  hi.style.height=((e-s+1)*m.lh)+'px';
+}
+function labClearHi(lab){ const hi=lab.querySelector('.line-hi'); if(hi) hi.style.display='none'; delete lab.dataset.hiStart; delete lab.dataset.hiEnd; }
+document.addEventListener('input',function(e){ if(e.target.classList&&e.target.classList.contains('code')) gutterSync(labOf(e.target)); });
+document.addEventListener('scroll',function(e){ // scroll doesn't bubble — capture it
+  if(e.target.classList&&e.target.classList.contains('code')) gutterSync(labOf(e.target));
+},true);
+document.querySelectorAll('.lab').forEach(gutterSync);
+
+/* ---------- Guided audio walkthrough (per-line explanations) ----------
+ * audio/walkthrough.json (built by narrate-lab.js):
+ *   { <sid>: { steps:[ {lines:[start,end], text, file}, … ] } }
+ * Autoplay highlights the current line(s), scrolls them into view, shows the
+ * explanation in the caption bar, and advances when each clip ends. */
+const walkAudio=document.getElementById('walkAudio');
+let _walkData={},_walk=null;
+(async function(){
+  try{ const r=await fetch('audio/walkthrough.json',{cache:'no-cache'}); if(r.ok) _walkData=await r.json(); }catch(e){}
+  document.querySelectorAll('.lab').forEach(function(lab){
+    const sec=lab.closest('section'), sid=sec&&sec.dataset.sid;
+    const d=sid&&_walkData[sid];
+    if(d&&d.steps&&d.steps.length){ lab.dataset.walkSid=sid; lab.querySelector('.walk').hidden=false; }
+  });
+})();
+function walkUI(lab,on){
+  lab.querySelector('.walk').hidden=on||!lab.dataset.walkSid;
+  lab.querySelector('.walk-controls').hidden=!on;
+}
+function stopWalk(finished){
+  if(!_walk) return;
+  const w=_walk; _walk=null;
+  walkAudio.onended=null; walkAudio.pause(); walkAudio.removeAttribute('src'); walkAudio.load();
+  const ta=w.lab.querySelector('.code'); ta.readOnly=false;
+  if(w.saved!=null){ ta.value=w.saved; } // restore the student's edits
+  labClearHi(w.lab); gutterSync(w.lab); walkUI(w.lab,false);
+  capBar.style.display='none';
+  w.lab.querySelector('.lab-status').textContent=finished===true?'🎧 walkthrough finished — now make it yours':'';
+}
+function walkScrollTo(lab,s,e){
+  const ta=lab.querySelector('.code'), m=labMetrics(ta);
+  const top=m.pt+(s-1)*m.lh, bottom=m.pt+e*m.lh, vh=ta.clientHeight;
+  if(top<ta.scrollTop+m.lh||bottom>ta.scrollTop+vh-m.lh) ta.scrollTop=Math.max(0,top-vh*0.3);
+  gutterSync(lab);
+}
+function walkPlayStep(){
+  const w=_walk; if(!w) return;
+  const st=w.steps[w.i], s=st.lines[0], e=st.lines[1]||st.lines[0];
+  labHighlight(w.lab,s,e); walkScrollTo(w.lab,s,e);
+  w.lab.querySelector('.walk-step').textContent=(w.i+1)+' / '+w.steps.length+' · L'+s+(e>s?'–'+e:'');
+  capBar.textContent=st.text; capBar.style.display='block';
+  walkAudio.src='audio/'+encodeURIComponent(st.file);
+  walkAudio.load(); // some Chrome profiles stall a src-swap without an explicit load() (see narratorAudio note)
+  walkAudio.onended=function(){ if(!_walk) return; if(_walk.i<_walk.steps.length-1){ _walk.i++; walkPlayStep(); } else stopWalk(true); };
+  const tok=w.tok=(w.tok||0)+1; // a newer step's load() aborts this play() — only the latest step may flip the UI
+  w.playing=true; walkPauseBtn();
+  walkAudio.play().catch(function(){ if(_walk===w&&w.tok===tok){ w.playing=false; walkPauseBtn(); w.lab.querySelector('.lab-status').textContent='audio blocked — press ▶ to resume'; } });
+}
+function walkPauseBtn(){ if(_walk) _walk.lab.querySelector('.walk-pause').textContent=_walk.playing?'⏸':'▶'; }
+function walkPauseResume(){
+  if(!_walk) return;
+  if(_walk.playing){ walkAudio.pause(); _walk.playing=false; }
+  else { _walk.playing=true; walkAudio.play().catch(function(){}); }
+  walkPauseBtn();
+}
+function startWalk(lab){
+  stopAudio(); // also stops any previous walkthrough
+  const sid=lab.dataset.walkSid, data=_walkData[sid]; if(!data) return;
+  const ta=lab.querySelector('.code');
+  let saved=null;
+  if(ta.value!==ta.defaultValue){ saved=ta.value; ta.value=ta.defaultValue; } // walkthrough narrates the original code
+  ta.readOnly=true; gutterSync(lab);
+  _walk={ lab:lab, steps:data.steps, i:0, playing:false, saved:saved };
+  walkUI(lab,true);
+  lab.querySelector('.lab-status').textContent=saved!=null?'🎧 showing the original code — your edits come back after':'';
+  walkPlayStep();
+}
+/* Tab key inserts spaces in code editors; keep typing inside textareas from triggering reveal nav */
+document.addEventListener('keydown',function(e){
+  const ta=e.target;
+  if(ta.classList&&ta.classList.contains('code')&&e.key==='Tab'){ e.preventDefault(); const s=ta.selectionStart,en=ta.selectionEnd; ta.value=ta.value.slice(0,s)+'    '+ta.value.slice(en); ta.selectionStart=ta.selectionEnd=s+4; }
+},true);
+/* allow Enter to submit the assistant question */
+document.addEventListener('keydown',function(e){ if(e.target.classList&&e.target.classList.contains('ask-in')&&e.key==='Enter'){ e.preventDefault(); const lab=labOf(e.target); if(e.target.value.trim()){ askAssistant(lab,'ask',e.target.value.trim()); e.target.value=''; } } });
+
+/* ---------- Per-slide comments ---------- */
+const btn=document.getElementById('commentBtn'),panel=document.getElementById('commentPanel'),
+  listEl=document.getElementById('commentList'),cnum=document.getElementById('cnum'),
+  cph=document.getElementById('cph'),form=document.getElementById('commentForm');
+let counts={}, curSid='title';
+// Comment identity = the slide's stable data-sid slug. Never positional:
+// a positional key would re-point old comments to a different slide whenever
+// the deck is reordered. Every slide is built with a sid (asserted at build);
+// the content-hash fallback below stays position-independent just in case.
+function _hashSid(s){ const t=((s&&s.textContent)||'').replace(/s+/g,' ').trim().slice(0,400); let h=0; for(let i=0;i<t.length;i++){ h=(h*31+t.charCodeAt(i))|0; } return 'auto-'+(h>>>0).toString(36); }
+function sidOf(){ const s=Reveal.getCurrentSlide(); if(s&&s.dataset.sid) return s.dataset.sid; console.warn('slide has no data-sid; using content-hash key'); return _hashSid(s); }
+function fmtTime(ts){ const d=new Date(ts); return d.toLocaleDateString()+' '+d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}); }
+function escc(s){ return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+async function loadCounts(){ try{ const r=await fetch('/api/comments/counts?deck='+encodeURIComponent(DECK)); const j=await r.json(); counts=j.counts||{}; updateBadge(); }catch(e){} }
+function updateBadge(){ cnum.textContent=counts[curSid]||0; }
+async function loadComments(){ listEl.innerHTML='<div class="none">Loading…</div>';
+  try{ const r=await fetch('/api/comments?deck='+encodeURIComponent(DECK)+'&slide='+encodeURIComponent(curSid)); const j=await r.json();
+    const cs=j.comments||[]; counts[curSid]=cs.length; updateBadge();
+    listEl.innerHTML=cs.length?cs.map(c=>'<div class="c"><span class="cn">'+escc(c.name)+'</span><span class="ct">'+fmtTime(c.created)+'</span><div class="cb">'+escc(c.body)+'</div></div>').join(''):'<div class="none">No comments yet — be the first!</div>';
+  }catch(e){ listEl.innerHTML='<div class="none">Could not load comments.</div>'; }
+}
+function openPanel(){ curSid=sidOf(); cph.textContent='Comments · '+curSid; panel.classList.add('open'); loadComments(); }
+btn.onclick=function(){ panel.classList.contains('open')?panel.classList.remove('open'):openPanel(); };
+document.getElementById('cclose').onclick=function(){ panel.classList.remove('open'); };
+form.onsubmit=async function(e){ e.preventDefault();
+  const name=document.getElementById('cname').value, body=document.getElementById('cbody').value.trim();
+  const msg=document.getElementById('cmsg'); if(!body){ msg.textContent='Write something first.'; return; }
+  msg.textContent='Posting…';
+  try{ const r=await fetch('/api/comments',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({deck:DECK,slide:curSid,name:name,body:body})});
+    const j=await r.json(); if(j.ok){ document.getElementById('cbody').value=''; msg.textContent='Posted! Thanks.'; loadComments(); } else { msg.textContent=j.error||'Could not post.'; }
+  }catch(e){ msg.textContent='Network error — try again.'; }
+};
+Reveal.on('slidechanged',function(){ stopAudio(); curSid=sidOf(); updateBadge(); updateListen(); sendSlide(); if(panel.classList.contains('open')){ cph.textContent='Comments · '+curSid; loadComments(); } });
+Reveal.on('ready',function(){ curSid=sidOf(); loadCounts(); loadNarrated(); });
+
+/* ---------- Live classroom: presence chip + quiz stream (SSE) ---------- */
+let liveId=null;
+const liveChip=document.createElement('div');
+liveChip.id='liveChip'; liveChip.style.display='none'; document.body.appendChild(liveChip);
+function setOnline(n){ liveChip.style.display=''; liveChip.textContent='🟢 '+n+' online'; }
+function sendSlide(){
+  if(!liveId) return;
+  fetch('/api/presence',{method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({id:liveId,slide:curSid})}).catch(function(){});
+}
+function quizBySid(sid){
+  const secs=document.querySelectorAll('section[data-sid]');
+  for(const s of secs) if(s.dataset.sid===sid) return s.querySelector('.quiz');
+  return null;
+}
+function pollLive(){ // fallback when EventSource can't stream through a proxy
+  const tick=function(){ fetch('/api/presence/count?deck='+encodeURIComponent(DECK))
+    .then(function(r){return r.json();}).then(function(j){setOnline(j.online);}).catch(function(){}); };
+  tick(); setInterval(tick,20000);
+}
+(function connectLive(){
+  if(typeof EventSource==='undefined') return pollLive();
+  const es=new EventSource('/api/live?deck='+encodeURIComponent(DECK));
+  let opened=false;
+  es.onopen=function(){ opened=true; };
+  es.onmessage=function(ev){
+    let d; try{ d=JSON.parse(ev.data); }catch(e){ return; }
+    if(d.type==='hello'){ liveId=d.id; setOnline(d.online); sendSlide(); }
+    else if(d.type==='presence'){ setOnline(d.online); }
+    else if(d.type==='quiz'){ // live-update the chart on the quiz slide (only visible once answered)
+      const q=quizBySid(d.slide); if(q) renderQuizStats(q,{today:d.today,all:d.all});
+    }
+  };
+  es.onerror=function(){ if(!opened){ es.close(); pollLive(); } };
+})();
+</script>
+<script defer src="/meritpoint-slides/assets/auth.js"></script>
+</body></html>

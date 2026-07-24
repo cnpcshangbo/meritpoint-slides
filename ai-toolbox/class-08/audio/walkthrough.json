@@ -1,0 +1,288 @@
+{
+  "lab-clean-log": {
+    "hash": "464ed45a84bfb770",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          2
+        ],
+        "text": "We start by importing two libraries. Pandas gives us tables, called data frames, and we nickname it pd. NumPy, nicknamed np, gives us math tools including a special value for missing data.",
+        "file": "lab-clean-log-w00.mp3"
+      },
+      {
+        "lines": [
+          4,
+          6
+        ],
+        "text": "Now we build our raw data frame by hand. The first column, object, holds the detected thing. Notice the messiness already: mixed capitals, trailing spaces, and PED in all caps.",
+        "file": "lab-clean-log-w01.mp3"
+      },
+      {
+        "lines": [
+          7,
+          7
+        ],
+        "text": "The conf column holds confidence scores, meant to be between zero and one. But watch out, one value is negative one, which is clearly impossible.",
+        "file": "lab-clean-log-w02.mp3"
+      },
+      {
+        "lines": [
+          8,
+          8
+        ],
+        "text": "The dist underscore m column is distance in meters. Two entries are np dot nan, meaning the value is missing, a hole in our data.",
+        "file": "lab-clean-log-w03.mp3"
+      },
+      {
+        "lines": [
+          9,
+          10
+        ],
+        "text": "Last is box w, the width of the detection box in pixels. One value is negative forty, which makes no physical sense. The closing brace and parenthesis finish building the table.",
+        "file": "lab-clean-log-w04.mp3"
+      },
+      {
+        "lines": [
+          12,
+          12
+        ],
+        "text": "Before we clean anything, let's photograph the mess. This prints a before header along with the number of rows, using len on our raw table.",
+        "file": "lab-clean-log-w05.mp3"
+      },
+      {
+        "lines": [
+          13,
+          13
+        ],
+        "text": "Here we count how many times each object label appears. value counts tallies them, and to dict turns that into a readable dictionary so we can spot the spelling chaos.",
+        "file": "lab-clean-log-w06.mp3"
+      },
+      {
+        "lines": [
+          14,
+          14
+        ],
+        "text": "This shows the holes. isna marks every missing cell as true, and sum counts them per column, so we see exactly where data is missing.",
+        "file": "lab-clean-log-w07.mp3"
+      },
+      {
+        "lines": [
+          16,
+          16
+        ],
+        "text": "We make a copy of raw and call it df. We work on the copy so our original data stays untouched, which is always a safe habit.",
+        "file": "lab-clean-log-w08.mp3"
+      },
+      {
+        "lines": [
+          17,
+          18
+        ],
+        "text": "Step one fixes formats so one class has one spelling. We strip trailing spaces, lowercase everything, then replace the leftover ped with pedestrian. Now all pedestrian labels match.",
+        "file": "lab-clean-log-w09.mp3"
+      },
+      {
+        "lines": [
+          19,
+          20
+        ],
+        "text": "Step two removes duplicates. Those two identical car rows should count as one detection, so drop duplicates collapses them into a single vote.",
+        "file": "lab-clean-log-w10.mp3"
+      },
+      {
+        "lines": [
+          21,
+          22
+        ],
+        "text": "Step three hunts logical errors. We flag rows where confidence isn't between zero and one, or box width is zero or less. The tilde and pipe combine these into an impossible mask called bad.",
+        "file": "lab-clean-log-w11.mp3"
+      },
+      {
+        "lines": [
+          23,
+          24
+        ],
+        "text": "We drop those bad rows by their index, then print how many impossible rows we removed. Being explicit about deletions keeps our cleaning honest and traceable.",
+        "file": "lab-clean-log-w12.mp3"
+      },
+      {
+        "lines": [
+          25,
+          26
+        ],
+        "text": "Step four handles missing distances. First we compute the median of the dist m column, a safe middle value that isn't thrown off by outliers.",
+        "file": "lab-clean-log-w13.mp3"
+      },
+      {
+        "lines": [
+          27,
+          29
+        ],
+        "text": "We count how many distances are missing, then fill those holes with the median. Finally we print how many we filled and with what value, so we disclose exactly what we changed.",
+        "file": "lab-clean-log-w14.mp3"
+      },
+      {
+        "lines": [
+          31,
+          31
+        ],
+        "text": "Now the after snapshot. This prints an after header and the new row count, which should be smaller once duplicates and impossible rows are gone.",
+        "file": "lab-clean-log-w15.mp3"
+      },
+      {
+        "lines": [
+          32,
+          33
+        ],
+        "text": "We recount the object labels and the holes again. Comparing these to the before numbers proves our cleaning actually worked.",
+        "file": "lab-clean-log-w16.mp3"
+      },
+      {
+        "lines": [
+          34,
+          34
+        ],
+        "text": "Finally we print the whole cleaned table, rounding numbers to two decimal places so it reads neatly at a glance.",
+        "file": "lab-clean-log-w17.mp3"
+      },
+      {
+        "lines": [
+          36,
+          37
+        ],
+        "text": "Challenge one asks you to swap steps, dropping duplicates before unifying formats. Try it and see if the row count changes, because order really can matter.",
+        "file": "lab-clean-log-w18.mp3"
+      },
+      {
+        "lines": [
+          38,
+          40
+        ],
+        "text": "Challenge two makes you think deeper. What if negative one is a sensor code for couldn't compute? Then it's really missing data, a fill problem, not something to just delete.",
+        "file": "lab-clean-log-w19.mp3"
+      }
+    ]
+  },
+  "lab-scaling-proof": {
+    "hash": "3782fb1fd4705526",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "We start by importing the math module. We'll use its distance function later to measure how close two points are.",
+        "file": "lab-scaling-proof-w00.mp3"
+      },
+      {
+        "lines": [
+          3,
+          8
+        ],
+        "text": "Here's our known data. Each entry pairs a two-number feature list, distance in meters and confidence, with a label describing the situation. This is what our model compares against.",
+        "file": "lab-scaling-proof-w01.mp3"
+      },
+      {
+        "lines": [
+          9,
+          9
+        ],
+        "text": "This is the mystery point we want to classify: seven meters away and very confident. Intuitively that's clearly near and sure, right? Keep that hunch in mind.",
+        "file": "lab-scaling-proof-w02.mp3"
+      },
+      {
+        "lines": [
+          11,
+          12
+        ],
+        "text": "This function finds the nearest neighbor. It picks the known point with the smallest distance to our query, then returns that point's label. Simple and powerful.",
+        "file": "lab-scaling-proof-w03.mp3"
+      },
+      {
+        "lines": [
+          14,
+          14
+        ],
+        "text": "Now we print the prediction using the raw features. Let's see what the model actually decides before any scaling.",
+        "file": "lab-scaling-proof-w04.mp3"
+      },
+      {
+        "lines": [
+          15,
+          16
+        ],
+        "text": "These comments explain the trap. Distance ranges up to a hundred, while confidence only goes from zero to one, so distance completely drowns out confidence and we get the wrong answer.",
+        "file": "lab-scaling-proof-w05.mp3"
+      },
+      {
+        "lines": [
+          18,
+          20
+        ],
+        "text": "Now we fix it with min-max scaling. We record the low and high values for distance, and for confidence, straight from our known data's ranges.",
+        "file": "lab-scaling-proof-w06.mp3"
+      },
+      {
+        "lines": [
+          21,
+          22
+        ],
+        "text": "This scale function squeezes each feature into a zero-to-one range by subtracting its low and dividing by its span. Now both features count equally.",
+        "file": "lab-scaling-proof-w07.mp3"
+      },
+      {
+        "lines": [
+          24,
+          24
+        ],
+        "text": "We build a scaled version of our known data, applying scale to every point while keeping each label attached.",
+        "file": "lab-scaling-proof-w08.mp3"
+      },
+      {
+        "lines": [
+          25,
+          25
+        ],
+        "text": "Then we predict again, scaling the query the same way. Watch the output flip to the correct answer here.",
+        "file": "lab-scaling-proof-w09.mp3"
+      },
+      {
+        "lines": [
+          26,
+          26
+        ],
+        "text": "This comment celebrates the payoff. With both features speaking at the same volume, the model finally agrees with our intuition.",
+        "file": "lab-scaling-proof-w10.mp3"
+      },
+      {
+        "lines": [
+          28,
+          29
+        ],
+        "text": "A closing thought: one preprocessing step changed the whole decision. Normalization isn't just for looks, it decides which feature gets heard.",
+        "file": "lab-scaling-proof-w11.mp3"
+      },
+      {
+        "lines": [
+          31,
+          32
+        ],
+        "text": "Challenge one invites you to experiment: how low must confidence drop before even the scaled version flips to near and unsure? Try narrowing it down by hand.",
+        "file": "lab-scaling-proof-w12.mp3"
+      },
+      {
+        "lines": [
+          33,
+          35
+        ],
+        "text": "Challenge two suggests a different scaler, z-score, subtracting the mean and dividing by standard deviation. Check if the winner stays the same, because the scaler choice is itself a real decision.",
+        "file": "lab-scaling-proof-w13.mp3"
+      }
+    ]
+  }
+}

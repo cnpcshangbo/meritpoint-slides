@@ -1,0 +1,1026 @@
+{
+  "title": {
+    "hash": "74840a2545b5ff28",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Welcome back, everyone! Today we're stepping into the data stage of that pipeline you all sketched back in Class 3 — remember, that's where most of your warning marks landed, so this is important. We're going to figure out what data actually is, where researchers genuinely get it from, and how to judge a dataset before you trust it. Because there's a real difference between just grabbing a file off the internet and thoughtfully choosing the right dataset. By the end, you'll build a proper datasheet for your own project.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.45,
+        "text": "Welcome back, everyone!"
+      },
+      {
+        "start": 1.45,
+        "end": 11.675,
+        "text": "Today we're stepping into the data stage of that pipeline you all sketched back in Class 3 — remember, that's where most of your warning marks landed, so this is important."
+      },
+      {
+        "start": 11.675,
+        "end": 19.737,
+        "text": "We're going to figure out what data actually is, where researchers genuinely get it from, and how to judge a dataset before you trust it."
+      },
+      {
+        "start": 19.737,
+        "end": 26.675,
+        "text": "Because there's a real difference between just grabbing a file off the internet and thoughtfully choosing the right dataset."
+      },
+      {
+        "start": 26.675,
+        "end": 30.562,
+        "text": "By the end, you'll build a proper datasheet for your own project."
+      }
+    ],
+    "bytes": 183744,
+    "model": "claude-opus-4-8"
+  },
+  "recap-class06": {
+    "hash": "f855f10c6d6842f8",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's take sixty seconds to remember where we landed last time. You learned to use tools to find papers, but the real skill was reading the five that actually mattered and mapping who builds on whom — so your question now sits inside a neighborhood, with gaps between clusters that are yours to claim. Today I want to see your literature map and your repo README, and I'm asking which paper sits closest to your question. Because now that question goes hunting for its data — the literature told us what's known, and data is what lets you add something genuinely new.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.737,
+        "text": "Let's take sixty seconds to remember where we landed last time."
+      },
+      {
+        "start": 3.737,
+        "end": 16.8,
+        "text": "You learned to use tools to find papers, but the real skill was reading the five that actually mattered and mapping who builds on whom — so your question now sits inside a neighborhood, with gaps between clusters that are yours to claim."
+      },
+      {
+        "start": 16.8,
+        "end": 23.062,
+        "text": "Today I want to see your literature map and your repo README, and I'm asking which paper sits closest to your question."
+      },
+      {
+        "start": 23.062,
+        "end": 32.55,
+        "text": "Because now that question goes hunting for its data — the literature told us what's known, and data is what lets you add something genuinely new."
+      }
+    ],
+    "bytes": 195696,
+    "model": "claude-opus-4-8"
+  },
+  "agenda": {
+    "hash": "c2b983a0a003ceec",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's how our hour is going to flow. We'll start by sharing your homework and looking at a car that actually built a whole benchmark, then dig into what data really is, where it comes from, and how to spot the hidden problems inside it. We've got demos and two hands-on labs where you'll turn pixels into features and judge four datasets for yourselves. By the end, the real skill isn't downloading data — it's asking who collected it, under what license, and what blind spots it carries.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.162,
+        "text": "Here's how our hour is going to flow."
+      },
+      {
+        "start": 2.162,
+        "end": 12.55,
+        "text": "We'll start by sharing your homework and looking at a car that actually built a whole benchmark, then dig into what data really is, where it comes from, and how to spot the hidden problems inside it."
+      },
+      {
+        "start": 12.55,
+        "end": 19.925,
+        "text": "We've got demos and two hands-on labs where you'll turn pixels into features and judge four datasets for yourselves."
+      },
+      {
+        "start": 19.925,
+        "end": 28.087,
+        "text": "By the end, the real skill isn't downloading data — it's asking who collected it, under what license, and what blind spots it carries."
+      }
+    ],
+    "bytes": 168912,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-warmup": {
+    "hash": "c2670cf4b40037e4",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's warm up with a quick scenario. Imagine you want to build something that detects pedestrians at night, and you find thousands of ready-made labelled images online. Before you touch them, what two questions really matter? It's not the file size or whether the dataset has a catchy name — it's who collected this data and how, and whether the license actually lets you use it. Remember, finding something on the internet does not make it free to use, and how the data was gathered shapes the biases your model will inherit.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.75,
+        "text": "Let's warm up with a quick scenario."
+      },
+      {
+        "start": 1.75,
+        "end": 8.75,
+        "text": "Imagine you want to build something that detects pedestrians at night, and you find thousands of ready-made labelled images online."
+      },
+      {
+        "start": 8.75,
+        "end": 12.125,
+        "text": "Before you touch them, what two questions really matter?"
+      },
+      {
+        "start": 12.125,
+        "end": 21.275,
+        "text": "It's not the file size or whether the dataset has a catchy name — it's who collected this data and how, and whether the license actually lets you use it."
+      },
+      {
+        "start": 21.275,
+        "end": 29.9,
+        "text": "Remember, finding something on the internet does not make it free to use, and how the data was gathered shapes the biases your model will inherit."
+      }
+    ],
+    "bytes": 179712,
+    "model": "claude-opus-4-8"
+  },
+  "story-kitti": {
+    "hash": "a70523daca88f597",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Picture this: back in 2012, a group of researchers in Germany strapped cameras, lasers, and GPS onto an ordinary station wagon and just drove around their city for hours. What they captured became the KITTI dataset, and for the next ten years thousands of self-driving research papers leaned on the data from that one rigged-up car. Now, does this feel familiar? It should — it's the ImageNet lesson all over again: the field didn't leap forward because of a cleverer model, but because someone collected and shared the right data. Datasets aren't a side project — they're research infrastructure.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 12.087,
+        "text": "Picture this: back in 2012, a group of researchers in Germany strapped cameras, lasers, and GPS onto an ordinary station wagon and just drove around their city for hours."
+      },
+      {
+        "start": 12.087,
+        "end": 20.45,
+        "text": "What they captured became the KITTI dataset, and for the next ten years thousands of self-driving research papers leaned on the data from that one rigged-up car."
+      },
+      {
+        "start": 20.45,
+        "end": 22.112,
+        "text": "Now, does this feel familiar?"
+      },
+      {
+        "start": 22.112,
+        "end": 31.662,
+        "text": "It should — it's the ImageNet lesson all over again: the field didn't leap forward because of a cleverer model, but because someone collected and shared the right data."
+      },
+      {
+        "start": 31.662,
+        "end": 35.937,
+        "text": "Datasets aren't a side project — they're research infrastructure."
+      }
+    ],
+    "bytes": 216000,
+    "model": "claude-opus-4-8"
+  },
+  "concept-what-is-data": {
+    "hash": "93c37dc1298e3467",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Look around you for a second — almost everything can become data the moment we record it. Your height and weight are just numbers with units, a post you make carries opinions and likes that map out relationships, and a photo is really millions of pixel values, a grid of light turned into numbers. Here's the key idea: data is simply a recorded symbol of something real. And that matters because AI learns patterns from those symbols — no recording means no data, and nothing to learn from.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.087,
+        "text": "Look around you for a second — almost everything can become data the moment we record it."
+      },
+      {
+        "start": 6.087,
+        "end": 19.812,
+        "text": "Your height and weight are just numbers with units, a post you make carries opinions and likes that map out relationships, and a photo is really millions of pixel values, a grid of light turned into numbers."
+      },
+      {
+        "start": 19.812,
+        "end": 24.937,
+        "text": "Here's the key idea: data is simply a recorded symbol of something real."
+      },
+      {
+        "start": 24.937,
+        "end": 32.65,
+        "text": "And that matters because AI learns patterns from those symbols — no recording means no data, and nothing to learn from."
+      }
+    ],
+    "bytes": 196272,
+    "model": "claude-opus-4-8"
+  },
+  "concept-structured": {
+    "hash": "aaea3a4c10fbe3ad",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Think about the kind of data we worked with before — neat rows and columns that slot right into a table, the sort of thing pandas loves. But most of the exciting stuff in the world isn't like that at all: images, audio, video, raw text with no structure whatsoever. Perception is the bridge that turns those raw pixels into a tidy table of detections, like a pedestrian at ninety-four percent confidence. And in today's lab, you're going to do that transformation yourselves, by hand, so it stops feeling like magic.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 8.487,
+        "text": "Think about the kind of data we worked with before — neat rows and columns that slot right into a table, the sort of thing pandas loves."
+      },
+      {
+        "start": 8.487,
+        "end": 17.337,
+        "text": "But most of the exciting stuff in the world isn't like that at all: images, audio, video, raw text with no structure whatsoever."
+      },
+      {
+        "start": 17.337,
+        "end": 26.637,
+        "text": "Perception is the bridge that turns those raw pixels into a tidy table of detections, like a pedestrian at ninety-four percent confidence."
+      },
+      {
+        "start": 26.637,
+        "end": 32.85,
+        "text": "And in today's lab, you're going to do that transformation yourselves, by hand, so it stops feeling like magic."
+      }
+    ],
+    "bytes": 197424,
+    "model": "claude-opus-4-8"
+  },
+  "concept-quant-qual": {
+    "hash": "5cc14e2d05e052d6",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the second big way we sort our data. On one side we have quantitative — the \"how much\" numbers, either discrete like counting objects in a frame, or continuous like a distance or a temperature that can land anywhere in a range. On the other side, qualitative — the \"what kind\" data, either nominal with no order, like car versus pedestrian, or ordinal, which is ordered but with uneven gaps, like star ratings. And watch that ordinal trap: four stars minus three isn't the same jump as two minus one, so it looks numeric but you can't treat it that way. Get the type wrong here, and every chart, statistic, and model down the line quietly falls apart.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.4,
+        "text": "Here's the second big way we sort our data."
+      },
+      {
+        "start": 2.4,
+        "end": 14.65,
+        "text": "On one side we have quantitative — the \"how much\" numbers, either discrete like counting objects in a frame, or continuous like a distance or a temperature that can land anywhere in a range."
+      },
+      {
+        "start": 14.65,
+        "end": 25.425,
+        "text": "On the other side, qualitative — the \"what kind\" data, either nominal with no order, like car versus pedestrian, or ordinal, which is ordered but with uneven gaps, like star ratings."
+      },
+      {
+        "start": 25.425,
+        "end": 34.2,
+        "text": "And watch that ordinal trap: four stars minus three isn't the same jump as two minus one, so it looks numeric but you can't treat it that way."
+      },
+      {
+        "start": 34.2,
+        "end": 40.725,
+        "text": "Get the type wrong here, and every chart, statistic, and model down the line quietly falls apart."
+      }
+    ],
+    "bytes": 244656,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-types": {
+    "hash": "e08618e17948d5d5",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a sneaky one. Your focus level runs from one star to five stars — so what kind of data is that? It's tempting to call it a number, but look closer: four stars is clearly more than two, yet is the jump from one to two the same size as four to five? Nobody actually measured that. That's ordinal — you can rank it, but you can't subtract it. So whenever you're tempted to average star ratings, remember you're quietly assuming gaps that were never really there.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.4,
+        "text": "Here's a sneaky one."
+      },
+      {
+        "start": 1.4,
+        "end": 6.787,
+        "text": "Your focus level runs from one star to five stars — so what kind of data is that?"
+      },
+      {
+        "start": 6.787,
+        "end": 15.537,
+        "text": "It's tempting to call it a number, but look closer: four stars is clearly more than two, yet is the jump from one to two the same size as four to five?"
+      },
+      {
+        "start": 15.537,
+        "end": 17.475,
+        "text": "Nobody actually measured that."
+      },
+      {
+        "start": 17.475,
+        "end": 21.212,
+        "text": "That's ordinal — you can rank it, but you can't subtract it."
+      },
+      {
+        "start": 21.212,
+        "end": 27.675,
+        "text": "So whenever you're tempted to average star ratings, remember you're quietly assuming gaps that were never really there."
+      }
+    ],
+    "bytes": 166464,
+    "model": "claude-opus-4-8"
+  },
+  "concept-sources": {
+    "hash": "c25cde91f3a90662",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "So where does data actually come from? There are really three wells you can drink from. First, public datasets — places like Kaggle and UCI where the data is free, already labeled, and documented, so you should always start here. Second, your own data, which you collect yourself; it's the most relevant but collecting it is a whole project on its own. And third, the open web, where crawlers and APIs pull information — powerful, but it comes with rules we'll cover next. For this course, stick with public datasets: your skills work on them right away and the licenses are clearly spelled out.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.2,
+        "text": "So where does data actually come from?"
+      },
+      {
+        "start": 2.2,
+        "end": 4.987,
+        "text": "There are really three wells you can drink from."
+      },
+      {
+        "start": 4.987,
+        "end": 14.625,
+        "text": "First, public datasets — places like Kaggle and UCI where the data is free, already labeled, and documented, so you should always start here."
+      },
+      {
+        "start": 14.625,
+        "end": 22.387,
+        "text": "Second, your own data, which you collect yourself; it's the most relevant but collecting it is a whole project on its own."
+      },
+      {
+        "start": 22.387,
+        "end": 30.725,
+        "text": "And third, the open web, where crawlers and APIs pull information — powerful, but it comes with rules we'll cover next."
+      },
+      {
+        "start": 30.725,
+        "end": 37.912,
+        "text": "For this course, stick with public datasets: your skills work on them right away and the licenses are clearly spelled out."
+      }
+    ],
+    "bytes": 227808,
+    "model": "claude-opus-4-8"
+  },
+  "tool-crawler-api": {
+    "hash": "25169eda19edf717",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Imagine the web as a well you're drawing data from, and you've got two ways to fill your bucket. A crawler is a script that grabs pages and rips out the data — powerful, but easy to do rudely or even illegally. An API is the site's official front door: you get a key, read the docs, ask politely, and receive clean, structured data. Always prefer the API if one exists. And whatever you do, respect the rules — ignoring them isn't research, it's just trespassing with extra steps.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.562,
+        "text": "Imagine the web as a well you're drawing data from, and you've got two ways to fill your bucket."
+      },
+      {
+        "start": 5.562,
+        "end": 13.712,
+        "text": "A crawler is a script that grabs pages and rips out the data — powerful, but easy to do rudely or even illegally."
+      },
+      {
+        "start": 13.712,
+        "end": 22.237,
+        "text": "An API is the site's official front door: you get a key, read the docs, ask politely, and receive clean, structured data."
+      },
+      {
+        "start": 22.237,
+        "end": 24.837,
+        "text": "Always prefer the API if one exists."
+      },
+      {
+        "start": 24.837,
+        "end": 32.312,
+        "text": "And whatever you do, respect the rules — ignoring them isn't research, it's just trespassing with extra steps."
+      }
+    ],
+    "bytes": 194256,
+    "model": "claude-opus-4-8"
+  },
+  "concept-licensing": {
+    "hash": "34f612bbbd27eeb6",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Before you trust any dataset, ask two questions. First, what's the license? If it says CC0 or CC-BY, you're free to use it, just give credit where credit's due — but if it's research-only or you simply can't tell, walk away and pick something else. Second, what's its story? KITTI, for example, is one car driving through one German city in daylight back in 2012, so a model built on it has never seen a snowy night in Shanghai. That's not a scandal, it's an honest limitation — write it down now, and you've already drafted tomorrow's limitations section.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.775,
+        "text": "Before you trust any dataset, ask two questions."
+      },
+      {
+        "start": 3.775,
+        "end": 5.412,
+        "text": "First, what's the license?"
+      },
+      {
+        "start": 5.412,
+        "end": 17.225,
+        "text": "If it says CC0 or CC-BY, you're free to use it, just give credit where credit's due — but if it's research-only or you simply can't tell, walk away and pick something else."
+      },
+      {
+        "start": 17.225,
+        "end": 18.75,
+        "text": "Second, what's its story?"
+      },
+      {
+        "start": 18.75,
+        "end": 29.775,
+        "text": "KITTI, for example, is one car driving through one German city in daylight back in 2012, so a model built on it has never seen a snowy night in Shanghai."
+      },
+      {
+        "start": 29.775,
+        "end": 37.412,
+        "text": "That's not a scandal, it's an honest limitation — write it down now, and you've already drafted tomorrow's limitations section."
+      }
+    ],
+    "bytes": 224784,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-license": {
+    "hash": "67fd408d73affc10",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a trap that catches almost everyone. You find the perfect dataset, but there's no license listed anywhere — so it's fair game, right? Actually, it's the opposite: no license means all rights reserved by default, so you have the least permission, not the most. The professional move is to find a properly licensed alternative, or simply email the author and ask — there's a real human behind that data who often says yes.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.912,
+        "text": "Here's a trap that catches almost everyone."
+      },
+      {
+        "start": 2.912,
+        "end": 9.062,
+        "text": "You find the perfect dataset, but there's no license listed anywhere — so it's fair game, right?"
+      },
+      {
+        "start": 9.062,
+        "end": 16.987,
+        "text": "Actually, it's the opposite: no license means all rights reserved by default, so you have the least permission, not the most."
+      },
+      {
+        "start": 16.987,
+        "end": 27.412,
+        "text": "The professional move is to find a properly licensed alternative, or simply email the author and ask — there's a real human behind that data who often says yes."
+      }
+    ],
+    "bytes": 164880,
+    "model": "claude-opus-4-8"
+  },
+  "case-av-datasets": {
+    "hash": "9ccddff1077ee67e",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let me show you the shelf of datasets that self-driving research is built on. KITTI kicked it off back in 2012, but it only had clear daytime driving — so nuScenes came along and added nights, rain, and full 360-degree sensors to fill those gaps. Then Waymo pushed it to industrial scale with thousands of hours across many cities. Here's the deep pattern: each newer dataset exists to fix the previous one's blind spots. That's the field literally admitting \"our data was biased — here's something better.\"",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.862,
+        "text": "Let me show you the shelf of datasets that self-driving research is built on."
+      },
+      {
+        "start": 4.862,
+        "end": 16.5,
+        "text": "KITTI kicked it off back in 2012, but it only had clear daytime driving — so nuScenes came along and added nights, rain, and full 360-degree sensors to fill those gaps."
+      },
+      {
+        "start": 16.5,
+        "end": 21.812,
+        "text": "Then Waymo pushed it to industrial scale with thousands of hours across many cities."
+      },
+      {
+        "start": 21.812,
+        "end": 27.85,
+        "text": "Here's the deep pattern: each newer dataset exists to fix the previous one's blind spots."
+      },
+      {
+        "start": 27.85,
+        "end": 33.412,
+        "text": "That's the field literally admitting \"our data was biased — here's something better.\""
+      }
+    ],
+    "bytes": 200880,
+    "model": "claude-opus-4-8"
+  },
+  "discuss-dream-dataset": {
+    "hash": "8efe9a42568fc1a0",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's dream big for a moment. I want you to picture the one project you'd love to build if resources were no object, and then name the dataset it would actually need. Turn to your partner and trace it out: who collected this data, why did they bother, and would they even let you touch it? Then push harder — ask who's missing from that data, because hospital records skip people who never see a doctor, and app data ignores everyone without a phone. You've got three minutes, then a few of you share your dreams out loud.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.475,
+        "text": "Alright, let's dream big for a moment."
+      },
+      {
+        "start": 2.475,
+        "end": 9.887,
+        "text": "I want you to picture the one project you'd love to build if resources were no object, and then name the dataset it would actually need."
+      },
+      {
+        "start": 9.887,
+        "end": 16.725,
+        "text": "Turn to your partner and trace it out: who collected this data, why did they bother, and would they even let you touch it?"
+      },
+      {
+        "start": 16.725,
+        "end": 27.1,
+        "text": "Then push harder — ask who's missing from that data, because hospital records skip people who never see a doctor, and app data ignores everyone without a phone."
+      },
+      {
+        "start": 27.1,
+        "end": 31.037,
+        "text": "You've got three minutes, then a few of you share your dreams out loud."
+      }
+    ],
+    "bytes": 186624,
+    "model": "claude-opus-4-8"
+  },
+  "demo-kaggle-data": {
+    "hash": "5a70fa5e03130e8e",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's head into Kaggle's dataset library, and I want you to watch the order I read things in, because the order is the whole lesson. I check the license first — is it CC0, CC-BY, or something scarier that limits what I can do? Then I read the data dictionary, so I actually know what every column means and its units. Only after that do I glance at the usability score and the discussion tab to see what problems others already hit — and download comes dead last.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 8.587,
+        "text": "Alright, let's head into Kaggle's dataset library, and I want you to watch the order I read things in, because the order is the whole lesson."
+      },
+      {
+        "start": 8.587,
+        "end": 15.65,
+        "text": "I check the license first — is it CC0, CC-BY, or something scarier that limits what I can do?"
+      },
+      {
+        "start": 15.65,
+        "end": 21.5,
+        "text": "Then I read the data dictionary, so I actually know what every column means and its units."
+      },
+      {
+        "start": 21.5,
+        "end": 30.512,
+        "text": "Only after that do I glance at the usability score and the discussion tab to see what problems others already hit — and download comes dead last."
+      }
+    ],
+    "bytes": 183456,
+    "model": "claude-opus-4-8"
+  },
+  "demo-roboflow": {
+    "hash": "232231dfc981c07f",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's look at some real vision data together. We're heading to Roboflow Universe to search for something specific — night pedestrian datasets — and yes, they actually exist. What's powerful here is that you can see the images with the boxes drawn right on top of them, so you can judge for yourself: are those boxes tight and accurate, or are they sloppy? That judgment call is a skill no metadata can teach you. And keep an eye on the details — how many images, what classes, the license, and the download format, because we'll use exactly this in a later class.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.25,
+        "text": "Alright, let's look at some real vision data together."
+      },
+      {
+        "start": 3.25,
+        "end": 11.762,
+        "text": "We're heading to Roboflow Universe to search for something specific — night pedestrian datasets — and yes, they actually exist."
+      },
+      {
+        "start": 11.762,
+        "end": 21.937,
+        "text": "What's powerful here is that you can see the images with the boxes drawn right on top of them, so you can judge for yourself: are those boxes tight and accurate, or are they sloppy?"
+      },
+      {
+        "start": 21.937,
+        "end": 26.012,
+        "text": "That judgment call is a skill no metadata can teach you."
+      },
+      {
+        "start": 26.012,
+        "end": 34.912,
+        "text": "And keep an eye on the details — how many images, what classes, the license, and the download format, because we'll use exactly this in a later class."
+      }
+    ],
+    "bytes": 209808,
+    "model": "claude-opus-4-8"
+  },
+  "demo-scholarmind-data": {
+    "hash": "979f3fa83efabee7",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's put your questions to the real test. ScholarMind searches Hugging Face, UCI, and Kaggle all at once, so in seconds you'll know whether the data for your idea actually exists out there. Type in your topic, see which datasets come up, then compare two of them side by side — look at their size, their labels, their licenses. And here's the key move: if nothing shows up, don't panic — that's your cue to reshape the question right now, today, instead of discovering it painfully in week six.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.112,
+        "text": "Alright, let's put your questions to the real test."
+      },
+      {
+        "start": 3.112,
+        "end": 12.6,
+        "text": "ScholarMind searches Hugging Face, UCI, and Kaggle all at once, so in seconds you'll know whether the data for your idea actually exists out there."
+      },
+      {
+        "start": 12.6,
+        "end": 21.262,
+        "text": "Type in your topic, see which datasets come up, then compare two of them side by side — look at their size, their labels, their licenses."
+      },
+      {
+        "start": 21.262,
+        "end": 31.875,
+        "text": "And here's the key move: if nothing shows up, don't panic — that's your cue to reshape the question right now, today, instead of discovering it painfully in week six."
+      }
+    ],
+    "bytes": 191664,
+    "model": "claude-opus-4-8"
+  },
+  "lab-pixels": {
+    "hash": "74139fad27613f0f",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's where you become the perception system yourself. Look at this grid of numbers — that's all an image really is, just brightness values, and if you squint you can spot a tiny person standing there. Your job is to squeeze those sixty-four raw numbers down into four meaningful columns: how bright, top versus bottom, how wide, how tall. That's the whole leap from messy pixels to a neat row a model can actually learn from. Try the challenge — redraw it as a car, and watch which numbers flip to give it away.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4,
+        "text": "Alright, here's where you become the perception system yourself."
+      },
+      {
+        "start": 4,
+        "end": 12.525,
+        "text": "Look at this grid of numbers — that's all an image really is, just brightness values, and if you squint you can spot a tiny person standing there."
+      },
+      {
+        "start": 12.525,
+        "end": 22.825,
+        "text": "Your job is to squeeze those sixty-four raw numbers down into four meaningful columns: how bright, top versus bottom, how wide, how tall."
+      },
+      {
+        "start": 22.825,
+        "end": 28.387,
+        "text": "That's the whole leap from messy pixels to a neat row a model can actually learn from."
+      },
+      {
+        "start": 28.387,
+        "end": 33.487,
+        "text": "Try the challenge — redraw it as a car, and watch which numbers flip to give it away."
+      }
+    ],
+    "bytes": 201312,
+    "model": "claude-opus-4-8"
+  },
+  "lab-judge-datasets": {
+    "hash": "b0deb57b70059c9f",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's where our judgment becomes actual code. We've got four datasets competing for a night-pedestrian project, and the script scores each one on license, labels, size, and where the data came from. Watch what happens: the million-image set gets rejected while the tiny five-hundred-image one wins, because size isn't king — fitness for your question is. Then I want you to wrestle with two things: does \"research-only\" really pass for what you're doing, and add your own dataset as a fifth entry to see if you agree with the verdict.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.85,
+        "text": "Here's where our judgment becomes actual code."
+      },
+      {
+        "start": 2.85,
+        "end": 12.437,
+        "text": "We've got four datasets competing for a night-pedestrian project, and the script scores each one on license, labels, size, and where the data came from."
+      },
+      {
+        "start": 12.437,
+        "end": 21.562,
+        "text": "Watch what happens: the million-image set gets rejected while the tiny five-hundred-image one wins, because size isn't king — fitness for your question is."
+      },
+      {
+        "start": 21.562,
+        "end": 31.287,
+        "text": "Then I want you to wrestle with two things: does \"research-only\" really pass for what you're doing, and add your own dataset as a fifth entry to see if you agree with the verdict."
+      }
+    ],
+    "bytes": 188064,
+    "model": "claude-opus-4-8"
+  },
+  "your-project": {
+    "hash": "9cfd027eae73b781",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's where your project gets real. Your job is to pick the actual dataset you'll build on, and then document it the way a real researcher would. Go browse places like Kaggle, find something that fits your question, and don't skip the license and size checks — that's the judgment we've been practicing. Then write down its story: who collected it, when, how, and describe every single variable with its meaning, type, and units. Nail the source and get units on every variable, and you've hit the mark.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.662,
+        "text": "Alright, here's where your project gets real."
+      },
+      {
+        "start": 2.662,
+        "end": 8.95,
+        "text": "Your job is to pick the actual dataset you'll build on, and then document it the way a real researcher would."
+      },
+      {
+        "start": 8.95,
+        "end": 17.487,
+        "text": "Go browse places like Kaggle, find something that fits your question, and don't skip the license and size checks — that's the judgment we've been practicing."
+      },
+      {
+        "start": 17.487,
+        "end": 26.525,
+        "text": "Then write down its story: who collected it, when, how, and describe every single variable with its meaning, type, and units."
+      },
+      {
+        "start": 26.525,
+        "end": 31.187,
+        "text": "Nail the source and get units on every variable, and you've hit the mark."
+      }
+    ],
+    "bytes": 187488,
+    "model": "claude-opus-4-8"
+  },
+  "build-it-now": {
+    "hash": "c669d12c15525d89",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, it's your turn to actually build this. Head over to Kaggle or Roboflow, hunt for data that fits your question, and here's the trap I want you to avoid: don't just grab the first shiny dataset you see — shortlist two and run them through our judgment layer on license, labels, size, and collection story. If the license is unclear, walk away and find another one. Then fill out your datasheet, load the file, and check whether the actual columns match what the documentation promised. Nine times out of ten there's a surprise, so always trust what the data itself tells you.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.9370000000000003,
+        "text": "Alright, it's your turn to actually build this."
+      },
+      {
+        "start": 2.9370000000000003,
+        "end": 19.237,
+        "text": "Head over to Kaggle or Roboflow, hunt for data that fits your question, and here's the trap I want you to avoid: don't just grab the first shiny dataset you see — shortlist two and run them through our judgment layer on license, labels, size, and collection story."
+      },
+      {
+        "start": 19.237,
+        "end": 23.45,
+        "text": "If the license is unclear, walk away and find another one."
+      },
+      {
+        "start": 23.45,
+        "end": 30.387,
+        "text": "Then fill out your datasheet, load the file, and check whether the actual columns match what the documentation promised."
+      },
+      {
+        "start": 30.387,
+        "end": 35.637,
+        "text": "Nine times out of ten there's a surprise, so always trust what the data itself tells you."
+      }
+    ],
+    "bytes": 214128,
+    "model": "claude-opus-4-8"
+  },
+  "benchmark-datasheet": {
+    "hash": "b2a2a0ca968ecc4b",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Take a good look at this, because this is the standard you're aiming for. Notice how every single field here is backed by actual evidence, not guesses — and look especially at those limitations. They didn't just write \"might be biased.\" They pulled specific facts straight from the collection story: US cities only, winter clothing, no rain or snow, one labeling team with no cross-check. That's the sophisticated move — turning the story of how data was gathered into precise, honest limits. And this exact page becomes the opening of your final paper's data chapter, so the work you do here really does compound.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.625,
+        "text": "Take a good look at this, because this is the standard you're aiming for."
+      },
+      {
+        "start": 3.625,
+        "end": 12.162,
+        "text": "Notice how every single field here is backed by actual evidence, not guesses — and look especially at those limitations."
+      },
+      {
+        "start": 12.162,
+        "end": 14.175,
+        "text": "They didn't just write \"might be biased.\""
+      },
+      {
+        "start": 14.175,
+        "end": 24.912,
+        "text": "They pulled specific facts straight from the collection story: US cities only, winter clothing, no rain or snow, one labeling team with no cross-check."
+      },
+      {
+        "start": 24.912,
+        "end": 32.5,
+        "text": "That's the sophisticated move — turning the story of how data was gathered into precise, honest limits."
+      },
+      {
+        "start": 32.5,
+        "end": 39.65,
+        "text": "And this exact page becomes the opening of your final paper's data chapter, so the work you do here really does compound."
+      }
+    ],
+    "bytes": 238320,
+    "model": "claude-opus-4-8"
+  },
+  "reference-key-terms": {
+    "hash": "cd0d8539d07f2fa0",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's lock in some vocabulary you'll hear again and again over the next few classes. Data can be structured, meaning it slots neatly into a table, or unstructured, needing a model to make sense of it first. When we talk about numbers, we're either counting things or measuring them, and when we talk about categories, they're either unordered or ranked in levels. Always check the license, because if you don't know the terms of use, you legally can't touch it. And that datasheet idea—which comes from a paper by Gebru and colleagues—is basically a dataset's honest story: where it came from, its limits, and what's inside.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.462,
+        "text": "Let's lock in some vocabulary you'll hear again and again over the next few classes."
+      },
+      {
+        "start": 4.462,
+        "end": 13.225,
+        "text": "Data can be structured, meaning it slots neatly into a table, or unstructured, needing a model to make sense of it first."
+      },
+      {
+        "start": 13.225,
+        "end": 22.237,
+        "text": "When we talk about numbers, we're either counting things or measuring them, and when we talk about categories, they're either unordered or ranked in levels."
+      },
+      {
+        "start": 22.237,
+        "end": 27.775,
+        "text": "Always check the license, because if you don't know the terms of use, you legally can't touch it."
+      },
+      {
+        "start": 27.775,
+        "end": 38.337,
+        "text": "And that datasheet idea—which comes from a paper by Gebru and colleagues—is basically a dataset's honest story: where it came from, its limits, and what's inside."
+      }
+    ],
+    "bytes": 230400,
+    "model": "claude-opus-4-8"
+  },
+  "homework": {
+    "hash": "6ca85ba434ffd3e9",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's what I'd like you to do before we meet again. First, finish your datasheet, submit it in Google Classroom, and commit it to your GitHub repo — that's your project's first real artifact, so treat it with pride. Then be honest and name one bias your dataset carries from how it was collected, just one clear sentence in the limitation box. Most importantly, load your data in Colab, run the four verbs, and check that the columns actually match your variable table — because next class we start cleaning exactly what you choose today.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.187,
+        "text": "Alright, here's what I'd like you to do before we meet again."
+      },
+      {
+        "start": 3.187,
+        "end": 14.025,
+        "text": "First, finish your datasheet, submit it in Google Classroom, and commit it to your GitHub repo — that's your project's first real artifact, so treat it with pride."
+      },
+      {
+        "start": 14.025,
+        "end": 22.525,
+        "text": "Then be honest and name one bias your dataset carries from how it was collected, just one clear sentence in the limitation box."
+      },
+      {
+        "start": 22.525,
+        "end": 34.05,
+        "text": "Most importantly, load your data in Colab, run the four verbs, and check that the columns actually match your variable table — because next class we start cleaning exactly what you choose today."
+      }
+    ],
+    "bytes": 204624,
+    "model": "claude-opus-4-8"
+  },
+  "line-to-remember": {
+    "hash": "76c6bcf177976b9c",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "You've probably heard the phrase \"data is the new oil,\" right? Well, that's actually only half of what Clive Humby said back in 2006, and the second half is the part almost everyone forgets. He went on to say that data, just like oil, is completely worthless until you refine it. So hold onto that thought, because refining our data is exactly what we'll dive into next week.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.125,
+        "text": "You've probably heard the phrase \"data is the new oil,\" right?"
+      },
+      {
+        "start": 4.125,
+        "end": 12.462,
+        "text": "Well, that's actually only half of what Clive Humby said back in 2006, and the second half is the part almost everyone forgets."
+      },
+      {
+        "start": 12.462,
+        "end": 18.25,
+        "text": "He went on to say that data, just like oil, is completely worthless until you refine it."
+      },
+      {
+        "start": 18.25,
+        "end": 24.087,
+        "text": "So hold onto that thought, because refining our data is exactly what we'll dive into next week."
+      }
+    ],
+    "bytes": 144864,
+    "model": "claude-opus-4-8"
+  },
+  "wrap-up": {
+    "hash": "aeebd4024cc5ee38",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's pull together the big ideas from today. First, structured data slots neatly into a table while unstructured data doesn't yet — and perception is the bridge that connects them. Second, every dataset carries a license and a collection story, so judge both before you trust it. And third, a datasheet keeps you honest about your source, your variables, and your limitations. For your exit ticket, name one possible bias in the dataset you chose and post it — because next time we'll be working with your data loaded and ready to refine.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.4,
+        "text": "Let's pull together the big ideas from today."
+      },
+      {
+        "start": 2.4,
+        "end": 12.05,
+        "text": "First, structured data slots neatly into a table while unstructured data doesn't yet — and perception is the bridge that connects them."
+      },
+      {
+        "start": 12.05,
+        "end": 19.112,
+        "text": "Second, every dataset carries a license and a collection story, so judge both before you trust it."
+      },
+      {
+        "start": 19.112,
+        "end": 25.562,
+        "text": "And third, a datasheet keeps you honest about your source, your variables, and your limitations."
+      },
+      {
+        "start": 25.562,
+        "end": 34.85,
+        "text": "For your exit ticket, name one possible bias in the dataset you chose and post it — because next time we'll be working with your data loaded and ready to refine."
+      }
+    ],
+    "bytes": 209520,
+    "model": "claude-opus-4-8"
+  },
+  "backup-material": {
+    "hash": "087f649006aba6b3",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, everything from here on is bonus material, so don't stress if we don't get to all of it today. If we have some extra time, I've got a few fun deeper dives lined up for you — including a little hall of fame of the datasets that really shaped modern AI, which I think you'll find fascinating. We'll also expand on scraping ethics if your questions take us that direction, and there's one more quick quiz to test yourselves. Let's see how far we get.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.95,
+        "text": "Alright, everything from here on is bonus material, so don't stress if we don't get to all of it today."
+      },
+      {
+        "start": 5.95,
+        "end": 16.837,
+        "text": "If we have some extra time, I've got a few fun deeper dives lined up for you — including a little hall of fame of the datasets that really shaped modern AI, which I think you'll find fascinating."
+      },
+      {
+        "start": 16.837,
+        "end": 24.112,
+        "text": "We'll also expand on scraping ethics if your questions take us that direction, and there's one more quick quiz to test yourselves."
+      },
+      {
+        "start": 24.112,
+        "end": 25.65,
+        "text": "Let's see how far we get."
+      }
+    ],
+    "bytes": 154224,
+    "model": "claude-opus-4-8"
+  },
+  "backup-dataset-hall": {
+    "hash": "47cfa790aa0b136c",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let me show you a little hall of fame, and watch how each one connects back to something we've studied. MNIST taught every one of us handwritten digits, ImageNet sparked the whole deep learning revolution, KITTI opened up self-driving with a single station wagon, and COCO became the testing ground for YOLO. Here's what's fascinating: none of these are remembered for a clever algorithm. They're remembered for careful collection, labeling, and open sharing. That unglamorous data work is a real career hint hiding right in front of you.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.55,
+        "text": "Let me show you a little hall of fame, and watch how each one connects back to something we've studied."
+      },
+      {
+        "start": 5.55,
+        "end": 18.487,
+        "text": "MNIST taught every one of us handwritten digits, ImageNet sparked the whole deep learning revolution, KITTI opened up self-driving with a single station wagon, and COCO became the testing ground for YOLO."
+      },
+      {
+        "start": 18.487,
+        "end": 22.712,
+        "text": "Here's what's fascinating: none of these are remembered for a clever algorithm."
+      },
+      {
+        "start": 22.712,
+        "end": 27.337,
+        "text": "They're remembered for careful collection, labeling, and open sharing."
+      },
+      {
+        "start": 27.337,
+        "end": 32.825,
+        "text": "That unglamorous data work is a real career hint hiding right in front of you."
+      }
+    ],
+    "bytes": 197280,
+    "model": "claude-opus-4-8"
+  },
+  "backup-scraping-ethics": {
+    "hash": "615c199b5d4aa970",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "So let's talk about why these crawler rules actually matter, because they're not just arbitrary hoops to jump through. When a site tells you how fast to crawl, ignoring that can literally crash a small server — that's real harm to real people, not clever research. And remember, just because data is public doesn't make it fair game; once you scrape someone's name or face, you can't un-collect it. Here's the honest test I want you to carry with you: would you be comfortable explaining exactly what you took and why, to the site's owner and to the people in that data? If the answer is no, then stop.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.237,
+        "text": "So let's talk about why these crawler rules actually matter, because they're not just arbitrary hoops to jump through."
+      },
+      {
+        "start": 6.237,
+        "end": 15.45,
+        "text": "When a site tells you how fast to crawl, ignoring that can literally crash a small server — that's real harm to real people, not clever research."
+      },
+      {
+        "start": 15.45,
+        "end": 23.375,
+        "text": "And remember, just because data is public doesn't make it fair game; once you scrape someone's name or face, you can't un-collect it."
+      },
+      {
+        "start": 23.375,
+        "end": 32.762,
+        "text": "Here's the honest test I want you to carry with you: would you be comfortable explaining exactly what you took and why, to the site's owner and to the people in that data?"
+      },
+      {
+        "start": 32.762,
+        "end": 35.087,
+        "text": "If the answer is no, then stop."
+      }
+    ],
+    "bytes": 210816,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-backup-bonus": {
+    "hash": "c4686a60978eafa1",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Okay, quick gut check here. You've got a million images with a license nobody understands, or just five hundred images that you're clearly allowed to use and that were collected in a way that actually matches your question. Which one wins? The answer is the small one, and this trips people up every time. A license you can't use disqualifies a dataset instantly, and the right collection story beats a thousand-fold size advantage. Size only matters once you're comparing datasets you're actually allowed to use.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.6,
+        "text": "Okay, quick gut check here."
+      },
+      {
+        "start": 1.6,
+        "end": 11.875,
+        "text": "You've got a million images with a license nobody understands, or just five hundred images that you're clearly allowed to use and that were collected in a way that actually matches your question."
+      },
+      {
+        "start": 11.875,
+        "end": 13.112,
+        "text": "Which one wins?"
+      },
+      {
+        "start": 13.112,
+        "end": 17.262,
+        "text": "The answer is the small one, and this trips people up every time."
+      },
+      {
+        "start": 17.262,
+        "end": 25.45,
+        "text": "A license you can't use disqualifies a dataset instantly, and the right collection story beats a thousand-fold size advantage."
+      },
+      {
+        "start": 25.45,
+        "end": 29.937,
+        "text": "Size only matters once you're comparing datasets you're actually allowed to use."
+      }
+    ],
+    "bytes": 180000,
+    "model": "claude-opus-4-8"
+  }
+}

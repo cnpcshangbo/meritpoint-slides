@@ -1,0 +1,248 @@
+{
+  "lab-pixels": {
+    "hash": "dc86910ac05f1357",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "This comment reminds us that an image is really just numbers. We're using an eight by eight grayscale grid, where zero means dark and nine means bright.",
+        "file": "lab-pixels-w00.mp3"
+      },
+      {
+        "lines": [
+          2,
+          6
+        ],
+        "text": "Here we build the image as a list of lists. Each inner list is one row of eight pixels, and the nines are lighting up a shape near the top.",
+        "file": "lab-pixels-w01.mp3"
+      },
+      {
+        "lines": [
+          7,
+          11
+        ],
+        "text": "We finish the remaining rows and close the list. If you squint at the pattern of nines, it looks like a tiny pedestrian standing there.",
+        "file": "lab-pixels-w02.mp3"
+      },
+      {
+        "lines": [
+          13,
+          15
+        ],
+        "text": "Now we render the raw numbers as a picture. We loop over each row and print a hash when a pixel is brighter than five, otherwise a dot, joining them into one string.",
+        "file": "lab-pixels-w03.mp3"
+      },
+      {
+        "lines": [
+          17,
+          18
+        ],
+        "text": "Now we turn perception into features. Bright counts every pixel above five across the whole image, using two loops flattened into one line.",
+        "file": "lab-pixels-w04.mp3"
+      },
+      {
+        "lines": [
+          19,
+          20
+        ],
+        "text": "Top counts bright pixels in the first four rows, and bottom counts them in the last four rows. This tells us where the brightness sits vertically.",
+        "file": "lab-pixels-w05.mp3"
+      },
+      {
+        "lines": [
+          21,
+          21
+        ],
+        "text": "Widest finds the row with the most bright pixels, by counting bright pixels per row and taking the maximum. It captures the widest part of the shape.",
+        "file": "lab-pixels-w06.mp3"
+      },
+      {
+        "lines": [
+          22,
+          22
+        ],
+        "text": "Height counts how many rows have at least one bright pixel. We add one for each row where any pixel beats five, giving us the shape's vertical span.",
+        "file": "lab-pixels-w07.mp3"
+      },
+      {
+        "lines": [
+          24,
+          25
+        ],
+        "text": "Here we pack those numbers into a dictionary, our structured row. Notice top over bottom is rounded to two decimals to give a clean ratio.",
+        "file": "lab-pixels-w08.mp3"
+      },
+      {
+        "lines": [
+          26,
+          26
+        ],
+        "text": "We print the finished structured row. The backslash-n just adds a blank line first so it's easy to read below the picture.",
+        "file": "lab-pixels-w09.mp3"
+      },
+      {
+        "lines": [
+          28,
+          30
+        ],
+        "text": "These comments celebrate the big idea: sixty-four raw pixels became four meaningful columns. Real perception does this constantly, but with features it learns instead of ones we hand-write.",
+        "file": "lab-pixels-w10.mp3"
+      },
+      {
+        "lines": [
+          32,
+          33
+        ],
+        "text": "The first challenge invites you to redraw the pixels as a car, wide and low, then rerun and notice which features shift the most.",
+        "file": "lab-pixels-w11.mp3"
+      },
+      {
+        "lines": [
+          34,
+          35
+        ],
+        "text": "The final challenge asks you to invent a new feature that best separates your car from the pedestrian. Aspect ratio is a great place to start.",
+        "file": "lab-pixels-w12.mp3"
+      }
+    ]
+  },
+  "lab-judge-datasets": {
+    "hash": "3922383870e01072",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "We start with a comment explaining the big idea. We're turning a datasheet checklist into code to evaluate four candidate datasets for a study on pedestrians at night.",
+        "file": "lab-judge-datasets-w00.mp3"
+      },
+      {
+        "lines": [
+          2,
+          4
+        ],
+        "text": "Here we build a list called datasets. The first entry is a dictionary describing NightPeds-500, with a name, a clear license, whether it's labeled, its size, and how it was collected.",
+        "file": "lab-judge-datasets-w01.mp3"
+      },
+      {
+        "lines": [
+          5,
+          6
+        ],
+        "text": "The second candidate is MegaDrive-1M. Notice its license is unknown, and it's a giant million images scraped from video sites. Keep an eye on that mystery license.",
+        "file": "lab-judge-datasets-w02.mp3"
+      },
+      {
+        "lines": [
+          7,
+          8
+        ],
+        "text": "Third is SunnyStreets. It has a fully open CC0 license, but labeled is False, and it was collected daytime only on one campus. Those details will matter.",
+        "file": "lab-judge-datasets-w03.mp3"
+      },
+      {
+        "lines": [
+          9,
+          10
+        ],
+        "text": "The last candidate is CampusWalk, a tiny set of only 120 examples from ten students on one evening. We close the list on line eleven.",
+        "file": "lab-judge-datasets-w04.mp3"
+      },
+      {
+        "lines": [
+          13,
+          13
+        ],
+        "text": "We define OK licenses, a list of the license strings we accept. Anything not on this list is a red flag we won't just guess about.",
+        "file": "lab-judge-datasets-w05.mp3"
+      },
+      {
+        "lines": [
+          15,
+          16
+        ],
+        "text": "Now we define a function called judge that takes one dataset. We start with an empty notes list for problems, and ok set to True, assuming it's fine until proven otherwise.",
+        "file": "lab-judge-datasets-w06.mp3"
+      },
+      {
+        "lines": [
+          17,
+          18
+        ],
+        "text": "First check: we lowercase the license and see if it's in our approved list. If not, we add a note calling it unusable and flip ok to False, because we refuse to guess on licensing.",
+        "file": "lab-judge-datasets-w07.mp3"
+      },
+      {
+        "lines": [
+          19,
+          20
+        ],
+        "text": "Next, if the dataset isn't labeled, we add a note. Unlabeled data means you'd have to label it yourself, which is a whole project on its own.",
+        "file": "lab-judge-datasets-w08.mp3"
+      },
+      {
+        "lines": [
+          21,
+          22
+        ],
+        "text": "Then we check size. If there are fewer than three hundred examples, we note that it's too small to trust results, using an f-string to show the actual count.",
+        "file": "lab-judge-datasets-w09.mp3"
+      },
+      {
+        "lines": [
+          23,
+          24
+        ],
+        "text": "This check looks for the word night in the collection story. If nights aren't mentioned, it's simply the wrong data for a night study, so we flag it.",
+        "file": "lab-judge-datasets-w10.mp3"
+      },
+      {
+        "lines": [
+          25,
+          25
+        ],
+        "text": "Now we decide the verdict. If ok is False it's SKIP. Otherwise, if there are no notes at all it's USE, and if there are notes but nothing fatal, it's CAUTION.",
+        "file": "lab-judge-datasets-w11.mp3"
+      },
+      {
+        "lines": [
+          26,
+          27
+        ],
+        "text": "We print the verdict, name, and collection story, neatly aligned with fixed widths. Then we loop through the notes and print each one indented as a bullet.",
+        "file": "lab-judge-datasets-w12.mp3"
+      },
+      {
+        "lines": [
+          29,
+          30
+        ],
+        "text": "Here's the main loop. We go through every dataset in our list and run judge on it, so each one gets evaluated and printed in turn.",
+        "file": "lab-judge-datasets-w13.mp3"
+      },
+      {
+        "lines": [
+          32,
+          33
+        ],
+        "text": "This comment drives home the lesson: the million-image set loses to the five hundred one. Size isn't king; fitness for your actual question is what counts.",
+        "file": "lab-judge-datasets-w14.mp3"
+      },
+      {
+        "lines": [
+          35,
+          38
+        ],
+        "text": "Finally, two challenges to think about. Should research-only really pass, and what counts as your project? And try adding your own dataset as a fifth entry to see if you agree with the code's verdict.",
+        "file": "lab-judge-datasets-w15.mp3"
+      }
+    ]
+  }
+}

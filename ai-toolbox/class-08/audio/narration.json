@@ -1,0 +1,1021 @@
+{
+  "title": {
+    "hash": "bcf3a81a0931f786",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Welcome back, everyone. Remember last week when we said data is valueless until it's refined? Well, today is the refinery hour, where we take that messy, raw dataset you brought in and turn it into something a model can actually learn from. Here's what's at stake: dirty data doesn't just make a weak model, it teaches the model outright lies. By the end of today, you'll have your own before-and-after report showing exactly how far your data has come.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.587,
+        "text": "Welcome back, everyone."
+      },
+      {
+        "start": 1.587,
+        "end": 6.375,
+        "text": "Remember last week when we said data is valueless until it's refined?"
+      },
+      {
+        "start": 6.375,
+        "end": 15.362,
+        "text": "Well, today is the refinery hour, where we take that messy, raw dataset you brought in and turn it into something a model can actually learn from."
+      },
+      {
+        "start": 15.362,
+        "end": 22.625,
+        "text": "Here's what's at stake: dirty data doesn't just make a weak model, it teaches the model outright lies."
+      },
+      {
+        "start": 22.625,
+        "end": 28.962,
+        "text": "By the end of today, you'll have your own before-and-after report showing exactly how far your data has come."
+      }
+    ],
+    "bytes": 174096,
+    "model": "claude-opus-4-8"
+  },
+  "recap-class07": {
+    "hash": "16dab86a0c198f1c",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's take sixty seconds to remember where we landed last time. We learned that data comes in two flavors — structured or unstructured, numbers or words — and that the type you have decides which tools you reach for. We also built a judgment layer: checking the license, the collection story, the bias baked in, and writing an honest datasheet. So here's what I want to hear right now — what surprises did you catch when your first peek at the data didn't quite match the documentation's promises? Those surprises are exactly what we're going to fix today.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.637,
+        "text": "Let's take sixty seconds to remember where we landed last time."
+      },
+      {
+        "start": 3.637,
+        "end": 13.45,
+        "text": "We learned that data comes in two flavors — structured or unstructured, numbers or words — and that the type you have decides which tools you reach for."
+      },
+      {
+        "start": 13.45,
+        "end": 21.562,
+        "text": "We also built a judgment layer: checking the license, the collection story, the bias baked in, and writing an honest datasheet."
+      },
+      {
+        "start": 21.562,
+        "end": 29.75,
+        "text": "So here's what I want to hear right now — what surprises did you catch when your first peek at the data didn't quite match the documentation's promises?"
+      },
+      {
+        "start": 29.75,
+        "end": 33,
+        "text": "Those surprises are exactly what we're going to fix today."
+      }
+    ],
+    "bytes": 198288,
+    "model": "claude-opus-4-8"
+  },
+  "agenda": {
+    "hash": "36d6c326de8be4bd",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's how our hour together is going to unfold. We'll start by sharing your homework and looking at a model that confidently read the wrong thing, then dig into the five enemies of messy data before learning our three core moves: handling what's missing, putting numbers on a fair scale, and encoding categories without accidentally inventing an order. We'll see demos, run two hands-on labs, and by the end you'll write a before-and-after report. And here's the heart of it — every cleaning decision needs a reason, because cleaning your data is really a research choice, not just code.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.85,
+        "text": "Here's how our hour together is going to unfold."
+      },
+      {
+        "start": 2.85,
+        "end": 20.65,
+        "text": "We'll start by sharing your homework and looking at a model that confidently read the wrong thing, then dig into the five enemies of messy data before learning our three core moves: handling what's missing, putting numbers on a fair scale, and encoding categories without accidentally inventing an order."
+      },
+      {
+        "start": 20.65,
+        "end": 26.7,
+        "text": "We'll see demos, run two hands-on labs, and by the end you'll write a before-and-after report."
+      },
+      {
+        "start": 26.7,
+        "end": 35.475,
+        "text": "And here's the heart of it — every cleaning decision needs a reason, because cleaning your data is really a research choice, not just code."
+      }
+    ],
+    "bytes": 213264,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-warmup": {
+    "hash": "055d5049f20deedd",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a scenario that trips up almost everyone. Imagine your data has blank distances, a box with negative width, and the word \"pedestrian\" spelled three different ways, and you train your model anyway. What do you think happens? The scary truth is option C: nothing crashes. The model trains happily and treats those three spellings as three totally different objects, learning from garbage without ever warning you. That silent failure is exactly why we profile our data before we ever train.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.237,
+        "text": "Here's a scenario that trips up almost everyone."
+      },
+      {
+        "start": 3.237,
+        "end": 13.087,
+        "text": "Imagine your data has blank distances, a box with negative width, and the word \"pedestrian\" spelled three different ways, and you train your model anyway."
+      },
+      {
+        "start": 13.087,
+        "end": 14.387,
+        "text": "What do you think happens?"
+      },
+      {
+        "start": 14.387,
+        "end": 18.275,
+        "text": "The scary truth is option C: nothing crashes."
+      },
+      {
+        "start": 18.275,
+        "end": 27.512,
+        "text": "The model trains happily and treats those three spellings as three totally different objects, learning from garbage without ever warning you."
+      },
+      {
+        "start": 27.512,
+        "end": 32.887,
+        "text": "That silent failure is exactly why we profile our data before we ever train."
+      }
+    ],
+    "bytes": 197712,
+    "model": "claude-opus-4-8"
+  },
+  "story-xray": {
+    "hash": "a27b02dce90e6386",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's one of my favorite cautionary tales in all of machine learning. A hospital built an AI to detect serious pneumonia from chest X-rays, and it performed almost too well. But when researchers dug in, they found the model wasn't looking at lungs at all — it had learned to spot a tiny metal token that portable X-ray machines stamp on the image. Since sicker patients got those portable scans, the token quietly predicted severity, and the data, not the disease, was doing all the work. Remember this: whatever hides in your data, your model will find it.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.062,
+        "text": "Here's one of my favorite cautionary tales in all of machine learning."
+      },
+      {
+        "start": 4.062,
+        "end": 11.55,
+        "text": "A hospital built an AI to detect serious pneumonia from chest X-rays, and it performed almost too well."
+      },
+      {
+        "start": 11.55,
+        "end": 21.6,
+        "text": "But when researchers dug in, they found the model wasn't looking at lungs at all — it had learned to spot a tiny metal token that portable X-ray machines stamp on the image."
+      },
+      {
+        "start": 21.6,
+        "end": 30.975,
+        "text": "Since sicker patients got those portable scans, the token quietly predicted severity, and the data, not the disease, was doing all the work."
+      },
+      {
+        "start": 30.975,
+        "end": 35.425,
+        "text": "Remember this: whatever hides in your data, your model will find it."
+      }
+    ],
+    "bytes": 212976,
+    "model": "claude-opus-4-8"
+  },
+  "concept-five-enemies": {
+    "hash": "dc962a0dfa4b6a90",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, meet the five enemies that quietly ruin your data. There are missing values, those blank cells from a sensor dropping out; duplicates, which secretly double a row's vote in every calculation; outliers, like a pedestrian clocked at 900 kilometers an hour — is that a glitch or a rare real event? Then messy formats, where \"pedestrian\" and \"PED\" confuse a model even though you'd read right through them; and logical errors, like an age of 250 that just can't exist. Here's the honest truth: researchers spend about half their time cleaning, so this isn't the boring warm-up before research — this is research.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.225,
+        "text": "Alright, meet the five enemies that quietly ruin your data."
+      },
+      {
+        "start": 4.225,
+        "end": 19.625,
+        "text": "There are missing values, those blank cells from a sensor dropping out; duplicates, which secretly double a row's vote in every calculation; outliers, like a pedestrian clocked at 900 kilometers an hour — is that a glitch or a rare real event?"
+      },
+      {
+        "start": 19.625,
+        "end": 31.287,
+        "text": "Then messy formats, where \"pedestrian\" and \"PED\" confuse a model even though you'd read right through them; and logical errors, like an age of 250 that just can't exist."
+      },
+      {
+        "start": 31.287,
+        "end": 40.025,
+        "text": "Here's the honest truth: researchers spend about half their time cleaning, so this isn't the boring warm-up before research — this is research."
+      }
+    ],
+    "bytes": 240480,
+    "model": "claude-opus-4-8"
+  },
+  "concept-three-moves": {
+    "hash": "c62c044f6e119bb1",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the backbone of everything we're about to do, and it comes down to three moves. First, we handle missing values, either dropping the row or filling in a sensible guess, and always being honest about which one we chose. Second, we normalize our numbers so no single column bullies the rest just because it has bigger values. And third, we encode categories, turning a word like \"pedestrian\" into numbers a model can actually work with. Why these three? Because models are just math, and math can't average a blank, can't multiply a word, and gets thrown off by wildly different scales.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.3870000000000005,
+        "text": "Here's the backbone of everything we're about to do, and it comes down to three moves."
+      },
+      {
+        "start": 5.3870000000000005,
+        "end": 13.775,
+        "text": "First, we handle missing values, either dropping the row or filling in a sensible guess, and always being honest about which one we chose."
+      },
+      {
+        "start": 13.775,
+        "end": 20.712,
+        "text": "Second, we normalize our numbers so no single column bullies the rest just because it has bigger values."
+      },
+      {
+        "start": 20.712,
+        "end": 28.387,
+        "text": "And third, we encode categories, turning a word like \"pedestrian\" into numbers a model can actually work with."
+      },
+      {
+        "start": 28.387,
+        "end": 29.712,
+        "text": "Why these three?"
+      },
+      {
+        "start": 29.712,
+        "end": 38,
+        "text": "Because models are just math, and math can't average a blank, can't multiply a word, and gets thrown off by wildly different scales."
+      }
+    ],
+    "bytes": 228384,
+    "model": "claude-opus-4-8"
+  },
+  "move1-missing": {
+    "hash": "c23f151edd7dec98",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Okay, so you already know how to drop or fill missing data — today we add judgment. Drop when only a few rows are affected, or when a column is essential and you just can't fake it. Fill when lots of rows are hit, and reach for the median, not the mean, because one crazy outlier like a nine-hundred-kilometer-per-hour pedestrian drags the mean while the median just shrugs. But here's the real question: ask WHY the data is missing. If darkness breaks your distance sensor at night, those gaps carry meaning — filling them would hide exactly the pattern your night study needs.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.837,
+        "text": "Okay, so you already know how to drop or fill missing data — today we add judgment."
+      },
+      {
+        "start": 5.837,
+        "end": 12,
+        "text": "Drop when only a few rows are affected, or when a column is essential and you just can't fake it."
+      },
+      {
+        "start": 12,
+        "end": 24.262,
+        "text": "Fill when lots of rows are hit, and reach for the median, not the mean, because one crazy outlier like a nine-hundred-kilometer-per-hour pedestrian drags the mean while the median just shrugs."
+      },
+      {
+        "start": 24.262,
+        "end": 28.2,
+        "text": "But here's the real question: ask WHY the data is missing."
+      },
+      {
+        "start": 28.2,
+        "end": 36.587,
+        "text": "If darkness breaks your distance sensor at night, those gaps carry meaning — filling them would hide exactly the pattern your night study needs."
+      }
+    ],
+    "bytes": 219888,
+    "model": "claude-opus-4-8"
+  },
+  "move2-normalize": {
+    "hash": "acdc2f6ebca3cb85",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the big idea I want you to hold onto today: imagine two numbers, distance running from zero to a hundred, and confidence running from zero to one. When a model tries to combine them, distance is basically shouting a hundred times louder while confidence whispers in the corner. So we rescale them to speak at the same volume — either squeezing everything into a zero-to-one range, or centering it so the average is zero with an even spread. And in lab two, you'll see the proof: same data, same model, but changing the scaling actually flips the answer.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 9.762,
+        "text": "Here's the big idea I want you to hold onto today: imagine two numbers, distance running from zero to a hundred, and confidence running from zero to one."
+      },
+      {
+        "start": 9.762,
+        "end": 17.737,
+        "text": "When a model tries to combine them, distance is basically shouting a hundred times louder while confidence whispers in the corner."
+      },
+      {
+        "start": 17.737,
+        "end": 28.212,
+        "text": "So we rescale them to speak at the same volume — either squeezing everything into a zero-to-one range, or centering it so the average is zero with an even spread."
+      },
+      {
+        "start": 28.212,
+        "end": 36.5,
+        "text": "And in lab two, you'll see the proof: same data, same model, but changing the scaling actually flips the answer."
+      }
+    ],
+    "bytes": 219312,
+    "model": "claude-opus-4-8"
+  },
+  "move3-encode": {
+    "hash": "87af7b59a7732675",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a trap that catches almost everyone. Say we label pedestrian as one, car as two, sign as three — looks totally innocent, right? But watch what we just told the model: a sign equals three pedestrians, and a car somehow sits between them. That's nonsense! These are just names with no natural order, so we use one-hot encoding — one column per category, a single one per row, and nobody pretends a sign is bigger than a pedestrian. But remember, ordinal data like dusk, night, and deep-night can keep its one-two-three, because that order is real.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.125,
+        "text": "Here's a trap that catches almost everyone."
+      },
+      {
+        "start": 3.125,
+        "end": 9.887,
+        "text": "Say we label pedestrian as one, car as two, sign as three — looks totally innocent, right?"
+      },
+      {
+        "start": 9.887,
+        "end": 16.65,
+        "text": "But watch what we just told the model: a sign equals three pedestrians, and a car somehow sits between them."
+      },
+      {
+        "start": 16.65,
+        "end": 18.037,
+        "text": "That's nonsense!"
+      },
+      {
+        "start": 18.037,
+        "end": 29.262,
+        "text": "These are just names with no natural order, so we use one-hot encoding — one column per category, a single one per row, and nobody pretends a sign is bigger than a pedestrian."
+      },
+      {
+        "start": 29.262,
+        "end": 37.675,
+        "text": "But remember, ordinal data like dusk, night, and deep-night can keep its one-two-three, because that order is real."
+      }
+    ],
+    "bytes": 226368,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-encoding": {
+    "hash": "92ac305e1fc626a0",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Okay, here's a trap worth slowing down for. You've got two category columns, and it's tempting to just pick one rule for both — either turn everything into numbers, or one-hot everything to be safe. But look closer: pedestrian, car, and sign have no natural order, so numbering them would invent a ranking that isn't real — those need one-hot. Lighting, though? Dusk to night to deep-night genuinely darkens in steps, so an ordered code actually makes sense. Same rule, applied honestly, gives you two different answers.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.125,
+        "text": "Okay, here's a trap worth slowing down for."
+      },
+      {
+        "start": 3.125,
+        "end": 12.537,
+        "text": "You've got two category columns, and it's tempting to just pick one rule for both — either turn everything into numbers, or one-hot everything to be safe."
+      },
+      {
+        "start": 12.537,
+        "end": 21.65,
+        "text": "But look closer: pedestrian, car, and sign have no natural order, so numbering them would invent a ranking that isn't real — those need one-hot."
+      },
+      {
+        "start": 21.65,
+        "end": 22.65,
+        "text": "Lighting, though?"
+      },
+      {
+        "start": 22.65,
+        "end": 29.337,
+        "text": "Dusk to night to deep-night genuinely darkens in steps, so an ordered code actually makes sense."
+      },
+      {
+        "start": 29.337,
+        "end": 33.625,
+        "text": "Same rule, applied honestly, gives you two different answers."
+      }
+    ],
+    "bytes": 202176,
+    "model": "claude-opus-4-8"
+  },
+  "concept-outliers-dupes": {
+    "hash": "297b6e95c61e5644",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's meet the last two troublemakers in our data. Outliers first: some values are simply impossible, like a confidence score above one, and those you fix or drop without hesitation. But the tricky ones are extreme yet real — that pedestrian crossing at three in the morning is exactly who a night-detection system must never erase. Duplicates are usually the easy win, but always ask why they appeared, because a stuttering sensor is itself a finding. Remember, every value you drop is a claim that it doesn't belong to what you study, and claims need reasons — that's why you write a report, not just a script.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.6870000000000003,
+        "text": "Alright, let's meet the last two troublemakers in our data."
+      },
+      {
+        "start": 3.6870000000000003,
+        "end": 12.637,
+        "text": "Outliers first: some values are simply impossible, like a confidence score above one, and those you fix or drop without hesitation."
+      },
+      {
+        "start": 12.637,
+        "end": 22.7,
+        "text": "But the tricky ones are extreme yet real — that pedestrian crossing at three in the morning is exactly who a night-detection system must never erase."
+      },
+      {
+        "start": 22.7,
+        "end": 30.587,
+        "text": "Duplicates are usually the easy win, but always ask why they appeared, because a stuttering sensor is itself a finding."
+      },
+      {
+        "start": 30.587,
+        "end": 40.312,
+        "text": "Remember, every value you drop is a claim that it doesn't belong to what you study, and claims need reasons — that's why you write a report, not just a script."
+      }
+    ],
+    "bytes": 242208,
+    "model": "claude-opus-4-8"
+  },
+  "concept-feature-eng": {
+    "hash": "7052ce7b73862bf4",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "If cleaning is the careful, defensive work, then feature engineering is its creative sibling — this is where you get to build. Take one messy timestamp and split it into hour, weekday, and is-night, and suddenly the model has three useful signals instead of one confusing one. And remember that aspect ratio you discovered by hand back in Class 7 — tall means pedestrian, wide means car? You were already doing this; now it has a name. The professional's secret is that better columns often beat a fancier model, so build good features first.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 8.3,
+        "text": "If cleaning is the careful, defensive work, then feature engineering is its creative sibling — this is where you get to build."
+      },
+      {
+        "start": 8.3,
+        "end": 18.987,
+        "text": "Take one messy timestamp and split it into hour, weekday, and is-night, and suddenly the model has three useful signals instead of one confusing one."
+      },
+      {
+        "start": 18.987,
+        "end": 25.962,
+        "text": "And remember that aspect ratio you discovered by hand back in Class 7 — tall means pedestrian, wide means car?"
+      },
+      {
+        "start": 25.962,
+        "end": 28.712,
+        "text": "You were already doing this; now it has a name."
+      },
+      {
+        "start": 28.712,
+        "end": 35.987,
+        "text": "The professional's secret is that better columns often beat a fancier model, so build good features first."
+      }
+    ],
+    "bytes": 216288,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-diagnose": {
+    "hash": "f52d0054b8d30275",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Look closely at what the summary is telling us. A minimum distance of negative four point two meters — that's impossible in the real world, so it's a logical error we either clamp or drop. And notice 'car' with a lowercase c appearing three hundred twelve times, while 'Car' with a capital shows up forty-seven times — that's one single category being quietly split in two by a formatting quirk. Naming the enemy correctly is what tells you the cure: fix the impossible number, and lowercase the text to reunite that class.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.637,
+        "text": "Look closely at what the summary is telling us."
+      },
+      {
+        "start": 2.637,
+        "end": 11.962,
+        "text": "A minimum distance of negative four point two meters — that's impossible in the real world, so it's a logical error we either clamp or drop."
+      },
+      {
+        "start": 11.962,
+        "end": 25.562,
+        "text": "And notice 'car' with a lowercase c appearing three hundred twelve times, while 'Car' with a capital shows up forty-seven times — that's one single category being quietly split in two by a formatting quirk."
+      },
+      {
+        "start": 25.562,
+        "end": 33.975,
+        "text": "Naming the enemy correctly is what tells you the cure: fix the impossible number, and lowercase the text to reunite that class."
+      }
+    ],
+    "bytes": 204192,
+    "model": "claude-opus-4-8"
+  },
+  "case-clean-av-log": {
+    "hash": "36e17f2bee08fd24",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's take that detection log we've been following all term and finally make it ready for a model to learn from. First, those blank distance readings — maybe the sensor struggled at night — so we investigate, fill them with the median, and we write down that we did it. Then we squeeze the box coordinates into a zero-to-one range and z-score the distances so no single number drowns out the others, and we turn the object class into simple yes-no columns. And here's the key: the report of every change, rows in versus rows out, with a reason for each — that report is the deliverable, not paperwork you tack on afterward.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.875,
+        "text": "Let's take that detection log we've been following all term and finally make it ready for a model to learn from."
+      },
+      {
+        "start": 5.875,
+        "end": 15.337,
+        "text": "First, those blank distance readings — maybe the sensor struggled at night — so we investigate, fill them with the median, and we write down that we did it."
+      },
+      {
+        "start": 15.337,
+        "end": 27.475,
+        "text": "Then we squeeze the box coordinates into a zero-to-one range and z-score the distances so no single number drowns out the others, and we turn the object class into simple yes-no columns."
+      },
+      {
+        "start": 27.475,
+        "end": 38.725,
+        "text": "And here's the key: the report of every change, rows in versus rows out, with a reason for each — that report is the deliverable, not paperwork you tack on afterward."
+      }
+    ],
+    "bytes": 232704,
+    "model": "claude-opus-4-8"
+  },
+  "discuss-shortcut": {
+    "hash": "7e39f74554c87729",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's put on our detective hats for a few minutes. Remember how that X-ray model just learned to spot a little tag instead of actually finding pneumonia? Your pedestrian detector could be just as lazy — so what might it cheat with? Maybe it keys on crosswalk stripes or busy city backgrounds instead of people, which means it fails on a quiet country road where a pedestrian really matters. Grab a partner: figure out the best shortcut, then design a test image that would catch a cheater — like a person standing in an open field, or an empty crosswalk. Drop your best ideas in the chat.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.237,
+        "text": "Alright, let's put on our detective hats for a few minutes."
+      },
+      {
+        "start": 3.237,
+        "end": 9.312,
+        "text": "Remember how that X-ray model just learned to spot a little tag instead of actually finding pneumonia?"
+      },
+      {
+        "start": 9.312,
+        "end": 14,
+        "text": "Your pedestrian detector could be just as lazy — so what might it cheat with?"
+      },
+      {
+        "start": 14,
+        "end": 23.412,
+        "text": "Maybe it keys on crosswalk stripes or busy city backgrounds instead of people, which means it fails on a quiet country road where a pedestrian really matters."
+      },
+      {
+        "start": 23.412,
+        "end": 33.825,
+        "text": "Grab a partner: figure out the best shortcut, then design a test image that would catch a cheater — like a person standing in an open field, or an empty crosswalk."
+      },
+      {
+        "start": 33.825,
+        "end": 35.975,
+        "text": "Drop your best ideas in the chat."
+      }
+    ],
+    "bytes": 216144,
+    "model": "claude-opus-4-8"
+  },
+  "demo-profile": {
+    "hash": "3a03f77ea7f2ad8d",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Before you fix anything in a new dataset, you interrogate it — and these five lines do exactly that. The first shows your data types and where values are missing; the second maps every hole column by column. Then the statistics scream at you: negative widths, confidence scores above one, things that shouldn't exist. We count duplicate rows, and finally we spot when \"car,\" \"Car,\" and \"CAR\" are hiding as three different things. Profile first, fix second — always.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.775,
+        "text": "Before you fix anything in a new dataset, you interrogate it — and these five lines do exactly that."
+      },
+      {
+        "start": 6.775,
+        "end": 13.037,
+        "text": "The first shows your data types and where values are missing; the second maps every hole column by column."
+      },
+      {
+        "start": 13.037,
+        "end": 19.925,
+        "text": "Then the statistics scream at you: negative widths, confidence scores above one, things that shouldn't exist."
+      },
+      {
+        "start": 19.925,
+        "end": 27.837,
+        "text": "We count duplicate rows, and finally we spot when \"car,\" \"Car,\" and \"CAR\" are hiding as three different things."
+      },
+      {
+        "start": 27.837,
+        "end": 30.687,
+        "text": "Profile first, fix second — always."
+      }
+    ],
+    "bytes": 184464,
+    "model": "claude-opus-4-8"
+  },
+  "demo-ai-cleaning": {
+    "hash": "375b80ca3f03731e",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Watch how this works: the AI becomes your programmer, but you stay in charge of the judgment. You feed it your data summary, ask it to write the cleaning code, and crucially, you make it explain its choices — why median instead of mean, for instance. But my favorite prompt is the last one, where you ask what it did NOT fix, because that's where your human eyes matter most. And always read every line before you run it, since bad cleaning code corrupts your data quietly without any error message.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.075,
+        "text": "Watch how this works: the AI becomes your programmer, but you stay in charge of the judgment."
+      },
+      {
+        "start": 6.075,
+        "end": 16.225,
+        "text": "You feed it your data summary, ask it to write the cleaning code, and crucially, you make it explain its choices — why median instead of mean, for instance."
+      },
+      {
+        "start": 16.225,
+        "end": 23.15,
+        "text": "But my favorite prompt is the last one, where you ask what it did NOT fix, because that's where your human eyes matter most."
+      },
+      {
+        "start": 23.15,
+        "end": 31.062,
+        "text": "And always read every line before you run it, since bad cleaning code corrupts your data quietly without any error message."
+      }
+    ],
+    "bytes": 186768,
+    "model": "claude-opus-4-8"
+  },
+  "lab-clean-log": {
+    "hash": "5c90f73e0b79a082",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's your first real workshop, and this log is deliberately ugly — typos, holes, impossible numbers, twins. Watch how we clean it end to end: we unify the spellings so three versions of \"pedestrian\" become one, kill the duplicate car, drop the physically impossible row, and fill the missing distances while announcing exactly what we did. Notice eight rows shrink to six, and every fix leaves a paper trail. Now chew on the challenges — order really matters, and that conf of minus one might not be garbage at all, it might be the sensor's secret code for \"I couldn't tell.\"",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 8.525,
+        "text": "Alright, here's your first real workshop, and this log is deliberately ugly — typos, holes, impossible numbers, twins."
+      },
+      {
+        "start": 8.525,
+        "end": 23.2,
+        "text": "Watch how we clean it end to end: we unify the spellings so three versions of \"pedestrian\" become one, kill the duplicate car, drop the physically impossible row, and fill the missing distances while announcing exactly what we did."
+      },
+      {
+        "start": 23.2,
+        "end": 29.1,
+        "text": "Notice eight rows shrink to six, and every fix leaves a paper trail."
+      },
+      {
+        "start": 29.1,
+        "end": 39.4,
+        "text": "Now chew on the challenges — order really matters, and that conf of minus one might not be garbage at all, it might be the sensor's secret code for \"I couldn't tell.\""
+      }
+    ],
+    "bytes": 236736,
+    "model": "claude-opus-4-8"
+  },
+  "lab-scaling-proof": {
+    "hash": "27103e698de9be68",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the moment I've been promising you. We've got a tiny classifier that just measures which known example is closest to our query, and our query is clearly a near, confident detection. But when we run it on the raw numbers, distance is measured up to a hundred while confidence tops out at one, so distance basically shouts over everything and the model gives the wrong answer. Scale both features to the same range, and suddenly confidence gets a voice too — and the answer flips to the correct one. Normalization isn't cosmetic; it decides who gets heard.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.162,
+        "text": "Here's the moment I've been promising you."
+      },
+      {
+        "start": 2.162,
+        "end": 12,
+        "text": "We've got a tiny classifier that just measures which known example is closest to our query, and our query is clearly a near, confident detection."
+      },
+      {
+        "start": 12,
+        "end": 23.637,
+        "text": "But when we run it on the raw numbers, distance is measured up to a hundred while confidence tops out at one, so distance basically shouts over everything and the model gives the wrong answer."
+      },
+      {
+        "start": 23.637,
+        "end": 31,
+        "text": "Scale both features to the same range, and suddenly confidence gets a voice too — and the answer flips to the correct one."
+      },
+      {
+        "start": 31,
+        "end": 34.95,
+        "text": "Normalization isn't cosmetic; it decides who gets heard."
+      }
+    ],
+    "bytes": 210096,
+    "model": "claude-opus-4-8"
+  },
+  "your-project": {
+    "hash": "379d5e58625ca847",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's where everything we've built comes together. You're going to take your own dataset — the one from your Class-7 datasheet — and clean it, start to finish. Begin with that five-line profiling ritual to capture a \"before\" snapshot, then handle your missing values, normalize your numbers, and encode your categories the right way. But here's the part I really care about: for every single change, tell me why you made it. The code will look similar across the class, so your reasoning is what makes your report shine.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.437,
+        "text": "Alright, here's where everything we've built comes together."
+      },
+      {
+        "start": 3.437,
+        "end": 9.962,
+        "text": "You're going to take your own dataset — the one from your Class-7 datasheet — and clean it, start to finish."
+      },
+      {
+        "start": 9.962,
+        "end": 21.212,
+        "text": "Begin with that five-line profiling ritual to capture a \"before\" snapshot, then handle your missing values, normalize your numbers, and encode your categories the right way."
+      },
+      {
+        "start": 21.212,
+        "end": 26.587,
+        "text": "But here's the part I really care about: for every single change, tell me why you made it."
+      },
+      {
+        "start": 26.587,
+        "end": 31.862,
+        "text": "The code will look similar across the class, so your reasoning is what makes your report shine."
+      }
+    ],
+    "bytes": 191520,
+    "model": "claude-opus-4-8"
+  },
+  "build-it-now": {
+    "hash": "1324398a4431d8ca",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, this is where you get your hands dirty. Open your Colab, run those five profiling lines, and grab a screenshot — that's your \"before\" picture. Now remember from Lab 1: order matters, so fix your formats first, then handle duplicates, and always print a reason when you drop something. And here's the mindset I want you to carry: when you hit a value that makes no sense, that's not a problem — that's a finding, often the most interesting sentence in your whole report.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.487,
+        "text": "Alright, this is where you get your hands dirty."
+      },
+      {
+        "start": 2.487,
+        "end": 9.275,
+        "text": "Open your Colab, run those five profiling lines, and grab a screenshot — that's your \"before\" picture."
+      },
+      {
+        "start": 9.275,
+        "end": 18.012,
+        "text": "Now remember from Lab 1: order matters, so fix your formats first, then handle duplicates, and always print a reason when you drop something."
+      },
+      {
+        "start": 18.012,
+        "end": 28.625,
+        "text": "And here's the mindset I want you to carry: when you hit a value that makes no sense, that's not a problem — that's a finding, often the most interesting sentence in your whole report."
+      }
+    ],
+    "bytes": 172080,
+    "model": "claude-opus-4-8"
+  },
+  "benchmark-report": {
+    "hash": "7fc65f88988a3e09",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's what a finished cleaning report actually looks like, and I want you to treat it as your benchmark. Notice that every single change comes with a count and a reason that points to real evidence — an upload log, a camera check — never just a hunch. Look closely at that missing-tag fix: they didn't guess, they traced it to one broken camera whose footage is genuinely night-only. And my favorite part is the kept-outlier note — those three a.m. pedestrians stay, because they're rare but real, and knowing what not to clean is the true mark of maturity here.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.837,
+        "text": "Here's what a finished cleaning report actually looks like, and I want you to treat it as your benchmark."
+      },
+      {
+        "start": 5.837,
+        "end": 15.512,
+        "text": "Notice that every single change comes with a count and a reason that points to real evidence — an upload log, a camera check — never just a hunch."
+      },
+      {
+        "start": 15.512,
+        "end": 24,
+        "text": "Look closely at that missing-tag fix: they didn't guess, they traced it to one broken camera whose footage is genuinely night-only."
+      },
+      {
+        "start": 24,
+        "end": 34.775,
+        "text": "And my favorite part is the kept-outlier note — those three a.m. pedestrians stay, because they're rare but real, and knowing what not to clean is the true mark of maturity here."
+      }
+    ],
+    "bytes": 208944,
+    "model": "claude-opus-4-8"
+  },
+  "reference-key-terms": {
+    "hash": "ffec9f684ee89b07",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's lock in the vocabulary we've been building today, because these words will come back again and again. Imputation is filling missing values instead of throwing rows away, and normalization and one-hot encoding are how we make columns comparable and machine-readable. Remember that outliers aren't always errors — sometimes the strange value is exactly what we're studying. And keep an eye on shortcut learning, where a model cheats by latching onto an accidental signal; we'll hunt for that one when we design audits later.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.1370000000000005,
+        "text": "Let's lock in the vocabulary we've been building today, because these words will come back again and again."
+      },
+      {
+        "start": 6.1370000000000005,
+        "end": 17,
+        "text": "Imputation is filling missing values instead of throwing rows away, and normalization and one-hot encoding are how we make columns comparable and machine-readable."
+      },
+      {
+        "start": 17,
+        "end": 23.475,
+        "text": "Remember that outliers aren't always errors — sometimes the strange value is exactly what we're studying."
+      },
+      {
+        "start": 23.475,
+        "end": 32.012,
+        "text": "And keep an eye on shortcut learning, where a model cheats by latching onto an accidental signal; we'll hunt for that one when we design audits later."
+      }
+    ],
+    "bytes": 192384,
+    "model": "claude-opus-4-8"
+  },
+  "homework": {
+    "hash": "959f2ac6cc6b3e1a",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's what I'd like you to do before we meet again. First, finish your before-and-after report — every change justified — drop the Colab link in Classroom and commit everything to GitHub. Then try one feature-engineering experiment: build a single new column and write one sentence on what question it could answer. And run a quick shortcut audit — what accidental signal might be hiding, and how would you test for it? If you want a stretch, open a top Kaggle notebook and read only its cleaning section — count how many of our five enemies show up.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.437,
+        "text": "Alright, here's what I'd like you to do before we meet again."
+      },
+      {
+        "start": 3.437,
+        "end": 12.525,
+        "text": "First, finish your before-and-after report — every change justified — drop the Colab link in Classroom and commit everything to GitHub."
+      },
+      {
+        "start": 12.525,
+        "end": 19.787,
+        "text": "Then try one feature-engineering experiment: build a single new column and write one sentence on what question it could answer."
+      },
+      {
+        "start": 19.787,
+        "end": 26.012,
+        "text": "And run a quick shortcut audit — what accidental signal might be hiding, and how would you test for it?"
+      },
+      {
+        "start": 26.012,
+        "end": 34.275,
+        "text": "If you want a stretch, open a top Kaggle notebook and read only its cleaning section — count how many of our five enemies show up."
+      }
+    ],
+    "bytes": 206064,
+    "model": "claude-opus-4-8"
+  },
+  "line-to-remember": {
+    "hash": "93662c821bf45c78",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a thought I want you to carry out of here today, from Charles Babbage, the man who first dreamed up the computer. He said that errors from using imperfect data are far smaller than the errors we make using no data at all. Think about what that means: waiting for flawless data is itself a mistake, because perfect data simply doesn't exist. So bring what you have, clean it honestly, be open about its flaws, and then refine it. That beats both fantasy and doing nothing.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.662,
+        "text": "Here's a thought I want you to carry out of here today, from Charles Babbage, the man who first dreamed up the computer."
+      },
+      {
+        "start": 6.662,
+        "end": 13.112,
+        "text": "He said that errors from using imperfect data are far smaller than the errors we make using no data at all."
+      },
+      {
+        "start": 13.112,
+        "end": 21.412,
+        "text": "Think about what that means: waiting for flawless data is itself a mistake, because perfect data simply doesn't exist."
+      },
+      {
+        "start": 21.412,
+        "end": 27.287,
+        "text": "So bring what you have, clean it honestly, be open about its flaws, and then refine it."
+      },
+      {
+        "start": 27.287,
+        "end": 30.25,
+        "text": "That beats both fantasy and doing nothing."
+      }
+    ],
+    "bytes": 181872,
+    "model": "claude-opus-4-8"
+  },
+  "wrap-up": {
+    "hash": "7cb91cada3aa53d4",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's pull together the three big ideas worth carrying with you. First, dirty data fails quietly, so always profile before you fix, and be honest about what you changed. Second, remember your three moves — handle missing values, normalize, and encode — and let the data type tell you which encoding fits. And third, every row you drop is a claim that needs a reason, so stay suspicious of a model that performs a little too perfectly. For your exit ticket, tell me the strangest thing you found in your data today and what you decided to do about it — because next time, we turn that clean data into charts that actually tell a story.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.7119999999999997,
+        "text": "Let's pull together the three big ideas worth carrying with you."
+      },
+      {
+        "start": 3.7119999999999997,
+        "end": 10.675,
+        "text": "First, dirty data fails quietly, so always profile before you fix, and be honest about what you changed."
+      },
+      {
+        "start": 10.675,
+        "end": 20.35,
+        "text": "Second, remember your three moves — handle missing values, normalize, and encode — and let the data type tell you which encoding fits."
+      },
+      {
+        "start": 20.35,
+        "end": 28.612,
+        "text": "And third, every row you drop is a claim that needs a reason, so stay suspicious of a model that performs a little too perfectly."
+      },
+      {
+        "start": 28.612,
+        "end": 40.15,
+        "text": "For your exit ticket, tell me the strangest thing you found in your data today and what you decided to do about it — because next time, we turn that clean data into charts that actually tell a story."
+      }
+    ],
+    "bytes": 241200,
+    "model": "claude-opus-4-8"
+  },
+  "backup-material": {
+    "hash": "dc1e3c629376f50d",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, everything from here on is bonus material, so think of it as a little treasure chest we can open if we've got extra time. If we're racing the clock, we'll skip it, but I wanted it ready for you. In here we dig into how we actually caught that sneaky token during our audit, and I've built you a handy cheat sheet for choosing the right scaler. And there's one more quiz waiting if you want to test yourselves.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.812,
+        "text": "Alright, everything from here on is bonus material, so think of it as a little treasure chest we can open if we've got extra time."
+      },
+      {
+        "start": 6.812,
+        "end": 10.762,
+        "text": "If we're racing the clock, we'll skip it, but I wanted it ready for you."
+      },
+      {
+        "start": 10.762,
+        "end": 19.587,
+        "text": "In here we dig into how we actually caught that sneaky token during our audit, and I've built you a handy cheat sheet for choosing the right scaler."
+      },
+      {
+        "start": 19.587,
+        "end": 22.837,
+        "text": "And there's one more quiz waiting if you want to test yourselves."
+      }
+    ],
+    "bytes": 137376,
+    "model": "claude-opus-4-8"
+  },
+  "backup-shortcut-audit": {
+    "hash": "3896de1e947b7f62",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "So how do we actually catch a model taking shortcuts? First, we can look where it looks — saliency maps show which pixels drove the decision, and that pneumonia model was staring at the corner of the image, not the lungs at all. Second, we remove the suspect: mask that region and re-test, and if accuracy collapses, we've found the culprit. And third, the one you can really try yourself — test it on data from a different hospital or camera, because shortcuts stay local while real signal travels. A suspiciously good score isn't a trophy; it's a hypothesis you should attack.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.25,
+        "text": "So how do we actually catch a model taking shortcuts?"
+      },
+      {
+        "start": 3.25,
+        "end": 14,
+        "text": "First, we can look where it looks — saliency maps show which pixels drove the decision, and that pneumonia model was staring at the corner of the image, not the lungs at all."
+      },
+      {
+        "start": 14,
+        "end": 22.65,
+        "text": "Second, we remove the suspect: mask that region and re-test, and if accuracy collapses, we've found the culprit."
+      },
+      {
+        "start": 22.65,
+        "end": 32.825,
+        "text": "And third, the one you can really try yourself — test it on data from a different hospital or camera, because shortcuts stay local while real signal travels."
+      },
+      {
+        "start": 32.825,
+        "end": 37.537,
+        "text": "A suspiciously good score isn't a trophy; it's a hypothesis you should attack."
+      }
+    ],
+    "bytes": 225648,
+    "model": "claude-opus-4-8"
+  },
+  "backup-scaler-sheet": {
+    "hash": "4606d8f61315c355",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let me give you a cheat sheet you can actually reach for. When your data has known bounds, like pixels or percentages, min-max scaling to zero-and-one works nicely, but watch out, because one wild outlier can stretch the whole range. For open-ended stuff like prices or distances, z-score is your safe default, and for heavily skewed things like income, take a log first to squash that long tail. And here's the sneaky one: always fit your scaler on the training data only, then apply it to validation and test, otherwise you're secretly leaking the test set into your model.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.8,
+        "text": "Let me give you a cheat sheet you can actually reach for."
+      },
+      {
+        "start": 2.8,
+        "end": 14.575,
+        "text": "When your data has known bounds, like pixels or percentages, min-max scaling to zero-and-one works nicely, but watch out, because one wild outlier can stretch the whole range."
+      },
+      {
+        "start": 14.575,
+        "end": 25.662,
+        "text": "For open-ended stuff like prices or distances, z-score is your safe default, and for heavily skewed things like income, take a log first to squash that long tail."
+      },
+      {
+        "start": 25.662,
+        "end": 36.462,
+        "text": "And here's the sneaky one: always fit your scaler on the training data only, then apply it to validation and test, otherwise you're secretly leaking the test set into your model."
+      }
+    ],
+    "bytes": 219168,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-backup-bonus": {
+    "hash": "d2ae00c8dfafbd19",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a moment that separates beginners from real practitioners. Your accuracy just fell from 96 to 81 after cleaning, and your teammate panics that you broke something. But think sharper — that 96 was probably leaning on duplicates, leaks, or sneaky signals that let the model cheat. When you cleaned those out, you didn't cause damage; you revealed the truth. The 81 is your honest baseline, and now you get to improve it for real.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.087,
+        "text": "Here's a moment that separates beginners from real practitioners."
+      },
+      {
+        "start": 4.087,
+        "end": 10.8,
+        "text": "Your accuracy just fell from 96 to 81 after cleaning, and your teammate panics that you broke something."
+      },
+      {
+        "start": 10.8,
+        "end": 19.087,
+        "text": "But think sharper — that 96 was probably leaning on duplicates, leaks, or sneaky signals that let the model cheat."
+      },
+      {
+        "start": 19.087,
+        "end": 23.712,
+        "text": "When you cleaned those out, you didn't cause damage; you revealed the truth."
+      },
+      {
+        "start": 23.712,
+        "end": 28.25,
+        "text": "The 81 is your honest baseline, and now you get to improve it for real."
+      }
+    ],
+    "bytes": 169920,
+    "model": "claude-opus-4-8"
+  }
+}
