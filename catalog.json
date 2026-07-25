@@ -200,10 +200,22 @@
           "id": "class-09",
           "n": 9,
           "title": "Data Visualization & Storytelling",
+          "summary": "Use charts to argue, not just to decorate: Anscombe's quartet (computed live), the chart-job map, correlation and its traps, the axis that lies, matplotlib's five lines, ASCII-chart labs, and your own 3-chart data story arguing one conclusion.",
           "tags": [
-            "visualization"
+            "visualization",
+            "matplotlib",
+            "histogram",
+            "scatter",
+            "correlation",
+            "Anscombe",
+            "data story",
+            "honest charts",
+            "quiz",
+            "interactive",
+            "Python"
           ],
-          "status": "planned"
+          "duration": "60 min",
+          "status": "ready"
         },
         {
           "id": "class-10",

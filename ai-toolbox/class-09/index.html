@@ -1,0 +1,1514 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Class 09 · Data Visualization (Data Storytelling) — The AI Toolbox</title>
+<link rel="icon" type="image/png" href="/meritpoint-slides/assets/favicon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+<style>
+:root{--navy:#0C2D52;--navy2:#12386A;--blue:#1769C0;--teal:#0F9DB0;--tealb:#2BC4D4;--coral:#EE6B36;--amber:#F2A93B;--green:#1FA37A;--ink:#21303F;--muted:#5E7183;--line:#D7E2EC;--cloud:#EEF4FA;--cloud2:#F6F9FC}
+.reveal{font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);font-size:30px}
+.reveal h1,.reveal h2,.reveal h3{font-family:Georgia,serif;color:var(--navy);text-transform:none;letter-spacing:0;font-weight:700;line-height:1.12}
+.reveal h1{font-size:1.55em}.reveal h2{font-size:1.12em}.reveal h3{font-size:.9em}
+.reveal .kicker{color:var(--teal);font-weight:700;letter-spacing:3px;font-size:.44em;text-transform:uppercase;margin-bottom:.35em;font-family:-apple-system,sans-serif}
+.reveal section{text-align:left}.reveal section.center{text-align:center}
+.reveal ul,.reveal ol{margin-left:1.05em}.reveal li{margin:.28em 0;font-size:.7em;line-height:1.38}
+.reveal p{font-size:.74em;line-height:1.42}.reveal .lead{font-size:.82em}.reveal .muted{color:var(--muted)}
+.reveal .callout{background:var(--cloud);border-left:6px solid var(--teal);border-radius:8px;padding:.45em .8em;margin-top:.5em;font-size:.7em}
+.reveal .callout b{color:var(--teal)}
+.reveal .pill{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:999px;padding:.16em .7em;font-size:.55em;color:var(--navy);margin:.12em .18em}
+.reveal .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.65em}.reveal .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6em}
+.reveal .box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.6em .75em;box-shadow:0 4px 14px rgba(20,40,70,.06)}
+.reveal .box h3{margin:.05em 0 .2em}.reveal .box p{font-size:.58em;margin:0}
+.reveal .feature{display:inline-block;font-size:.55em;font-weight:700;color:#fff;background:var(--navy);border-radius:6px;padding:.1em .55em;margin-top:.25em}
+.reveal .rate{display:inline-block;font-weight:800;color:#fff;border-radius:5px;padding:.05em .4em;font-size:.92em;line-height:1.3}
+.reveal .rate.r-g{background:var(--green)}.reveal .rate.r-pg{background:var(--blue)}.reveal .rate.r-r{background:var(--coral)}
+.reveal .vid{display:grid;grid-template-columns:1.5fr 1fr;gap:1em;align-items:center}
+.reveal .poster{border-radius:12px;height:2.7em;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1.25em;text-align:center;box-shadow:0 8px 24px rgba(20,40,70,.18);position:relative}
+.reveal .poster .play{position:absolute;width:1em;height:1em;border-radius:50%;background:rgba(255,255,255,.92);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:.5em}
+.reveal .qr{width:1.6em;height:1.6em;border:1px solid var(--line);border-radius:8px;background:#fff;padding:4px}
+.reveal .qrwrap{text-align:center;font-size:.5em;color:var(--muted)}.reveal .qrwrap a{color:var(--teal);word-break:break-all}
+.reveal a.btn{display:inline-block;background:#fff;border:1px solid var(--teal);color:var(--teal);border-radius:8px;padding:.16em .7em;font-size:.58em;font-weight:600}
+.reveal .src{font-size:.5em;color:var(--muted);margin-top:.5em}
+.reveal blockquote{border:none;box-shadow:none;background:var(--cloud2);border-left:6px solid var(--teal);border-radius:8px;font-size:.76em;font-style:normal;width:100%;padding:.65em 1em}
+.reveal .speak{cursor:pointer;display:inline-flex;align-items:center;gap:.4em;background:var(--teal);color:#fff;border:none;border-radius:999px;padding:.28em .85em;font-size:.52em;font-weight:700;font-family:-apple-system,sans-serif;box-shadow:0 4px 12px rgba(15,157,176,.3)}
+.reveal .speak:hover{background:#0d8a9b}.reveal .speak.playing{background:var(--coral)}
+/* timeline */
+.reveal .tl{display:flex;gap:.4em;align-items:stretch;margin-top:.5em}
+.reveal .tl .ev{flex:1;background:#fff;border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:10px;padding:.45em .5em}
+.reveal .tl .ev.winter{border-top-color:#7FA8D0}.reveal .tl .ev.boom{border-top-color:var(--coral)}
+.reveal .tl .yr{font-family:Georgia,serif;font-weight:800;color:var(--navy);font-size:.72em}
+.reveal .tl .ev b{font-size:.56em;color:var(--navy);display:block;margin:.1em 0}.reveal .tl .ev span{font-size:.5em;color:var(--muted);line-height:1.25;display:block}
+/* flow steps */
+.reveal .flow{display:flex;flex-wrap:wrap;gap:.4em;align-items:stretch}
+.reveal .step{flex:1 1 0;min-width:2.3em;background:#fff;border:1px solid var(--line);border-radius:10px;padding:.38em .42em;position:relative}
+.reveal .step .n{position:absolute;top:-.5em;left:-.3em;width:1em;height:1em;border-radius:50%;background:var(--teal);color:#fff;font-size:.5em;font-weight:800;display:flex;align-items:center;justify-content:center}
+.reveal .step b{font-size:.56em;color:var(--navy);display:block;line-height:1.15}.reveal .step span{font-size:.48em;color:var(--muted)}
+.reveal .step.loop{border-color:var(--coral);border-style:dashed}
+/* prompt cards */
+.reveal .prompt{background:#0f2742;color:#dfeaf6;border-radius:9px;padding:.4em .65em;font-family:Consolas,monospace;font-size:.54em;margin:.26em 0;line-height:1.38}
+.reveal .prompt .you{color:var(--tealb);font-weight:700}
+/* skills */
+.reveal .skillcard{background:linear-gradient(135deg,#fff,var(--cloud));border:1px solid var(--line);border-radius:14px;padding:.65em .8em}
+.reveal .skillcard .cn{font-size:.95em;color:var(--navy);font-weight:700;font-family:Georgia,serif}
+/* QUIZ */
+.reveal .quiz{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.7em .85em;box-shadow:0 6px 18px rgba(20,40,70,.07);max-width:18em}
+.reveal .quiz .qq{font-size:.72em;font-weight:600;color:var(--navy);margin:0 0 .5em}
+.reveal .quiz .opt{display:block;width:100%;text-align:left;background:var(--cloud2);border:1px solid var(--line);border-radius:9px;padding:.4em .6em;margin:.25em 0;font-size:.6em;color:var(--ink);cursor:pointer;transition:.1s;font-family:-apple-system,sans-serif}
+.reveal .quiz .opt:hover{border-color:var(--teal);background:#fff}
+.reveal .quiz .opt.correct{background:#E6F4EE;border-color:var(--green);color:#0d6b4f;font-weight:600}
+.reveal .quiz .opt.wrong{background:#FBEAE7;border-color:var(--coral);color:#a23c1c}
+.reveal .quiz .opt[disabled]{cursor:default}
+.reveal .quiz-exp{font-size:.56em;color:var(--muted);margin:.4em 0 0;display:none}
+.reveal .quiz.answered .quiz-exp{display:block}
+.reveal .quiz-badge{font-size:.5em;color:var(--teal);font-weight:700;letter-spacing:1px}
+/* QUIZ LIVE DISTRIBUTION (shown once answered) */
+.reveal .qstats{display:none;margin-top:.5em;border-top:1px dashed var(--line);padding-top:.4em}
+.reveal .quiz.answered .qstats{display:block}
+.reveal .qhead{display:flex;justify-content:space-between;align-items:center;font-size:.5em;color:var(--muted);margin-bottom:.3em}
+.reveal .qm{border:1px solid var(--line);background:var(--cloud2);border-radius:999px;padding:.15em .7em;margin-left:.4em;font:inherit;font-size:.95em;cursor:pointer;color:var(--muted)}
+.reveal .qm.on{background:var(--teal);border-color:var(--teal);color:#fff;font-weight:700}
+.reveal .qrow{display:flex;align-items:center;gap:.4em;margin:.14em 0}
+.reveal .ql{font-size:.5em;font-weight:800;color:var(--navy);width:1.1em}
+.reveal .qbar{flex:1;height:.55em;background:var(--cloud2);border-radius:999px;overflow:hidden}
+.reveal .qfill{height:100%;background:var(--navy);border-radius:999px;transition:width .5s}
+.reveal .qfill.qok{background:var(--green)}
+.reveal .qp{font-size:.45em;color:var(--muted);min-width:4.2em;text-align:right}
+#liveChip{position:fixed;left:14px;bottom:46px;z-index:40;background:rgba(255,255,255,.92);border:1px solid var(--line);
+  border-radius:999px;padding:5px 12px;font:600 12px -apple-system,'Segoe UI',sans-serif;color:#1a9a6c;box-shadow:0 4px 14px rgba(20,40,70,.10)}
+/* CODE LAB — compact header, editor/output get nearly the whole slide.
+   Assistant starts folded (.lab.folded) so the editor spans full width. */
+.reveal .labslide .kicker{margin-bottom:.15em}
+.reveal .labslide h2{font-size:1em;margin:0 0 .05em}
+.reveal .labslide p.lead{font-size:.6em;margin:.05em 0 .2em}
+.reveal .lab{display:grid;grid-template-columns:1.9fr 1fr;gap:.5em;margin-top:.25em;height:17.4em}
+.reveal .lab.folded{grid-template-columns:1fr}
+.reveal .lab.folded .assist{display:none}
+.reveal .lab-main{display:flex;flex-direction:column;min-width:0;min-height:0}
+.reveal .code-wrap{position:relative;display:flex;flex:1.55;min-height:0;background:#0f2742;border:1px solid #21405f;border-radius:10px 10px 0 0;overflow:hidden}
+.reveal .code-wrap .gutter{position:relative;z-index:2;flex:0 0 46px;overflow:hidden;text-align:right;padding:10px 9px 10px 0;background:rgba(8,25,43,.55);border-right:1px solid #21405f;color:#54759a;font-family:Consolas,"SF Mono",monospace;font-size:16px;line-height:1.45;white-space:pre;user-select:none}
+.reveal .lab textarea.code{position:relative;z-index:1;flex:1;width:100%;background:transparent;color:#e7f0fb;border:none;font-family:Consolas,"SF Mono",monospace;font-size:16px;line-height:1.45;padding:10px 12px;resize:none;outline:none;tab-size:4;white-space:pre;overflow:auto}
+.reveal .line-hi{position:absolute;left:0;right:0;z-index:0;display:none;background:rgba(242,169,59,.17);border-left:4px solid var(--amber);pointer-events:none;transition:top .18s ease,height .18s ease}
+.reveal .lab-bar{display:flex;align-items:center;gap:.4em;background:#11314f;border:1px solid #21405f;border-top:none;padding:.32em .5em;flex-wrap:wrap}
+.reveal .lab-bar button{font-family:-apple-system,sans-serif;font-size:13px;font-weight:600;border:none;border-radius:8px;padding:.42em .85em;cursor:pointer}
+.reveal .lab-bar .run{background:var(--green);color:#fff}.reveal .lab-bar .run:hover{background:#178a64}
+.reveal .lab-bar .walk{background:var(--amber);color:#4a3405}.reveal .lab-bar .walk:hover{background:#e09a20}
+.reveal .walk-controls{display:inline-flex;align-items:center;gap:.3em}
+.reveal .walk-controls[hidden]{display:none}
+.reveal .walk-controls button{background:#1b3e5e;color:#ffd98a;padding:.42em .6em}
+.reveal .walk-controls .walk-pause{background:var(--amber);color:#4a3405;min-width:2.6em}
+.reveal .walk-controls .walk-step{font-size:12px;color:#ffd98a;font-family:-apple-system,sans-serif;font-variant-numeric:tabular-nums}
+.reveal .lab-bar .ai-explain,.reveal .lab-bar .ai-debug,.reveal .lab-bar .ai-improve,.reveal .lab-bar .ai-toggle{background:#1b3e5e;color:#cfe0ef}
+.reveal .lab-bar .ai-explain:hover,.reveal .lab-bar .ai-debug:hover,.reveal .lab-bar .ai-improve:hover,.reveal .lab-bar .ai-toggle:hover{background:#27557d}
+.reveal .lab:not(.folded) .ai-toggle{background:var(--teal);color:#fff}
+.reveal .lab-status{font-size:12px;color:#9db8d6;margin-left:auto;font-family:-apple-system,sans-serif}
+.reveal .lab pre.out{flex:1;min-height:0;width:100%;background:#08192b;color:#bfe3c7;border:1px solid #21405f;border-top:none;border-radius:0 0 10px 10px;margin:0;padding:.5em .7em;font-family:Consolas,monospace;font-size:14px;line-height:1.45;overflow:auto;white-space:pre-wrap}
+.reveal .lab pre.out .err{color:#ff9b8a}
+.reveal .assist{display:flex;flex-direction:column;background:linear-gradient(135deg,#fff,#f1f7fb);border:1px solid var(--line);border-radius:11px;overflow:hidden;min-width:0}
+.reveal .assist-head{background:linear-gradient(90deg,#0F9DB0,#2BC4D4);color:#fff;font-size:13px;font-weight:700;padding:.45em .7em;font-family:-apple-system,sans-serif;display:flex;align-items:center;justify-content:space-between;gap:.5em}
+.reveal .mira-name{display:inline-flex;align-items:center;gap:6px}
+.reveal .mira-face{flex:0 0 auto;display:block}
+.reveal .assist-head .ai-model{font-family:-apple-system,sans-serif;font-size:12px;font-weight:600;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.5);border-radius:6px;padding:.15em .3em;cursor:pointer;outline:none}
+.reveal .assist-head .ai-model option{color:var(--ink)}
+.reveal .assist-body{flex:1;overflow:auto;padding:.5em .65em;font-size:13px;line-height:1.46;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .assist-body p{font-size:13px;margin:.3em 0}.reveal .assist-body code{background:#eef3f8;border-radius:4px;padding:0 .25em;font-family:Consolas,monospace;font-size:12px}
+.reveal .assist-body pre{background:#0f2742;color:#e7f0fb;border-radius:8px;padding:.5em .6em;font-size:12px;overflow:auto;white-space:pre}
+.reveal .assist-body pre code{background:none;color:inherit}
+.reveal .assist-body .apply{background:var(--teal);color:#fff;border:none;border-radius:6px;padding:.25em .6em;font-size:12px;font-weight:600;cursor:pointer;margin-top:.2em}
+.reveal .assist-ask{display:flex;gap:.3em;border-top:1px solid var(--line);padding:.4em}
+.reveal .assist-ask input{flex:1;border:1px solid var(--line);border-radius:7px;padding:.4em .5em;font-size:13px;font-family:-apple-system,sans-serif;outline:none}
+.reveal .assist-ask button{background:var(--navy);color:#fff;border:none;border-radius:7px;padding:.4em .7em;font-size:13px;font-weight:600;cursor:pointer}
+/* LAB VIZ — live chart panel beside the code (shares the column with the
+   assistant: folded = viz visible, assistant open = viz hidden) */
+.reveal .lab.hasviz.folded{grid-template-columns:1.55fr 1.05fr}
+.reveal .labviz{display:none;flex-direction:column;background:linear-gradient(135deg,#fff,#f1f7fb);border:1px solid var(--line);border-radius:11px;overflow:hidden;min-width:0;min-height:0}
+.reveal .lab.hasviz.folded .labviz{display:flex}
+.reveal .lv-tabs{display:flex;gap:.28em;padding:.32em .38em;background:linear-gradient(90deg,#0C2D52,#16406e)}
+.reveal .lv-tab{flex:1;font-family:-apple-system,sans-serif;font-size:11px;font-weight:700;border:none;border-radius:6px;padding:.34em .15em;cursor:pointer;background:rgba(255,255,255,.13);color:#cfe0ef;white-space:nowrap}
+.reveal .lv-tab:hover{background:rgba(255,255,255,.25)}
+.reveal .lv-tab.sel{background:var(--teal);color:#fff}
+.reveal .lv-svg{flex:1;width:100%;min-height:0;font-family:-apple-system,sans-serif}
+.reveal .lv-svg .lv-pt{transition:opacity .3s}
+.reveal .lv-svg text{user-select:none}
+.reveal .lv-cap{font-family:-apple-system,sans-serif;font-size:12px;line-height:1.35;color:var(--ink);padding:.4em .55em;border-top:1px solid var(--line);min-height:3.4em;background:#fff}
+.reveal .lv-cap b{color:var(--navy)}
+@keyframes lvpulse{0%,100%{opacity:.85}50%{opacity:.15}}
+.reveal .lv-svg .lv-ring{animation:lvpulse 1.1s ease-in-out infinite}
+/* HEAP / TOP-K VISUALIZER */
+.reveal .heapviz{margin-top:.35em;font-family:-apple-system,sans-serif}
+.reveal .hv-top{display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
+.reveal .hv-code{background:#0f2742;border-radius:10px 10px 0 0;padding:8px 12px;border:1px solid #21405f;border-bottom:none}
+.reveal .hv-code-title{color:#9db8d6;font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:4px}
+.reveal .hv-code pre.hv-pre{margin:0;color:#e7f0fb;font-family:Consolas,"SF Mono",monospace;font-size:11.5px;line-height:1.5;max-height:150px;overflow:auto;white-space:pre}
+.reveal .hv-info{background:#eef4fa;border:1px solid #21405f22;border-top:none;border-radius:0 0 10px 10px;padding:6px 12px;font-size:11px;color:var(--muted)}
+.reveal .hv-panel{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:6px}
+.reveal .hv-panel label{font-size:10.5px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin-top:4px}
+.reveal .hv-panel label:first-child{margin-top:0}
+.reveal .hv-row{display:flex;gap:6px}
+.reveal .hv-input{flex:1;border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:13px;font-family:-apple-system,sans-serif;min-width:0}
+.reveal .hv-insert{background:var(--green);color:#fff;border:none;border-radius:7px;padding:6px 12px;font-size:12.5px;font-weight:700;cursor:pointer}
+.reveal .hv-quick{display:flex;gap:5px;flex-wrap:wrap}
+.reveal .hv-quick-btn{background:var(--cloud);border:1px solid var(--line);border-radius:7px;padding:4px 10px;font-size:12px;font-weight:600;cursor:pointer;color:var(--ink)}
+.reveal .hv-quick-btn:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .hv-arr-now{background:var(--cloud2);border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-family:Consolas,monospace;font-size:12.5px}
+.reveal .hv-status,.reveal .hv-action{font-size:12px;color:var(--ink)}
+.reveal .hv-frames-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin:10px 0 4px}
+.reveal .hv-frames{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.reveal .hv-frame{flex:0 0 auto;min-width:150px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 8px;text-align:center}
+.reveal .hv-frame-active{border-color:var(--teal);box-shadow:0 0 0 2px rgba(15,157,176,.18)}
+.reveal .hv-frame-title{font-size:11px;font-weight:700;color:var(--navy)}
+.reveal .hv-frame-desc{font-size:9.5px;color:var(--muted);min-height:1.6em;line-height:1.25;margin:2px 0}
+.reveal .hv-tree-svg{width:100%;height:80px}
+.reveal .hv-empty{color:var(--muted);font-size:10.5px;padding:20px 0}
+.reveal .hv-node{fill:#D6ECEF;stroke:#0B7E8A;stroke-width:1.5}
+.reveal .hv-node-hi{fill:#F2A93B;stroke:#c07f1a}
+.reveal .hv-node-text{font-size:9px;font-weight:700;fill:#0C2D52;text-anchor:middle;font-family:-apple-system,sans-serif}
+.reveal .hv-edge{stroke:#c7d6e4;stroke-width:1.5}
+.reveal .hv-swap{stroke:#C0392B;stroke-width:2;stroke-dasharray:3,2}
+.reveal .hv-arrs{display:flex;gap:8px;overflow-x:auto;margin-top:6px}
+.reveal .hv-arr{flex:0 0 auto;min-width:150px;text-align:center;font-family:Consolas,monospace;font-size:11.5px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:5px 8px;color:var(--ink)}
+.reveal .hv-arr-active{border-color:var(--teal)}
+.reveal .hv-arr-hi{color:#C0392B;font-weight:700}
+.reveal .hv-controls{display:flex;align-items:center;gap:6px;margin-top:8px;flex-wrap:wrap}
+.reveal .hv-controls button{background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 10px;font-size:11.5px;font-weight:600;cursor:pointer;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .hv-controls button:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .hv-play{background:var(--teal)!important;color:#fff!important;border-color:var(--teal)!important}
+.reveal .hv-speed-label{font-size:11px;color:var(--muted);margin-left:6px}
+/* convolution visualizer */
+.reveal .cv-top{display:grid;grid-template-columns:1fr 1.05fr 1fr;gap:14px;align-items:start;justify-items:center}
+.reveal .cv-col{display:flex;flex-direction:column;align-items:center}
+.reveal .cv-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin-bottom:5px;text-align:center}
+.reveal .cv-grid{display:grid;gap:2px;width:max-content}
+.reveal .cv-in{grid-template-columns:repeat(8,25px)}
+.reveal .cv-out{grid-template-columns:repeat(6,33px)}
+.reveal .cv-cell{width:25px;height:25px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:9px;font-weight:700;cursor:pointer;user-select:none;border:1px solid rgba(12,45,82,.14)}
+.reveal .cv-ocell{width:33px;height:33px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:10.5px;font-weight:700;background:var(--cloud);color:#b9c6d4;border:1px solid var(--line)}
+.reveal .cv-win{outline:2.5px solid var(--coral);outline-offset:-1px;z-index:1}
+.reveal .cv-kwrap{background:#0f2742;border-radius:10px;padding:10px 12px;border:1px solid #21405f;width:100%}
+.reveal .cv-kgrid{display:grid;grid-template-columns:repeat(3,36px);gap:2px;width:max-content;margin:0 auto}
+.reveal .cv-kcell{width:36px;height:28px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:11.5px;font-weight:700;background:#1a3a5f;color:#e7f0fb;border:1px solid #2c4d75}
+.reveal .cv-kdiv{text-align:center;color:#9db8d6;font-size:10px;margin-top:4px;font-family:Consolas,monospace}
+.reveal .cv-calc{margin-top:8px;font-family:Consolas,monospace;font-size:10px;line-height:1.55;color:#cfe0ef;min-height:60px;text-align:center}
+.reveal .cv-calc .cv-sum{color:#F2A93B;font-weight:700}
+.reveal .cv-chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px;justify-content:center}
+.reveal .cv-chip{background:var(--cloud);border:1px solid var(--line);border-radius:7px;padding:4px 9px;font-size:11px;font-weight:600;cursor:pointer;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .cv-chip:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .cv-chip.sel{background:var(--teal);border-color:var(--teal);color:#fff}
+.reveal .cv-status{font-size:12px;color:var(--ink);margin-top:7px}
+.reveal .cv-controls{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;flex-wrap:wrap}
+.reveal .cv-controls button{background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 10px;font-size:11.5px;font-weight:600;cursor:pointer;color:var(--ink);font-family:-apple-system,sans-serif}
+.reveal .cv-controls button:hover{border-color:var(--teal);color:var(--teal)}
+.reveal .cv-play{background:var(--teal)!important;color:#fff!important;border-color:var(--teal)!important}
+/* comments */
+/* bottom-right toolbar (CC | Listen | Comment) — top-right belongs to the
+   signed-in profile chip (#mpAuth, assets/auth.js), which used to cover this */
+#commentBtn{position:fixed;right:16px;bottom:14px;z-index:60;background:var(--teal);color:#fff;border:none;border-radius:999px;padding:9px 15px;font-size:13px;font-weight:700;font-family:-apple-system,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(15,157,176,.4)}
+#commentBtn:hover{background:#0d8a9b}#commentBtn .cnum{background:#fff;color:var(--teal);border-radius:999px;padding:0 6px;margin-left:5px;font-size:11px}
+#listenBtn{--p:0%;position:fixed;right:168px;bottom:14px;z-index:60;min-width:128px;justify-content:center;color:#fff;border:none;border-radius:999px;padding:9px 15px;font-size:13px;font-weight:700;font-family:-apple-system,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(20,40,70,.34);display:none;align-items:center;gap:.45em;background:linear-gradient(to right,var(--teal) var(--p),var(--navy) var(--p));transition:background .15s linear}
+#listenBtn:hover{filter:brightness(1.1)}
+#listenBtn.playing{background:linear-gradient(to right,var(--coral) var(--p),#16406e var(--p))}
+#listenBtn .li-ic{font-size:12px;line-height:1}#listenBtn .li-tx{font-variant-numeric:tabular-nums;font-size:11.5px;opacity:.92}
+#ccBtn{position:fixed;right:306px;bottom:14px;z-index:60;background:var(--navy);color:#fff;border:none;border-radius:999px;padding:9px 12px;font-size:11.5px;font-weight:800;letter-spacing:.03em;font-family:-apple-system,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(20,40,70,.34);display:none;opacity:.5}
+#ccBtn:hover{opacity:.8}#ccBtn.on{opacity:1;background:var(--teal)}
+#capBar{position:fixed;left:50%;bottom:58px;transform:translateX(-50%);max-width:70%;background:rgba(8,16,30,.88);color:#fff;padding:.4em 1em;border-radius:9px;font-size:13.5px;line-height:1.35;text-align:center;z-index:59;display:none;font-family:-apple-system,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+#commentPanel{position:fixed;right:16px;bottom:60px;width:340px;max-height:64vh;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 44px rgba(20,40,70,.22);z-index:61;display:none;flex-direction:column;font-family:-apple-system,sans-serif;overflow:hidden}
+#commentPanel.open{display:flex}
+#commentPanel .ph{background:var(--navy);color:#fff;padding:10px 14px;font-size:13px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+#commentPanel .ph .x{cursor:pointer;opacity:.8}#commentPanel .ph .x:hover{opacity:1}
+#commentList{flex:1;overflow:auto;padding:10px 14px}
+#commentList .c{border-bottom:1px solid var(--cloud);padding:7px 0}#commentList .c:last-child{border:none}
+#commentList .c .cn{font-size:12px;font-weight:700;color:var(--navy)}#commentList .c .ct{font-size:10px;color:var(--muted);margin-left:6px}
+#commentList .c .cb{font-size:13px;color:var(--ink);margin-top:2px;white-space:pre-wrap;word-break:break-word}
+#commentList .none{color:var(--muted);font-size:12.5px;text-align:center;padding:14px 0}
+#commentForm{border-top:1px solid var(--line);padding:10px 12px;display:flex;flex-direction:column;gap:6px}
+#commentForm input,#commentForm textarea{border:1px solid var(--line);border-radius:8px;padding:7px 9px;font-size:13px;font-family:-apple-system,sans-serif;outline:none}
+#commentForm textarea{resize:vertical;min-height:46px}
+#commentForm .row{display:flex;gap:6px;align-items:center}
+#commentForm button{background:var(--teal);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:700;cursor:pointer}
+#commentForm .msg{font-size:11px;color:var(--muted)}
+/* donate */
+#donateBtn{position:fixed;left:70px;top:19px;z-index:60;background:var(--coral);color:#fff;border-radius:999px;padding:8px 16px;font-size:12.5px;font-weight:700;font-family:-apple-system,sans-serif;text-decoration:none;box-shadow:0 6px 18px rgba(238,107,54,.4)}
+#donateBtn:hover{background:#d85a28;text-decoration:none}
+/* MPA logo badge — top-left of every slide, next to Donate (top-right holds the auth chip) */
+#mpaLogo{position:fixed;left:16px;top:14px;z-index:50;display:block;width:44px;height:44px;border-radius:10px;background:#fff;box-shadow:0 4px 14px rgba(20,40,70,.25);opacity:.92;transition:opacity .15s}
+#mpaLogo:hover{opacity:1}
+#mpaLogo img{width:100%;height:100%;object-fit:contain;display:block}
+/* slide number: default bottom-right collides with the comment/listen/cc button row, so move it to bottom-left */
+.reveal .slide-number{left:14px;right:auto;bottom:14px;z-index:58;background:rgba(255,255,255,.85);padding:2px 8px;border-radius:6px;color:var(--muted)}
+/* PDF download — top-left row, after Donate */
+#pdfBtn{position:fixed;left:178px;top:19px;z-index:60;background:#fff;color:var(--navy);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:12.5px;font-weight:700;font-family:-apple-system,sans-serif;text-decoration:none;box-shadow:0 4px 14px rgba(20,40,70,.18)}
+#pdfBtn:hover{border-color:var(--teal);color:var(--teal);text-decoration:none}
+/* keep screen-only chrome out of print / the exported PDF (fixed elements repeat on every page) */
+@media print{#donateBtn,#mpaLogo,#pdfBtn,#ccBtn,#listenBtn,#commentBtn,#commentPanel,#capBar,#mpAuth{display:none!important}}
+</style></head><body>
+<div class="reveal"><div class="slides">
+<section id="title" data-sid="title" class="center" data-background-gradient="linear-gradient(135deg,#0C2D52,#16406e)">
+<div class="kicker" style="color:#7fd3df">The AI Toolbox · Class 09</div>
+    <h1 style="color:#fff">Data Visualization<br>(Data Storytelling)</h1>
+    <p style="color:#cfe0ef;margin-top:.5em">Use charts to <b>argue</b>, not just to decorate.</p>
+    <p style="color:#9db8d6;font-size:.58em;margin-top:1.1em">Merit Point Academy · 60 min · press <b>S</b> notes · <b>→</b> next · 💬 to comment</p>
+    <aside class="notes">The finale of the data stage (classes 5-9), and the payoff of Class 3's pitfall #4: numbers with no picture. Two skills braided all hour: making charts that argue (rhetoric) and keeping them honest (ethics). Students leave with a 3-chart data story about their OWN cleaned dataset — the artifact that opens their final presentation in Class 15.</aside>
+</section>
+<section id="recap-class08" data-sid="recap-class08">
+<div class="kicker">Recap · where we left off</div>
+    <h2>Last class in 60 seconds</h2>
+    <div class="grid3" style="margin-top:.35em">
+      <div class="box"><h3 style="color:var(--navy)">Five enemies, three moves</h3><p>Missing · normalize · encode — and the type picks the encoding (no fake order!).</p></div>
+      <div class="box"><h3 style="color:var(--teal)">Every drop is a claim</h3><p>Cleaning decisions got reasons; disclosure became habit.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">Shortcut learning</h3><p>The X-ray token: suspiciously good = a hypothesis to attack.</p></div>
+    </div>
+    <div class="callout"><b>Homework share:</b> the strangest thing you found while cleaning — and your shortcut audit. Your data is now clean and documented… <b>but it still can't speak.</b> Today we give it a voice: one conclusion, three honest charts.</div>
+    <aside class="notes">The strangest-finding shares are perfect raw material — several will literally become chart subjects today ('show me that outlier'). The arc: Class 7 chose, Class 8 cleaned, Class 9 argues. Next week the models arrive.</aside>
+</section>
+<section id="agenda" data-sid="agenda">
+<div class="kicker">Agenda · how this hour runs</div>
+    <h2>Where we're going</h2>
+    <div class="grid2" style="margin-top:.4em">
+      <ul>
+        <li><b>0–8'</b> Homework share + four datasets in one disguise</li>
+        <li><b>8–18'</b> Charts are arguments · which chart for which job</li>
+        <li><b>18–28'</b> Correlation — and its favorite trap</li>
+        <li><b>28–38'</b> Honest visuals: the axis that lies · matplotlib's five lines</li>
+      </ul>
+      <ul>
+        <li><b>38–46'</b> Demos: charts in Colab · the AI chart critic</li>
+        <li><b>46–54'</b> Two labs: ASCII charts · Anscombe, verified by hand</li>
+        <li><b>54–60'</b> Your 3-chart data story, homework &amp; wrap-up</li>
+        <li>Quizzes &amp; 💬 comments throughout</li>
+      </ul>
+    </div>
+    <div class="callout"><b>By the end:</b> pick the right chart for a claim, compute and distrust correlation appropriately, spot an axis that lies, and tell one clear story with exactly three honest charts.</div>
+    <aside class="notes">Rhetoric + ethics is the braid: argue AND stay honest. The labs are deliberately chart-free-tooling (ASCII) so the CONCEPTS land in the browser while real matplotlib lives in Colab where charts can render.</aside>
+</section>
+<section id="quiz-warmup" data-sid="quiz-warmup">
+<div class="kicker">Warm-up · activate</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="2">
+    <p class="qq">When is a self-driving car's vision least trustworthy — near or far? big objects or small? Where does that answer live?</p>
+    <div class="opts"><button class="opt" data-i="0">In the car's user manual</button><button class="opt" data-i="1">In expert opinion — ask three engineers</button><button class="opt" data-i="2">Already in your detection log, waiting for the right chart to reveal it</button><button class="opt" data-i="3">Nowhere; trustworthiness can't be measured</button></div>
+    <p class="quiz-exp">One scatter plot of confidence vs. object size answers it instantly — the pattern is sitting in the data you cleaned last week. Most questions about your data are one correct chart away from an answer.</p>
+  </div>
+  <aside class="notes">Frames charts as instruments of discovery, not decoration — the case study builds exactly this scatter later. 'One correct chart away' is the hour's promise.</aside>
+</section>
+<section id="story-anscombe" data-sid="story-anscombe">
+<div class="kicker">The Story</div>
+    <h2>Four datasets, one disguise</h2>
+    <blockquote id="quote">In 1973, statistician <b>Francis Anscombe</b> built four little datasets with nearly identical statistics — same mean, same variance, same correlation, same best-fit line. By the numbers they were <b>twins</b>. Then he plotted them. One was a clean line, one a curve, one had a single wild outlier, one was almost vertical. <b>The numbers hid everything; only the charts told the truth.</b></blockquote>
+    <div style="margin-top:.4em;display:flex;align-items:center;gap:1em">
+      <button class="speak" data-audio="audio/quote.mp3">🔊 <span>Speak this story</span></button>
+      <span class="muted" style="font-size:.52em">Neural voice · click to play / pause</span></div>
+    <p class="src">You'll meet the actual four on the visual slide — and in Lab 2 you'll <b>verify his trick yourself</b>: compute the identical stats, then plot the four shapes. Fifty years later it's still the best two-minute argument for "always plot your data."</p>
+    <aside class="notes">Anscombe built the quartet specifically to fight the 1970s attitude that plots were beneath serious statisticians. The lab-2 promise matters: students won't take the story on faith, they'll reproduce it — the course's verify habit applied to a statistics legend.</aside>
+</section>
+<section id="concept-charts-argue" data-sid="concept-charts-argue">
+<div class="kicker">Concept 1 · what a chart is for</div>
+    <h2>A chart is an argument</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">📊 Histogram</h3><p>"How is one variable <b>distributed</b>?" — where do my detection distances pile up?</p></div>
+      <div class="box"><h3 style="color:var(--teal)">✨ Scatter</h3><p>"How do two variables <b>relate</b>?" — does confidence fall as objects shrink?</p></div>
+      <div class="box"><h3 style="color:var(--coral)">🔗 Correlation</h3><p>"How <b>strong</b> is that relationship?" — one number (r) summarizing the scatter.</p></div>
+    </div>
+    <div class="callout"><b>KEY IDEA</b> — every chart should answer a question you can state <b>in one sentence</b>. If you can't say the sentence, you don't need the chart. (Recognize the discipline? It's Class 2's picture test — now pointed at output instead of input.)</div>
+    <aside class="notes">The one-sentence test is the hour's quality gate and the project's step 1. The three chart types named here are exactly the deliverable's toolkit — histogram, scatter, correlation — deliberately minimal.</aside>
+</section>
+<section id="concept-chart-map" data-sid="concept-chart-map">
+<div class="kicker">Concept 2 · the question picks the chart</div>
+    <h2>Five jobs, five charts</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">📈 Trend over time</h3><p>→ <b>line chart</b>. Sales by month, temperature by hour.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">⚖️ Compare categories</h3><p>→ <b>bar chart</b>. Detections per object class.</p></div>
+      <div class="box"><h3 style="color:var(--amber)">🥧 Parts of a whole</h3><p>→ <b>pie</b> (sparingly!). Market shares — only when parts sum to 100%.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">🏔️ Distribution</h3><p>→ <b>histogram / box plot</b>. Ages, distances, scores.</p></div>
+      <div class="box"><h3 style="color:var(--green)">🔀 Relationship</h3><p>→ <b>scatter</b>. Confidence vs. size; study hours vs. grades.</p></div>
+      <div class="box" style="background:var(--cloud)"><h3 style="color:var(--navy)">🧭 The rule</h3><p>State the question first — <b>the question picks the chart</b>. (Sound familiar? "The type picks the tools" — Class 7.)</p></div>
+    </div>
+    <aside class="notes">Same rule-shape as Class 7's type-picks-tools — the course's recurring 'classify first, then act' move. Pie's 'sparingly' earns 15 seconds: humans misread angles; bars beat pies for comparison almost always.</aside>
+</section>
+<section id="quiz-chart-choice" data-sid="quiz-chart-choice">
+<div class="kicker">Check · pick the chart</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="1">
+    <p class="qq">Your claim: 'the detector's confidence drops as objects get smaller.' Which chart carries that argument?</p>
+    <div class="opts"><button class="opt" data-i="0">A pie chart of object classes</button><button class="opt" data-i="1">A scatter plot: box size on x, confidence on y</button><button class="opt" data-i="2">A bar chart of average confidence</button><button class="opt" data-i="3">A line chart of confidence over time</button></div>
+    <p class="quiz-exp">The claim relates TWO variables — size and confidence — and relationship is the scatter's job. A bar of averages would hide the shape of the relationship (Anscombe's warning!), and time isn't even in the claim.</p>
+  </div>
+  <aside class="notes">The distractor C is the subtle one: averaging first destroys exactly the evidence the claim needs. This scatter is the case study's centerpiece in a few slides.</aside>
+</section>
+<section id="concept-anscombe-visual" data-sid="concept-anscombe-visual">
+<div class="kicker">The idea in one picture · the real quartet</div>
+    <h2>Same stats, four different truths</h2>
+    <p class="lead" style="margin:0 0 .3em">These are Anscombe's actual numbers. All four: mean(x)=9, mean(y)=7.5, correlation r≈0.816, best-fit line y = 3 + 0.5x (dashed):</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.5em"><div style="text-align:center"><svg viewBox="0 0 150 104" style="width:100%;background:#fff;border:1px solid var(--line);border-radius:8px"><line x1="17.647058823529413" y1="73.0" x2="132.35294117647058" y2="20.5" stroke="#EE6B36" stroke-width="1.5" stroke-dasharray="4,3"/><circle cx="63.5" cy="51.7" r="3" fill="#0F9DB0"/><circle cx="48.2" cy="59.3" r="3" fill="#0F9DB0"/><circle cx="86.5" cy="54.9" r="3" fill="#0F9DB0"/><circle cx="55.9" cy="46.3" r="3" fill="#0F9DB0"/><circle cx="71.2" cy="49.7" r="3" fill="#0F9DB0"/><circle cx="94.1" cy="38.3" r="3" fill="#0F9DB0"/><circle cx="32.9" cy="57.3" r="3" fill="#0F9DB0"/><circle cx="17.6" cy="78.2" r="3" fill="#0F9DB0"/><circle cx="78.8" cy="32.1" r="3" fill="#0F9DB0"/><circle cx="40.6" cy="74.3" r="3" fill="#0F9DB0"/><circle cx="25.3" cy="68.2" r="3" fill="#0F9DB0"/></svg>
+    <div style="font-size:.48em;color:var(--navy);font-weight:700;margin-top:.2em">I · linear</div></div><div style="text-align:center"><svg viewBox="0 0 150 104" style="width:100%;background:#fff;border:1px solid var(--line);border-radius:8px"><line x1="17.647058823529413" y1="73.0" x2="132.35294117647058" y2="20.5" stroke="#EE6B36" stroke-width="1.5" stroke-dasharray="4,3"/><circle cx="63.5" cy="44.0" r="3" fill="#0F9DB0"/><circle cx="48.2" cy="51.0" r="3" fill="#0F9DB0"/><circle cx="86.5" cy="46.8" r="3" fill="#0F9DB0"/><circle cx="55.9" cy="46.6" r="3" fill="#0F9DB0"/><circle cx="71.2" cy="43.2" r="3" fill="#0F9DB0"/><circle cx="94.1" cy="51.3" r="3" fill="#0F9DB0"/><circle cx="32.9" cy="65.1" r="3" fill="#0F9DB0"/><circle cx="17.6" cy="86.3" r="3" fill="#0F9DB0"/><circle cx="78.8" cy="44.1" r="3" fill="#0F9DB0"/><circle cx="40.6" cy="57.2" r="3" fill="#0F9DB0"/><circle cx="25.3" cy="74.8" r="3" fill="#0F9DB0"/></svg>
+    <div style="font-size:.48em;color:var(--navy);font-weight:700;margin-top:.2em">II · curved</div></div><div style="text-align:center"><svg viewBox="0 0 150 104" style="width:100%;background:#fff;border:1px solid var(--line);border-radius:8px"><line x1="17.647058823529413" y1="73.0" x2="132.35294117647058" y2="20.5" stroke="#EE6B36" stroke-width="1.5" stroke-dasharray="4,3"/><circle cx="63.5" cy="55.8" r="3" fill="#0F9DB0"/><circle cx="48.2" cy="60.6" r="3" fill="#0F9DB0"/><circle cx="86.5" cy="18.8" r="3" fill="#0F9DB0"/><circle cx="55.9" cy="58.2" r="3" fill="#0F9DB0"/><circle cx="71.2" cy="53.3" r="3" fill="#0F9DB0"/><circle cx="94.1" cy="46.1" r="3" fill="#0F9DB0"/><circle cx="32.9" cy="65.4" r="3" fill="#0F9DB0"/><circle cx="17.6" cy="70.3" r="3" fill="#0F9DB0"/><circle cx="78.8" cy="50.9" r="3" fill="#0F9DB0"/><circle cx="40.6" cy="63.1" r="3" fill="#0F9DB0"/><circle cx="25.3" cy="67.9" r="3" fill="#0F9DB0"/></svg>
+    <div style="font-size:.48em;color:var(--navy);font-weight:700;margin-top:.2em">III · outlier</div></div><div style="text-align:center"><svg viewBox="0 0 150 104" style="width:100%;background:#fff;border:1px solid var(--line);border-radius:8px"><line x1="17.647058823529413" y1="73.0" x2="132.35294117647058" y2="20.5" stroke="#EE6B36" stroke-width="1.5" stroke-dasharray="4,3"/><circle cx="48.2" cy="61.9" r="3" fill="#0F9DB0"/><circle cx="48.2" cy="67.7" r="3" fill="#0F9DB0"/><circle cx="48.2" cy="54.0" r="3" fill="#0F9DB0"/><circle cx="48.2" cy="46.1" r="3" fill="#0F9DB0"/><circle cx="48.2" cy="48.7" r="3" fill="#0F9DB0"/><circle cx="48.2" cy="58.7" r="3" fill="#0F9DB0"/><circle cx="48.2" cy="71.3" r="3" fill="#0F9DB0"/><circle cx="132.4" cy="20.5" r="3" fill="#0F9DB0"/><circle cx="48.2" cy="69.1" r="3" fill="#0F9DB0"/><circle cx="48.2" cy="52.6" r="3" fill="#0F9DB0"/><circle cx="48.2" cy="59.8" r="3" fill="#0F9DB0"/></svg>
+    <div style="font-size:.48em;color:var(--navy);font-weight:700;margin-top:.2em">IV · vertical</div></div></div>
+    <div class="callout"><b>Takeaway:</b> identical summary numbers can hide totally different shapes — a curve, a killer outlier, a vertical stack. <b>Always plot your data</b> before you trust any statistic about it. describe() is the beginning of looking, never the end.</div>
+    <aside class="notes">The panels are computed from the genuine quartet values at build time. Walk each panel: I is what everyone imagines; II is a law of physics wearing r=0.816; III is one outlier bending the line; IV is one point INVENTING the whole correlation. Panel IV segues into the correlation slide's cautions.</aside>
+</section>
+<section id="concept-correlation" data-sid="concept-correlation">
+<div class="kicker">Concept 3 · the strength number</div>
+    <h2>Correlation: one number for a relationship</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--teal)">r → +1</h3><p>Rise together, tightly. Study hours vs. grades (usually!).</p></div>
+      <div class="box"><h3 style="color:var(--navy)">r → 0</h3><p>No <i>linear</i> pattern. Shoe size vs. music taste.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">r → −1</h3><p>One rises, the other falls. Object size vs. distance in our log.</p></div>
+    </div>
+    <div class="grid2" style="margin-top:.4em">
+      <div class="box" style="border-top:4px solid var(--coral)"><h3 style="color:var(--coral)">⚠️ Trap 1 · correlation ≠ causation</h3><p>Ice-cream sales correlate with drownings — summer causes both. An r, however large, never proves one thing <i>drives</i> the other. (Class 5's Titanic quiz, formalized.)</p></div>
+      <div class="box" style="border-top:4px solid var(--amber)"><h3 style="color:#8a6114">⚠️ Trap 2 · r only sees straight lines</h3><p>Anscombe's panel II: a perfect curve, r = 0.816 — same as the line! Strong nonlinear patterns can hide behind any r. The fix is always the same: <b>plot it</b>.</p></div>
+    </div>
+    <aside class="notes">Two traps, both defused by plotting — the hour's refrain. The ice-cream example is the classic for a reason; invite a student to name the lurking variable. Panel-II callback makes trap 2 concrete instead of abstract.</aside>
+</section>
+<section id="quiz-correlation" data-sid="quiz-correlation">
+<div class="kicker">Check · the traps</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="2">
+    <p class="qq">Cities with more firefighters have more fire damage (strong positive r). Therefore firefighters cause damage. What went wrong?</p>
+    <div class="opts"><button class="opt" data-i="0">Nothing — the data has spoken</button><button class="opt" data-i="1">The r must have been computed incorrectly</button><button class="opt" data-i="2">A lurking variable: bigger fires bring both more firefighters AND more damage — correlation isn't causation</button><button class="opt" data-i="3">Firefighters should be reduced to test it</button></div>
+    <p class="quiz-exp">Fire size drives both variables — the classic lurking-variable pattern (same shape as ice cream and drownings). The r is real; the causal story pinned on it is not. Charts and correlations describe; experiments (Class 14!) are what test causes.</p>
+  </div>
+  <aside class="notes">The firefighter version lands harder than ice cream because the wrong conclusion sounds actionable. The Class-14 pointer seeds the causality-needs-experiments idea early.</aside>
+</section>
+<section id="concept-honest-axes" data-sid="concept-honest-axes">
+<div class="kicker">Concept 4 · the ethics half</div>
+    <h2>The axis that lies</h2>
+    <p class="lead" style="margin:0 0 .3em">Same three detectors, same numbers — 88%, 90%, 92% accuracy. Watch the y-axis do the lying:</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.7em">
+  <div style="text-align:center"><svg viewBox="0 0 170 110" style="width:100%;background:#fff;border:1px solid var(--line);border-radius:8px">
+    <text x="4" y="10" font-size="7.5" fill="#5E7183">y from 0</text><rect x="26" y="22.3" width="28" height="75.7" fill="#0F9DB0" rx="2"/>
+      <text x="40" y="108" text-anchor="middle" font-size="8" fill="#5E7183">A</text><rect x="72" y="20.6" width="28" height="77.4" fill="#0F9DB0" rx="2"/>
+      <text x="86" y="108" text-anchor="middle" font-size="8" fill="#5E7183">B</text><rect x="118" y="18.9" width="28" height="79.1" fill="#0F9DB0" rx="2"/>
+      <text x="132" y="108" text-anchor="middle" font-size="8" fill="#5E7183">C</text></svg>
+    <div style="font-size:.48em;font-weight:700;margin-top:.2em;color:var(--navy)">Honest: axis starts at 0</div>
+    <div style="font-size:.44em;color:var(--muted)">the three detectors are nearly tied</div></div>
+  <div style="text-align:center"><svg viewBox="0 0 170 110" style="width:100%;background:#fff;border:1px solid var(--line);border-radius:8px">
+    <text x="4" y="10" font-size="7.5" fill="#5E7183">y from 87</text><rect x="26" y="91.4" width="28" height="6.6" fill="#EE6B36" rx="2"/>
+      <text x="40" y="108" text-anchor="middle" font-size="8" fill="#5E7183">A</text><rect x="72" y="78.2" width="28" height="19.8" fill="#EE6B36" rx="2"/>
+      <text x="86" y="108" text-anchor="middle" font-size="8" fill="#5E7183">B</text><rect x="118" y="64.9" width="28" height="33.1" fill="#EE6B36" rx="2"/>
+      <text x="132" y="108" text-anchor="middle" font-size="8" fill="#5E7183">C</text></svg>
+    <div style="font-size:.48em;font-weight:700;margin-top:.2em;color:var(--navy)">Misleading: axis starts at 87</div>
+    <div style="font-size:.44em;color:var(--muted)">C looks 3× better — same numbers!</div></div>
+</div>
+    <div class="callout"><b>The honest-chart checklist:</b> axes start at sensible values (bars: usually 0) · units labeled · every point's meaning stated · <b>caption self-contained</b> — a reader should get the message without you narrating. Break these to make a point <i>look</i> bigger, and you've joined the X-ray token on the dark side.</div>
+    <aside class="notes">Both panels are the SAME data — the truncated axis triples the visual difference. This is the most common chart lie in the wild (news, ads, pitch decks), which is exactly the homework hunt. The checklist is the project's grading rubric in miniature.</aside>
+</section>
+<section id="tool-matplotlib" data-sid="tool-matplotlib">
+<div class="kicker">The tool · five lines to a real chart</div>
+    <h2>matplotlib, gently</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1fr;margin-top:.25em">
+      <div class="box"><h3 style="color:var(--navy)">Histogram</h3>
+        <div class="prompt">import matplotlib.pyplot as plt<br>plt.hist(df["dist_m"], bins=20)<br>plt.title("Detection distances")<br>plt.xlabel("distance (m)")<br>plt.ylabel("count"); plt.show()</div></div>
+      <div class="box"><h3 style="color:var(--teal)">Scatter</h3>
+        <div class="prompt">plt.scatter(df["box_area"],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;df["conf"], alpha=0.5)<br>plt.title("Confidence vs. size")<br>plt.xlabel("box area (px²)")<br>plt.ylabel("confidence"); plt.show()</div></div>
+    </div>
+    <div class="callout"><b>Notice what's NOT optional:</b> three of the five lines are title and axis labels — the same rule since your first Colab chart (Class 5). The plotting is one line; the <b>honesty</b> is the other four. Correlation, when you need the number: <span style="font-family:Consolas,monospace;font-size:.85em">df["a"].corr(df["b"])</span>.</div>
+    <aside class="notes">Deliberately tiny API surface: hist, scatter, title, labels, corr — enough for the whole deliverable. The 'honesty is the other four lines' framing connects the tool back to concept 4. Real rendering happens in Colab (demo next); the deck labs go ASCII on purpose.</aside>
+</section>
+<section id="case-av-3charts" data-sid="case-av-3charts">
+<div class="kicker">Case study · our running example, argued</div>
+    <h2>When is perception least confident?</h2>
+    <div class="flow" style="margin-top:.3em">
+      <div class="step"><div class="n">1</div><b>Histogram</b><span>Distances pile up at 5–20 m — but a long tail stretches past 60 m. <i>"Far detections exist and matter."</i></span></div>
+      <div class="step"><div class="n">2</div><b>Scatter</b><span>Confidence vs. box size: a clear upward drift — small boxes, shaky confidence. <i>"Size drives certainty."</i></span></div>
+      <div class="step"><div class="n">3</div><b>Correlation</b><span>r(size, conf) ≈ +0.7 · r(distance, conf) ≈ −0.6 — the numbers behind the pictures.</span></div>
+    </div>
+    <div class="prompt" style="margin-top:.5em"><span class="you">Conclusion ▸</span> Our detector is least trustworthy exactly where stakes are high: <b>small, far objects</b> — which is where a night-time pedestrian first appears.</div>
+    <div class="callout"><b>Anatomy of a data story:</b> each chart answers one sentence; together they corner a single conclusion — and that conclusion is Class 2's strong question, <b>now with evidence</b>. This is the story-shape your project copies today.</div>
+    <aside class="notes">The full-circle moment: the night-question thread gets its first evidence-backed conclusion, built from the very log they cleaned. The three-step shape (distribution → relationship → strength) is a reusable story template for almost any dataset.</aside>
+</section>
+<section id="discuss-hidden-problem" data-sid="discuss-hidden-problem">
+<div class="kicker">Discuss · 5 minutes · numbers that hide</div>
+    <h2>A great summary number hiding a problem</h2>
+    <p class="lead">Anscombe's mean hid four different shapes. What's a number from <b>your</b> world that could look great in a summary while hiding trouble underneath?</p>
+    <div class="grid2" style="margin-top:.4em">
+      <div class="box" style="border-top:4px solid var(--teal)"><h3 style="color:var(--teal)">Find one</h3><p>A class average hiding a struggling half? An app's average rating hiding a review-bomb? A model's 95% accuracy hiding one always-missed class?</p></div>
+      <div class="box" style="border-top:4px solid var(--coral)"><h3 style="color:var(--coral)">Reveal it</h3><p>Which chart exposes the hiding place? And — have <i>you</i> ever been fooled by a chart? What was the trick?</p></div>
+    </div>
+    <p class="lead" style="margin-top:.4em">Pairs, 3 minutes — best hidden-number + revealing chart in 💬.</p>
+    <aside class="notes">The 95%-accuracy-one-missed-class example quietly previews confusion matrices (Class 11). Personal been-fooled stories usually surface truncated axes and cherry-picked windows — name them as they appear; the backup gallery has the full taxonomy.</aside>
+</section>
+<section id="demo-colab-charts" data-sid="demo-colab-charts">
+<div class="kicker">Live demo 1</div>
+  <h2>The data story, built live in Colab</h2>
+  <p class="lead" style="margin:.15em 0 .35em">From cleaned log to three captioned charts in ten minutes — the exact flow of tonight's deliverable.</p>
+  <div class="grid2" style="grid-template-columns:2.3fr 1fr;align-items:start">
+    <div><div class="prompt"><span class="you">You ▸</span> df["box_area"] = df.box_w * df.box_h   # feature engineering, Class 8!</div><div class="prompt"><span class="you">You ▸</span> plt.hist(df["dist_m"], bins=20) + title + labels → chart 1, captioned</div><div class="prompt"><span class="you">You ▸</span> plt.scatter(df["box_area"], df["conf"], alpha=0.5) → chart 2, captioned</div><div class="prompt"><span class="you">You ▸</span> df[["box_area","dist_m","conf"]].corr().round(2) → the numbers for chart 3</div><div class="prompt"><span class="you">You ▸</span> plt.savefig("story1.png", dpi=150) — export for your poster/README</div></div>
+    <div class="qrwrap" style="margin-top:.2em"><img class="qr" src="assets/qr-colab.png" alt="QR"><br><a href="https://colab.research.google.com/" target="_blank" rel="noopener">colab.research.google.com</a></div>
+  </div><aside class="notes">Live-build the case study's three artifacts on the real log. Step 1 reuses Class 8's feature engineering — say so. Caption each chart aloud in one sentence before moving on, modeling the discipline. savefig matters: exports feed the GitHub README and Class 15 slides.</aside>
+</section>
+<section id="demo-ai-critic" data-sid="demo-ai-critic">
+<div class="kicker">Live demo 2</div>
+  <h2>The AI chart critic</h2>
+  <p class="lead" style="margin:.15em 0 .35em">Class 4's mentor hat, aimed at your charts: generate faster, then get audited for honesty.</p>
+  <div class="grid2" style="grid-template-columns:2.3fr 1fr;align-items:start">
+    <div><div class="prompt"><span class="you">You ▸</span> Write matplotlib code for a histogram of dist_m with proper title, axis labels, and units.</div><div class="prompt"><span class="you">You ▸</span> Here's my chart code + caption: [paste]. Critique it against this checklist: honest axes, labeled units, self-contained caption.</div><div class="prompt"><span class="you">You ▸</span> My claim is 'small objects get low confidence.' Which chart best supports it — and what chart would OVERSTATE it?</div><div class="prompt"><span class="you">You ▸</span> Act as a skeptical reviewer: how could this chart mislead someone? Fix it.</div></div>
+    <div class="qrwrap" style="margin-top:.2em"><img class="qr" src="assets/qr-chatgpt.png" alt="QR"><br><a href="https://chatgpt.com/" target="_blank" rel="noopener">chatgpt.com</a></div>
+  </div><aside class="notes">Prompt 3's second half is the gem — asking what would OVERSTATE the claim teaches the dark arts defensively. Prompt 4 is the pre-submission ritual for tonight's deliverable. As always: the critic drafts, the student judges.</aside>
+</section>
+<section id="lab-ascii-charts" data-sid="lab-ascii-charts" class="labslide">
+<div class="kicker">Hands-on lab 1 · charts before chart libraries</div>
+  <h2>Build a histogram and a scatter — out of text</h2>
+  <p class="lead">No library, no magic: a histogram is <b>counting into buckets</b>; a scatter is <b>placing points on a grid</b>. Build both from raw characters and the concepts become yours forever.</p>
+  <div class="lab folded" data-packages="">
+    <div class="lab-main">
+      <div class="code-wrap">
+        <div class="gutter"></div>
+        <div class="line-hi"></div>
+        <textarea class="code" spellcheck="false" wrap="off"># The detection log's distances (m) and confidences - cleaned, Class 8 style
+dist = [8.2, 15.0, 14.1, 22.4, 9.5, 13.0, 7.8, 16.2, 21.0, 6.9,
+        31.5, 44.0, 12.3, 55.8, 18.7, 26.4, 38.2, 9.9, 48.5, 11.2]
+conf = [0.94, 0.88, 0.91, 0.79, 0.62, 0.95, 0.58, 0.90, 0.83, 0.97,
+        0.71, 0.55, 0.92, 0.42, 0.85, 0.74, 0.61, 0.96, 0.47, 0.93]
+
+# ── HISTOGRAM = count into buckets ──────────────────────────────
+print("Distance distribution (each # = 1 detection)")
+for lo in range(0, 60, 10):
+    n = sum(lo &lt;= d &lt; lo + 10 for d in dist)
+    print(f"{lo:2d}-{lo+10:&lt;3d}m | {'#' * n}")
+
+# ── SCATTER = place points on a grid ────────────────────────────
+print("\nConfidence vs. distance  (x: 0-60 m -&gt; 30 cols)")
+ROWS, COLS = 8, 30
+grid = [[" "] * COLS for _ in range(ROWS)]
+for d, c in zip(dist, conf):
+    col = min(int(d / 60 * COLS), COLS - 1)
+    row = min(int((1 - c) / 0.7 * ROWS), ROWS - 1)   # conf 1.0 top ... 0.3 bottom
+    grid[row][col] = "o"
+top, bot = 1.0, 0.3
+for i, row in enumerate(grid):
+    label = f"{top - (top-bot)*i/(ROWS-1):.2f}"
+    print(f"conf {label} |" + "".join(row))
+print("        +" + "-" * COLS)
+print("         0m" + " " * (COLS - 8) + "60m")
+
+# Read your own chart: where do the o's sink as you go right?
+# That downward drift IS the story: far -&gt; less confident.
+
+# CHALLENGE 1: change the histogram bucket width to 5 m. Does the
+#              long tail become easier or harder to see? Why?
+# CHALLENGE 2: compute r for (dist, conf) with the formula in Lab 2 -
+#              does the number agree with the picture?
+</textarea>
+      </div>
+      <div class="lab-bar">
+        <button class="run">▶ Run</button>
+        <button class="walk" hidden>🎧 Explain each line</button>
+        <span class="walk-controls" hidden>
+          <button class="walk-prev" title="Previous step">⏮</button>
+          <button class="walk-pause" title="Pause / resume">⏸</button>
+          <button class="walk-next" title="Next step">⏭</button>
+          <button class="walk-stop" title="Stop walkthrough">✕</button>
+          <span class="walk-step"></span>
+        </span>
+        <button class="ai-explain">✨ Explain</button>
+        <button class="ai-debug">🐞 Debug</button>
+        <button class="ai-improve">⚡ Improve</button>
+        <button class="ai-toggle" title="Show / hide Mira, your AI teaching assistant">🤖 Mira</button>
+        <span class="lab-status">Python loads on first Run</span>
+      </div>
+      <pre class="out">▶ Run the code to see the output here.</pre>
+    </div>
+    <div class="assist">
+      <div class="assist-head"><span class="mira-name"><svg class="mira-face" viewBox="0 0 40 40" width="21" height="21" aria-hidden="true"><circle cx="20" cy="21" r="15" fill="#fff"/><circle cx="14.5" cy="18" r="2" fill="#0C7E8E"/><circle cx="25.5" cy="18" r="2" fill="#0C7E8E"/><path d="M13 23.5a7.5 7.5 0 0 0 14 0" fill="none" stroke="#0C7E8E" stroke-width="2.4" stroke-linecap="round"/><circle cx="31.5" cy="8" r="2.8" fill="#FFC94D"/></svg>Mira · 小析</span><select class="ai-model" title="Choose the AI model"><option value="haiku">⚡ Haiku · fastest</option><option value="sonnet">Sonnet · balanced</option><option value="opus">Opus · most capable</option></select></div>
+      <div class="assist-body">Hi, I'm <b>Mira · 小析</b>, your AI teaching assistant. Edit the code and hit <b>Run</b>. Stuck? I can <b>Explain</b>, <b>Debug</b>, or <b>Improve</b> it — or just ask me below.</div>
+      <div class="assist-ask"><input class="ask-in" placeholder="问 Mira · ask Mira about this code…"><button class="ask-btn">Ask</button></div>
+    </div>
+  </div><aside class="notes">Runs instantly. The histogram's tail and the scatter's downward drift are visible in pure text — proof the concepts precede the tooling. Challenge 1 teaches bin-width sensitivity (the histogram's one big judgment call). The drift shown here is the same negative correlation the case study claimed.</aside>
+</section>
+<section id="lab-anscombe" data-sid="lab-anscombe" class="labslide">
+<div class="kicker">Hands-on lab 2 · check a legend's homework</div>
+  <h2>Anscombe's quartet, verified by hand</h2>
+  <p class="lead">Don't take the story on faith. Compute the stats yourself — means, correlation, fit line — then plot the four shapes. <b>The numbers say twins; your eyes will disagree.</b></p>
+  <div class="lab folded" data-packages="">
+    <div class="lab-main">
+      <div class="code-wrap">
+        <div class="gutter"></div>
+        <div class="line-hi"></div>
+        <textarea class="code" spellcheck="false" wrap="off"># Anscombe's actual 1973 numbers - all four sets
+x123 = [10, 8, 13, 9, 11, 14, 6, 4, 12, 7, 5]
+sets = {
+ "I  ": (x123, [8.04,6.95,7.58,8.81,8.33,9.96,7.24,4.26,10.84,4.82,5.68]),
+ "II ": (x123, [9.14,8.14,8.74,8.77,9.26,8.10,6.13,3.10,9.13,7.26,4.74]),
+ "III": (x123, [7.46,6.77,12.74,7.11,7.81,8.84,6.08,5.39,8.15,6.42,5.73]),
+ "IV ": ([8,8,8,8,8,8,8,19,8,8,8],
+         [6.58,5.76,7.71,8.84,8.47,7.04,5.25,12.50,5.56,7.91,6.89]),
+}
+
+def mean(v): return sum(v) / len(v)
+def corr(xs, ys):                      # Pearson's r, from scratch
+    mx, my = mean(xs), mean(ys)
+    num = sum((a - mx) * (b - my) for a, b in zip(xs, ys))
+    dx = sum((a - mx) ** 2 for a in xs) ** 0.5
+    dy = sum((b - my) ** 2 for b in ys) ** 0.5
+    return num / (dx * dy)
+
+print("set   mean(x)  mean(y)   r")
+for name, (xs, ys) in sets.items():
+    print(f"{name}   {mean(xs):5.2f}   {mean(ys):5.2f}   {corr(xs, ys):.3f}")
+print("-&gt; statistically, quadruplets.\n")
+
+def ascii_plot(name, xs, ys):          # now LOOK at them
+    ROWS, COLS = 7, 26
+    grid = [[" "] * COLS for _ in range(ROWS)]
+    for a, b in zip(xs, ys):
+        col = min(int((a - 3) / 17 * COLS), COLS - 1)
+        row = min(int((13 - b) / 11 * ROWS), ROWS - 1)
+        grid[row][col] = "o"
+    print(name.strip() + ":")
+    for row in grid: print("  |" + "".join(row))
+    print("  +" + "-" * COLS)
+
+for name, (xs, ys) in sets.items():
+    ascii_plot(name, xs, ys)
+
+# Same stats. Four completely different animals. THIS is why
+# describe() is the beginning of looking - never the end.
+
+# CHALLENGE: which single point in set III is bending its line?
+#            Remove it and re-run corr(). What happens to r?
+</textarea>
+      </div>
+      <div class="lab-bar">
+        <button class="run">▶ Run</button>
+        <button class="walk" hidden>🎧 Explain each line</button>
+        <span class="walk-controls" hidden>
+          <button class="walk-prev" title="Previous step">⏮</button>
+          <button class="walk-pause" title="Pause / resume">⏸</button>
+          <button class="walk-next" title="Next step">⏭</button>
+          <button class="walk-stop" title="Stop walkthrough">✕</button>
+          <span class="walk-step"></span>
+        </span>
+        <button class="ai-explain">✨ Explain</button>
+        <button class="ai-debug">🐞 Debug</button>
+        <button class="ai-improve">⚡ Improve</button>
+        <button class="ai-toggle" title="Show / hide Mira, your AI teaching assistant">🤖 Mira</button>
+        <span class="lab-status">Python loads on first Run</span>
+      </div>
+      <pre class="out">▶ Run the code to see the output here.</pre>
+    </div>
+    <div class="assist">
+      <div class="assist-head"><span class="mira-name"><svg class="mira-face" viewBox="0 0 40 40" width="21" height="21" aria-hidden="true"><circle cx="20" cy="21" r="15" fill="#fff"/><circle cx="14.5" cy="18" r="2" fill="#0C7E8E"/><circle cx="25.5" cy="18" r="2" fill="#0C7E8E"/><path d="M13 23.5a7.5 7.5 0 0 0 14 0" fill="none" stroke="#0C7E8E" stroke-width="2.4" stroke-linecap="round"/><circle cx="31.5" cy="8" r="2.8" fill="#FFC94D"/></svg>Mira · 小析</span><select class="ai-model" title="Choose the AI model"><option value="haiku">⚡ Haiku · fastest</option><option value="sonnet">Sonnet · balanced</option><option value="opus">Opus · most capable</option></select></div>
+      <div class="assist-body">Hi, I'm <b>Mira · 小析</b>, your AI teaching assistant. Edit the code and hit <b>Run</b>. Stuck? I can <b>Explain</b>, <b>Debug</b>, or <b>Improve</b> it — or just ask me below.</div>
+      <div class="assist-ask"><input class="ask-in" placeholder="问 Mira · ask Mira about this code…"><button class="ask-btn">Ask</button></div>
+    </div>
+  </div><aside class="notes">The verify-a-legend lab: r prints 0.816/0.816/0.816/0.817 — then the ASCII plots shatter the twins illusion (line, arc, outlier, vertical wall). Pearson's r from scratch demystifies the number. The challenge: removing III's (13, 12.74) outlier jumps r to ~1.0 — one point was hiding a perfect line.</aside>
+</section>
+<section id="your-project" data-sid="your-project">
+<div class="kicker">Your project</div>
+    <h2>A 3-chart data story</h2>
+    <div class="grid2" style="grid-template-columns:1.3fr 1fr">
+      <div><p class="lead">Use <b>exactly three charts</b> to make <b>one clear, defensible conclusion</b> about your own dataset.</p>
+        <ul><li>State your conclusion in <b>one sentence</b> — first, before any plotting</li>
+          <li>Pick the 3 charts that genuinely support it (the question picks the chart!)</li>
+          <li>Build them with titles, labeled axes, units</li>
+          <li>Write a <b>self-contained caption</b> for each</li></ul></div>
+      <div class="box"><h3 style="color:var(--teal)">Deliverable</h3><p>A "data story" poster: 3 captioned charts + the one-sentence conclusion.</p>
+        <h3 style="color:var(--coral);margin-top:.35em">Success looks like</h3><p>The 3 charts genuinely support the one claim — and axes and captions are honest and clear.</p></div>
+    </div>
+    <aside class="notes">The graded deliverable (Classroom: 'A 3-chart data story that argues one conclusion'). Conclusion-first ordering is the discipline — charts chosen to serve a claim, not claims retrofitted to pretty charts. The case-study template (distribution → relationship → strength) is a legal starting skeleton.</aside>
+</section>
+<section id="build-it-now" data-sid="build-it-now">
+<div class="kicker">Build it now · hands-on</div>
+    <h2>Conclusion first, charts second</h2>
+    <ol style="font-size:.72em;margin-left:1.05em">
+      <li>Open your Class-8 Colab (cleaned data ready) → write your <b>one-sentence conclusion</b> as a markdown cell</li>
+      <li>Chart 1 — usually a <b>histogram</b>: show the landscape your claim lives in</li>
+      <li>Chart 2 — usually a <b>scatter</b>: show the relationship doing the work</li>
+      <li>Chart 3 — the <b>strength or comparison</b>: .corr(), or a grouped bar</li>
+      <li>Caption each in one sentence: <i>what it shows → why that supports the claim</i></li>
+      <li>The honesty pass: axes, units, labels — then <b>Run all</b>, savefig, commit to GitHub</li></ol>
+    <div style="margin-top:.2em"><span class="pill">Colab</span><span class="pill">matplotlib</span><span class="pill">ChatGPT / Claude (chart critic)</span><span class="pill">GitHub</span></div>
+    <div class="callout"><b>The cut rule:</b> if a chart doesn't pull its weight for the claim, cut it — <b>three strong beats five weak</b>. (And a chart you can't caption in one sentence is telling you something.)</div>
+    <aside class="notes">Step 1's markdown-cell-first move enforces conclusion-before-charts physically. Steps 2-4 mirror the case-study skeleton without mandating it. The honesty pass is where demo 2's AI critic gets used for real.</aside>
+</section>
+<section id="benchmark-story" data-sid="benchmark-story">
+<div class="kicker">Benchmark · judge against this</div>
+    <h2>What a finished data story looks like</h2>
+    <p class="lead" style="margin:0 0 .25em"><b>Conclusion:</b> <i>"Our detector is least reliable on small, distant objects — exactly where night-time pedestrians first appear."</i></p>
+    <div class="grid3" style="margin-top:.2em">
+      <div class="box"><h3 style="color:var(--navy)">📊 Chart 1 · histogram</h3><p>Distances, 20 bins, x-labeled in metres. <b>Caption:</b> "30% of detections are beyond 25 m — the far zone isn't rare, so failures there matter."</p></div>
+      <div class="box"><h3 style="color:var(--teal)">✨ Chart 2 · scatter</h3><p>Box area vs. confidence, α=0.5, both axes united. <b>Caption:</b> "Confidence sinks with size — below ~2,000 px², most detections fall under 0.7."</p></div>
+      <div class="box"><h3 style="color:var(--coral)">🔗 Chart 3 · correlation</h3><p>r table: size↔conf +0.72, distance↔conf −0.61. <b>Caption:</b> "The drift is strong, not a squint: size and distance together explain most confidence loss."</p></div>
+    </div>
+    <div class="callout"><b>The bar:</b> each caption is <i>what it shows → why it supports the claim</i>, the three charts hit distribution → relationship → strength, and nothing needs the author standing next to it. This poster is slide 3 of your final presentation (Class 15), finished seven weeks early.</div>
+    <aside class="notes">Captions do the argumentative work — read them aloud and the whole story transfers without the charts visible; that's the self-contained standard. The Class-15 line is literal: data stories slot straight into final presentations.</aside>
+</section>
+<section id="reference-key-terms" data-sid="reference-key-terms">
+<div class="kicker">Reference · key terms</div>
+    <h2>Today's vocabulary</h2>
+    <div class="grid2" style="margin-top:.3em">
+      <div class="box"><p><b>Histogram</b> — counts in buckets: the shape of one variable's distribution. Bin width is a judgment call.</p></div>
+      <div class="box"><p><b>Scatter plot</b> — two variables, one point per row: the shape of a relationship.</p></div>
+      <div class="box"><p><b>Correlation (r)</b> — linear-relationship strength, −1…+1. Blind to curves; silent on causes.</p></div>
+      <div class="box"><p><b>Lurking variable</b> — the hidden driver behind a correlation (summer → ice cream + drownings).</p></div>
+      <div class="box"><p><b>Truncated axis</b> — a y-axis that skips zero to inflate differences: the most common chart lie.</p></div>
+      <div class="box"><p><b>Data story</b> — one conclusion, a few honest charts, self-contained captions. Your deliverable — and Class 15's opening act.</p></div>
+    </div>
+    <aside class="notes">Lurking variable and truncated axis are the two terms students will actually use outside class — on news charts and TikTok statistics — this week.</aside>
+</section>
+<section id="homework" data-sid="homework">
+<div class="kicker">Recommended homework</div>
+    <h2>Before next class</h2>
+    <div class="grid2" style="grid-template-columns:1fr 1fr">
+      <div><ol style="font-size:.66em;margin-left:1.05em">
+        <li><b>Finish your 3-chart data story</b> (conclusion + captioned charts, honesty pass done) — submit the Colab link in Google Classroom, commit the PNGs to GitHub.</li>
+        <li><b>Chart-lie hunt:</b> find one misleading chart in the wild (news, ads, social media). One sentence: what's the trick, and what's the one-line fix?</li>
+        <li><b>Re-run Lab 2's challenge:</b> remove set III's outlier and report what happens to r — one sentence on what that teaches about outliers and correlation.</li>
+      </ol></div>
+      <div class="box"><h3 style="color:var(--teal)">⭐ Stretch (optional)</h3>
+        <p>Meet the <b>Datasaurus Dozen</b> — Anscombe's modern heir: thirteen datasets with identical stats, one of which is a <i>dinosaur</i>. Scroll the animation and grin.</p>
+        <a class="btn" href="https://www.autodesk.com/research/publications/same-stats-different-graphs" target="_blank" rel="noopener">autodesk research · Datasaurus</a></div>
+    </div>
+    <div class="callout">The chart-lie hunt is the habit that outlives the course — once you see truncated axes, you can't unsee them. Questions → 💬 on any slide.</div>
+    <aside class="notes">Task 2 weaponizes concept 4 on real media — expect mostly truncated axes and cherry-picked time windows; collect the best for next class's warm-up. The Datasaurus stretch lands the always-plot lesson with a literal dinosaur.</aside>
+</section>
+<section id="line-to-remember" data-sid="line-to-remember" class="center" data-background-gradient="linear-gradient(135deg,#0B7E8A,#0F9DB0)">
+<div class="kicker">Today's line to remember</div>
+    <h2 style="color:#fff">"The greatest value of a picture is when it forces us to notice what we never expected to see."</h2>
+    <p style="color:#cfe0ef;margin-top:.3em">— John Tukey, father of exploratory data analysis</p>
+    <p style="color:#eaf2fb;font-size:.8em;margin-top:.5em">Anscombe proved it with four plots. Tonight, your three charts might surprise <b>you</b> first.</p>
+    <div style="margin-top:.5em"><button class="speak" data-audio="audio/quote2.mp3">🔊 <span>Speak this</span></button></div>
+    <aside class="notes">Tukey coined 'exploratory data analysis' (the EDA from Class 5's glossary) — charts as instruments of discovery, not just persuasion. The 'surprise you first' line is real: many students' conclusions change mid-plotting, and that's the system working.</aside>
+</section>
+<section id="wrap-up" data-sid="wrap-up" class="center" data-background-gradient="linear-gradient(135deg,#0C2D52,#16406e)">
+<div class="kicker" style="color:#7fd3df">Wrap-up</div>
+    <h2 style="color:#fff">Three things to keep</h2>
+    <ul style="display:inline-block;text-align:left;color:#eaf2fb">
+      <li>Charts make <b>arguments</b> — every chart answers a one-sentence question</li>
+      <li><b>Always plot your data</b> — identical stats can hide four different truths</li>
+      <li>Honest axes, labeled units, self-contained captions — <b>or it's decoration</b></li></ul>
+    <p style="color:#cfe0ef;margin-top:.6em"><b>Exit ticket:</b> the one-sentence conclusion of your data story — post it in 💬.</p>
+    <p style="color:#9db8d6;font-size:.6em;margin-top:.7em">Next · Class 10 — Stage 4 begins: your first model that <b>predicts</b>. The data stage is complete.</p>
+    <aside class="notes">Exit tickets = every project's thesis statement in one thread — skim before Class 10 and reference the strongest when introducing prediction. Milestone moment: the data stage (5-9) closes tonight; say it out loud, students earned it.</aside>
+</section>
+<section id="backup-material" data-sid="backup-material">
+<div class="kicker" style="color:var(--coral)">Backup material</div>
+    <h2>Extra slides — if there's time</h2>
+    <p class="lead">Deeper dives and extra practice. Skip in a tight hour; pull up on demand or for a longer session.</p>
+    <div class="flow" style="margin-top:.4em">
+      <div class="step"><b>The liar's gallery</b><span>three classic chart tricks</span></div>
+      <div class="step"><b>The extended chart menu</b><span>box plots, lines, heatmaps</span></div>
+      <div class="step"><b>Bonus quiz</b><span>one more check</span></div>
+    </div>
+    <aside class="notes">The gallery pairs with the homework hunt; the extended menu serves students whose data stories need more than the core three chart types.</aside>
+</section>
+<section id="backup-liars-gallery" data-sid="backup-liars-gallery">
+<div class="kicker">Backup · the liar's gallery</div>
+    <h2>Three classic chart tricks (and the catch)</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--coral)">✂️ The truncated axis</h3><p>y starts at 87, differences triple visually. <b>Catch:</b> read the axis numbers <i>first</i>, always.</p></div>
+      <div class="box"><h3 style="color:var(--amber)">🪟 The cherry-picked window</h3><p>"Sales up 40%!" — chart starts at last year's crash. <b>Catch:</b> ask what happens if the x-axis extends left.</p></div>
+      <div class="box"><h3 style="color:var(--navy)">⚖️ The double y-axis</h3><p>Two unrelated scales overlaid until they "correlate." <b>Catch:</b> two y-axes = two stories; demand them separately.</p></div>
+    </div>
+    <div class="callout"><b>The general antidote:</b> a chart is a claim (concept 1) — so apply Class 4's discipline to it: <i>who made this, what's the source, what would the honest version look like?</i> Verification isn't just for text.</div>
+    <aside class="notes">These three cover ~90% of wild chart lies students will find in the homework hunt. The Class-4 bridge (charts get the verify routine too) unifies the course's skepticism training.</aside>
+</section>
+<section id="backup-chart-menu" data-sid="backup-chart-menu">
+<div class="kicker">Backup · the extended menu</div>
+    <h2>Three more charts worth knowing</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3 style="color:var(--navy)">📦 Box plot</h3><p>describe() as a picture: median, quartiles, and outliers flagged automatically. Best for comparing distributions across groups — <span style="font-family:Consolas,monospace;font-size:.82em">df.boxplot(column="conf", by="object")</span>.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">📈 Line chart</h3><p>The trend specialist — but only when x is <i>ordered</i> (time, distance). Lines on unordered categories draw connections that don't exist.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">🔥 Heatmap</h3><p>A whole correlation table at a glance — <span style="font-family:Consolas,monospace;font-size:.82em">plt.imshow(df.corr())</span>. The instant map of which variables move together.</p></div>
+    </div>
+    <div class="callout">Still the same rule: <b>the question picks the chart.</b> New chart types are new answers, not new decorations — add one to your story only if it carries a sentence the core three can't.</div>
+    <aside class="notes">Box plots close the loop with Class 5's describe() and Class 8's outlier detection. The line-chart caveat (ordered x only) prevents the most common student misuse. Heatmaps preview the multi-feature world of classes 10-13.</aside>
+</section>
+<section id="quiz-backup-bonus" data-sid="quiz-backup-bonus">
+<div class="kicker">Backup · bonus check</div>
+  <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
+  <div class="quiz" data-correct="2">
+    <p class="qq">A news chart shows crime 'exploding' — a steep red line. You check: the y-axis runs 41.0 to 42.5 incidents, and the x-axis covers exactly the two worst months of a flat year. Diagnose the tricks.</p>
+    <div class="opts"><button class="opt" data-i="0">No tricks — steep lines mean big changes</button><button class="opt" data-i="1">One trick: bad colors</button><button class="opt" data-i="2">Two stacked tricks: truncated axis magnifying a ~3% wiggle, plus a cherry-picked time window</button><button class="opt" data-i="3">The data must be fake</button></div>
+    <p class="quiz-exp">Both classics at once: the 1.5-unit y-range turns noise into a cliff, and the two-month window hides the flat year around it. The data may be perfectly real — the LYING is all in the frame. Honest version: y from 0, twelve months, and the story evaporates.</p>
+  </div>
+  <aside class="notes">A composite audit — exactly what the homework hunt trains. 'The lying is in the frame, not the data' is the gallery's unifying lesson.</aside>
+</section>
+</div></div>
+
+<a id="donateBtn" href="https://buy.stripe.com/14AbIT26kfUzbqjbGv4ow00" target="_blank" rel="noopener">♥ Donate</a>
+<a id="pdfBtn" href="slides.pdf" download title="Download these slides as a PDF">⬇ PDF</a>
+<a id="mpaLogo" href="/meritpoint-slides/" title="Merit Point Academy — all courses"><img src="/meritpoint-slides/assets/mpa-logo.png" alt="Merit Point Academy"></a>
+<!-- per-slide comments -->
+<audio id="narratorAudio" preload="none" style="display:none"></audio>
+<audio id="walkAudio" preload="none" style="display:none"></audio>
+<div id="capBar"></div>
+<button id="ccBtn" title="Toggle captions">CC</button>
+<button id="listenBtn" title="Listen to this slide narrated"><span class="li-ic">▶</span><span class="li-tx">Listen</span></button>
+<button id="commentBtn" title="Comment on this slide">💬 Comment<span class="cnum" id="cnum">0</span></button>
+<div id="commentPanel">
+  <div class="ph"><span id="cph">Comments</span><span class="x" id="cclose">✕</span></div>
+  <div id="commentList"></div>
+  <form id="commentForm">
+    <div class="row"><input id="cname" placeholder="Your name (optional)" maxlength="40"></div>
+    <textarea id="cbody" placeholder="Leave a comment or question about this slide…" maxlength="2000"></textarea>
+    <div class="row"><button type="submit">Post</button><span class="msg" id="cmsg">Visible to your instructor &amp; classmates.</span></div>
+  </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+<script>
+const DECK = "ai-toolbox/class-09";
+Reveal.initialize({ hash:true, slideNumber:'c/t', controls:true, progress:true,
+  width:1280, height:720, margin:0.04, transition:'slide',
+  keyboardCondition:'focused', plugins:[ RevealNotes ] });
+
+/* ---------- Shared audio player ----------
+ * One audio element, already attached to the DOM (see markup above), reused
+ * for every play. A bare detached Audio object is never used: on at least one
+ * real browser/profile that made Chrome abort play() within milliseconds
+ * ("interrupted because the media was removed from the document") — audio
+ * never audibly played and the button silently reset to idle before anyone
+ * noticed. Reusing an attached element avoids that path. */
+const _audio=document.getElementById('narratorAudio');
+let _btn=null,_playToken=0;
+function fmtClock(s){ s=Math.max(0,Math.floor(s||0)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
+function resetListenUI(){ listenBtn.style.setProperty('--p','0%'); listenBtn.querySelector('.li-ic').textContent='▶'; listenBtn.querySelector('.li-tx').textContent='Listen'; }
+function stopAudio(){
+  stopWalk(); // lab walkthrough shares the stage with narration — never both
+  _playToken++; // invalidate any in-flight play() for the old src
+  _audio.pause(); _audio.currentTime=0; _audio.removeAttribute('src'); _audio.load();
+  _audio.removeEventListener('timeupdate',onListenTimeupdate); // else it'd animate listenBtn during a .speak clip
+  capBar.style.display='none';
+  if(_btn){
+    _btn.classList.remove('playing');
+    if(_btn===listenBtn) resetListenUI();
+    else if(_btn.querySelector('span')) _btn.querySelector('span').textContent=_btn.dataset.label||'Speak';
+  }
+  _btn=null;
+}
+document.addEventListener('click',function(e){
+  const b=e.target.closest('.speak'); if(!b) return;
+  if(_btn===b && !_audio.paused){ stopAudio(); return; }
+  stopAudio();
+  const token=_playToken;
+  _btn=b; b.dataset.label=b.dataset.label||b.querySelector('span').textContent;
+  b.classList.add('playing'); b.querySelector('span').textContent='Pause';
+  _audio.src=b.dataset.audio;
+  _audio.addEventListener('ended',stopAudio,{once:true});
+  _audio.play().catch(function(){ if(token===_playToken) stopAudio(); });
+});
+
+/* ---------- Per-slide narration ("Listen") + captions ---------- */
+const listenBtn=document.getElementById('listenBtn');
+const ccBtn=document.getElementById('ccBtn');
+const capBar=document.getElementById('capBar');
+let _narrationData=null; // { [sid]: { script, cues:[{start,end,text}], ... } }
+let _ccOn=localStorage.getItem('cc_captions')!=='0'; // on by default
+function updateCcBtn(){ ccBtn.classList.toggle('on',_ccOn); ccBtn.title=_ccOn?'Captions on — click to hide':'Captions off — click to show'; }
+async function loadNarrated(){
+  try{ const r=await fetch('audio/narration.json',{cache:'no-cache'}); if(!r.ok) throw 0;
+    _narrationData=await r.json(); }
+  catch(e){ _narrationData={}; }
+  updateCcBtn();
+  updateListen();
+}
+function updateListen(){
+  if(!_narrationData){ return; }
+  const has=!!_narrationData[curSid];
+  listenBtn.style.display=has?'inline-flex':'none';
+  ccBtn.style.display=has?'inline-flex':'none';
+  if(!has && _btn===listenBtn) stopAudio();
+}
+function cueAt(cues,t){ for(const c of cues) if(t>=c.start && t<c.end) return c; return null; }
+function updateCaption(){
+  const data=_narrationData && _narrationData[curSid];
+  const cues=data && data.cues;
+  if(!_ccOn || _btn!==listenBtn || !cues || !cues.length){ capBar.style.display='none'; return; }
+  const cue=cueAt(cues,_audio.currentTime);
+  if(cue){ capBar.textContent=cue.text; capBar.style.display='block'; }
+  else capBar.style.display='none'; // brief gap between sentences
+}
+ccBtn.addEventListener('click',function(){
+  _ccOn=!_ccOn; localStorage.setItem('cc_captions',_ccOn?'1':'0'); updateCcBtn(); updateCaption();
+});
+function onListenTimeupdate(){
+  if(_audio.duration) listenBtn.style.setProperty('--p',(_audio.currentTime/_audio.duration*100)+'%');
+  listenBtn.querySelector('.li-tx').textContent=fmtClock(_audio.currentTime)+' / '+fmtClock(_audio.duration);
+  updateCaption();
+}
+listenBtn.addEventListener('click',function(){
+  if(_btn===listenBtn && !_audio.paused){ stopAudio(); return; } // toggles play/stop even mid-buffer
+  stopAudio();
+  const token=_playToken;
+  _btn=listenBtn;
+  listenBtn.classList.add('playing');
+  listenBtn.querySelector('.li-ic').textContent='⏹';
+  listenBtn.querySelector('.li-tx').textContent='loading…';
+  _audio.src='audio/'+encodeURIComponent(curSid)+'.mp3';
+  _audio.addEventListener('timeupdate',onListenTimeupdate);
+  _audio.addEventListener('ended',stopAudio,{once:true});
+  _audio.play().catch(function(){
+    if(token!==_playToken) return; // superseded by a newer click/stop — ignore
+    _audio.removeEventListener('timeupdate',onListenTimeupdate);
+    stopAudio();
+    listenBtn.querySelector('.li-tx').textContent='tap to retry';
+    setTimeout(resetListenUI,2200);
+  });
+});
+
+/* ---------- Quizzes (answers feed the live class distribution) ---------- */
+function renderQuizStats(quiz,data){
+  quiz._qstats=data;
+  let box=quiz.querySelector('.qstats');
+  if(!box){ box=document.createElement('div'); box.className='qstats'; quiz.appendChild(box); }
+  const mode=quiz._qmode||'today';
+  const st=(data&&data[mode])||{counts:{},total:0};
+  const opts=quiz.querySelectorAll('.opt'), correct=parseInt(quiz.dataset.correct,10);
+  let bars='';
+  for(let i=0;i<opts.length;i++){
+    const c=st.counts[i]||0, pct=st.total?Math.round(c*100/st.total):0;
+    bars+='<div class="qrow"><span class="ql">'+String.fromCharCode(65+i)+'</span>'
+      +'<div class="qbar"><div class="qfill'+(i===correct?' qok':'')+'" style="width:'+pct+'%"></div></div>'
+      +'<span class="qp">'+pct+'% ('+c+')</span></div>';
+  }
+  box.innerHTML='<div class="qhead"><span>Class results · '+st.total+' answered</span>'
+    +'<span><button class="qm'+(mode==='today'?' on':'')+'" data-m="today">Today</button>'
+    +'<button class="qm'+(mode==='all'?' on':'')+'" data-m="all">All time</button></span></div>'+bars;
+}
+document.addEventListener('click',function(e){
+  const m=e.target.closest('.qstats .qm');
+  if(m){ const q=m.closest('.quiz'); q._qmode=m.dataset.m; renderQuizStats(q,q._qstats); return; }
+  const opt=e.target.closest('.quiz .opt'); if(!opt) return;
+  const quiz=opt.closest('.quiz'); if(quiz.classList.contains('answered')) return;
+  const correct=parseInt(quiz.dataset.correct,10);
+  quiz.querySelectorAll('.opt').forEach(function(o){o.setAttribute('disabled','');});
+  const chosen=parseInt(opt.dataset.i,10);
+  quiz.querySelectorAll('.opt')[correct].classList.add('correct');
+  if(chosen!==correct) opt.classList.add('wrong');
+  quiz.classList.add('answered');
+  const sec=quiz.closest('section');
+  const sid=(sec&&sec.dataset.sid)||_hashSid(sec);
+  fetch('/api/quiz/answer',{method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({deck:DECK,slide:sid,choice:chosen,correct:chosen===correct})})
+    .then(function(r){return r.json();})
+    .then(function(j){ if(j&&j.today) renderQuizStats(quiz,{today:j.today,all:j.all}); })
+    .catch(function(){ fetch('/api/quiz/stats?deck='+encodeURIComponent(DECK)+'&slide='+encodeURIComponent(sid))
+      .then(function(r){return r.json();}).then(function(j){renderQuizStats(quiz,j);}).catch(function(){}); });
+});
+
+/* ---------- Heap / Top-K insertion visualizer ---------- */
+function hvState(el){
+  if(!el._hv){ el._hv={ frames:[{heap:[],action:'Ready. Insert a value to see the animation.',hi:[]}], cur:0, playing:false, timer:null }; }
+  return el._hv;
+}
+function hvTree(arr,hi){
+  if(!arr.length) return '<div class="hv-empty">(empty)</div>';
+  const W=200,H=140; const depthOf=(i)=>Math.floor(Math.log2(i+1)); const maxDepth=depthOf(arr.length-1);
+  const nodes=arr.map(function(v,i){ const d=depthOf(i); const levelStart=Math.pow(2,d)-1; const pos=i-levelStart; const cnt=Math.pow(2,d);
+    return { i:i, v:v, x:((pos+0.5)/cnt)*W, y:16+d*((H-24)/Math.max(1,maxDepth)) }; });
+  let svg='<svg viewBox="0 0 '+W+' '+(H+16)+'" class="hv-tree-svg">';
+  nodes.forEach(function(n){ if(n.i===0) return; const p=nodes[Math.floor((n.i-1)/2)];
+    svg+='<line x1="'+p.x+'" y1="'+p.y+'" x2="'+n.x+'" y2="'+n.y+'" class="hv-edge"/>'; });
+  (hi||[]).forEach(function(pair){ if(pair.length===2 && nodes[pair[0]] && nodes[pair[1]]){
+    svg+='<line x1="'+nodes[pair[0]].x+'" y1="'+nodes[pair[0]].y+'" x2="'+nodes[pair[1]].x+'" y2="'+nodes[pair[1]].y+'" class="hv-swap"/>'; } });
+  const hiIdx=(hi||[]).flat();
+  nodes.forEach(function(n){ const isHi=hiIdx.indexOf(n.i)>-1;
+    svg+='<circle cx="'+n.x+'" cy="'+n.y+'" r="13" class="hv-node'+(isHi?' hv-node-hi':'')+'"/><text x="'+n.x+'" y="'+(n.y+4)+'" class="hv-node-text">'+n.v+'</text>'; });
+  return svg+'</svg>';
+}
+function hvRender(el){
+  const st=hvState(el);
+  el.querySelector('.hv-arr-now').textContent='['+st.frames[st.cur].heap.join(', ')+']';
+  el.querySelector('.hv-step').textContent=st.cur+' / '+(st.frames.length-1);
+  el.querySelector('.hv-action-text').textContent=st.frames[st.cur].action;
+  const framesEl=el.querySelector('.hv-frames'), arrsEl=el.querySelector('.hv-arrs');
+  framesEl.innerHTML=''; arrsEl.innerHTML='';
+  st.frames.forEach(function(f,idx){
+    const hiIdx=(f.hi||[]).flat();
+    const card=document.createElement('div'); card.className='hv-frame'+(idx===st.cur?' hv-frame-active':'');
+    card.innerHTML='<div class="hv-frame-title">Step '+idx+'</div><div class="hv-frame-desc">'+(idx===0?'(empty)':f.action)+'</div>'+hvTree(f.heap,f.hi);
+    framesEl.appendChild(card);
+    const a=document.createElement('div'); a.className='hv-arr'+(idx===st.cur?' hv-arr-active':'');
+    a.innerHTML='['+f.heap.map(function(v,i){ return hiIdx.indexOf(i)>-1?'<span class="hv-arr-hi">'+v+'</span>':v; }).join(', ')+']';
+    arrsEl.appendChild(a);
+  });
+  const active=framesEl.querySelector('.hv-frame-active');
+  if(active) active.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
+}
+function hvInsert(el,val){
+  const st=hvState(el);
+  if(st.cur!==st.frames.length-1) st.frames=st.frames.slice(0,st.cur+1); // drop redo history on a fresh insert
+  const heap=st.frames[st.frames.length-1].heap.slice();
+  const idx=heap.length; heap.push(val);
+  let i=idx, hi=[[idx,idx]];
+  while(i>0){ const p=Math.floor((i-1)/2);
+    if(heap[p]>heap[i]){ const t=heap[p]; heap[p]=heap[i]; heap[i]=t; hi=[[p,i]]; i=p; } else break; }
+  st.frames.push({ heap:heap, action:'Insert '+val+' at index '+idx, hi:hi });
+  st.cur=st.frames.length-1; hvRender(el);
+}
+function hvGoto(el,idx){ const st=hvState(el); st.cur=Math.max(0,Math.min(st.frames.length-1,idx)); hvRender(el); }
+function hvStop(el){ const st=hvState(el); if(st.timer){ clearInterval(st.timer); st.timer=null; } st.playing=false;
+  const b=el.querySelector('.hv-play'); if(b) b.textContent='▶ Play'; }
+function hvPlay(el){ const st=hvState(el); if(st.playing){ hvStop(el); return; }
+  if(st.cur>=st.frames.length-1) hvGoto(el,0);
+  st.playing=true; const b=el.querySelector('.hv-play'); if(b) b.textContent='⏸ Pause';
+  const speed=parseInt(el.querySelector('.hv-speed').value,10)||3, delay=Math.max(280,1300-speed*220);
+  st.timer=setInterval(function(){ if(st.cur>=st.frames.length-1){ hvStop(el); return; } hvGoto(el,st.cur+1); },delay);
+}
+document.addEventListener('click',function(e){
+  const hv=e.target.closest('.heapviz'); if(!hv) return;
+  if(e.target.closest('.hv-insert')){ const inp=hv.querySelector('.hv-input'); const v=parseInt(inp.value,10);
+    if(!isNaN(v)){ hvStop(hv); hvInsert(hv,v); inp.value=''; } }
+  else if(e.target.closest('.hv-quick-btn')){ hvStop(hv); hvInsert(hv,parseInt(e.target.closest('.hv-quick-btn').dataset.v,10)); }
+  else if(e.target.closest('.hv-first')){ hvStop(hv); hvGoto(hv,0); }
+  else if(e.target.closest('.hv-prev')){ hvStop(hv); hvGoto(hv,hvState(hv).cur-1); }
+  else if(e.target.closest('.hv-next')){ hvStop(hv); hvGoto(hv,hvState(hv).cur+1); }
+  else if(e.target.closest('.hv-last')){ hvStop(hv); hvGoto(hv,hvState(hv).frames.length-1); }
+  else if(e.target.closest('.hv-play')){ hvPlay(hv); }
+});
+document.addEventListener('keydown',function(e){
+  if(e.target.classList&&e.target.classList.contains('hv-input')&&e.key==='Enter'){
+    e.preventDefault(); const hv=e.target.closest('.heapviz'); const v=parseInt(e.target.value,10);
+    if(!isNaN(v)){ hvStop(hv); hvInsert(hv,v); e.target.value=''; }
+  }
+});
+document.querySelectorAll('.heapviz').forEach(function(hv){
+  const preset=(hv.dataset.preset||'').split(',').map(function(s){return s.trim();}).filter(Boolean);
+  const q=hv.querySelector('.hv-quick');
+  preset.forEach(function(v){ const b=document.createElement('button'); b.type='button'; b.className='hv-quick-btn'; b.dataset.v=v; b.textContent=v; q.appendChild(b); });
+  hvRender(hv);
+});
+
+/* ---------- Convolution (sliding-window) visualizer ---------- */
+const CV_IMGS={
+  edge:['11110000','11110000','11110000','11110000','11110000','11110000','11110000','11110000'],
+  hedge:['11111111','11111111','11111111','11111111','00000000','00000000','00000000','00000000'],
+  diag:['11000000','11100000','01110000','00111000','00011100','00001110','00000111','00000011'],
+  smiley:['00000000','01100110','01100110','00000000','10000001','01000010','00111100','00000000'],
+  x:['10000001','11000011','01100110','00111100','00111100','01100110','11000011','10000001'],
+  clear:['00000000','00000000','00000000','00000000','00000000','00000000','00000000','00000000']
+};
+const CV_IMG_NAMES=[['edge','Vertical edge'],['hedge','Horizontal edge'],['diag','Diagonal'],['smiley','Smiley'],['x','X'],['clear','Clear']];
+const CV_KERNELS=[
+  {name:'Vertical edge',k:[[1,0,-1],[1,0,-1],[1,0,-1]],div:1},
+  {name:'Horizontal edge',k:[[1,1,1],[0,0,0],[-1,-1,-1]],div:1},
+  {name:'Blur (average)',k:[[1,1,1],[1,1,1],[1,1,1]],div:9},
+  {name:'Sharpen',k:[[0,-1,0],[-1,5,-1],[0,-1,0]],div:1}
+];
+function cvState(el){
+  if(!el._cv){
+    const rows=CV_IMGS[el.dataset.img||'edge'];
+    el._cv={ img:rows.map(function(r){return r.split('').map(Number);}), ki:0, cur:0, playing:false, timer:null };
+  }
+  return el._cv;
+}
+function cvOutputs(st){
+  const K=CV_KERNELS[st.ki], out=[];
+  for(let r=0;r<6;r++){ const row=[];
+    for(let c=0;c<6;c++){ let s=0;
+      for(let i=0;i<3;i++) for(let j=0;j<3;j++) s+=st.img[r+i][c+j]*K.k[i][j];
+      row.push(s); }
+    out.push(row); }
+  return out;
+}
+function cvFmt(v){ return String(Math.round(v*10)/10); }
+function cvRender(el){
+  const st=cvState(el), K=CV_KERNELS[st.ki], out=cvOutputs(st);
+  const wr=Math.floor(st.cur/6), wc=st.cur%6;
+  const inEl=el.querySelector('.cv-in'); inEl.innerHTML='';
+  for(let r=0;r<8;r++) for(let c=0;c<8;c++){
+    const d=document.createElement('div'); d.className='cv-cell'; d.dataset.r=r; d.dataset.c=c;
+    const v=st.img[r][c];
+    d.style.background=v?'#F2A93B':'#132A47';
+    d.style.color=v?'#5c3d05':'#3d5878';
+    d.textContent=v;
+    if(r>=wr&&r<wr+3&&c>=wc&&c<wc+3) d.classList.add('cv-win');
+    inEl.appendChild(d);
+  }
+  const kg=el.querySelector('.cv-kgrid'); kg.innerHTML='';
+  for(let i=0;i<3;i++) for(let j=0;j<3;j++){ const d=document.createElement('div'); d.className='cv-kcell'; d.textContent=K.k[i][j]; kg.appendChild(d); }
+  el.querySelector('.cv-kdiv').textContent=K.div>1?'output = sum ÷ '+K.div:'output = sum of the 9 products';
+  let maxAbs=1; out.forEach(function(row){ row.forEach(function(v){ maxAbs=Math.max(maxAbs,Math.abs(v/K.div)); }); });
+  const lines=[]; let s=0;
+  for(let i=0;i<3;i++){ const terms=[];
+    for(let j=0;j<3;j++){ s+=st.img[wr+i][wc+j]*K.k[i][j];
+      terms.push(st.img[wr+i][wc+j]+'×'+(K.k[i][j]<0?'('+K.k[i][j]+')':K.k[i][j])); }
+    lines.push(terms.join(' + ')); }
+  el.querySelector('.cv-calc').innerHTML=lines.join('<br>')+'<br><span class="cv-sum">= '+cvFmt(s/K.div)+'</span>';
+  const outEl=el.querySelector('.cv-out'); outEl.innerHTML='';
+  for(let r=0;r<6;r++) for(let c=0;c<6;c++){
+    const d=document.createElement('div'); d.className='cv-ocell'; const idx=r*6+c;
+    if(idx<=st.cur){ const v=out[r][c]/K.div, t=Math.min(1,Math.abs(v)/maxAbs);
+      d.textContent=cvFmt(v);
+      if(v>0) d.style.background='rgba(15,157,176,'+(0.12+0.88*t).toFixed(2)+')';
+      else if(v<0) d.style.background='rgba(238,107,54,'+(0.12+0.88*t).toFixed(2)+')';
+      d.style.color=t>0.5&&v!==0?'#fff':'#21303F';
+    }
+    if(idx===st.cur) d.classList.add('cv-win');
+    outEl.appendChild(d);
+  }
+  el.querySelector('.cv-step').textContent=(st.cur+1)+' / 36 · row '+(wr+1)+', col '+(wc+1);
+  el.querySelectorAll('.cv-kchips .cv-chip').forEach(function(ch,i){ ch.classList.toggle('sel',i===st.ki); });
+}
+function cvGoto(el,idx){ const st=cvState(el); st.cur=Math.max(0,Math.min(35,idx)); cvRender(el); }
+function cvStop(el){ const st=cvState(el); if(st.timer){ clearInterval(st.timer); st.timer=null; } st.playing=false;
+  const b=el.querySelector('.cv-play'); if(b) b.textContent='▶ Play'; }
+function cvPlay(el){ const st=cvState(el); if(st.playing){ cvStop(el); return; }
+  if(st.cur>=35) cvGoto(el,0);
+  st.playing=true; const b=el.querySelector('.cv-play'); if(b) b.textContent='⏸ Pause';
+  const speed=parseInt(el.querySelector('.cv-speed').value,10)||3, delay=Math.max(120,900-speed*160);
+  st.timer=setInterval(function(){ if(st.cur>=35){ cvStop(el); return; } cvGoto(el,st.cur+1); },delay);
+}
+document.addEventListener('click',function(e){
+  const cv=e.target.closest('.convviz'); if(!cv) return;
+  const cell=e.target.closest('.cv-cell');
+  if(cell){ const st=cvState(cv); cvStop(cv);
+    const r=parseInt(cell.dataset.r,10), c=parseInt(cell.dataset.c,10);
+    st.img[r][c]=st.img[r][c]?0:1; cvRender(cv); return; }
+  const chip=e.target.closest('.cv-chip');
+  if(chip){ cvStop(cv); const st=cvState(cv);
+    if(chip.dataset.k!==undefined){ st.ki=parseInt(chip.dataset.k,10); }
+    else if(chip.dataset.img){ st.img=CV_IMGS[chip.dataset.img].map(function(r){return r.split('').map(Number);}); st.cur=0; }
+    cvRender(cv); return; }
+  if(e.target.closest('.cv-first')){ cvStop(cv); cvGoto(cv,0); }
+  else if(e.target.closest('.cv-prev')){ cvStop(cv); cvGoto(cv,cvState(cv).cur-1); }
+  else if(e.target.closest('.cv-next')){ cvStop(cv); cvGoto(cv,cvState(cv).cur+1); }
+  else if(e.target.closest('.cv-last')){ cvStop(cv); cvGoto(cv,35); }
+  else if(e.target.closest('.cv-play')){ cvPlay(cv); }
+});
+document.querySelectorAll('.convviz').forEach(function(cv){
+  const pr=cv.querySelector('.cv-presets');
+  CV_IMG_NAMES.forEach(function(p){ const b=document.createElement('button'); b.type='button'; b.className='cv-chip'; b.dataset.img=p[0]; b.textContent=p[1]; pr.appendChild(b); });
+  const kc=cv.querySelector('.cv-kchips');
+  CV_KERNELS.forEach(function(k,i){ const b=document.createElement('button'); b.type='button'; b.className='cv-chip'; b.dataset.k=i; b.textContent=k.name; kc.appendChild(b); });
+  cvRender(cv);
+});
+
+/* ---------- Scaling-proof visualizer (lab data-viz="scaling-knn") ----------
+ * A live scatter chart beside the code with three views of the SAME data:
+ *   human  — axes stretched to fit (how people draw it; query hugs near&sure)
+ *   model  — both axes in true raw units (confidence collapses to a sliver;
+ *            nearest = near&unsure, the wrong answer) + equal-units zoom inset
+ *   scaled — min-max 0-1 (the chart springs back; the answer flips)
+ * During the 🎧 walkthrough, lvWalkStep() switches views to match the lines
+ * being narrated, so the audio tutor can point at what the student sees. */
+var LV_NS='http://www.w3.org/2000/svg';
+function lvEl(tag,attrs,parent){ var el=document.createElementNS(LV_NS,tag); for(var k in attrs) el.setAttribute(k,attrs[k]); if(parent) parent.appendChild(el); return el; }
+var LV_COL={f:'#16406e',s:'#0F9DB0',u:'#EE6B36',q:'#F2A93B'};
+var LV_NAME={f:'far & sure',s:'near & sure',u:'near & unsure',q:'query'};
+/* geometry: viewBox 340x236, plot l=40 r=330 t=18 b=204 */
+function lvViews(){
+  var L=40,R=330,T=18,B=204,W=R-L,H=B-T;
+  var X=function(x){return L+x/90*W;};
+  var hum=function(x,y){return [X(x), B-(y-0.2)/0.8*H];};
+  var u=W/90, yb=140; /* model view: 1 confidence unit = 1 metre = u px */
+  var mod=function(x,y){return [X(x), yb-y*u];};
+  var sc=function(x,y){var sx=(x-5)/75, sy=(y-0.30)/0.65; return [L+(0.05+0.90*sx)*W, B-(0.05+0.90*sy)*H];};
+  var P={f:[80,0.95],s:[5,0.90],u:[6,0.30],q:[7,0.92]};
+  var pos={human:{},model:{},scaled:{}};
+  for(var k in P){ pos.human[k]=hum(P[k][0],P[k][1]); pos.model[k]=mod(P[k][0],P[k][1]); pos.scaled[k]=sc(P[k][0],P[k][1]); }
+  return {L:L,R:R,T:T,B:B,X:X,u:u,yb:yb,pos:pos};
+}
+/* label placement per view: [dx,dy,anchor,visible] relative to the point */
+var LV_LBL={
+  human:{f:[-10,-4,'end',1], s:[10,6,'start',1], u:[10,4,'start',1], q:[10,-6,'start',1]},
+  model:{f:[-10,-8,'end',1], s:[0,0,'start',0], u:[0,0,'start',0], q:[0,0,'start',0]},
+  scaled:{f:[-10,-4,'end',1], s:[10,8,'start',1], u:[10,-3,'start',1], q:[10,-6,'start',1]}
+};
+var LV_CAP={
+  'human:intro':'<b>The data, the way humans plot it</b> — axes stretched to fit. Three labeled detections + one query. Press 🎧 <b>Explain each line</b> for the guided tour.',
+  'human:known':'Three known detections: <b>far & sure</b> (80 m, 0.95) · <b>near & sure</b> (5 m, 0.90) · <b>near & unsure</b> (6 m, 0.30).',
+  'human:query':'The query: <b>7 m, confidence 0.92</b> — near and confident. Your eyes already know its nearest neighbor… right?',
+  'human:guess':'Nearest neighbor = shortest straight-line distance between points. On this chart the query practically hugs <b>near & sure</b>.',
+  'model:wrong':'<b>What the model actually computes.</b> In raw units the entire confidence axis is a sliver. Distances: near&sure <b>2.00</b> · near&unsure <b>1.18</b> ← nearest. Verdict: <b>near & unsure ✗</b>',
+  'model:formula':'Min-max squeezes each feature into <b>0–1</b>: (x − min) ÷ (max − min). In a moment the flat line will spring back into a real chart — scaling does mathematically what your eyes did all along.',
+  'scaled:squeeze':'Min-max squeezes each feature into <b>0–1</b>: (x − min) ÷ (max − min). The flat line springs back into a chart — scaling does mathematically what your eyes did all along.',
+  'scaled:right':'Same model, scaled features: near&sure <b>0.04</b> ← nearest · near&unsure <b>0.95</b> · far <b>0.97</b>. Verdict: <b>near & sure ✓</b> — the answer flipped.',
+  'scaled:final':'One preprocessing move changed the model\u2019s decision. Normalization isn\u2019t cosmetic — <b>it decides who gets heard.</b>'
+};
+function lvState(lab){
+  if(lab._lv) return lab._lv;
+  var svg=lab.querySelector('.lv-svg'); if(!svg) return null;
+  var g=lvViews();
+  var st=lab._lv={svg:svg,cap:lab.querySelector('.lv-cap'),tabs:lab.querySelectorAll('.lv-tab'),
+    g:g,view:null,focus:null,cur:null,anim:0,
+    gAxes:lvEl('g',{},svg),gDeco:lvEl('g',{},svg),gPts:lvEl('g',{},svg),pt:{},lbl:{},ring:null};
+  st.ring=lvEl('circle',{r:11,fill:'none',stroke:LV_COL.q,'stroke-width':2.5,opacity:0},st.gPts);
+  ['f','s','u','q'].forEach(function(k){
+    st.pt[k]=lvEl('circle',{r:k==='q'?6:5,fill:LV_COL[k],stroke:k==='q'?'#7a5410':'#fff','stroke-width':k==='q'?2:1.5,'class':'lv-pt'},st.gPts);
+    st.lbl[k]=lvEl('text',{'font-size':10,'font-weight':k==='q'?700:600,fill:LV_COL[k]==='#F2A93B'?'#8a5f0e':LV_COL[k],'class':'lv-pt'},st.gPts);
+    st.lbl[k].textContent=LV_NAME[k];
+  });
+  return st;
+}
+function lvAxes(st,view){
+  var g=st.g,L=g.L,R=g.R,T=g.T,B=g.B; st.gAxes.innerHTML='';
+  var ax=function(x1,y1,x2,y2){ lvEl('line',{x1:x1,y1:y1,x2:x2,y2:y2,stroke:'#9db0c4','stroke-width':1},st.gAxes); };
+  var tx=function(x,y,s,anc,sz,col){ var t=lvEl('text',{x:x,y:y,'font-size':sz||9,fill:col||'#6b7f95','text-anchor':anc||'middle'},st.gAxes); t.textContent=s; return t; };
+  ax(L,B,R,B);
+  if(view==='scaled'){
+    ax(L,T,L,B);
+    [0,0.5,1].forEach(function(v){ tx(L+(0.05+0.90*v)*(R-L),B+11,String(v)); tx(L-5,B-(0.05+0.90*v)*(B-T)+3,String(v),'end'); });
+    tx((L+R)/2,B+23,'distance (scaled 0–1)','middle',9);
+    var yl=tx(12,(T+B)/2,'confidence (scaled 0–1)');
+    yl.setAttribute('transform','rotate(-90 12 '+(T+B)/2+')');
+  } else {
+    [0,30,60,90].forEach(function(v){ tx(g.X(v),B+11,String(v)); });
+    tx((L+R)/2,B+23,'distance_m (raw metres)','middle',9);
+    if(view==='human'){
+      ax(L,T,L,B);
+      [0.3,0.6,0.9].forEach(function(v){ tx(L-5,B-(v-0.2)/0.8*(B-T)+3,String(v),'end'); });
+      var yl2=tx(12,(T+B)/2,'confidence (stretched!)');
+      yl2.setAttribute('transform','rotate(-90 12 '+(T+B)/2+')');
+    } else {
+      /* the whole 0-1 confidence axis, drawn to the same scale as metres */
+      var y1=g.yb-1*g.u, y0=g.yb;
+      lvEl('line',{x1:32,y1:y1,x2:32,y2:y0,stroke:'#EE6B36','stroke-width':2},st.gAxes);
+      lvEl('line',{x1:29,y1:y1,x2:35,y2:y1,stroke:'#EE6B36','stroke-width':1.5},st.gAxes);
+      lvEl('line',{x1:29,y1:y0,x2:35,y2:y0,stroke:'#EE6B36','stroke-width':1.5},st.gAxes);
+      tx(6,y0+16,'← the ENTIRE confidence','start',9,'#c14e20');
+      tx(6,y0+27,'axis (0→1), to scale','start',9,'#c14e20');
+    }
+  }
+}
+function lvLine(st,a,b,col,wid,dash,label,lx,ly){
+  lvEl('line',{x1:a[0],y1:a[1],x2:b[0],y2:b[1],stroke:col,'stroke-width':wid,'stroke-dasharray':dash||'none','stroke-linecap':'round'},st.gDeco);
+  if(label){ var t=lvEl('text',{x:lx,y:ly,'font-size':10,'font-weight':700,fill:col,'text-anchor':'middle'},st.gDeco);
+    t.textContent=label; }
+}
+function lvDeco(st){
+  st.gDeco.innerHTML='';
+  var p=st.g.pos[st.view], focus=st.focus;
+  st.ring.setAttribute('opacity',0); st.ring.classList.remove('lv-ring');
+  if(focus==='query'){ st.ring.classList.add('lv-ring'); st.ring.setAttribute('opacity',0.85); }
+  if(st.view==='human'&&focus==='guess'){
+    var cx=(p.q[0]+p.s[0])/2, cy=(p.q[1]+p.s[1])/2;
+    lvEl('ellipse',{cx:cx,cy:cy,rx:19,ry:15,fill:'none',stroke:'#e09a20','stroke-width':2,'stroke-dasharray':'5 4'},st.gDeco);
+    var t=lvEl('text',{x:cx+26,y:cy+24,'font-size':10,'font-weight':700,fill:'#8a5f0e'},st.gDeco);
+    t.textContent='"obviously" nearest?';
+  }
+  if(st.view==='model'&&(focus==='wrong'||focus==='formula')){
+    lvLine(st,p.q,p.f,'#8aa0b8',1.5,'4 3','d = 73.0',(p.q[0]+p.f[0])/2,p.q[1]-8);
+    /* equal-units zoom inset: x 3.2-9.8 m, conf 0.2-1.05, 24 px per unit both ways */
+    var ix=70,iy=28,iw=180,ih=52,k=24, mX=function(x){return ix+12+(x-3.2)*k;}, mY=function(c){return iy+10+(1.05-c)*k;};
+    lvEl('rect',{x:ix,y:iy,width:iw,height:ih,rx:6,fill:'#fff',stroke:'#21405f','stroke-width':1.2},st.gDeco);
+    lvEl('line',{x1:ix+16,y1:iy+ih,x2:p.q[0]-2,y2:p.q[1]-4,stroke:'#8aa0b8','stroke-width':1,'stroke-dasharray':'2 3'},st.gDeco);
+    lvEl('line',{x1:ix+iw-16,y1:iy+ih,x2:p.q[0]+4,y2:p.q[1]-4,stroke:'#8aa0b8','stroke-width':1,'stroke-dasharray':'2 3'},st.gDeco);
+    var zt=lvEl('text',{x:ix+iw/2,y:iy-4,'font-size':9,fill:'#6b7f95','text-anchor':'middle'},st.gDeco);
+    zt.textContent='zoom — both axes in the SAME units';
+    var q=[mX(7),mY(0.92)],s=[mX(5),mY(0.90)],u2=[mX(6),mY(0.30)];
+    lvLine(st,q,s,'#8aa0b8',1.5,'4 3','2.00',(q[0]+s[0])/2,s[1]-5);
+    lvLine(st,q,u2,'#EE6B36',2.5,null,'1.18',u2[0]-14,(q[1]+u2[1])/2+8);
+    [[s,'s'],[u2,'u'],[q,'q']].forEach(function(d){ lvEl('circle',{cx:d[0][0],cy:d[0][1],r:4,fill:LV_COL[d[1]],stroke:'#fff','stroke-width':1},st.gDeco); });
+    var w=lvEl('text',{x:u2[0]+26,y:u2[1]+4,'font-size':10,'font-weight':800,fill:'#EE6B36'},st.gDeco);
+    w.textContent='← nearest ✗';
+  }
+  if(st.view==='scaled'&&(focus==='right'||focus==='final')){
+    lvLine(st,p.q,p.f,'#8aa0b8',1.5,'4 3','0.97',(p.q[0]+p.f[0])/2,p.q[1]-10);
+    lvLine(st,p.q,p.u,'#8aa0b8',1.5,'4 3','0.95',p.q[0]+16,(p.q[1]+p.u[1])/2);
+    var cx2=(p.q[0]+p.s[0])/2, cy2=(p.q[1]+p.s[1])/2;
+    lvEl('ellipse',{cx:cx2,cy:cy2,rx:17,ry:13,fill:'none',stroke:'#1FA97A','stroke-width':2.5},st.gDeco);
+    var t2=lvEl('text',{x:cx2+24,y:cy2+22,'font-size':10,'font-weight':800,fill:'#1FA97A'},st.gDeco);
+    t2.textContent='d = 0.04 — nearest ✓';
+  }
+}
+function lvPlace(st,pos,vis){
+  ['f','s','u','q'].forEach(function(k){
+    var pt=st.pt[k],lb=st.lbl[k],p=pos[k],l=LV_LBL[st.view][k];
+    pt.setAttribute('cx',p[0]); pt.setAttribute('cy',p[1]);
+    pt.setAttribute('opacity',vis[k]?1:0);
+    lb.setAttribute('x',p[0]+l[0]); lb.setAttribute('y',p[1]+l[1]); lb.setAttribute('text-anchor',l[2]);
+    lb.setAttribute('opacity',vis[k]&&l[3]?1:0);
+  });
+  st.ring.setAttribute('cx',pos.q[0]); st.ring.setAttribute('cy',pos.q[1]);
+}
+function lvSet(lab,view,focus){
+  var st=lvState(lab); if(!st) return;
+  if(st.view===view&&st.focus===focus) return;
+  var from=st.cur, sameView=(st.view===view);
+  st.view=view; st.focus=focus;
+  var to=st.g.pos[view];
+  var vis={f:1,s:1,u:1,q:focus==='known'?0:1};
+  st.tabs.forEach(function(b){ b.classList.toggle('sel',b.dataset.view===view); });
+  st.cap.innerHTML=LV_CAP[view+':'+focus]||LV_CAP[view+':intro']||'';
+  lvAxes(st,view);
+  st.gDeco.innerHTML=''; st.ring.setAttribute('opacity',0); st.ring.classList.remove('lv-ring');
+  var token=++st.anim;
+  if(!from||sameView){ st.cur=to; lvPlace(st,to,vis); lvDeco(st); return; }
+  var t0=null, DUR=550;
+  function frame(ts){
+    if(st.anim!==token) return;
+    if(t0===null) t0=ts;
+    var t=Math.min(1,(ts-t0)/DUR), e=t<0.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2, cur={};
+    ['f','s','u','q'].forEach(function(k){ cur[k]=[from[k][0]+(to[k][0]-from[k][0])*e, from[k][1]+(to[k][1]-from[k][1])*e]; });
+    lvPlace(st,cur,vis);
+    if(t<1) requestAnimationFrame(frame);
+    else { st.cur=to; lvDeco(st); }
+  }
+  requestAnimationFrame(frame);
+}
+var LV_TAB_FOCUS={human:'guess',model:'wrong',scaled:'right'};
+function lvMarks(lab){
+  if(lab._lvMarks) return lab._lvMarks;
+  var src=lab.querySelector('.code').defaultValue.split('\n');
+  var find=function(pat){ for(var i=0;i<src.length;i++) if(src[i].indexOf(pat)>-1) return i+1; return 1e9; };
+  return lab._lvMarks={known:find('known = ['),query:find('query = ['),nearest:find('def nearest'),
+    raw:find('print("RAW'),scaleStart:find('# Min-max scale'),scaled:find('known_s'),fin:find('# One preprocessing')};
+}
+function lvWalkStep(lab,line){
+  if(lab.dataset.viz!=='scaling-knn') return;
+  var m=lvMarks(lab);
+  if(line<m.known) lvSet(lab,'human','intro');
+  else if(line<m.query) lvSet(lab,'human','known');
+  else if(line<m.nearest) lvSet(lab,'human','query');
+  else if(line<m.raw) lvSet(lab,'human','guess');
+  else if(line<m.scaleStart) lvSet(lab,'model','wrong');
+  else if(line<m.scaled) lvSet(lab,'model','formula'); // narration explains min-max while the flat truth stays on screen
+  /* the spring-back tween fires exactly when the narration says "watch the flat line spring back" (known_s line) */
+  else if(line<m.fin) lvSet(lab,'scaled','right');
+  else lvSet(lab,'scaled','final');
+}
+document.addEventListener('click',function(e){
+  var tab=e.target.closest('.lv-tab'); if(!tab) return;
+  var lab=tab.closest('.lab'), v=tab.dataset.view;
+  lvSet(lab,v,v==='human'&&(!lab._lv||!lab._lv.view)?'intro':LV_TAB_FOCUS[v]);
+});
+document.querySelectorAll('.lab[data-viz="scaling-knn"]').forEach(function(lab){ lvSet(lab,'human','intro'); });
+
+/* ---------- Pyodide code labs ---------- */
+let _py=null,_pyLoading=null;
+async function getPy(statusEl){
+  if(_py) return _py;
+  if(!_pyLoading){ if(statusEl)statusEl.textContent='Loading Python…';
+    _pyLoading=loadPyodide({indexURL:'https://cdn.jsdelivr.net/pyodide/v0.26.2/full/'}); }
+  _py=await _pyLoading; return _py;
+}
+function labOf(el){ return el.closest('.lab'); }
+async function runLab(lab){
+  const code=lab.querySelector('.code').value;
+  const out=lab.querySelector('.out'); const status=lab.querySelector('.lab-status');
+  out.textContent=''; out.classList.remove('has-err'); lab.dataset.lastError='';
+  try{
+    const py=await getPy(status);
+    const pkgs=(lab.dataset.packages||'').split(',').map(s=>s.trim()).filter(Boolean);
+    if(pkgs.length){ status.textContent='Loading '+pkgs.join(', ')+'…'; await py.loadPackage(pkgs); }
+    status.textContent='Running…';
+    let buf='';
+    py.setStdout({batched:(s)=>{buf+=s+'\n';}});
+    py.setStderr({batched:(s)=>{buf+=s+'\n';}});
+    await py.runPythonAsync(code);
+    out.textContent=buf||'(no output — add a print(...) )';
+    status.textContent='✓ done';
+  }catch(err){
+    const msg=(err&&err.message)?err.message:String(err);
+    out.innerHTML='<span class="err">'+msg.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))+'</span>';
+    lab.dataset.lastError=msg; status.textContent='✗ error — try 🐞 Debug';
+  }
+}
+/* very small markdown -> html for assistant replies */
+function mdToHtml(md){
+  const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  let html=''; const parts=md.split(/```/);
+  parts.forEach(function(p,i){
+    if(i%2===1){ const code=p.replace(/^python\n?/i,''); html+='<pre data-code="'+encodeURIComponent(code.trim())+'"><code>'+esc(code.trim())+'</code></pre>'+
+      '<button class="apply">↧ Use this code</button>'; }
+    else { let t=esc(p).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/`(.+?)`/g,'<code>$1</code>').replace(/\n{2,}/g,'</p><p>').replace(/\n/g,'<br>'); if(t.trim())html+='<p>'+t+'</p>'; }
+  });
+  return html;
+}
+async function askAssistant(lab,action,question){
+  lab.classList.remove('folded'); // assistant is folded by default — any AI action opens it
+  const body=lab.querySelector('.assist-body');
+  const sel=lab.querySelector('.ai-model');
+  const model=(sel&&sel.value)||'haiku';
+  body.innerHTML='<p class="muted">✨ Thinking…</p>';
+  try{
+    const r=await fetch('/api/assistant',{method:'POST',headers:{'content-type':'application/json'},
+      body:JSON.stringify({action:action,question:question||'',code:lab.querySelector('.code').value,error:lab.dataset.lastError||'',model:model})});
+    const j=await r.json();
+    body.innerHTML=mdToHtml(j.text||'(no response)');
+  }catch(e){ body.innerHTML='<p class="muted">Mira is unavailable right now. Try again shortly.</p>'; }
+}
+document.addEventListener('click',function(e){
+  const t=e.target;
+  if(t.closest('.lab .run')){ runLab(labOf(t.closest('.run'))); }
+  else if(t.closest('.lab .walk')){ startWalk(labOf(t.closest('.walk'))); }
+  else if(t.closest('.lab .walk-pause')){ walkPauseResume(); }
+  else if(t.closest('.lab .walk-prev')){ if(_walk&&_walk.i>0){ _walk.i--; walkPlayStep(); } }
+  else if(t.closest('.lab .walk-next')){ if(_walk){ if(_walk.i<_walk.steps.length-1){ _walk.i++; walkPlayStep(); } else stopWalk(true); } }
+  else if(t.closest('.lab .walk-stop')){ stopWalk(); }
+  else if(t.closest('.lab .ai-toggle')){ t.closest('.lab').classList.toggle('folded'); }
+  else if(t.closest('.lab .ai-explain')){ askAssistant(labOf(t.closest('.ai-explain')),'explain'); }
+  else if(t.closest('.lab .ai-debug')){ askAssistant(labOf(t.closest('.ai-debug')),'debug'); }
+  else if(t.closest('.lab .ai-improve')){ askAssistant(labOf(t.closest('.ai-improve')),'improve'); }
+  else if(t.closest('.lab .ask-btn')){ const lab=labOf(t.closest('.ask-btn')); const inp=lab.querySelector('.ask-in'); if(inp.value.trim()){ askAssistant(lab,'ask',inp.value.trim()); inp.value=''; } }
+  else if(t.classList&&t.classList.contains('apply')){ const pre=t.previousElementSibling; const lab=t.closest('.lab'); if(pre&&lab){ lab.querySelector('.code').value=decodeURIComponent(pre.dataset.code); gutterSync(lab); } }
+});
+
+/* ---------- Lab line gutter + highlight overlay ---------- */
+function gutterSync(lab){
+  const ta=lab.querySelector('.code'), g=lab.querySelector('.gutter'); if(!ta||!g) return;
+  const n=ta.value.split('\n').length;
+  if(g._n!==n){ g._n=n; let s=''; for(let i=1;i<=n;i++) s+=i+'\n'; g.textContent=s; }
+  g.scrollTop=ta.scrollTop;
+  if(lab.dataset.hiStart) labHighlight(lab,+lab.dataset.hiStart,+lab.dataset.hiEnd);
+}
+function labMetrics(ta){ const cs=getComputedStyle(ta); return { lh:parseFloat(cs.lineHeight), pt:parseFloat(cs.paddingTop) }; }
+function labHighlight(lab,s,e){
+  const ta=lab.querySelector('.code'), hi=lab.querySelector('.line-hi'); if(!ta||!hi) return;
+  lab.dataset.hiStart=s; lab.dataset.hiEnd=e;
+  const m=labMetrics(ta);
+  hi.style.display='block';
+  hi.style.top=(m.pt+(s-1)*m.lh-ta.scrollTop)+'px';
+  hi.style.height=((e-s+1)*m.lh)+'px';
+}
+function labClearHi(lab){ const hi=lab.querySelector('.line-hi'); if(hi) hi.style.display='none'; delete lab.dataset.hiStart; delete lab.dataset.hiEnd; }
+document.addEventListener('input',function(e){ if(e.target.classList&&e.target.classList.contains('code')) gutterSync(labOf(e.target)); });
+document.addEventListener('scroll',function(e){ // scroll doesn't bubble — capture it
+  if(e.target.classList&&e.target.classList.contains('code')) gutterSync(labOf(e.target));
+},true);
+document.querySelectorAll('.lab').forEach(gutterSync);
+
+/* ---------- Guided audio walkthrough (per-line explanations) ----------
+ * audio/walkthrough.json (built by narrate-lab.js):
+ *   { <sid>: { steps:[ {lines:[start,end], text, file}, … ] } }
+ * Autoplay highlights the current line(s), scrolls them into view, shows the
+ * explanation in the caption bar, and advances when each clip ends. */
+const walkAudio=document.getElementById('walkAudio');
+let _walkData={},_walk=null;
+(async function(){
+  try{ const r=await fetch('audio/walkthrough.json',{cache:'no-cache'}); if(r.ok) _walkData=await r.json(); }catch(e){}
+  document.querySelectorAll('.lab').forEach(function(lab){
+    const sec=lab.closest('section'), sid=sec&&sec.dataset.sid;
+    const d=sid&&_walkData[sid];
+    if(d&&d.steps&&d.steps.length){ lab.dataset.walkSid=sid; lab.querySelector('.walk').hidden=false; }
+  });
+})();
+function walkUI(lab,on){
+  lab.querySelector('.walk').hidden=on||!lab.dataset.walkSid;
+  lab.querySelector('.walk-controls').hidden=!on;
+}
+function stopWalk(finished){
+  if(!_walk) return;
+  const w=_walk; _walk=null;
+  walkAudio.onended=null; walkAudio.pause(); walkAudio.removeAttribute('src'); walkAudio.load();
+  const ta=w.lab.querySelector('.code'); ta.readOnly=false;
+  if(w.saved!=null){ ta.value=w.saved; } // restore the student's edits
+  labClearHi(w.lab); gutterSync(w.lab); walkUI(w.lab,false);
+  capBar.style.display='none';
+  w.lab.querySelector('.lab-status').textContent=finished===true?'🎧 walkthrough finished — now make it yours':'';
+}
+function walkScrollTo(lab,s,e){
+  const ta=lab.querySelector('.code'), m=labMetrics(ta);
+  const top=m.pt+(s-1)*m.lh, bottom=m.pt+e*m.lh, vh=ta.clientHeight;
+  if(top<ta.scrollTop+m.lh||bottom>ta.scrollTop+vh-m.lh) ta.scrollTop=Math.max(0,top-vh*0.3);
+  gutterSync(lab);
+}
+function walkPlayStep(){
+  const w=_walk; if(!w) return;
+  const st=w.steps[w.i], s=st.lines[0], e=st.lines[1]||st.lines[0];
+  labHighlight(w.lab,s,e); walkScrollTo(w.lab,s,e);
+  if(w.lab.dataset.viz) lvWalkStep(w.lab,s); // keep the chart in step with the narration
+  w.lab.querySelector('.walk-step').textContent=(w.i+1)+' / '+w.steps.length+' · L'+s+(e>s?'–'+e:'');
+  capBar.textContent=st.text; capBar.style.display='block';
+  walkAudio.src='audio/'+encodeURIComponent(st.file);
+  walkAudio.load(); // some Chrome profiles stall a src-swap without an explicit load() (see narratorAudio note)
+  walkAudio.onended=function(){ if(!_walk) return; if(_walk.i<_walk.steps.length-1){ _walk.i++; walkPlayStep(); } else stopWalk(true); };
+  const tok=w.tok=(w.tok||0)+1; // a newer step's load() aborts this play() — only the latest step may flip the UI
+  w.playing=true; walkPauseBtn();
+  walkAudio.play().catch(function(){ if(_walk===w&&w.tok===tok){ w.playing=false; walkPauseBtn(); w.lab.querySelector('.lab-status').textContent='audio blocked — press ▶ to resume'; } });
+}
+function walkPauseBtn(){ if(_walk) _walk.lab.querySelector('.walk-pause').textContent=_walk.playing?'⏸':'▶'; }
+function walkPauseResume(){
+  if(!_walk) return;
+  if(_walk.playing){ walkAudio.pause(); _walk.playing=false; }
+  else { _walk.playing=true; walkAudio.play().catch(function(){}); }
+  walkPauseBtn();
+}
+function startWalk(lab){
+  stopAudio(); // also stops any previous walkthrough
+  const sid=lab.dataset.walkSid, data=_walkData[sid]; if(!data) return;
+  if(lab.dataset.viz) lab.classList.add('folded'); // fold the assistant so the chart is on stage
+  const ta=lab.querySelector('.code');
+  let saved=null;
+  if(ta.value!==ta.defaultValue){ saved=ta.value; ta.value=ta.defaultValue; } // walkthrough narrates the original code
+  ta.readOnly=true; gutterSync(lab);
+  _walk={ lab:lab, steps:data.steps, i:0, playing:false, saved:saved };
+  walkUI(lab,true);
+  lab.querySelector('.lab-status').textContent=saved!=null?'🎧 showing the original code — your edits come back after':'';
+  walkPlayStep();
+}
+/* Tab key inserts spaces in code editors; keep typing inside textareas from triggering reveal nav */
+document.addEventListener('keydown',function(e){
+  const ta=e.target;
+  if(ta.classList&&ta.classList.contains('code')&&e.key==='Tab'){ e.preventDefault(); const s=ta.selectionStart,en=ta.selectionEnd; ta.value=ta.value.slice(0,s)+'    '+ta.value.slice(en); ta.selectionStart=ta.selectionEnd=s+4; }
+},true);
+/* allow Enter to submit the assistant question */
+document.addEventListener('keydown',function(e){ if(e.target.classList&&e.target.classList.contains('ask-in')&&e.key==='Enter'){ e.preventDefault(); const lab=labOf(e.target); if(e.target.value.trim()){ askAssistant(lab,'ask',e.target.value.trim()); e.target.value=''; } } });
+
+/* ---------- Per-slide comments ---------- */
+const btn=document.getElementById('commentBtn'),panel=document.getElementById('commentPanel'),
+  listEl=document.getElementById('commentList'),cnum=document.getElementById('cnum'),
+  cph=document.getElementById('cph'),form=document.getElementById('commentForm');
+let counts={}, curSid='title';
+// Comment identity = the slide's stable data-sid slug. Never positional:
+// a positional key would re-point old comments to a different slide whenever
+// the deck is reordered. Every slide is built with a sid (asserted at build);
+// the content-hash fallback below stays position-independent just in case.
+function _hashSid(s){ const t=((s&&s.textContent)||'').replace(/s+/g,' ').trim().slice(0,400); let h=0; for(let i=0;i<t.length;i++){ h=(h*31+t.charCodeAt(i))|0; } return 'auto-'+(h>>>0).toString(36); }
+function sidOf(){ const s=Reveal.getCurrentSlide(); if(s&&s.dataset.sid) return s.dataset.sid; console.warn('slide has no data-sid; using content-hash key'); return _hashSid(s); }
+function fmtTime(ts){ const d=new Date(ts); return d.toLocaleDateString()+' '+d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}); }
+function escc(s){ return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+async function loadCounts(){ try{ const r=await fetch('/api/comments/counts?deck='+encodeURIComponent(DECK)); const j=await r.json(); counts=j.counts||{}; updateBadge(); }catch(e){} }
+function updateBadge(){ cnum.textContent=counts[curSid]||0; }
+async function loadComments(){ listEl.innerHTML='<div class="none">Loading…</div>';
+  try{ const r=await fetch('/api/comments?deck='+encodeURIComponent(DECK)+'&slide='+encodeURIComponent(curSid)); const j=await r.json();
+    const cs=j.comments||[]; counts[curSid]=cs.length; updateBadge();
+    listEl.innerHTML=cs.length?cs.map(c=>'<div class="c"><span class="cn">'+escc(c.name)+'</span><span class="ct">'+fmtTime(c.created)+'</span><div class="cb">'+escc(c.body)+'</div></div>').join(''):'<div class="none">No comments yet — be the first!</div>';
+  }catch(e){ listEl.innerHTML='<div class="none">Could not load comments.</div>'; }
+}
+function openPanel(){ curSid=sidOf(); cph.textContent='Comments · '+curSid; panel.classList.add('open'); loadComments(); }
+btn.onclick=function(){ panel.classList.contains('open')?panel.classList.remove('open'):openPanel(); };
+document.getElementById('cclose').onclick=function(){ panel.classList.remove('open'); };
+form.onsubmit=async function(e){ e.preventDefault();
+  const name=document.getElementById('cname').value, body=document.getElementById('cbody').value.trim();
+  const msg=document.getElementById('cmsg'); if(!body){ msg.textContent='Write something first.'; return; }
+  msg.textContent='Posting…';
+  try{ const r=await fetch('/api/comments',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({deck:DECK,slide:curSid,name:name,body:body})});
+    const j=await r.json(); if(j.ok){ document.getElementById('cbody').value=''; msg.textContent='Posted! Thanks.'; loadComments(); } else { msg.textContent=j.error||'Could not post.'; }
+  }catch(e){ msg.textContent='Network error — try again.'; }
+};
+Reveal.on('slidechanged',function(){ stopAudio(); curSid=sidOf(); updateBadge(); updateListen(); sendSlide(); if(panel.classList.contains('open')){ cph.textContent='Comments · '+curSid; loadComments(); } });
+Reveal.on('ready',function(){ curSid=sidOf(); loadCounts(); loadNarrated(); });
+
+/* ---------- Live classroom: presence chip + quiz stream (SSE) ---------- */
+let liveId=null;
+const liveChip=document.createElement('div');
+liveChip.id='liveChip'; liveChip.style.display='none'; document.body.appendChild(liveChip);
+function setOnline(n){ liveChip.style.display=''; liveChip.textContent='🟢 '+n+' online'; }
+function sendSlide(){
+  if(!liveId) return;
+  fetch('/api/presence',{method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({id:liveId,slide:curSid})}).catch(function(){});
+}
+function quizBySid(sid){
+  const secs=document.querySelectorAll('section[data-sid]');
+  for(const s of secs) if(s.dataset.sid===sid) return s.querySelector('.quiz');
+  return null;
+}
+function pollLive(){ // fallback when EventSource can't stream through a proxy
+  const tick=function(){ fetch('/api/presence/count?deck='+encodeURIComponent(DECK))
+    .then(function(r){return r.json();}).then(function(j){setOnline(j.online);}).catch(function(){}); };
+  tick(); setInterval(tick,20000);
+}
+(function connectLive(){
+  if(typeof EventSource==='undefined') return pollLive();
+  const es=new EventSource('/api/live?deck='+encodeURIComponent(DECK));
+  let opened=false;
+  es.onopen=function(){ opened=true; };
+  es.onmessage=function(ev){
+    let d; try{ d=JSON.parse(ev.data); }catch(e){ return; }
+    if(d.type==='hello'){ liveId=d.id; setOnline(d.online); sendSlide(); }
+    else if(d.type==='presence'){ setOnline(d.online); }
+    else if(d.type==='quiz'){ // live-update the chart on the quiz slide (only visible once answered)
+      const q=quizBySid(d.slide); if(q) renderQuizStats(q,{today:d.today,all:d.all});
+    }
+  };
+  es.onerror=function(){ if(!opened){ es.close(); pollLive(); } };
+})();
+</script>
+<script defer src="/meritpoint-slides/assets/auth.js"></script>
+</body></html>

@@ -167,7 +167,7 @@
     ]
   },
   "lab-scaling-proof": {
-    "hash": "3782fb1fd4705526",
+    "hash": "6c363908b5d94724",
     "voice": "en-US-AndrewMultilingualNeural",
     "model": "claude-opus-4-8",
     "steps": [
@@ -176,7 +176,7 @@
           1,
           1
         ],
-        "text": "We start by importing the math module. We'll use its distance function later to measure how close two points are.",
+        "text": "We start by importing the math module. We only need one thing from it, a handy function that measures the straight-line distance between two points.",
         "file": "lab-scaling-proof-w00.mp3"
       },
       {
@@ -184,7 +184,7 @@
           3,
           8
         ],
-        "text": "Here's our known data. Each entry pairs a two-number feature list, distance in meters and confidence, with a label describing the situation. This is what our model compares against.",
+        "text": "Here's our known data. Each entry is a pair of numbers, distance in metres and confidence from zero to one, plus a label describing the situation. So we have far and sure, near and sure, and near and unsure.",
         "file": "lab-scaling-proof-w01.mp3"
       },
       {
@@ -192,7 +192,7 @@
           9,
           9
         ],
-        "text": "This is the mystery point we want to classify: seven meters away and very confident. Intuitively that's clearly near and sure, right? Keep that hunch in mind.",
+        "text": "Now the mystery detection we want to classify: seven metres away, ninety-two percent confident. Look at the chart with stretched axes; the query sits right beside near and sure, so the answer seems obvious, right?",
         "file": "lab-scaling-proof-w02.mp3"
       },
       {
@@ -200,7 +200,7 @@
           11,
           12
         ],
-        "text": "This function finds the nearest neighbor. It picks the known point with the smallest distance to our query, then returns that point's label. Simple and powerful.",
+        "text": "This function finds the nearest neighbour. It goes through every point, measures its distance to the query, picks the smallest, and returns that point's label. See the dashed circle hugging near and sure, our eyeball guess.",
         "file": "lab-scaling-proof-w03.mp3"
       },
       {
@@ -208,7 +208,7 @@
           14,
           14
         ],
-        "text": "Now we print the prediction using the raw features. Let's see what the model actually decides before any scaling.",
+        "text": "Here we print the prediction using the raw features exactly as they are. Let's see what the computer actually decides.",
         "file": "lab-scaling-proof-w04.mp3"
       },
       {
@@ -216,7 +216,7 @@
           15,
           16
         ],
-        "text": "These comments explain the trap. Distance ranges up to a hundred, while confidence only goes from zero to one, so distance completely drowns out confidence and we get the wrong answer.",
+        "text": "But watch the chart flip to true units. Distance in metres is a hundred times bigger than confidence, so the whole confidence axis collapses to a sliver, and near and unsure wrongly wins because its metre gap looks tiny.",
         "file": "lab-scaling-proof-w05.mp3"
       },
       {
@@ -224,7 +224,7 @@
           18,
           20
         ],
-        "text": "Now we fix it with min-max scaling. We record the low and high values for distance, and for confidence, straight from our known data's ranges.",
+        "text": "Time to fix it. We record the low and high values for each feature from our known data, the distances span five to eighty, and confidence spans point three to point nine five.",
         "file": "lab-scaling-proof-w06.mp3"
       },
       {
@@ -232,7 +232,7 @@
           21,
           22
         ],
-        "text": "This scale function squeezes each feature into a zero-to-one range by subtracting its low and dividing by its span. Now both features count equally.",
+        "text": "This scale function rescales a point so each feature lands between zero and one. We subtract the low value and divide by the range, doing this for both distance and confidence.",
         "file": "lab-scaling-proof-w07.mp3"
       },
       {
@@ -240,7 +240,7 @@
           24,
           24
         ],
-        "text": "We build a scaled version of our known data, applying scale to every point while keeping each label attached.",
+        "text": "Now we scale every known point, keeping its label attached. Watch the flat line spring back into a full chart, the points spreading out just like the stretched axes showed.",
         "file": "lab-scaling-proof-w08.mp3"
       },
       {
@@ -248,7 +248,7 @@
           25,
           25
         ],
-        "text": "Then we predict again, scaling the query the same way. Watch the output flip to the correct answer here.",
+        "text": "We scale the query too, then run the same nearest function on this scaled data and print the result. On the chart, near and sure now wins and gets circled in green, the correct answer.",
         "file": "lab-scaling-proof-w09.mp3"
       },
       {
@@ -256,7 +256,7 @@
           26,
           26
         ],
-        "text": "This comment celebrates the payoff. With both features speaking at the same volume, the model finally agrees with our intuition.",
+        "text": "This comment sums it up: once both features speak at the same volume, distance no longer drowns out confidence, and the model chooses correctly.",
         "file": "lab-scaling-proof-w10.mp3"
       },
       {
@@ -264,7 +264,7 @@
           28,
           29
         ],
-        "text": "A closing thought: one preprocessing step changed the whole decision. Normalization isn't just for looks, it decides which feature gets heard.",
+        "text": "A powerful lesson here. One preprocessing step flipped the decision. Normalization isn't just cosmetic tidying; it decides which feature actually gets heard.",
         "file": "lab-scaling-proof-w11.mp3"
       },
       {
@@ -272,7 +272,7 @@
           31,
           32
         ],
-        "text": "Challenge one invites you to experiment: how low must confidence drop before even the scaled version flips to near and unsure? Try narrowing it down by hand.",
+        "text": "Your first challenge: figure out how far confidence must drop before even the scaled version switches to near and unsure. Try narrowing it down by hand, like a binary search.",
         "file": "lab-scaling-proof-w12.mp3"
       },
       {
@@ -280,7 +280,7 @@
           33,
           35
         ],
-        "text": "Challenge two suggests a different scaler, z-score, subtracting the mean and dividing by standard deviation. Check if the winner stays the same, because the scaler choice is itself a real decision.",
+        "text": "The second challenge: try z-score scaling instead, subtracting the mean and dividing by the standard deviation. Do you get the same winner? Usually, but not always, which shows that choosing a scaler is itself a real research decision.",
         "file": "lab-scaling-proof-w13.mp3"
       }
     ]

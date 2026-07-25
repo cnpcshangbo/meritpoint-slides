@@ -1,0 +1,1012 @@
+{
+  "title": {
+    "hash": "307567cc07838f1f",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Welcome to the finale of our data journey! Over the last few classes you've cleaned and wrangled your data, and today we turn those numbers into pictures that actually say something. Here's the big idea: a chart isn't decoration, it's an argument — it should make a point and persuade your audience. And we'll do this honestly, because a chart can just as easily mislead as reveal. By the end you'll walk out with a three-chart story built from your very own dataset.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3,
+        "text": "Welcome to the finale of our data journey!"
+      },
+      {
+        "start": 3,
+        "end": 11.325,
+        "text": "Over the last few classes you've cleaned and wrangled your data, and today we turn those numbers into pictures that actually say something."
+      },
+      {
+        "start": 11.325,
+        "end": 18.775,
+        "text": "Here's the big idea: a chart isn't decoration, it's an argument — it should make a point and persuade your audience."
+      },
+      {
+        "start": 18.775,
+        "end": 24.3,
+        "text": "And we'll do this honestly, because a chart can just as easily mislead as reveal."
+      },
+      {
+        "start": 24.3,
+        "end": 28.95,
+        "text": "By the end you'll walk out with a three-chart story built from your very own dataset."
+      }
+    ],
+    "bytes": 174096,
+    "model": "claude-opus-4-8"
+  },
+  "recap-class08": {
+    "hash": "6c43d876e84a4817",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's rewind for just a minute to where we left off. Last time we tackled our five data enemies with three key moves — handling what's missing, normalizing, and encoding — always letting the type of data decide, never faking an order that isn't there. We learned that every value we drop is a claim we have to justify, and that suspiciously perfect results are a red flag worth attacking. Your data is clean and documented now, but it still can't speak — so today we give it a voice with one clear conclusion and three honest charts.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.8120000000000003,
+        "text": "Let's rewind for just a minute to where we left off."
+      },
+      {
+        "start": 2.8120000000000003,
+        "end": 15.075,
+        "text": "Last time we tackled our five data enemies with three key moves — handling what's missing, normalizing, and encoding — always letting the type of data decide, never faking an order that isn't there."
+      },
+      {
+        "start": 15.075,
+        "end": 23.612,
+        "text": "We learned that every value we drop is a claim we have to justify, and that suspiciously perfect results are a red flag worth attacking."
+      },
+      {
+        "start": 23.612,
+        "end": 32.9,
+        "text": "Your data is clean and documented now, but it still can't speak — so today we give it a voice with one clear conclusion and three honest charts."
+      }
+    ],
+    "bytes": 197712,
+    "model": "claude-opus-4-8"
+  },
+  "agenda": {
+    "hash": "fa1df685c435b6ee",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's how our hour together is going to flow. We'll start by sharing homework and looking at four datasets that are secretly hiding the same disguise, then move into the idea that every chart is really an argument. From there we tackle correlation and the trap it loves to spring on us, we learn to spot an axis that lies, and we get hands-on in two labs before you build your own three-chart data story. By the end, you'll pick the right chart for a claim, trust correlation only as much as it deserves, catch a dishonest axis, and tell one clear, honest story.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.625,
+        "text": "Here's how our hour together is going to flow."
+      },
+      {
+        "start": 2.625,
+        "end": 12.425,
+        "text": "We'll start by sharing homework and looking at four datasets that are secretly hiding the same disguise, then move into the idea that every chart is really an argument."
+      },
+      {
+        "start": 12.425,
+        "end": 23.2,
+        "text": "From there we tackle correlation and the trap it loves to spring on us, we learn to spot an axis that lies, and we get hands-on in two labs before you build your own three-chart data story."
+      },
+      {
+        "start": 23.2,
+        "end": 33.95,
+        "text": "By the end, you'll pick the right chart for a claim, trust correlation only as much as it deserves, catch a dishonest axis, and tell one clear, honest story."
+      }
+    ],
+    "bytes": 204048,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-warmup": {
+    "hash": "02fd42a875a2530e",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a question to warm up your brains: when do you think a self-driving car sees least reliably — up close or far away, big things or tiny ones? Now, where does that answer actually live? Not in a manual, not in three engineers' opinions — it's already sitting in the detection log you cleaned last week. One simple scatter plot of confidence against object size reveals the whole pattern instantly. That's our promise today: most questions about your data are just one correct chart away from an answer.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 9.95,
+        "text": "Here's a question to warm up your brains: when do you think a self-driving car sees least reliably — up close or far away, big things or tiny ones?"
+      },
+      {
+        "start": 9.95,
+        "end": 12.312,
+        "text": "Now, where does that answer actually live?"
+      },
+      {
+        "start": 12.312,
+        "end": 19.275,
+        "text": "Not in a manual, not in three engineers' opinions — it's already sitting in the detection log you cleaned last week."
+      },
+      {
+        "start": 19.275,
+        "end": 26.037,
+        "text": "One simple scatter plot of confidence against object size reveals the whole pattern instantly."
+      },
+      {
+        "start": 26.037,
+        "end": 32.187,
+        "text": "That's our promise today: most questions about your data are just one correct chart away from an answer."
+      }
+    ],
+    "bytes": 193536,
+    "model": "claude-opus-4-8"
+  },
+  "story-anscombe": {
+    "hash": "a4f1193fc837aa85",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a story from 1973 that I absolutely love. A statistician named Francis Anscombe built four little datasets that were statistical twins — identical mean, identical variance, identical correlation, even the same best-fit line. On paper, you couldn't tell them apart. But then he plotted them, and one was a clean line, one a curve, one had a wild outlier, one nearly vertical. The numbers hid everything, and in Lab 2 you'll prove this yourself instead of just taking my word for it.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.15,
+        "text": "Here's a story from 1973 that I absolutely love."
+      },
+      {
+        "start": 4.15,
+        "end": 16.212,
+        "text": "A statistician named Francis Anscombe built four little datasets that were statistical twins — identical mean, identical variance, identical correlation, even the same best-fit line."
+      },
+      {
+        "start": 16.212,
+        "end": 18.625,
+        "text": "On paper, you couldn't tell them apart."
+      },
+      {
+        "start": 18.625,
+        "end": 25.862,
+        "text": "But then he plotted them, and one was a clean line, one a curve, one had a wild outlier, one nearly vertical."
+      },
+      {
+        "start": 25.862,
+        "end": 32.162,
+        "text": "The numbers hid everything, and in Lab 2 you'll prove this yourself instead of just taking my word for it."
+      }
+    ],
+    "bytes": 193392,
+    "model": "claude-opus-4-8"
+  },
+  "concept-charts-argue": {
+    "hash": "d5ad857c752dd794",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a way to think about charts that will save you a lot of wasted effort: every chart is really an argument, an answer to a question you can say in one sentence. A histogram answers \"how is one variable spread out?\" — where do my detection distances pile up? A scatter asks \"how do two things relate?\" — does confidence drop as objects shrink? And correlation squeezes that relationship into a single number. If you can't state the sentence, you don't need the chart.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 9.762,
+        "text": "Here's a way to think about charts that will save you a lot of wasted effort: every chart is really an argument, an answer to a question you can say in one sentence."
+      },
+      {
+        "start": 9.762,
+        "end": 13.75,
+        "text": "A histogram answers \"how is one variable spread out?\""
+      },
+      {
+        "start": 13.75,
+        "end": 15.925,
+        "text": "— where do my detection distances pile up?"
+      },
+      {
+        "start": 15.925,
+        "end": 18.975,
+        "text": "A scatter asks \"how do two things relate?\""
+      },
+      {
+        "start": 18.975,
+        "end": 22.237,
+        "text": "— does confidence drop as objects shrink?"
+      },
+      {
+        "start": 22.237,
+        "end": 26.575,
+        "text": "And correlation squeezes that relationship into a single number."
+      },
+      {
+        "start": 26.575,
+        "end": 29.6,
+        "text": "If you can't state the sentence, you don't need the chart."
+      }
+    ],
+    "bytes": 177984,
+    "model": "claude-opus-4-8"
+  },
+  "concept-chart-map": {
+    "hash": "abf0def2e30facba",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a simple truth about charts: the question you're asking decides which one to use. Tracking something over time? That's a line chart. Comparing categories, like how many of each object you detected? Reach for a bar chart. Want to show a relationship between two things, like study hours and grades? A scatter plot. And be careful with pie charts—our eyes are terrible at judging angles, so bars almost always win. State your question first, and the chart picks itself.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.675,
+        "text": "Here's a simple truth about charts: the question you're asking decides which one to use."
+      },
+      {
+        "start": 5.675,
+        "end": 7.312,
+        "text": "Tracking something over time?"
+      },
+      {
+        "start": 7.312,
+        "end": 8.75,
+        "text": "That's a line chart."
+      },
+      {
+        "start": 8.75,
+        "end": 12.675,
+        "text": "Comparing categories, like how many of each object you detected?"
+      },
+      {
+        "start": 12.675,
+        "end": 14.062,
+        "text": "Reach for a bar chart."
+      },
+      {
+        "start": 14.062,
+        "end": 18.937,
+        "text": "Want to show a relationship between two things, like study hours and grades?"
+      },
+      {
+        "start": 18.937,
+        "end": 20.212,
+        "text": "A scatter plot."
+      },
+      {
+        "start": 20.212,
+        "end": 27.112,
+        "text": "And be careful with pie charts—our eyes are terrible at judging angles, so bars almost always win."
+      },
+      {
+        "start": 27.112,
+        "end": 30.75,
+        "text": "State your question first, and the chart picks itself."
+      }
+    ],
+    "bytes": 184896,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-chart-choice": {
+    "hash": "e58d28e409767342",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's think about this carefully. Your claim connects two things — how big an object is, and how confident the detector feels about it. When you're arguing about a relationship between two variables, the scatter plot is your tool, because it shows every point and reveals the shape. Now watch out for that bar chart of averages — it feels tempting, but averaging first quietly erases the very pattern you're trying to prove. And time? That's not even part of your claim, so don't be fooled.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.75,
+        "text": "Let's think about this carefully."
+      },
+      {
+        "start": 1.75,
+        "end": 8.187,
+        "text": "Your claim connects two things — how big an object is, and how confident the detector feels about it."
+      },
+      {
+        "start": 8.187,
+        "end": 16.762,
+        "text": "When you're arguing about a relationship between two variables, the scatter plot is your tool, because it shows every point and reveals the shape."
+      },
+      {
+        "start": 16.762,
+        "end": 24.95,
+        "text": "Now watch out for that bar chart of averages — it feels tempting, but averaging first quietly erases the very pattern you're trying to prove."
+      },
+      {
+        "start": 24.95,
+        "end": 25.862,
+        "text": "And time?"
+      },
+      {
+        "start": 25.862,
+        "end": 28.787,
+        "text": "That's not even part of your claim, so don't be fooled."
+      }
+    ],
+    "bytes": 173088,
+    "model": "claude-opus-4-8"
+  },
+  "concept-anscombe-visual": {
+    "hash": "8af28398a6977e4a",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Look closely at these four pictures, because something amazing is happening here. All four have the exact same average, the same correlation, and the same best-fit line — the numbers are identical. But the shapes could not be more different: one is a clean line, one is actually a smooth curve, one has a single rogue point bending everything, and in the last, one lonely point invents the whole correlation by itself. So please, always plot your data before you trust any statistic about it — describe() is where looking begins, never where it ends.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.25,
+        "text": "Look closely at these four pictures, because something amazing is happening here."
+      },
+      {
+        "start": 5.25,
+        "end": 12.587,
+        "text": "All four have the exact same average, the same correlation, and the same best-fit line — the numbers are identical."
+      },
+      {
+        "start": 12.587,
+        "end": 26.137,
+        "text": "But the shapes could not be more different: one is a clean line, one is actually a smooth curve, one has a single rogue point bending everything, and in the last, one lonely point invents the whole correlation by itself."
+      },
+      {
+        "start": 26.137,
+        "end": 34.7,
+        "text": "So please, always plot your data before you trust any statistic about it — describe() is where looking begins, never where it ends."
+      }
+    ],
+    "bytes": 208512,
+    "model": "claude-opus-4-8"
+  },
+  "concept-correlation": {
+    "hash": "a4df5ca882ef0507",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a neat idea: we can capture an entire relationship in a single number called r. When r is near positive one, two things rise together tightly, like study hours and grades; near negative one, one climbs as the other falls; and near zero, there's just no straight-line pattern at all. But watch out for two traps: first, correlation never proves causation — ice-cream sales and drownings rise together because summer drives both. Second, r only sees straight lines, so a perfect curve can fool it completely, which is why the fix is always the same: plot it.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.687,
+        "text": "Here's a neat idea: we can capture an entire relationship in a single number called r."
+      },
+      {
+        "start": 5.687,
+        "end": 19.1,
+        "text": "When r is near positive one, two things rise together tightly, like study hours and grades; near negative one, one climbs as the other falls; and near zero, there's just no straight-line pattern at all."
+      },
+      {
+        "start": 19.1,
+        "end": 28.687,
+        "text": "But watch out for two traps: first, correlation never proves causation — ice-cream sales and drownings rise together because summer drives both."
+      },
+      {
+        "start": 28.687,
+        "end": 37.462,
+        "text": "Second, r only sees straight lines, so a perfect curve can fool it completely, which is why the fix is always the same: plot it."
+      }
+    ],
+    "bytes": 225072,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-correlation": {
+    "hash": "b7600a8a9f526020",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a classic trap for you. Cities with more firefighters really do have more fire damage — the correlation is strong and genuine. So should we fire the firefighters to stop the damage? Of course not! There's a lurking variable hiding here: bigger fires bring more firefighters and more damage at the same time. The number tells you things move together, but it never proves one causes the other — and to actually test a cause, we'll need experiments, which is exactly where we're headed in Class 14.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.687,
+        "text": "Here's a classic trap for you."
+      },
+      {
+        "start": 1.687,
+        "end": 8.612,
+        "text": "Cities with more firefighters really do have more fire damage — the correlation is strong and genuine."
+      },
+      {
+        "start": 8.612,
+        "end": 11.75,
+        "text": "So should we fire the firefighters to stop the damage?"
+      },
+      {
+        "start": 11.75,
+        "end": 12.875,
+        "text": "Of course not!"
+      },
+      {
+        "start": 12.875,
+        "end": 19.612,
+        "text": "There's a lurking variable hiding here: bigger fires bring more firefighters and more damage at the same time."
+      },
+      {
+        "start": 19.612,
+        "end": 30.487,
+        "text": "The number tells you things move together, but it never proves one causes the other — and to actually test a cause, we'll need experiments, which is exactly where we're headed in Class 14."
+      }
+    ],
+    "bytes": 183312,
+    "model": "claude-opus-4-8"
+  },
+  "concept-honest-axes": {
+    "hash": "94d1ed559a5ad8f8",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Look closely at these two charts, because they show the exact same numbers — 88, 90, and 92 percent. On the left, where the axis starts at zero, the three detectors look nearly tied, which is the truth. But on the right, where the axis starts at 87, detector C suddenly looks three times better, even though nothing about the data changed. That's the oldest trick in the book, and you'll spot it everywhere once you know to check whether the axis starts at a sensible value, whether the units are labeled, and whether the caption speaks for itself.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.487,
+        "text": "Look closely at these two charts, because they show the exact same numbers — 88, 90, and 92 percent."
+      },
+      {
+        "start": 7.487,
+        "end": 14.1,
+        "text": "On the left, where the axis starts at zero, the three detectors look nearly tied, which is the truth."
+      },
+      {
+        "start": 14.1,
+        "end": 22.55,
+        "text": "But on the right, where the axis starts at 87, detector C suddenly looks three times better, even though nothing about the data changed."
+      },
+      {
+        "start": 22.55,
+        "end": 33.625,
+        "text": "That's the oldest trick in the book, and you'll spot it everywhere once you know to check whether the axis starts at a sensible value, whether the units are labeled, and whether the caption speaks for itself."
+      }
+    ],
+    "bytes": 202176,
+    "model": "claude-opus-4-8"
+  },
+  "tool-matplotlib": {
+    "hash": "851f58b3e3495434",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Look at how little code it actually takes to make a real chart — just five lines. But here's what I want you to notice: only one of those lines does the plotting. The other four are the title and the axis labels, and those aren't optional. A chart without labels is a chart that hides what it's showing, and we've held to that rule since your very first Colab. The plotting is easy; the honesty is the part you can't skip.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.787,
+        "text": "Look at how little code it actually takes to make a real chart — just five lines."
+      },
+      {
+        "start": 4.787,
+        "end": 9.125,
+        "text": "But here's what I want you to notice: only one of those lines does the plotting."
+      },
+      {
+        "start": 9.125,
+        "end": 13.6,
+        "text": "The other four are the title and the axis labels, and those aren't optional."
+      },
+      {
+        "start": 13.6,
+        "end": 20.325,
+        "text": "A chart without labels is a chart that hides what it's showing, and we've held to that rule since your very first Colab."
+      },
+      {
+        "start": 20.325,
+        "end": 24.425,
+        "text": "The plotting is easy; the honesty is the part you can't skip."
+      }
+    ],
+    "bytes": 146880,
+    "model": "claude-opus-4-8"
+  },
+  "case-av-3charts": {
+    "hash": "8c059fa2c89aad38",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's put it all together with a real detective story built from the very data you cleaned. First, the histogram shows most objects sit close, between 5 and 20 meters, but there's a long tail of far detections that still matter. Then the scatter plot reveals smaller boxes come with shakier confidence, and the correlations confirm it with hard numbers. So our detector is least trustworthy exactly where the stakes are highest — small, far objects, which is precisely how a night-time pedestrian first appears. Three charts, three sentences, one conclusion — and that's the story-shape you'll copy today.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.562,
+        "text": "Let's put it all together with a real detective story built from the very data you cleaned."
+      },
+      {
+        "start": 4.562,
+        "end": 13.6,
+        "text": "First, the histogram shows most objects sit close, between 5 and 20 meters, but there's a long tail of far detections that still matter."
+      },
+      {
+        "start": 13.6,
+        "end": 20.95,
+        "text": "Then the scatter plot reveals smaller boxes come with shakier confidence, and the correlations confirm it with hard numbers."
+      },
+      {
+        "start": 20.95,
+        "end": 31.375,
+        "text": "So our detector is least trustworthy exactly where the stakes are highest — small, far objects, which is precisely how a night-time pedestrian first appears."
+      },
+      {
+        "start": 31.375,
+        "end": 38.05,
+        "text": "Three charts, three sentences, one conclusion — and that's the story-shape you'll copy today."
+      }
+    ],
+    "bytes": 228672,
+    "model": "claude-opus-4-8"
+  },
+  "discuss-hidden-problem": {
+    "hash": "d2c9a09ae46500c7",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, take five minutes with a partner for this one. Remember how Anscombe's four datasets shared the same average but looked completely different? I want you to find a number from your own life that looks fantastic in a summary but hides trouble underneath — maybe a class average that hides a struggling half, or an app rating that hides a review-bomb. Then figure out which chart would expose the hiding place, and if a chart's ever fooled you, tell me the trick. Drop your best pair in the chat.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.887,
+        "text": "Alright, take five minutes with a partner for this one."
+      },
+      {
+        "start": 2.887,
+        "end": 8.45,
+        "text": "Remember how Anscombe's four datasets shared the same average but looked completely different?"
+      },
+      {
+        "start": 8.45,
+        "end": 19.975,
+        "text": "I want you to find a number from your own life that looks fantastic in a summary but hides trouble underneath — maybe a class average that hides a struggling half, or an app rating that hides a review-bomb."
+      },
+      {
+        "start": 19.975,
+        "end": 26.462,
+        "text": "Then figure out which chart would expose the hiding place, and if a chart's ever fooled you, tell me the trick."
+      },
+      {
+        "start": 26.462,
+        "end": 28.3,
+        "text": "Drop your best pair in the chat."
+      }
+    ],
+    "bytes": 170208,
+    "model": "claude-opus-4-8"
+  },
+  "demo-colab-charts": {
+    "hash": "04fd060e7038e30b",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's build tonight's data story together, live, right now. We'll start by creating a new feature — box area from width times height — exactly the trick we learned back in Class 8, so this is you reusing skills you already have. Then we make a histogram, a scatter plot, and a correlation table, and here's the key discipline: I'll caption each chart in one clear sentence before we move on. Finally we save that image, because it feeds straight into your poster and your project README.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.65,
+        "text": "Alright, let's build tonight's data story together, live, right now."
+      },
+      {
+        "start": 4.65,
+        "end": 14.637,
+        "text": "We'll start by creating a new feature — box area from width times height — exactly the trick we learned back in Class 8, so this is you reusing skills you already have."
+      },
+      {
+        "start": 14.637,
+        "end": 24.225,
+        "text": "Then we make a histogram, a scatter plot, and a correlation table, and here's the key discipline: I'll caption each chart in one clear sentence before we move on."
+      },
+      {
+        "start": 24.225,
+        "end": 29.812,
+        "text": "Finally we save that image, because it feeds straight into your poster and your project README."
+      }
+    ],
+    "bytes": 179280,
+    "model": "claude-opus-4-8"
+  },
+  "demo-ai-critic": {
+    "hash": "f19d69b36e1cf635",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's where AI becomes your chart critic, not just your chart maker. Watch how we first ask it to generate a histogram, then flip the script and have it audit our work for honesty. My favourite trick is asking what chart would overstate a claim — because once you know how graphs mislead, you can spot it in your own work and everyone else's. And before you submit tonight, run this skeptical-reviewer pass: let the AI draft the critique, but you make the final call.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.575,
+        "text": "Here's where AI becomes your chart critic, not just your chart maker."
+      },
+      {
+        "start": 4.575,
+        "end": 11.062,
+        "text": "Watch how we first ask it to generate a histogram, then flip the script and have it audit our work for honesty."
+      },
+      {
+        "start": 11.062,
+        "end": 20.475,
+        "text": "My favourite trick is asking what chart would overstate a claim — because once you know how graphs mislead, you can spot it in your own work and everyone else's."
+      },
+      {
+        "start": 20.475,
+        "end": 28.312,
+        "text": "And before you submit tonight, run this skeptical-reviewer pass: let the AI draft the critique, but you make the final call."
+      }
+    ],
+    "bytes": 170208,
+    "model": "claude-opus-4-8"
+  },
+  "lab-ascii-charts": {
+    "hash": "6dd01d731ec8fe99",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, before we ever touch a fancy charting library, let's prove that a chart is really just a simple idea dressed up. A histogram is nothing more than counting things into buckets, and a scatter plot is just placing dots on a grid — so we're going to build both using plain text characters. Watch what happens in the scatter: as you read from left to right, the dots drift downward, meaning the farther away a detection is, the less confident it becomes. That downward slide is the whole story, and once you build it yourself, that understanding is yours forever.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.787,
+        "text": "Alright, before we ever touch a fancy charting library, let's prove that a chart is really just a simple idea dressed up."
+      },
+      {
+        "start": 7.787,
+        "end": 18.45,
+        "text": "A histogram is nothing more than counting things into buckets, and a scatter plot is just placing dots on a grid — so we're going to build both using plain text characters."
+      },
+      {
+        "start": 18.45,
+        "end": 28.775,
+        "text": "Watch what happens in the scatter: as you read from left to right, the dots drift downward, meaning the farther away a detection is, the less confident it becomes."
+      },
+      {
+        "start": 28.775,
+        "end": 36.362,
+        "text": "That downward slide is the whole story, and once you build it yourself, that understanding is yours forever."
+      }
+    ],
+    "bytes": 218592,
+    "model": "claude-opus-4-8"
+  },
+  "lab-anscombe": {
+    "hash": "b724e44a765a8b85",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a challenge to a famous story. Anscombe built four little datasets back in 1973, and when you crunch the numbers — the means, the correlation, the best-fit line — they come out nearly identical. Statistically, they look like quadruplets. But then we plot them, and your eyes tell a completely different tale: one's a clean line, one's a curve, one has a rogue point, one's a vertical wall. So compute it yourself, then actually look — because the summary is where you start, never where you stop.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.512,
+        "text": "Here's a challenge to a famous story."
+      },
+      {
+        "start": 2.512,
+        "end": 13.2,
+        "text": "Anscombe built four little datasets back in 1973, and when you crunch the numbers — the means, the correlation, the best-fit line — they come out nearly identical."
+      },
+      {
+        "start": 13.2,
+        "end": 16.1,
+        "text": "Statistically, they look like quadruplets."
+      },
+      {
+        "start": 16.1,
+        "end": 25.712,
+        "text": "But then we plot them, and your eyes tell a completely different tale: one's a clean line, one's a curve, one has a rogue point, one's a vertical wall."
+      },
+      {
+        "start": 25.712,
+        "end": 32.212,
+        "text": "So compute it yourself, then actually look — because the summary is where you start, never where you stop."
+      }
+    ],
+    "bytes": 193680,
+    "model": "claude-opus-4-8"
+  },
+  "your-project": {
+    "hash": "9c70ddd25a094ba2",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's your project, and I want you to notice the order of operations because it matters. Before you plot a single thing, write down your conclusion in one clear sentence — then choose three charts that genuinely back it up. The trick is that your question picks the chart, not the other way around; don't fall in love with a pretty graph and bend a claim to fit it. Label your axes, add units, and give each chart an honest caption that stands on its own. Success is simple: three charts that truly support one defensible claim.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.325,
+        "text": "Here's your project, and I want you to notice the order of operations because it matters."
+      },
+      {
+        "start": 5.325,
+        "end": 13.712,
+        "text": "Before you plot a single thing, write down your conclusion in one clear sentence — then choose three charts that genuinely back it up."
+      },
+      {
+        "start": 13.712,
+        "end": 21.612,
+        "text": "The trick is that your question picks the chart, not the other way around; don't fall in love with a pretty graph and bend a claim to fit it."
+      },
+      {
+        "start": 21.612,
+        "end": 27.412,
+        "text": "Label your axes, add units, and give each chart an honest caption that stands on its own."
+      },
+      {
+        "start": 27.412,
+        "end": 32.925,
+        "text": "Success is simple: three charts that truly support one defensible claim."
+      }
+    ],
+    "bytes": 197856,
+    "model": "claude-opus-4-8"
+  },
+  "build-it-now": {
+    "hash": "e64c08c6d2a93bd1",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's actually build this together. Start by opening your Class-8 Colab and, before you touch a single chart, write your conclusion as one sentence in a markdown cell — that forces you to know what you're arguing first. Then build three charts that earn their place: one to show the landscape, one to show the relationship, and one to show how strong it is, each with a single-sentence caption. Do the honesty pass on your axes and labels, and remember the cut rule — three strong charts beat five weak ones, and if you can't caption it in one sentence, that's your signal to drop it.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.625,
+        "text": "Alright, let's actually build this together."
+      },
+      {
+        "start": 2.625,
+        "end": 15.237,
+        "text": "Start by opening your Class-8 Colab and, before you touch a single chart, write your conclusion as one sentence in a markdown cell — that forces you to know what you're arguing first."
+      },
+      {
+        "start": 15.237,
+        "end": 25.937,
+        "text": "Then build three charts that earn their place: one to show the landscape, one to show the relationship, and one to show how strong it is, each with a single-sentence caption."
+      },
+      {
+        "start": 25.937,
+        "end": 37.625,
+        "text": "Do the honesty pass on your axes and labels, and remember the cut rule — three strong charts beat five weak ones, and if you can't caption it in one sentence, that's your signal to drop it."
+      }
+    ],
+    "bytes": 226080,
+    "model": "claude-opus-4-8"
+  },
+  "benchmark-story": {
+    "hash": "c3eee05bd7beb0a5",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's what a finished data story actually looks like, and I want you to notice how it stands on its own. The conclusion up top makes a claim, and then each of the three charts backs it up — first showing how the distances are distributed, then the relationship between size and confidence, and finally how strong that link really is. Look at the captions: every one says what it shows and why that matters to the argument. Read those aloud and the whole story lands, even if you never saw the pictures — that's the standard we're chasing, and it drops straight into your final presentation.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.437,
+        "text": "Here's what a finished data story actually looks like, and I want you to notice how it stands on its own."
+      },
+      {
+        "start": 5.437,
+        "end": 18.775,
+        "text": "The conclusion up top makes a claim, and then each of the three charts backs it up — first showing how the distances are distributed, then the relationship between size and confidence, and finally how strong that link really is."
+      },
+      {
+        "start": 18.775,
+        "end": 24.425,
+        "text": "Look at the captions: every one says what it shows and why that matters to the argument."
+      },
+      {
+        "start": 24.425,
+        "end": 34.475,
+        "text": "Read those aloud and the whole story lands, even if you never saw the pictures — that's the standard we're chasing, and it drops straight into your final presentation."
+      }
+    ],
+    "bytes": 207216,
+    "model": "claude-opus-4-8"
+  },
+  "reference-key-terms": {
+    "hash": "1cb36abb658e7185",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let me leave you with a handful of terms that will actually change how you see the world this week. A histogram shows the shape of one variable, while a scatter plot reveals the relationship between two. Correlation, that number between minus one and one, tells you how strong a straight-line link is — but it never tells you why. Watch closely for two things: a lurking variable, the hidden cause behind a surprising connection, and a truncated axis, where someone chops off zero to make tiny differences look huge. Those last two are the tricks you'll spot on the news and on your feed all the time.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.837,
+        "text": "Let me leave you with a handful of terms that will actually change how you see the world this week."
+      },
+      {
+        "start": 4.837,
+        "end": 11.612,
+        "text": "A histogram shows the shape of one variable, while a scatter plot reveals the relationship between two."
+      },
+      {
+        "start": 11.612,
+        "end": 19.437,
+        "text": "Correlation, that number between minus one and one, tells you how strong a straight-line link is — but it never tells you why."
+      },
+      {
+        "start": 19.437,
+        "end": 32.025,
+        "text": "Watch closely for two things: a lurking variable, the hidden cause behind a surprising connection, and a truncated axis, where someone chops off zero to make tiny differences look huge."
+      },
+      {
+        "start": 32.025,
+        "end": 36.55,
+        "text": "Those last two are the tricks you'll spot on the news and on your feed all the time."
+      }
+    ],
+    "bytes": 219600,
+    "model": "claude-opus-4-8"
+  },
+  "homework": {
+    "hash": "00107b5e5255ca66",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's what I'd love you to do before we meet again. First, finish your three-chart data story with a conclusion and captions, run your honesty check, and submit it — nothing fancy, just complete and honest. Then go on a chart-lie hunt: find one misleading chart out in the wild, and tell me in a single sentence what the trick is and how you'd fix it. Also re-run that Lab 2 challenge, pull out the outlier, and see what happens to your correlation. And if you're hungry for more, meet the Datasaurus — thirteen datasets with identical stats, one shaped like a dinosaur, which proves once and for all why you always plot your data.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.5620000000000003,
+        "text": "Alright, here's what I'd love you to do before we meet again."
+      },
+      {
+        "start": 3.5620000000000003,
+        "end": 14.325,
+        "text": "First, finish your three-chart data story with a conclusion and captions, run your honesty check, and submit it — nothing fancy, just complete and honest."
+      },
+      {
+        "start": 14.325,
+        "end": 23.312,
+        "text": "Then go on a chart-lie hunt: find one misleading chart out in the wild, and tell me in a single sentence what the trick is and how you'd fix it."
+      },
+      {
+        "start": 23.312,
+        "end": 29.512,
+        "text": "Also re-run that Lab 2 challenge, pull out the outlier, and see what happens to your correlation."
+      },
+      {
+        "start": 29.512,
+        "end": 41.187,
+        "text": "And if you're hungry for more, meet the Datasaurus — thirteen datasets with identical stats, one shaped like a dinosaur, which proves once and for all why you always plot your data."
+      }
+    ],
+    "bytes": 247536,
+    "model": "claude-opus-4-8"
+  },
+  "line-to-remember": {
+    "hash": "f2f3a09e251e6951",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a line worth holding onto tonight: the greatest value of a picture is when it forces us to notice what we never expected to see. That comes from John Tukey, the person who gave us the whole idea of exploring data with charts before we try to prove anything. Remember Anscombe? Four datasets that looked identical in numbers but told wildly different stories once plotted. So when you build your three charts and they surprise you, don't panic — that's exactly the system working.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 8.075,
+        "text": "Here's a line worth holding onto tonight: the greatest value of a picture is when it forces us to notice what we never expected to see."
+      },
+      {
+        "start": 8.075,
+        "end": 15.937,
+        "text": "That comes from John Tukey, the person who gave us the whole idea of exploring data with charts before we try to prove anything."
+      },
+      {
+        "start": 15.937,
+        "end": 17.237,
+        "text": "Remember Anscombe?"
+      },
+      {
+        "start": 17.237,
+        "end": 23.362,
+        "text": "Four datasets that looked identical in numbers but told wildly different stories once plotted."
+      },
+      {
+        "start": 23.362,
+        "end": 29.9,
+        "text": "So when you build your three charts and they surprise you, don't panic — that's exactly the system working."
+      }
+    ],
+    "bytes": 179712,
+    "model": "claude-opus-4-8"
+  },
+  "wrap-up": {
+    "hash": "267f418ed4ee7954",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's pull it all together with three ideas worth carrying forward. First, every chart makes an argument — it should answer one clear question in a single sentence. Second, always plot your data, because identical statistics can hide four completely different stories underneath. And third, honest axes, labeled units, and captions that stand on their own — without those, you've made decoration, not evidence. For your exit ticket, post the one-sentence conclusion of your data story. And take a moment: tonight the data stage is complete — you earned it, and next class we start predicting.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.2620000000000005,
+        "text": "Alright, let's pull it all together with three ideas worth carrying forward."
+      },
+      {
+        "start": 4.2620000000000005,
+        "end": 10.862,
+        "text": "First, every chart makes an argument — it should answer one clear question in a single sentence."
+      },
+      {
+        "start": 10.862,
+        "end": 18.3,
+        "text": "Second, always plot your data, because identical statistics can hide four completely different stories underneath."
+      },
+      {
+        "start": 18.3,
+        "end": 27.687,
+        "text": "And third, honest axes, labeled units, and captions that stand on their own — without those, you've made decoration, not evidence."
+      },
+      {
+        "start": 27.687,
+        "end": 32.575,
+        "text": "For your exit ticket, post the one-sentence conclusion of your data story."
+      },
+      {
+        "start": 32.575,
+        "end": 39.162,
+        "text": "And take a moment: tonight the data stage is complete — you earned it, and next class we start predicting."
+      }
+    ],
+    "bytes": 235296,
+    "model": "claude-opus-4-8"
+  },
+  "backup-material": {
+    "hash": "c8141d8b9ec5caa3",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, everything from here on is bonus material, so we'll dip into it only if we've got time to spare. We've got a fun section I call the liar's gallery, where I'll show you three classic tricks people use to make charts deceive you, and that ties right into your homework hunt. There's also an extended menu of chart types for when your data story needs more than the basics, plus one more quiz to test yourselves. Think of these as tools you can pull up whenever you're ready.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.862,
+        "text": "Alright, everything from here on is bonus material, so we'll dip into it only if we've got time to spare."
+      },
+      {
+        "start": 5.862,
+        "end": 15.675,
+        "text": "We've got a fun section I call the liar's gallery, where I'll show you three classic tricks people use to make charts deceive you, and that ties right into your homework hunt."
+      },
+      {
+        "start": 15.675,
+        "end": 23.687,
+        "text": "There's also an extended menu of chart types for when your data story needs more than the basics, plus one more quiz to test yourselves."
+      },
+      {
+        "start": 23.687,
+        "end": 26.7,
+        "text": "Think of these as tools you can pull up whenever you're ready."
+      }
+    ],
+    "bytes": 160560,
+    "model": "claude-opus-4-8"
+  },
+  "backup-liars-gallery": {
+    "hash": "9afec2972b34e566",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let me show you three tricks that turn honest data into lies. First, the truncated axis: start the y-axis at 87 instead of zero, and tiny differences suddenly look huge, so always read the axis numbers first. Second, the cherry-picked window, where \"sales up 40 percent\" just means they started counting right after a crash, so ask what the graph looks like if you extend it further back. Third, the double y-axis, where two unrelated scales get stacked until they seem to move together, so demand each story separately. And remember, a chart is a claim, so apply the same verification you'd give any text: who made this, what's the source, what would the honest version look like?",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.15,
+        "text": "Let me show you three tricks that turn honest data into lies."
+      },
+      {
+        "start": 4.15,
+        "end": 15.312,
+        "text": "First, the truncated axis: start the y-axis at 87 instead of zero, and tiny differences suddenly look huge, so always read the axis numbers first."
+      },
+      {
+        "start": 15.312,
+        "end": 25.625,
+        "text": "Second, the cherry-picked window, where \"sales up 40 percent\" just means they started counting right after a crash, so ask what the graph looks like if you extend it further back."
+      },
+      {
+        "start": 25.625,
+        "end": 35.337,
+        "text": "Third, the double y-axis, where two unrelated scales get stacked until they seem to move together, so demand each story separately."
+      },
+      {
+        "start": 35.337,
+        "end": 45.425,
+        "text": "And remember, a chart is a claim, so apply the same verification you'd give any text: who made this, what's the source, what would the honest version look like?"
+      }
+    ],
+    "bytes": 272880,
+    "model": "claude-opus-4-8"
+  },
+  "backup-chart-menu": {
+    "hash": "bf8ad659457c7a85",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let me show you three more charts to keep in your back pocket. The box plot is basically your describe summary turned into a picture — median, quartiles, and outliers all flagged for you, perfect when comparing groups side by side. The line chart is your trend specialist, but only use it when x is actually ordered, like time or distance — otherwise you're drawing connections that simply don't exist. And the heatmap lets you see a whole correlation table at a glance, showing which variables move together. Remember, though, add a new chart only if it says something the core three can't.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.412,
+        "text": "Let me show you three more charts to keep in your back pocket."
+      },
+      {
+        "start": 3.412,
+        "end": 13.687,
+        "text": "The box plot is basically your describe summary turned into a picture — median, quartiles, and outliers all flagged for you, perfect when comparing groups side by side."
+      },
+      {
+        "start": 13.687,
+        "end": 24.112,
+        "text": "The line chart is your trend specialist, but only use it when x is actually ordered, like time or distance — otherwise you're drawing connections that simply don't exist."
+      },
+      {
+        "start": 24.112,
+        "end": 30.5,
+        "text": "And the heatmap lets you see a whole correlation table at a glance, showing which variables move together."
+      },
+      {
+        "start": 30.5,
+        "end": 35.637,
+        "text": "Remember, though, add a new chart only if it says something the core three can't."
+      }
+    ],
+    "bytes": 214128,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-backup-bonus": {
+    "hash": "9ccc27851ccdd500",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Look closely at that terrifying red line \"exploding\" off the chart. Here's the thing — the y-axis only runs from 41 to 42.5, so a tiny three percent wiggle suddenly looks like a cliff. And they've only shown you two months, cherry-picked from an otherwise flat year. The data might be completely real, but the lying is all in the frame. Stretch that axis to zero and show twelve months, and the whole scary story just evaporates.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5,
+        "text": "Look closely at that terrifying red line \"exploding\" off the chart."
+      },
+      {
+        "start": 5,
+        "end": 14.762,
+        "text": "Here's the thing — the y-axis only runs from 41 to 42.5, so a tiny three percent wiggle suddenly looks like a cliff."
+      },
+      {
+        "start": 14.762,
+        "end": 19.262,
+        "text": "And they've only shown you two months, cherry-picked from an otherwise flat year."
+      },
+      {
+        "start": 19.262,
+        "end": 23.725,
+        "text": "The data might be completely real, but the lying is all in the frame."
+      },
+      {
+        "start": 23.725,
+        "end": 30.625,
+        "text": "Stretch that axis to zero and show twelve months, and the whole scary story just evaporates."
+      }
+    ],
+    "bytes": 184176,
+    "model": "claude-opus-4-8"
+  }
+}

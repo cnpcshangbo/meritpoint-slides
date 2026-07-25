@@ -105,6 +105,8 @@
 .reveal .lab pre.out .err{color:#ff9b8a}
 .reveal .assist{display:flex;flex-direction:column;background:linear-gradient(135deg,#fff,#f1f7fb);border:1px solid var(--line);border-radius:11px;overflow:hidden;min-width:0}
 .reveal .assist-head{background:linear-gradient(90deg,#0F9DB0,#2BC4D4);color:#fff;font-size:13px;font-weight:700;padding:.45em .7em;font-family:-apple-system,sans-serif;display:flex;align-items:center;justify-content:space-between;gap:.5em}
+.reveal .mira-name{display:inline-flex;align-items:center;gap:6px}
+.reveal .mira-face{flex:0 0 auto;display:block}
 .reveal .assist-head .ai-model{font-family:-apple-system,sans-serif;font-size:12px;font-weight:600;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.5);border-radius:6px;padding:.15em .3em;cursor:pointer;outline:none}
 .reveal .assist-head .ai-model option{color:var(--ink)}
 .reveal .assist-body{flex:1;overflow:auto;padding:.5em .65em;font-size:13px;line-height:1.46;color:var(--ink);font-family:-apple-system,sans-serif}
@@ -115,6 +117,22 @@
 .reveal .assist-ask{display:flex;gap:.3em;border-top:1px solid var(--line);padding:.4em}
 .reveal .assist-ask input{flex:1;border:1px solid var(--line);border-radius:7px;padding:.4em .5em;font-size:13px;font-family:-apple-system,sans-serif;outline:none}
 .reveal .assist-ask button{background:var(--navy);color:#fff;border:none;border-radius:7px;padding:.4em .7em;font-size:13px;font-weight:600;cursor:pointer}
+/* LAB VIZ — live chart panel beside the code (shares the column with the
+   assistant: folded = viz visible, assistant open = viz hidden) */
+.reveal .lab.hasviz.folded{grid-template-columns:1.55fr 1.05fr}
+.reveal .labviz{display:none;flex-direction:column;background:linear-gradient(135deg,#fff,#f1f7fb);border:1px solid var(--line);border-radius:11px;overflow:hidden;min-width:0;min-height:0}
+.reveal .lab.hasviz.folded .labviz{display:flex}
+.reveal .lv-tabs{display:flex;gap:.28em;padding:.32em .38em;background:linear-gradient(90deg,#0C2D52,#16406e)}
+.reveal .lv-tab{flex:1;font-family:-apple-system,sans-serif;font-size:11px;font-weight:700;border:none;border-radius:6px;padding:.34em .15em;cursor:pointer;background:rgba(255,255,255,.13);color:#cfe0ef;white-space:nowrap}
+.reveal .lv-tab:hover{background:rgba(255,255,255,.25)}
+.reveal .lv-tab.sel{background:var(--teal);color:#fff}
+.reveal .lv-svg{flex:1;width:100%;min-height:0;font-family:-apple-system,sans-serif}
+.reveal .lv-svg .lv-pt{transition:opacity .3s}
+.reveal .lv-svg text{user-select:none}
+.reveal .lv-cap{font-family:-apple-system,sans-serif;font-size:12px;line-height:1.35;color:var(--ink);padding:.4em .55em;border-top:1px solid var(--line);min-height:3.4em;background:#fff}
+.reveal .lv-cap b{color:var(--navy)}
+@keyframes lvpulse{0%,100%{opacity:.85}50%{opacity:.15}}
+.reveal .lv-svg .lv-ring{animation:lvpulse 1.1s ease-in-out infinite}
 /* HEAP / TOP-K VISUALIZER */
 .reveal .heapviz{margin-top:.35em;font-family:-apple-system,sans-serif}
 .reveal .hv-top{display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
@@ -497,23 +515,23 @@ print(df.round(2))
         <button class="ai-explain">✨ Explain</button>
         <button class="ai-debug">🐞 Debug</button>
         <button class="ai-improve">⚡ Improve</button>
-        <button class="ai-toggle" title="Show / hide the AI assistant">🤖 Assistant</button>
+        <button class="ai-toggle" title="Show / hide Mira, your AI teaching assistant">🤖 Mira</button>
         <span class="lab-status">Python loads on first Run</span>
       </div>
       <pre class="out">▶ Run the code to see the output here.</pre>
     </div>
     <div class="assist">
-      <div class="assist-head"><span>✨ AI Assistant</span><select class="ai-model" title="Choose the AI model"><option value="haiku">⚡ Haiku · fastest</option><option value="sonnet">Sonnet · balanced</option><option value="opus">Opus · most capable</option></select></div>
-      <div class="assist-body">Hi! Edit the code and hit <b>Run</b>. Stuck? I can <b>Explain</b>, <b>Debug</b>, or <b>Improve</b> it — or just ask me below.</div>
-      <div class="assist-ask"><input class="ask-in" placeholder="Ask about this code…"><button class="ask-btn">Ask</button></div>
+      <div class="assist-head"><span class="mira-name"><svg class="mira-face" viewBox="0 0 40 40" width="21" height="21" aria-hidden="true"><circle cx="20" cy="21" r="15" fill="#fff"/><circle cx="14.5" cy="18" r="2" fill="#0C7E8E"/><circle cx="25.5" cy="18" r="2" fill="#0C7E8E"/><path d="M13 23.5a7.5 7.5 0 0 0 14 0" fill="none" stroke="#0C7E8E" stroke-width="2.4" stroke-linecap="round"/><circle cx="31.5" cy="8" r="2.8" fill="#FFC94D"/></svg>Mira · 小析</span><select class="ai-model" title="Choose the AI model"><option value="haiku">⚡ Haiku · fastest</option><option value="sonnet">Sonnet · balanced</option><option value="opus">Opus · most capable</option></select></div>
+      <div class="assist-body">Hi, I'm <b>Mira · 小析</b>, your AI teaching assistant. Edit the code and hit <b>Run</b>. Stuck? I can <b>Explain</b>, <b>Debug</b>, or <b>Improve</b> it — or just ask me below.</div>
+      <div class="assist-ask"><input class="ask-in" placeholder="问 Mira · ask Mira about this code…"><button class="ask-btn">Ask</button></div>
     </div>
   </div><aside class="notes">8 rows → 6: three spellings unify into 'pedestrian', one duplicate car dies, the impossible row (conf −1 AND width −40) drops, two holes fill with disclosure (median 8.0). Challenge 1's answer: 'PED' only matches its twin AFTER unification — order matters, formats first. Challenge 2 reframes an 'outlier' as encoded missingness — the judgment layer in one question.</aside>
 </section>
 <section id="lab-scaling-proof" data-sid="lab-scaling-proof" class="labslide">
 <div class="kicker">Hands-on lab 2 · the receipts</div>
   <h2>Prove normalization matters: same model, flipped answer</h2>
-  <p class="lead">A tiny nearest-neighbor classifier (Class 13 preview!). Same data, same question — the <b>only</b> change is scaling. Watch the answer flip.</p>
-  <div class="lab folded" data-packages="">
+  <p class="lead">A tiny nearest-neighbor classifier (Class 13 preview!). Same data, same question — the <b>only</b> change is scaling. The chart shows the data <b>before and after</b>; press 🎧 and it follows the audio, line by line.</p>
+  <div class="lab folded hasviz" data-packages="" data-viz="scaling-knn">
     <div class="lab-main">
       <div class="code-wrap">
         <div class="gutter"></div>
@@ -568,17 +586,111 @@ print("SCALED features -&gt;", nearest(scale(query), known_s))
         <button class="ai-explain">✨ Explain</button>
         <button class="ai-debug">🐞 Debug</button>
         <button class="ai-improve">⚡ Improve</button>
-        <button class="ai-toggle" title="Show / hide the AI assistant">🤖 Assistant</button>
+        <button class="ai-toggle" title="Show / hide Mira, your AI teaching assistant">🤖 Mira</button>
         <span class="lab-status">Python loads on first Run</span>
       </div>
       <pre class="out">▶ Run the code to see the output here.</pre>
     </div>
     <div class="assist">
-      <div class="assist-head"><span>✨ AI Assistant</span><select class="ai-model" title="Choose the AI model"><option value="haiku">⚡ Haiku · fastest</option><option value="sonnet">Sonnet · balanced</option><option value="opus">Opus · most capable</option></select></div>
-      <div class="assist-body">Hi! Edit the code and hit <b>Run</b>. Stuck? I can <b>Explain</b>, <b>Debug</b>, or <b>Improve</b> it — or just ask me below.</div>
-      <div class="assist-ask"><input class="ask-in" placeholder="Ask about this code…"><button class="ask-btn">Ask</button></div>
+      <div class="assist-head"><span class="mira-name"><svg class="mira-face" viewBox="0 0 40 40" width="21" height="21" aria-hidden="true"><circle cx="20" cy="21" r="15" fill="#fff"/><circle cx="14.5" cy="18" r="2" fill="#0C7E8E"/><circle cx="25.5" cy="18" r="2" fill="#0C7E8E"/><path d="M13 23.5a7.5 7.5 0 0 0 14 0" fill="none" stroke="#0C7E8E" stroke-width="2.4" stroke-linecap="round"/><circle cx="31.5" cy="8" r="2.8" fill="#FFC94D"/></svg>Mira · 小析</span><select class="ai-model" title="Choose the AI model"><option value="haiku">⚡ Haiku · fastest</option><option value="sonnet">Sonnet · balanced</option><option value="opus">Opus · most capable</option></select></div>
+      <div class="assist-body">Hi, I'm <b>Mira · 小析</b>, your AI teaching assistant. Edit the code and hit <b>Run</b>. Stuck? I can <b>Explain</b>, <b>Debug</b>, or <b>Improve</b> it — or just ask me below.</div>
+      <div class="assist-ask"><input class="ask-in" placeholder="问 Mira · ask Mira about this code…"><button class="ask-btn">Ask</button></div>
     </div>
-  </div><aside class="notes">The proof moment: RAW → 'near &amp; unsure' (metres drown a 0.62 confidence gap); SCALED → 'near &amp; sure'. Verified: raw distances 1.18 vs 2.00, scaled 0.95 vs 0.04. 'Decides who gets heard' is the line to repeat. Challenge 1 is hands-on sensitivity analysis; the nearest-neighbor machinery quietly pre-teaches Class 13's KNN.</aside>
+    <div class="labviz">
+      <div class="lv-tabs">
+        <button type="button" class="lv-tab" data-view="human">👁 Stretched</button>
+        <button type="button" class="lv-tab" data-view="model">🤖 Model's view</button>
+        <button type="button" class="lv-tab" data-view="scaled">⚖️ Scaled 0–1</button>
+      </div>
+      <svg class="lv-svg" viewBox="0 0 340 236" preserveAspectRatio="xMidYMid meet"></svg>
+      <div class="lv-cap"></div>
+    </div>
+  </div><aside class="notes">The proof moment: RAW → 'near &amp; unsure' (metres drown a 0.62 confidence gap); SCALED → 'near &amp; sure'. Verified: raw distances 1.18 vs 2.00, scaled 0.95 vs 0.04. 'Decides who gets heard' is the line to repeat. The side chart has three views (stretched axes / true raw units / scaled 0-1) and follows the 🎧 walkthrough automatically — the true-units view with its zoom inset is the visual argument for WHY the wrong neighbor wins. Challenge 1 is hands-on sensitivity analysis; the nearest-neighbor machinery quietly pre-teaches Class 13's KNN.</aside>
+</section>
+<section id="lab-real-receipts" data-sid="lab-real-receipts" class="labslide">
+<div class="kicker">Hands-on lab 3 · the receipts, on real data</div>
+  <h2>Two claims from this class, proved on 891 real passengers</h2>
+  <p class="lead">Lab 2 proved scaling matters on three toy points. Now the same argument on the <b>real Kaggle Titanic set</b> — every number below is computed from the actual fares, not quoted at you. Two receipts: what one £512 ticket does to <b>min-max</b>, and why the "obvious" <b>C=0, Q=1, S=2</b> ordering is measurably false.</p>
+  <div class="lab folded" data-packages="">
+    <div class="lab-main">
+      <div class="code-wrap">
+        <div class="gutter"></div>
+        <div class="line-hi"></div>
+        <textarea class="code" spellcheck="false" wrap="off"># Real Kaggle Titanic data — all 891 passengers. Scroll past these three
+# lines; they are just the raw numbers, exactly as train.csv has them.
+FARES = [float(x) for x in "7.25,71.28,7.92,53.1,8.05,8.46,51.86,21.07,11.13,30.07,16.7,26.55,8.05,31.27,7.85,16,29.12,13,18,7.22,26,13,8.03,35.5,21.07,31.39,7.22,263,7.88,7.9,27.72,146.52,7.75,10.5,82.17,52,7.23,8.05,18,11.24,9.47,21,7.9,41.58,7.88,8.05,15.5,7.75,21.68,17.8,39.69,7.8,76.73,26,61.98,35.5,10.5,7.23,27.75,46.9,7.23,80,83.47,27.9,27.72,15.25,10.5,8.16,7.92,8.66,10.5,46.9,73.5,14.45,56.5,7.65,7.9,8.05,29,12.47,9,9.5,7.79,47.1,10.5,15.85,34.38,8.05,263,8.05,8.05,7.85,61.17,20.57,7.25,8.05,34.65,63.36,23,26,7.9,7.9,77.29,8.65,7.92,7.9,7.65,7.78,7.9,24.15,52,14.45,8.05,9.82,14.46,7.92,7.75,21,247.52,31.27,73.5,8.05,30.07,13,77.29,11.24,7.75,7.14,22.36,6.97,7.9,7.05,14.5,26,13,15.05,26.28,53.1,9.22,79.2,15.25,7.75,15.85,6.75,11.5,36.75,7.8,34.38,26,13,12.53,66.6,8.05,14.5,7.31,61.38,7.73,8.05,8.66,69.55,16.1,15.75,7.78,8.66,39.69,20.52,55,27.9,25.93,56.5,33.5,29.12,11.13,7.92,30.7,7.85,25.47,28.71,13,0,69.55,15.05,31.39,39,22.02,50,15.5,26.55,15.5,7.9,13,13,7.85,26,27.72,146.52,7.75,8.4,7.75,13,9.5,69.55,6.5,7.22,8.05,10.46,15.85,18.79,7.75,31,7.05,21,7.25,13,7.75,113.28,7.92,27,76.29,10.5,8.05,13,8.05,7.9,90,9.35,10.5,7.25,13,25.47,83.47,7.78,13.5,31.39,10.5,7.55,26,26.25,10.5,12.28,14.45,15.5,10.5,7.12,7.22,90,7.78,14.5,52.55,26,7.25,10.46,26.55,16.1,20.21,15.25,79.2,86.5,512.33,26,7.75,31.39,79.65,0,7.75,10.5,39.69,7.78,153.46,135.63,31,0,19.5,29.7,7.75,77.96,7.75,0,29.12,20.25,7.75,7.85,9.5,8.05,26,8.66,9.5,7.9,13,7.75,78.85,91.08,12.88,8.85,7.9,27.72,7.23,151.55,30.5,247.52,7.75,23.25,0,12.35,8.05,151.55,110.88,108.9,24,56.93,83.16,262.38,26,7.9,26.25,7.85,26,14,164.87,134.5,7.25,7.9,12.35,29,69.55,135.63,6.24,13,20.52,57.98,23.25,28.5,153.46,18,133.65,7.9,66.6,134.5,8.05,35.5,26,263,13,13,13,13,13,16.1,15.9,8.66,9.22,35,7.23,17.8,7.22,9.5,55,13,7.88,7.88,27.9,27.72,14.45,7.05,15.5,7.25,75.25,7.23,7.75,69.3,55.44,6.5,8.05,135.63,21.07,82.17,7.25,211.5,4.01,7.78,227.53,15.74,7.92,52,7.9,73.5,46.9,13,7.73,12,120,7.8,7.92,113.28,16.7,7.8,7.85,26,10.5,12.65,7.92,8.05,9.82,15.85,8.66,21,7.75,18.75,7.78,25.47,7.9,6.86,90,0,7.92,8.05,32.5,13,13,24.15,7.9,7.73,7.88,14.4,20.21,7.25,26,26,7.75,8.05,26.55,16.1,26,7.12,55.9,120,34.38,18.75,263,10.5,26.25,9.5,7.78,13,8.11,81.86,19.5,26.55,19.26,30.5,27.75,19.97,27.75,89.1,8.05,7.9,26.55,51.86,10.5,7.75,26.55,8.05,38.5,13,8.05,7.05,0,26.55,7.72,19.26,7.25,8.66,27.75,13.79,9.84,52,21,7.05,7.52,12.29,46.9,0,8.05,9.59,91.08,25.47,90,29.7,8.05,15.9,19.97,7.25,30.5,49.5,8.05,14.46,78.27,15.1,151.55,7.8,8.66,7.75,7.63,9.59,86.5,108.9,26,26.55,22.52,56.5,7.75,8.05,26.29,59.4,7.5,34.02,10.5,24.15,26,7.9,93.5,7.9,7.22,57.98,7.23,7.75,10.5,221.78,7.92,11.5,26,7.23,7.23,22.36,8.66,26.25,26.55,106.42,14.5,49.5,71,31.27,31.27,26,106.42,26,26,13.86,20.52,36.75,110.88,26,7.83,7.22,7.78,26.55,39.6,227.53,79.65,17.4,7.75,7.9,13.5,8.05,8.05,24.15,7.9,21.07,7.23,7.85,10.5,51.48,26.39,7.75,8.05,14.5,13,55.9,14.46,7.92,30,110.88,26,40.12,8.71,79.65,15,79.2,8.05,8.05,7.12,78.27,7.25,7.75,26,24.15,33,0,7.22,56.93,27,7.9,42.4,8.05,26.55,15.55,7.9,30.5,41.58,153.46,31.27,7.05,15.5,7.75,8.05,65,14.4,16.1,39,10.5,14.45,52.55,15.74,7.85,16.1,32.32,12.35,77.96,7.9,7.73,30,7.05,30.5,0,27.9,13,7.92,26.25,39.69,16.1,7.85,69.3,27.9,56.5,19.26,76.73,7.9,35.5,7.55,7.55,7.9,23,8.43,7.83,6.75,73.5,7.9,15.5,13,113.28,133.65,7.22,25.59,7.5,7.92,73.5,13,7.78,8.05,52,39,52,10.5,13,0,7.78,8.05,9.84,46.9,512.33,8.14,76.73,9.22,46.9,39,41.58,39.69,10.17,7.8,211.34,57,13.42,56.5,7.22,26.55,13.5,8.05,7.73,110.88,7.65,227.53,26.29,14.45,7.74,7.85,26,13.5,26.29,151.55,15.25,49.5,26.55,52,9.48,13,7.65,227.53,10.5,15.5,7.78,33,7.05,13,13,53.1,8.66,21,7.74,26,7.92,211.34,18.79,0,13,13,16.1,34.38,512.33,7.9,7.9,30,78.85,262.38,16.1,7.92,71,20.25,13,53.1,7.75,23,12.47,9.5,7.9,65,14.5,7.8,11.5,8.05,86.5,14.5,7.12,7.23,120,7.78,77.96,39.6,7.75,24.15,8.36,9.5,7.85,10.5,7.22,23,7.75,7.75,12.47,7.74,211.34,7.23,57,30,23.45,7.05,7.25,7.5,29.12,20.57,79.2,7.75,26,69.55,30.7,7.9,13,25.93,8.68,7.23,24.15,13,26.25,120,8.52,6.97,7.78,0,7.78,13,53.1,7.89,24.15,10.5,31.27,8.05,0,7.92,37,6.45,27.9,93.5,8.66,0,12.47,39.69,6.95,56.5,37,7.75,80,14.45,18.75,7.23,7.85,8.3,83.16,8.66,8.05,56.5,29.7,7.92,10.5,31,6.44,8.66,7.55,69.55,7.9,33,89.1,31.27,7.78,15.25,39.4,26,9.35,164.87,26.55,19.26,7.23,14.11,11.5,25.93,69.55,13,13,13.86,50.5,9.5,11.13,7.9,52.55,5,9,24,7.22,9.85,7.9,7.9,83.16,26,7.9,10.52,10.5,7.05,29.12,13,30,23.45,30,7.75".split(",")]
+PORTS = "SCSSSQSSSCSSSSSSQSSCSSQSSSCSQSCCQSCSCSSCSSCCQSQQCSSSCSCSSCSSC?SSCCSSSSSSSCSSSSSSSSQSSSSSSSSSSSSSCCSSSSSSSSSSSQSCSSCSQSCSSSCSSCQSCSCSSSSCSSSCCSSQSSSSSSSSSSSCQSSSSSSSSSSSSSSQSSCSSCSSSCSSSSQSQSSSSSCCQSQSSSSCSSSCQCSSSSQCSSCSSSSSSSSSSSSSSSSSSSSSCQSSCQSSSSSSSSSCCSCSQSSSQSSSSSSSSCQSSSQSQSSSSCSSSQSCCSSCCSSCQQSQSSCCCCCCSSSSSSSCSSQSSCSSSCQSSSSSSCSSSSSSSSSSSSSSCSCSSSQQSCCSQSCCQCCSSCSCSCCSCCSSSSSSQCSSSCSSSSSSSSSSSSSSSSSQQSSSSSSSCQSSSSSSQSSSSSSSSSSSSSSSSSSSCSSSCCSCSSSQSSSSSSSSQCSSSCSSSSSSSSSSCSSCSSSSSCSCCSSSSQQSSCSSSSQSSCSSSQSSSSCCCQSSSSSCCCSSSCSCSSSSCSSCSSCSQCSSCCSSQSSSSSSSCSSSSQSSSSCSSCSCCSSCSSSCSQSSSSCCSSSSCSSSCSSSQQSSSSSSCSCSSSQSSQSSCSSSSSSSSCSSCCSCSSSSSQQSSQSCSCSSSSSSSSSSSSSSSSSCQCSSSCSSSSSCSCSSSQCSCSCQSSSSSCCSSSSSCSQSSSSSSSSQSSSCSSSSSCSSSSCSSSSSSQSSSSSSSSSSSSCSSSCQQSSSSCSSQSQSCSSSSSSQSCQSSCSSSSCSSSSCSSSSSSSSSSSSSCSSSSSSSQSCQ?CSCSSCSSSCSSCCSSSCSCSSCSSSSSCCSSSSSSCSSSSSSSCCSSSCSSSSSQSSSCQ"   # C=Cherbourg  Q=Queenstown  S=Southampton  ?=missing
+LIVED = "011100001111000101010111010010011000100100011001000011011010010001101000001000110110110010000000011000000011010000000000000101011000010010000110001000010000100001000110000010000000000110110010111100100000100111010001101010001010001001000100010000011000000111110100000111011011000100010010111100000011110101110111000110110011010111100010011011000111100000001011000000111110000110001101000101110110000110000001000010101100000000110111100101001001111111000101011010000000010011000001000110100100000010000000101101101100101010010010001001010101100100110110011010110000000001111100110111000101000100001001100010011100100100100110000100101001000001011101010101000000100010000110010001010100000001111000010011000011111010001100100010110010000001001010100100110011000100110100000000100101110000101000000011000111100001000000000011010001111100010011001000000100010111100010011001010011000110000001010"   # 1 = survived
+
+# ══ RECEIPT 1 ══ One outlier can eat your entire min-max range.
+lo, hi = min(FARES), max(FARES)
+order  = sorted(FARES)
+median = order[len(order) // 2]
+p75    = order[int(len(order) * 0.75)]
+
+def minmax(x):
+    return (x - lo) / (hi - lo)          # the "squeeze into 0-1" recipe
+
+print("cheapest ticket: £", lo, "   dearest ticket: £", hi)
+print("typical (median) fare: £", median)
+print()
+print("after min-max, the TYPICAL passenger sits at", round(minmax(median), 4))
+print("after min-max, 75% of fares fall below     ", round(minmax(p75), 3))
+squashed = sum(1 for f in FARES if minmax(f) &lt; 0.1) / len(FARES)
+print("share of ALL passengers crushed under 0.1  ", str(round(squashed * 100, 1)) + "%")
+# One first-class passenger paid £512 and now defines the top of the scale.
+# You did scale the column to 0-1. You also flattened almost all the
+# variation you actually cared about. THIS is why slide 9 says min-max is
+# "fragile if a wild outlier stretches the range".
+
+# ══ RECEIPT 2 ══ The "obvious" alphabetical order C=0, Q=1, S=2 is FALSE.
+print()
+print("port   n     avg fare   survival")
+for p in "CQS":
+    fares = [f for f, q in zip(FARES, PORTS) if q == p]
+    lived = [int(c) for c, q in zip(LIVED, PORTS) if q == p]
+    print(" ", p, str(len(fares)).rjust(4),
+          str(round(sum(fares) / len(fares), 2)).rjust(10),
+          str(round(sum(lived) / len(lived), 3)).rjust(10))
+
+# Read the fare column. Numbering the ports C=0, Q=1, S=2 tells your model
+# that Q sits BETWEEN C and S. By fare, Queenstown is the CHEAPEST of the
+# three - not the middle. The order you invented is measurably wrong, so
+# one-hot encoding isn't good manners: it's the only honest option.
+
+# CHALLENGE 1: re-run receipt 1 with the single £512 passenger removed.
+#              How far does the median climb? (Hint: filter FARES first.)
+# CHALLENGE 2: z-score the fares instead - (x - mean) / std - and print
+#              how many standard deviations that £512 ticket sits above
+#              the mean. Does z-scoring make the outlier disappear?
+# CHALLENGE 3: is there ANY ordering of C/Q/S that a number line could
+#              honestly express? Argue it from the table above.
+</textarea>
+      </div>
+      <div class="lab-bar">
+        <button class="run">▶ Run</button>
+        <button class="walk" hidden>🎧 Explain each line</button>
+        <span class="walk-controls" hidden>
+          <button class="walk-prev" title="Previous step">⏮</button>
+          <button class="walk-pause" title="Pause / resume">⏸</button>
+          <button class="walk-next" title="Next step">⏭</button>
+          <button class="walk-stop" title="Stop walkthrough">✕</button>
+          <span class="walk-step"></span>
+        </span>
+        <button class="ai-explain">✨ Explain</button>
+        <button class="ai-debug">🐞 Debug</button>
+        <button class="ai-improve">⚡ Improve</button>
+        <button class="ai-toggle" title="Show / hide Mira, your AI teaching assistant">🤖 Mira</button>
+        <span class="lab-status">Python loads on first Run</span>
+      </div>
+      <pre class="out">▶ Run the code to see the output here.</pre>
+    </div>
+    <div class="assist">
+      <div class="assist-head"><span class="mira-name"><svg class="mira-face" viewBox="0 0 40 40" width="21" height="21" aria-hidden="true"><circle cx="20" cy="21" r="15" fill="#fff"/><circle cx="14.5" cy="18" r="2" fill="#0C7E8E"/><circle cx="25.5" cy="18" r="2" fill="#0C7E8E"/><path d="M13 23.5a7.5 7.5 0 0 0 14 0" fill="none" stroke="#0C7E8E" stroke-width="2.4" stroke-linecap="round"/><circle cx="31.5" cy="8" r="2.8" fill="#FFC94D"/></svg>Mira · 小析</span><select class="ai-model" title="Choose the AI model"><option value="haiku">⚡ Haiku · fastest</option><option value="sonnet">Sonnet · balanced</option><option value="opus">Opus · most capable</option></select></div>
+      <div class="assist-body">Hi, I'm <b>Mira · 小析</b>, your AI teaching assistant. Edit the code and hit <b>Run</b>. Stuck? I can <b>Explain</b>, <b>Debug</b>, or <b>Improve</b> it — or just ask me below.</div>
+      <div class="assist-ask"><input class="ask-in" placeholder="问 Mira · ask Mira about this code…"><button class="ask-btn">Ask</button></div>
+    </div>
+  </div><aside class="notes">The two proofs behind slide 9 ("fragile if a wild outlier stretches the range") and slide 10 ("you invented an order that doesn't exist") — now with receipts, so students argue from evidence instead of authority. Verified output: median fare £14.45 lands at 0.0282 after min-max; 75% of fares below 0.061; 82.2% of ALL passengers crushed under 0.1 by one £512 ticket. Ports by average fare: C 59.95, Q 13.28, S 27.08 — Queenstown is the CHEAPEST, not the middle, so any C&lt;Q&lt;S number line is factually wrong. Same figures appear in the class-08 recording's supplementary segment (Mira), so deck and video agree. Stdlib only (no pandas) — runs instantly. Challenge 2 previews why z-scoring doesn't delete an outlier; Challenge 3 is the discussion hook: no honest ordering exists for nominal data.</aside>
 </section>
 <section id="your-project" data-sid="your-project">
 <div class="kicker">Your project</div>
@@ -1068,6 +1180,197 @@ document.querySelectorAll('.convviz').forEach(function(cv){
   cvRender(cv);
 });
 
+/* ---------- Scaling-proof visualizer (lab data-viz="scaling-knn") ----------
+ * A live scatter chart beside the code with three views of the SAME data:
+ *   human  — axes stretched to fit (how people draw it; query hugs near&sure)
+ *   model  — both axes in true raw units (confidence collapses to a sliver;
+ *            nearest = near&unsure, the wrong answer) + equal-units zoom inset
+ *   scaled — min-max 0-1 (the chart springs back; the answer flips)
+ * During the 🎧 walkthrough, lvWalkStep() switches views to match the lines
+ * being narrated, so the audio tutor can point at what the student sees. */
+var LV_NS='http://www.w3.org/2000/svg';
+function lvEl(tag,attrs,parent){ var el=document.createElementNS(LV_NS,tag); for(var k in attrs) el.setAttribute(k,attrs[k]); if(parent) parent.appendChild(el); return el; }
+var LV_COL={f:'#16406e',s:'#0F9DB0',u:'#EE6B36',q:'#F2A93B'};
+var LV_NAME={f:'far & sure',s:'near & sure',u:'near & unsure',q:'query'};
+/* geometry: viewBox 340x236, plot l=40 r=330 t=18 b=204 */
+function lvViews(){
+  var L=40,R=330,T=18,B=204,W=R-L,H=B-T;
+  var X=function(x){return L+x/90*W;};
+  var hum=function(x,y){return [X(x), B-(y-0.2)/0.8*H];};
+  var u=W/90, yb=140; /* model view: 1 confidence unit = 1 metre = u px */
+  var mod=function(x,y){return [X(x), yb-y*u];};
+  var sc=function(x,y){var sx=(x-5)/75, sy=(y-0.30)/0.65; return [L+(0.05+0.90*sx)*W, B-(0.05+0.90*sy)*H];};
+  var P={f:[80,0.95],s:[5,0.90],u:[6,0.30],q:[7,0.92]};
+  var pos={human:{},model:{},scaled:{}};
+  for(var k in P){ pos.human[k]=hum(P[k][0],P[k][1]); pos.model[k]=mod(P[k][0],P[k][1]); pos.scaled[k]=sc(P[k][0],P[k][1]); }
+  return {L:L,R:R,T:T,B:B,X:X,u:u,yb:yb,pos:pos};
+}
+/* label placement per view: [dx,dy,anchor,visible] relative to the point */
+var LV_LBL={
+  human:{f:[-10,-4,'end',1], s:[10,6,'start',1], u:[10,4,'start',1], q:[10,-6,'start',1]},
+  model:{f:[-10,-8,'end',1], s:[0,0,'start',0], u:[0,0,'start',0], q:[0,0,'start',0]},
+  scaled:{f:[-10,-4,'end',1], s:[10,8,'start',1], u:[10,-3,'start',1], q:[10,-6,'start',1]}
+};
+var LV_CAP={
+  'human:intro':'<b>The data, the way humans plot it</b> — axes stretched to fit. Three labeled detections + one query. Press 🎧 <b>Explain each line</b> for the guided tour.',
+  'human:known':'Three known detections: <b>far & sure</b> (80 m, 0.95) · <b>near & sure</b> (5 m, 0.90) · <b>near & unsure</b> (6 m, 0.30).',
+  'human:query':'The query: <b>7 m, confidence 0.92</b> — near and confident. Your eyes already know its nearest neighbor… right?',
+  'human:guess':'Nearest neighbor = shortest straight-line distance between points. On this chart the query practically hugs <b>near & sure</b>.',
+  'model:wrong':'<b>What the model actually computes.</b> In raw units the entire confidence axis is a sliver. Distances: near&sure <b>2.00</b> · near&unsure <b>1.18</b> ← nearest. Verdict: <b>near & unsure ✗</b>',
+  'model:formula':'Min-max squeezes each feature into <b>0–1</b>: (x − min) ÷ (max − min). In a moment the flat line will spring back into a real chart — scaling does mathematically what your eyes did all along.',
+  'scaled:squeeze':'Min-max squeezes each feature into <b>0–1</b>: (x − min) ÷ (max − min). The flat line springs back into a chart — scaling does mathematically what your eyes did all along.',
+  'scaled:right':'Same model, scaled features: near&sure <b>0.04</b> ← nearest · near&unsure <b>0.95</b> · far <b>0.97</b>. Verdict: <b>near & sure ✓</b> — the answer flipped.',
+  'scaled:final':'One preprocessing move changed the model\u2019s decision. Normalization isn\u2019t cosmetic — <b>it decides who gets heard.</b>'
+};
+function lvState(lab){
+  if(lab._lv) return lab._lv;
+  var svg=lab.querySelector('.lv-svg'); if(!svg) return null;
+  var g=lvViews();
+  var st=lab._lv={svg:svg,cap:lab.querySelector('.lv-cap'),tabs:lab.querySelectorAll('.lv-tab'),
+    g:g,view:null,focus:null,cur:null,anim:0,
+    gAxes:lvEl('g',{},svg),gDeco:lvEl('g',{},svg),gPts:lvEl('g',{},svg),pt:{},lbl:{},ring:null};
+  st.ring=lvEl('circle',{r:11,fill:'none',stroke:LV_COL.q,'stroke-width':2.5,opacity:0},st.gPts);
+  ['f','s','u','q'].forEach(function(k){
+    st.pt[k]=lvEl('circle',{r:k==='q'?6:5,fill:LV_COL[k],stroke:k==='q'?'#7a5410':'#fff','stroke-width':k==='q'?2:1.5,'class':'lv-pt'},st.gPts);
+    st.lbl[k]=lvEl('text',{'font-size':10,'font-weight':k==='q'?700:600,fill:LV_COL[k]==='#F2A93B'?'#8a5f0e':LV_COL[k],'class':'lv-pt'},st.gPts);
+    st.lbl[k].textContent=LV_NAME[k];
+  });
+  return st;
+}
+function lvAxes(st,view){
+  var g=st.g,L=g.L,R=g.R,T=g.T,B=g.B; st.gAxes.innerHTML='';
+  var ax=function(x1,y1,x2,y2){ lvEl('line',{x1:x1,y1:y1,x2:x2,y2:y2,stroke:'#9db0c4','stroke-width':1},st.gAxes); };
+  var tx=function(x,y,s,anc,sz,col){ var t=lvEl('text',{x:x,y:y,'font-size':sz||9,fill:col||'#6b7f95','text-anchor':anc||'middle'},st.gAxes); t.textContent=s; return t; };
+  ax(L,B,R,B);
+  if(view==='scaled'){
+    ax(L,T,L,B);
+    [0,0.5,1].forEach(function(v){ tx(L+(0.05+0.90*v)*(R-L),B+11,String(v)); tx(L-5,B-(0.05+0.90*v)*(B-T)+3,String(v),'end'); });
+    tx((L+R)/2,B+23,'distance (scaled 0–1)','middle',9);
+    var yl=tx(12,(T+B)/2,'confidence (scaled 0–1)');
+    yl.setAttribute('transform','rotate(-90 12 '+(T+B)/2+')');
+  } else {
+    [0,30,60,90].forEach(function(v){ tx(g.X(v),B+11,String(v)); });
+    tx((L+R)/2,B+23,'distance_m (raw metres)','middle',9);
+    if(view==='human'){
+      ax(L,T,L,B);
+      [0.3,0.6,0.9].forEach(function(v){ tx(L-5,B-(v-0.2)/0.8*(B-T)+3,String(v),'end'); });
+      var yl2=tx(12,(T+B)/2,'confidence (stretched!)');
+      yl2.setAttribute('transform','rotate(-90 12 '+(T+B)/2+')');
+    } else {
+      /* the whole 0-1 confidence axis, drawn to the same scale as metres */
+      var y1=g.yb-1*g.u, y0=g.yb;
+      lvEl('line',{x1:32,y1:y1,x2:32,y2:y0,stroke:'#EE6B36','stroke-width':2},st.gAxes);
+      lvEl('line',{x1:29,y1:y1,x2:35,y2:y1,stroke:'#EE6B36','stroke-width':1.5},st.gAxes);
+      lvEl('line',{x1:29,y1:y0,x2:35,y2:y0,stroke:'#EE6B36','stroke-width':1.5},st.gAxes);
+      tx(6,y0+16,'← the ENTIRE confidence','start',9,'#c14e20');
+      tx(6,y0+27,'axis (0→1), to scale','start',9,'#c14e20');
+    }
+  }
+}
+function lvLine(st,a,b,col,wid,dash,label,lx,ly){
+  lvEl('line',{x1:a[0],y1:a[1],x2:b[0],y2:b[1],stroke:col,'stroke-width':wid,'stroke-dasharray':dash||'none','stroke-linecap':'round'},st.gDeco);
+  if(label){ var t=lvEl('text',{x:lx,y:ly,'font-size':10,'font-weight':700,fill:col,'text-anchor':'middle'},st.gDeco);
+    t.textContent=label; }
+}
+function lvDeco(st){
+  st.gDeco.innerHTML='';
+  var p=st.g.pos[st.view], focus=st.focus;
+  st.ring.setAttribute('opacity',0); st.ring.classList.remove('lv-ring');
+  if(focus==='query'){ st.ring.classList.add('lv-ring'); st.ring.setAttribute('opacity',0.85); }
+  if(st.view==='human'&&focus==='guess'){
+    var cx=(p.q[0]+p.s[0])/2, cy=(p.q[1]+p.s[1])/2;
+    lvEl('ellipse',{cx:cx,cy:cy,rx:19,ry:15,fill:'none',stroke:'#e09a20','stroke-width':2,'stroke-dasharray':'5 4'},st.gDeco);
+    var t=lvEl('text',{x:cx+26,y:cy+24,'font-size':10,'font-weight':700,fill:'#8a5f0e'},st.gDeco);
+    t.textContent='"obviously" nearest?';
+  }
+  if(st.view==='model'&&(focus==='wrong'||focus==='formula')){
+    lvLine(st,p.q,p.f,'#8aa0b8',1.5,'4 3','d = 73.0',(p.q[0]+p.f[0])/2,p.q[1]-8);
+    /* equal-units zoom inset: x 3.2-9.8 m, conf 0.2-1.05, 24 px per unit both ways */
+    var ix=70,iy=28,iw=180,ih=52,k=24, mX=function(x){return ix+12+(x-3.2)*k;}, mY=function(c){return iy+10+(1.05-c)*k;};
+    lvEl('rect',{x:ix,y:iy,width:iw,height:ih,rx:6,fill:'#fff',stroke:'#21405f','stroke-width':1.2},st.gDeco);
+    lvEl('line',{x1:ix+16,y1:iy+ih,x2:p.q[0]-2,y2:p.q[1]-4,stroke:'#8aa0b8','stroke-width':1,'stroke-dasharray':'2 3'},st.gDeco);
+    lvEl('line',{x1:ix+iw-16,y1:iy+ih,x2:p.q[0]+4,y2:p.q[1]-4,stroke:'#8aa0b8','stroke-width':1,'stroke-dasharray':'2 3'},st.gDeco);
+    var zt=lvEl('text',{x:ix+iw/2,y:iy-4,'font-size':9,fill:'#6b7f95','text-anchor':'middle'},st.gDeco);
+    zt.textContent='zoom — both axes in the SAME units';
+    var q=[mX(7),mY(0.92)],s=[mX(5),mY(0.90)],u2=[mX(6),mY(0.30)];
+    lvLine(st,q,s,'#8aa0b8',1.5,'4 3','2.00',(q[0]+s[0])/2,s[1]-5);
+    lvLine(st,q,u2,'#EE6B36',2.5,null,'1.18',u2[0]-14,(q[1]+u2[1])/2+8);
+    [[s,'s'],[u2,'u'],[q,'q']].forEach(function(d){ lvEl('circle',{cx:d[0][0],cy:d[0][1],r:4,fill:LV_COL[d[1]],stroke:'#fff','stroke-width':1},st.gDeco); });
+    var w=lvEl('text',{x:u2[0]+26,y:u2[1]+4,'font-size':10,'font-weight':800,fill:'#EE6B36'},st.gDeco);
+    w.textContent='← nearest ✗';
+  }
+  if(st.view==='scaled'&&(focus==='right'||focus==='final')){
+    lvLine(st,p.q,p.f,'#8aa0b8',1.5,'4 3','0.97',(p.q[0]+p.f[0])/2,p.q[1]-10);
+    lvLine(st,p.q,p.u,'#8aa0b8',1.5,'4 3','0.95',p.q[0]+16,(p.q[1]+p.u[1])/2);
+    var cx2=(p.q[0]+p.s[0])/2, cy2=(p.q[1]+p.s[1])/2;
+    lvEl('ellipse',{cx:cx2,cy:cy2,rx:17,ry:13,fill:'none',stroke:'#1FA97A','stroke-width':2.5},st.gDeco);
+    var t2=lvEl('text',{x:cx2+24,y:cy2+22,'font-size':10,'font-weight':800,fill:'#1FA97A'},st.gDeco);
+    t2.textContent='d = 0.04 — nearest ✓';
+  }
+}
+function lvPlace(st,pos,vis){
+  ['f','s','u','q'].forEach(function(k){
+    var pt=st.pt[k],lb=st.lbl[k],p=pos[k],l=LV_LBL[st.view][k];
+    pt.setAttribute('cx',p[0]); pt.setAttribute('cy',p[1]);
+    pt.setAttribute('opacity',vis[k]?1:0);
+    lb.setAttribute('x',p[0]+l[0]); lb.setAttribute('y',p[1]+l[1]); lb.setAttribute('text-anchor',l[2]);
+    lb.setAttribute('opacity',vis[k]&&l[3]?1:0);
+  });
+  st.ring.setAttribute('cx',pos.q[0]); st.ring.setAttribute('cy',pos.q[1]);
+}
+function lvSet(lab,view,focus){
+  var st=lvState(lab); if(!st) return;
+  if(st.view===view&&st.focus===focus) return;
+  var from=st.cur, sameView=(st.view===view);
+  st.view=view; st.focus=focus;
+  var to=st.g.pos[view];
+  var vis={f:1,s:1,u:1,q:focus==='known'?0:1};
+  st.tabs.forEach(function(b){ b.classList.toggle('sel',b.dataset.view===view); });
+  st.cap.innerHTML=LV_CAP[view+':'+focus]||LV_CAP[view+':intro']||'';
+  lvAxes(st,view);
+  st.gDeco.innerHTML=''; st.ring.setAttribute('opacity',0); st.ring.classList.remove('lv-ring');
+  var token=++st.anim;
+  if(!from||sameView){ st.cur=to; lvPlace(st,to,vis); lvDeco(st); return; }
+  var t0=null, DUR=550;
+  function frame(ts){
+    if(st.anim!==token) return;
+    if(t0===null) t0=ts;
+    var t=Math.min(1,(ts-t0)/DUR), e=t<0.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2, cur={};
+    ['f','s','u','q'].forEach(function(k){ cur[k]=[from[k][0]+(to[k][0]-from[k][0])*e, from[k][1]+(to[k][1]-from[k][1])*e]; });
+    lvPlace(st,cur,vis);
+    if(t<1) requestAnimationFrame(frame);
+    else { st.cur=to; lvDeco(st); }
+  }
+  requestAnimationFrame(frame);
+}
+var LV_TAB_FOCUS={human:'guess',model:'wrong',scaled:'right'};
+function lvMarks(lab){
+  if(lab._lvMarks) return lab._lvMarks;
+  var src=lab.querySelector('.code').defaultValue.split('\n');
+  var find=function(pat){ for(var i=0;i<src.length;i++) if(src[i].indexOf(pat)>-1) return i+1; return 1e9; };
+  return lab._lvMarks={known:find('known = ['),query:find('query = ['),nearest:find('def nearest'),
+    raw:find('print("RAW'),scaleStart:find('# Min-max scale'),scaled:find('known_s'),fin:find('# One preprocessing')};
+}
+function lvWalkStep(lab,line){
+  if(lab.dataset.viz!=='scaling-knn') return;
+  var m=lvMarks(lab);
+  if(line<m.known) lvSet(lab,'human','intro');
+  else if(line<m.query) lvSet(lab,'human','known');
+  else if(line<m.nearest) lvSet(lab,'human','query');
+  else if(line<m.raw) lvSet(lab,'human','guess');
+  else if(line<m.scaleStart) lvSet(lab,'model','wrong');
+  else if(line<m.scaled) lvSet(lab,'model','formula'); // narration explains min-max while the flat truth stays on screen
+  /* the spring-back tween fires exactly when the narration says "watch the flat line spring back" (known_s line) */
+  else if(line<m.fin) lvSet(lab,'scaled','right');
+  else lvSet(lab,'scaled','final');
+}
+document.addEventListener('click',function(e){
+  var tab=e.target.closest('.lv-tab'); if(!tab) return;
+  var lab=tab.closest('.lab'), v=tab.dataset.view;
+  lvSet(lab,v,v==='human'&&(!lab._lv||!lab._lv.view)?'intro':LV_TAB_FOCUS[v]);
+});
+document.querySelectorAll('.lab[data-viz="scaling-knn"]').forEach(function(lab){ lvSet(lab,'human','intro'); });
+
 /* ---------- Pyodide code labs ---------- */
 let _py=null,_pyLoading=null;
 async function getPy(statusEl){
@@ -1120,7 +1423,7 @@ async function askAssistant(lab,action,question){
       body:JSON.stringify({action:action,question:question||'',code:lab.querySelector('.code').value,error:lab.dataset.lastError||'',model:model})});
     const j=await r.json();
     body.innerHTML=mdToHtml(j.text||'(no response)');
-  }catch(e){ body.innerHTML='<p class="muted">Assistant unavailable right now. Try again shortly.</p>'; }
+  }catch(e){ body.innerHTML='<p class="muted">Mira is unavailable right now. Try again shortly.</p>'; }
 }
 document.addEventListener('click',function(e){
   const t=e.target;
@@ -1201,6 +1504,7 @@ function walkPlayStep(){
   const w=_walk; if(!w) return;
   const st=w.steps[w.i], s=st.lines[0], e=st.lines[1]||st.lines[0];
   labHighlight(w.lab,s,e); walkScrollTo(w.lab,s,e);
+  if(w.lab.dataset.viz) lvWalkStep(w.lab,s); // keep the chart in step with the narration
   w.lab.querySelector('.walk-step').textContent=(w.i+1)+' / '+w.steps.length+' · L'+s+(e>s?'–'+e:'');
   capBar.textContent=st.text; capBar.style.display='block';
   walkAudio.src='audio/'+encodeURIComponent(st.file);
@@ -1220,6 +1524,7 @@ function walkPauseResume(){
 function startWalk(lab){
   stopAudio(); // also stops any previous walkthrough
   const sid=lab.dataset.walkSid, data=_walkData[sid]; if(!data) return;
+  if(lab.dataset.viz) lab.classList.add('folded'); // fold the assistant so the chart is on stage
   const ta=lab.querySelector('.code');
   let saved=null;
   if(ta.value!==ta.defaultValue){ saved=ta.value; ta.value=ta.defaultValue; } // walkthrough narrates the original code

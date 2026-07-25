@@ -1,0 +1,320 @@
+{
+  "lab-ascii-charts": {
+    "hash": "d3b3f342573685d0",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          3
+        ],
+        "text": "We start with a comment reminding us this is our detection log. Then dist holds twenty distance measurements in meters, spread across two lines just so the list fits nicely.",
+        "file": "lab-ascii-charts-w00.mp3"
+      },
+      {
+        "lines": [
+          4,
+          5
+        ],
+        "text": "Right below it, conf holds twenty confidence scores, one for each distance. These two lists line up position by position, so the first distance pairs with the first confidence.",
+        "file": "lab-ascii-charts-w01.mp3"
+      },
+      {
+        "lines": [
+          7,
+          8
+        ],
+        "text": "This banner comment marks our histogram section. We print a title telling the reader that each hash mark stands for one detection.",
+        "file": "lab-ascii-charts-w02.mp3"
+      },
+      {
+        "lines": [
+          9,
+          9
+        ],
+        "text": "We loop over lo, the low edge of each bucket, going zero, ten, twenty, up to fifty. So we're carving distances into ten-meter bands.",
+        "file": "lab-ascii-charts-w03.mp3"
+      },
+      {
+        "lines": [
+          10,
+          10
+        ],
+        "text": "For each band, we count how many distances fall between lo and lo plus ten. Each true comparison counts as one, and summing them gives us n, the bucket total.",
+        "file": "lab-ascii-charts-w04.mp3"
+      },
+      {
+        "lines": [
+          11,
+          11
+        ],
+        "text": "Then we print the range label, nicely padded, followed by n hash marks. Multiplying the hash string by n draws a little bar you can read at a glance.",
+        "file": "lab-ascii-charts-w05.mp3"
+      },
+      {
+        "lines": [
+          13,
+          14
+        ],
+        "text": "Now the scatter section. We print a heading, starting with a newline for spacing, explaining that distance from zero to sixty meters gets squeezed into thirty columns.",
+        "file": "lab-ascii-charts-w06.mp3"
+      },
+      {
+        "lines": [
+          15,
+          15
+        ],
+        "text": "We set ROWS to eight and COLS to thirty. This defines the size of our text canvas, eight rows tall and thirty columns wide.",
+        "file": "lab-ascii-charts-w07.mp3"
+      },
+      {
+        "lines": [
+          16,
+          16
+        ],
+        "text": "Here we build the grid: a list of eight rows, each row a list of thirty spaces. This is our blank drawing surface, ready to receive points.",
+        "file": "lab-ascii-charts-w08.mp3"
+      },
+      {
+        "lines": [
+          17,
+          17
+        ],
+        "text": "We loop over each pair using zip, which walks both lists together, giving us one distance d and its matching confidence c each time around.",
+        "file": "lab-ascii-charts-w09.mp3"
+      },
+      {
+        "lines": [
+          18,
+          18
+        ],
+        "text": "We turn distance into a column. We scale d across sixty meters onto thirty columns, and min with twenty-nine keeps a big value from falling off the edge.",
+        "file": "lab-ascii-charts-w10.mp3"
+      },
+      {
+        "lines": [
+          19,
+          19
+        ],
+        "text": "Now the row. High confidence lands near the top and low near the bottom, using the range one down to point three, again clamped so it stays on the grid.",
+        "file": "lab-ascii-charts-w11.mp3"
+      },
+      {
+        "lines": [
+          20,
+          20
+        ],
+        "text": "We drop a lowercase o into the grid at that row and column. That marks where this one detection sits in our little chart.",
+        "file": "lab-ascii-charts-w12.mp3"
+      },
+      {
+        "lines": [
+          21,
+          21
+        ],
+        "text": "We set top to one point zero and bot to point three. These are the confidence values at the very top and bottom of our chart, used for labels.",
+        "file": "lab-ascii-charts-w13.mp3"
+      },
+      {
+        "lines": [
+          22,
+          23
+        ],
+        "text": "We walk through each row with its index i. Then we compute a confidence label that slides evenly from top down to bottom as we go lower.",
+        "file": "lab-ascii-charts-w14.mp3"
+      },
+      {
+        "lines": [
+          24,
+          24
+        ],
+        "text": "We print that label, a divider, then join the row's characters into one string. This draws a full line of the scatter with its confidence marking on the left.",
+        "file": "lab-ascii-charts-w15.mp3"
+      },
+      {
+        "lines": [
+          25,
+          26
+        ],
+        "text": "After the rows, we print an axis: a plus and thirty dashes for the bottom line, then a label showing zero meters on the left and sixty meters on the right.",
+        "file": "lab-ascii-charts-w16.mp3"
+      },
+      {
+        "lines": [
+          28,
+          29
+        ],
+        "text": "These comments invite you to read your own chart, watching how the o's sink lower as you move right. That downward drift is the story: farther away means less confident.",
+        "file": "lab-ascii-charts-w17.mp3"
+      },
+      {
+        "lines": [
+          31,
+          34
+        ],
+        "text": "Finally, two challenges. First, try five-meter buckets and see if the tail is clearer. Second, compute the correlation r and check whether the number matches the picture you drew.",
+        "file": "lab-ascii-charts-w18.mp3"
+      }
+    ]
+  },
+  "lab-anscombe": {
+    "hash": "78dd1d1fd54682af",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          2
+        ],
+        "text": "We start with a comment naming this dataset, Anscombe's quartet from 1973. Then we make a list called x123, the x values shared by the first three data sets, so we only type them once.",
+        "file": "lab-anscombe-w00.mp3"
+      },
+      {
+        "lines": [
+          3,
+          6
+        ],
+        "text": "Here we build a dictionary named sets. Each key is a label like one, two, three, and each value is a pair: the x list and the matching y list. Sets one through three all reuse x123.",
+        "file": "lab-anscombe-w01.mp3"
+      },
+      {
+        "lines": [
+          7,
+          9
+        ],
+        "text": "Set four is the odd one out, so it gets its own x list where almost every value is eight, with one lonely nineteen, plus its own y values. The closing brace ends the dictionary.",
+        "file": "lab-anscombe-w02.mp3"
+      },
+      {
+        "lines": [
+          11,
+          11
+        ],
+        "text": "This tiny function, mean, adds up all the numbers in a list and divides by how many there are. That's just the average, and we'll lean on it everywhere.",
+        "file": "lab-anscombe-w03.mp3"
+      },
+      {
+        "lines": [
+          12,
+          13
+        ],
+        "text": "Now corr computes Pearson's correlation from scratch. First we grab the mean of the x values and the mean of the y values, storing them as mx and my.",
+        "file": "lab-anscombe-w04.mp3"
+      },
+      {
+        "lines": [
+          14,
+          14
+        ],
+        "text": "We calculate the numerator by pairing each x with its y, subtracting the means, multiplying those differences, and summing them all. This measures how the two move together.",
+        "file": "lab-anscombe-w05.mp3"
+      },
+      {
+        "lines": [
+          15,
+          16
+        ],
+        "text": "Then dx and dy are the spreads of x and y: we square each difference from the mean, add them up, and take the square root of each total.",
+        "file": "lab-anscombe-w06.mp3"
+      },
+      {
+        "lines": [
+          17,
+          17
+        ],
+        "text": "Finally we return the numerator divided by dx times dy. That ratio is the correlation, a number telling us how tightly the points hug a straight line.",
+        "file": "lab-anscombe-w07.mp3"
+      },
+      {
+        "lines": [
+          19,
+          19
+        ],
+        "text": "Let's print results. This line is our header row, labeling the columns for set name, mean of x, mean of y, and r, so the numbers below make sense.",
+        "file": "lab-anscombe-w08.mp3"
+      },
+      {
+        "lines": [
+          20,
+          21
+        ],
+        "text": "We loop over every set, unpacking each into its name and its x and y lists. Then we print a neatly formatted row showing the two means and the correlation, rounded for readability.",
+        "file": "lab-anscombe-w09.mp3"
+      },
+      {
+        "lines": [
+          22,
+          22
+        ],
+        "text": "After the loop we print a punchline: statistically these four are quadruplets. The stats come out nearly identical, which is the whole surprise of Anscombe's quartet.",
+        "file": "lab-anscombe-w10.mp3"
+      },
+      {
+        "lines": [
+          24,
+          25
+        ],
+        "text": "Now we define ascii_plot to actually draw the data. We pick a canvas size of seven rows and twenty-six columns to sketch dots in the terminal.",
+        "file": "lab-anscombe-w11.mp3"
+      },
+      {
+        "lines": [
+          26,
+          26
+        ],
+        "text": "We build the grid as a list of rows, each row a list of blank spaces. Using a separate list for each row keeps them independent so we can mark points freely.",
+        "file": "lab-anscombe-w12.mp3"
+      },
+      {
+        "lines": [
+          27,
+          29
+        ],
+        "text": "For each point we pair x with y, then scale the x value into a column and the y value into a row. We flip y because on screen row zero is the top, and clamp so nothing spills off the edge.",
+        "file": "lab-anscombe-w13.mp3"
+      },
+      {
+        "lines": [
+          30,
+          30
+        ],
+        "text": "With row and column figured out, we drop a little letter o into that spot on the grid, marking where this data point lands.",
+        "file": "lab-anscombe-w14.mp3"
+      },
+      {
+        "lines": [
+          31,
+          33
+        ],
+        "text": "Then we print the set's name, draw each grid row with a left border bar, and finish with a plus and a line of dashes to form the bottom axis.",
+        "file": "lab-anscombe-w15.mp3"
+      },
+      {
+        "lines": [
+          35,
+          36
+        ],
+        "text": "Now we loop over the sets again and call ascii_plot for each one, so we can actually see all four scatter plots side by side.",
+        "file": "lab-anscombe-w16.mp3"
+      },
+      {
+        "lines": [
+          38,
+          39
+        ],
+        "text": "This comment drives home the lesson: same stats, four totally different shapes. Summary numbers are where looking begins, never where it ends.",
+        "file": "lab-anscombe-w17.mp3"
+      },
+      {
+        "lines": [
+          41,
+          42
+        ],
+        "text": "Finally a challenge for you: find the single point in set three that's bending its line. Remove it, rerun corr, and watch how the r value changes.",
+        "file": "lab-anscombe-w18.mp3"
+      }
+    ]
+  }
+}
