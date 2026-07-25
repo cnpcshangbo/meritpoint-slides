@@ -284,5 +284,156 @@
         "file": "lab-scaling-proof-w13.mp3"
       }
     ]
+  },
+  "lab-real-receipts": {
+    "hash": "bee5244e2bd5804e",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          3
+        ],
+        "text": "This first block is just raw data. Line three takes one giant string of fare numbers, splits it on the commas, and turns each piece into a decimal number. We now have a list called fares with all 891 ticket prices.",
+        "file": "lab-real-receipts-w00.mp3"
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "Ports is a string where each character is one passenger's boarding port — C for Cherbourg, Q for Queenstown, S for Southampton, and a question mark when it's missing. Same order as the fares.",
+        "file": "lab-real-receipts-w01.mp3"
+      },
+      {
+        "lines": [
+          5,
+          5
+        ],
+        "text": "Lived is another string, one character per passenger. A one means that person survived, a zero means they didn't. These three lines are perfectly lined up, passenger by passenger.",
+        "file": "lab-real-receipts-w02.mp3"
+      },
+      {
+        "lines": [
+          7,
+          8
+        ],
+        "text": "Now our first experiment. We grab the smallest and largest fares using min and max, storing them as lo and hi. These two numbers set the ends of our scale.",
+        "file": "lab-real-receipts-w03.mp3"
+      },
+      {
+        "lines": [
+          9,
+          9
+        ],
+        "text": "Here we make a sorted copy of the fares, from cheapest to dearest. Sorting lets us pick out fares by position, like the middle one.",
+        "file": "lab-real-receipts-w04.mp3"
+      },
+      {
+        "lines": [
+          10,
+          11
+        ],
+        "text": "The median is the fare sitting right in the middle of the sorted list, found by taking the length and dividing by two. P75 grabs the fare three-quarters of the way up, so seventy-five percent of tickets cost less than that.",
+        "file": "lab-real-receipts-w05.mp3"
+      },
+      {
+        "lines": [
+          13,
+          14
+        ],
+        "text": "This little function, minmax, is the classic squeeze-into-zero-to-one recipe. It subtracts the lowest fare and divides by the full range, so the cheapest becomes zero and the dearest becomes one.",
+        "file": "lab-real-receipts-w06.mp3"
+      },
+      {
+        "lines": [
+          16,
+          17
+        ],
+        "text": "These lines print the cheapest and dearest tickets, then the typical median fare, so we can see the real prices before we scale anything.",
+        "file": "lab-real-receipts-w07.mp3"
+      },
+      {
+        "lines": [
+          18,
+          19
+        ],
+        "text": "After an empty line for spacing, we scale the median fare through minmax and round it. Watch this number — the typical passenger should land somewhere near the middle, but it won't.",
+        "file": "lab-real-receipts-w08.mp3"
+      },
+      {
+        "lines": [
+          20,
+          20
+        ],
+        "text": "Here we scale the seventy-fifth percentile fare. Even three-quarters of the way up the list, the scaled value stays surprisingly tiny.",
+        "file": "lab-real-receipts-w09.mp3"
+      },
+      {
+        "lines": [
+          21,
+          22
+        ],
+        "text": "This counts how many fares land below zero point one after scaling, divides by the total to get a share, then prints it as a percentage. It reveals how badly everyone got crushed toward the bottom.",
+        "file": "lab-real-receipts-w10.mp3"
+      },
+      {
+        "lines": [
+          23,
+          26
+        ],
+        "text": "These comments explain the punchline. One first-class passenger paid five hundred and twelve pounds and now stretches the whole scale, flattening all the variation you cared about. That's why min-max is fragile when a wild outlier is present.",
+        "file": "lab-real-receipts-w11.mp3"
+      },
+      {
+        "lines": [
+          28,
+          30
+        ],
+        "text": "Now our second experiment. After a blank line, we print a header row with columns for port, count, average fare, and survival, so the numbers below line up neatly.",
+        "file": "lab-real-receipts-w12.mp3"
+      },
+      {
+        "lines": [
+          31,
+          31
+        ],
+        "text": "We loop over the three port letters, C, Q, and S, one at a time. Each turn through the loop handles all passengers from that single port.",
+        "file": "lab-real-receipts-w13.mp3"
+      },
+      {
+        "lines": [
+          32,
+          33
+        ],
+        "text": "For the current port, we zip fares with ports and keep only the fares whose port matches. We do the same for survival, turning each character into an integer so we can add them up.",
+        "file": "lab-real-receipts-w14.mp3"
+      },
+      {
+        "lines": [
+          34,
+          36
+        ],
+        "text": "Now we print the row: the port letter, the count of passengers, the average fare, and the survival rate. The right-justify calls pad each number so the columns stay tidy.",
+        "file": "lab-real-receipts-w15.mp3"
+      },
+      {
+        "lines": [
+          38,
+          41
+        ],
+        "text": "These comments read the result. Numbering ports C zero, Q one, S two secretly claims Queenstown sits between the others, but by fare Queenstown is the cheapest. The invented order is wrong, so one-hot encoding is the honest choice.",
+        "file": "lab-real-receipts-w16.mp3"
+      },
+      {
+        "lines": [
+          43,
+          49
+        ],
+        "text": "Finally, three challenges for you. Remove the five-hundred-pound passenger and watch the median move; try z-scoring instead and see if the outlier survives; and argue whether any ordering of the ports could ever be honest.",
+        "file": "lab-real-receipts-w17.mp3"
+      }
+    ]
   }
 }
