@@ -1,0 +1,301 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guide 05 · Downloading the Right Data — Merit Point Academy</title>
+<meta name="description" content="A student-friendly checklist for choosing, verifying, downloading, organizing, and documenting the right dataset for a research project.">
+<link rel="icon" type="image/png" href="/meritpoint-slides/assets/favicon.png"><link rel="stylesheet" href="/meritpoint-slides/assets/site.css">
+<style>
+main.wrap{max-width:860px;padding-bottom:60vh}
+.crumb{margin-top:18px}
+h2.sec{color:#0C2D52;font-size:22px;margin:44px 0 6px;padding-top:10px;border-top:3px solid #0F9DB0}
+h2.sec .no{color:#0F9DB0;margin-right:8px}
+h3{color:#0C2D52;font-size:16.5px;margin:26px 0 8px}
+p,li{font-size:15px}
+.lead{font-size:16px;color:#21303F}
+.why{background:#EEF4FA;border-left:4px solid #F2A93B;border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0;font-size:14.5px}
+.why b{color:#0C2D52}
+pre.cmd{position:relative;background:#0d1b2a;color:#d7e7f7;border-radius:10px;padding:13px 90px 13px 16px;font-size:13.5px;line-height:1.65;overflow-x:auto;font-family:"SF Mono",Menlo,Consolas,monospace}
+pre.cmd .c{color:#6d8aa5}
+pre.cmd .o{color:#8fb98f}
+pre.cmd button.copy{position:absolute;top:8px;right:8px;font:inherit;font-size:11.5px;background:#1b3a5c;color:#cfe0ef;border:1px solid #2c5580;border-radius:7px;padding:4px 10px;cursor:pointer}
+pre.cmd button.copy:hover{background:#24507e}
+.step{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid #D7E2EC;border-radius:10px;padding:11px 14px;margin:8px 0;cursor:pointer;font-size:14.5px}
+.step:hover{border-color:#0F9DB0}
+.step input{margin-top:3px;width:16px;height:16px;accent-color:#0F9DB0;flex:none}
+.step.done{background:#f2faf7;border-color:#bfe3d4}
+.step.done .t{color:#1FA37A}
+.step kbd,p kbd,li kbd{background:#EEF4FA;border:1px solid #D7E2EC;border-bottom-width:2px;border-radius:5px;padding:1px 6px;font-size:12.5px;font-family:inherit}
+.tryit{background:#eafcff;border:1.5px dashed #2BC4D4;border-radius:10px;padding:11px 14px;margin:14px 0;font-size:14.5px}
+.tryit b{color:#0F9DB0}
+.quiz{background:#fff;border:1px solid #D7E2EC;border-radius:12px;padding:14px 16px;margin:18px 0}
+.quiz .qq{font-weight:600;color:#0C2D52;margin:0 0 10px;font-size:14.5px}
+.quiz button{display:block;width:100%;text-align:left;font:inherit;font-size:14px;background:#F6F9FC;border:1px solid #D7E2EC;border-radius:9px;padding:9px 12px;margin:6px 0;cursor:pointer}
+.quiz button:hover{border-color:#0F9DB0}
+.quiz button.right{background:#e7f6ef;border-color:#1FA37A;color:#1FA37A;font-weight:600}
+.quiz button.wrong{background:#fdecea;border-color:#C0392B;color:#C0392B}
+.quiz .exp{display:none;margin:10px 0 0;font-size:13.5px;color:#5E7183;border-top:1px dashed #D7E2EC;padding-top:9px}
+.quiz.answered .exp{display:block}
+table.cheat{border-collapse:collapse;width:100%;margin:14px 0;font-size:14px}
+table.cheat th{background:#0C2D52;color:#fff;text-align:left;padding:8px 12px;font-size:13px}
+table.cheat td{border:1px solid #D7E2EC;padding:7px 12px;background:#fff}
+table.cheat td code{background:#EEF4FA;border-radius:5px;padding:1px 6px;font-size:12.5px}
+.pathpic{background:#fff;border:1px solid #D7E2EC;border-radius:12px;padding:14px 18px;margin:14px 0;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:13.5px;line-height:1.9;overflow-x:auto}
+.pathpic .d{color:#1769C0;font-weight:600}.pathpic .f{color:#21303F}.pathpic .hl{background:#fff3d6;border-radius:4px;padding:0 4px}
+.navchips{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 4px}
+.navchips a{font-size:13px;background:#fff;border:1px solid #D7E2EC;border-radius:999px;padding:6px 13px;color:#5E7183}
+.navchips a:hover{border-color:#0F9DB0;color:#0F9DB0;text-decoration:none}
+#pgbar{position:sticky;top:0;z-index:40;background:#F6F9FC;padding:10px 0 8px}
+#pgbar .lbl{font-size:12.5px;color:#5E7183;margin-bottom:5px}
+#pgbar .rail{height:9px;background:#D7E2EC;border-radius:999px;overflow:hidden}
+#pgbar .fill{height:100%;width:0;background:linear-gradient(90deg,#0F9DB0,#2BC4D4);border-radius:999px;transition:width .3s}
+/* ---------- practice terminal panel ---------- */
+#termBtn{position:fixed;right:18px;bottom:18px;z-index:60;font:inherit;font-weight:700;font-size:14.5px;background:#0C2D52;color:#fff;border:none;border-radius:999px;padding:13px 22px;cursor:pointer;box-shadow:0 8px 24px rgba(12,45,82,.35)}
+#termBtn:hover{background:#12386A}
+#termPanel{position:fixed;left:0;right:0;bottom:0;z-index:55;background:#0d1b2a;border-top:3px solid #2BC4D4;box-shadow:0 -10px 40px rgba(0,0,0,.35);display:none;height:46vh;min-height:300px}
+#termPanel.open{display:flex}
+#termCol{flex:1.4;display:flex;flex-direction:column;min-width:0}
+#termOut{flex:1;overflow-y:auto;padding:14px 16px 6px;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:13px;line-height:1.6;color:#d7e7f7;white-space:pre-wrap;word-break:break-all}
+#termOut .p{color:#6fd3e0}
+#termOut .err{color:#ff9d8a}
+#termOut .ok{color:#8fb98f}
+#termRow{display:flex;align-items:center;gap:8px;padding:8px 16px 12px;border-top:1px solid #1b3a5c}
+#termRow .pp{color:#6fd3e0;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:13px;white-space:nowrap}
+#termIn{flex:1;background:transparent;border:none;outline:none;color:#fff;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:14px}
+#missionCol{flex:1;border-left:1px solid #1b3a5c;overflow-y:auto;padding:12px 14px;min-width:230px}
+#missionCol h4{color:#6fd3e0;font-size:12px;letter-spacing:1.5px;margin:10px 0 6px;text-transform:uppercase}
+.mi{display:flex;gap:8px;align-items:flex-start;color:#9fb6cc;font-size:12.5px;margin:5px 0;font-family:"SF Mono",Menlo,Consolas,monospace}
+.mi .bx{flex:none;width:15px;height:15px;border:1.5px solid #3d6a94;border-radius:4px;margin-top:1px;text-align:center;line-height:13px;font-size:11px}
+.mi.done{color:#8fb98f}.mi.done .bx{background:#1FA37A;border-color:#1FA37A;color:#fff}
+.mi.done .bx::before{content:"✓"}
+#termClose{position:absolute;top:8px;right:12px;background:none;border:none;color:#6d8aa5;font-size:20px;cursor:pointer}
+#termClose:hover{color:#fff}
+@media(max-width:760px){#termPanel{height:62vh}#missionCol{display:none}}
+footer.site{margin-top:60px}
+.answer{background:linear-gradient(135deg,#eafcff,#f2faf7);border:1px solid #b8dfe3;border-radius:14px;padding:16px 18px;margin:16px 0}
+.answer p{margin:5px 0}.answer strong{color:#0c2d52}
+.signal{display:inline-block;border-radius:999px;padding:3px 9px;font-size:12px;font-weight:700;white-space:nowrap}
+.good{background:#e7f6ef;color:#177552}.warn{background:#fff3d6;color:#8a5a00}.stop{background:#fdecea;color:#a33127}
+.score td:first-child{font-weight:700;color:#0c2d52}.score td:nth-child(2){text-align:center;font-weight:700}
+.template{background:#fff;border:1px solid #cbd9e6;border-radius:12px;padding:14px 16px;margin:14px 0}
+.template ul{margin:8px 0;padding-left:22px}.template li{margin:5px 0}
+.section-comments{margin:22px 0 34px;border:1px solid #cbd9e6;border-radius:12px;background:#fff;overflow:hidden}
+.discussion-toggle{display:flex;width:100%;align-items:center;gap:8px;text-align:left;border:0;background:#f4f8fb;color:#0c2d52;padding:11px 14px;font:inherit;font-size:14px;font-weight:700;cursor:pointer}
+.discussion-toggle:hover{background:#eafcff}.discussion-count{margin-left:auto;min-width:24px;padding:2px 7px;border-radius:999px;background:#0f9db0;color:#fff;text-align:center;font-size:11px}
+.discussion-panel{padding:0 14px 14px}.discussion-list{max-height:290px;overflow:auto}.discussion-empty{color:#687b8f;font-size:13px;text-align:center;padding:10px}
+.discussion-item{padding:10px 0;border-bottom:1px solid #e8eef3}.discussion-item:last-child{border-bottom:0}.discussion-meta{font-size:12px;color:#687b8f}.discussion-meta b{color:#0c2d52}.discussion-body{margin-top:3px;font-size:14px;white-space:pre-wrap;word-break:break-word}
+.discussion-form{border-top:1px solid #d8e2eb;padding-top:12px;display:grid;gap:9px}.discussion-form label span{display:block;font-size:12px;font-weight:700;color:#0c2d52;margin-bottom:4px}.discussion-form small{font-weight:400;color:#687b8f}
+.discussion-form input,.discussion-form textarea{box-sizing:border-box;width:100%;border:1px solid #cbd9e6;border-radius:8px;padding:8px 10px;font:inherit;font-size:13px}.discussion-form textarea{min-height:72px;resize:vertical}.discussion-form input:focus,.discussion-form textarea:focus{outline:2px solid #8edce5;outline-offset:1px}
+.discussion-actions{display:flex;align-items:center;gap:10px}.discussion-actions button{border:0;border-radius:8px;background:#0f9db0;color:#fff;padding:8px 16px;font:inherit;font-size:13px;font-weight:700;cursor:pointer}.discussion-actions button:disabled{opacity:.6;cursor:wait}.discussion-status{font-size:11px;color:#687b8f}
+</style></head><body>
+<header class="site"><div class="wrap"><img class="logo" src="/meritpoint-slides/assets/mpa-logo.png" alt="Merit Point Academy logo"><div><h1>Guide 05 · Downloading the Right Data 📥</h1><p>Pick data that answers your question — then download it safely and reproducibly.</p></div>
+<div class="hdr-actions"><a class="asg-btn" href="https://academic.hopeembark.org/assignments">📝 Assignments · 作业</a><a class="donate-btn" href="https://buy.stripe.com/14AbIT26kfUzbqjbGv4ow00" target="_blank" rel="noopener">♥ Donate</a></div></div></header>
+<main class="wrap">
+<p class="crumb"><a href="../">← All guides</a></p>
+<div id="pgbar"><div class="lbl"><span id="pgtxt">0%</span> of steps checked — your progress is saved in this browser</div><div class="rail"><div class="fill" id="pgfill"></div></div></div>
+
+<div class="answer"><p><strong>Short answer to your question:</strong> do not download the first dataset that looks interesting. First write what one row should represent and which columns you need. Then check the source, license, date, size, documentation, and missing values. Download the original file, keep it unchanged, record its link and access date, and analyze a copy.</p></div>
+
+<p class="lead">The “right” data is not necessarily the biggest or most popular dataset. It is the dataset that can <b>actually answer your research question</b>, comes from a source you can explain, and is legal and practical for you to use. This guide gives you a repeatable 15-minute check before you commit to a download.</p>
+
+<div class="navchips"><a href="#s1">1 · Start with the question</a><a href="#s2">2 · Score the dataset</a><a href="#s3">3 · Preview first</a><a href="#s4">4 · Download safely</a><a href="#s5">5 · Verify it</a><a href="#s6">6 · Record your source</a></div>
+
+<h2 class="sec" id="s1"><span class="no">1</span>Start with the question, not the download button</h2>
+<p>Before searching, turn your project into a tiny data specification. Write these four lines:</p>
+<div class="template"><ul><li><b>Question:</b> What exactly am I trying to find out?</li><li><b>One row means:</b> one game, one patient, one image, one day, one survey response…</li><li><b>I must have:</b> the columns or labels needed to answer the question.</li><li><b>Scope:</b> the place, population, and time period I want to study.</li></ul></div>
+<p><b>Example:</b> “Did action games receive higher user ratings than puzzle games from 2015–2025?” One row should be one game. You need at least <code>genre</code>, <code>user_rating</code>, and <code>release_year</code>. A dataset without ratings cannot answer the question, no matter how large it is.</p>
+<label class="step"><input type="checkbox" data-k="spec"><span class="t">Write your four-line data specification before opening Kaggle, Google Dataset Search, a government portal, or an API.</span></label>
+<aside class="section-comments" data-section="s1-question" data-label="Start with the question">
+  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
+  <div class="discussion-panel" hidden>
+    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
+    <form class="discussion-form">
+      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
+      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="What would you like to ask or share about this section?"></textarea></label>
+      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
+    </form>
+  </div>
+</aside>
+
+<h2 class="sec" id="s2"><span class="no">2</span>Use the RIGHT checklist</h2>
+<table class="cheat score"><tr><th>Check</th><th>Points</th><th>What good looks like</th></tr>
+<tr><td>R · Relevant</td><td>0–2</td><td>Rows, columns, population, and dates match your question.</td></tr>
+<tr><td>I · Identifiable source</td><td>0–2</td><td>A named organization or author explains how the data was collected.</td></tr>
+<tr><td>G · Granted permission</td><td>0–2</td><td>A license or terms clearly allow your educational/research use.</td></tr>
+<tr><td>H · Healthy quality</td><td>0–2</td><td>Definitions exist; missing values, duplicates, and obvious errors are manageable.</td></tr>
+<tr><td>T · Timely &amp; tractable</td><td>0–2</td><td>Dates fit the question; the file size and format work with your tools.</td></tr></table>
+<div class="why"><b>Decision:</b> <span class="signal good">8–10 · use it</span> <span class="signal warn">5–7 · investigate</span> <span class="signal stop">0–4 · keep searching</span> A famous dataset can still score poorly for <i>your</i> question.</div>
+<label class="step"><input type="checkbox" data-k="score"><span class="t">Score at least two candidate datasets. Keep the stronger one, and write one sentence explaining your choice.</span></label>
+<div class="quiz"><p class="qq">Your question is about current electric vehicles, but a clean, well-documented dataset ends in 2014. Is it the right data?</p><button data-x>Yes — clean data is always right</button><button data-ok>No — it fails relevance and timeliness for this question</button><button data-x>Yes — older data is automatically less biased</button><p class="exp">Quality is not enough. The data must match the time period and population named in the question.</p></div>
+<aside class="section-comments" data-section="s2-right-checklist" data-label="Use the RIGHT checklist">
+  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
+  <div class="discussion-panel" hidden>
+    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
+    <form class="discussion-form">
+      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
+      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="What would you like to ask or share about this section?"></textarea></label>
+      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
+    </form>
+  </div>
+</aside>
+
+<h2 class="sec" id="s3"><span class="no">3</span>Preview before downloading</h2>
+<p>Read the dataset page, documentation, or “data card.” Look at a sample of rows and ask:</p>
+<table class="cheat"><tr><th>Look for</th><th>Question to ask</th><th>Warning sign</th></tr>
+<tr><td>Columns</td><td>Are the fields I need actually present?</td><td>Useful-sounding title, wrong variables</td></tr>
+<tr><td>Units</td><td>Dollars or thousands of dollars? Miles or kilometers?</td><td>No definitions or mixed units</td></tr>
+<tr><td>Coverage</td><td>Who, where, and when is included?</td><td>“Global” data from one country</td></tr>
+<tr><td>Collection</td><td>Survey, sensor, scrape, experiment, or administrative record?</td><td>No collection method</td></tr>
+<tr><td>Target/label</td><td>How was the answer label decided?</td><td>Labels created with no explanation</td></tr>
+<tr><td>Privacy</td><td>Does it contain names, emails, faces, IDs, or sensitive information?</td><td>Personal data with unclear consent</td></tr></table>
+<div class="why"><b>Best source order:</b> original publisher first (government agency, research lab, company, or author), then a trusted repository that links back to the original. Reuploads are convenient, but they may be old, changed, or missing documentation.</div>
+<label class="step"><input type="checkbox" data-k="preview"><span class="t">Open the documentation and preview at least 10 rows. Confirm the meaning and units of every column you plan to use.</span></label>
+<aside class="section-comments" data-section="s3-preview" data-label="Preview before downloading">
+  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
+  <div class="discussion-panel" hidden>
+    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
+    <form class="discussion-form">
+      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
+      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="What would you like to ask or share about this section?"></textarea></label>
+      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
+    </form>
+  </div>
+</aside>
+
+<h2 class="sec" id="s4"><span class="no">4</span>Download safely and keep the raw file raw</h2>
+<p>Prefer simple, open formats: <code>.csv</code> for tables, <code>.json</code> for structured records, and documented image/audio folders for media. Avoid unknown executable files. If the download is a <code>.zip</code>, inspect its contents after unzipping.</p>
+<pre class="cmd">my-project/
+├── data/
+│   ├── raw/          <span class="c"># original download — never edit this copy</span>
+│   └── processed/    <span class="c"># cleaned data your code creates</span>
+├── notebooks/
+└── README.md         <span class="c"># source, license, dates, and decisions</span></pre>
+<label class="step"><input type="checkbox" data-k="raw"><span class="t">Save the original file in <code>data/raw/</code>. Give it a clear name such as <code>ev_registrations_2026-07-29.csv</code>; include a version or download date when the publisher does not.</span></label>
+<label class="step"><input type="checkbox" data-k="copy"><span class="t">Do not fix cells by hand in the raw file. Write cleaning steps in Python or a notebook so another person can repeat them.</span></label>
+<aside class="section-comments" data-section="s4-download" data-label="Download safely">
+  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
+  <div class="discussion-panel" hidden>
+    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
+    <form class="discussion-form">
+      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
+      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="What would you like to ask or share about this section?"></textarea></label>
+      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
+    </form>
+  </div>
+</aside>
+
+<h2 class="sec" id="s5"><span class="no">5</span>Verify immediately after download</h2>
+<p>Open the file before building your project around it. For a CSV in Python:</p>
+<pre class="cmd">import pandas as pd
+
+df = pd.read_csv("data/raw/my_dataset.csv")
+print(df.shape)                 <span class="c"># rows and columns</span>
+print(df.columns.tolist())      <span class="c"># required fields present?</span>
+print(df.head())                <span class="c"># values look sensible?</span>
+print(df.isna().mean().sort_values(ascending=False).head())
+print("duplicate rows:", df.duplicated().sum())</pre>
+<p>Compare the row count, column count, and file size with the publisher’s description. Scan categories and number ranges. A column that is 90% empty or an age of 300 is not always fatal—but it must be investigated.</p>
+<label class="step"><input type="checkbox" data-k="verify"><span class="t">Run the five checks above. Record anything surprising before cleaning.</span></label>
+<div class="quiz"><p class="qq">You downloaded 2 million rows, but your spreadsheet displays only part of them. What should you do?</p><button data-x>Assume the hidden rows do not matter</button><button data-x>Delete rows until the file opens</button><button data-ok>Use Python/pandas or a database, and verify the full row count there</button><p class="exp">The tool must fit the data. Spreadsheet limits or slow loading do not mean the rest of the dataset is absent.</p></div>
+<aside class="section-comments" data-section="s5-verify" data-label="Verify after download">
+  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
+  <div class="discussion-panel" hidden>
+    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
+    <form class="discussion-form">
+      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
+      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="What would you like to ask or share about this section?"></textarea></label>
+      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
+    </form>
+  </div>
+</aside>
+
+<h2 class="sec" id="s6"><span class="no">6</span>Leave a receipt: make the download reproducible</h2>
+<p>In your project README or dataset notes, record:</p>
+<div class="template"><ul><li><b>Dataset title and publisher</b></li><li><b>Original page URL</b> (not just a search-results link)</li><li><b>Date accessed and dataset version/date</b></li><li><b>License or terms of use</b></li><li><b>File name, size, and row/column count</b></li><li><b>What one row represents</b></li><li><b>Known limits, missing groups, and likely biases</b></li><li><b>Any filters or cleaning performed</b></li></ul></div>
+<label class="step"><input type="checkbox" data-k="receipt"><span class="t">Create your dataset receipt. A classmate should be able to find the same source and understand your file without asking you.</span></label>
+<aside class="section-comments" data-section="s6-receipt" data-label="Leave a dataset receipt">
+  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
+  <div class="discussion-panel" hidden>
+    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
+    <form class="discussion-form">
+      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
+      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="What would you like to ask or share about this section?"></textarea></label>
+      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
+    </form>
+  </div>
+</aside>
+
+<div class="why"><b>The final rule:</b> never choose data only because it is easy to download. Choose it because you can defend the match between the <i>question</i>, the <i>rows</i>, the <i>columns</i>, the <i>source</i>, and the <i>license</i>.</div>
+<p class="lead" style="margin-top:26px"><b>Your next step:</b> write your four-line specification, compare two datasets with the RIGHT score, and bring your winning dataset receipt to class. For finding research data, revisit <a href="../../ai-toolbox/class-07/">Class 07 · What Is Data? How to Obtain It</a>. For loading a CSV, use <a href="../../ai-toolbox/class-05/">Class 05 · Data Analysis Tools</a>. For file paths, see <a href="../github-terminal/">Guide 01</a>.</p>
+</main><footer class="site">Merit Point Academy · Guides</footer>
+<script>(function(){
+  /* ---------- progress checkboxes ---------- */
+  var KEY='mpa-guide-download-right-data';
+  var saved={}; try{saved=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){}
+  function persist(){try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){}}
+  var boxes=[].slice.call(document.querySelectorAll('.step input[type=checkbox]'));
+  function paint(){var n=boxes.filter(function(b){return b.checked;}).length;
+    var pct=boxes.length?Math.round(100*n/boxes.length):0;
+    document.getElementById('pgfill').style.width=pct+'%';
+    document.getElementById('pgtxt').textContent=pct+'%';}
+  boxes.forEach(function(b){
+    if(saved[b.dataset.k]){b.checked=true;b.closest('.step').classList.add('done');}
+    b.addEventListener('change',function(){
+      saved[b.dataset.k]=b.checked; b.closest('.step').classList.toggle('done',b.checked);
+      persist(); paint();});
+  });
+  paint();
+
+  /* ---------- copy buttons ---------- */
+  [].slice.call(document.querySelectorAll('pre.cmd')).forEach(function(pre){
+    var btn=document.createElement('button');btn.className='copy';btn.textContent='⧉ copy';
+    btn.addEventListener('click',function(){
+      var t=pre.cloneNode(true);
+      [].slice.call(t.querySelectorAll('.c,button')).forEach(function(x){x.remove();});
+      var txt=t.textContent.replace(/\n{2,}/g,'\n').split('\n').map(function(l){return l.replace(/\s+$/,'');}).filter(function(l){return l.trim();}).join('\n');
+      (navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject()).then(
+        function(){btn.textContent='✓ copied';setTimeout(function(){btn.textContent='⧉ copy';},1400);},
+        function(){btn.textContent='select + ⌘C';});
+    });
+    pre.appendChild(btn);
+  });
+
+  /* ---------- quizzes ---------- */
+  [].slice.call(document.querySelectorAll('.quiz')).forEach(function(q){
+    [].slice.call(q.querySelectorAll('button')).forEach(function(b){
+      b.addEventListener('click',function(){
+        if(q.classList.contains('answered'))return;
+        q.classList.add('answered');
+        if(b.hasAttribute('data-ok')){b.classList.add('right');}
+        else{b.classList.add('wrong');
+          var ok=q.querySelector('button[data-ok]');if(ok)ok.classList.add('right');}
+      });
+    });
+  });
+
+})();</script>
+<script>
+(function(){
+  var DECK='guides/download-right-data';
+  function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function when(ts){var d=new Date(ts);return d.toLocaleDateString()+' '+d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});}
+  function load(box){
+    var section=box.dataset.section,list=box.querySelector('.discussion-list'),count=box.querySelector('.discussion-count');
+    list.innerHTML='<p class="discussion-empty">Loading…</p>';
+    fetch('/api/comments?deck='+encodeURIComponent(DECK)+'&slide='+encodeURIComponent(section)).then(function(r){return r.json();}).then(function(j){
+      var cs=j.comments||[];count.textContent=cs.length;
+      list.innerHTML=cs.length?cs.map(function(c){return '<div class="discussion-item"><div class="discussion-meta"><b>'+esc(c.name)+'</b> · '+when(c.created)+'</div><div class="discussion-body">'+esc(c.body)+'</div></div>';}).join(''):'<p class="discussion-empty">No comments yet — ask the first question.</p>';
+    }).catch(function(){list.innerHTML='<p class="discussion-empty">Could not load comments. Please try again.</p>';});
+  }
+  document.querySelectorAll('.section-comments').forEach(function(box){
+    var toggle=box.querySelector('.discussion-toggle'),panel=box.querySelector('.discussion-panel'),form=box.querySelector('.discussion-form'),status=box.querySelector('.discussion-status');
+    toggle.addEventListener('click',function(){var opening=panel.hidden;panel.hidden=!opening;toggle.setAttribute('aria-expanded',String(opening));if(opening)load(box);});
+    form.addEventListener('submit',function(e){
+      e.preventDefault();var body=form.elements.body.value.trim(),submit=form.querySelector('[type="submit"]');if(!body){status.textContent='Write a comment or question first.';return;}
+      submit.disabled=true;status.textContent='Posting…';
+      fetch('/api/comments',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({deck:DECK,slide:box.dataset.section,name:form.elements.name.value,body:body})}).then(function(r){return r.json();}).then(function(j){
+        if(!j.ok)throw new Error(j.error||'Could not post.');form.elements.body.value='';status.textContent='Posted — thank you!';load(box);
+      }).catch(function(err){status.textContent=err.message||'Could not post. Please try again.';}).finally(function(){submit.disabled=false;});
+    });
+  });
+  fetch('/api/comments/counts?deck='+encodeURIComponent(DECK)).then(function(r){return r.json();}).then(function(j){document.querySelectorAll('.section-comments').forEach(function(box){box.querySelector('.discussion-count').textContent=(j.counts||{})[box.dataset.section]||0;});}).catch(function(){});
+})();
+</script>
+</body></html>

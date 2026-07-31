@@ -102,37 +102,37 @@
     "model": "claude-opus-4-8"
   },
   "story-lawyer": {
-    "hash": "f9d81022599e022b",
+    "hash": "855aa397ea4382f7",
     "voice": "en-US-AndrewMultilingualNeural",
-    "script": "Let me tell you about a lawyer who learned a very expensive lesson. Back in 2023, he filed a court brief citing six perfect-looking cases — names, quotes, citations, all flawless. The trouble was, ChatGPT had invented every single one of them, and the judge sanctioned him for it. Here's the crucial part: the AI wasn't lying on purpose — it was simply doing what these models do, predicting plausible text. Today we'll uncover the machinery behind those six fake cases and the two-minute routine that would have caught them.",
+    "script": "Let me tell you about a lawyer in New York back in 2023. He asked ChatGPT to help write a legal brief, and it handed him six precedent cases — perfect names, perfect quotes, flawless citations. The trouble is, not one of them existed. The AI didn't set out to deceive him; it was simply doing what these systems always do, predicting text that sounds plausible. Today we're going to open up the machinery behind those six fake cases, and learn the two-minute check that would have saved him.",
     "cues": [
       {
         "start": 0.05,
-        "end": 3.85,
-        "text": "Let me tell you about a lawyer who learned a very expensive lesson."
+        "end": 3.437,
+        "text": "Let me tell you about a lawyer in New York back in 2023."
       },
       {
-        "start": 3.85,
-        "end": 12.425,
-        "text": "Back in 2023, he filed a court brief citing six perfect-looking cases — names, quotes, citations, all flawless."
+        "start": 3.437,
+        "end": 13.525,
+        "text": "He asked ChatGPT to help write a legal brief, and it handed him six precedent cases — perfect names, perfect quotes, flawless citations."
       },
       {
-        "start": 12.425,
-        "end": 18.65,
-        "text": "The trouble was, ChatGPT had invented every single one of them, and the judge sanctioned him for it."
+        "start": 13.525,
+        "end": 16.1,
+        "text": "The trouble is, not one of them existed."
       },
       {
-        "start": 18.65,
-        "end": 27.225,
-        "text": "Here's the crucial part: the AI wasn't lying on purpose — it was simply doing what these models do, predicting plausible text."
+        "start": 16.1,
+        "end": 25.062,
+        "text": "The AI didn't set out to deceive him; it was simply doing what these systems always do, predicting text that sounds plausible."
       },
       {
-        "start": 27.225,
-        "end": 33.962,
-        "text": "Today we'll uncover the machinery behind those six fake cases and the two-minute routine that would have caught them."
+        "start": 25.062,
+        "end": 31.562,
+        "text": "Today we're going to open up the machinery behind those six fake cases, and learn the two-minute check that would have saved him."
       }
     ],
-    "bytes": 204192,
+    "bytes": 189792,
     "model": "claude-opus-4-8"
   },
   "concept-five-hats": {
@@ -636,71 +636,71 @@
     "model": "claude-opus-4-8"
   },
   "lab-tiny-llm": {
-    "hash": "8cb6f2ac465fc60f",
+    "hash": "58aa79a94413fafa",
     "voice": "en-US-AndrewMultilingualNeural",
-    "script": "Alright, we're about to build a real language model in just twenty-five lines of code. Here's the whole trick: it learns which word tends to follow which other word, and then it just keeps picking a plausible next word — over and over. Watch what happens when you run it, because it produces text that sounds confident but means nothing at all. That's not a bug, that's exactly how the giant models work too, just with trillions more words. So add your own facts to that little corpus and watch it remix them into things you never actually said.",
+    "script": "Okay, here's where the magic loses its mystery. This is a real language model in about twenty-five lines — all it does is look at a word and pick a likely next word, over and over. Watch what comes out: it's grammatical, it sounds confident, and it means absolutely nothing. That's not a bug, that's the whole trick — and it's exactly why big models hallucinate. Run it a few times and see it invent fresh nonsense every single time.",
     "cues": [
       {
         "start": 0.05,
-        "end": 5.05,
-        "text": "Alright, we're about to build a real language model in just twenty-five lines of code."
+        "end": 3.387,
+        "text": "Okay, here's where the magic loses its mystery."
       },
       {
-        "start": 5.05,
-        "end": 13.75,
-        "text": "Here's the whole trick: it learns which word tends to follow which other word, and then it just keeps picking a plausible next word — over and over."
+        "start": 3.387,
+        "end": 11.612,
+        "text": "This is a real language model in about twenty-five lines — all it does is look at a word and pick a likely next word, over and over."
       },
       {
-        "start": 13.75,
-        "end": 19.762,
-        "text": "Watch what happens when you run it, because it produces text that sounds confident but means nothing at all."
+        "start": 11.612,
+        "end": 17.437,
+        "text": "Watch what comes out: it's grammatical, it sounds confident, and it means absolutely nothing."
       },
       {
-        "start": 19.762,
-        "end": 25.687,
-        "text": "That's not a bug, that's exactly how the giant models work too, just with trillions more words."
-      },
-      {
-        "start": 25.687,
-        "end": 32.275,
-        "text": "So add your own facts to that little corpus and watch it remix them into things you never actually said."
-      }
-    ],
-    "bytes": 193968,
-    "model": "claude-opus-4-8"
-  },
-  "lab-prompt-scorer": {
-    "hash": "ea2bc2ec7538aed6",
-    "voice": "en-US-AndrewMultilingualNeural",
-    "script": "Remember the question checker from last class? Here's its sibling, but for prompts — it hunts for the four anatomy parts we've been talking about: role, context, format, and constraints. Watch what happens when we run the three demos: one scores zero, one scores one, and the last one hits four, the full ladder right in front of you. Then it's your turn to write and score your own. And notice the sneaky bit — you can fool this checker just by stuffing in the right keywords, which is exactly why judgement stays human.",
-    "cues": [
-      {
-        "start": 0.05,
-        "end": 2.55,
-        "text": "Remember the question checker from last class?"
-      },
-      {
-        "start": 2.55,
-        "end": 11.512,
-        "text": "Here's its sibling, but for prompts — it hunts for the four anatomy parts we've been talking about: role, context, format, and constraints."
-      },
-      {
-        "start": 11.512,
-        "end": 20.487,
-        "text": "Watch what happens when we run the three demos: one scores zero, one scores one, and the last one hits four, the full ladder right in front of you."
-      },
-      {
-        "start": 20.487,
+        "start": 17.437,
         "end": 23.025,
-        "text": "Then it's your turn to write and score your own."
+        "text": "That's not a bug, that's the whole trick — and it's exactly why big models hallucinate."
       },
       {
         "start": 23.025,
-        "end": 31.137,
-        "text": "And notice the sneaky bit — you can fool this checker just by stuffing in the right keywords, which is exactly why judgement stays human."
+        "end": 27.725,
+        "text": "Run it a few times and see it invent fresh nonsense every single time."
       }
     ],
-    "bytes": 187200,
+    "bytes": 166752,
+    "model": "claude-opus-4-8"
+  },
+  "lab-prompt-scorer": {
+    "hash": "b4231beba46da4a8",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Remember the question checker from last class? Well, here's its cousin for prompts, and it hunts for the four building blocks: role, context, format, and constraints. Watch what happens when we run it — \"Explain AI\" scores nothing, the middle one earns a single point, and the full research prompt lights up every part. But here's the sneaky bit: you could fool this thing just by stuffing in the right words. That's exactly the point — pattern matching isn't understanding, which is why your judgement always has to stay in the loop.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.45,
+        "text": "Remember the question checker from last class?"
+      },
+      {
+        "start": 2.45,
+        "end": 10.562,
+        "text": "Well, here's its cousin for prompts, and it hunts for the four building blocks: role, context, format, and constraints."
+      },
+      {
+        "start": 10.562,
+        "end": 20.1,
+        "text": "Watch what happens when we run it — \"Explain AI\" scores nothing, the middle one earns a single point, and the full research prompt lights up every part."
+      },
+      {
+        "start": 20.1,
+        "end": 24.962,
+        "text": "But here's the sneaky bit: you could fool this thing just by stuffing in the right words."
+      },
+      {
+        "start": 24.962,
+        "end": 31.675,
+        "text": "That's exactly the point — pattern matching isn't understanding, which is why your judgement always has to stay in the loop."
+      }
+    ],
+    "bytes": 190368,
     "model": "claude-opus-4-8"
   },
   "your-project": {

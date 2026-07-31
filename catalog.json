@@ -540,6 +540,28 @@
           ],
           "duration": "45–60 min",
           "status": "ready"
+        },
+        {
+          "id": "download-right-data",
+          "n": 5,
+          "numLabel": "GUIDE 05",
+          "noPdf": true,
+          "title": "Downloading the Right Data 📥",
+          "summary": "A practical shared note for choosing, verifying, downloading, organizing, and documenting research data: define what one row means, compare candidate datasets with the RIGHT checklist, inspect source and license, preserve raw files, run quick pandas quality checks, and leave a reproducible dataset receipt.",
+          "tags": [
+            "data",
+            "dataset",
+            "download",
+            "research",
+            "license",
+            "data quality",
+            "CSV",
+            "pandas",
+            "documentation",
+            "beginner"
+          ],
+          "duration": "15–25 min",
+          "status": "ready"
         }
       ]
     },

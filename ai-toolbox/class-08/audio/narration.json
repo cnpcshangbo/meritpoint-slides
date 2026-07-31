@@ -136,37 +136,37 @@
     "model": "claude-opus-4-8"
   },
   "story-xray": {
-    "hash": "a27b02dce90e6386",
+    "hash": "8672fef56d409327",
     "voice": "en-US-AndrewMultilingualNeural",
-    "script": "Here's one of my favorite cautionary tales in all of machine learning. A hospital built an AI to detect serious pneumonia from chest X-rays, and it performed almost too well. But when researchers dug in, they found the model wasn't looking at lungs at all — it had learned to spot a tiny metal token that portable X-ray machines stamp on the image. Since sicker patients got those portable scans, the token quietly predicted severity, and the data, not the disease, was doing all the work. Remember this: whatever hides in your data, your model will find it.",
+    "script": "Here's one of my favorite cautionary tales. A hospital built an AI to spot serious pneumonia on chest X-rays, and it performed almost too well. When researchers dug in, they discovered the model wasn't studying lungs at all — it had learned to recognize a tiny metal token that portable machines stamp on the image. Since sicker patients got those portable scans, the token quietly predicted severity. We call this shortcut learning, and it reminds us that whatever hides in your data, the model will find it.",
     "cues": [
       {
         "start": 0.05,
-        "end": 4.062,
-        "text": "Here's one of my favorite cautionary tales in all of machine learning."
+        "end": 2.7119999999999997,
+        "text": "Here's one of my favorite cautionary tales."
       },
       {
-        "start": 4.062,
-        "end": 11.55,
-        "text": "A hospital built an AI to detect serious pneumonia from chest X-rays, and it performed almost too well."
+        "start": 2.7119999999999997,
+        "end": 9.787,
+        "text": "A hospital built an AI to spot serious pneumonia on chest X-rays, and it performed almost too well."
       },
       {
-        "start": 11.55,
-        "end": 21.6,
-        "text": "But when researchers dug in, they found the model wasn't looking at lungs at all — it had learned to spot a tiny metal token that portable X-ray machines stamp on the image."
+        "start": 9.787,
+        "end": 20.537,
+        "text": "When researchers dug in, they discovered the model wasn't studying lungs at all — it had learned to recognize a tiny metal token that portable machines stamp on the image."
       },
       {
-        "start": 21.6,
-        "end": 30.975,
-        "text": "Since sicker patients got those portable scans, the token quietly predicted severity, and the data, not the disease, was doing all the work."
+        "start": 20.537,
+        "end": 26.312,
+        "text": "Since sicker patients got those portable scans, the token quietly predicted severity."
       },
       {
-        "start": 30.975,
-        "end": 35.425,
-        "text": "Remember this: whatever hides in your data, your model will find it."
+        "start": 26.312,
+        "end": 32.837,
+        "text": "We call this shortcut learning, and it reminds us that whatever hides in your data, the model will find it."
       }
     ],
-    "bytes": 212976,
+    "bytes": 197424,
     "model": "claude-opus-4-8"
   },
   "concept-five-enemies": {
@@ -607,66 +607,81 @@
     "model": "claude-opus-4-8"
   },
   "lab-clean-log": {
-    "hash": "5c90f73e0b79a082",
+    "hash": "f13dc95faf4c8615",
     "voice": "en-US-AndrewMultilingualNeural",
-    "script": "Alright, here's your first real workshop, and this log is deliberately ugly — typos, holes, impossible numbers, twins. Watch how we clean it end to end: we unify the spellings so three versions of \"pedestrian\" become one, kill the duplicate car, drop the physically impossible row, and fill the missing distances while announcing exactly what we did. Notice eight rows shrink to six, and every fix leaves a paper trail. Now chew on the challenges — order really matters, and that conf of minus one might not be garbage at all, it might be the sensor's secret code for \"I couldn't tell.\"",
+    "script": "Alright, here's our whole refinery in one small script — the messy log comes in, and we clean it step by step. Watch the order carefully: we standardize spellings first, so \"PED\" becomes \"pedestrian\" before we hunt for duplicates. That sequence actually matters — flip it and the numbers change, which is exactly Challenge 1. And notice that confidence of minus one we threw away — Challenge 2 asks, what if that's not garbage but the sensor's code for \"I couldn't tell\"? Suddenly it's a missing-value problem, not a deletion. That single question is the judgment that separates a technician from a real analyst.",
     "cues": [
       {
         "start": 0.05,
-        "end": 8.525,
-        "text": "Alright, here's your first real workshop, and this log is deliberately ugly — typos, holes, impossible numbers, twins."
+        "end": 6.712,
+        "text": "Alright, here's our whole refinery in one small script — the messy log comes in, and we clean it step by step."
       },
       {
-        "start": 8.525,
-        "end": 23.2,
-        "text": "Watch how we clean it end to end: we unify the spellings so three versions of \"pedestrian\" become one, kill the duplicate car, drop the physically impossible row, and fill the missing distances while announcing exactly what we did."
+        "start": 6.712,
+        "end": 14.75,
+        "text": "Watch the order carefully: we standardize spellings first, so \"PED\" becomes \"pedestrian\" before we hunt for duplicates."
       },
       {
-        "start": 23.2,
-        "end": 29.1,
-        "text": "Notice eight rows shrink to six, and every fix leaves a paper trail."
+        "start": 14.75,
+        "end": 20.962,
+        "text": "That sequence actually matters — flip it and the numbers change, which is exactly Challenge 1."
       },
       {
-        "start": 29.1,
-        "end": 39.4,
-        "text": "Now chew on the challenges — order really matters, and that conf of minus one might not be garbage at all, it might be the sensor's secret code for \"I couldn't tell.\""
+        "start": 20.962,
+        "end": 30.85,
+        "text": "And notice that confidence of minus one we threw away — Challenge 2 asks, what if that's not garbage but the sensor's code for \"I couldn't tell\"?"
+      },
+      {
+        "start": 30.85,
+        "end": 34.312,
+        "text": "Suddenly it's a missing-value problem, not a deletion."
+      },
+      {
+        "start": 34.312,
+        "end": 40.1,
+        "text": "That single question is the judgment that separates a technician from a real analyst."
       }
     ],
-    "bytes": 236736,
+    "bytes": 240912,
     "model": "claude-opus-4-8"
   },
   "lab-scaling-proof": {
-    "hash": "27103e698de9be68",
+    "hash": "51892fd352daacab",
     "voice": "en-US-AndrewMultilingualNeural",
-    "script": "Here's the moment I've been promising you. We've got a tiny classifier that just measures which known example is closest to our query, and our query is clearly a near, confident detection. But when we run it on the raw numbers, distance is measured up to a hundred while confidence tops out at one, so distance basically shouts over everything and the model gives the wrong answer. Scale both features to the same range, and suddenly confidence gets a voice too — and the answer flips to the correct one. Normalization isn't cosmetic; it decides who gets heard.",
+    "script": "Here's the moment where the math shows off. We ask one simple question — is this detection near and sure, or near and unsure? — and with the raw numbers the model gets it wrong, because distance in metres shouts a hundred times louder than confidence. Then we scale both features to the same range, and suddenly the answer flips to the correct one. Nothing changed but the scaling. Normalization isn't cosmetic — it decides who gets heard.",
     "cues": [
       {
         "start": 0.05,
-        "end": 2.162,
-        "text": "Here's the moment I've been promising you."
+        "end": 2.462,
+        "text": "Here's the moment where the math shows off."
       },
       {
-        "start": 2.162,
-        "end": 12,
-        "text": "We've got a tiny classifier that just measures which known example is closest to our query, and our query is clearly a near, confident detection."
+        "start": 2.462,
+        "end": 8.787,
+        "text": "We ask one simple question — is this detection near and sure, or near and unsure?"
       },
       {
-        "start": 12,
-        "end": 23.637,
-        "text": "But when we run it on the raw numbers, distance is measured up to a hundred while confidence tops out at one, so distance basically shouts over everything and the model gives the wrong answer."
+        "start": 8.787,
+        "end": 16.225,
+        "text": "— and with the raw numbers the model gets it wrong, because distance in metres shouts a hundred times louder than confidence."
       },
       {
-        "start": 23.637,
-        "end": 31,
-        "text": "Scale both features to the same range, and suddenly confidence gets a voice too — and the answer flips to the correct one."
+        "start": 16.225,
+        "end": 22.387,
+        "text": "Then we scale both features to the same range, and suddenly the answer flips to the correct one."
       },
       {
-        "start": 31,
-        "end": 34.95,
-        "text": "Normalization isn't cosmetic; it decides who gets heard."
+        "start": 22.387,
+        "end": 24.462,
+        "text": "Nothing changed but the scaling."
+      },
+      {
+        "start": 24.462,
+        "end": 28.337,
+        "text": "Normalization isn't cosmetic — it decides who gets heard."
       }
     ],
-    "bytes": 210096,
+    "bytes": 170352,
     "model": "claude-opus-4-8"
   },
   "your-project": {
@@ -1016,6 +1031,35 @@
       }
     ],
     "bytes": 169920,
+    "model": "claude-opus-4-8"
+  },
+  "lab-real-receipts": {
+    "hash": "67daa19ff3efdac7",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Last time we proved scaling matters using three made-up points. Now let's run the exact same arguments on 891 real Titanic passengers, and every number comes straight from their actual fares. Watch what happens: one first-class passenger paid five hundred and twelve pounds, and once we squeeze everything into zero-to-one, over eighty percent of people get crushed below a tenth — the outlier ate our whole scale. And notice the ports: Queenstown is actually the cheapest, not the middle, so pretending C-Q-S is a number line is just factually wrong.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.125,
+        "text": "Last time we proved scaling matters using three made-up points."
+      },
+      {
+        "start": 4.125,
+        "end": 12.925,
+        "text": "Now let's run the exact same arguments on 891 real Titanic passengers, and every number comes straight from their actual fares."
+      },
+      {
+        "start": 12.925,
+        "end": 26.862,
+        "text": "Watch what happens: one first-class passenger paid five hundred and twelve pounds, and once we squeeze everything into zero-to-one, over eighty percent of people get crushed below a tenth — the outlier ate our whole scale."
+      },
+      {
+        "start": 26.862,
+        "end": 35.687,
+        "text": "And notice the ports: Queenstown is actually the cheapest, not the middle, so pretending C-Q-S is a number line is just factually wrong."
+      }
+    ],
+    "bytes": 214416,
     "model": "claude-opus-4-8"
   }
 }
