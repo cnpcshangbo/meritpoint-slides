@@ -221,10 +221,21 @@
           "id": "class-10",
           "n": 10,
           "title": "Linear Regression",
+          "summary": "Build your first predictive model and see what 'learning' means numerically: features vs. target, loss (MSE), gradient descent from scratch, honest train/test evaluation, the AV box-height-to-distance case study, and the danger of extrapolating past your data.",
           "tags": [
-            "ML"
+            "machine learning",
+            "linear regression",
+            "loss function",
+            "gradient descent",
+            "MSE",
+            "scikit-learn",
+            "overfitting",
+            "quiz",
+            "interactive",
+            "Python"
           ],
-          "status": "planned"
+          "duration": "60 min",
+          "status": "ready"
         },
         {
           "id": "class-11",

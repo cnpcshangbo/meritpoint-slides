@@ -1,0 +1,296 @@
+{
+  "lab-gradient-descent": {
+    "hash": "ef6e816df4d975d7",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          3
+        ],
+        "text": "We're teaching a computer to find the best line linking study hours to test scores. Here's our data: hours studied, and the matching scores students got.",
+        "file": "lab-gradient-descent-w00.mp3"
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "We store n, the number of data points, so we can average things later. Here it's ten.",
+        "file": "lab-gradient-descent-w01.mp3"
+      },
+      {
+        "lines": [
+          6,
+          6
+        ],
+        "text": "Our line is score equals m times hours plus b. We start m and b both at zero. It doesn't matter where we begin — we'll improve from anywhere.",
+        "file": "lab-gradient-descent-w02.mp3"
+      },
+      {
+        "lines": [
+          7,
+          7
+        ],
+        "text": "The learning rate lr controls how big each step downhill is. Too small and we crawl; too big and we overshoot.",
+        "file": "lab-gradient-descent-w03.mp3"
+      },
+      {
+        "lines": [
+          9,
+          9
+        ],
+        "text": "Now we loop two thousand times. Each pass nudges our line a little closer to the perfect fit.",
+        "file": "lab-gradient-descent-w04.mp3"
+      },
+      {
+        "lines": [
+          10,
+          10
+        ],
+        "text": "First we make predictions: for every hours value x, we compute m times x plus b, our line's current guess.",
+        "file": "lab-gradient-descent-w05.mp3"
+      },
+      {
+        "lines": [
+          11,
+          11
+        ],
+        "text": "Then errors: how far each prediction is from the real score. We pair predictions with scores and subtract.",
+        "file": "lab-gradient-descent-w06.mp3"
+      },
+      {
+        "lines": [
+          12,
+          12
+        ],
+        "text": "Loss is the mean squared error — average of the errors squared. Squaring makes all errors positive and punishes big misses. This single number tells us how bad we're doing.",
+        "file": "lab-gradient-descent-w07.mp3"
+      },
+      {
+        "lines": [
+          14,
+          16
+        ],
+        "text": "Now the gradient: which direction makes loss go uphill. We compute grad m and grad b using calculus formulas — the slope of the loss with respect to each parameter.",
+        "file": "lab-gradient-descent-w08.mp3"
+      },
+      {
+        "lines": [
+          18,
+          20
+        ],
+        "text": "Since the gradient points uphill, we step the opposite way to go downhill. We subtract a small piece of each gradient from m and b, shrinking the loss.",
+        "file": "lab-gradient-descent-w09.mp3"
+      },
+      {
+        "lines": [
+          22,
+          23
+        ],
+        "text": "Every four hundred steps we print a progress report — the step number, current loss, and our m and b — so we can watch the loss shrink over time.",
+        "file": "lab-gradient-descent-w10.mp3"
+      },
+      {
+        "lines": [
+          25,
+          25
+        ],
+        "text": "After the loop, we print the final results: the m and b we landed on, and the final loss.",
+        "file": "lab-gradient-descent-w11.mp3"
+      },
+      {
+        "lines": [
+          26,
+          26
+        ],
+        "text": "Let's actually use our line — we predict the score for someone who studied six and a half hours, rounded to one decimal.",
+        "file": "lab-gradient-descent-w12.mp3"
+      },
+      {
+        "lines": [
+          28,
+          29
+        ],
+        "text": "Now let's check our answer against the exact math solution. We compute xbar and ybar, the average hours and average score.",
+        "file": "lab-gradient-descent-w13.mp3"
+      },
+      {
+        "lines": [
+          30,
+          30
+        ],
+        "text": "This is the closed-form formula for the exact best slope — how hours and scores vary together, divided by how hours vary. No looping needed, just algebra.",
+        "file": "lab-gradient-descent-w14.mp3"
+      },
+      {
+        "lines": [
+          31,
+          31
+        ],
+        "text": "And the exact intercept b follows from the slope and the two averages, keeping the line passing through the center of the data.",
+        "file": "lab-gradient-descent-w15.mp3"
+      },
+      {
+        "lines": [
+          32,
+          32
+        ],
+        "text": "We print the exact answer. Compare it to what gradient descent found — they should match, and our little loop discovered it all on its own!",
+        "file": "lab-gradient-descent-w16.mp3"
+      },
+      {
+        "lines": [
+          34,
+          36
+        ],
+        "text": "Finally, some challenges to try. Play with the learning rate to see crawling versus exploding, and start from different m and b to check you still reach the same answer.",
+        "file": "lab-gradient-descent-w17.mp3"
+      }
+    ]
+  },
+  "lab-av-regression": {
+    "hash": "ff390b19d8acc927",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          3
+        ],
+        "text": "We start by importing our tools. LinearRegression is the model itself, train test split lets us hold back some data for testing, and mean squared error and r2 score will measure how good our predictions are.",
+        "file": "lab-av-regression-w00.mp3"
+      },
+      {
+        "lines": [
+          5,
+          6
+        ],
+        "text": "This comment sets the scene. We're mapping the height of a detection box in pixels to how far away the object is in meters. Bigger box means the object is closer, roughly in a straight line, but with real noise.",
+        "file": "lab-av-regression-w01.mp3"
+      },
+      {
+        "lines": [
+          7,
+          10
+        ],
+        "text": "Here's our list of box heights in pixels, forty measurements from a detection log. These are the inputs the model will learn from.",
+        "file": "lab-av-regression-w02.mp3"
+      },
+      {
+        "lines": [
+          11,
+          14
+        ],
+        "text": "And these are the matching distances in meters. Notice as box height goes up, distance goes down, exactly like a closer object making a bigger box.",
+        "file": "lab-av-regression-w03.mp3"
+      },
+      {
+        "lines": [
+          16,
+          16
+        ],
+        "text": "Scikit-learn wants each input as its own little list, not a bare number. So we wrap every box height in brackets, building a list of single-value rows called X.",
+        "file": "lab-av-regression-w04.mp3"
+      },
+      {
+        "lines": [
+          17,
+          17
+        ],
+        "text": "Now we split the data. Seventy-five percent goes to training, twenty-five percent to testing. Setting random state to forty-two means we get the same split every time, so results are repeatable.",
+        "file": "lab-av-regression-w05.mp3"
+      },
+      {
+        "lines": [
+          19,
+          20
+        ],
+        "text": "We create our linear regression model, then call fit on the training data. This is where the model learns the best straight line through the points.",
+        "file": "lab-av-regression-w06.mp3"
+      },
+      {
+        "lines": [
+          21,
+          21
+        ],
+        "text": "With the line learned, we ask the model to predict distances for the test boxes it hasn't seen. These predictions let us check honesty on fresh data.",
+        "file": "lab-av-regression-w07.mp3"
+      },
+      {
+        "lines": [
+          23,
+          24
+        ],
+        "text": "Now we print what the model learned. The coefficient is the slope, how much distance changes per pixel, and the intercept is where the line crosses zero. We round to three decimals.",
+        "file": "lab-av-regression-w08.mp3"
+      },
+      {
+        "lines": [
+          25,
+          26
+        ],
+        "text": "Here we print two scores. Mean squared error tells us the average squared prediction error, and r2 tells us what fraction of the variation the line explains, closer to one being better.",
+        "file": "lab-av-regression-w09.mp3"
+      },
+      {
+        "lines": [
+          27,
+          27
+        ],
+        "text": "This line prints the range of box heights we trained on. The leading backslash n adds a blank line, and it reminds us where our data actually lived, which matters next.",
+        "file": "lab-av-regression-w10.mp3"
+      },
+      {
+        "lines": [
+          29,
+          30
+        ],
+        "text": "Now comes the interesting experiment. We're going to push box heights beyond anything the model ever saw during training, and this print announces it.",
+        "file": "lab-av-regression-w11.mp3"
+      },
+      {
+        "lines": [
+          31,
+          32
+        ],
+        "text": "We loop over some test heights, including some way outside our data. For each one, we predict a distance, grabbing the single number out of the result with index zero.",
+        "file": "lab-av-regression-w12.mp3"
+      },
+      {
+        "lines": [
+          33,
+          33
+        ],
+        "text": "Here we build a warning flag. If the predicted distance is negative, which is physically impossible, we attach a message. Otherwise the flag stays empty.",
+        "file": "lab-av-regression-w13.mp3"
+      },
+      {
+        "lines": [
+          34,
+          34
+        ],
+        "text": "Finally we print each box height and its predicted distance, neatly formatted, with the impossible flag on the end if it applies. Watch the numbers go absurd.",
+        "file": "lab-av-regression-w14.mp3"
+      },
+      {
+        "lines": [
+          36,
+          38
+        ],
+        "text": "Challenge one asks you to think. A box height of one-sixty never appeared in training, yet the model answers confidently. Why? Because a straight line has no edges, it just keeps going forever.",
+        "file": "lab-av-regression-w15.mp3"
+      },
+      {
+        "lines": [
+          39,
+          40
+        ],
+        "text": "And challenge two: what real-world safeguard would you add before putting this model in an actual car? Think about limiting predictions to the range you actually trained on.",
+        "file": "lab-av-regression-w16.mp3"
+      }
+    ]
+  }
+}
