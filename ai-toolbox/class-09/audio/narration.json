@@ -583,66 +583,71 @@
     "model": "claude-opus-4-8"
   },
   "lab-ascii-charts": {
-    "hash": "6dd01d731ec8fe99",
+    "hash": "8cd749c54c3f43cd",
     "voice": "en-US-AndrewMultilingualNeural",
-    "script": "Alright, before we ever touch a fancy charting library, let's prove that a chart is really just a simple idea dressed up. A histogram is nothing more than counting things into buckets, and a scatter plot is just placing dots on a grid — so we're going to build both using plain text characters. Watch what happens in the scatter: as you read from left to right, the dots drift downward, meaning the farther away a detection is, the less confident it becomes. That downward slide is the whole story, and once you build it yourself, that understanding is yours forever.",
+    "script": "Before we ever touch a fancy charting library, let's build two classic charts out of nothing but text characters. A histogram is really just counting things into buckets and printing a row of hash marks, and a scatter plot is just placing little o's on a grid based on two numbers. Watch what happens as your eyes travel right across the scatter — the points sink lower, meaning the farther away a detection is, the less confident it becomes. That downward drift is the whole story, and you built it yourself. Then try shrinking the buckets to five meters and see whether that long tail gets clearer or messier.",
     "cues": [
       {
         "start": 0.05,
-        "end": 7.787,
-        "text": "Alright, before we ever touch a fancy charting library, let's prove that a chart is really just a simple idea dressed up."
+        "end": 7.15,
+        "text": "Before we ever touch a fancy charting library, let's build two classic charts out of nothing but text characters."
       },
       {
-        "start": 7.787,
-        "end": 18.45,
-        "text": "A histogram is nothing more than counting things into buckets, and a scatter plot is just placing dots on a grid — so we're going to build both using plain text characters."
+        "start": 7.15,
+        "end": 17.912,
+        "text": "A histogram is really just counting things into buckets and printing a row of hash marks, and a scatter plot is just placing little o's on a grid based on two numbers."
       },
       {
-        "start": 18.45,
-        "end": 28.775,
-        "text": "Watch what happens in the scatter: as you read from left to right, the dots drift downward, meaning the farther away a detection is, the less confident it becomes."
+        "start": 17.912,
+        "end": 28.137,
+        "text": "Watch what happens as your eyes travel right across the scatter — the points sink lower, meaning the farther away a detection is, the less confident it becomes."
       },
       {
-        "start": 28.775,
-        "end": 36.362,
-        "text": "That downward slide is the whole story, and once you build it yourself, that understanding is yours forever."
+        "start": 28.137,
+        "end": 32.637,
+        "text": "That downward drift is the whole story, and you built it yourself."
+      },
+      {
+        "start": 32.637,
+        "end": 39.212,
+        "text": "Then try shrinking the buckets to five meters and see whether that long tail gets clearer or messier."
       }
     ],
-    "bytes": 218592,
+    "bytes": 235584,
     "model": "claude-opus-4-8"
   },
   "lab-anscombe": {
-    "hash": "b724e44a765a8b85",
+    "hash": "7952d8972ae68af9",
     "voice": "en-US-AndrewMultilingualNeural",
-    "script": "Here's a challenge to a famous story. Anscombe built four little datasets back in 1973, and when you crunch the numbers — the means, the correlation, the best-fit line — they come out nearly identical. Statistically, they look like quadruplets. But then we plot them, and your eyes tell a completely different tale: one's a clean line, one's a curve, one has a rogue point, one's a vertical wall. So compute it yourself, then actually look — because the summary is where you start, never where you stop.",
+    "script": "Today we're going to fact-check a famous statistician, and I want you to trust nothing until you compute it yourself. We'll calculate the means, the correlation, the fit line for four little datasets — and the numbers come back as near-perfect twins, all with that same correlation around point-eight-one. But then we plot them, and your eyes will revolt: one's a clean line, one's an arc, one has a single rebel point bending everything. Here's your challenge — find that one point in the third set, remove it, and watch the correlation leap toward perfect. That's the whole lesson: summary numbers are where looking begins, never where it ends.",
     "cues": [
       {
         "start": 0.05,
-        "end": 2.512,
-        "text": "Here's a challenge to a famous story."
+        "end": 6.862,
+        "text": "Today we're going to fact-check a famous statistician, and I want you to trust nothing until you compute it yourself."
       },
       {
-        "start": 2.512,
-        "end": 13.2,
-        "text": "Anscombe built four little datasets back in 1973, and when you crunch the numbers — the means, the correlation, the best-fit line — they come out nearly identical."
+        "start": 6.862,
+        "end": 18.112,
+        "text": "We'll calculate the means, the correlation, the fit line for four little datasets — and the numbers come back as near-perfect twins, all with that same correlation around point-eight-one."
       },
       {
-        "start": 13.2,
-        "end": 16.1,
-        "text": "Statistically, they look like quadruplets."
+        "start": 18.112,
+        "end": 27.2,
+        "text": "But then we plot them, and your eyes will revolt: one's a clean line, one's an arc, one has a single rebel point bending everything."
       },
       {
-        "start": 16.1,
-        "end": 25.712,
-        "text": "But then we plot them, and your eyes tell a completely different tale: one's a clean line, one's a curve, one has a rogue point, one's a vertical wall."
+        "start": 27.2,
+        "end": 34.962,
+        "text": "Here's your challenge — find that one point in the third set, remove it, and watch the correlation leap toward perfect."
       },
       {
-        "start": 25.712,
-        "end": 32.212,
-        "text": "So compute it yourself, then actually look — because the summary is where you start, never where you stop."
+        "start": 34.962,
+        "end": 40.462,
+        "text": "That's the whole lesson: summary numbers are where looking begins, never where it ends."
       }
     ],
-    "bytes": 193680,
+    "bytes": 243072,
     "model": "claude-opus-4-8"
   },
   "your-project": {

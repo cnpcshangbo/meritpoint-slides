@@ -622,66 +622,71 @@
     "model": "claude-opus-4-8"
   },
   "lab-detection-log": {
-    "hash": "e670ee6c0bdd6967",
+    "hash": "7e8acbda3017fb40",
     "voice": "en-US-AndrewMultilingualNeural",
-    "script": "Alright, here's the car's own diary — every row is one thing it spotted, with how confident it was and how far away. We're going to run four simple moves: look at the data, inspect what's most common, select just the rows we care about, and summarize with an average. The first run takes a few seconds to wake up, so watch how each verb answers a real question. Keep an eye on those risky pedestrians — the ones the car barely saw but that are actually close. That's the exact safety puzzle we'll wrestle with next class.",
+    "script": "Alright, here's the car's diary sitting right in front of us — every row is one thing the car spotted in a single frame. We're going to run just four simple moves: peek at the data, count what shows up most, pick out the rows we care about, and summarize with an average. Watch what happens when we filter for pedestrians the car was unsure about — those two risky detections are actually close to the car, only about eight meters away. That's the scary part, and it's exactly the safety question we'll dig into next class. Go ahead and hit run, then try the challenges yourself.",
     "cues": [
       {
         "start": 0.05,
-        "end": 8.512,
-        "text": "Alright, here's the car's own diary — every row is one thing it spotted, with how confident it was and how far away."
+        "end": 7.3870000000000005,
+        "text": "Alright, here's the car's diary sitting right in front of us — every row is one thing the car spotted in a single frame."
       },
       {
-        "start": 8.512,
-        "end": 18.087,
-        "text": "We're going to run four simple moves: look at the data, inspect what's most common, select just the rows we care about, and summarize with an average."
+        "start": 7.3870000000000005,
+        "end": 16.025,
+        "text": "We're going to run just four simple moves: peek at the data, count what shows up most, pick out the rows we care about, and summarize with an average."
       },
       {
-        "start": 18.087,
-        "end": 24,
-        "text": "The first run takes a few seconds to wake up, so watch how each verb answers a real question."
+        "start": 16.025,
+        "end": 25.275,
+        "text": "Watch what happens when we filter for pedestrians the car was unsure about — those two risky detections are actually close to the car, only about eight meters away."
       },
       {
-        "start": 24,
-        "end": 29.887,
-        "text": "Keep an eye on those risky pedestrians — the ones the car barely saw but that are actually close."
+        "start": 25.275,
+        "end": 30.737,
+        "text": "That's the scary part, and it's exactly the safety question we'll dig into next class."
       },
       {
-        "start": 29.887,
-        "end": 33.637,
-        "text": "That's the exact safety puzzle we'll wrestle with next class."
+        "start": 30.737,
+        "end": 34.45,
+        "text": "Go ahead and hit run, then try the challenges yourself."
       }
     ],
-    "bytes": 202176,
+    "bytes": 207072,
     "model": "claude-opus-4-8"
   },
   "lab-titanic": {
-    "hash": "1cf188c840cc98f5",
+    "hash": "cbba57a9d21806cf",
     "voice": "en-US-AndrewMultilingualNeural",
-    "script": "Remember back in Class 1, when we counted twelve passengers by hand and wrote out loops just to get one survival number? Today we do the exact same question, but with real tools — we find the missing ages, fill them with the median and honestly announce that we did, and then one groupby line answers everything at once. Watch what happens: females survive at a much higher rate than males, but it's not a perfect split, so remember it's an association, not destiny. And tonight, your challenge is to run these same lines on the full 891 rows and see if the pattern holds.",
+    "script": "Remember back in our first class, when you wrote eight lines of loops just to count survivors by hand? Watch what happens now with real tools. We spot the missing ages, fill them with the median and honestly announce that we did it, and then one single groupby line answers the whole survival question at once. Notice females survive at about eighty-six percent and males around twenty — a strong pattern, but not destiny, and it echoes the full dataset. That's exactly why pandas exists.",
     "cues": [
       {
         "start": 0.05,
-        "end": 7,
-        "text": "Remember back in Class 1, when we counted twelve passengers by hand and wrote out loops just to get one survival number?"
+        "end": 6,
+        "text": "Remember back in our first class, when you wrote eight lines of loops just to count survivors by hand?"
       },
       {
-        "start": 7,
-        "end": 19.237,
-        "text": "Today we do the exact same question, but with real tools — we find the missing ages, fill them with the median and honestly announce that we did, and then one groupby line answers everything at once."
+        "start": 6,
+        "end": 8.725,
+        "text": "Watch what happens now with real tools."
       },
       {
-        "start": 19.237,
-        "end": 28.825,
-        "text": "Watch what happens: females survive at a much higher rate than males, but it's not a perfect split, so remember it's an association, not destiny."
+        "start": 8.725,
+        "end": 18.825,
+        "text": "We spot the missing ages, fill them with the median and honestly announce that we did it, and then one single groupby line answers the whole survival question at once."
       },
       {
-        "start": 28.825,
-        "end": 36.587,
-        "text": "And tonight, your challenge is to run these same lines on the full 891 rows and see if the pattern holds."
+        "start": 18.825,
+        "end": 28.587,
+        "text": "Notice females survive at about eighty-six percent and males around twenty — a strong pattern, but not destiny, and it echoes the full dataset."
+      },
+      {
+        "start": 28.587,
+        "end": 31.012,
+        "text": "That's exactly why pandas exists."
       }
     ],
-    "bytes": 219888,
+    "bytes": 186480,
     "model": "claude-opus-4-8"
   },
   "your-project": {

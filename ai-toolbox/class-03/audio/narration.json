@@ -577,71 +577,66 @@
     "model": "claude-opus-4-8"
   },
   "lab-pipeline": {
-    "hash": "5b692d10a074abd2",
+    "hash": "df166f7a8a144701",
     "voice": "en-US-AndrewMultilingualNeural",
-    "script": "Here it is — the entire research pipeline in just twenty-five lines, running right in your browser. Follow the comment headers and you'll see the four stages we've been talking about: first we load real data, a hundred and fifty iris flowers with four measurements each. Then a decision tree learns the patterns, we test it on flowers it has never seen, and finally we draw a conclusion the numbers actually support. While the libraries load, notice how honest this is — we only trust it against that fresh exam pile. When it finishes, try dropping the depth to one and watch what happens.",
+    "script": "Here it is — an entire research pipeline in just twenty-five lines, running right in your browser. Watch how each numbered comment matches a stage we've been talking about: first we load real data, one hundred fifty iris flowers with four measurements each, then we teach a decision tree to spot the patterns. We test it on flowers it has never seen, and only then do we draw a conclusion the numbers actually support. The first run takes a moment to load, so keep an eye on those stage headers while it wakes up.",
     "cues": [
       {
         "start": 0.05,
-        "end": 6.2620000000000005,
-        "text": "Here it is — the entire research pipeline in just twenty-five lines, running right in your browser."
+        "end": 6.362,
+        "text": "Here it is — an entire research pipeline in just twenty-five lines, running right in your browser."
       },
       {
-        "start": 6.2620000000000005,
-        "end": 15.387,
-        "text": "Follow the comment headers and you'll see the four stages we've been talking about: first we load real data, a hundred and fifty iris flowers with four measurements each."
+        "start": 6.362,
+        "end": 18.212,
+        "text": "Watch how each numbered comment matches a stage we've been talking about: first we load real data, one hundred fifty iris flowers with four measurements each, then we teach a decision tree to spot the patterns."
       },
       {
-        "start": 15.387,
-        "end": 24.187,
-        "text": "Then a decision tree learns the patterns, we test it on flowers it has never seen, and finally we draw a conclusion the numbers actually support."
+        "start": 18.212,
+        "end": 25.625,
+        "text": "We test it on flowers it has never seen, and only then do we draw a conclusion the numbers actually support."
       },
       {
-        "start": 24.187,
-        "end": 30.337,
-        "text": "While the libraries load, notice how honest this is — we only trust it against that fresh exam pile."
-      },
-      {
-        "start": 30.337,
-        "end": 34.612,
-        "text": "When it finishes, try dropping the depth to one and watch what happens."
+        "start": 25.625,
+        "end": 30.55,
+        "text": "The first run takes a moment to load, so keep an eye on those stage headers while it wakes up."
       }
     ],
-    "bytes": 208080,
+    "bytes": 183600,
     "model": "claude-opus-4-8"
   },
   "lab-overfitting": {
-    "hash": "6aaf560510fa0e20",
+    "hash": "51657c4b4d979096",
     "voice": "en-US-AndrewMultilingualNeural",
-    "script": "Alright, here's where we actually watch the disease unfold. We've got some data that follows a gentle curve with a bit of noise, and we're going to fit three models of increasing complexity to it. Keep your eyes on those two numbers: the training error keeps dropping, but the error on unseen data drops, then turns around and climbs. That turning point — that's overfitting happening right in front of you, and degree fifteen is where it explodes. Once you've seen it, try the degrees in between and find exactly where the test error bottoms out.",
+    "script": "Alright, here's where we actually watch overfitting happen in real numbers. We take some data that follows a gentle curve with a little noise, then we fit three models of growing complexity to it. Watch what happens: the simple line is bad everywhere, the middle one nails it, but the wildly complex one drives its training error almost to zero while its test error explodes. That explosion is the disease, live in front of you. Then your challenge is to hunt for the sweet spot in between — which is exactly what tuning is all about.",
     "cues": [
       {
         "start": 0.05,
-        "end": 3.375,
-        "text": "Alright, here's where we actually watch the disease unfold."
+        "end": 3.9370000000000003,
+        "text": "Alright, here's where we actually watch overfitting happen in real numbers."
       },
       {
-        "start": 3.375,
-        "end": 11,
-        "text": "We've got some data that follows a gentle curve with a bit of noise, and we're going to fit three models of increasing complexity to it."
+        "start": 3.9370000000000003,
+        "end": 11.925,
+        "text": "We take some data that follows a gentle curve with a little noise, then we fit three models of growing complexity to it."
       },
       {
-        "start": 11,
-        "end": 19.325,
-        "text": "Keep your eyes on those two numbers: the training error keeps dropping, but the error on unseen data drops, then turns around and climbs."
+        "start": 11.925,
+        "end": 22.737,
+        "text": "Watch what happens: the simple line is bad everywhere, the middle one nails it, but the wildly complex one drives its training error almost to zero while its test error explodes."
       },
       {
-        "start": 19.325,
-        "end": 25.812,
-        "text": "That turning point — that's overfitting happening right in front of you, and degree fifteen is where it explodes."
+        "start": 22.737,
+        "end": 26.45,
+        "text": "That explosion is the disease, live in front of you."
       },
       {
-        "start": 25.812,
-        "end": 31.512,
-        "text": "Once you've seen it, try the degrees in between and find exactly where the test error bottoms out."
+        "start": 26.45,
+        "end": 32.312,
+        "text": "Then your challenge is to hunt for the sweet spot in between — which is exactly what tuning is all about."
       }
     ],
-    "bytes": 189504,
+    "bytes": 194256,
     "model": "claude-opus-4-8"
   },
   "your-project": {

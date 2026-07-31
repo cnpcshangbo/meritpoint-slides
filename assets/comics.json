@@ -1,0 +1,50 @@
+{
+  "ai-toolbox/class-09/story-anscombe": {
+    "hash": "c84a047385a1",
+    "model": "gpt-image-1.5",
+    "quality": "medium",
+    "size": "1536x1024",
+    "bytes": 342154,
+    "at": "2026-07-31T21:57:22.345Z"
+  },
+  "ai-toolbox/class-01/story-teach-by-examples": {
+    "hash": "59ac5edf46f4",
+    "model": "gpt-image-1.5",
+    "quality": "medium",
+    "size": "1536x1024",
+    "bytes": 479428,
+    "at": "2026-07-31T21:57:57.424Z"
+  },
+  "ai-toolbox/class-03/story-imagenet": {
+    "hash": "9ad141c55aba",
+    "model": "gpt-image-1.5",
+    "quality": "medium",
+    "size": "1536x1024",
+    "bytes": 1199504,
+    "at": "2026-07-31T21:58:17.576Z"
+  },
+  "ai-toolbox/class-05/story-pandas": {
+    "hash": "d9ef625a7d1f",
+    "model": "gpt-image-1.5",
+    "quality": "medium",
+    "size": "1536x1024",
+    "bytes": 637445,
+    "at": "2026-07-31T21:58:36.565Z"
+  },
+  "ai-toolbox/class-06/story-swanson": {
+    "hash": "da36d7fa1da1",
+    "model": "gpt-image-1.5",
+    "quality": "medium",
+    "size": "1536x1024",
+    "bytes": 372537,
+    "at": "2026-07-31T21:58:55.462Z"
+  },
+  "ai-toolbox/class-07/story-kitti": {
+    "hash": "12f8e2badb1f",
+    "model": "gpt-image-1.5",
+    "quality": "medium",
+    "size": "1536x1024",
+    "bytes": 796815,
+    "at": "2026-07-31T21:59:14.700Z"
+  }
+}

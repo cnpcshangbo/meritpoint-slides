@@ -592,66 +592,76 @@
     "model": "claude-opus-4-8"
   },
   "lab-pixels": {
-    "hash": "74139fad27613f0f",
+    "hash": "f641ba7406bbc88d",
     "voice": "en-US-AndrewMultilingualNeural",
-    "script": "Alright, here's where you become the perception system yourself. Look at this grid of numbers — that's all an image really is, just brightness values, and if you squint you can spot a tiny person standing there. Your job is to squeeze those sixty-four raw numbers down into four meaningful columns: how bright, top versus bottom, how wide, how tall. That's the whole leap from messy pixels to a neat row a model can actually learn from. Try the challenge — redraw it as a car, and watch which numbers flip to give it away.",
+    "script": "Alright, here's where you become the perception system yourself. That grid is just numbers, zero for dark and nine for bright, but if you squint you'll see a tiny pedestrian silhouette hiding in there. Your job is to squeeze those sixty-four raw pixels down into just four meaningful measurements — how bright, how tall, top versus bottom, and the widest row. Then try the challenge: redraw it as a wide, low car and watch which numbers flip. That ratio of width to height? That's exactly what the first real pedestrian detectors used.",
     "cues": [
       {
         "start": 0.05,
-        "end": 4,
+        "end": 4.037,
         "text": "Alright, here's where you become the perception system yourself."
       },
       {
-        "start": 4,
-        "end": 12.525,
-        "text": "Look at this grid of numbers — that's all an image really is, just brightness values, and if you squint you can spot a tiny person standing there."
+        "start": 4.037,
+        "end": 12.587,
+        "text": "That grid is just numbers, zero for dark and nine for bright, but if you squint you'll see a tiny pedestrian silhouette hiding in there."
       },
       {
-        "start": 12.525,
-        "end": 22.825,
-        "text": "Your job is to squeeze those sixty-four raw numbers down into four meaningful columns: how bright, top versus bottom, how wide, how tall."
+        "start": 12.587,
+        "end": 23.237,
+        "text": "Your job is to squeeze those sixty-four raw pixels down into just four meaningful measurements — how bright, how tall, top versus bottom, and the widest row."
       },
       {
-        "start": 22.825,
-        "end": 28.387,
-        "text": "That's the whole leap from messy pixels to a neat row a model can actually learn from."
+        "start": 23.237,
+        "end": 29.037,
+        "text": "Then try the challenge: redraw it as a wide, low car and watch which numbers flip."
       },
       {
-        "start": 28.387,
-        "end": 33.487,
-        "text": "Try the challenge — redraw it as a car, and watch which numbers flip to give it away."
+        "start": 29.037,
+        "end": 30.9,
+        "text": "That ratio of width to height?"
+      },
+      {
+        "start": 30.9,
+        "end": 34.637,
+        "text": "That's exactly what the first real pedestrian detectors used."
       }
     ],
-    "bytes": 201312,
+    "bytes": 208224,
     "model": "claude-opus-4-8"
   },
   "lab-judge-datasets": {
-    "hash": "b0deb57b70059c9f",
+    "hash": "d5214058e694ec3b",
     "voice": "en-US-AndrewMultilingualNeural",
-    "script": "Here's where our judgment becomes actual code. We've got four datasets competing for a night-pedestrian project, and the script scores each one on license, labels, size, and where the data came from. Watch what happens: the million-image set gets rejected while the tiny five-hundred-image one wins, because size isn't king — fitness for your question is. Then I want you to wrestle with two things: does \"research-only\" really pass for what you're doing, and add your own dataset as a fifth entry to see if you agree with the verdict.",
+    "script": "Here's where all our talk about judgment turns into actual code. We've got four datasets for a night-pedestrian study, and this little function scores each one on license, labels, size, and where the data actually came from. Watch what happens: the million-image set gets skipped because its license is unknown and it was scraped, while the tiny 500-image set gets a green light. Size isn't king here — fitness for your question is. Then I want you to argue with the code: does \"research-only\" really pass, and does your own dataset survive the same test?",
     "cues": [
       {
         "start": 0.05,
-        "end": 2.85,
-        "text": "Here's where our judgment becomes actual code."
+        "end": 3.762,
+        "text": "Here's where all our talk about judgment turns into actual code."
       },
       {
-        "start": 2.85,
-        "end": 12.437,
-        "text": "We've got four datasets competing for a night-pedestrian project, and the script scores each one on license, labels, size, and where the data came from."
+        "start": 3.762,
+        "end": 13.737,
+        "text": "We've got four datasets for a night-pedestrian study, and this little function scores each one on license, labels, size, and where the data actually came from."
       },
       {
-        "start": 12.437,
-        "end": 21.562,
-        "text": "Watch what happens: the million-image set gets rejected while the tiny five-hundred-image one wins, because size isn't king — fitness for your question is."
+        "start": 13.737,
+        "end": 23.237,
+        "text": "Watch what happens: the million-image set gets skipped because its license is unknown and it was scraped, while the tiny 500-image set gets a green light."
       },
       {
-        "start": 21.562,
-        "end": 31.287,
-        "text": "Then I want you to wrestle with two things: does \"research-only\" really pass for what you're doing, and add your own dataset as a fifth entry to see if you agree with the verdict."
+        "start": 23.237,
+        "end": 26.412,
+        "text": "Size isn't king here — fitness for your question is."
+      },
+      {
+        "start": 26.412,
+        "end": 33.362,
+        "text": "Then I want you to argue with the code: does \"research-only\" really pass, and does your own dataset survive the same test?"
       }
     ],
-    "bytes": 188064,
+    "bytes": 200592,
     "model": "claude-opus-4-8"
   },
   "your-project": {

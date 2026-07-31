@@ -650,71 +650,66 @@
     "model": "claude-opus-4-8"
   },
   "lab-citation-graph": {
-    "hash": "35b0bd2d268d5e62",
+    "hash": "e01aaed9817c95ba",
     "voice": "en-US-AndrewMultilingualNeural",
-    "script": "Alright, let's make citation graphs real by actually reading some code. Here we've got a tiny network of object-detection papers, and each connection just means one paper cites an older one. Notice how the roots are the papers everyone builds on, while the frontier papers are the newest ones nobody has cited yet. And look at that little function that traces a paper back to its origins — that's literally Tree view in about four lines. Try the second challenge: invent a paper linking night and rain detection, and you've just proposed a study that bridges two separate clusters.",
+    "script": "Here we're going to actually read a citation graph in code, using a tiny network of object detection papers. Each arrow just means one paper cites another, and from that simple list we can find two things: the roots, the foundational papers everyone builds on, and the frontier, the newest work nobody's cited yet. Notice that little backward-tracing function — that's exactly the Tree view idea in just four lines. And when you get to the second challenge, adding a paper that bridges the night and rain clusters, you're literally proposing a brand-new study across a gap in the research!",
     "cues": [
       {
         "start": 0.05,
-        "end": 4.15,
-        "text": "Alright, let's make citation graphs real by actually reading some code."
+        "end": 6.962,
+        "text": "Here we're going to actually read a citation graph in code, using a tiny network of object detection papers."
       },
       {
-        "start": 4.15,
-        "end": 11.5,
-        "text": "Here we've got a tiny network of object-detection papers, and each connection just means one paper cites an older one."
+        "start": 6.962,
+        "end": 19.7,
+        "text": "Each arrow just means one paper cites another, and from that simple list we can find two things: the roots, the foundational papers everyone builds on, and the frontier, the newest work nobody's cited yet."
       },
       {
-        "start": 11.5,
-        "end": 19.312,
-        "text": "Notice how the roots are the papers everyone builds on, while the frontier papers are the newest ones nobody has cited yet."
+        "start": 19.7,
+        "end": 26.312,
+        "text": "Notice that little backward-tracing function — that's exactly the Tree view idea in just four lines."
       },
       {
-        "start": 19.312,
-        "end": 26.887,
-        "text": "And look at that little function that traces a paper back to its origins — that's literally Tree view in about four lines."
-      },
-      {
-        "start": 26.887,
-        "end": 35.325,
-        "text": "Try the second challenge: invent a paper linking night and rain detection, and you've just proposed a study that bridges two separate clusters."
+        "start": 26.312,
+        "end": 37.275,
+        "text": "And when you get to the second challenge, adding a paper that bridges the night and rain clusters, you're literally proposing a brand-new study across a gap in the research!"
       }
     ],
-    "bytes": 212256,
+    "bytes": 224064,
     "model": "claude-opus-4-8"
   },
   "lab-relevance": {
-    "hash": "833534cd8150886d",
+    "hash": "44f1818b68ed97cc",
     "voice": "en-US-AndrewMultilingualNeural",
-    "script": "Imagine you're facing ten thousand papers and you need the five that actually matter. Here's the simplest possible idea: just count how many words your question shares with each paper's title, and rank by that overlap. Run it and watch — the movie sentiment paper scores basically zero, which is exactly what we want. But look closely at paper D: it says \"darkness\" where you wrote \"night,\" so the ranker under-rates it even though it's a perfect match. That gap right there is precisely why real search tools rank by meaning, not just matching letters.",
+    "script": "Imagine you're staring at ten thousand papers and you need the five that actually matter. Here's the simplest trick: count how many words your question shares with each title, and rank by that overlap. Watch what happens — the movie sentiment paper scores basically zero, and that's exactly the mismatch we want to catch. But look at paper D: it says \"darkness\" where you wrote \"night,\" same meaning but no shared letters, so our ranker undervalues it. That gap is precisely why real tools search by meaning, not just words.",
     "cues": [
       {
         "start": 0.05,
-        "end": 5.212,
-        "text": "Imagine you're facing ten thousand papers and you need the five that actually matter."
+        "end": 5.45,
+        "text": "Imagine you're staring at ten thousand papers and you need the five that actually matter."
       },
       {
-        "start": 5.212,
-        "end": 13.05,
-        "text": "Here's the simplest possible idea: just count how many words your question shares with each paper's title, and rank by that overlap."
+        "start": 5.45,
+        "end": 12.125,
+        "text": "Here's the simplest trick: count how many words your question shares with each title, and rank by that overlap."
       },
       {
-        "start": 13.05,
-        "end": 19.55,
-        "text": "Run it and watch — the movie sentiment paper scores basically zero, which is exactly what we want."
+        "start": 12.125,
+        "end": 19.65,
+        "text": "Watch what happens — the movie sentiment paper scores basically zero, and that's exactly the mismatch we want to catch."
       },
       {
-        "start": 19.55,
-        "end": 28.212,
-        "text": "But look closely at paper D: it says \"darkness\" where you wrote \"night,\" so the ranker under-rates it even though it's a perfect match."
+        "start": 19.65,
+        "end": 28.95,
+        "text": "But look at paper D: it says \"darkness\" where you wrote \"night,\" same meaning but no shared letters, so our ranker undervalues it."
       },
       {
-        "start": 28.212,
-        "end": 35.012,
-        "text": "That gap right there is precisely why real search tools rank by meaning, not just matching letters."
+        "start": 28.95,
+        "end": 34.025,
+        "text": "That gap is precisely why real tools search by meaning, not just words."
       }
     ],
-    "bytes": 210384,
+    "bytes": 204480,
     "model": "claude-opus-4-8"
   },
   "your-project": {

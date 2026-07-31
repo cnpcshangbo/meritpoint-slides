@@ -296,32 +296,32 @@
     "model": "claude-opus-4-8"
   },
   "video-her-agi": {
-    "hash": "a4f7e2046ae53850",
+    "hash": "08c2e3f3496e6545",
     "voice": "en-US-AndrewMultilingualNeural",
-    "script": "Now let's look at the kind of AI you see in movies, like the film \"Her,\" where a computer can talk, learn anything, and even set its own goals. That idea has a name — Artificial General Intelligence, one system that reasons across everything the way a human can. But here's the crucial part: it doesn't actually exist yet. A movie is not evidence, and learning to tell the real science from the sci-fi is genuinely one of the sharpest skills you can build.",
+    "script": "Let's talk about the big dream of AI, the kind you see in movies like \"Her\" — one system that can learn any task, set its own goals, and reason about everything, just like a human. That's called Artificial General Intelligence, and here's the key point: it doesn't exist yet. Films like this are wonderful for imagining the future, but a movie is not evidence — telling apart the real science from the storytelling is genuinely a skill you're building right now. We'll watch clips from the gentler titles together in class, and I'll flag the more mature ones as optional viewing on your own time.",
     "cues": [
       {
         "start": 0.05,
-        "end": 8.487,
-        "text": "Now let's look at the kind of AI you see in movies, like the film \"Her,\" where a computer can talk, learn anything, and even set its own goals."
+        "end": 11.3,
+        "text": "Let's talk about the big dream of AI, the kind you see in movies like \"Her\" — one system that can learn any task, set its own goals, and reason about everything, just like a human."
       },
       {
-        "start": 8.487,
-        "end": 16.562,
-        "text": "That idea has a name — Artificial General Intelligence, one system that reasons across everything the way a human can."
+        "start": 11.3,
+        "end": 17.112,
+        "text": "That's called Artificial General Intelligence, and here's the key point: it doesn't exist yet."
       },
       {
-        "start": 16.562,
-        "end": 20.3,
-        "text": "But here's the crucial part: it doesn't actually exist yet."
+        "start": 17.112,
+        "end": 28.637,
+        "text": "Films like this are wonderful for imagining the future, but a movie is not evidence — telling apart the real science from the storytelling is genuinely a skill you're building right now."
       },
       {
-        "start": 20.3,
-        "end": 28.437,
-        "text": "A movie is not evidence, and learning to tell the real science from the sci-fi is genuinely one of the sharpest skills you can build."
+        "start": 28.637,
+        "end": 36.225,
+        "text": "We'll watch clips from the gentler titles together in class, and I'll flag the more mature ones as optional viewing on your own time."
       }
     ],
-    "bytes": 170928,
+    "bytes": 217728,
     "model": "claude-opus-4-8"
   },
   "quiz-after-clips": {
@@ -791,66 +791,61 @@
     "model": "claude-opus-4-8"
   },
   "lab-python-pattern": {
-    "hash": "af73885389b1d4a2",
+    "hash": "a4917b6bd25d33ad",
     "voice": "en-US-AndrewMultilingualNeural",
-    "script": "Alright, time to get our hands dirty with some real Python and a tiny slice of Titanic history. What we're doing here is exactly what a data scientist does — asking the data a question and letting it answer. Run the code and you'll see the survival rates for women, men, and first-class passengers pop out, just from counting patterns. Then take on the challenge: figure out the survival rate for third-class men, and don't be shy about asking the assistant to explain anything that feels tricky.",
+    "script": "Alright, this is where you get to think like a real data scientist, and it's actually simpler than it looks. We've got a tiny list of Titanic passengers, and each one tells us their sex, their class, and whether they survived. Hit Run and watch the code count up the survival rates for different groups — women, men, first class — and notice how the patterns jump out. Then take on the challenge: figure out the survival rate for third-class men, and if you get stuck, just ask Mira to explain any line.",
     "cues": [
       {
         "start": 0.05,
-        "end": 5.725,
-        "text": "Alright, time to get our hands dirty with some real Python and a tiny slice of Titanic history."
+        "end": 6.862,
+        "text": "Alright, this is where you get to think like a real data scientist, and it's actually simpler than it looks."
       },
       {
-        "start": 5.725,
-        "end": 12.162,
-        "text": "What we're doing here is exactly what a data scientist does — asking the data a question and letting it answer."
+        "start": 6.862,
+        "end": 14.012,
+        "text": "We've got a tiny list of Titanic passengers, and each one tells us their sex, their class, and whether they survived."
       },
       {
-        "start": 12.162,
-        "end": 19.737,
-        "text": "Run the code and you'll see the survival rates for women, men, and first-class passengers pop out, just from counting patterns."
+        "start": 14.012,
+        "end": 22.575,
+        "text": "Hit Run and watch the code count up the survival rates for different groups — women, men, first class — and notice how the patterns jump out."
       },
       {
-        "start": 19.737,
-        "end": 29.562,
-        "text": "Then take on the challenge: figure out the survival rate for third-class men, and don't be shy about asking the assistant to explain anything that feels tricky."
+        "start": 22.575,
+        "end": 30.837,
+        "text": "Then take on the challenge: figure out the survival rate for third-class men, and if you get stuck, just ask Mira to explain any line."
       }
     ],
-    "bytes": 177696,
+    "bytes": 185328,
     "model": "claude-opus-4-8"
   },
   "lab-model-learn": {
-    "hash": "f9b03e0b32b186bb",
+    "hash": "3808ef2d37e5555e",
     "voice": "en-US-AndrewMultilingualNeural",
-    "script": "Alright, here's where it gets exciting — we're going to watch a model actually learn a rule all by itself. We give it some simple data: how many hours students studied, and whether they passed. Notice there's no if-statement telling it \"four hours means pass.\" Instead, it makes a guess, checks how wrong it was, and nudges itself two thousand times until it gets good. Run it, then ask the assistant to explain how it learns, and try the challenge of changing that learning rate.",
+    "script": "Here's where things get really cool — we're going to watch a model actually learn a rule all by itself. Our data is simple: hours studied versus whether someone passed, and nobody writes an if-statement saying \"four hours means pass.\" Instead, the model starts knowing nothing, makes a guess, checks how wrong it was, and nudges itself in the right direction two thousand times over. Run it and watch those numbers improve, then ask our assistant to explain exactly how it learns.",
     "cues": [
       {
         "start": 0.05,
-        "end": 6.1370000000000005,
-        "text": "Alright, here's where it gets exciting — we're going to watch a model actually learn a rule all by itself."
+        "end": 6.25,
+        "text": "Here's where things get really cool — we're going to watch a model actually learn a rule all by itself."
       },
       {
-        "start": 6.1370000000000005,
-        "end": 11.437,
-        "text": "We give it some simple data: how many hours students studied, and whether they passed."
+        "start": 6.25,
+        "end": 14.887,
+        "text": "Our data is simple: hours studied versus whether someone passed, and nobody writes an if-statement saying \"four hours means pass.\""
       },
       {
-        "start": 11.437,
-        "end": 15.887,
-        "text": "Notice there's no if-statement telling it \"four hours means pass.\""
+        "start": 14.887,
+        "end": 24.475,
+        "text": "Instead, the model starts knowing nothing, makes a guess, checks how wrong it was, and nudges itself in the right direction two thousand times over."
       },
       {
-        "start": 15.887,
-        "end": 22.425,
-        "text": "Instead, it makes a guess, checks how wrong it was, and nudges itself two thousand times until it gets good."
-      },
-      {
-        "start": 22.425,
-        "end": 29.075,
-        "text": "Run it, then ask the assistant to explain how it learns, and try the challenge of changing that learning rate."
+        "start": 24.475,
+        "end": 30.762,
+        "text": "Run it and watch those numbers improve, then ask our assistant to explain exactly how it learns."
       }
     ],
-    "bytes": 174816,
+    "bytes": 184896,
     "model": "claude-opus-4-8"
   },
   "case-study": {
@@ -1254,6 +1249,132 @@
       }
     ],
     "bytes": 168192,
+    "model": "claude-opus-4-8"
+  },
+  "instructor-intro": {
+    "hash": "78436ee13c77392f",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let me quickly introduce myself. I'm Bo Shang, and I work as a postdoctoral scholar in the AI and Mobility Research Lab here at City College. My world is robotics and autonomous systems — teaching cars to see using LiDAR, cameras, and computer vision, and I've done everything from bridge inspection to traffic monitoring with drones. So when we explore self-driving perception in this course, that's my actual research, not some textbook example. And here's my promise to you: I'd much rather you walk away with one thing you built and ran yourself than ten definitions you memorized.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.15,
+        "text": "Let me quickly introduce myself."
+      },
+      {
+        "start": 2.15,
+        "end": 8.725,
+        "text": "I'm Bo Shang, and I work as a postdoctoral scholar in the AI and Mobility Research Lab here at City College."
+      },
+      {
+        "start": 8.725,
+        "end": 20.562,
+        "text": "My world is robotics and autonomous systems — teaching cars to see using LiDAR, cameras, and computer vision, and I've done everything from bridge inspection to traffic monitoring with drones."
+      },
+      {
+        "start": 20.562,
+        "end": 28.037,
+        "text": "So when we explore self-driving perception in this course, that's my actual research, not some textbook example."
+      },
+      {
+        "start": 28.037,
+        "end": 35.987,
+        "text": "And here's my promise to you: I'd much rather you walk away with one thing you built and ran yourself than ten definitions you memorized."
+      }
+    ],
+    "bytes": 216288,
+    "model": "claude-opus-4-8"
+  },
+  "syllabus-overview": {
+    "hash": "b6ecf9ee23fa4559",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Welcome! Over the next fifteen classes, we're going to build one complete research pipeline together, moving from a raw idea all the way to a finished mini-study with a paper and slides. Here's my promise to you each week: you'll walk away with one tangible result, one research skill, and one AI-tool workout you can actually use. We'll start with AI literacy and finding good questions, move into wrangling real data in Python, and finish by building machine learning models and running a fair experiment. And to keep things concrete, we'll follow one running example — teaching a car to see — but if you've got a topic you love, swap it in and carry it through the whole journey.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 0.812,
+        "text": "Welcome!"
+      },
+      {
+        "start": 0.812,
+        "end": 11.6,
+        "text": "Over the next fifteen classes, we're going to build one complete research pipeline together, moving from a raw idea all the way to a finished mini-study with a paper and slides."
+      },
+      {
+        "start": 11.6,
+        "end": 21.087,
+        "text": "Here's my promise to you each week: you'll walk away with one tangible result, one research skill, and one AI-tool workout you can actually use."
+      },
+      {
+        "start": 21.087,
+        "end": 32.45,
+        "text": "We'll start with AI literacy and finding good questions, move into wrangling real data in Python, and finish by building machine learning models and running a fair experiment."
+      },
+      {
+        "start": 32.45,
+        "end": 42.537,
+        "text": "And to keep things concrete, we'll follow one running example — teaching a car to see — but if you've got a topic you love, swap it in and carry it through the whole journey."
+      }
+    ],
+    "bytes": 255600,
+    "model": "claude-opus-4-8"
+  },
+  "assignment-requirements": {
+    "hash": "147f8f728d0972c6",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's how this course works: there are no exams at all, because everything is project-based. Instead, you'll build a research portfolio bit by bit, with weekly tangible results, real data work, honest modeling, and a final mini-study you'll write up and present. Each class ends with homework, usually just finishing what we started that day, plus an optional stretch task if you're hungry for more. And about AI tools: use them freely to brainstorm and debug, but always verify every claim, never share private data, and be honest about how you used them.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.4,
+        "text": "Here's how this course works: there are no exams at all, because everything is project-based."
+      },
+      {
+        "start": 5.4,
+        "end": 16.362,
+        "text": "Instead, you'll build a research portfolio bit by bit, with weekly tangible results, real data work, honest modeling, and a final mini-study you'll write up and present."
+      },
+      {
+        "start": 16.362,
+        "end": 24.137,
+        "text": "Each class ends with homework, usually just finishing what we started that day, plus an optional stretch task if you're hungry for more."
+      },
+      {
+        "start": 24.137,
+        "end": 34.512,
+        "text": "And about AI tools: use them freely to brainstorm and debug, but always verify every claim, never share private data, and be honest about how you used them."
+      }
+    ],
+    "bytes": 207504,
+    "model": "claude-opus-4-8"
+  },
+  "join-classroom": {
+    "hash": "1b6b3f87e76acfb3",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's get you all connected to our Google Classroom, because that's home base for everything we do together. Head to the Classroom site, tap the plus sign, choose to join a class, and type in the code you see here. Once you're in, you'll find every slide deck under Class Materials, all your homework under Assignments where you'll submit your work, and your grades and feedback in their own spot. Please join before our next class so you can turn in today's homework right there.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.675,
+        "text": "Alright, let's get you all connected to our Google Classroom, because that's home base for everything we do together."
+      },
+      {
+        "start": 6.675,
+        "end": 13.062,
+        "text": "Head to the Classroom site, tap the plus sign, choose to join a class, and type in the code you see here."
+      },
+      {
+        "start": 13.062,
+        "end": 23.15,
+        "text": "Once you're in, you'll find every slide deck under Class Materials, all your homework under Assignments where you'll submit your work, and your grades and feedback in their own spot."
+      },
+      {
+        "start": 23.15,
+        "end": 27.45,
+        "text": "Please join before our next class so you can turn in today's homework right there."
+      }
+    ],
+    "bytes": 165024,
     "model": "claude-opus-4-8"
   }
 }
