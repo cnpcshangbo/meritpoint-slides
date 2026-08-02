@@ -107,7 +107,9 @@
 .reveal .assist-head{background:linear-gradient(90deg,#0F9DB0,#2BC4D4);color:#fff;font-size:13px;font-weight:700;padding:.45em .7em;font-family:-apple-system,sans-serif;display:flex;align-items:center;justify-content:space-between;gap:.5em}
 .reveal .mira-name{display:inline-flex;align-items:center;gap:6px}
 .reveal .mira-face{flex:0 0 auto;display:block}
+.reveal .assist-head .ai-tutor,
 .reveal .assist-head .ai-model{font-family:-apple-system,sans-serif;font-size:12px;font-weight:600;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.5);border-radius:6px;padding:.15em .3em;cursor:pointer;outline:none}
+.reveal .assist-head .ai-tutor option,
 .reveal .assist-head .ai-model option{color:var(--ink)}
 .reveal .assist-body{flex:1;overflow:auto;padding:.5em .65em;font-size:13px;line-height:1.46;color:var(--ink);font-family:-apple-system,sans-serif}
 .reveal .assist-body p{font-size:13px;margin:.3em 0}.reveal .assist-body code{background:#eef3f8;border-radius:4px;padding:0 .25em;font-family:Consolas,monospace;font-size:12px}
@@ -430,7 +432,7 @@ for r in range(4):              # slide the 3x3 window
       <pre class="out">▶ Run the code to see the output here.</pre>
     </div>
     <div class="assist">
-      <div class="assist-head"><span class="mira-name"><svg class="mira-face" viewBox="0 0 40 40" width="21" height="21" aria-hidden="true"><circle cx="20" cy="21" r="15" fill="#fff"/><circle cx="14.5" cy="18" r="2" fill="#0C7E8E"/><circle cx="25.5" cy="18" r="2" fill="#0C7E8E"/><path d="M13 23.5a7.5 7.5 0 0 0 14 0" fill="none" stroke="#0C7E8E" stroke-width="2.4" stroke-linecap="round"/><circle cx="31.5" cy="8" r="2.8" fill="#FFC94D"/></svg>Mira · 小析</span><select class="ai-model" title="Choose the AI model"><option value="haiku">⚡ Haiku · fastest</option><option value="sonnet">Sonnet · balanced</option><option value="opus">Opus · most capable</option></select></div>
+      <div class="assist-head"><span class="mira-name"><svg class="mira-face" viewBox="0 0 40 40" width="21" height="21" aria-hidden="true"><circle cx="20" cy="21" r="15" fill="#fff"/><circle cx="14.5" cy="18" r="2" fill="#0C7E8E"/><circle cx="25.5" cy="18" r="2" fill="#0C7E8E"/><path d="M13 23.5a7.5 7.5 0 0 0 14 0" fill="none" stroke="#0C7E8E" stroke-width="2.4" stroke-linecap="round"/><circle cx="31.5" cy="8" r="2.8" fill="#FFC94D"/></svg><span class="tutor-name">Mira · 小析</span></span><select class="ai-tutor" title="Choose your AI tutor"><option value="mira">Mira · 小析</option><option value="bob">Bob · AI, instructor's voice</option></select><select class="ai-model" title="Choose the AI model"><option value="haiku">⚡ Haiku · fastest</option><option value="sonnet">Sonnet · balanced</option><option value="opus">Opus · most capable</option></select></div>
       <div class="assist-body">Hi, I'm <b>Mira · 小析</b>, your AI teaching assistant. Edit the code and hit <b>Run</b>. Stuck? I can <b>Explain</b>, <b>Debug</b>, or <b>Improve</b> it — or just ask me below.</div>
       <div class="assist-ask"><input class="ask-in" placeholder="问 Mira · ask Mira about this code…"><button class="ask-btn">Ask</button></div>
     </div>
@@ -1105,19 +1107,56 @@ function mdToHtml(md){
   });
   return html;
 }
+/* Which tutors speak. Mira is text-only by design (see docs/MIRA.md); Bob
+   answers in a synthetic copy of the instructor's voice. */
+const TUTOR_VOICED={bob:1};
 async function askAssistant(lab,action,question){
   lab.classList.remove('folded'); // assistant is folded by default — any AI action opens it
   const body=lab.querySelector('.assist-body');
   const sel=lab.querySelector('.ai-model');
   const model=(sel&&sel.value)||'haiku';
+  const tsel=lab.querySelector('.ai-tutor');
+  const tutor=(tsel&&tsel.value)||'mira';
+  const who=tsel?tsel.options[tsel.selectedIndex].text.split(' · ')[0]:'Mira';
   body.innerHTML='<p class="muted">✨ Thinking…</p>';
   try{
     const r=await fetch('/api/assistant',{method:'POST',headers:{'content-type':'application/json'},
-      body:JSON.stringify({action:action,question:question||'',code:lab.querySelector('.code').value,error:lab.dataset.lastError||'',model:model})});
+      body:JSON.stringify({action:action,question:question||'',code:lab.querySelector('.code').value,error:lab.dataset.lastError||'',model:model,tutor:tutor})});
     const j=await r.json();
     body.innerHTML=mdToHtml(j.text||'(no response)');
-  }catch(e){ body.innerHTML='<p class="muted">Mira is unavailable right now. Try again shortly.</p>'; }
+    if(TUTOR_VOICED[tutor]&&j.text){
+      const b=document.createElement('button');
+      b.className='speak tutor-speak'; b.dataset.tutor=tutor;
+      // Strip code blocks — reading Python aloud helps nobody.
+      b.dataset.text=j.text.replace(/```[\s\S]*?```/g,' ').replace(/\s+/g,' ').trim().slice(0,1200);
+      b.innerHTML='<span>🔊 Speak</span>';
+      if(b.dataset.text) body.appendChild(b);
+    }
+  }catch(e){ body.innerHTML='<p class="muted">'+who+' is unavailable right now. Try again shortly.</p>'; }
 }
+/* Voiced replies are generated on demand — each one costs GPU time, so the
+   audio is fetched on the first click rather than with every answer. Capture
+   phase, so this runs before the shared .speak player; once data-audio is set
+   the click falls through to it and plays normally. */
+document.addEventListener('click',async function(e){
+  const b=e.target.closest('.tutor-speak'); if(!b||b.dataset.audio) return;
+  e.stopPropagation();
+  const lbl=b.querySelector('span'); lbl.textContent='Generating…';
+  try{
+    const r=await fetch('/api/tutor-voice',{method:'POST',headers:{'content-type':'application/json'},
+      body:JSON.stringify({tutor:b.dataset.tutor,text:b.dataset.text})});
+    if(!r.ok) throw new Error('unavailable');
+    b.dataset.audio=URL.createObjectURL(await r.blob());
+    lbl.textContent='Speak'; b.dataset.label='Speak';
+    b.click(); // hand off to the shared player
+  }catch(err){ lbl.textContent='🔇 Voice unavailable'; }
+},true);
+/* Keep the header name in step with the picker. */
+document.addEventListener('change',function(e){
+  const s=e.target.closest('.ai-tutor'); if(!s) return;
+  const head=s.closest('.assist-head'), nm=head&&head.querySelector('.tutor-name');
+  if(nm) nm.textContent=s.options[s.selectedIndex].text.split(' · ')[0]==='Mira'?'Mira · 小析':'Bob';
+});
 document.addEventListener('click',function(e){
   const t=e.target;
   if(t.closest('.lab .run')){ runLab(labOf(t.closest('.run'))); }
