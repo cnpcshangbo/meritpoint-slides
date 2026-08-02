@@ -239,6 +239,9 @@
 /* PDF download — top-left row, after Donate */
 #pdfBtn{position:fixed;left:178px;top:19px;z-index:60;background:#fff;color:var(--navy);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:12.5px;font-weight:700;font-family:-apple-system,sans-serif;text-decoration:none;box-shadow:0 4px 14px rgba(20,40,70,.18)}
 #pdfBtn:hover{border-color:var(--teal);color:var(--teal);text-decoration:none}
+#watchBtn{position:fixed;left:256px;top:19px;z-index:60;background:var(--navy);color:#fff;border:1px solid var(--navy);border-radius:999px;padding:8px 14px;font-size:12.5px;font-weight:700;font-family:-apple-system,sans-serif;text-decoration:none;box-shadow:0 4px 14px rgba(20,40,70,.18)}
+#watchBtn:hover{filter:brightness(1.15);text-decoration:none}
+#watchBtn[hidden]{display:none}
 /* keep screen-only chrome out of print / the exported PDF (fixed elements repeat on every page) */
 @media print{#donateBtn,#mpaLogo,#pdfBtn,#ccBtn,#listenBtn,#commentBtn,#commentPanel,#capBar,#mpAuth{display:none!important}}
 </style></head><body>
@@ -751,6 +754,8 @@ print(df.groupby("pclass")["survived"].mean())
 
 <a id="donateBtn" href="https://buy.stripe.com/14AbIT26kfUzbqjbGv4ow00" target="_blank" rel="noopener">♥ Donate</a>
 <a id="pdfBtn" href="slides.pdf" download title="Download these slides as a PDF">⬇ PDF</a>
+<a id="watchBtn" href="#" target="_blank" rel="noopener" hidden
+   title="从这一页开始看录播 · watch the recording from this slide">🎬 <span>录播</span></a>
 <a id="mpaLogo" href="/meritpoint-slides/" title="Merit Point Academy — all courses"><img src="/meritpoint-slides/assets/mpa-logo.png" alt="Merit Point Academy"></a>
 <!-- per-slide comments -->
 <audio id="narratorAudio" preload="none" style="display:none"></audio>
@@ -1531,7 +1536,44 @@ form.onsubmit=async function(e){ e.preventDefault();
     const j=await r.json(); if(j.ok){ document.getElementById('cbody').value=''; msg.textContent='Posted! Thanks.'; loadComments(); } else { msg.textContent=j.error||'Could not post.'; }
   }catch(e){ msg.textContent='Network error — try again.'; }
 };
-Reveal.on('slidechanged',function(){ stopAudio(); curSid=sidOf(); updateBadge(); updateListen(); sendSlide(); if(panel.classList.contains('open')){ cph.textContent='Comments · '+curSid; loadComments(); } });
+
+/* ── deck ⇄ recording: jump to the moment this slide is taught ──────
+   The lessons site knows which video teaches this deck and where each
+   segment starts; ask it once, then point the button at the right second
+   as the student moves. Silent no-op when no recording exists yet. */
+var _watchMap=null;
+(async function(){
+  try{
+    // no regex here: this file is a template literal, which eats backslashes
+    var parts=location.pathname.split('/').filter(Boolean);
+    if(parts.length<2) return;
+    var deck=parts[0]+'/'+parts[1];                          // "ai-toolbox/class-09"
+    var r=await fetch('https://academic.hopeembark.org/api/lessons/deck/'+deck,{credentials:'omit'});
+    if(!r.ok) return;
+    _watchMap=await r.json();
+    updateWatch();
+  }catch(e){}
+})();
+// 'slidechanged' never fires for the slide you land on, and 'ready' may have
+// fired before this runs, so just retry a few times while the deck settles.
+try{ Reveal.on('ready',updateWatch); }catch(e){}
+[300,900,2000,4000].forEach(function(ms){ setTimeout(updateWatch,ms); });
+function updateWatch(){
+  var btn=document.getElementById('watchBtn');
+  if(!btn) return;
+  if(!_watchMap||!_watchMap.chapters){ btn.dataset.why='no-map'; return; }
+  var sid=null;
+  try{ sid=Reveal.getCurrentSlide().dataset.sid; }catch(e){ btn.dataset.why='no-reveal'; return; }
+  btn.dataset.sid=sid||'';
+  var hit=_watchMap.chapters.filter(function(c){return c.sid===sid;})[0];
+  if(!hit){ btn.hidden=true; btn.dataset.why='no-chapter'; return; }
+  btn.dataset.why='ok';
+  var mm=Math.floor(hit.t/60), ss=String(Math.floor(hit.t%60)).padStart(2,'0');
+  btn.href=_watchMap.watchUrl+'&t='+Math.floor(hit.t);
+  btn.querySelector('span').textContent='录播 '+mm+':'+ss;
+  btn.hidden=false;
+}
+Reveal.on('slidechanged',function(){ stopAudio(); curSid=sidOf(); updateBadge(); updateListen(); sendSlide(); updateWatch(); if(panel.classList.contains('open')){ cph.textContent='Comments · '+curSid; loadComments(); } });
 Reveal.on('ready',function(){ curSid=sidOf(); loadCounts(); loadNarrated(); });
 
 /* ---------- Live classroom: presence chip + quiz stream (SSE) ---------- */
