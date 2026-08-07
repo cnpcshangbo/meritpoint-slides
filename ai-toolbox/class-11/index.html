@@ -301,7 +301,7 @@
     <div style="margin-top:.4em;display:flex;align-items:center;gap:1em">
       <button class="speak" data-audio="audio/quote.mp3">🔊 <span>Speak this story</span></button>
       <span class="muted" style="font-size:.52em">Neural voice · click to play / pause</span></div>
-    <div style="text-align:center;margin-top:.45em"><img src="assets/comic-story-perceptron.png" alt="Comic: a 1958 newspaper headline promising a walking, talking machine, next to the actual perceptron drawing a line between two groups of dots" style="width:100%;max-width:24em;border-radius:10px"></div>
+    <div style="text-align:center;margin-top:.45em"><img src="assets/comic-story-perceptron.png" alt="Comic: a 1958 newspaper headline promising a walking, talking machine, next to the actual perceptron drawing a line between two groups of dots" style="width:100%;max-width:17.5em;border-radius:10px"></div>
     <p class="src">Two lessons in one story: <b>AI hype is as old as AI itself</b> — and the boring idea underneath the hype is often the one that lasts.</p>
     <aside class="notes">Worth being precise: the "walk, talk, see, write" line is the NYT paraphrasing the Navy's own press release, not Rosenblatt's paper. His actual claims were narrower. This matters — the pattern isn't "researcher lies," it's "modest result + institutional press office + eager reporter = a myth that outlives the machine." Ask the room where they saw that pattern last month.</aside>
 </section>
@@ -344,8 +344,8 @@
     <text x="12" y="156" font-size="9" fill="#5E7183" transform="rotate(-90 12,156)">P(class = 1)</text>
   </svg>
     </div>
-    <div class="callout"><b>One more thing changes with it:</b> squared error stops being the right loss. Classification uses <b>cross-entropy</b> (log loss) — it punishes confident wrong answers brutally, and unlike MSE-through-a-sigmoid it gives gradient descent a bowl-shaped landscape with a single bottom instead of a lumpy one full of false valleys.</div>
-    <aside class="notes">The curve is plotted from the real function at 0.2 intervals; the labelled dots are σ(−4)=0.02, σ(−2)=0.12, σ(0)=0.50, σ(2)=0.88, σ(4)=0.98. Two claims to make carefully: cross-entropy's convexity is the technical reason (MSE composed with sigmoid is non-convex), and "punishes confident wrong answers" is the intuitive one — a prediction of 0.99 on a true 0 costs about 4.6, a prediction of 0.6 costs about 0.9.</aside>
+    <div class="callout"><b>One more thing changes with it:</b> squared error stops being the right loss. Classification uses <b>cross-entropy</b> (log loss). It punishes confident wrong answers without limit — and, crucially, it still <b>pushes</b> when the model is confidently wrong. Squared error through a sigmoid does the opposite: at P = 0.01 on a true 1, its gradient is <b>50× smaller</b> than cross-entropy's, so training crawls exactly where it most needs to move.</div>
+    <aside class="notes">The curve is plotted from the real function at 0.2 intervals; the labelled dots are σ(−4)=0.02, σ(−2)=0.12, σ(0)=0.50, σ(2)=0.88, σ(4)=0.98. Be precise about the two reasons, because the textbook version is often overstated. (1) Cost: predicting 0.01 on a true 1 costs 4.6 under log loss and only 0.98 under squared error. (2) Gradient: d(MSE)/dz = 2(p−y)·p(1−p) vanishes as p→0, while d(log-loss)/dz = p−y stays at ~1 — a 500× difference at p = 0.001. Cross-entropy is also convex in the weights and MSE-through-a-sigmoid is not, but on a one-feature problem that rarely produces a second minimum; don't claim students will see one.</aside>
 </section>
 <section id="quiz-sigmoid" data-sid="quiz-sigmoid">
 <div class="kicker">Check · reading a probability</div>
@@ -412,7 +412,7 @@
       <div class="step loop"><div class="n">3</div><b>Boundary</b><span>Plot it — then move the threshold and watch it slide</span></div>
     </div>
     <div class="callout"><b>The asymmetry is the whole engineering problem.</b> A false alarm means the car brakes for a plastic bag: annoying, occasionally dangerous for the driver behind. A miss means the car doesn't brake for a person. Those two errors are not worth the same, so <b>0.5 is a default, not a decision</b> — and no amount of extra training data will choose it for you.</div>
-    <aside class="notes">This is where classification stops being a maths lesson. The threshold is a value judgement wearing a number's clothes; students who leave with only that have got their money's worth. Lab 2 makes them move it and read what breaks — recall climbs from 0.62 to 0.88 as the threshold drops from 0.7 to 0.3, and precision pays for it.</aside>
+    <aside class="notes">This is where classification stops being a maths lesson. The threshold is a value judgement wearing a number's clothes; students who leave with only that have got their money's worth. Lab 2 makes them move it and read what breaks — recall climbs from 0.38 to 1.00 as the threshold drops from 0.7 to 0.3, and precision falls from 1.00 to 0.53 paying for it.</aside>
 </section>
 <section id="discuss-costly-errors" data-sid="discuss-costly-errors">
 <div class="kicker">Discuss · 5 minutes · which mistake is worse?</div>
@@ -554,7 +554,10 @@ label = [0,1,1,1,0,0,0,1,1,1,0,0,0,1,0,0,1,1,0,0,
          0,0,1,0,1,1,1,0,0,1,0,1,1,1,0,1,0,1,0,1,
          1,1,1,1,0,1,0,0,1,0]
 
-X = [[c, h] for c, h in zip(conf, box_h)]
+# Class 8's lesson, cashed in: box height runs 8-83, confidence runs 0.2-0.95.
+# Left unscaled, the penalty inside LogisticRegression squashes the confidence
+# weight to almost nothing. Put both features on the same scale and BOTH count.
+X = [[c, h / 100] for c, h in zip(conf, box_h)]
 X_train, X_test, y_train, y_test = train_test_split(
     X, label, test_size=0.3, random_state=42, stratify=label)
 
@@ -562,13 +565,13 @@ clf = LogisticRegression()
 clf.fit(X_train, y_train)
 
 w1, w2 = clf.coef_[0]
-print(f"z = {w1:.2f}*confidence + {w2:.3f}*box_height + ({clf.intercept_[0]:.2f})")
+print(f"z = {w1:.2f}*confidence + {w2:.2f}*(box_height/100) + ({clf.intercept_[0]:.2f})")
 print(f"train accuracy: {accuracy_score(y_train, clf.predict(X_train)):.3f}")
 print(f"test  accuracy: {accuracy_score(y_test,  clf.predict(X_test)):.3f}")
 
 print("\nthree new detections the model has never seen:")
 for c, h in [(0.30, 12), (0.62, 40), (0.91, 75)]:
-    p = clf.predict_proba([[c, h]])[0][1]
+    p = clf.predict_proba([[c, h / 100]])[0][1]
     print(f"  confidence={c}  box_height={h:2d}px  -&gt;  P(real)={p:.3f}"
           f"  -&gt;  {'REAL' if p &gt;= 0.5 else 'false alarm'}")
 
@@ -600,8 +603,9 @@ print("  96% accurate. Misses every pedestrian. Accuracy alone cannot see this."
 
 # CHALLENGE 1: which threshold would you ship in a real car, and what does
 #              your choice cost the driver behind you?
-# CHALLENGE 2: your scratch model in Lab 1 hit 92% on ALL the data. This one
-#              gets 80% on data it never saw. Which number is the honest one?
+# CHALLENGE 2: delete the "/ 100" on the box_height feature and re-run. The
+#              coefficients change enormously. Which feature did the model
+#              stop listening to, and why? (Hint: Class 8, normalisation.)
 </textarea>
       </div>
       <div class="lab-bar">
@@ -627,7 +631,7 @@ print("  96% accurate. Misses every pedestrian. Accuracy alone cannot see this."
       <div class="assist-body">Hi, I'm <b>Mira · 小析</b>, your AI teaching assistant. Edit the code and hit <b>Run</b>. Stuck? I can <b>Explain</b>, <b>Debug</b>, or <b>Improve</b> it — or just ask me below.</div>
       <div class="assist-ask"><input class="ask-in" placeholder="问 Mira · ask Mira about this code…"><button class="ask-btn">Ask</button></div>
     </div>
-  </div><aside class="notes">First run loads sklearn (~15-30s). Verified in real Python: z = 0.90·confidence + 0.197·box_height − 8.47; train 0.886, test 0.800. The three probe detections give 0.003, 0.494 and 0.999 — point at the middle one, it lands just BELOW the threshold and flips to REAL the moment you lower it. Sweep: threshold 0.3 → recall 0.88 / precision 0.88 / 1 miss; 0.7 → recall 0.62 / precision 0.83 / 3 misses; 0.9 → precision 1.00 and still 3 misses. Test accuracy of 0.80 is deliberately modest and worth saying out loud — 50 noisy rows is a small, honest dataset, not a demo rigged to look good.</aside>
+  </div><aside class="notes">First run loads sklearn (~15-30s). Verified in real Python: z = 1.74·confidence + 1.84·(box_height/100) − 1.78; train 0.971, test 0.867. The three probes give 0.261, 0.508 and 0.765 — point at the middle one, it clears the threshold by eight thousandths and flips to 'false alarm' the moment you nudge the threshold up. Sweep: 0.3 → recall 1.00 / precision 0.53 / 0 missed; 0.5 → 0.88 / 0.88 / 1 missed; 0.7 → 0.38 / 1.00 / 5 missed; 0.9 → recall 0.00, precision undefined, all 8 missed — at 0.9 this model has BECOME the always-say-no model from the accuracy trap. Challenge 2 is the Class-8 payoff: unscaled, the coefficients go to 0.90 and 0.197 and test accuracy drops to 0.800, because L2 shrinks the confidence weight into irrelevance and the model listens to box height alone.</aside>
 </section>
 <section id="your-project" data-sid="your-project">
 <div class="kicker">Your project</div>
@@ -662,12 +666,12 @@ print("  96% accurate. Misses every pedestrian. Accuracy alone cannot see this."
 <div class="kicker">Benchmark · judge against this</div>
     <h2>What a finished classifier looks like</h2>
     <div class="grid3" style="margin-top:.25em">
-      <div class="box"><h3 style="color:var(--navy)">📐 The boundary</h3><p><span style="font-family:Consolas,monospace;font-size:.78em">z = 0.90·conf + 0.197·box_h − 8.47</span><br>Two weights and an intercept — readable as "more confidence and a bigger box both push toward REAL."</p></div>
-      <div class="box"><h3 style="color:var(--teal)">📊 The honest score</h3><p>Test accuracy 0.80 <i>with its confusion matrix beside it</i> — 6 hits, 6 correct rejections, 1 false alarm, 2 misses. Not accuracy alone.</p></div>
+      <div class="box"><h3 style="color:var(--navy)">📐 The boundary</h3><p><span style="font-family:Consolas,monospace;font-size:.78em">z = 1.74·conf + 1.84·(box_h/100) − 1.78</span><br>Two weights and an intercept — readable as "more confidence and a bigger box both push toward REAL."</p></div>
+      <div class="box"><h3 style="color:var(--teal)">📊 The honest score</h3><p>Test accuracy 0.867 <i>with its confusion matrix beside it</i> — 7 hits, 6 correct rejections, 1 false alarm, 1 miss. Not accuracy alone.</p></div>
       <div class="box"><h3 style="color:var(--coral)">📈 The plot</h3><p>Points coloured by class, the boundary drawn through them, labelled axes and a title — a stranger sees the split without you narrating it (Class 9's rule).</p></div>
     </div>
     <div class="callout"><b>The bar:</b> a boundary you can read in one sentence, a confusion matrix rather than a lone percentage, a labelled plot that proves the split — and one sentence on which of your two error types you'd rather make, and why.</div>
-    <aside class="notes">These are Lab 2's real numbers, so the rubric and the lab agree. The last clause is the transfer test: a student who can say 'I'd rather have false alarms than misses because…' has understood the hour; a student who only reports 0.80 has understood the API.</aside>
+    <aside class="notes">These are Lab 2's real numbers, so the rubric and the lab agree. The last clause is the transfer test: a student who can say 'I'd rather have false alarms than misses because…' has understood the hour; a student who only reports 0.867 has understood the API.</aside>
 </section>
 <section id="reference-key-terms" data-sid="reference-key-terms">
 <div class="kicker">Reference · key terms</div>
@@ -750,7 +754,7 @@ print("  96% accurate. Misses every pedestrian. Accuracy alone cannot see this."
         <p style="margin-top:.3em"><b>Recall = TP / (TP + FN)</b><br>"Of everything I should have caught, how much did I catch?"</p>
         <p class="src" style="margin-top:.3em">Lowering the threshold buys recall and spends precision. There is no setting that maximises both.</p></div>
     </div>
-    <div class="callout">Our lab, live: threshold <b>0.3</b> → recall 0.88, precision 0.88, one real object missed. Threshold <b>0.9</b> → precision 1.00 (every alarm correct) but recall stuck at 0.62 — three real objects missed. Same model, same data, different values.</div>
+    <div class="callout">Our lab, live: threshold <b>0.3</b> → recall <b>1.00</b> (nothing missed), precision 0.53 (half the alarms are junk). Threshold <b>0.7</b> → precision <b>1.00</b> (every alarm correct) and five real objects missed. Push to <b>0.9</b> and recall hits 0.00 — the model has become the always-say-no model from concept 4. Same weights, same data, different values.</div>
     <aside class="notes">The mnemonic that sticks: precision is about the alarms you raised, recall is about the things that were out there. Class 14 adds F1 and the precision-recall curve; today the trade-off itself is enough.</aside>
 </section>
 <section id="quiz-backup-bonus" data-sid="quiz-backup-bonus">

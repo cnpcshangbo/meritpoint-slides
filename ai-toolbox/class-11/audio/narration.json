@@ -214,32 +214,37 @@
     "model": "claude-opus-4-8"
   },
   "concept-sigmoid": {
-    "hash": "af984292fe26047e",
+    "hash": "6a66c2bc66216d97",
     "voice": "en-US-AndrewMultilingualNeural",
-    "script": "Here's the one new gadget we're adding. Take the straight line from last time, call its output z, and push it through this S-shaped curve — whatever comes out lands neatly between zero and one, which we read as a probability. When z is zero we get exactly a half, pure uncertainty; big positive z climbs toward one, big negative toward zero, but it never quite arrives, so the model is never absolutely certain. And because we're now predicting probabilities, we swap squared error for cross-entropy, which brutally punishes a confident wrong guess and hands gradient descent a clean, single-bottomed bowl to roll down.",
+    "script": "So here's the one new gadget we're adding. Take the straight line from last class, get its output — we'll call it z — and push it through this S-shaped function. Whatever goes in, whatever huge number, out comes something between zero and one, which we read as a probability. When z is zero you land right at fifty-fifty, pure uncertainty; big positive z pushes you toward confident one, big negative toward confident zero — but it never quite touches either end, so the model is never absolutely certain. And because of this curve, we swap our loss too: cross-entropy punishes confident wrong answers hard and keeps pushing where squared error would leave training crawling.",
     "cues": [
       {
         "start": 0.05,
-        "end": 2.3,
-        "text": "Here's the one new gadget we're adding."
+        "end": 2.525,
+        "text": "So here's the one new gadget we're adding."
       },
       {
-        "start": 2.3,
-        "end": 14.187,
-        "text": "Take the straight line from last time, call its output z, and push it through this S-shaped curve — whatever comes out lands neatly between zero and one, which we read as a probability."
+        "start": 2.525,
+        "end": 9.925,
+        "text": "Take the straight line from last class, get its output — we'll call it z — and push it through this S-shaped function."
       },
       {
-        "start": 14.187,
-        "end": 26.8,
-        "text": "When z is zero we get exactly a half, pure uncertainty; big positive z climbs toward one, big negative toward zero, but it never quite arrives, so the model is never absolutely certain."
+        "start": 9.925,
+        "end": 17.287,
+        "text": "Whatever goes in, whatever huge number, out comes something between zero and one, which we read as a probability."
       },
       {
-        "start": 26.8,
-        "end": 39.2,
-        "text": "And because we're now predicting probabilities, we swap squared error for cross-entropy, which brutally punishes a confident wrong guess and hands gradient descent a clean, single-bottomed bowl to roll down."
+        "start": 17.287,
+        "end": 32.075,
+        "text": "When z is zero you land right at fifty-fifty, pure uncertainty; big positive z pushes you toward confident one, big negative toward confident zero — but it never quite touches either end, so the model is never absolutely certain."
+      },
+      {
+        "start": 32.075,
+        "end": 42.037,
+        "text": "And because of this curve, we swap our loss too: cross-entropy punishes confident wrong answers hard and keeps pushing where squared error would leave training crawling."
       }
     ],
-    "bytes": 235584,
+    "bytes": 252576,
     "model": "claude-opus-4-8"
   },
   "quiz-sigmoid": {
@@ -345,32 +350,32 @@
     "model": "claude-opus-4-8"
   },
   "case-av-classification": {
-    "hash": "3ac02be466690e21",
+    "hash": "4cbe890dc9b9e9c6",
     "voice": "en-US-AndrewMultilingualNeural",
-    "script": "Picture a self-driving car asking, dozens of times a second, is that a real object or just a false alarm? It looks at two clues — how confident the detector is, and how tall the box around the thing is — and it has to decide yes or one. Here's the twist: braking for a plastic bag is annoying, but not braking for a person is catastrophic, so those two mistakes are not equal. That's why point-five is just a lazy default, not a real decision — no dataset on earth will pick the right threshold for you, because that's a human value judgement dressed up as a number.",
+    "script": "Let's ground this in something real: a self-driving car, dozens of times every second, asking one question — is that a real object, or just a false alarm? It looks at features like the detector's confidence and the height of the box around the object, and it has to decide, one or zero. Now here's the part that isn't maths: braking for a plastic bag is annoying, but not braking for a person is catastrophic. Those two mistakes are not equal, so where you set the threshold is a value judgement — no dataset on Earth will pick that number for you.",
     "cues": [
       {
         "start": 0.05,
-        "end": 7.8,
-        "text": "Picture a self-driving car asking, dozens of times a second, is that a real object or just a false alarm?"
+        "end": 11.137,
+        "text": "Let's ground this in something real: a self-driving car, dozens of times every second, asking one question — is that a real object, or just a false alarm?"
       },
       {
-        "start": 7.8,
-        "end": 17.062,
-        "text": "It looks at two clues — how confident the detector is, and how tall the box around the thing is — and it has to decide yes or one."
+        "start": 11.137,
+        "end": 19.275,
+        "text": "It looks at features like the detector's confidence and the height of the box around the object, and it has to decide, one or zero."
       },
       {
-        "start": 17.062,
-        "end": 25.9,
-        "text": "Here's the twist: braking for a plastic bag is annoying, but not braking for a person is catastrophic, so those two mistakes are not equal."
+        "start": 19.275,
+        "end": 26.487,
+        "text": "Now here's the part that isn't maths: braking for a plastic bag is annoying, but not braking for a person is catastrophic."
       },
       {
-        "start": 25.9,
-        "end": 37.325,
-        "text": "That's why point-five is just a lazy default, not a real decision — no dataset on earth will pick the right threshold for you, because that's a human value judgement dressed up as a number."
+        "start": 26.487,
+        "end": 34.425,
+        "text": "Those two mistakes are not equal, so where you set the threshold is a value judgement — no dataset on Earth will pick that number for you."
       }
     ],
-    "bytes": 224352,
+    "bytes": 206928,
     "model": "claude-opus-4-8"
   },
   "discuss-costly-errors": {
@@ -500,37 +505,32 @@
     "model": "claude-opus-4-8"
   },
   "lab-av-classifier": {
-    "hash": "3691806bec46d871",
+    "hash": "7736867c6b6b4352",
     "voice": "en-US-AndrewMultilingualNeural",
-    "script": "Alright, this is where it gets real — two features, confidence and box height, and a model that draws an honest boundary between real objects and false alarms. Watch that middle test detection: it sits right on the fence at about a coin-flip, and the moment you nudge the threshold down, it flips to \"real.\" Play with that sweep and you'll feel the trade — lower the threshold and you catch more, but you cry wolf more often too. And notice the test accuracy is only eighty percent on data it never saw — that's not a broken lab, that's honesty. Ask yourself which number you'd actually trust in a moving car.",
+    "script": "Alright, here's where everything we've learned comes together with a real detection problem. We train a model on two features—confidence and box height—and then we do the experiment that actually matters: we slide the decision threshold up and down and watch which mistakes we trade for which. Push it low and you catch every real object but cry wolf constantly; push it to point-nine and, terrifyingly, the model stops saying \"yes\" entirely and misses every single one. And don't miss that accuracy trap at the bottom—a model that's ninety-six percent accurate while never spotting a pedestrian is worse than useless.",
     "cues": [
       {
         "start": 0.05,
-        "end": 9.712,
-        "text": "Alright, this is where it gets real — two features, confidence and box height, and a model that draws an honest boundary between real objects and false alarms."
+        "end": 5.087,
+        "text": "Alright, here's where everything we've learned comes together with a real detection problem."
       },
       {
-        "start": 9.712,
-        "end": 18.9,
-        "text": "Watch that middle test detection: it sits right on the fence at about a coin-flip, and the moment you nudge the threshold down, it flips to \"real.\""
+        "start": 5.087,
+        "end": 17.087,
+        "text": "We train a model on two features—confidence and box height—and then we do the experiment that actually matters: we slide the decision threshold up and down and watch which mistakes we trade for which."
       },
       {
-        "start": 18.9,
-        "end": 26.025,
-        "text": "Play with that sweep and you'll feel the trade — lower the threshold and you catch more, but you cry wolf more often too."
+        "start": 17.087,
+        "end": 29,
+        "text": "Push it low and you catch every real object but cry wolf constantly; push it to point-nine and, terrifyingly, the model stops saying \"yes\" entirely and misses every single one."
       },
       {
-        "start": 26.025,
-        "end": 34.375,
-        "text": "And notice the test accuracy is only eighty percent on data it never saw — that's not a broken lab, that's honesty."
-      },
-      {
-        "start": 34.375,
-        "end": 38.25,
-        "text": "Ask yourself which number you'd actually trust in a moving car."
+        "start": 29,
+        "end": 37.85,
+        "text": "And don't miss that accuracy trap at the bottom—a model that's ninety-six percent accurate while never spotting a pedestrian is worse than useless."
       }
     ],
-    "bytes": 229824,
+    "bytes": 227520,
     "model": "claude-opus-4-8"
   },
   "your-project": {
@@ -597,42 +597,42 @@
     "model": "claude-opus-4-8"
   },
   "benchmark-model": {
-    "hash": "451950fbc3c65ff4",
+    "hash": "b3722aa8175a2202",
     "voice": "en-US-AndrewMultilingualNeural",
-    "script": "Here's what a finished classifier actually looks like, so you know what you're aiming for. First, a boundary you can read in one plain sentence — more confidence and a bigger box both push toward \"real.\" Second, an honest score: not just eighty percent accuracy, but the full confusion matrix showing your hits, your correct rejections, and both kinds of mistakes. And a plot a stranger could understand without you talking. The real test is this: can you say which error you'd rather make — a false alarm or a miss — and why? Nail that, and you've understood the hour, not just the code.",
+    "script": "Here's what a finished classifier actually looks like, and it's your benchmark to judge your own work against. First, the boundary is just two weights and an intercept, readable in plain English — more confidence and a bigger box both push toward \"real.\" Then comes the honest score: not just eighty-seven percent, but a confusion matrix showing your hits, your correct rejections, your false alarm, and your miss. And finally a labelled plot a stranger could read without you talking. But here's the real test — can you tell me which error you'd rather make, a false alarm or a miss, and why? That sentence is where understanding lives.",
     "cues": [
       {
         "start": 0.05,
-        "end": 4.325,
-        "text": "Here's what a finished classifier actually looks like, so you know what you're aiming for."
+        "end": 5.587,
+        "text": "Here's what a finished classifier actually looks like, and it's your benchmark to judge your own work against."
       },
       {
-        "start": 4.325,
-        "end": 12.8,
-        "text": "First, a boundary you can read in one plain sentence — more confidence and a bigger box both push toward \"real.\""
+        "start": 5.587,
+        "end": 16.25,
+        "text": "First, the boundary is just two weights and an intercept, readable in plain English — more confidence and a bigger box both push toward \"real.\""
       },
       {
-        "start": 12.8,
-        "end": 23.637,
-        "text": "Second, an honest score: not just eighty percent accuracy, but the full confusion matrix showing your hits, your correct rejections, and both kinds of mistakes."
+        "start": 16.25,
+        "end": 26.862,
+        "text": "Then comes the honest score: not just eighty-seven percent, but a confusion matrix showing your hits, your correct rejections, your false alarm, and your miss."
       },
       {
-        "start": 23.637,
-        "end": 26.912,
-        "text": "And a plot a stranger could understand without you talking."
+        "start": 26.862,
+        "end": 31.375,
+        "text": "And finally a labelled plot a stranger could read without you talking."
       },
       {
-        "start": 26.912,
-        "end": 33.537,
-        "text": "The real test is this: can you say which error you'd rather make — a false alarm or a miss — and why?"
+        "start": 31.375,
+        "end": 37.887,
+        "text": "But here's the real test — can you tell me which error you'd rather make, a false alarm or a miss, and why?"
       },
       {
-        "start": 33.537,
-        "end": 37.275,
-        "text": "Nail that, and you've understood the hour, not just the code."
+        "start": 37.887,
+        "end": 41.025,
+        "text": "That sentence is where understanding lives."
       }
     ],
-    "bytes": 224064,
+    "bytes": 246528,
     "model": "claude-opus-4-8"
   },
   "reference-key-terms": {
@@ -820,42 +820,42 @@
     "model": "claude-opus-4-8"
   },
   "backup-precision-recall": {
-    "hash": "dcd6ea21ac91f278",
+    "hash": "27fc8166fa27a588",
     "voice": "en-US-AndrewMultilingualNeural",
-    "script": "Let's untangle these four boxes. A false alarm and a miss are completely different mistakes, so we never let them share a number. Precision asks: when I raise the alarm, how often am I right? Recall asks: of everything that was really out there, how much did I actually catch? And here's the catch — in our live lab, dropping the threshold to 0.3 caught more but let false alarms creep in, while pushing it to 0.9 made every alarm correct yet quietly missed three real objects. Same model, same data — you simply choose what you're willing to lose.",
+    "script": "Let's get these four boxes straight, because they matter. A false positive is a false alarm; a false negative is a miss — and those are completely different mistakes that should never be lumped together. Here's the trick to remember: precision asks, when I raise the alarm, how often am I right? Recall asks, of everything I should have caught, how much did I actually catch? And watch what happens with the threshold — drop it low and you catch everything but half your alarms are junk; push it high and every alarm is right but you miss real objects. There's no magic setting that wins both.",
     "cues": [
       {
         "start": 0.05,
-        "end": 2.275,
-        "text": "Let's untangle these four boxes."
+        "end": 2.9370000000000003,
+        "text": "Let's get these four boxes straight, because they matter."
       },
       {
-        "start": 2.275,
-        "end": 8.337,
-        "text": "A false alarm and a miss are completely different mistakes, so we never let them share a number."
+        "start": 2.9370000000000003,
+        "end": 11.4,
+        "text": "A false positive is a false alarm; a false negative is a miss — and those are completely different mistakes that should never be lumped together."
       },
       {
-        "start": 8.337,
-        "end": 12.475,
-        "text": "Precision asks: when I raise the alarm, how often am I right?"
+        "start": 11.4,
+        "end": 17.212,
+        "text": "Here's the trick to remember: precision asks, when I raise the alarm, how often am I right?"
       },
       {
-        "start": 12.475,
-        "end": 17.812,
-        "text": "Recall asks: of everything that was really out there, how much did I actually catch?"
+        "start": 17.212,
+        "end": 22.112,
+        "text": "Recall asks, of everything I should have caught, how much did I actually catch?"
       },
       {
-        "start": 17.812,
-        "end": 32.062,
-        "text": "And here's the catch — in our live lab, dropping the threshold to 0.3 caught more but let false alarms creep in, while pushing it to 0.9 made every alarm correct yet quietly missed three real objects."
+        "start": 22.112,
+        "end": 32.625,
+        "text": "And watch what happens with the threshold — drop it low and you catch everything but half your alarms are junk; push it high and every alarm is right but you miss real objects."
       },
       {
-        "start": 32.062,
-        "end": 36.675,
-        "text": "Same model, same data — you simply choose what you're willing to lose."
+        "start": 32.625,
+        "end": 35.2,
+        "text": "There's no magic setting that wins both."
       }
     ],
-    "bytes": 220464,
+    "bytes": 211536,
     "model": "claude-opus-4-8"
   },
   "quiz-backup-bonus": {
