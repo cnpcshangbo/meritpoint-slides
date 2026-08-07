@@ -240,20 +240,48 @@
         {
           "id": "class-11",
           "n": 11,
-          "title": "Classification & Logistic Regression",
+          "title": "Classification (Logistic Regression)",
+          "summary": "Predict categories instead of quantities: the sigmoid that turns a score into a probability, the decision boundary fitted live from a real detection log, why a 96%-accurate model can find zero pedestrians, and the threshold — the value judgement hiding inside every classifier.",
           "tags": [
-            "ML"
+            "machine learning",
+            "classification",
+            "logistic regression",
+            "sigmoid",
+            "decision boundary",
+            "threshold",
+            "precision",
+            "recall",
+            "confusion matrix",
+            "scikit-learn",
+            "quiz",
+            "interactive",
+            "Python"
           ],
-          "status": "planned"
+          "duration": "60 min",
+          "status": "ready"
         },
         {
           "id": "class-12",
           "n": 12,
           "title": "Decision Trees & Random Forests",
+          "summary": "The first model you can read: if-then trees, Gini impurity worked out on 14 real rows, a depth sweep where training accuracy hits 1.000 while test accuracy falls, Galton's ox and Condorcet's jury theorem — and the trade between a tree you can argue with and a forest that beats it.",
           "tags": [
-            "ML"
+            "machine learning",
+            "decision tree",
+            "random forest",
+            "Gini",
+            "overfitting",
+            "ensemble",
+            "bagging",
+            "interpretability",
+            "feature importance",
+            "scikit-learn",
+            "quiz",
+            "interactive",
+            "Python"
           ],
-          "status": "planned"
+          "duration": "60 min",
+          "status": "ready"
         },
         {
           "id": "class-13",
@@ -572,6 +600,30 @@
             "beginner"
           ],
           "duration": "15–25 min",
+          "status": "ready"
+        },
+        {
+          "id": "claude-code-manuscript",
+          "n": 6,
+          "numLabel": "GUIDE 06",
+          "noPdf": true,
+          "title": "From a Colab Script to a Conference Manuscript with Claude Code 📄",
+          "summary": "The written version of the Class 10 live demo: download your linear-regression notebook as a .py, open the folder in Claude Code, and ask for a five-page LaTeX manuscript with 5–8 figures. Screenshots from the recording show what the agent actually does — explore the folder, check the LaTeX stack, write and RUN experiments.py, then quote the numbers back out of summary.json. Ends with the Overleaf zip, five honesty checks, and a reusable prompt library.",
+          "tags": [
+            "Claude Code",
+            "manuscript",
+            "LaTeX",
+            "Overleaf",
+            "paper",
+            "conference",
+            "Colab",
+            "linear regression",
+            "reproducibility",
+            "scikit-learn",
+            "AI writing",
+            "research"
+          ],
+          "duration": "25–40 min",
           "status": "ready"
         }
       ]

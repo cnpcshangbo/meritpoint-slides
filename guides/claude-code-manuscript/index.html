@@ -1,0 +1,436 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guide 06 · From Colab Script to Conference Manuscript with Claude Code — Merit Point Academy</title>
+<meta name="description" content="Step-by-step notes from the live class demo: take a linear-regression script out of Google Colab, hand it to Claude Code, and get back a real LaTeX manuscript with 8 figures, a reproducible experiments.py, and an Overleaf-ready zip.">
+<link rel="icon" type="image/png" href="/meritpoint-slides/assets/favicon.png"><link rel="stylesheet" href="/meritpoint-slides/assets/site.css">
+<style>
+main.wrap{max-width:860px;padding-bottom:60vh}
+.crumb{margin-top:18px}
+h2.sec{color:#0C2D52;font-size:22px;margin:44px 0 6px;padding-top:10px;border-top:3px solid #0F9DB0}
+h2.sec .no{color:#0F9DB0;margin-right:8px}
+h3{color:#0C2D52;font-size:16.5px;margin:26px 0 8px}
+p,li{font-size:15px}
+.lead{font-size:16px;color:#21303F}
+.why{background:#EEF4FA;border-left:4px solid #F2A93B;border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0;font-size:14.5px}
+.why b{color:#0C2D52}
+pre.cmd{position:relative;background:#0d1b2a;color:#d7e7f7;border-radius:10px;padding:13px 90px 13px 16px;font-size:13.5px;line-height:1.65;overflow-x:auto;font-family:"SF Mono",Menlo,Consolas,monospace}
+pre.cmd .c{color:#6d8aa5}
+pre.cmd .o{color:#8fb98f}
+pre.cmd button.copy{position:absolute;top:8px;right:8px;font:inherit;font-size:11.5px;background:#1b3a5c;color:#cfe0ef;border:1px solid #2c5580;border-radius:7px;padding:4px 10px;cursor:pointer}
+pre.cmd button.copy:hover{background:#24507e}
+.step{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid #D7E2EC;border-radius:10px;padding:11px 14px;margin:8px 0;cursor:pointer;font-size:14.5px}
+.step:hover{border-color:#0F9DB0}
+.step input{margin-top:3px;width:16px;height:16px;accent-color:#0F9DB0;flex:none}
+.step.done{background:#f2faf7;border-color:#bfe3d4}
+.step.done .t{color:#1FA37A}
+.step kbd,p kbd,li kbd{background:#EEF4FA;border:1px solid #D7E2EC;border-bottom-width:2px;border-radius:5px;padding:1px 6px;font-size:12.5px;font-family:inherit}
+.tryit{background:#eafcff;border:1.5px dashed #2BC4D4;border-radius:10px;padding:11px 14px;margin:14px 0;font-size:14.5px}
+.tryit b{color:#0F9DB0}
+.quiz{background:#fff;border:1px solid #D7E2EC;border-radius:12px;padding:14px 16px;margin:18px 0}
+.quiz .qq{font-weight:600;color:#0C2D52;margin:0 0 10px;font-size:14.5px}
+.quiz button{display:block;width:100%;text-align:left;font:inherit;font-size:14px;background:#F6F9FC;border:1px solid #D7E2EC;border-radius:9px;padding:9px 12px;margin:6px 0;cursor:pointer}
+.quiz button:hover{border-color:#0F9DB0}
+.quiz button.right{background:#e7f6ef;border-color:#1FA37A;color:#1FA37A;font-weight:600}
+.quiz button.wrong{background:#fdecea;border-color:#C0392B;color:#C0392B}
+.quiz .exp{display:none;margin:10px 0 0;font-size:13.5px;color:#5E7183;border-top:1px dashed #D7E2EC;padding-top:9px}
+.quiz.answered .exp{display:block}
+table.cheat{border-collapse:collapse;width:100%;margin:14px 0;font-size:14px}
+table.cheat th{background:#0C2D52;color:#fff;text-align:left;padding:8px 12px;font-size:13px}
+table.cheat td{border:1px solid #D7E2EC;padding:7px 12px;background:#fff}
+table.cheat td code{background:#EEF4FA;border-radius:5px;padding:1px 6px;font-size:12.5px}
+.pathpic{background:#fff;border:1px solid #D7E2EC;border-radius:12px;padding:14px 18px;margin:14px 0;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:13.5px;line-height:1.9;overflow-x:auto}
+.pathpic .d{color:#1769C0;font-weight:600}.pathpic .f{color:#21303F}.pathpic .hl{background:#fff3d6;border-radius:4px;padding:0 4px}
+.navchips{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 4px}
+.navchips a{font-size:13px;background:#fff;border:1px solid #D7E2EC;border-radius:999px;padding:6px 13px;color:#5E7183}
+.navchips a:hover{border-color:#0F9DB0;color:#0F9DB0;text-decoration:none}
+#pgbar{position:sticky;top:0;z-index:40;background:#F6F9FC;padding:10px 0 8px}
+#pgbar .lbl{font-size:12.5px;color:#5E7183;margin-bottom:5px}
+#pgbar .rail{height:9px;background:#D7E2EC;border-radius:999px;overflow:hidden}
+#pgbar .fill{height:100%;width:0;background:linear-gradient(90deg,#0F9DB0,#2BC4D4);border-radius:999px;transition:width .3s}
+/* ---------- practice terminal panel ---------- */
+#termBtn{position:fixed;right:18px;bottom:18px;z-index:60;font:inherit;font-weight:700;font-size:14.5px;background:#0C2D52;color:#fff;border:none;border-radius:999px;padding:13px 22px;cursor:pointer;box-shadow:0 8px 24px rgba(12,45,82,.35)}
+#termBtn:hover{background:#12386A}
+#termPanel{position:fixed;left:0;right:0;bottom:0;z-index:55;background:#0d1b2a;border-top:3px solid #2BC4D4;box-shadow:0 -10px 40px rgba(0,0,0,.35);display:none;height:46vh;min-height:300px}
+#termPanel.open{display:flex}
+#termCol{flex:1.4;display:flex;flex-direction:column;min-width:0}
+#termOut{flex:1;overflow-y:auto;padding:14px 16px 6px;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:13px;line-height:1.6;color:#d7e7f7;white-space:pre-wrap;word-break:break-all}
+#termOut .p{color:#6fd3e0}
+#termOut .err{color:#ff9d8a}
+#termOut .ok{color:#8fb98f}
+#termRow{display:flex;align-items:center;gap:8px;padding:8px 16px 12px;border-top:1px solid #1b3a5c}
+#termRow .pp{color:#6fd3e0;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:13px;white-space:nowrap}
+#termIn{flex:1;background:transparent;border:none;outline:none;color:#fff;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:14px}
+#missionCol{flex:1;border-left:1px solid #1b3a5c;overflow-y:auto;padding:12px 14px;min-width:230px}
+#missionCol h4{color:#6fd3e0;font-size:12px;letter-spacing:1.5px;margin:10px 0 6px;text-transform:uppercase}
+.mi{display:flex;gap:8px;align-items:flex-start;color:#9fb6cc;font-size:12.5px;margin:5px 0;font-family:"SF Mono",Menlo,Consolas,monospace}
+.mi .bx{flex:none;width:15px;height:15px;border:1.5px solid #3d6a94;border-radius:4px;margin-top:1px;text-align:center;line-height:13px;font-size:11px}
+.mi.done{color:#8fb98f}.mi.done .bx{background:#1FA37A;border-color:#1FA37A;color:#fff}
+.mi.done .bx::before{content:"✓"}
+#termClose{position:absolute;top:8px;right:12px;background:none;border:none;color:#6d8aa5;font-size:20px;cursor:pointer}
+#termClose:hover{color:#fff}
+@media(max-width:760px){#termPanel{height:62vh}#missionCol{display:none}}
+footer.site{margin-top:60px}
+.answer{background:linear-gradient(135deg,#eafcff,#f2faf7);border:1px solid #b8dfe3;border-radius:14px;padding:16px 18px;margin:16px 0}
+.answer p{margin:5px 0}.answer strong{color:#0c2d52}
+.shot{margin:16px 0 20px;border:1px solid #cbd9e6;border-radius:12px;overflow:hidden;background:#fff}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{font-size:13px;color:#4b6178;padding:9px 13px;border-top:1px solid #e8eef3;background:#f7fafc}
+.shot figcaption b{color:#0c2d52}
+.prompt{background:#0c2d52;color:#eaf4ff;border-radius:12px;padding:14px 17px;margin:14px 0;font-size:15px;line-height:1.6}
+.prompt .who{display:block;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:#8edce5;margin-bottom:7px}
+.prompt code{background:rgba(255,255,255,.12);border-radius:5px;padding:1px 6px;font-size:13.5px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;margin:18px 0}
+.flow .b{flex:1 1 130px;background:#fff;border:1px solid #cbd9e6;border-radius:11px;padding:10px 12px;font-size:13px;color:#0c2d52}
+.flow .b b{display:block;font-size:11px;letter-spacing:1.3px;text-transform:uppercase;color:#0f9db0;margin-bottom:3px}
+.tree{background:#fff;border:1px solid #cbd9e6;border-radius:12px;padding:14px 18px;margin:14px 0;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:13px;line-height:1.85;overflow-x:auto;white-space:pre}
+.tree .d{color:#2b6cb0;font-weight:600}.tree .c{color:#687b8f}.tree .hl{background:#fff3d6;border-radius:4px;padding:0 4px}
+.rule{background:#fff;border:1px solid #cbd9e6;border-left:4px solid #c9433a;border-radius:0 11px 11px 0;padding:11px 15px;margin:12px 0;font-size:14.5px}
+.rule b{color:#a33127}
+.section-comments{margin:22px 0 34px;border:1px solid #cbd9e6;border-radius:12px;background:#fff;overflow:hidden}
+.discussion-toggle{display:flex;width:100%;align-items:center;gap:8px;text-align:left;border:0;background:#f4f8fb;color:#0c2d52;padding:11px 14px;font:inherit;font-size:14px;font-weight:700;cursor:pointer}
+.discussion-toggle:hover{background:#eafcff}.discussion-count{margin-left:auto;min-width:24px;padding:2px 7px;border-radius:999px;background:#0f9db0;color:#fff;text-align:center;font-size:11px}
+.discussion-panel{padding:0 14px 14px}.discussion-list{max-height:290px;overflow:auto}.discussion-empty{color:#687b8f;font-size:13px;text-align:center;padding:10px}
+.discussion-item{padding:10px 0;border-bottom:1px solid #e8eef3}.discussion-item:last-child{border-bottom:0}.discussion-meta{font-size:12px;color:#687b8f}.discussion-meta b{color:#0c2d52}.discussion-body{margin-top:3px;font-size:14px;white-space:pre-wrap;word-break:break-word}
+.discussion-form{border-top:1px solid #d8e2eb;padding-top:12px;display:grid;gap:9px}.discussion-form label span{display:block;font-size:12px;font-weight:700;color:#0c2d52;margin-bottom:4px}.discussion-form small{font-weight:400;color:#687b8f}
+.discussion-form input,.discussion-form textarea{box-sizing:border-box;width:100%;border:1px solid #cbd9e6;border-radius:8px;padding:8px 10px;font:inherit;font-size:13px}.discussion-form textarea{min-height:72px;resize:vertical}.discussion-form input:focus,.discussion-form textarea:focus{outline:2px solid #8edce5;outline-offset:1px}
+</style></head><body>
+<header class="site"><div class="wrap"><img class="logo" src="/meritpoint-slides/assets/mpa-logo.png" alt="Merit Point Academy logo"><div><h1>Guide 06 · From a Colab Script to a Manuscript 📄</h1><p>Turn the regression you just fitted into a real conference paper — with Claude Code doing the typing and your code producing the numbers.</p></div>
+<div class="hdr-actions"><a class="asg-btn" href="https://academic.hopeembark.org/assignments">📝 Assignments · 作业</a><a class="donate-btn" href="https://buy.stripe.com/14AbIT26kfUzbqjbGv4ow00" target="_blank" rel="noopener">♥ Donate</a></div></div></header>
+<main class="wrap">
+<p class="crumb"><a href="../">← All guides</a></p>
+<div id="pgbar"><div class="lbl"><span id="pgtxt">0%</span> of steps checked — your progress is saved in this browser</div><div class="rail"><div class="fill" id="pgfill"></div></div></div>
+
+<div class="answer"><p><strong>What this guide is:</strong> the written version of the live demo at the end of <a href="../../ai-toolbox/class-10/">Class 10 · Linear Regression</a>. We took the five-line regression from Google Colab, downloaded it as a <code>.py</code> file, opened it in <b>Claude Code</b>, and asked for a five-page LaTeX manuscript with 5–8 figures. Twenty minutes later we had eight figures, a results table, a bibliography, and a zip ready for Overleaf.</p>
+<p><strong>The one idea to keep:</strong> Claude Code did not <i>invent</i> the results. It wrote an experiment script, <b>ran</b> it, read the numbers back out of <code>summary.json</code>, and then wrote the paper around those real numbers. That is the difference between a paper and a fabrication.</p></div>
+
+<p class="lead">A manuscript is not a writing problem — it is a <b>bookkeeping</b> problem. Every number in the text has to trace back to code that someone can run again. The AI is very good at the bookkeeping and the LaTeX; you stay responsible for the science.</p>
+
+<div class="flow">
+  <div class="b"><b>Step 1</b>Fit the model in Colab</div>
+  <div class="b"><b>Step 2</b>Download as <code>.py</code></div>
+  <div class="b"><b>Step 3</b>Open the folder in Claude Code</div>
+  <div class="b"><b>Step 4</b>Ask for the manuscript</div>
+  <div class="b"><b>Step 5</b>It writes + <i>runs</i> experiments.py</div>
+  <div class="b"><b>Step 6</b>Zip → Overleaf</div>
+</div>
+
+<div class="navchips"><a href="#s1">1 · Finish the analysis</a><a href="#s2">2 · Get the script out of Colab</a><a href="#s3">3 · Open it in Claude Code</a><a href="#s4">4 · The prompt</a><a href="#s5">5 · Read what it does</a><a href="#s6">6 · What you get back</a><a href="#s7">7 · Overleaf</a><a href="#s8">8 · Honesty rules</a><a href="#s9">9 · Prompt library</a></div>
+
+<h2 class="sec" id="s1"><span class="no">1</span>Start from an analysis that already runs</h2>
+<p>You cannot write a paper about code that does not work. In class the starting point was the notebook from Class 10 — scikit-learn's built-in <b>diabetes</b> dataset, a train/test split, and three models compared:</p>
+<pre class="cmd">from sklearn.datasets import load_diabetes
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression, Ridge, Lasso
+from sklearn.metrics import mean_squared_error, r2_score
+
+data = load_diabetes()
+X, y = data.data, data.target
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25)
+
+model = LinearRegression().fit(X_train, y_train)      <span class="c"># the baseline</span>
+ridge = Ridge(alpha=1.0).fit(X_train, y_train)        <span class="c"># L2 regularization</span>
+lasso = Lasso(alpha=0.1).fit(X_train, y_train)        <span class="c"># L1 regularization</span>
+
+y_pred = model.predict(X_test)
+print(mean_squared_error(y_test, y_pred), r2_score(y_test, y_pred))
+<span class="o">2651.10   0.55</span></pre>
+<p>Then a scatter plot of predicted against actual values — <code>matplotlib</code> for the quick look, <code>seaborn</code> when you want it to look publishable — so the fit is something you can <i>see</i>, not just a number you report.</p>
+<div class="why"><b>That is already a research question.</b> Three models, one dataset, one honest test score each — “does regularization actually help here?” is a perfectly publishable question at your level. In class the plain linear model won: lowest error, highest R². The manuscript grew out of exactly this comparison; the title Claude Code proposed was <i>“How Much Does Regularization Buy You? A Controlled Study of Linear Regression on the Diabetes Regression Benchmark.”</i></div>
+<div class="rule"><b>Set <code>random_state</code> before you write anything down.</b> <code>train_test_split(X, y, test_size=0.25)</code> reshuffles on every run, so the same code gave R² ≈ 0.55 in one cell and ≈ 0.57 a few minutes later. That wobble is harmless in a notebook and fatal in a paper — you cannot reproduce a number you did not pin. Write <code>train_test_split(X, y, test_size=0.25, <b>random_state=42</b>)</code> and the score stops moving.</div>
+<label class="step"><input type="checkbox" data-k="runs"><span class="t">Run your notebook top to bottom with <b>Runtime → Restart and run all</b>. Every cell must succeed before you go on — a half-broken notebook produces a half-invented paper.</span></label>
+<label class="step"><input type="checkbox" data-k="score"><span class="t">Write down your own test score (MSE and R², or accuracy) on paper. You will check the manuscript against this number later.</span></label>
+<aside class="section-comments" data-section="s1-analysis" data-label="Start from an analysis that runs">
+  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
+  <div class="discussion-panel" hidden>
+    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
+    <form class="discussion-form">
+      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
+      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="What would you like to ask or share about this section?"></textarea></label>
+      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
+    </form>
+  </div>
+</aside>
+
+<h2 class="sec" id="s2"><span class="no">2</span>Get the script out of Colab</h2>
+<p>Claude Code works on <b>files in a folder on your computer</b>, not on a browser tab. So the notebook has to come down first.</p>
+<pre class="cmd">In Colab:  File → Download → Download .py</pre>
+<p>You get a plain Python file — in the demo it was <code>untitled19.py</code>, all of <b>2,485 bytes</b>. That tiny file is the entire seed of the paper.</p>
+<figure class="shot"><img src="assets/01-colab-download-py.jpg" alt="Google Colab notebook with the linear regression cells; the browser download bar shows untitled19.py, 2,485 B, Done" loading="lazy">
+<figcaption><b>The moment it leaves the browser.</b> The notebook on the left, Gemini's evaluation summary on the right (MSE 2651.10, R² 0.55), and the finished <code>untitled19.py</code> download in the corner.</figcaption></figure>
+<div class="tryit"><b>Rename it.</b> <code>untitled19.py</code> tells a reader nothing. <code>diabetes_regression.py</code> takes four seconds and saves your future self a headache. Then make a folder for the project and put the file inside it:
+<pre class="cmd">mkdir ~/linear_regression
+mv ~/Downloads/untitled19.py ~/linear_regression/</pre>
+(New to <code>mkdir</code> and <code>mv</code>? <a href="../github-terminal/">Guide 01</a> covers the terminal from zero.)</div>
+<label class="step"><input type="checkbox" data-k="download"><span class="t">Download your notebook as <code>.py</code>, make a project folder, and move the file into it.</span></label>
+<div class="quiz"><p class="qq">Why download <code>.py</code> instead of <code>.ipynb</code>?</p><button data-x>.ipynb files cannot be opened by AI tools</button><button data-ok>.py is plain code — easy for a tool to read, run, and diff; .ipynb is JSON wrapped around the code plus stored outputs</button><button data-x>.py runs faster than .ipynb</button><p class="exp">Both work, and Claude Code can read a notebook too. But <code>.py</code> is the cleanest hand-off: no stored outputs to confuse things, and it runs with a single <code>python3 file.py</code>.</p></div>
+<aside class="section-comments" data-section="s2-download" data-label="Get the script out of Colab">
+  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
+  <div class="discussion-panel" hidden>
+    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
+    <form class="discussion-form">
+      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
+      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="What would you like to ask or share about this section?"></textarea></label>
+      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
+    </form>
+  </div>
+</aside>
+
+<h2 class="sec" id="s3"><span class="no">3</span>Open the folder in Claude Code</h2>
+<p><b>Claude Code</b> is Anthropic's coding agent. It runs in a terminal, in the Claude desktop app, or inside VS Code / Cursor. Unlike a chat window, it can <i>see your folder, edit files, and run commands</i> — which is exactly what a manuscript needs.</p>
+<pre class="cmd"><span class="c"># terminal version — one line, from inside your project folder</span>
+cd ~/linear_regression
+claude</pre>
+<p>In the desktop app you press <b>New</b>, then pick the folder (in the demo: <code>linear_regression</code>) next to the prompt box. The first time you use it, a browser tab opens to sign in and comes back saying <i>“You're all set up for Claude Code.”</i></p>
+<figure class="shot"><img src="assets/02-claude-code-prompt.jpg" alt="Claude Code desktop app, Welcome back screen, working folder set to linear_regression, with the manuscript prompt typed into the box" loading="lazy">
+<figcaption><b>Point it at the folder, then type one sentence.</b> Note the folder chip <code>linear_regression</code> above the prompt — that is the scope of everything the agent is allowed to see.</figcaption></figure>
+<div class="why"><b>Pick the folder deliberately.</b> The agent reads and writes inside the folder you open. Open a project folder, never your whole home directory or Desktop.</div>
+<label class="step"><input type="checkbox" data-k="open"><span class="t">Open your project folder in Claude Code and confirm the folder name shown on screen is the one holding your <code>.py</code> file.</span></label>
+<aside class="section-comments" data-section="s3-open" data-label="Open the folder in Claude Code">
+  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
+  <div class="discussion-panel" hidden>
+    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
+    <form class="discussion-form">
+      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
+      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="What would you like to ask or share about this section?"></textarea></label>
+      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
+    </form>
+  </div>
+</aside>
+
+<h2 class="sec" id="s4"><span class="no">4</span>The prompt — short, but with the right four facts</h2>
+<p>The prompt used in class was one sentence:</p>
+<div class="prompt"><span class="who">what was actually typed</span>create a five page latex manuscript that contains 5-8 figures for a conference submission</div>
+<p>It is short, but it pins down four things the model would otherwise have to guess:</p>
+<table class="cheat"><tr><th>Fact given</th><th>Why it matters</th></tr>
+<tr><td><b>Length</b> — five pages</td><td>Controls how much text is written and how dense the figures need to be.</td></tr>
+<tr><td><b>Format</b> — LaTeX</td><td>Determines the whole toolchain: <code>.tex</code>, <code>.bib</code>, PDF figures, <code>pdflatex</code>.</td></tr>
+<tr><td><b>Figure count</b> — 5–8</td><td>Forces real experiments. Eight figures cannot be filled with one train/test split.</td></tr>
+<tr><td><b>Venue</b> — conference submission</td><td>Sets the structure: abstract, related work, method, experiments, results, conclusion, references.</td></tr></table>
+<div class="tryit"><b>Add the fifth fact — and the instructor caught this one live.</b> Watching the agent start, he said: <i>“I think I forgot something like <b>based on this Python</b> — but hopefully it understood, since it already read that piece of Python script.”</i> It did, because the file was the only thing in the folder. Do not rely on that. Name the file, and say where the numbers must come from:
+<div class="prompt" style="margin-top:10px"><span class="who">improved</span>Read <code>diabetes_regression.py</code>. Write a five-page LaTeX manuscript for a conference submission with 5–8 figures comparing Linear, Ridge and Lasso regression on this dataset. <b>Write a single <code>experiments.py</code> that generates every figure and every number, run it, and use only its real output in the paper — do not invent any value.</b></div></div>
+<label class="step"><input type="checkbox" data-k="prompt"><span class="t">Write your own prompt with all five facts: length, format, figure count, venue, and “numbers must come from code you run.”</span></label>
+<div class="quiz"><p class="qq">Which of these belongs in the prompt?</p><button data-x>“Make it sound impressive and academic”</button><button data-ok>“Use only numbers produced by running experiments.py; do not invent values”</button><button data-x>“Cite at least 30 famous papers”</button><p class="exp">Style adjectives change nothing you care about. Constraints about <i>where numbers and citations come from</i> change everything — that is where AI writing goes wrong.</p></div>
+<aside class="section-comments" data-section="s4-prompt" data-label="The prompt">
+  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
+  <div class="discussion-panel" hidden>
+    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
+    <form class="discussion-form">
+      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
+      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="What would you like to ask or share about this section?"></textarea></label>
+      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
+    </form>
+  </div>
+</aside>
+
+<h2 class="sec" id="s5"><span class="no">5</span>Watch what it does — this part is the lesson</h2>
+<p>Do not scroll past the agent's progress log. The reason, in the instructor's own words while the demo ran:</p>
+<div class="prompt"><span class="who">said out loud in class</span>“I would like to read, to see the steps — and also to make sure they didn't really use some, like, <b>fake data</b>.”</div>
+<p>That is the whole job of watching. In class the log read, in order, roughly like this:</p>
+<figure class="shot"><img src="assets/03-claude-working.jpg" alt="Claude Code session log showing it exploring the directory, checking the LaTeX stack, running the experiment pipeline in the background, creating references.bib, and reading summary.json" loading="lazy">
+<figcaption><b>The whole method in one screen.</b> Explore the folder → check the tooling → run the real pipeline in the background → write the bibliography while waiting → read the numbers back from <code>summary.json</code>.</figcaption></figure>
+<table class="cheat"><tr><th>What it said</th><th>What that actually means</th></tr>
+<tr><td>“I start by exploring what materials exist in the working directory.”</td><td>It listed your folder and read your <code>.py</code> file. It is building the paper from <i>your</i> analysis, not a generic template.</td></tr>
+<tr><td>“Full stack available, including LaTeX.”</td><td>It checked that Python and <code>pdflatex</code> are installed before promising a PDF. If LaTeX is missing it will tell you instead of failing at the end.</td></tr>
+<tr><td>“All packages I need are present except <code>siunitx</code> (which I'll avoid).”</td><td>It adapted the document to the packages you actually have. This is why the PDF compiles on your machine.</td></tr>
+<tr><td>“Ran full experiment pipeline” (background)</td><td>It <b>executed</b> the experiments — nested cross-validation, learning curves — and waited for real output.</td></tr>
+<tr><td>“While it runs, I'll write the bibliography.” → <code>Created references.bib +205</code></td><td>It parallelised: long computation in the background, prose in the foreground.</td></tr>
+<tr><td>“All 8 figures and results generated. Let me pull the full numeric detail” → <code>Read summary.json</code></td><td><b>The critical step.</b> Numbers enter the manuscript by being read out of a results file, not by being remembered.</td></tr></table>
+<div class="why"><b>This is the workflow you are actually learning.</b> Not “AI writes my paper,” but: <i>code produces results → results are saved to a file → the paper quotes that file</i>. Do that by hand and it is good science. Do it with an agent and it is good science, faster.</div>
+
+<h3>Three things that will slow you down</h3>
+<table class="cheat"><tr><th>What happens</th><th>What to do</th></tr>
+<tr><td><b>Your laptop has no LaTeX.</b> The agent checks early and says so. In class this is exactly why a second agent was started on a remote server that already had the toolchain — <i>“the local one may not have the LaTeX; this one is still doing more experiments.”</i></td><td>Either install a TeX distribution, or let the agent produce <code>.tex</code> + figures and compile in <b>Overleaf</b> (§7) — Overleaf has LaTeX so you do not need to.</td></tr>
+<tr><td><b>It pauses for permission.</b> Agents ask before running commands or writing files, and the run sits idle until you answer.</td><td>Stay at the keyboard for the first few minutes. An agent waiting on a dialog looks exactly like an agent that is thinking.</td></tr>
+<tr><td><b>Eight figures takes real time.</b> Nested cross-validation and learning curves are genuine computation — <i>“probably because we asked a challenging task… then it takes some time.”</i></td><td>Let it run. In class the figure count climbed to eight while the class discussed something else. Do not restart it because it looks stuck.</td></tr></table>
+<label class="step"><input type="checkbox" data-k="read"><span class="t">Read your agent's log line by line once. Find the exact moment it <b>ran</b> your experiments and the moment it <b>read</b> the results file.</span></label>
+<aside class="section-comments" data-section="s5-watch" data-label="Watch what it does">
+  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
+  <div class="discussion-panel" hidden>
+    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
+    <form class="discussion-form">
+      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
+      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="What would you like to ask or share about this section?"></textarea></label>
+      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
+    </form>
+  </div>
+</aside>
+
+<h2 class="sec" id="s6"><span class="no">6</span>What comes back</h2>
+<p>The 2 KB script turned into a project. Every figure in the paper has a file, and every file has code that made it:</p>
+<div class="tree"><span class="d">linear_regression/</span>
+├── <span class="d">figures/</span>
+│   ├── fig1_data_overview.pdf      <span class="c"># the dataset before any modelling</span>
+│   ├── fig2_marginals.pdf
+│   ├── fig3_paths.pdf              <span class="c"># coefficient paths vs. alpha</span>
+│   ├── fig4_validation_curves.pdf  <span class="c"># CV error vs. regularization strength</span>
+│   ├── fig5_model_comparison.pdf
+│   ├── fig6_diagnostics.pdf        <span class="c"># residuals — the honesty plot</span>
+│   ├── fig7_coefficients.pdf
+│   └── fig8_learning_curves.pdf    <span class="c"># does more data help?</span>
+├── <span class="d">results/</span>
+│   ├── cv_raw.npz                  <span class="c"># every fold's raw score</span>
+│   ├── <span class="hl">summary.json</span>             <span class="c"># the numbers the manuscript quotes</span>
+│   └── table_main.tex              <span class="c"># the results table, auto-generated</span>
+├── <span class="hl">experiments.py</span>               <span class="c"># run this and everything above regenerates</span>
+├── references.bib
+├── manuscript.tex
+└── diabetes_regression.py          <span class="c"># your original Colab download</span></div>
+<figure class="shot"><img src="assets/04-project-tree.jpg" alt="Editor showing the linear_regression project tree with figures, results, experiments.py, and the header docstring of experiments.py" loading="lazy">
+<figcaption><b><code>experiments.py</code> is the real deliverable.</b> Its docstring names the paper it feeds and ends with <code>Usage: python3 experiments.py</code> — one command regenerates every figure and number in the manuscript.</figcaption></figure>
+<p>The generated <code>experiments.py</code> reaches well past the original five lines — <code>GridSearchCV</code>, <code>RepeatedKFold</code>, <code>cross_validate</code>, <code>learning_curve</code>, a <code>Pipeline</code>, plus <code>ElasticNet</code> and a <code>DummyRegressor</code> baseline. That is what eight honest figures costs, and it is a good reading list for what you should learn next.</p>
+<figure class="shot"><img src="assets/05-figure-output.jpg" alt="The generated fig4_validation_curves.pdf opened in the editor: side-by-side Ridge and Lasso validation curves with 10-fold CV RMSE and marked lambda-min and lambda-1se" loading="lazy">
+<figcaption><b>A figure you could defend in a review.</b> Ridge and Lasso validation curves over 10-fold CV RMSE, with both <span style='white-space:nowrap'>λ<sub>min</sub></span> and <span style='white-space:nowrap'>λ<sub>1se</sub></span> marked and a shaded uncertainty band.</figcaption></figure>
+<div class="rule"><b>The failure mode to check for first.</b> Sometimes the agent produces figures and prose but never ships a runnable script — it worked the numbers out inline and left nothing you can re-execute. As it was put in class: <i>“sometimes it just uses the online Python script, so they may not include the Python script — but you can use the next prompt to write down the Python script so you can check.”</i> If there is no <code>experiments.py</code> in your folder, that is the bug. Ask for it explicitly:
+<div class="prompt" style="margin-top:10px"><span class="who">the repair prompt</span>Write every experiment behind this manuscript into a single runnable <code>experiments.py</code> that regenerates all figures and <code>results/summary.json</code> from scratch. Run it and show me the output.</div></div>
+<label class="step"><input type="checkbox" data-k="rerun"><span class="t">Run <code>python3 experiments.py</code> yourself. If the figures and <code>summary.json</code> regenerate, your paper is reproducible. If it errors — or if the file does not exist — fix that <b>before</b> you touch the prose.</span></label>
+<div class="quiz"><p class="qq">Which file makes the paper reproducible?</p><button data-x>manuscript.tex</button><button data-ok>experiments.py — one command regenerates every figure and number</button><button data-x>references.bib</button><p class="exp">The <code>.tex</code> is only the presentation layer. Reproducibility lives in the script that turns data into results, plus the results file it writes.</p></div>
+<aside class="section-comments" data-section="s6-output" data-label="What comes back">
+  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
+  <div class="discussion-panel" hidden>
+    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
+    <form class="discussion-form">
+      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
+      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="What would you like to ask or share about this section?"></textarea></label>
+      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
+    </form>
+  </div>
+</aside>
+
+<h2 class="sec" id="s7"><span class="no">7</span>Get it into Overleaf</h2>
+<p>Most conferences and most classmates work in <a href="https://www.overleaf.com" target="_blank" rel="noopener">Overleaf</a>. Ask for the package directly — this was the second prompt of the demo:</p>
+<div class="prompt"><span class="who">what was actually typed</span>convert the existing materials to a latex manuscript and prepare a zip file that I can upload to overleaf</div>
+<p>Then in Overleaf: <b>New Project → Upload Project</b> → drop the zip → <b>Recompile</b>. The zip needs <code>manuscript.tex</code>, <code>references.bib</code>, and the whole <code>figures/</code> folder; leave the raw data out unless it is small.</p>
+<label class="step"><input type="checkbox" data-k="zip"><span class="t">Ask for the Overleaf zip, upload it, and recompile. Fix any missing-figure errors before you show anyone.</span></label>
+<label class="step"><input type="checkbox" data-k="pdf"><span class="t">Read the compiled PDF end to end — as a reader, not as the author. Does every figure get mentioned in the text?</span></label>
+<aside class="section-comments" data-section="s7-overleaf" data-label="Get it into Overleaf">
+  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
+  <div class="discussion-panel" hidden>
+    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
+    <form class="discussion-form">
+      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
+      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="What would you like to ask or share about this section?"></textarea></label>
+      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
+    </form>
+  </div>
+</aside>
+
+<h2 class="sec" id="s8"><span class="no">8</span>Before you put your name on it</h2>
+<p>You are the author. The agent is a very fast assistant with no accountability. Five checks, every time:</p>
+<div class="rule"><b>1 · Check every number against your own run.</b> Open <code>results/summary.json</code>, then find those same values in the PDF. Numbers in the text that appear nowhere in the results file are the single most common failure — delete them or regenerate them.</div>
+<div class="rule"><b>2 · Check every citation exists.</b> Open <code>references.bib</code> and look up each entry on Google Scholar. Language models produce plausible references that were never written. A fake citation ends a submission.</div>
+<div class="rule"><b>3 · Check the claims are not bigger than the evidence.</b> One dataset and one split does not support “Ridge regression is superior.” It supports “on this benchmark, under this protocol, Ridge did not outperform the ordinary least-squares baseline.”</div>
+<div class="rule"><b>4 · Check the data description is true.</b> Sample size, features, licence, where it came from. See <a href="../download-right-data/">Guide 05</a> for the dataset receipt you should already have.</div>
+<div class="rule"><b>5 · Disclose the AI assistance.</b> Most venues now require a sentence about it, and every venue requires that you can explain and defend every line. If you cannot explain a paragraph, it does not go in.</div>
+<div class="quiz"><p class="qq">The manuscript reports “R² = 0.61” but your <code>summary.json</code> says 0.55. What do you do?</p><button data-x>Keep 0.61 — higher looks better</button><button data-x>Change summary.json to 0.61</button><button data-ok>Treat it as a bug: find where 0.61 came from, and make the text quote the value the code produced</button><p class="exp">A mismatch between text and results file is the exact error this whole workflow exists to prevent. The results file wins — always.</p></div>
+<label class="step"><input type="checkbox" data-k="verify"><span class="t">Run all five checks and mark them done only after you have personally opened <code>summary.json</code> and looked up at least three references.</span></label>
+<aside class="section-comments" data-section="s8-honesty" data-label="Before you put your name on it">
+  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
+  <div class="discussion-panel" hidden>
+    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
+    <form class="discussion-form">
+      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
+      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="What would you like to ask or share about this section?"></textarea></label>
+      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
+    </form>
+  </div>
+</aside>
+
+<h2 class="sec" id="s9"><span class="no">9</span>Prompt library</h2>
+<p>Reusable prompts for the rest of the pipeline. Change the file names to yours.</p>
+<table class="cheat"><tr><th>Goal</th><th>Prompt</th></tr>
+<tr><td>First draft</td><td>“Read <code>my_analysis.py</code>. Write a five-page LaTeX conference manuscript with 5–8 figures. Put every experiment in one <code>experiments.py</code>, run it, and use only its real output.”</td></tr>
+<tr><td>More evidence</td><td>“Add a learning curve and a residual diagnostic figure. Regenerate <code>summary.json</code> and update every number in the text that changed.”</td></tr>
+<tr><td>Honesty pass</td><td>“List every numeric claim in <code>manuscript.tex</code> next to the exact key in <code>results/summary.json</code> it comes from. Flag anything with no source.”</td></tr>
+<tr><td>Citation audit</td><td>“For each entry in <code>references.bib</code>, tell me the title, authors, year and venue, and mark any you are not certain is a real publication.”</td></tr>
+<tr><td>Reviewer rehearsal</td><td>“Act as a strict reviewer for this venue. Give me the three weaknesses most likely to get this rejected, and what experiment would fix each.”</td></tr>
+<tr><td>Overleaf package</td><td>“Prepare a zip with <code>manuscript.tex</code>, <code>references.bib</code> and <code>figures/</code> that compiles on Overleaf with no missing files.”</td></tr>
+<tr><td>Shrink to fit</td><td>“The paper is 5.4 pages; the limit is 5. Cut 0.4 pages without deleting any figure or weakening any claim.”</td></tr></table>
+<label class="step"><input type="checkbox" data-k="reviewer"><span class="t">Run the “reviewer rehearsal” prompt on your own draft and write down the three weaknesses it finds.</span></label>
+<aside class="section-comments" data-section="s9-prompts" data-label="Prompt library">
+  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
+  <div class="discussion-panel" hidden>
+    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
+    <form class="discussion-form">
+      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
+      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="What would you like to ask or share about this section?"></textarea></label>
+      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
+    </form>
+  </div>
+</aside>
+
+<div class="why"><b>The final rule:</b> the AI writes the paper, but <b>your code produces the results and your name goes on the front page</b>. If a number cannot be traced back to a file your script wrote, it does not belong in the manuscript.</div>
+<p class="lead" style="margin-top:26px"><b>Your next step:</b> take your own Class 10 regression, run it through steps 1–7, and bring the compiled PDF plus your <code>experiments.py</code> to office hours. For the modelling itself, revisit <a href="../../ai-toolbox/class-10/">Class 10 · Linear Regression</a>. For choosing the dataset, see <a href="../download-right-data/">Guide 05</a>. For the terminal commands used here, see <a href="../github-terminal/">Guide 01</a>. To put the finished paper on the web, see <a href="../publish-research/">Guide 04</a>.</p>
+</main><footer class="site">Merit Point Academy · Guides</footer>
+<script>(function(){
+  /* ---------- progress checkboxes ---------- */
+  var KEY='mpa-guide-claude-code-manuscript';
+  var saved={}; try{saved=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){}
+  function persist(){try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){}}
+  var boxes=[].slice.call(document.querySelectorAll('.step input[type=checkbox]'));
+  function paint(){var n=boxes.filter(function(b){return b.checked;}).length;
+    var pct=boxes.length?Math.round(100*n/boxes.length):0;
+    document.getElementById('pgfill').style.width=pct+'%';
+    document.getElementById('pgtxt').textContent=pct+'%';}
+  boxes.forEach(function(b){
+    if(saved[b.dataset.k]){b.checked=true;b.closest('.step').classList.add('done');}
+    b.addEventListener('change',function(){
+      saved[b.dataset.k]=b.checked; b.closest('.step').classList.toggle('done',b.checked);
+      persist(); paint();});
+  });
+  paint();
+
+  /* ---------- copy buttons ---------- */
+  [].slice.call(document.querySelectorAll('pre.cmd')).forEach(function(pre){
+    var btn=document.createElement('button');btn.className='copy';btn.textContent='⧉ copy';
+    btn.addEventListener('click',function(){
+      var t=pre.cloneNode(true);
+      [].slice.call(t.querySelectorAll('.c,button')).forEach(function(x){x.remove();});
+      var txt=t.textContent.replace(/\n{2,}/g,'\n').split('\n').map(function(l){return l.replace(/\s+$/,'');}).filter(function(l){return l.trim();}).join('\n');
+      (navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject()).then(
+        function(){btn.textContent='✓ copied';setTimeout(function(){btn.textContent='⧉ copy';},1400);},
+        function(){btn.textContent='select + ⌘C';});
+    });
+    pre.appendChild(btn);
+  });
+
+  /* ---------- quizzes ---------- */
+  [].slice.call(document.querySelectorAll('.quiz')).forEach(function(q){
+    [].slice.call(q.querySelectorAll('button')).forEach(function(b){
+      b.addEventListener('click',function(){
+        if(q.classList.contains('answered'))return;
+        q.classList.add('answered');
+        if(b.hasAttribute('data-ok')){b.classList.add('right');}
+        else{b.classList.add('wrong');
+          var ok=q.querySelector('button[data-ok]');if(ok)ok.classList.add('right');}
+      });
+    });
+  });
+
+})();</script>
+<script>
+(function(){
+  var DECK='guides/claude-code-manuscript';
+  function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function when(ts){var d=new Date(ts);return d.toLocaleDateString()+' '+d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});}
+  function load(box){
+    var section=box.dataset.section,list=box.querySelector('.discussion-list'),count=box.querySelector('.discussion-count');
+    list.innerHTML='<p class="discussion-empty">Loading…</p>';
+    fetch('/api/comments?deck='+encodeURIComponent(DECK)+'&slide='+encodeURIComponent(section)).then(function(r){return r.json();}).then(function(j){
+      var cs=j.comments||[];count.textContent=cs.length;
+      list.innerHTML=cs.length?cs.map(function(c){return '<div class="discussion-item"><div class="discussion-meta"><b>'+esc(c.name)+'</b> · '+when(c.created)+'</div><div class="discussion-body">'+esc(c.body)+'</div></div>';}).join(''):'<p class="discussion-empty">No comments yet — ask the first question.</p>';
+    }).catch(function(){list.innerHTML='<p class="discussion-empty">Could not load comments. Please try again.</p>';});
+  }
+  document.querySelectorAll('.section-comments').forEach(function(box){
+    var toggle=box.querySelector('.discussion-toggle'),panel=box.querySelector('.discussion-panel'),form=box.querySelector('.discussion-form'),status=box.querySelector('.discussion-status');
+    toggle.addEventListener('click',function(){var opening=panel.hidden;panel.hidden=!opening;toggle.setAttribute('aria-expanded',String(opening));if(opening)load(box);});
+    form.addEventListener('submit',function(e){
+      e.preventDefault();var body=form.elements.body.value.trim(),submit=form.querySelector('[type="submit"]');if(!body){status.textContent='Write a comment or question first.';return;}
+      submit.disabled=true;status.textContent='Posting…';
+      fetch('/api/comments',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({deck:DECK,slide:box.dataset.section,name:form.elements.name.value,body:body})}).then(function(r){return r.json();}).then(function(j){
+        if(!j.ok)throw new Error(j.error||'Could not post.');form.elements.body.value='';status.textContent='Posted — thank you!';load(box);
+      }).catch(function(err){status.textContent=err.message||'Could not post. Please try again.';}).finally(function(){submit.disabled=false;});
+    });
+  });
+  fetch('/api/comments/counts?deck='+encodeURIComponent(DECK)).then(function(r){return r.json();}).then(function(j){document.querySelectorAll('.section-comments').forEach(function(box){box.querySelector('.discussion-count').textContent=(j.counts||{})[box.dataset.section]||0;});}).catch(function(){});
+})();
+</script>
+</body></html>

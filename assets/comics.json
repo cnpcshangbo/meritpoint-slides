@@ -54,5 +54,21 @@
     "size": "1536x1024",
     "bytes": 387845,
     "at": "2026-07-31T22:20:04.712Z"
+  },
+  "ai-toolbox/class-11/story-perceptron": {
+    "hash": "22b3e94ed3e4",
+    "model": "gpt-image-1-mini",
+    "quality": "medium",
+    "size": "1536x1024",
+    "bytes": 1430385,
+    "at": "2026-08-07T00:16:00.838Z"
+  },
+  "ai-toolbox/class-12/story-ox": {
+    "hash": "809f3484f34b",
+    "model": "gpt-image-1-mini",
+    "quality": "medium",
+    "size": "1536x1024",
+    "bytes": 1427483,
+    "at": "2026-08-07T00:16:22.792Z"
   }
 }

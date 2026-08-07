@@ -1,0 +1,910 @@
+{
+  "title": {
+    "hash": "7854a3036c88bf4b",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Welcome, everyone. Today we're stepping away from straight lines for the first time and into a model you can actually read from top to bottom — the decision tree. And here's the tension I want you to sit with: a single tree is something you can print out and argue about, but a forest of two hundred trees is basically unreadable and yet performs better. So which do you choose? By the end of the hour, you'll see that's a real decision, not a trick question.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.5,
+        "text": "Welcome, everyone."
+      },
+      {
+        "start": 1.5,
+        "end": 9.35,
+        "text": "Today we're stepping away from straight lines for the first time and into a model you can actually read from top to bottom — the decision tree."
+      },
+      {
+        "start": 9.35,
+        "end": 20.287,
+        "text": "And here's the tension I want you to sit with: a single tree is something you can print out and argue about, but a forest of two hundred trees is basically unreadable and yet performs better."
+      },
+      {
+        "start": 20.287,
+        "end": 21.725,
+        "text": "So which do you choose?"
+      },
+      {
+        "start": 21.725,
+        "end": 26.237,
+        "text": "By the end of the hour, you'll see that's a real decision, not a trick question."
+      }
+    ],
+    "bytes": 157824,
+    "model": "claude-opus-4-8"
+  },
+  "recap-class11": {
+    "hash": "48f6a09b839ed2f4",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's rewind for just a minute. We learned that the sigmoid takes a raw score and turns it into a probability, and then a threshold turns that probability into a yes-or-no decision. We also saw that accuracy can flat-out lie to you — ninety-six percent correct while missing every single pedestrian — so always look at the confusion matrix. But here's the thread I really want you to catch: both models we've built so far just draw one straight line and hope the world plays nice. Today's model doesn't draw lines at all — it asks questions.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.725,
+        "text": "Let's rewind for just a minute."
+      },
+      {
+        "start": 1.725,
+        "end": 10.787,
+        "text": "We learned that the sigmoid takes a raw score and turns it into a probability, and then a threshold turns that probability into a yes-or-no decision."
+      },
+      {
+        "start": 10.787,
+        "end": 20.912,
+        "text": "We also saw that accuracy can flat-out lie to you — ninety-six percent correct while missing every single pedestrian — so always look at the confusion matrix."
+      },
+      {
+        "start": 20.912,
+        "end": 29.075,
+        "text": "But here's the thread I really want you to catch: both models we've built so far just draw one straight line and hope the world plays nice."
+      },
+      {
+        "start": 29.075,
+        "end": 33.025,
+        "text": "Today's model doesn't draw lines at all — it asks questions."
+      }
+    ],
+    "bytes": 198576,
+    "model": "claude-opus-4-8"
+  },
+  "agenda": {
+    "hash": "0d9e85f85743d357",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's how our hour together is going to flow. We'll open by sharing homework and playing a little game where 787 people try to guess the weight of an ox — trust me, that matters. Then we build up if-then trees, and this is the part I really want you to stay with me on: we're going to actually watch one tree overfit, seeing train and test scores pull apart right before our eyes. After that, forests, some live demos, and two hands-on labs. By the end, you'll explain how a tree splits, spot overfitting yourself, and say why a forest wins — using your own numbers.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.862,
+        "text": "Here's how our hour together is going to flow."
+      },
+      {
+        "start": 2.862,
+        "end": 12.012,
+        "text": "We'll open by sharing homework and playing a little game where 787 people try to guess the weight of an ox — trust me, that matters."
+      },
+      {
+        "start": 12.012,
+        "end": 23.512,
+        "text": "Then we build up if-then trees, and this is the part I really want you to stay with me on: we're going to actually watch one tree overfit, seeing train and test scores pull apart right before our eyes."
+      },
+      {
+        "start": 23.512,
+        "end": 27.687,
+        "text": "After that, forests, some live demos, and two hands-on labs."
+      },
+      {
+        "start": 27.687,
+        "end": 36.65,
+        "text": "By the end, you'll explain how a tree splits, spot overfitting yourself, and say why a forest wins — using your own numbers."
+      }
+    ],
+    "bytes": 220320,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-warmup": {
+    "hash": "69279a1ad70b2d55",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's start with a quick gut check. Picture a rule like \"if it's a pedestrian and closer than ten metres, then brake.\" Could a machine-learning model's whole brain actually look like that, in plain readable language? Take a moment and tap your answer. Now, many of you probably think all AI is just an unreadable wall of numbers, and honestly, for neural networks that's nearly true — it's a real debate called explainable AI. But there's one big exception, and today you're going to build it yourself.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.675,
+        "text": "Let's start with a quick gut check."
+      },
+      {
+        "start": 1.675,
+        "end": 6.975,
+        "text": "Picture a rule like \"if it's a pedestrian and closer than ten metres, then brake.\""
+      },
+      {
+        "start": 6.975,
+        "end": 12.687,
+        "text": "Could a machine-learning model's whole brain actually look like that, in plain readable language?"
+      },
+      {
+        "start": 12.687,
+        "end": 14.8,
+        "text": "Take a moment and tap your answer."
+      },
+      {
+        "start": 14.8,
+        "end": 25.775,
+        "text": "Now, many of you probably think all AI is just an unreadable wall of numbers, and honestly, for neural networks that's nearly true — it's a real debate called explainable AI."
+      },
+      {
+        "start": 25.775,
+        "end": 29.837,
+        "text": "But there's one big exception, and today you're going to build it yourself."
+      }
+    ],
+    "bytes": 179424,
+    "model": "claude-opus-4-8"
+  },
+  "story-ox": {
+    "hash": "5775b0c62dde4e04",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Picture a country fair in England, 1906, where an ox is on display and people pay sixpence to guess its weight. Francis Galton — yes, the same Galton from Class 10 — gathered nearly eight hundred tickets fully expecting to prove the crowd was foolish. But the middle guess was 1,207 pounds, and the ox actually weighed 1,198 — the crowd was off by less than one percent and beat every expert in the room. And notice this: Galton went in hoping to embarrass the crowd, yet he published the opposite result honestly. That's a random forest in one story — one guesser is a single tree, and the whole crowd is the forest.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 8.137,
+        "text": "Picture a country fair in England, 1906, where an ox is on display and people pay sixpence to guess its weight."
+      },
+      {
+        "start": 8.137,
+        "end": 17.362,
+        "text": "Francis Galton — yes, the same Galton from Class 10 — gathered nearly eight hundred tickets fully expecting to prove the crowd was foolish."
+      },
+      {
+        "start": 17.362,
+        "end": 29.037,
+        "text": "But the middle guess was 1,207 pounds, and the ox actually weighed 1,198 — the crowd was off by less than one percent and beat every expert in the room."
+      },
+      {
+        "start": 29.037,
+        "end": 35.85,
+        "text": "And notice this: Galton went in hoping to embarrass the crowd, yet he published the opposite result honestly."
+      },
+      {
+        "start": 35.85,
+        "end": 43.362,
+        "text": "That's a random forest in one story — one guesser is a single tree, and the whole crowd is the forest."
+      }
+    ],
+    "bytes": 260496,
+    "model": "claude-opus-4-8"
+  },
+  "concept-if-then-trees": {
+    "hash": "a1c5445a373541f5",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Think of a decision tree as a model built entirely out of yes-or-no questions. You start at the top with all your data, and each question splits it in two — is the distance ten meters or less? If yes, brake; if not, ask another question, and keep going until you reach an answer at the bottom. The magic here is that you can trace exactly why the model decided anything, in plain words. Now here's a question worth arguing about: would you rather have a model that's five percent more accurate, or one that can actually tell you why it turned you down for a loan?",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.2620000000000005,
+        "text": "Think of a decision tree as a model built entirely out of yes-or-no questions."
+      },
+      {
+        "start": 5.2620000000000005,
+        "end": 12.525,
+        "text": "You start at the top with all your data, and each question splits it in two — is the distance ten meters or less?"
+      },
+      {
+        "start": 12.525,
+        "end": 18.712,
+        "text": "If yes, brake; if not, ask another question, and keep going until you reach an answer at the bottom."
+      },
+      {
+        "start": 18.712,
+        "end": 24.95,
+        "text": "The magic here is that you can trace exactly why the model decided anything, in plain words."
+      },
+      {
+        "start": 24.95,
+        "end": 33.025,
+        "text": "Now here's a question worth arguing about: would you rather have a model that's five percent more accurate, or one that can actually tell you why it turned you down for a loan?"
+      }
+    ],
+    "bytes": 198576,
+    "model": "claude-opus-4-8"
+  },
+  "concept-impurity": {
+    "hash": "78e66e6931e33346",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "So here's the whole trick behind how a decision tree thinks: it wants purity. A good question splits your group so each side leans hard toward one answer, and we measure that with something called Gini impurity — zero means perfectly clean, and around a half means it's basically a coin flip. The tree just tries every threshold on every feature, keeps the one that drops impurity the most, and repeats. Now watch this tie — two totally different questions score exactly the same gain, so which one wins is basically a coin toss, and that little bit of luck is why trees are so unstable. Hold onto that thought, because in twenty minutes it's going to explain everything.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.8870000000000005,
+        "text": "So here's the whole trick behind how a decision tree thinks: it wants purity."
+      },
+      {
+        "start": 4.8870000000000005,
+        "end": 17.412,
+        "text": "A good question splits your group so each side leans hard toward one answer, and we measure that with something called Gini impurity — zero means perfectly clean, and around a half means it's basically a coin flip."
+      },
+      {
+        "start": 17.412,
+        "end": 25.15,
+        "text": "The tree just tries every threshold on every feature, keeps the one that drops impurity the most, and repeats."
+      },
+      {
+        "start": 25.15,
+        "end": 37.175,
+        "text": "Now watch this tie — two totally different questions score exactly the same gain, so which one wins is basically a coin toss, and that little bit of luck is why trees are so unstable."
+      },
+      {
+        "start": 37.175,
+        "end": 41.762,
+        "text": "Hold onto that thought, because in twenty minutes it's going to explain everything."
+      }
+    ],
+    "bytes": 250992,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-split": {
+    "hash": "6e6249b61be3722d",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's test this together. We start with 20 rows split evenly, ten BRAKE and ten GO — that's a perfect coin flip, an impurity of 0.5. Now our question sends every BRAKE to the left and every GO to the right, so each side holds just one class. Think about it: when a group is entirely one label, how impure is it? It's completely pure, zero on both sides, so the answer is 0.0 — the cleanest split you'll ever dream of, and real data almost never hands it to you.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.525,
+        "text": "Let's test this together."
+      },
+      {
+        "start": 1.525,
+        "end": 10.837,
+        "text": "We start with 20 rows split evenly, ten BRAKE and ten GO — that's a perfect coin flip, an impurity of 0.5."
+      },
+      {
+        "start": 10.837,
+        "end": 18.275,
+        "text": "Now our question sends every BRAKE to the left and every GO to the right, so each side holds just one class."
+      },
+      {
+        "start": 18.275,
+        "end": 23.612,
+        "text": "Think about it: when a group is entirely one label, how impure is it?"
+      },
+      {
+        "start": 23.612,
+        "end": 34.625,
+        "text": "It's completely pure, zero on both sides, so the answer is 0.0 — the cleanest split you'll ever dream of, and real data almost never hands it to you."
+      }
+    ],
+    "bytes": 208080,
+    "model": "claude-opus-4-8"
+  },
+  "concept-one-tree-overfits": {
+    "hash": "bad2d64d2d181077",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Watch what happens when we let a decision tree do whatever it wants. It keeps splitting and splitting until every single leaf holds just one training example, and at that point it's perfect — 100% accurate on the data it learned from. But look at the test score: it actually gets worse, dropping to 0.778, while a shallow tree of depth three sits comfortably at 0.806. That gap between the two lines, that's overfitting made visible — the tree memorised the noise instead of the real pattern. We can fix it by pruning early, but the better fix is coming up next: don't build just one tree.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.762,
+        "text": "Watch what happens when we let a decision tree do whatever it wants."
+      },
+      {
+        "start": 3.762,
+        "end": 15.05,
+        "text": "It keeps splitting and splitting until every single leaf holds just one training example, and at that point it's perfect — 100% accurate on the data it learned from."
+      },
+      {
+        "start": 15.05,
+        "end": 25.812,
+        "text": "But look at the test score: it actually gets worse, dropping to 0.778, while a shallow tree of depth three sits comfortably at 0.806."
+      },
+      {
+        "start": 25.812,
+        "end": 34.137,
+        "text": "That gap between the two lines, that's overfitting made visible — the tree memorised the noise instead of the real pattern."
+      },
+      {
+        "start": 34.137,
+        "end": 40.35,
+        "text": "We can fix it by pruning early, but the better fix is coming up next: don't build just one tree."
+      }
+    ],
+    "bytes": 242496,
+    "model": "claude-opus-4-8"
+  },
+  "concept-forest-vote": {
+    "hash": "0a1dd4fb5d09d171",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's one of my favorite ideas in all of machine learning: a crowd of mediocre voters can beat a single expert. Imagine each voter is right just sixty percent of the time, but they vote independently — with a hundred of them, the majority is right almost ninety-eight percent of the time, because their random errors cancel out and only the signal survives. That's exactly what a random forest does: hundreds of deliberately different trees, each voting. But here's the honest catch — real trees see overlapping data, so they're not truly independent, and our forest only climbed from about 0.78 to 0.86. Still, that's free accuracy, and we keep our readability.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.712,
+        "text": "Here's one of my favorite ideas in all of machine learning: a crowd of mediocre voters can beat a single expert."
+      },
+      {
+        "start": 6.712,
+        "end": 21.25,
+        "text": "Imagine each voter is right just sixty percent of the time, but they vote independently — with a hundred of them, the majority is right almost ninety-eight percent of the time, because their random errors cancel out and only the signal survives."
+      },
+      {
+        "start": 21.25,
+        "end": 27.75,
+        "text": "That's exactly what a random forest does: hundreds of deliberately different trees, each voting."
+      },
+      {
+        "start": 27.75,
+        "end": 39.75,
+        "text": "But here's the honest catch — real trees see overlapping data, so they're not truly independent, and our forest only climbed from about 0.78 to 0.86."
+      },
+      {
+        "start": 39.75,
+        "end": 43.812,
+        "text": "Still, that's free accuracy, and we keep our readability."
+      }
+    ],
+    "bytes": 263232,
+    "model": "claude-opus-4-8"
+  },
+  "case-av-brake": {
+    "hash": "3f3a448d9191af31",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Imagine a self-driving car has to decide: brake or not? Now picture a crash happens, and an investigator asks why. \"The model said so\" won't fly here. But a decision tree lets you print out the exact branch — speed over fifty-four, distance under fifty-eight, therefore brake — and actually argue with it. That's why safety-critical systems often ship the readable tree on purpose, even when a bigger forest scores a little higher.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.275,
+        "text": "Imagine a self-driving car has to decide: brake or not?"
+      },
+      {
+        "start": 4.275,
+        "end": 8.45,
+        "text": "Now picture a crash happens, and an investigator asks why."
+      },
+      {
+        "start": 8.45,
+        "end": 11,
+        "text": "\"The model said so\" won't fly here."
+      },
+      {
+        "start": 11,
+        "end": 20.85,
+        "text": "But a decision tree lets you print out the exact branch — speed over fifty-four, distance under fifty-eight, therefore brake — and actually argue with it."
+      },
+      {
+        "start": 20.85,
+        "end": 28.312,
+        "text": "That's why safety-critical systems often ship the readable tree on purpose, even when a bigger forest scores a little higher."
+      }
+    ],
+    "bytes": 170208,
+    "model": "claude-opus-4-8"
+  },
+  "discuss-your-rule": {
+    "hash": "83d4540b90e24d08",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's make this hands-on. Take five minutes and write one simple if-then rule you'd want a self-driving car to follow — something like \"if the light is red, then stop.\" Here's the catch: for a car to actually learn your rule, it has to measure every part of it. \"If the child looks like they might run\" isn't something a car can record in a column, so it can't learn from it. Then, in pairs, try to break your own rule — when would obeying it actually be dangerous? Drop your best rule and your best counter-example in the chat.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.975,
+        "text": "Alright, let's make this hands-on."
+      },
+      {
+        "start": 1.975,
+        "end": 10.937,
+        "text": "Take five minutes and write one simple if-then rule you'd want a self-driving car to follow — something like \"if the light is red, then stop.\""
+      },
+      {
+        "start": 10.937,
+        "end": 16.6,
+        "text": "Here's the catch: for a car to actually learn your rule, it has to measure every part of it."
+      },
+      {
+        "start": 16.6,
+        "end": 22.725,
+        "text": "\"If the child looks like they might run\" isn't something a car can record in a column, so it can't learn from it."
+      },
+      {
+        "start": 22.725,
+        "end": 28.862,
+        "text": "Then, in pairs, try to break your own rule — when would obeying it actually be dangerous?"
+      },
+      {
+        "start": 28.862,
+        "end": 32.637,
+        "text": "Drop your best rule and your best counter-example in the chat."
+      }
+    ],
+    "bytes": 196128,
+    "model": "claude-opus-4-8"
+  },
+  "demo-colab-tree": {
+    "hash": "50f35342e7151934",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Watch this — with just a few lines, we can make a model tell us exactly how it thinks. First we fit a shallow tree, only three levels deep, and print its logic as plain text. We'll read one branch out loud, top to bottom, like a sentence: if this feature is below that value, then go, otherwise brake. Keep it shallow, because at depth ten the printout runs right off the screen, and that's the lesson itself. The forest at the end can't show its reasoning, so instead it just ranks which features mattered most — its little consolation prize.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.462,
+        "text": "Watch this — with just a few lines, we can make a model tell us exactly how it thinks."
+      },
+      {
+        "start": 5.462,
+        "end": 12.337,
+        "text": "First we fit a shallow tree, only three levels deep, and print its logic as plain text."
+      },
+      {
+        "start": 12.337,
+        "end": 21.087,
+        "text": "We'll read one branch out loud, top to bottom, like a sentence: if this feature is below that value, then go, otherwise brake."
+      },
+      {
+        "start": 21.087,
+        "end": 27.787,
+        "text": "Keep it shallow, because at depth ten the printout runs right off the screen, and that's the lesson itself."
+      },
+      {
+        "start": 27.787,
+        "end": 36.112,
+        "text": "The forest at the end can't show its reasoning, so instead it just ranks which features mattered most — its little consolation prize."
+      }
+    ],
+    "bytes": 217008,
+    "model": "claude-opus-4-8"
+  },
+  "demo-ai-rule-reader": {
+    "hash": "c807352e8d70d186",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a clever trick: take the raw printout of your decision tree and hand it to an AI, asking it to translate each branch into plain English or to spot which rules came from noise instead of real logic. But look at that last question closely, because it's the real gem. When your model says speed matters far more than whether someone's a pedestrian, there are two honest readings. The boring one is that speed and distance simply drive the physics; the worrying one is that your model barely cares if it's a person at all. Holding both explanations at once — that's what data literacy really means.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 11.812,
+        "text": "Here's a clever trick: take the raw printout of your decision tree and hand it to an AI, asking it to translate each branch into plain English or to spot which rules came from noise instead of real logic."
+      },
+      {
+        "start": 11.812,
+        "end": 15.512,
+        "text": "But look at that last question closely, because it's the real gem."
+      },
+      {
+        "start": 15.512,
+        "end": 21.65,
+        "text": "When your model says speed matters far more than whether someone's a pedestrian, there are two honest readings."
+      },
+      {
+        "start": 21.65,
+        "end": 29.85,
+        "text": "The boring one is that speed and distance simply drive the physics; the worrying one is that your model barely cares if it's a person at all."
+      },
+      {
+        "start": 29.85,
+        "end": 35.337,
+        "text": "Holding both explanations at once — that's what data literacy really means."
+      }
+    ],
+    "bytes": 212400,
+    "model": "claude-opus-4-8"
+  },
+  "lab-gini-scratch": {
+    "hash": "b7350981e4771502",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's where we actually build a decision tree ourselves — no fancy libraries, just about twenty lines you can read top to bottom. We've got fourteen braking situations, and our code tries every possible question about distance, speed, and whether there's a pedestrian, measuring which split makes the groups purest. When you run it, you'll find the best first question is \"is the distance ten meters or less?\" — and that one cleanly separates six situations where we always brake. Watch for the ranked list, because two questions tie for first place, and that tie is the heart of Challenge one.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.687,
+        "text": "Alright, here's where we actually build a decision tree ourselves — no fancy libraries, just about twenty lines you can read top to bottom."
+      },
+      {
+        "start": 7.687,
+        "end": 19.675,
+        "text": "We've got fourteen braking situations, and our code tries every possible question about distance, speed, and whether there's a pedestrian, measuring which split makes the groups purest."
+      },
+      {
+        "start": 19.675,
+        "end": 25.912,
+        "text": "When you run it, you'll find the best first question is \"is the distance ten meters or less?\""
+      },
+      {
+        "start": 25.912,
+        "end": 30.337,
+        "text": "— and that one cleanly separates six situations where we always brake."
+      },
+      {
+        "start": 30.337,
+        "end": 36.875,
+        "text": "Watch for the ranked list, because two questions tie for first place, and that tie is the heart of Challenge one."
+      }
+    ],
+    "bytes": 221616,
+    "model": "claude-opus-4-8"
+  },
+  "lab-tree-vs-forest": {
+    "hash": "7ac9e2caecd33b17",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's where the theory meets the road, literally — we've built 240 braking scenarios from real physics, then sprinkled in eight percent label noise because the world is never clean. Watch what happens as we let the tree grow deeper: at depth three it nails about eighty percent on unseen data, but let it grow unlimited and it memorizes the training set perfectly while test accuracy actually drops — that's overfitting you can see with your own eyes. Then two hundred trees vote together and claw that accuracy back up. And notice the pedestrian feature scores almost zero — chew on Challenge One, because whether that's reassuring or terrifying depends entirely on how we defined \"brake.\"",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 12.062,
+        "text": "Here's where the theory meets the road, literally — we've built 240 braking scenarios from real physics, then sprinkled in eight percent label noise because the world is never clean."
+      },
+      {
+        "start": 12.062,
+        "end": 27.75,
+        "text": "Watch what happens as we let the tree grow deeper: at depth three it nails about eighty percent on unseen data, but let it grow unlimited and it memorizes the training set perfectly while test accuracy actually drops — that's overfitting you can see with your own eyes."
+      },
+      {
+        "start": 27.75,
+        "end": 31.875,
+        "text": "Then two hundred trees vote together and claw that accuracy back up."
+      },
+      {
+        "start": 31.875,
+        "end": 42.487,
+        "text": "And notice the pedestrian feature scores almost zero — chew on Challenge One, because whether that's reassuring or terrifying depends entirely on how we defined \"brake.\""
+      }
+    ],
+    "bytes": 255312,
+    "model": "claude-opus-4-8"
+  },
+  "your-project": {
+    "hash": "5929d7a1de89a608",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's your project. I want you to build a decision tree shallow enough that you can actually read its rules out loud, then build a random forest, and compare how they both do on the test set. Use your own dataset or the braking data from Lab 2 — either works. The real test of success is this: can you say one learned rule aloud as a plain sentence, like \"if the speed is above 55 and the object is closer than 58 metres, the car brakes\"? And be honest about the scores, especially when the forest beats your readable tree.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.8,
+        "text": "Alright, here's your project."
+      },
+      {
+        "start": 1.8,
+        "end": 10.9,
+        "text": "I want you to build a decision tree shallow enough that you can actually read its rules out loud, then build a random forest, and compare how they both do on the test set."
+      },
+      {
+        "start": 10.9,
+        "end": 15.5,
+        "text": "Use your own dataset or the braking data from Lab 2 — either works."
+      },
+      {
+        "start": 15.5,
+        "end": 28.312,
+        "text": "The real test of success is this: can you say one learned rule aloud as a plain sentence, like \"if the speed is above 55 and the object is closer than 58 metres, the car brakes\"?"
+      },
+      {
+        "start": 28.312,
+        "end": 33.362,
+        "text": "And be honest about the scores, especially when the forest beats your readable tree."
+      }
+    ],
+    "bytes": 200592,
+    "model": "claude-opus-4-8"
+  },
+  "build-it-now": {
+    "hash": "0a77923acf29b93b",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, this is where we actually get our hands dirty. Start simple — split your data into train and test first, no shortcuts, then fit a tree just three levels deep and read one branch out loud to the person next to you. Now sweep the depth from one all the way up, and write down both your training and test accuracy each time — watch for the point where the test score stops climbing, because that's your tree's honest depth, and it'll be different for everyone. Then fit a forest and ask yourself one question: what did you trade away to buy that extra accuracy?",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.612,
+        "text": "Alright, this is where we actually get our hands dirty."
+      },
+      {
+        "start": 2.612,
+        "end": 13.987,
+        "text": "Start simple — split your data into train and test first, no shortcuts, then fit a tree just three levels deep and read one branch out loud to the person next to you."
+      },
+      {
+        "start": 13.987,
+        "end": 27.112,
+        "text": "Now sweep the depth from one all the way up, and write down both your training and test accuracy each time — watch for the point where the test score stops climbing, because that's your tree's honest depth, and it'll be different for everyone."
+      },
+      {
+        "start": 27.112,
+        "end": 34.15,
+        "text": "Then fit a forest and ask yourself one question: what did you trade away to buy that extra accuracy?"
+      }
+    ],
+    "bytes": 205200,
+    "model": "claude-opus-4-8"
+  },
+  "benchmark-model": {
+    "hash": "50bce615e4473030",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's what a finished piece of work actually looks like, so you know what you're aiming for. You want a readable tree, shallow enough to print, where you can point at one branch and say it out loud: fast and close, so brake. You want a depth sweep that shows the gap opening — training climbing to a perfect one while test slips down. And you want your forest scored beside it on the same held-out data. If your forest doesn't win, report that honestly; that's real science, not a failure.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.25,
+        "text": "Here's what a finished piece of work actually looks like, so you know what you're aiming for."
+      },
+      {
+        "start": 4.25,
+        "end": 13.587,
+        "text": "You want a readable tree, shallow enough to print, where you can point at one branch and say it out loud: fast and close, so brake."
+      },
+      {
+        "start": 13.587,
+        "end": 19.825,
+        "text": "You want a depth sweep that shows the gap opening — training climbing to a perfect one while test slips down."
+      },
+      {
+        "start": 19.825,
+        "end": 23.287,
+        "text": "And you want your forest scored beside it on the same held-out data."
+      },
+      {
+        "start": 23.287,
+        "end": 29.287,
+        "text": "If your forest doesn't win, report that honestly; that's real science, not a failure."
+      }
+    ],
+    "bytes": 176112,
+    "model": "claude-opus-4-8"
+  },
+  "reference-key-terms": {
+    "hash": "95d898a692ce3722",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let me leave you with a handful of words worth keeping. A decision tree is just a chain of yes-or-no questions, and Gini impurity measures how mixed a group is — zero means clean, a half means a coin toss. Pruning means stopping the tree early on purpose, and an ensemble combines many models into one answer, which is where a random forest lives. Hold on to that word \"ensemble\" — it opens the door to almost everything you'll build later. And remember interpretability: a tree lets you follow its reasoning, while a forest quietly trades that away.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.612,
+        "text": "Let me leave you with a handful of words worth keeping."
+      },
+      {
+        "start": 2.612,
+        "end": 13.075,
+        "text": "A decision tree is just a chain of yes-or-no questions, and Gini impurity measures how mixed a group is — zero means clean, a half means a coin toss."
+      },
+      {
+        "start": 13.075,
+        "end": 22.45,
+        "text": "Pruning means stopping the tree early on purpose, and an ensemble combines many models into one answer, which is where a random forest lives."
+      },
+      {
+        "start": 22.45,
+        "end": 28.187,
+        "text": "Hold on to that word \"ensemble\" — it opens the door to almost everything you'll build later."
+      },
+      {
+        "start": 28.187,
+        "end": 35.662,
+        "text": "And remember interpretability: a tree lets you follow its reasoning, while a forest quietly trades that away."
+      }
+    ],
+    "bytes": 214272,
+    "model": "claude-opus-4-8"
+  },
+  "homework": {
+    "hash": "e8700451207258f7",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, before we meet again, I want you to finish your rule-based model — the printed depth-three tree, the forest, and both test scores. Then do the task that really matters: pull out one rule your model learned, put it into plain English, and tell me honestly whether you agree with it. Would you have written that rule yourself? Run the depth sweep on your own data and note where your accuracy peaked, because that number will be different for every single one of you. And if you're hungry for more, try gradient boosting on the same split and see if it beats your forest.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 8.875,
+        "text": "Alright, before we meet again, I want you to finish your rule-based model — the printed depth-three tree, the forest, and both test scores."
+      },
+      {
+        "start": 8.875,
+        "end": 17.737,
+        "text": "Then do the task that really matters: pull out one rule your model learned, put it into plain English, and tell me honestly whether you agree with it."
+      },
+      {
+        "start": 17.737,
+        "end": 19.8,
+        "text": "Would you have written that rule yourself?"
+      },
+      {
+        "start": 19.8,
+        "end": 27.6,
+        "text": "Run the depth sweep on your own data and note where your accuracy peaked, because that number will be different for every single one of you."
+      },
+      {
+        "start": 27.6,
+        "end": 33.575,
+        "text": "And if you're hungry for more, try gradient boosting on the same split and see if it beats your forest."
+      }
+    ],
+    "bytes": 201744,
+    "model": "claude-opus-4-8"
+  },
+  "line-to-remember": {
+    "hash": "bdf105e27f7766ee",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Listen to this sentence for a moment, because you can almost hear a scientist grumbling as he admits he was wrong. Galton went to a country fair expecting to prove that crowds were foolish, and instead the crowd's collective guess turned out to be remarkably accurate — so he published it anyway, even though it wasn't the answer he wanted. That honesty is science at its best. And amazingly, that little note about guessing the weight of an ox is the ancestor of a tool we still use today.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.575,
+        "text": "Listen to this sentence for a moment, because you can almost hear a scientist grumbling as he admits he was wrong."
+      },
+      {
+        "start": 6.575,
+        "end": 19.737,
+        "text": "Galton went to a country fair expecting to prove that crowds were foolish, and instead the crowd's collective guess turned out to be remarkably accurate — so he published it anyway, even though it wasn't the answer he wanted."
+      },
+      {
+        "start": 19.737,
+        "end": 22.3,
+        "text": "That honesty is science at its best."
+      },
+      {
+        "start": 22.3,
+        "end": 29.875,
+        "text": "And amazingly, that little note about guessing the weight of an ox is the ancestor of a tool we still use today."
+      }
+    ],
+    "bytes": 179568,
+    "model": "claude-opus-4-8"
+  },
+  "wrap-up": {
+    "hash": "d095c692d2db5918",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's hold onto three ideas before we go. First, a decision tree splits your data with simple if-then questions, and the beauty is you can read every single one. Second, one deep tree can memorize the training data perfectly but stumble on new data — that gap between one point and 0.778 is overfitting. Third, a forest votes for better accuracy but gives up some readability, and that trade-off is a choice you get to make. Before you leave, write one rule you'd expect your own tree to learn and post it. Next time we meet three new classifiers, and the real question becomes not which model wins, but which one fits your data and your decision.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.75,
+        "text": "Let's hold onto three ideas before we go."
+      },
+      {
+        "start": 2.75,
+        "end": 11.325,
+        "text": "First, a decision tree splits your data with simple if-then questions, and the beauty is you can read every single one."
+      },
+      {
+        "start": 11.325,
+        "end": 22.1,
+        "text": "Second, one deep tree can memorize the training data perfectly but stumble on new data — that gap between one point and 0.778 is overfitting."
+      },
+      {
+        "start": 22.1,
+        "end": 29.637,
+        "text": "Third, a forest votes for better accuracy but gives up some readability, and that trade-off is a choice you get to make."
+      },
+      {
+        "start": 29.637,
+        "end": 34.9,
+        "text": "Before you leave, write one rule you'd expect your own tree to learn and post it."
+      },
+      {
+        "start": 34.9,
+        "end": 44.2,
+        "text": "Next time we meet three new classifiers, and the real question becomes not which model wins, but which one fits your data and your decision."
+      }
+    ],
+    "bytes": 265536,
+    "model": "claude-opus-4-8"
+  },
+  "backup-material": {
+    "hash": "ff372e265f2ee853",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, so everything from here on is bonus material — deeper dives we'll pull up if we've got the time or if you're curious. And here's one honest thing I want to flag: if you ever ask me whether a random forest is the best you can do, the truthful answer, at least on the kind of table-shaped data you'll meet most often, is usually no — gradient boosting tends to edge it out. We've also got trees that predict numbers and an extra quiz waiting whenever you want them.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7,
+        "text": "Alright, so everything from here on is bonus material — deeper dives we'll pull up if we've got the time or if you're curious."
+      },
+      {
+        "start": 7,
+        "end": 21.362,
+        "text": "And here's one honest thing I want to flag: if you ever ask me whether a random forest is the best you can do, the truthful answer, at least on the kind of table-shaped data you'll meet most often, is usually no — gradient boosting tends to edge it out."
+      },
+      {
+        "start": 21.362,
+        "end": 26.787,
+        "text": "We've also got trees that predict numbers and an extra quiz waiting whenever you want them."
+      }
+    ],
+    "bytes": 161136,
+    "model": "claude-opus-4-8"
+  },
+  "backup-boosting": {
+    "hash": "f0ff4b61b4f6dc3b",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "There are two great ways to combine trees into something stronger. Bagging, like a random forest, trains lots of trees independently and lets them vote, so their random mistakes cancel out. Boosting instead builds trees one after another, each one fixing what the last got wrong. And here's the surprise: on everyday spreadsheet data, these boosted trees often beat fancy neural networks — the humble if-then tree you built tonight is still the champion.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.1,
+        "text": "There are two great ways to combine trees into something stronger."
+      },
+      {
+        "start": 4.1,
+        "end": 12.537,
+        "text": "Bagging, like a random forest, trains lots of trees independently and lets them vote, so their random mistakes cancel out."
+      },
+      {
+        "start": 12.537,
+        "end": 18.037,
+        "text": "Boosting instead builds trees one after another, each one fixing what the last got wrong."
+      },
+      {
+        "start": 18.037,
+        "end": 29.125,
+        "text": "And here's the surprise: on everyday spreadsheet data, these boosted trees often beat fancy neural networks — the humble if-then tree you built tonight is still the champion."
+      }
+    ],
+    "bytes": 175104,
+    "model": "claude-opus-4-8"
+  },
+  "backup-regression-trees": {
+    "hash": "96274d27fe1be449",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Remember that disaster from before, when a straight line confidently told us something was negative six metres tall? A regression tree simply can't make that mistake, because every prediction it gives is just an average of rows it actually saw during training. It never invents a wild value outside what it knows. But here's the catch — it has the opposite weakness. It can only ever repeat values it's already seen, in flat little steps. Every model trades one failure for another, and the real skill is choosing which flaw you can live with.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.312,
+        "text": "Remember that disaster from before, when a straight line confidently told us something was negative six metres tall?"
+      },
+      {
+        "start": 7.312,
+        "end": 16.462,
+        "text": "A regression tree simply can't make that mistake, because every prediction it gives is just an average of rows it actually saw during training."
+      },
+      {
+        "start": 16.462,
+        "end": 20.125,
+        "text": "It never invents a wild value outside what it knows."
+      },
+      {
+        "start": 20.125,
+        "end": 23.475,
+        "text": "But here's the catch — it has the opposite weakness."
+      },
+      {
+        "start": 23.475,
+        "end": 28.125,
+        "text": "It can only ever repeat values it's already seen, in flat little steps."
+      },
+      {
+        "start": 28.125,
+        "end": 34.7,
+        "text": "Every model trades one failure for another, and the real skill is choosing which flaw you can live with."
+      }
+    ],
+    "bytes": 208512,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-backup-bonus": {
+    "hash": "3daac495f81181f4",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Look closely at these numbers: a perfect 1.000 on training but only 0.62 on test. That gap is screaming something at us. If your colleague adds more depth, the tree just memorises the training data even harder — the test score gets worse or stays flat, not better. A perfect training score isn't a trophy; it's a warning sign of memorising. The fix goes the opposite way: less depth, bigger leaves, or a whole forest.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.562,
+        "text": "Look closely at these numbers: a perfect 1.000 on training but only 0.62 on test."
+      },
+      {
+        "start": 7.562,
+        "end": 10.175,
+        "text": "That gap is screaming something at us."
+      },
+      {
+        "start": 10.175,
+        "end": 18.962,
+        "text": "If your colleague adds more depth, the tree just memorises the training data even harder — the test score gets worse or stays flat, not better."
+      },
+      {
+        "start": 18.962,
+        "end": 23.95,
+        "text": "A perfect training score isn't a trophy; it's a warning sign of memorising."
+      },
+      {
+        "start": 23.95,
+        "end": 29.075,
+        "text": "The fix goes the opposite way: less depth, bigger leaves, or a whole forest."
+      }
+    ],
+    "bytes": 174816,
+    "model": "claude-opus-4-8"
+  }
+}

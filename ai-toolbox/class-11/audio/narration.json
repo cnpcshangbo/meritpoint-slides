@@ -1,0 +1,895 @@
+{
+  "title": {
+    "hash": "a3866bb266a51c12",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Welcome back, everyone! Today we're tackling classification, and here's the good news: it's the twin of what you learned last time. Almost everything is identical — features go in, the model learns by gradient descent, and we judge it honestly on a test set. Just one thing changes: instead of predicting a number, we're predicting a category. The new machinery is tiny, but there's one big idea waiting for you — a model can be ninety-six percent accurate and still be completely worthless.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.5,
+        "text": "Welcome back, everyone!"
+      },
+      {
+        "start": 1.5,
+        "end": 7.487,
+        "text": "Today we're tackling classification, and here's the good news: it's the twin of what you learned last time."
+      },
+      {
+        "start": 7.487,
+        "end": 15.825,
+        "text": "Almost everything is identical — features go in, the model learns by gradient descent, and we judge it honestly on a test set."
+      },
+      {
+        "start": 15.825,
+        "end": 21.65,
+        "text": "Just one thing changes: instead of predicting a number, we're predicting a category."
+      },
+      {
+        "start": 21.65,
+        "end": 31.275,
+        "text": "The new machinery is tiny, but there's one big idea waiting for you — a model can be ninety-six percent accurate and still be completely worthless."
+      }
+    ],
+    "bytes": 188064,
+    "model": "claude-opus-4-8"
+  },
+  "recap-class10": {
+    "hash": "8e0a778c65f4387e",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's take sixty seconds to remember where we've been. A model is just a learned relationship — features go in, a target comes out, and training means fitting that relationship to data by walking downhill on our loss until it stops falling. We judge only on test data, and we never trust predictions far outside our training range. Here's the beautiful part: today we keep all of that machinery and change exactly one thing — the target becomes a category instead of a number. Not \"how many metres away,\" but \"is it a real object, yes or no?\"",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.875,
+        "text": "Let's take sixty seconds to remember where we've been."
+      },
+      {
+        "start": 2.875,
+        "end": 14.225,
+        "text": "A model is just a learned relationship — features go in, a target comes out, and training means fitting that relationship to data by walking downhill on our loss until it stops falling."
+      },
+      {
+        "start": 14.225,
+        "end": 20.4,
+        "text": "We judge only on test data, and we never trust predictions far outside our training range."
+      },
+      {
+        "start": 20.4,
+        "end": 29.862,
+        "text": "Here's the beautiful part: today we keep all of that machinery and change exactly one thing — the target becomes a category instead of a number."
+      },
+      {
+        "start": 29.862,
+        "end": 35.6,
+        "text": "Not \"how many metres away,\" but \"is it a real object, yes or no?\""
+      }
+    ],
+    "bytes": 213984,
+    "model": "claude-opus-4-8"
+  },
+  "agenda": {
+    "hash": "15d283da8f955b5c",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's how our hour together is going to flow. We'll start by sharing homework and looking at a machine the press once promised would walk and talk, then move into how we turn a raw score into a probability using something called the sigmoid. We'll build up to reading a decision boundary, and I really want us to slow down on one crucial idea: why a model that's ninety-six percent accurate can still be completely useless. Then we get hands-on with demos and two labs before you build your own yes-or-no predictor. By the end, you'll explain binary classification, read a boundary, and never trust accuracy blindly again.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.7119999999999997,
+        "text": "Here's how our hour together is going to flow."
+      },
+      {
+        "start": 2.7119999999999997,
+        "end": 14.212,
+        "text": "We'll start by sharing homework and looking at a machine the press once promised would walk and talk, then move into how we turn a raw score into a probability using something called the sigmoid."
+      },
+      {
+        "start": 14.212,
+        "end": 25.762,
+        "text": "We'll build up to reading a decision boundary, and I really want us to slow down on one crucial idea: why a model that's ninety-six percent accurate can still be completely useless."
+      },
+      {
+        "start": 25.762,
+        "end": 31.362,
+        "text": "Then we get hands-on with demos and two labs before you build your own yes-or-no predictor."
+      },
+      {
+        "start": 31.362,
+        "end": 38.437,
+        "text": "By the end, you'll explain binary classification, read a boundary, and never trust accuracy blindly again."
+      }
+    ],
+    "bytes": 230976,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-warmup": {
+    "hash": "d5b80294316ace2d",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Picture your car's camera spotting a blob on the road — is it a real pedestrian or just a shadow? You might think, \"I'll just feed the confidence score into the linear regression we built last class.\" But here's the trouble: a line can output any number at all, from way below zero to way above one. So it might spit out negative three or positive eight — and those aren't probabilities, and they aren't yes-or-no answers. Today we fix that by bolting one small function onto the end, the sigmoid, which squeezes any number neatly between zero and one.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.612,
+        "text": "Picture your car's camera spotting a blob on the road — is it a real pedestrian or just a shadow?"
+      },
+      {
+        "start": 5.612,
+        "end": 11.25,
+        "text": "You might think, \"I'll just feed the confidence score into the linear regression we built last class.\""
+      },
+      {
+        "start": 11.25,
+        "end": 17.637,
+        "text": "But here's the trouble: a line can output any number at all, from way below zero to way above one."
+      },
+      {
+        "start": 17.637,
+        "end": 25.25,
+        "text": "So it might spit out negative three or positive eight — and those aren't probabilities, and they aren't yes-or-no answers."
+      },
+      {
+        "start": 25.25,
+        "end": 33.987,
+        "text": "Today we fix that by bolting one small function onto the end, the sigmoid, which squeezes any number neatly between zero and one."
+      }
+    ],
+    "bytes": 204336,
+    "model": "claude-opus-4-8"
+  },
+  "story-perceptron": {
+    "hash": "f118fdf36a1a680a",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Back in 1958, a man named Frank Rosenblatt built something called the Perceptron, and the New York Times announced it would soon walk, talk, see, write, and even become conscious of its own existence. It did none of that. Underneath those wild headlines was a simple machine that draws a straight line between two groups of dots — almost exactly what you'll build today. And notice how that happened: a modest result met an eager press office and an excited reporter, and a myth was born that outlived the machine. When the hype collapsed, funding vanished — but the humble idea survived, and it's now inside almost everything.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 13.4,
+        "text": "Back in 1958, a man named Frank Rosenblatt built something called the Perceptron, and the New York Times announced it would soon walk, talk, see, write, and even become conscious of its own existence."
+      },
+      {
+        "start": 13.4,
+        "end": 14.625,
+        "text": "It did none of that."
+      },
+      {
+        "start": 14.625,
+        "end": 23.425,
+        "text": "Underneath those wild headlines was a simple machine that draws a straight line between two groups of dots — almost exactly what you'll build today."
+      },
+      {
+        "start": 23.425,
+        "end": 32.337,
+        "text": "And notice how that happened: a modest result met an eager press office and an excited reporter, and a myth was born that outlived the machine."
+      },
+      {
+        "start": 32.337,
+        "end": 39.825,
+        "text": "When the hype collapsed, funding vanished — but the humble idea survived, and it's now inside almost everything."
+      }
+    ],
+    "bytes": 239328,
+    "model": "claude-opus-4-8"
+  },
+  "concept-categories": {
+    "hash": "cf0bdf8e1165fcde",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Last class we asked \"how much?\" — predicting a number like a price or a distance. Today the question changes to \"which one?\" Is this email spam or not, is this tumour benign or malignant? Here's the piece I really want you to write down: logistic regression doesn't hand you a label. It gives you a probability between zero and one, and then you choose the cut-off that turns that into a decision. That extra step sounds like a small technicality, but it's actually the most powerful choice in the entire model — it's what lets the same trained model be cautious or aggressive depending on what you need.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.912,
+        "text": "Last class we asked \"how much?\""
+      },
+      {
+        "start": 1.912,
+        "end": 4.937,
+        "text": "— predicting a number like a price or a distance."
+      },
+      {
+        "start": 4.937,
+        "end": 7.575,
+        "text": "Today the question changes to \"which one?\""
+      },
+      {
+        "start": 7.575,
+        "end": 12.3,
+        "text": "Is this email spam or not, is this tumour benign or malignant?"
+      },
+      {
+        "start": 12.3,
+        "end": 18.125,
+        "text": "Here's the piece I really want you to write down: logistic regression doesn't hand you a label."
+      },
+      {
+        "start": 18.125,
+        "end": 24.587,
+        "text": "It gives you a probability between zero and one, and then you choose the cut-off that turns that into a decision."
+      },
+      {
+        "start": 24.587,
+        "end": 35.637,
+        "text": "That extra step sounds like a small technicality, but it's actually the most powerful choice in the entire model — it's what lets the same trained model be cautious or aggressive depending on what you need."
+      }
+    ],
+    "bytes": 214128,
+    "model": "claude-opus-4-8"
+  },
+  "concept-sigmoid": {
+    "hash": "af984292fe26047e",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the one new gadget we're adding. Take the straight line from last time, call its output z, and push it through this S-shaped curve — whatever comes out lands neatly between zero and one, which we read as a probability. When z is zero we get exactly a half, pure uncertainty; big positive z climbs toward one, big negative toward zero, but it never quite arrives, so the model is never absolutely certain. And because we're now predicting probabilities, we swap squared error for cross-entropy, which brutally punishes a confident wrong guess and hands gradient descent a clean, single-bottomed bowl to roll down.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.3,
+        "text": "Here's the one new gadget we're adding."
+      },
+      {
+        "start": 2.3,
+        "end": 14.187,
+        "text": "Take the straight line from last time, call its output z, and push it through this S-shaped curve — whatever comes out lands neatly between zero and one, which we read as a probability."
+      },
+      {
+        "start": 14.187,
+        "end": 26.8,
+        "text": "When z is zero we get exactly a half, pure uncertainty; big positive z climbs toward one, big negative toward zero, but it never quite arrives, so the model is never absolutely certain."
+      },
+      {
+        "start": 26.8,
+        "end": 39.2,
+        "text": "And because we're now predicting probabilities, we swap squared error for cross-entropy, which brutally punishes a confident wrong guess and hands gradient descent a clean, single-bottomed bowl to roll down."
+      }
+    ],
+    "bytes": 235584,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-sigmoid": {
+    "hash": "9e609ccef355b983",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a subtle one. Your model spits out 0.52 for a detection — what has it actually told you? It's basically saying \"I'm barely more than a coin flip on this,\" yet because 0.52 clears the 0.5 threshold, it gets stamped REAL, same label a confident 0.99 would get. That's the danger: if you only keep the final label, you throw away how unsure the model really was. And in a self-driving car, a nervous 0.52 and a rock-solid 0.99 should absolutely not trigger the same response.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.387,
+        "text": "Here's a subtle one."
+      },
+      {
+        "start": 1.387,
+        "end": 7.175,
+        "text": "Your model spits out 0.52 for a detection — what has it actually told you?"
+      },
+      {
+        "start": 7.175,
+        "end": 20.162,
+        "text": "It's basically saying \"I'm barely more than a coin flip on this,\" yet because 0.52 clears the 0.5 threshold, it gets stamped REAL, same label a confident 0.99 would get."
+      },
+      {
+        "start": 20.162,
+        "end": 26.925,
+        "text": "That's the danger: if you only keep the final label, you throw away how unsure the model really was."
+      },
+      {
+        "start": 26.925,
+        "end": 36.225,
+        "text": "And in a self-driving car, a nervous 0.52 and a rock-solid 0.99 should absolutely not trigger the same response."
+      }
+    ],
+    "bytes": 217728,
+    "model": "claude-opus-4-8"
+  },
+  "concept-decision-boundary": {
+    "hash": "0d9f70d5b0096ddf",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the beautiful part: when you set the probability to one half, you're really just drawing a straight line through your data. Everything on one side gets called a real object, everything on the other side a false alarm — so that line literally is your model, just two weights and an intercept. Notice these three or four dots sitting on the wrong side; that's not a mistake, that's what messy real data looks like. And look how a point hugging the line and a point far away can share the same label but wildly different confidence — hold onto that, because it's exactly why we'll want to move the threshold.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.45,
+        "text": "Here's the beautiful part: when you set the probability to one half, you're really just drawing a straight line through your data."
+      },
+      {
+        "start": 7.45,
+        "end": 17.662,
+        "text": "Everything on one side gets called a real object, everything on the other side a false alarm — so that line literally is your model, just two weights and an intercept."
+      },
+      {
+        "start": 17.662,
+        "end": 25.325,
+        "text": "Notice these three or four dots sitting on the wrong side; that's not a mistake, that's what messy real data looks like."
+      },
+      {
+        "start": 25.325,
+        "end": 36.662,
+        "text": "And look how a point hugging the line and a point far away can share the same label but wildly different confidence — hold onto that, because it's exactly why we'll want to move the threshold."
+      }
+    ],
+    "bytes": 220320,
+    "model": "claude-opus-4-8"
+  },
+  "concept-accuracy-lies": {
+    "hash": "0bb479a32c412632",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a number that will lie to your face: 96% accurate. Imagine a model watching dashcam footage where only 8 out of 200 frames contain a pedestrian. If it just says \"no pedestrian\" every single time, never even looking, it's right 192 times — that's 96% accuracy — and yet it catches zero of the actual pedestrians. So instead of accuracy, we ask: of the real pedestrians, what fraction did we catch? That's recall, and here it's zero. Whenever one class is rare — disease, fraud, pedestrians — accuracy flatters you, so never report it alone.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.275,
+        "text": "Here's a number that will lie to your face: 96% accurate."
+      },
+      {
+        "start": 4.275,
+        "end": 10.587,
+        "text": "Imagine a model watching dashcam footage where only 8 out of 200 frames contain a pedestrian."
+      },
+      {
+        "start": 10.587,
+        "end": 23.425,
+        "text": "If it just says \"no pedestrian\" every single time, never even looking, it's right 192 times — that's 96% accuracy — and yet it catches zero of the actual pedestrians."
+      },
+      {
+        "start": 23.425,
+        "end": 29.5,
+        "text": "So instead of accuracy, we ask: of the real pedestrians, what fraction did we catch?"
+      },
+      {
+        "start": 29.5,
+        "end": 31.875,
+        "text": "That's recall, and here it's zero."
+      },
+      {
+        "start": 31.875,
+        "end": 40.325,
+        "text": "Whenever one class is rare — disease, fraud, pedestrians — accuracy flatters you, so never report it alone."
+      }
+    ],
+    "bytes": 242352,
+    "model": "claude-opus-4-8"
+  },
+  "case-av-classification": {
+    "hash": "3ac02be466690e21",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Picture a self-driving car asking, dozens of times a second, is that a real object or just a false alarm? It looks at two clues — how confident the detector is, and how tall the box around the thing is — and it has to decide yes or one. Here's the twist: braking for a plastic bag is annoying, but not braking for a person is catastrophic, so those two mistakes are not equal. That's why point-five is just a lazy default, not a real decision — no dataset on earth will pick the right threshold for you, because that's a human value judgement dressed up as a number.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.8,
+        "text": "Picture a self-driving car asking, dozens of times a second, is that a real object or just a false alarm?"
+      },
+      {
+        "start": 7.8,
+        "end": 17.062,
+        "text": "It looks at two clues — how confident the detector is, and how tall the box around the thing is — and it has to decide yes or one."
+      },
+      {
+        "start": 17.062,
+        "end": 25.9,
+        "text": "Here's the twist: braking for a plastic bag is annoying, but not braking for a person is catastrophic, so those two mistakes are not equal."
+      },
+      {
+        "start": 25.9,
+        "end": 37.325,
+        "text": "That's why point-five is just a lazy default, not a real decision — no dataset on earth will pick the right threshold for you, because that's a human value judgement dressed up as a number."
+      }
+    ],
+    "bytes": 224352,
+    "model": "claude-opus-4-8"
+  },
+  "discuss-costly-errors": {
+    "hash": "202d311cd4442cc9",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a question I want you to really chew on: which mistake is worse, a wrong yes or a wrong no? Think about a spam filter — if it wrongly flags a job offer as spam, that opportunity vanishes forever, but a wrong \"not spam\" just costs you two seconds of annoyance. So pick a case, like cancer screening or airport security, and figure out who actually pays for each kind of error. Then wrestle with the hard part: should the model lean one way on purpose, and who gets to draw that line? Grab a partner for three minutes and post your best example and your best \"who decides\" answer.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6,
+        "text": "Here's a question I want you to really chew on: which mistake is worse, a wrong yes or a wrong no?"
+      },
+      {
+        "start": 6,
+        "end": 17.387,
+        "text": "Think about a spam filter — if it wrongly flags a job offer as spam, that opportunity vanishes forever, but a wrong \"not spam\" just costs you two seconds of annoyance."
+      },
+      {
+        "start": 17.387,
+        "end": 24.362,
+        "text": "So pick a case, like cancer screening or airport security, and figure out who actually pays for each kind of error."
+      },
+      {
+        "start": 24.362,
+        "end": 30.412,
+        "text": "Then wrestle with the hard part: should the model lean one way on purpose, and who gets to draw that line?"
+      },
+      {
+        "start": 30.412,
+        "end": 36.7,
+        "text": "Grab a partner for three minutes and post your best example and your best \"who decides\" answer."
+      }
+    ],
+    "bytes": 220608,
+    "model": "claude-opus-4-8"
+  },
+  "demo-colab-logistic": {
+    "hash": "b61eac3959b79d0c",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Look closely and you'll notice something reassuring: three of these five lines are exactly what we wrote last week for regression. So you already know most of this. The two new pieces are what matter. Notice this little word \"stratify\" — it keeps the same ratio of classes in both your training and test data, which is crucial when one class is rare, otherwise your scores become pure noise. And this line asking for probabilities is the one everyone skips, but it's secretly what \"predict\" is doing underneath, just with a hidden cutoff at one half.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.362,
+        "text": "Look closely and you'll notice something reassuring: three of these five lines are exactly what we wrote last week for regression."
+      },
+      {
+        "start": 7.362,
+        "end": 9.25,
+        "text": "So you already know most of this."
+      },
+      {
+        "start": 9.25,
+        "end": 11.25,
+        "text": "The two new pieces are what matter."
+      },
+      {
+        "start": 11.25,
+        "end": 23.187,
+        "text": "Notice this little word \"stratify\" — it keeps the same ratio of classes in both your training and test data, which is crucial when one class is rare, otherwise your scores become pure noise."
+      },
+      {
+        "start": 23.187,
+        "end": 32.925,
+        "text": "And this line asking for probabilities is the one everyone skips, but it's secretly what \"predict\" is doing underneath, just with a hidden cutoff at one half."
+      }
+    ],
+    "bytes": 197856,
+    "model": "claude-opus-4-8"
+  },
+  "demo-ai-threshold": {
+    "hash": "64e8fa9f367bd042",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's where we hand the AI a mentor's hat, but only for the one call it truly can't make for you — the threshold. Notice these questions: if missing a pedestrian is catastrophic, should your cutoff sit below 0.5, and what do you sacrifice? That last question is the sneaky one — it's fishing for calibration, asking why a model's probabilities might be untrustworthy even at high accuracy. The AI will answer this beautifully and sometimes wrongly, so always run our two-minute verify routine before you trust it.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.237,
+        "text": "Here's where we hand the AI a mentor's hat, but only for the one call it truly can't make for you — the threshold."
+      },
+      {
+        "start": 7.237,
+        "end": 15.962,
+        "text": "Notice these questions: if missing a pedestrian is catastrophic, should your cutoff sit below 0.5, and what do you sacrifice?"
+      },
+      {
+        "start": 15.962,
+        "end": 25.712,
+        "text": "That last question is the sneaky one — it's fishing for calibration, asking why a model's probabilities might be untrustworthy even at high accuracy."
+      },
+      {
+        "start": 25.712,
+        "end": 34.612,
+        "text": "The AI will answer this beautifully and sometimes wrongly, so always run our two-minute verify routine before you trust it."
+      }
+    ],
+    "bytes": 208080,
+    "model": "claude-opus-4-8"
+  },
+  "lab-sigmoid-scratch": {
+    "hash": "e1ae138f0f23058d",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Today we're building logistic regression with our own hands — no libraries, just the same gradient-descent loop you wrote last week with two small changes. We swap in a sigmoid to squash the output into a probability, and we use cross-entropy instead of squared error. Watch what happens: the loss falls, the curve steepens, and it prints itself as an S-shape right in the text — flat, then a sharp climb, then flat again. Keep an eye on that weight, because it never quite stops growing, and Challenge 1 asks you why.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 10.087,
+        "text": "Today we're building logistic regression with our own hands — no libraries, just the same gradient-descent loop you wrote last week with two small changes."
+      },
+      {
+        "start": 10.087,
+        "end": 17.375,
+        "text": "We swap in a sigmoid to squash the output into a probability, and we use cross-entropy instead of squared error."
+      },
+      {
+        "start": 17.375,
+        "end": 27.862,
+        "text": "Watch what happens: the loss falls, the curve steepens, and it prints itself as an S-shape right in the text — flat, then a sharp climb, then flat again."
+      },
+      {
+        "start": 27.862,
+        "end": 32.925,
+        "text": "Keep an eye on that weight, because it never quite stops growing, and Challenge 1 asks you why."
+      }
+    ],
+    "bytes": 197856,
+    "model": "claude-opus-4-8"
+  },
+  "lab-av-classifier": {
+    "hash": "3691806bec46d871",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, this is where it gets real — two features, confidence and box height, and a model that draws an honest boundary between real objects and false alarms. Watch that middle test detection: it sits right on the fence at about a coin-flip, and the moment you nudge the threshold down, it flips to \"real.\" Play with that sweep and you'll feel the trade — lower the threshold and you catch more, but you cry wolf more often too. And notice the test accuracy is only eighty percent on data it never saw — that's not a broken lab, that's honesty. Ask yourself which number you'd actually trust in a moving car.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 9.712,
+        "text": "Alright, this is where it gets real — two features, confidence and box height, and a model that draws an honest boundary between real objects and false alarms."
+      },
+      {
+        "start": 9.712,
+        "end": 18.9,
+        "text": "Watch that middle test detection: it sits right on the fence at about a coin-flip, and the moment you nudge the threshold down, it flips to \"real.\""
+      },
+      {
+        "start": 18.9,
+        "end": 26.025,
+        "text": "Play with that sweep and you'll feel the trade — lower the threshold and you catch more, but you cry wolf more often too."
+      },
+      {
+        "start": 26.025,
+        "end": 34.375,
+        "text": "And notice the test accuracy is only eighty percent on data it never saw — that's not a broken lab, that's honesty."
+      },
+      {
+        "start": 34.375,
+        "end": 38.25,
+        "text": "Ask yourself which number you'd actually trust in a moving car."
+      }
+    ],
+    "bytes": 229824,
+    "model": "claude-opus-4-8"
+  },
+  "your-project": {
+    "hash": "3f44669f513d20e3",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's your project, and I want you to build something you can actually see. Pick a yes/no dataset, choose exactly two features — and I mean two, because that's what lets us draw the boundary on a flat plot — then fit a logistic regression and colour your points by class. The magic is in that boundary line: once you draw it, the model stops being a mystery box and becomes something you can point at and explain. And please report the confusion matrix, not just accuracy, because accuracy will happily lie to you while the confusion matrix tells you exactly which mistakes your model makes.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.112,
+        "text": "Alright, here's your project, and I want you to build something you can actually see."
+      },
+      {
+        "start": 5.112,
+        "end": 18.237,
+        "text": "Pick a yes/no dataset, choose exactly two features — and I mean two, because that's what lets us draw the boundary on a flat plot — then fit a logistic regression and colour your points by class."
+      },
+      {
+        "start": 18.237,
+        "end": 27.325,
+        "text": "The magic is in that boundary line: once you draw it, the model stops being a mystery box and becomes something you can point at and explain."
+      },
+      {
+        "start": 27.325,
+        "end": 38.7,
+        "text": "And please report the confusion matrix, not just accuracy, because accuracy will happily lie to you while the confusion matrix tells you exactly which mistakes your model makes."
+      }
+    ],
+    "bytes": 232560,
+    "model": "claude-opus-4-8"
+  },
+  "build-it-now": {
+    "hash": "597513ea5a36801d",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, time to build this yourself. Start by picking two numeric features and a yes-or-no target, and before you do anything else, count how many rows fall into each class. Here's why that matters: if ninety percent of your data is one class, your model can score ninety percent just by guessing lazily — it learned nothing. When you split, keep the class balance in both piles, fit on the training data only, and then read the confusion matrix. Finally, to draw that boundary line, remember you're solving for x₂ — that's x₂ equals minus w₁x₁ plus b, all over w₂ — so put it on paper before you code it.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.387,
+        "text": "Alright, time to build this yourself."
+      },
+      {
+        "start": 2.387,
+        "end": 11.087,
+        "text": "Start by picking two numeric features and a yes-or-no target, and before you do anything else, count how many rows fall into each class."
+      },
+      {
+        "start": 11.087,
+        "end": 20.962,
+        "text": "Here's why that matters: if ninety percent of your data is one class, your model can score ninety percent just by guessing lazily — it learned nothing."
+      },
+      {
+        "start": 20.962,
+        "end": 29.075,
+        "text": "When you split, keep the class balance in both piles, fit on the training data only, and then read the confusion matrix."
+      },
+      {
+        "start": 29.075,
+        "end": 41.087,
+        "text": "Finally, to draw that boundary line, remember you're solving for x₂ — that's x₂ equals minus w₁x₁ plus b, all over w₂ — so put it on paper before you code it."
+      }
+    ],
+    "bytes": 246816,
+    "model": "claude-opus-4-8"
+  },
+  "benchmark-model": {
+    "hash": "451950fbc3c65ff4",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's what a finished classifier actually looks like, so you know what you're aiming for. First, a boundary you can read in one plain sentence — more confidence and a bigger box both push toward \"real.\" Second, an honest score: not just eighty percent accuracy, but the full confusion matrix showing your hits, your correct rejections, and both kinds of mistakes. And a plot a stranger could understand without you talking. The real test is this: can you say which error you'd rather make — a false alarm or a miss — and why? Nail that, and you've understood the hour, not just the code.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.325,
+        "text": "Here's what a finished classifier actually looks like, so you know what you're aiming for."
+      },
+      {
+        "start": 4.325,
+        "end": 12.8,
+        "text": "First, a boundary you can read in one plain sentence — more confidence and a bigger box both push toward \"real.\""
+      },
+      {
+        "start": 12.8,
+        "end": 23.637,
+        "text": "Second, an honest score: not just eighty percent accuracy, but the full confusion matrix showing your hits, your correct rejections, and both kinds of mistakes."
+      },
+      {
+        "start": 23.637,
+        "end": 26.912,
+        "text": "And a plot a stranger could understand without you talking."
+      },
+      {
+        "start": 26.912,
+        "end": 33.537,
+        "text": "The real test is this: can you say which error you'd rather make — a false alarm or a miss — and why?"
+      },
+      {
+        "start": 33.537,
+        "end": 37.275,
+        "text": "Nail that, and you've understood the hour, not just the code."
+      }
+    ],
+    "bytes": 224064,
+    "model": "claude-opus-4-8"
+  },
+  "reference-key-terms": {
+    "hash": "447e45f08261c4b7",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let me walk you through the words we'll lean on today. Classification just means predicting which category something falls into, and when there are exactly two, we call it binary. The sigmoid is our little squashing function — it takes any number and turns it into a probability between zero and one. Now, pay special attention to the threshold: that's the cut-off that decides when a probability becomes a yes or a no, and it defaults to 0.5, but you should always choose it deliberately, because that choice carries real weight.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.287,
+        "text": "Let me walk you through the words we'll lean on today."
+      },
+      {
+        "start": 3.287,
+        "end": 11.137,
+        "text": "Classification just means predicting which category something falls into, and when there are exactly two, we call it binary."
+      },
+      {
+        "start": 11.137,
+        "end": 19.262,
+        "text": "The sigmoid is our little squashing function — it takes any number and turns it into a probability between zero and one."
+      },
+      {
+        "start": 19.262,
+        "end": 33.35,
+        "text": "Now, pay special attention to the threshold: that's the cut-off that decides when a probability becomes a yes or a no, and it defaults to 0.5, but you should always choose it deliberately, because that choice carries real weight."
+      }
+    ],
+    "bytes": 200448,
+    "model": "claude-opus-4-8"
+  },
+  "homework": {
+    "hash": "1a1263825896a714",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's what I need from you before we meet again. Finish building your yes/no predictor, then do something crucial: slide your threshold to 0.3, then to 0.7, and watch how your two kinds of errors trade off. Write me one honest paragraph about which mistake hurts more for your problem, and who ought to make that call — there's no right answer here, I'm grading your reasoning. A threshold you chose on purpose and can defend is a completely different thing from one you never even noticed. If you want a stretch, try the Titanic challenge — and notice how much of it is cleaning, not modeling.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.3,
+        "text": "Alright, here's what I need from you before we meet again."
+      },
+      {
+        "start": 3.3,
+        "end": 15.65,
+        "text": "Finish building your yes/no predictor, then do something crucial: slide your threshold to 0.3, then to 0.7, and watch how your two kinds of errors trade off."
+      },
+      {
+        "start": 15.65,
+        "end": 24.95,
+        "text": "Write me one honest paragraph about which mistake hurts more for your problem, and who ought to make that call — there's no right answer here, I'm grading your reasoning."
+      },
+      {
+        "start": 24.95,
+        "end": 32.6,
+        "text": "A threshold you chose on purpose and can defend is a completely different thing from one you never even noticed."
+      },
+      {
+        "start": 32.6,
+        "end": 38.875,
+        "text": "If you want a stretch, try the Titanic challenge — and notice how much of it is cleaning, not modeling."
+      }
+    ],
+    "bytes": 233568,
+    "model": "claude-opus-4-8"
+  },
+  "line-to-remember": {
+    "hash": "e38b1447c92928fa",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the one line I want you to carry out of here tonight: the machine's answer is a probability, but the decision is yours. When logistic regression hands you 0.63, that's all it knows — nothing in the math tells you whether 0.63 should mean \"hit the brakes.\" Where you draw that line, that threshold, isn't some technical setting buried in the code. It's a value judgement, and it belongs to you, not the algorithm.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.55,
+        "text": "Here's the one line I want you to carry out of here tonight: the machine's answer is a probability, but the decision is yours."
+      },
+      {
+        "start": 7.55,
+        "end": 17.15,
+        "text": "When logistic regression hands you 0.63, that's all it knows — nothing in the math tells you whether 0.63 should mean \"hit the brakes.\""
+      },
+      {
+        "start": 17.15,
+        "end": 22.662,
+        "text": "Where you draw that line, that threshold, isn't some technical setting buried in the code."
+      },
+      {
+        "start": 22.662,
+        "end": 27.025,
+        "text": "It's a value judgement, and it belongs to you, not the algorithm."
+      }
+    ],
+    "bytes": 162576,
+    "model": "claude-opus-4-8"
+  },
+  "wrap-up": {
+    "hash": "0110d4971f8e0bcb",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's hold onto three big ideas before we go. First, classification predicts a category by turning a probability through a sigmoid, and that decision boundary is really the model itself — moving your threshold slides that line around. Second, accuracy alone can fool you, so always look at the confusion matrix, especially when one outcome is rare. For your exit ticket, give me a real example where a wrong \"yes\" hurts more than a wrong \"no.\" Next time we meet models that don't draw lines at all — they ask questions you can actually read.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.037,
+        "text": "Let's hold onto three big ideas before we go."
+      },
+      {
+        "start": 3.037,
+        "end": 15.3,
+        "text": "First, classification predicts a category by turning a probability through a sigmoid, and that decision boundary is really the model itself — moving your threshold slides that line around."
+      },
+      {
+        "start": 15.3,
+        "end": 23.175,
+        "text": "Second, accuracy alone can fool you, so always look at the confusion matrix, especially when one outcome is rare."
+      },
+      {
+        "start": 23.175,
+        "end": 29.012,
+        "text": "For your exit ticket, give me a real example where a wrong \"yes\" hurts more than a wrong \"no.\""
+      },
+      {
+        "start": 29.012,
+        "end": 34.75,
+        "text": "Next time we meet models that don't draw lines at all — they ask questions you can actually read."
+      }
+    ],
+    "bytes": 208800,
+    "model": "claude-opus-4-8"
+  },
+  "backup-material": {
+    "hash": "202caee8d8c403ea",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, everything from here on is bonus territory — the extra material we'll dip into only if we've got the time and the appetite for it. If someone's already wondering how we handle more than two categories, I've got a section on that waiting. And if the accuracy discussion really clicked with you and you want to go deeper into precision and recall, we can pull that up too. Think of these as tools on the shelf, ready when you need them.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 8.037,
+        "text": "Alright, everything from here on is bonus territory — the extra material we'll dip into only if we've got the time and the appetite for it."
+      },
+      {
+        "start": 8.037,
+        "end": 13.525,
+        "text": "If someone's already wondering how we handle more than two categories, I've got a section on that waiting."
+      },
+      {
+        "start": 13.525,
+        "end": 20.675,
+        "text": "And if the accuracy discussion really clicked with you and you want to go deeper into precision and recall, we can pull that up too."
+      },
+      {
+        "start": 20.675,
+        "end": 24.1,
+        "text": "Think of these as tools on the shelf, ready when you need them."
+      }
+    ],
+    "bytes": 145008,
+    "model": "claude-opus-4-8"
+  },
+  "backup-multiclass": {
+    "hash": "ed98f311ba5b6c8e",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "So far we've been asking yes-or-no questions, but what happens when you've got pedestrians, cars, and cyclists all at once? One approach is to train a separate detector for each class and just trust whichever one is most confident. The other is softmax — a single model that spits out a score for every class, all adding up to one. And here's the exciting part: that softmax layer sits at the end of nearly every modern neural network, including the one that decides the next word in ChatGPT.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.787,
+        "text": "So far we've been asking yes-or-no questions, but what happens when you've got pedestrians, cars, and cyclists all at once?"
+      },
+      {
+        "start": 6.787,
+        "end": 13.287,
+        "text": "One approach is to train a separate detector for each class and just trust whichever one is most confident."
+      },
+      {
+        "start": 13.287,
+        "end": 19.675,
+        "text": "The other is softmax — a single model that spits out a score for every class, all adding up to one."
+      },
+      {
+        "start": 19.675,
+        "end": 29.312,
+        "text": "And here's the exciting part: that softmax layer sits at the end of nearly every modern neural network, including the one that decides the next word in ChatGPT."
+      }
+    ],
+    "bytes": 176256,
+    "model": "claude-opus-4-8"
+  },
+  "backup-precision-recall": {
+    "hash": "dcd6ea21ac91f278",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's untangle these four boxes. A false alarm and a miss are completely different mistakes, so we never let them share a number. Precision asks: when I raise the alarm, how often am I right? Recall asks: of everything that was really out there, how much did I actually catch? And here's the catch — in our live lab, dropping the threshold to 0.3 caught more but let false alarms creep in, while pushing it to 0.9 made every alarm correct yet quietly missed three real objects. Same model, same data — you simply choose what you're willing to lose.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.275,
+        "text": "Let's untangle these four boxes."
+      },
+      {
+        "start": 2.275,
+        "end": 8.337,
+        "text": "A false alarm and a miss are completely different mistakes, so we never let them share a number."
+      },
+      {
+        "start": 8.337,
+        "end": 12.475,
+        "text": "Precision asks: when I raise the alarm, how often am I right?"
+      },
+      {
+        "start": 12.475,
+        "end": 17.812,
+        "text": "Recall asks: of everything that was really out there, how much did I actually catch?"
+      },
+      {
+        "start": 17.812,
+        "end": 32.062,
+        "text": "And here's the catch — in our live lab, dropping the threshold to 0.3 caught more but let false alarms creep in, while pushing it to 0.9 made every alarm correct yet quietly missed three real objects."
+      },
+      {
+        "start": 32.062,
+        "end": 36.675,
+        "text": "Same model, same data — you simply choose what you're willing to lose."
+      }
+    ],
+    "bytes": 220464,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-backup-bonus": {
+    "hash": "e3d7d0c48b285426",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a tricky one. A hospital brags about 99.2% accuracy, but the disease only shows up in half a percent of people. Watch what happens: a lazy model that just says \"healthy\" to everyone scores 99.5% — even better! So the first thing you should ask is how many actual sick people it caught, because accuracy is basically useless when one class dominates. Now, checking whether they tested on training data is a genuinely smart question too — it's just not the one that matters first here.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.237,
+        "text": "Here's a tricky one."
+      },
+      {
+        "start": 1.237,
+        "end": 8.787,
+        "text": "A hospital brags about 99.2% accuracy, but the disease only shows up in half a percent of people."
+      },
+      {
+        "start": 8.787,
+        "end": 17.112,
+        "text": "Watch what happens: a lazy model that just says \"healthy\" to everyone scores 99.5% — even better!"
+      },
+      {
+        "start": 17.112,
+        "end": 25.962,
+        "text": "So the first thing you should ask is how many actual sick people it caught, because accuracy is basically useless when one class dominates."
+      },
+      {
+        "start": 25.962,
+        "end": 33.825,
+        "text": "Now, checking whether they tested on training data is a genuinely smart question too — it's just not the one that matters first here."
+      }
+    ],
+    "bytes": 203328,
+    "model": "claude-opus-4-8"
+  }
+}
