@@ -1,0 +1,1077 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guide 07 · Healthcare Datasets & 103 Research Questions — Merit Point Academy</title>
+<meta name="description" content="Verified healthcare data portals and ready-to-download datasets, plus 103 research questions mapped to data, poster figures, and contributions — built for the IEEE HealthCom 2026 Young Researcher Symposium poster project.">
+<link rel="icon" type="image/png" href="/meritpoint-slides/assets/favicon.png"><link rel="stylesheet" href="/meritpoint-slides/assets/site.css">
+<style>
+main.wrap{max-width:860px;padding-bottom:60vh}
+.crumb{margin-top:18px}
+h2.sec{color:#0C2D52;font-size:22px;margin:44px 0 6px;padding-top:10px;border-top:3px solid #0F9DB0}
+h2.sec .no{color:#0F9DB0;margin-right:8px}
+h3{color:#0C2D52;font-size:16.5px;margin:26px 0 8px}
+p,li{font-size:15px}
+.lead{font-size:16px;color:#21303F}
+.why{background:#EEF4FA;border-left:4px solid #F2A93B;border-radius:0 10px 10px 0;padding:10px 14px;margin:14px 0;font-size:14.5px}
+.why b{color:#0C2D52}
+pre.cmd{position:relative;background:#0d1b2a;color:#d7e7f7;border-radius:10px;padding:13px 90px 13px 16px;font-size:13.5px;line-height:1.65;overflow-x:auto;font-family:"SF Mono",Menlo,Consolas,monospace}
+pre.cmd .c{color:#6d8aa5}
+pre.cmd .o{color:#8fb98f}
+pre.cmd button.copy{position:absolute;top:8px;right:8px;font:inherit;font-size:11.5px;background:#1b3a5c;color:#cfe0ef;border:1px solid #2c5580;border-radius:7px;padding:4px 10px;cursor:pointer}
+pre.cmd button.copy:hover{background:#24507e}
+.step{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid #D7E2EC;border-radius:10px;padding:11px 14px;margin:8px 0;cursor:pointer;font-size:14.5px}
+.step:hover{border-color:#0F9DB0}
+.step input{margin-top:3px;width:16px;height:16px;accent-color:#0F9DB0;flex:none}
+.step.done{background:#f2faf7;border-color:#bfe3d4}
+.step.done .t{color:#1FA37A}
+.step kbd,p kbd,li kbd{background:#EEF4FA;border:1px solid #D7E2EC;border-bottom-width:2px;border-radius:5px;padding:1px 6px;font-size:12.5px;font-family:inherit}
+.tryit{background:#eafcff;border:1.5px dashed #2BC4D4;border-radius:10px;padding:11px 14px;margin:14px 0;font-size:14.5px}
+.tryit b{color:#0F9DB0}
+.quiz{background:#fff;border:1px solid #D7E2EC;border-radius:12px;padding:14px 16px;margin:18px 0}
+.quiz .qq{font-weight:600;color:#0C2D52;margin:0 0 10px;font-size:14.5px}
+.quiz button{display:block;width:100%;text-align:left;font:inherit;font-size:14px;background:#F6F9FC;border:1px solid #D7E2EC;border-radius:9px;padding:9px 12px;margin:6px 0;cursor:pointer}
+.quiz button:hover{border-color:#0F9DB0}
+.quiz button.right{background:#e7f6ef;border-color:#1FA37A;color:#1FA37A;font-weight:600}
+.quiz button.wrong{background:#fdecea;border-color:#C0392B;color:#C0392B}
+.quiz .exp{display:none;margin:10px 0 0;font-size:13.5px;color:#5E7183;border-top:1px dashed #D7E2EC;padding-top:9px}
+.quiz.answered .exp{display:block}
+table.cheat{border-collapse:collapse;width:100%;margin:14px 0;font-size:14px}
+table.cheat th{background:#0C2D52;color:#fff;text-align:left;padding:8px 12px;font-size:13px}
+table.cheat td{border:1px solid #D7E2EC;padding:7px 12px;background:#fff}
+table.cheat td code{background:#EEF4FA;border-radius:5px;padding:1px 6px;font-size:12.5px}
+.pathpic{background:#fff;border:1px solid #D7E2EC;border-radius:12px;padding:14px 18px;margin:14px 0;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:13.5px;line-height:1.9;overflow-x:auto}
+.pathpic .d{color:#1769C0;font-weight:600}.pathpic .f{color:#21303F}.pathpic .hl{background:#fff3d6;border-radius:4px;padding:0 4px}
+.navchips{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 4px}
+.navchips a{font-size:13px;background:#fff;border:1px solid #D7E2EC;border-radius:999px;padding:6px 13px;color:#5E7183}
+.navchips a:hover{border-color:#0F9DB0;color:#0F9DB0;text-decoration:none}
+#pgbar{position:sticky;top:0;z-index:40;background:#F6F9FC;padding:10px 0 8px}
+#pgbar .lbl{font-size:12.5px;color:#5E7183;margin-bottom:5px}
+#pgbar .rail{height:9px;background:#D7E2EC;border-radius:999px;overflow:hidden}
+#pgbar .fill{height:100%;width:0;background:linear-gradient(90deg,#0F9DB0,#2BC4D4);border-radius:999px;transition:width .3s}
+/* ---------- practice terminal panel ---------- */
+#termBtn{position:fixed;right:18px;bottom:18px;z-index:60;font:inherit;font-weight:700;font-size:14.5px;background:#0C2D52;color:#fff;border:none;border-radius:999px;padding:13px 22px;cursor:pointer;box-shadow:0 8px 24px rgba(12,45,82,.35)}
+#termBtn:hover{background:#12386A}
+#termPanel{position:fixed;left:0;right:0;bottom:0;z-index:55;background:#0d1b2a;border-top:3px solid #2BC4D4;box-shadow:0 -10px 40px rgba(0,0,0,.35);display:none;height:46vh;min-height:300px}
+#termPanel.open{display:flex}
+#termCol{flex:1.4;display:flex;flex-direction:column;min-width:0}
+#termOut{flex:1;overflow-y:auto;padding:14px 16px 6px;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:13px;line-height:1.6;color:#d7e7f7;white-space:pre-wrap;word-break:break-all}
+#termOut .p{color:#6fd3e0}
+#termOut .err{color:#ff9d8a}
+#termOut .ok{color:#8fb98f}
+#termRow{display:flex;align-items:center;gap:8px;padding:8px 16px 12px;border-top:1px solid #1b3a5c}
+#termRow .pp{color:#6fd3e0;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:13px;white-space:nowrap}
+#termIn{flex:1;background:transparent;border:none;outline:none;color:#fff;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:14px}
+#missionCol{flex:1;border-left:1px solid #1b3a5c;overflow-y:auto;padding:12px 14px;min-width:230px}
+#missionCol h4{color:#6fd3e0;font-size:12px;letter-spacing:1.5px;margin:10px 0 6px;text-transform:uppercase}
+.mi{display:flex;gap:8px;align-items:flex-start;color:#9fb6cc;font-size:12.5px;margin:5px 0;font-family:"SF Mono",Menlo,Consolas,monospace}
+.mi .bx{flex:none;width:15px;height:15px;border:1.5px solid #3d6a94;border-radius:4px;margin-top:1px;text-align:center;line-height:13px;font-size:11px}
+.mi.done{color:#8fb98f}.mi.done .bx{background:#1FA37A;border-color:#1FA37A;color:#fff}
+.mi.done .bx::before{content:"✓"}
+#termClose{position:absolute;top:8px;right:12px;background:none;border:none;color:#6d8aa5;font-size:20px;cursor:pointer}
+#termClose:hover{color:#fff}
+@media(max-width:760px){#termPanel{height:62vh}#missionCol{display:none}}
+footer.site{margin-top:60px}
+.vidbox{margin:16px 0 20px}
+.vidbox video{width:100%;border-radius:14px;background:#0c2d52;box-shadow:0 6px 24px rgba(12,45,82,.18)}
+.vidcap{margin:8px 2px 0;font-size:13px;color:#3d4f60}
+.answer{background:linear-gradient(135deg,#eafcff,#f2faf7);border:1px solid #b8dfe3;border-radius:14px;padding:16px 18px;margin:16px 0}
+.answer p{margin:5px 0}.answer strong{color:#0c2d52}
+.pillt{display:inline-block;border-radius:999px;background:#eef4fa;color:#0c2d52;padding:2px 9px;font-size:11px;font-weight:700;white-space:nowrap}
+.cheat td a{color:#0c6e7c;font-weight:600}
+.dsg{margin:26px 0 8px;color:#0c2d52}
+.dsgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:10px}
+.dscard{background:#fff;border:1px solid #cbd9e6;border-radius:12px;padding:11px 13px}
+.dscard h4{margin:0 0 5px;font-size:14px}.dscard h4 a{color:#0c6e7c}
+.dscard p{margin:3px 0;font-size:12.5px;color:#3d4f60}.dsrow b{color:#0c2d52}
+.qgh{margin:30px 0 2px;color:#0c2d52;display:flex;align-items:baseline;gap:10px}
+.qcount{font-size:12px;color:#687b8f;font-weight:400}
+.qtopic{margin:0 0 8px;font-size:12.5px;color:#0c6e7c;font-weight:600}
+.qlist{padding-left:22px}.qlist>li{margin:9px 0;font-size:14.5px}
+.qq{color:#21303f}
+.lvl{display:inline-block;border-radius:999px;padding:1px 8px;font-size:10.5px;font-weight:700;vertical-align:1px;margin-right:4px}
+.l1{background:#e7f6ef;color:#177552}.l2{background:#fff3d6;color:#8a5a00}.l3{background:#fdecea;color:#a33127}
+.qlist details{margin:4px 0 0;background:#f7fafc;border:1px solid #e1eaf2;border-radius:8px;padding:6px 10px}
+.qlist summary{cursor:pointer;font-size:12px;color:#0c6e7c;font-weight:700}
+.qmeta{margin:5px 0;font-size:12.5px;color:#3d4f60}.qmeta b{color:#0c2d52}
+.dchip{display:inline-block;background:#eafcff;border:1px solid #b8dfe3;border-radius:999px;padding:2px 9px;font-size:11.5px;color:#0c6e7c;font-weight:700;text-decoration:none;margin:1px 2px}
+.dchip:hover{background:#d9f5fa}
+.qfilter{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}
+.qfilter button{border:1px solid #cbd9e6;background:#fff;border-radius:999px;padding:5px 12px;font:inherit;font-size:12.5px;font-weight:700;color:#0c2d52;cursor:pointer}
+.qfilter button.on{background:#0f9db0;border-color:#0f9db0;color:#fff}
+.cta{background:linear-gradient(135deg,#0c2d52,#16406e);border-radius:14px;color:#cfe0ef;padding:18px 20px;margin:26px 0}
+.cta h3{color:#fff;margin:0 0 6px}.cta a{color:#7fd3df;font-weight:700}
+.section-comments{margin:22px 0 34px;border:1px solid #cbd9e6;border-radius:12px;background:#fff;overflow:hidden}
+.discussion-toggle{display:flex;width:100%;align-items:center;gap:8px;text-align:left;border:0;background:#f4f8fb;color:#0c2d52;padding:11px 14px;font:inherit;font-size:14px;font-weight:700;cursor:pointer}
+.discussion-toggle:hover{background:#eafcff}.discussion-count{margin-left:auto;min-width:24px;padding:2px 7px;border-radius:999px;background:#0f9db0;color:#fff;text-align:center;font-size:11px}
+.discussion-panel{padding:0 14px 14px}.discussion-list{max-height:290px;overflow:auto}.discussion-empty{color:#687b8f;font-size:13px;text-align:center;padding:10px}
+.discussion-item{padding:10px 0;border-bottom:1px solid #e8eef3}.discussion-item:last-child{border-bottom:0}.discussion-meta{font-size:12px;color:#687b8f}.discussion-meta b{color:#0c2d52}.discussion-body{margin-top:3px;font-size:14px;white-space:pre-wrap;word-break:break-word}
+.discussion-form{border-top:1px solid #d8e2eb;padding-top:12px;display:grid;gap:9px}.discussion-form label span{display:block;font-size:12px;font-weight:700;color:#0c2d52;margin-bottom:4px}.discussion-form small{font-weight:400;color:#687b8f}
+.discussion-form input,.discussion-form textarea{box-sizing:border-box;width:100%;border:1px solid #cbd9e6;border-radius:8px;padding:8px 10px;font:inherit;font-size:13px}.discussion-form textarea{min-height:72px;resize:vertical}.discussion-form input:focus,.discussion-form textarea:focus{outline:2px solid #8edce5;outline-offset:1px}
+.discussion-actions{display:flex;align-items:center;gap:10px}.discussion-actions button{border:0;border-radius:8px;background:#0f9db0;color:#fff;padding:8px 16px;font:inherit;font-size:13px;font-weight:700;cursor:pointer}.discussion-actions button:disabled{opacity:.6;cursor:wait}.discussion-status{font-size:11px;color:#687b8f}
+</style></head><body>
+<header class="site"><div class="wrap"><img class="logo" src="/meritpoint-slides/assets/mpa-logo.png" alt="Merit Point Academy logo"><div><h1>Guide 07 · Healthcare Datasets &amp; 103 Research Questions 🏥📊</h1><p>The dataset-first topic shelf for your IEEE HealthCom 2026 YRS poster — every link verified, every question mapped to data, figures, and a contribution.</p></div>
+<div class="hdr-actions"><a class="asg-btn" href="https://academic.hopeembark.org/assignments">📝 Assignments · 作业</a><a class="donate-btn" href="https://buy.stripe.com/14AbIT26kfUzbqjbGv4ow00" target="_blank" rel="noopener">♥ Donate</a></div></div></header>
+<main class="wrap">
+<p class="crumb"><a href="../">← All guides</a></p>
+
+<div class="vidbox">
+  <video controls preload="metadata" crossorigin="anonymous"
+         poster="https://academic.hopeembark.org/media/health-datasets-guide-poster.jpg">
+    <source src="https://academic.hopeembark.org/media/health-datasets-guide.mp4" type="video/mp4">
+    <track kind="captions" srclang="en" label="English captions"
+           src="https://academic.hopeembark.org/media/health-datasets-guide.en.vtt" default>
+    Your browser can't play this video — <a href="https://academic.hopeembark.org/media/health-datasets-guide.mp4">download it instead</a>.
+  </video>
+  <p class="vidcap">▶ <b>Watch first (17 min):</b> the guided tour of this page — the portals, six real computed example figures, and how to pick your question. Narrated by Mira (AI); every chart really computed. 建议先看视频导览，再用下面的文字版慢慢挑。</p>
+</div>
+
+<div class="answer"><p><strong>How to use this page (10 minutes):</strong> ① skim the portal table so you know where health data lives · ② pick the topic group closest to your interest · ③ open 3–5 questions in that group and read their <i>data → figures → contribution</i> lines · ④ take ONE question (or adapt it), open its dataset link, and run the <a href="../download-right-data/">Guide 05 RIGHT check</a> · ⑤ bring the question + dataset to your mentor in proposal week. 选题路径：先选兴趣组，再挑一个问题和它的数据集，带到 proposal 周与导师确认。</p>
+<p><strong>AI-era note 必读:</strong> this shelf — like the whole poster project — assumes you work <b>with</b> AI tools (they helped verify these links via our own dataset-search API). Use ChatGPT/Claude to adapt a question to your own angle, then verify everything yourself. Every question below is a starting point, not a ceiling.</p></div>
+
+<div class="navchips"><a href="#s1">1 · HealthCom topics</a><a href="#s2">2 · The portals</a><a href="#s3">3 · Ready datasets</a><a href="#s4">4 · 103 questions</a><a href="#s5">5 · Choosing yours</a></div>
+
+<h2 class="sec" id="s1"><span class="no">1</span>What counts as "health-related"? The official YRS topics</h2>
+<p>The <a href="https://healthcom2026.ieee-healthcom.org/authors/call-posters-young-researcher-symposium" target="_blank" rel="noopener">official call for posters</a> welcomes submissions in these areas (verbatim topics, abridged):</p>
+<table class="cheat"><tr><th>Official topic</th><th>Question groups below</th></tr>
+<tr><td>AI, machine learning, and data analytics for healthcare</td><td><a href="#qa">Group A</a>, <a href="#qe">Group E</a></td></tr>
+<tr><td>Mobile health, wearable sensing, and IoT-based health monitoring</td><td><a href="#qb">Group B</a></td></tr>
+<tr><td>Telemedicine, remote care, and digital health applications</td><td><a href="#qc">Group C</a></td></tr>
+<tr><td>Communication and networking systems for healthcare</td><td><a href="#qb">Group B</a> (sensor/sampling questions), <a href="#qf">Group F</a> (federated)</td></tr>
+<tr><td>Biomedical signal processing, medical imaging, and health data analysis</td><td><a href="#qd">Group D</a></td></tr>
+<tr><td>Security, privacy, trust, and usability in eHealth systems</td><td><a href="#qf">Group F</a></td></tr>
+<tr><td>Student-led prototypes, case studies, and innovative projects</td><td><a href="#qg">Group G</a></td></tr></table>
+<p>Early-stage, exploratory, and prototype work is <b>explicitly welcome</b> — a well-scoped small question beats an unfinished grand one.</p>
+<aside class="section-comments" data-section="s1-topics" data-label="HealthCom topics">
+  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
+  <div class="discussion-panel" hidden>
+    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
+    <form class="discussion-form">
+      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
+      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="Which dataset or question are you considering?"></textarea></label>
+      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
+    </form>
+  </div>
+</aside>
+
+<h2 class="sec" id="s2"><span class="no">2</span>The portals — where health data lives</h2>
+<p>These are front doors, each holding dozens-to-thousands of datasets. Links verified 2026-08-08. (CDC pages block robots, so they were verified by hand — they are official, stable URLs.)</p>
+<table class="cheat"><tr><th>Portal</th><th>What it holds</th><th>Access</th><th>Tier</th></tr><tr><td><a href="https://www.kaggle.com/datasets" target="_blank" rel="noopener"><b>Kaggle Datasets</b></a></td><td>The biggest hobby-to-pro dataset hub; almost every beginner health dataset lives here as a clean CSV.</td><td>Free account</td><td><span class="pillt">Start here</span></td></tr><tr><td><a href="https://archive.ics.uci.edu/datasets?Area=Health+and+Medicine" target="_blank" rel="noopener"><b>UCI Machine Learning Repository — Health &amp; Medicine</b></a></td><td>The classic academic repository; the health area alone has 100+ documented datasets (Heart Disease, Diabetes, WESAD…).</td><td>No account</td><td><span class="pillt">Start here</span></td></tr><tr><td><a href="https://huggingface.co/datasets" target="_blank" rel="noopener"><b>Hugging Face Datasets</b></a></td><td>Modern ML dataset hub — search any health keyword; loads directly into Python with one line.</td><td>No account</td><td><span class="pillt">Start here</span></td></tr><tr><td><a href="https://physionet.org/about/database/" target="_blank" rel="noopener"><b>PhysioNet</b></a></td><td>THE home of physiological signals: ECG (PTB-XL), sleep EEG (Sleep-EDF), and clinical databases. Many sets are fully open.</td><td>No account for open sets</td><td><span class="pillt">Signals</span></td></tr><tr><td><a href="https://www.cdc.gov/nchs/nhanes/index.html" target="_blank" rel="noopener"><b>CDC NHANES</b></a></td><td>US National Health &amp; Nutrition Examination Survey — real exams, labs, diet and activity for thousands of people per cycle.</td><td>No account</td><td><span class="pillt">Survey data</span></td></tr><tr><td><a href="https://www.cdc.gov/brfss/annual_data/annual_data.htm" target="_blank" rel="noopener"><b>CDC BRFSS</b></a></td><td>The world's largest phone health survey (400k+ US adults/year): habits, conditions, mental-health days.</td><td>No account</td><td><span class="pillt">Survey data</span></td></tr><tr><td><a href="https://wonder.cdc.gov/" target="_blank" rel="noopener"><b>CDC WONDER</b></a></td><td>Query US public-health statistics (mortality, natality, disease) into downloadable tables.</td><td>No account</td><td><span class="pillt">Survey data</span></td></tr><tr><td><a href="https://www.who.int/data/gho" target="_blank" rel="noopener"><b>WHO Global Health Observatory</b></a></td><td>Country-level indicators for nearly every health topic on Earth — life expectancy, obesity, air pollution deaths…</td><td>No account</td><td><span class="pillt">Global</span></td></tr><tr><td><a href="https://ourworldindata.org/health-meta" target="_blank" rel="noopener"><b>Our World in Data — Health</b></a></td><td>Beautifully documented country-level health series with CSV download buttons under every chart.</td><td>No account</td><td><span class="pillt">Global</span></td></tr><tr><td><a href="https://healthdata.gov/" target="_blank" rel="noopener"><b>HealthData.gov</b></a></td><td>US government health data catalog — hospitals, Medicare, COVID, substance use.</td><td>No account</td><td><span class="pillt">Global</span></td></tr><tr><td><a href="https://ghdx.healthdata.org/" target="_blank" rel="noopener"><b>GHDx (IHME)</b></a></td><td>Global Health Data Exchange — the catalog behind the Global Burden of Disease studies.</td><td>Free account for some</td><td><span class="pillt">Global</span></td></tr><tr><td><a href="https://openneuro.org/" target="_blank" rel="noopener"><b>OpenNeuro</b></a></td><td>800+ open brain-imaging datasets (MRI, EEG, MEG) in a standard format.</td><td>No account</td><td><span class="pillt">Advanced</span></td></tr><tr><td><a href="https://www.isic-archive.com/" target="_blank" rel="noopener"><b>ISIC Archive</b></a></td><td>The reference archive of dermoscopic skin-lesion images behind the ISIC challenges.</td><td>No account to browse</td><td><span class="pillt">Imaging</span></td></tr><tr><td><a href="https://physionet.org/content/mimiciv/" target="_blank" rel="noopener"><b>MIMIC-IV (PhysioNet)</b></a></td><td>Real de-identified ICU records — the most-used clinical research database. Requires a credentialing course, so treat it as a 'see what pros use' visit.</td><td>Credentialed (advanced)</td><td><span class="pillt">Advanced</span></td></tr><tr><td><a href="https://data.mendeley.com/" target="_blank" rel="noopener"><b>Mendeley Data</b></a></td><td>Research-data repository where papers deposit their datasets — good for finding the exact data behind a study.</td><td>No account</td><td><span class="pillt">Advanced</span></td></tr></table>
+<div class="why"><b>Rule of thumb:</b> start on Kaggle/UCI/Hugging Face (clean CSVs, one-click), graduate to PhysioNet and the CDC/WHO portals when your question outgrows them. MIMIC-IV is listed so you know what professionals use — it needs credentialing, so it's a "next year" door, not a "this poster" door.</div>
+<label class="step"><input type="checkbox" data-k="portals"><span class="t">Open two portals from the table and search your interest keyword in each.</span></label>
+<aside class="section-comments" data-section="s2-portals" data-label="The portals">
+  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
+  <div class="discussion-panel" hidden>
+    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
+    <form class="discussion-form">
+      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
+      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="Which dataset or question are you considering?"></textarea></label>
+      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
+    </form>
+  </div>
+</aside>
+
+<h2 class="sec" id="s3"><span class="no">3</span>Ready-to-download datasets, by topic</h2>
+<p>Curated via our course's own dataset-search API (Hugging Face + UCI + Kaggle) — the same tool behind the <a href="https://academic.hopeembark.org/" target="_blank" rel="noopener">ScholarMind topic finder</a> — then hand-checked. Every card links to the dataset's page with license and documentation.</p>
+
+<h3 class="dsg" id="ds-tabular">Clinical tabular data · predict a condition from measurements</h3>
+<div class="dsgrid">
+  <div class="dscard"><h4><a href="https://archive.ics.uci.edu/dataset/45/heart+disease" target="_blank" rel="noopener">UCI Heart Disease (Cleveland)</a></h4>
+  <p class="dsrow"><b>One row =</b> one patient (13 clinical features → disease yes/no)</p><p>THE classic first medical-ML dataset; 303 rows, fits every classifier from Class 11–12.</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction" target="_blank" rel="noopener">Heart Failure Prediction (Kaggle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one patient (11 features → heart disease)</p><p>918 rows, tidy CSV, superb documentation.</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease" target="_blank" rel="noopener">Indicators of Heart Disease — CDC BRFSS extract</a></h4>
+  <p class="dsrow"><b>One row =</b> one survey respondent (lifestyle + conditions)</p><p>400k rows from the real CDC survey — big enough for honest subgroup questions.</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset" target="_blank" rel="noopener">Stroke Prediction (Kaggle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one patient (age, hypertension, glucose… → stroke)</p><p>Classic imbalanced-classes lesson: accuracy lies here (Class 11!).</p></div>
+  <div class="dscard"><h4><a href="https://huggingface.co/datasets/khoaguin/pima-indians-diabetes-database" target="_blank" rel="noopener">Pima Indians Diabetes</a></h4>
+  <p class="dsrow"><b>One row =</b> one patient (8 measurements → diabetes)</p><p>768 rows; also a lesson in data ethics — read its collection story.</p></div>
+  <div class="dscard"><h4><a href="https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008" target="_blank" rel="noopener">Diabetes 130-US Hospitals (UCI)</a></h4>
+  <p class="dsrow"><b>One row =</b> one hospital admission (101k encounters)</p><p>Real hospital-readmission data — the question pros actually study.</p></div>
+  <div class="dscard"><h4><a href="https://archive.ics.uci.edu/dataset/529/early+stage+diabetes+risk+prediction+dataset" target="_blank" rel="noopener">Early Stage Diabetes Risk (UCI)</a></h4>
+  <p class="dsrow"><b>One row =</b> one patient (symptoms questionnaire → diabetes)</p><p>520 rows of yes/no symptoms — a perfect decision-tree dataset.</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data" target="_blank" rel="noopener">Breast Cancer Wisconsin (Diagnostic)</a></h4>
+  <p class="dsrow"><b>One row =</b> one tumor sample (30 cell-nucleus features → benign/malignant)</p><p>The benchmark for explaining what features a classifier uses.</p></div>
+  <div class="dscard"><h4><a href="https://archive.ics.uci.edu/dataset/544/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition" target="_blank" rel="noopener">Obesity Levels from Eating Habits (UCI)</a></h4>
+  <p class="dsrow"><b>One row =</b> one person (habits questionnaire → obesity level)</p><p>Multi-class target + lifestyle features students instantly understand.</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/rabieelkharoua/alzheimers-disease-dataset" target="_blank" rel="noopener">Alzheimer's Disease Dataset (Kaggle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one patient (demographics, lifestyle, cognition → diagnosis)</p><p>2,149 rows, modern and clean.</p></div>
+  <div class="dscard"><h4><a href="https://archive.ics.uci.edu/dataset/461/drug+review+dataset+druglib+com" target="_blank" rel="noopener">Drug Reviews — Druglib (UCI)</a></h4>
+  <p class="dsrow"><b>One row =</b> one patient review (text + 10-point rating)</p><p>Text + numbers: sentiment meets side-effects. NLP-flavored posters start here.</p></div>
+</div>
+<h3 class="dsg" id="ds-wearable">Wearables, mobile health &amp; IoT monitoring</h3>
+<div class="dsgrid">
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/arashnic/fitbit" target="_blank" rel="noopener">FitBit Fitness Tracker Data (Kaggle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one user-day (steps, calories, sleep, heart rate)</p><p>30 real users' exported trackers — minute-level data, many joinable tables.</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/aleespinosa/apple-watch-and-fitbit-data" target="_blank" rel="noopener">Apple Watch &amp; Fitbit Data (Kaggle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one measurement window from two devices</p><p>Two devices on the same activities → the device-agreement question.</p></div>
+  <div class="dscard"><h4><a href="https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones" target="_blank" rel="noopener">Human Activity Recognition Using Smartphones (UCI)</a></h4>
+  <p class="dsrow"><b>One row =</b> one 2.56 s sensor window (561 features → activity)</p><p>The canonical phone-sensor dataset: walking vs stairs vs sitting.</p></div>
+  <div class="dscard"><h4><a href="https://archive.ics.uci.edu/dataset/465/wesad+wearable+stress+and+affect+detection" target="_blank" rel="noopener">WESAD — Wearable Stress &amp; Affect Detection (UCI)</a></h4>
+  <p class="dsrow"><b>One row =</b> one sensor timestamp (chest+wrist signals, labeled stress/amusement)</p><p>Research-grade stress detection — the dataset behind many real papers.</p></div>
+  <div class="dscard"><h4><a href="https://archive.ics.uci.edu/dataset/287/activity+recognition+from+single+chest+mounted+accelerometer" target="_blank" rel="noopener">Activity from Chest-Mounted Accelerometer (UCI)</a></h4>
+  <p class="dsrow"><b>One row =</b> one accelerometer sample (52 Hz, 15 users, 7 activities)</p><p>Raw signal → you engineer the features (Class 8 flex).</p></div>
+  <div class="dscard"><h4><a href="https://archive.ics.uci.edu/dataset/427/activity+recognition+with+healthy+older+people+using+a+batteryless+wearable+sensor" target="_blank" rel="noopener">Activity of Healthy Older People (batteryless sensor, UCI)</a></h4>
+  <p class="dsrow"><b>One row =</b> one sensor reading from adults aged 66–86</p><p>Aging-in-place monitoring — an eHealth topic with real social weight.</p></div>
+  <div class="dscard"><h4><a href="https://archive.ics.uci.edu/dataset/250/wearable+computing+classification+of+body+postures+and+movements+puc+rio" target="_blank" rel="noopener">Body Postures &amp; Movements — PUC-Rio (UCI)</a></h4>
+  <p class="dsrow"><b>One row =</b> one reading from 4 body sensors (165k rows)</p><p>Five postures, four sensor positions — which sensor matters most?</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/qiriro/stress" target="_blank" rel="noopener">Biometrics for Stress Monitoring (Kaggle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one physiological sample during tasks</p><p>Compact companion to WESAD.</p></div>
+</div>
+<h3 class="dsg" id="ds-lifestyle">Sleep, mental health &amp; student life</h3>
+<div class="dsgrid">
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset" target="_blank" rel="noopener">Sleep Health and Lifestyle (Kaggle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one person (sleep duration/quality, stress, activity, disorder)</p><p>374 rows, instantly chartable — the most poster-friendly starter here.</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/shariful07/student-mental-health" target="_blank" rel="noopener">Student Mental Health (Kaggle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one student survey response</p><p>Small and honest: depression/anxiety vs GPA, year, gender.</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/hopesb/student-depression-dataset" target="_blank" rel="noopener">Student Depression Dataset (Kaggle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one student (pressures, habits → depression)</p><p>27k rows — big enough for subgroup fairness questions.</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/rxnach/student-stress-factors-a-comprehensive-analysis" target="_blank" rel="noopener">Student Stress Factors (Kaggle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one student (20 stress factors)</p><p>Psychological + academic + social factors in one table.</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/osmi/mental-health-in-tech-survey" target="_blank" rel="noopener">Mental Health in Tech Survey (OSMI, Kaggle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one tech worker (attitudes + treatment)</p><p>Workplace mental health + a masterclass in messy survey cleaning (Class 8).</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/catherinerasgaitis/mxmh-survey-results" target="_blank" rel="noopener">Music &amp; Mental Health Survey (Kaggle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one respondent (listening habits + anxiety/depression/insomnia scores)</p><p>The teenager-magnet dataset: does music taste track mood?</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/thedevastator/medical-student-mental-health" target="_blank" rel="noopener">Medical Student Mental Health (Kaggle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one medical student (burnout, empathy, support)</p><p>Health-workforce wellbeing — an under-asked eHealth angle.</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/flaredown/flaredown-autoimmune-symptom-tracker" target="_blank" rel="noopener">Flaredown — Chronic Illness Symptom Tracker (Kaggle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one patient-day symptom/treatment check-in</p><p>Real patient-generated app data — mHealth in the wild.</p></div>
+</div>
+<h3 class="dsg" id="ds-signals">Biomedical signals &amp; medical imaging</h3>
+<div class="dsgrid">
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/shayanfazeli/heartbeat" target="_blank" rel="noopener">ECG Heartbeat Categorization (Kaggle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one heartbeat (187 samples → normal/arrhythmia class)</p><p>Pre-segmented beats = signal ML without signal-processing pain.</p></div>
+  <div class="dscard"><h4><a href="https://physionet.org/content/ptb-xl/1.0.3/" target="_blank" rel="noopener">PTB-XL 12-lead ECG (PhysioNet)</a></h4>
+  <p class="dsrow"><b>One row =</b> one 10 s clinical ECG (21k records, cardiologist labels)</p><p>Open, research-grade, with published benchmarks to compare against.</p></div>
+  <div class="dscard"><h4><a href="https://physionet.org/content/sleep-edfx/1.0.0/" target="_blank" rel="noopener">Sleep-EDF Expanded (PhysioNet)</a></h4>
+  <p class="dsrow"><b>One row =</b> one 30 s sleep epoch (EEG → sleep stage)</p><p>Real polysomnography — the science behind every sleep app.</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia" target="_blank" rel="noopener">Chest X-Ray Images — Pneumonia (Kaggle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one pediatric chest X-ray (normal/pneumonia)</p><p>5,863 images; the standard first medical-imaging project.</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/nih-chest-xrays/data" target="_blank" rel="noopener">NIH Chest X-rays (Kaggle mirror)</a></h4>
+  <p class="dsrow"><b>One row =</b> one X-ray (112k images, 14 disease labels)</p><p>Scale + label noise = the honest-limitations discussion writes itself.</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000" target="_blank" rel="noopener">HAM10000 Skin Lesions (Kaggle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one dermoscopy image (7 lesion classes)</p><p>10k images incl. metadata (age, site) — imaging + tabular in one.</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/paultimothymooney/kermany2018" target="_blank" rel="noopener">Retinal OCT Images (Kaggle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one retinal scan (4 classes)</p><p>84k scans from a landmark Cell paper.</p></div>
+  <div class="dscard"><h4><a href="https://huggingface.co/datasets/Falah/Alzheimer_MRI" target="_blank" rel="noopener">Alzheimer MRI (Hugging Face)</a></h4>
+  <p class="dsrow"><b>One row =</b> one brain MRI slice (4 dementia stages)</p><p>Loads in one line of Python via datasets library.</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/wanghaohan/confused-eeg" target="_blank" rel="noopener">Confused Student EEG (Kaggle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one EEG sample while watching lecture videos</p><p>Can a headset tell you're confused? Education meets eHealth.</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/harunshimanto/epileptic-seizure-recognition" target="_blank" rel="noopener">Epileptic Seizure Recognition (Kaggle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one 1 s EEG segment (178 values → seizure/not)</p><p>Tabular-shaped EEG: signal ML with a plain CSV.</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/birdy654/eeg-brainwave-dataset-feeling-emotions" target="_blank" rel="noopener">EEG Brainwave — Feeling Emotions (Kaggle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one EEG feature window (positive/neutral/negative)</p><p>Emotion detection from a consumer headset.</p></div>
+</div>
+<h3 class="dsg" id="ds-publichealth">Public health, environment &amp; population data</h3>
+<div class="dsgrid">
+  <div class="dscard"><h4><a href="https://ourworldindata.org/health-meta" target="_blank" rel="noopener">Our World in Data — Health</a></h4>
+  <p class="dsrow"><b>One row =</b> one country-year indicator value</p><p>Every chart has a CSV download button. Life expectancy, obesity, mental health, vaccination…</p></div>
+  <div class="dscard"><h4><a href="https://www.who.int/data/gho" target="_blank" rel="noopener">WHO Global Health Observatory</a></h4>
+  <p class="dsrow"><b>One row =</b> one country-year indicator</p><p>The official UN numbers behind global-health claims; has a free API.</p></div>
+  <div class="dscard"><h4><a href="https://www.cdc.gov/nchs/nhanes/index.html" target="_blank" rel="noopener">CDC NHANES</a></h4>
+  <p class="dsrow"><b>One row =</b> one examined person (labs, diet, activity, questionnaires)</p><p>Real physical-exam microdata — the pro upgrade from Kaggle surveys.</p></div>
+  <div class="dscard"><h4><a href="https://www.cdc.gov/brfss/annual_data/annual_data.htm" target="_blank" rel="noopener">CDC BRFSS</a></h4>
+  <p class="dsrow"><b>One row =</b> one adult phone interview (400k+/year)</p><p>Sleep hours, exercise, mental-health days, by state and year.</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/utkarshxy/who-worldhealth-statistics-2020-complete" target="_blank" rel="noopener">World Health Statistics 2020 (Kaggle bundle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one country-year indicator (pre-bundled CSVs)</p><p>WHO indicators without the portal learning curve.</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/epa/epa-historical-air-quality" target="_blank" rel="noopener">EPA Historical Air Quality (Kaggle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one monitor-day pollutant reading (US, 1980s→)</p><p>Decades of PM2.5/ozone — join to health outcomes by state/year.</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/hasibalmuzdadid/global-air-pollution-dataset" target="_blank" rel="noopener">Global Air Pollution (Kaggle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one city (AQI by pollutant)</p><p>23k cities — the map-figure dataset.</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/caesarmario/our-world-in-data-covid19-dataset" target="_blank" rel="noopener">Our World in Data — COVID-19 (Kaggle mirror)</a></h4>
+  <p class="dsrow"><b>One row =</b> one country-day (cases, deaths, vaccinations)</p><p>The pandemic as a clean time-series table.</p></div>
+  <div class="dscard"><h4><a href="https://www.kaggle.com/datasets/openfoodfacts/world-food-facts" target="_blank" rel="noopener">Open Food Facts (Kaggle)</a></h4>
+  <p class="dsrow"><b>One row =</b> one packaged food product (nutrients, labels)</p><p>Crowd-sourced nutrition on 100k+ products — sugar-content questions live here.</p></div>
+  <div class="dscard"><h4><a href="https://archive.ics.uci.edu/dataset/887" target="_blank" rel="noopener">NHANES 2013-14 Age Prediction Subset (UCI)</a></h4>
+  <p class="dsrow"><b>One row =</b> one NHANES respondent (prepared ML subset)</p><p>A gentle, pre-cleaned on-ramp to NHANES.</p></div>
+</div>
+<label class="step"><input type="checkbox" data-k="shortlist"><span class="t">Shortlist two datasets and write "one row = ___" for each from its documentation.</span></label>
+<aside class="section-comments" data-section="s3-datasets" data-label="Ready datasets">
+  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
+  <div class="discussion-panel" hidden>
+    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
+    <form class="discussion-form">
+      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
+      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="Which dataset or question are you considering?"></textarea></label>
+      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
+    </form>
+  </div>
+</aside>
+
+<h2 class="sec" id="s4"><span class="no">4</span>103 research questions — with data, figures &amp; contribution</h2>
+<p>Each question expands to show: the dataset(s) to use, the <b>poster figures</b> you'd draw (Class 9 vocabulary), and the one-line <b>contribution</b> your poster could claim. Badges: <span class="lvl l1">starter</span> = doable with Classes 1–10 skills · <span class="lvl l2">solid</span> = adds one new idea · <span class="lvl l3">stretch</span> = ambitious, talk to your mentor first.</p>
+<div class="qfilter" id="qfilter"><button class="on" data-l="0">All levels</button><button data-l="1">Starter</button><button data-l="2">Solid</button><button data-l="3">Stretch</button></div>
+
+<h3 class="qgh" id="qa">A · AI &amp; machine learning for healthcare <span class="qcount">18 questions</span></h3>
+<p class="qtopic">HealthCom topic: AI, machine learning, and data analytics for healthcare</p>
+<ol class="qlist">
+<li><span class="lvl l1">starter</span> <span class="qq">How well can a model predict heart disease from 11 routine measurements — and which 3 features carry most of the signal?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction" target="_blank" rel="noopener">Heart Failure Prediction (Kaggle)</a> <a class="dchip" href="https://archive.ics.uci.edu/dataset/45/heart+disease" target="_blank" rel="noopener">UCI Heart Disease (Cleveland)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> feature-importance bar · ROC curve · confusion matrix</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> An honest, explained baseline for cheap cardiac screening.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">Does a decision tree lose much accuracy to a random forest on heart-disease data — and what do we buy with the tree's readability?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://archive.ics.uci.edu/dataset/45/heart+disease" target="_blank" rel="noopener">UCI Heart Disease (Cleveland)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> the tree itself · accuracy-vs-depth curve</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A concrete interpretability-vs-accuracy trade-off measurement (Class 12).</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Can a 96%-accurate stroke model still be useless? Measure precision/recall on imbalanced stroke data at different thresholds.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset" target="_blank" rel="noopener">Stroke Prediction (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> precision-recall curve · confusion matrices at 3 thresholds</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A worked demonstration that accuracy is the wrong metric for rare events.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">Which symptoms best predict early-stage diabetes — and can a 5-question screener match the full 16-question set?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://archive.ics.uci.edu/dataset/529/early+stage+diabetes+risk+prediction+dataset" target="_blank" rel="noopener">Early Stage Diabetes Risk (UCI)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> feature-importance bar · ROC of 5-q vs 16-q screener</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A minimal symptom checklist with quantified accuracy cost.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">How much accuracy does a diabetes model lose when you hide lab values and keep only lifestyle answers?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://huggingface.co/datasets/khoaguin/pima-indians-diabetes-database" target="_blank" rel="noopener">Pima Indians Diabetes</a> <a class="dchip" href="https://archive.ics.uci.edu/dataset/529/early+stage+diabetes+risk+prediction+dataset" target="_blank" rel="noopener">Early Stage Diabetes Risk (UCI)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> grouped ROC curves · bar of AUC by feature set</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Quantifies what no-blood-test screening can and cannot do.</p>
+  </details></li>
+<li><span class="lvl l3">stretch</span> <span class="qq">What predicts 30-day hospital readmission for diabetic patients — age, medications, or time in hospital?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008" target="_blank" rel="noopener">Diabetes 130-US Hospitals (UCI)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> readmission rate by group bars · feature-importance</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A student-scale replication of a real health-systems question.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">Which cell-nucleus features separate benign from malignant tumors, and how few features keep 95% of the accuracy?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data" target="_blank" rel="noopener">Breast Cancer Wisconsin (Diagnostic)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> scatter of top-2 features colored by class · accuracy-vs-#features curve</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Feature-selection study showing diagnosis rests on a handful of measurements.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">Can eating-habit answers alone classify obesity level without weight or height?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://archive.ics.uci.edu/dataset/544/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition" target="_blank" rel="noopener">Obesity Levels from Eating Habits (UCI)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> confusion matrix · per-class accuracy bars</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Tests whether behavior questionnaires proxy for physical measurement.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Do the same features predict heart disease for men and women? Train per-group models and compare.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease" target="_blank" rel="noopener">Indicators of Heart Disease — CDC BRFSS extract</a> <a class="dchip" href="https://archive.ics.uci.edu/dataset/45/heart+disease" target="_blank" rel="noopener">UCI Heart Disease (Cleveland)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> side-by-side feature-importance bars · subgroup ROC</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A fairness audit at poster scale: one model does not fit all.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">How does a heart-disease model trained on one age band perform on another? (Distribution shift, honestly measured.)</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease" target="_blank" rel="noopener">Indicators of Heart Disease — CDC BRFSS extract</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> AUC by train→test age matrix (heatmap)</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Shows why deployment population matters — a real eHealth failure mode.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Does balancing classes (oversampling) actually improve rare-disease detection, or just move errors around?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset" target="_blank" rel="noopener">Stroke Prediction (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> PR curves before/after balancing</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> An evidence-based answer to the most-repeated ML recipe online.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Can drug-review text predict the star rating? Compare a word-count baseline to a simple classifier.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://archive.ics.uci.edu/dataset/461/drug+review+dataset+druglib+com" target="_blank" rel="noopener">Drug Reviews — Druglib (UCI)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> top predictive words bar · accuracy comparison</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A first NLP-for-health result with an interpretable model.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">Which side-effect words appear most in low-rated drug reviews, per condition?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://archive.ics.uci.edu/dataset/461/drug+review+dataset+druglib+com" target="_blank" rel="noopener">Drug Reviews — Druglib (UCI)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> word-frequency bars by rating band</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Patient-voice mining: what dissatisfied patients actually say.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">How does Alzheimer's risk vary with lifestyle factors after controlling for age? (Stratified comparison.)</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/rabieelkharoua/alzheimers-disease-dataset" target="_blank" rel="noopener">Alzheimer's Disease Dataset (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> prevalence bars stratified by age band · odds-ratio dot plot</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A confounding-aware analysis — rare at student level, very credible.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">How small can a training set get before a heart model breaks? Plot the learning curve.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction" target="_blank" rel="noopener">Heart Failure Prediction (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> learning curve (AUC vs training size)</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Answers 'how much data is enough?' with an actual curve.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Model calibration: when a heart model says '70% risk', is it right about 70% of the time?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction" target="_blank" rel="noopener">Heart Failure Prediction (Kaggle)</a> <a class="dchip" href="https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset" target="_blank" rel="noopener">Stroke Prediction (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> calibration (reliability) curve · risk-band bar chart</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Evaluates the property doctors actually need — trustworthy probabilities, not just rankings.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">Can BMI be dropped from heart-risk prediction without losing accuracy? A test of the most-criticized health metric.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease" target="_blank" rel="noopener">Indicators of Heart Disease — CDC BRFSS extract</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> AUC with/without BMI bars · substitute-feature importance</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A measured answer to a live medical debate.</p>
+  </details></li>
+<li><span class="lvl l3">stretch</span> <span class="qq">Do two different model families disagree on WHICH patients they get wrong? Compare error overlap.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://archive.ics.uci.edu/dataset/45/heart+disease" target="_blank" rel="noopener">UCI Heart Disease (Cleveland)</a> <a class="dchip" href="https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data" target="_blank" rel="noopener">Breast Cancer Wisconsin (Diagnostic)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> error-overlap Venn/heatmap · per-patient disagreement table</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Motivates ensembles by measuring complementary errors (Class 12).</p>
+  </details></li>
+</ol>
+
+<h3 class="qgh" id="qb">B · Wearables, mobile health &amp; IoT monitoring <span class="qcount">16 questions</span></h3>
+<p class="qtopic">HealthCom topic: Mobile health, wearable sensing, and IoT-based health monitoring</p>
+<ol class="qlist">
+<li><span class="lvl l2">solid</span> <span class="qq">Do Apple Watch and Fitbit agree on steps and heart rate during the same activities — and where do they diverge most?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/aleespinosa/apple-watch-and-fitbit-data" target="_blank" rel="noopener">Apple Watch &amp; Fitbit Data (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> Bland-Altman agreement plot · per-activity error bars</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A device-agreement study — the exact question clinicians ask before trusting wearables.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">Can phone accelerometer windows distinguish walking from stairs with a simple classifier — and which activities confuse it?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones" target="_blank" rel="noopener">Human Activity Recognition Using Smartphones (UCI)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> confusion matrix · misclassified-pair examples</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> An honest map of what phone sensors can and cannot see.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">How many minutes of sensor data does activity recognition need before accuracy plateaus?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones" target="_blank" rel="noopener">Human Activity Recognition Using Smartphones (UCI)</a> <a class="dchip" href="https://archive.ics.uci.edu/dataset/287/activity+recognition+from+single+chest+mounted+accelerometer" target="_blank" rel="noopener">Activity from Chest-Mounted Accelerometer (UCI)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> accuracy vs window length curve</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A practical design number for battery-limited wearables.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">Does step count predict sleep duration that night in real Fitbit users?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/arashnic/fitbit" target="_blank" rel="noopener">FitBit Fitness Tracker Data (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> scatter + fitted line per user · pooled correlation bar</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Within-person vs between-person effects — a subtle point made visible.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">Are 'active' users consistent? Quantify day-to-day variability of steps per user and its predictors.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/arashnic/fitbit" target="_blank" rel="noopener">FitBit Fitness Tracker Data (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> per-user box plots · variability histogram</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Shows averages hide behavior; variability is its own signal.</p>
+  </details></li>
+<li><span class="lvl l3">stretch</span> <span class="qq">Can wrist signals alone (no chest sensor) detect stress in WESAD — and what accuracy do we lose?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://archive.ics.uci.edu/dataset/465/wesad+wearable+stress+and+affect+detection" target="_blank" rel="noopener">WESAD — Wearable Stress &amp; Affect Detection (UCI)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> ROC wrist vs chest+wrist · signal traces during stress</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Tests whether a smartwatch could replace lab equipment for stress alerts.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Which single sensor position (waist, thigh, ankle, arm) best identifies posture?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://archive.ics.uci.edu/dataset/250/wearable+computing+classification+of+body+postures+and+movements+puc+rio" target="_blank" rel="noopener">Body Postures &amp; Movements — PUC-Rio (UCI)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> accuracy-by-sensor bar · confusion matrix of the winner</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A sensor-placement recommendation with measured evidence.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Can a batteryless sensor reliably detect bed-exit events in older adults — the alarm that matters for falls?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://archive.ics.uci.edu/dataset/427/activity+recognition+with+healthy+older+people+using+a+batteryless+wearable+sensor" target="_blank" rel="noopener">Activity of Healthy Older People (batteryless sensor, UCI)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> event-detection precision/recall bars · timeline example</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Aging-in-place monitoring evaluated on the event clinicians care about.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">How does heart rate during identical activities differ across individuals — and what does that mean for one-size-fits-all alerts?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/aleespinosa/apple-watch-and-fitbit-data" target="_blank" rel="noopener">Apple Watch &amp; Fitbit Data (Kaggle)</a> <a class="dchip" href="https://www.kaggle.com/datasets/arashnic/fitbit" target="_blank" rel="noopener">FitBit Fitness Tracker Data (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> per-person HR distributions (ridgeline/box)</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Argues for personalized baselines in mHealth alerts.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Engineer 3 features from raw accelerometer signal (mean, variance, zero-crossings): how close do they get to the 561-feature set?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://archive.ics.uci.edu/dataset/287/activity+recognition+from+single+chest+mounted+accelerometer" target="_blank" rel="noopener">Activity from Chest-Mounted Accelerometer (UCI)</a> <a class="dchip" href="https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones" target="_blank" rel="noopener">Human Activity Recognition Using Smartphones (UCI)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> accuracy: 3 features vs full set · feature scatter</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Feature engineering demystified — Class 8 as a measurable experiment.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">Is sedentary time (not exercise time) the better predictor of calories burned in tracker data?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/arashnic/fitbit" target="_blank" rel="noopener">FitBit Fitness Tracker Data (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> two competing scatter+fit panels · partial-correlation bar</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Separates 'moving more' from 'sitting less' with real tracker data.</p>
+  </details></li>
+<li><span class="lvl l3">stretch</span> <span class="qq">How much does downsampling sensor frequency (52→10 Hz) hurt activity recognition? (Battery-life trade-off.)</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://archive.ics.uci.edu/dataset/287/activity+recognition+from+single+chest+mounted+accelerometer" target="_blank" rel="noopener">Activity from Chest-Mounted Accelerometer (UCI)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> accuracy vs sampling-rate curve</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A concrete energy-accuracy design curve for IoT health devices.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">Do 'weekend warriors' exist in tracker data? Map step-count rhythms across days of the week per user.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/arashnic/fitbit" target="_blank" rel="noopener">FitBit Fitness Tracker Data (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> user × weekday step heatmap · weekday/weekend box plots</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A behavioral-phenotype map from real tracker exports.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Can you detect when a wearable was taken OFF (non-wear) from gaps and flatlines — and how much does ignoring it bias results?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/arashnic/fitbit" target="_blank" rel="noopener">FitBit Fitness Tracker Data (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> annotated wear/non-wear timeline · biased-vs-corrected averages bar</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Turns a data-cleaning chore (Class 8) into a publishable methods finding.</p>
+  </details></li>
+<li><span class="lvl l3">stretch</span> <span class="qq">Do stress-detection models trained on one person transfer to another? (Personal vs universal models.)</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://archive.ics.uci.edu/dataset/465/wesad+wearable+stress+and+affect+detection" target="_blank" rel="noopener">WESAD — Wearable Stress &amp; Affect Detection (UCI)</a> <a class="dchip" href="https://www.kaggle.com/datasets/qiriro/stress" target="_blank" rel="noopener">Biometrics for Stress Monitoring (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> per-subject transfer heatmap</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Quantifies the personalization gap — a live research debate at student scale.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">What share of 'sleep' recorded by trackers is restless? Compare sleep stages/quality fields across users.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/arashnic/fitbit" target="_blank" rel="noopener">FitBit Fitness Tracker Data (Kaggle)</a> <a class="dchip" href="https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset" target="_blank" rel="noopener">Sleep Health and Lifestyle (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> stacked sleep-composition bars per user</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Reads tracker sleep claims critically instead of at face value.</p>
+  </details></li>
+</ol>
+
+<h3 class="qgh" id="qc">C · Telemedicine, digital health &amp; patient-generated data <span class="qcount">12 questions</span></h3>
+<p class="qtopic">HealthCom topic: Telemedicine, remote care, and digital health applications</p>
+<ol class="qlist">
+<li><span class="lvl l2">solid</span> <span class="qq">In a chronic-illness tracking app, which treatments do patients most often log alongside symptom improvement?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/flaredown/flaredown-autoimmune-symptom-tracker" target="_blank" rel="noopener">Flaredown — Chronic Illness Symptom Tracker (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> treatment-vs-symptom-change heatmap</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Mines real patient-generated app data for signals worth a clinician's look.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">How consistent is daily self-tracking? Measure check-in streaks and dropout curves in a real health app.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/flaredown/flaredown-autoimmune-symptom-tracker" target="_blank" rel="noopener">Flaredown — Chronic Illness Symptom Tracker (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> retention/dropout curve · streak histogram</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> App engagement quantified — the make-or-break of digital health.</p>
+  </details></li>
+<li><span class="lvl l3">stretch</span> <span class="qq">Do symptom reports cluster into recognizable condition profiles without using diagnosis labels? (Unsupervised.)</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/flaredown/flaredown-autoimmune-symptom-tracker" target="_blank" rel="noopener">Flaredown — Chronic Illness Symptom Tracker (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> cluster scatter (2-D projection) · cluster-symptom heatmap</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Shows structure in messy patient-reported data.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">What do patients praise vs complain about in drug reviews — efficacy, side effects, or cost?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://archive.ics.uci.edu/dataset/461/drug+review+dataset+druglib+com" target="_blank" rel="noopener">Drug Reviews — Druglib (UCI)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> theme-frequency bars by rating</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A patient-experience taxonomy a telehealth service could act on.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Can review length and word choice flag reviews written during severe symptoms? (Proxy triage.)</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://archive.ics.uci.edu/dataset/461/drug+review+dataset+druglib+com" target="_blank" rel="noopener">Drug Reviews — Druglib (UCI)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> length/word distributions by severity words · classifier ROC</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Explores text signals a remote-care queue could prioritize.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Which US states report the most poor-mental-health days, and does telehealth-era data shift the map?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.cdc.gov/brfss/annual_data/annual_data.htm" target="_blank" rel="noopener">CDC BRFSS</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> state choropleth by year · trend lines</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A geography-of-need map for remote mental-health services.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">Does self-reported sleep quality track measured sleep duration — how far can remote self-report be trusted?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset" target="_blank" rel="noopener">Sleep Health and Lifestyle (Kaggle)</a> <a class="dchip" href="https://www.kaggle.com/datasets/arashnic/fitbit" target="_blank" rel="noopener">FitBit Fitness Tracker Data (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> self-report vs measured scatter · agreement bands</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Calibrates the cheapest telemedicine instrument: asking.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Which survey questions best predict whether a tech worker sought mental-health treatment — the basis of a 3-question screener?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/osmi/mental-health-in-tech-survey" target="_blank" rel="noopener">Mental Health in Tech Survey (OSMI, Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> feature-importance bar · screener ROC</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A minimal remote screening instrument with measured accuracy.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Simulate triage: if a model routes the top-10% risk patients to a doctor, how many true cases does it catch?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease" target="_blank" rel="noopener">Indicators of Heart Disease — CDC BRFSS extract</a> <a class="dchip" href="https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset" target="_blank" rel="noopener">Stroke Prediction (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> capture-rate vs referral-budget curve</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Reframes classification as the resource-allocation problem telehealth actually faces.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Are people with less healthcare access (proxied by checkup recency) also those with higher risk scores? (The telehealth opportunity gap.)</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease" target="_blank" rel="noopener">Indicators of Heart Disease — CDC BRFSS extract</a> <a class="dchip" href="https://www.cdc.gov/brfss/annual_data/annual_data.htm" target="_blank" rel="noopener">CDC BRFSS</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> risk distribution by access group</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Evidence for where remote care could matter most.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">How fresh is 'open' health data? Audit last-update dates across 20 datasets on this page and quantify staleness by topic.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://ourworldindata.org/health-meta" target="_blank" rel="noopener">Our World in Data — Health</a> <a class="dchip" href="https://www.who.int/data/gho" target="_blank" rel="noopener">WHO Global Health Observatory</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> staleness histogram · topic-vs-age dot plot</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A meta-research audit of the shelf itself — instantly reusable by other students.</p>
+  </details></li>
+<li><span class="lvl l3">stretch</span> <span class="qq">How does missing data differ between app-collected and survey-collected health data — and what does that do to conclusions?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/flaredown/flaredown-autoimmune-symptom-tracker" target="_blank" rel="noopener">Flaredown — Chronic Illness Symptom Tracker (Kaggle)</a> <a class="dchip" href="https://www.kaggle.com/datasets/osmi/mental-health-in-tech-survey" target="_blank" rel="noopener">Mental Health in Tech Survey (OSMI, Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> missingness heatmaps side by side</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A data-quality comparison of the two pipes telemedicine drinks from.</p>
+  </details></li>
+</ol>
+
+<h3 class="qgh" id="qd">D · Biomedical signals &amp; medical imaging <span class="qcount">15 questions</span></h3>
+<p class="qtopic">HealthCom topic: Biomedical signal processing, medical imaging, and health data analysis</p>
+<ol class="qlist">
+<li><span class="lvl l1">starter</span> <span class="qq">Can a simple classifier spot abnormal heartbeats from a single beat's shape — and which arrhythmia class is hardest?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/shayanfazeli/heartbeat" target="_blank" rel="noopener">ECG Heartbeat Categorization (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> example beats per class · confusion matrix</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A readable arrhythmia baseline with per-class honesty.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">How much does class imbalance distort arrhythmia detection, and does reweighting fix the rarest class?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/shayanfazeli/heartbeat" target="_blank" rel="noopener">ECG Heartbeat Categorization (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> per-class recall before/after · class-size bar</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> The imbalance lesson on data where it costs lives, not points.</p>
+  </details></li>
+<li><span class="lvl l3">stretch</span> <span class="qq">Do textbook ECG features (R-R interval statistics) rival a model trained on raw beats?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://physionet.org/content/ptb-xl/1.0.3/" target="_blank" rel="noopener">PTB-XL 12-lead ECG (PhysioNet)</a> <a class="dchip" href="https://www.kaggle.com/datasets/shayanfazeli/heartbeat" target="_blank" rel="noopener">ECG Heartbeat Categorization (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> AUC comparison bar · example annotated beat</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Domain knowledge vs raw learning, measured fairly.</p>
+  </details></li>
+<li><span class="lvl l3">stretch</span> <span class="qq">Can EEG epochs distinguish deep sleep from light sleep with interpretable band-power features?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://physionet.org/content/sleep-edfx/1.0.0/" target="_blank" rel="noopener">Sleep-EDF Expanded (PhysioNet)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> band-power box plots by stage · confusion matrix</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Connects consumer sleep-tracking claims to the real signals underneath.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Pneumonia from chest X-rays: what accuracy does a small model reach, and what do its mistakes look like?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia" target="_blank" rel="noopener">Chest X-Ray Images — Pneumonia (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> ROC · gallery of hardest false negatives/positives</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> An error-analysis-first take on the most popular medical-imaging task.</p>
+  </details></li>
+<li><span class="lvl l3">stretch</span> <span class="qq">Does an X-ray model trained on one dataset survive contact with another hospital's images? (External validation.)</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia" target="_blank" rel="noopener">Chest X-Ray Images — Pneumonia (Kaggle)</a> <a class="dchip" href="https://www.kaggle.com/datasets/nih-chest-xrays/data" target="_blank" rel="noopener">NIH Chest X-rays (Kaggle mirror)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> in-domain vs external AUC bars</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> The single most important honesty check in medical AI, at student scale.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Which skin-lesion classes get confused with melanoma, and does patient age or lesion site change the error rate?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000" target="_blank" rel="noopener">HAM10000 Skin Lesions (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> confusion matrix · error rate by age/site bars</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Combines image ML with metadata for a clinically flavored audit.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">How much image resolution does lesion classification actually need? Downscale and measure.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000" target="_blank" rel="noopener">HAM10000 Skin Lesions (Kaggle)</a> <a class="dchip" href="https://www.kaggle.com/datasets/paultimothymooney/kermany2018" target="_blank" rel="noopener">Retinal OCT Images (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> accuracy vs resolution curve · example images per resolution</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A compute-vs-accuracy design curve for low-resource clinics.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Can retinal OCT classes be separated by simple image statistics (brightness/texture) before any deep model?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/paultimothymooney/kermany2018" target="_blank" rel="noopener">Retinal OCT Images (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> feature scatter colored by class · baseline vs CNN bar</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Establishes the baseline every fancy model must beat.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">Seizure vs non-seizure EEG from a plain CSV: which time-window statistics carry the signal?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/harunshimanto/epileptic-seizure-recognition" target="_blank" rel="noopener">Epileptic Seizure Recognition (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> feature-importance bar · example traces</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Signal ML made accessible — no specialized toolchain required.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Can a consumer EEG headset's data tell confusion from attention while watching lecture videos?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/wanghaohan/confused-eeg" target="_blank" rel="noopener">Confused Student EEG (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> per-subject accuracy bars · signal snippets</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> EdTech-meets-eHealth with a skeptical per-person evaluation.</p>
+  </details></li>
+<li><span class="lvl l3">stretch</span> <span class="qq">Emotion from EEG: do models generalize across recording sessions, or are they memorizing the session?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/birdy654/eeg-brainwave-dataset-feeling-emotions" target="_blank" rel="noopener">EEG Brainwave — Feeling Emotions (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> within- vs cross-session accuracy bars</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Exposes the leakage trap that inflates many published numbers.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Brain MRI dementia staging: how does per-class accuracy degrade from 'no dementia' to 'moderate'?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://huggingface.co/datasets/Falah/Alzheimer_MRI" target="_blank" rel="noopener">Alzheimer MRI (Hugging Face)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> per-class recall bars · example slices</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A staged-severity evaluation, not just a yes/no headline.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">How robust is an X-ray classifier to realistic image corruption (blur, noise, compression)?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia" target="_blank" rel="noopener">Chest X-Ray Images — Pneumonia (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> accuracy vs corruption-severity curves · corrupted examples</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A robustness report card — the deployment question rural clinics would ask.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">What does data augmentation (flips/rotations) really buy on a small medical image set? Measure, don't assume.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia" target="_blank" rel="noopener">Chest X-Ray Images — Pneumonia (Kaggle)</a> <a class="dchip" href="https://huggingface.co/datasets/Falah/Alzheimer_MRI" target="_blank" rel="noopener">Alzheimer MRI (Hugging Face)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> accuracy with/without augmentation · augmented examples</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Evidence for a technique usually copied on faith.</p>
+  </details></li>
+</ol>
+
+<h3 class="qgh" id="qe">E · Public health, environment &amp; population analytics <span class="qcount">16 questions</span></h3>
+<p class="qtopic">HealthCom topic: data analytics for healthcare (population scale)</p>
+<ol class="qlist">
+<li><span class="lvl l1">starter</span> <span class="qq">Which countries improved life expectancy fastest since 2000, and what health spending did it take?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://ourworldindata.org/health-meta" target="_blank" rel="noopener">Our World in Data — Health</a> <a class="dchip" href="https://www.who.int/data/gho" target="_blank" rel="noopener">WHO Global Health Observatory</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> slope chart of life expectancy · spending-vs-gain scatter</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A ranked, sourced answer to 'what does progress cost?'</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Does air pollution (PM2.5) track respiratory mortality across countries — and does the link survive income adjustment?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.who.int/data/gho" target="_blank" rel="noopener">WHO Global Health Observatory</a> <a class="dchip" href="https://www.kaggle.com/datasets/hasibalmuzdadid/global-air-pollution-dataset" target="_blank" rel="noopener">Global Air Pollution (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> scatter + fit, raw vs income-stratified</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A confounder-aware environmental-health analysis.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Which US counties/states have the worst long-term air-quality trends, and is the gap widening?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/epa/epa-historical-air-quality" target="_blank" rel="noopener">EPA Historical Air Quality (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> trend lines by state · divergence chart</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A 40-year environmental-justice trend audit from official monitors.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">How did COVID-19 waves differ across countries in speed of rise vs fall — and what does vaccination timing correlate with?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/caesarmario/our-world-in-data-covid19-dataset" target="_blank" rel="noopener">Our World in Data — COVID-19 (Kaggle mirror)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> aligned wave curves · timing-vs-outcome scatter</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Comparative epidemic-shape analysis with transparent data.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Obesity vs sugar availability across countries and time: correlation, lag, or neither?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://ourworldindata.org/health-meta" target="_blank" rel="noopener">Our World in Data — Health</a> <a class="dchip" href="https://www.kaggle.com/datasets/openfoodfacts/world-food-facts" target="_blank" rel="noopener">Open Food Facts (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> country trend pairs · lagged correlation plot</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A careful correlation-is-not-causation case study done right.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">How much sugar hides in 'healthy-sounding' packaged foods? Compare label claims to nutrient values.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/openfoodfacts/world-food-facts" target="_blank" rel="noopener">Open Food Facts (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> sugar distribution by claim group (box plots)</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A consumer-protection finding from open data.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">Do countries with more physicians per 1,000 people see lower deaths from treatable conditions?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.who.int/data/gho" target="_blank" rel="noopener">WHO Global Health Observatory</a> <a class="dchip" href="https://www.kaggle.com/datasets/utkarshxy/who-worldhealth-statistics-2020-complete" target="_blank" rel="noopener">World Health Statistics 2020 (Kaggle bundle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> scatter + fit by region · residual outliers named</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Identifies over- and under-performers, not just the trend.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Sleep, exercise, and mental-health days in BRFSS: which lifestyle factor associates most with fewer bad days?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.cdc.gov/brfss/annual_data/annual_data.htm" target="_blank" rel="noopener">CDC BRFSS</a> <a class="dchip" href="https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease" target="_blank" rel="noopener">Indicators of Heart Disease — CDC BRFSS extract</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> partial-association bars · stratified box plots</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Ranks modifiable factors in the world's largest health survey.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Are teen vaccination rates converging or diverging across US states over the last decade?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.who.int/data/gho" target="_blank" rel="noopener">WHO Global Health Observatory</a> <a class="dchip" href="https://healthdata.gov/" target="_blank" rel="noopener">HealthData.gov</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> state trend spaghetti + variance-over-time line</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A convergence analysis policymakers actually run.</p>
+  </details></li>
+<li><span class="lvl l3">stretch</span> <span class="qq">Does the obesity-level dataset's lifestyle story replicate in national survey data? (Small data vs NHANES.)</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://archive.ics.uci.edu/dataset/544/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition" target="_blank" rel="noopener">Obesity Levels from Eating Habits (UCI)</a> <a class="dchip" href="https://www.cdc.gov/nchs/nhanes/index.html" target="_blank" rel="noopener">CDC NHANES</a> <a class="dchip" href="https://archive.ics.uci.edu/dataset/887" target="_blank" rel="noopener">NHANES 2013-14 Age Prediction Subset (UCI)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> matched-association comparison bars</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A replication study — the most underrated poster genre.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">Which WHO indicator best 'predicts' a country's life expectancy in a simple model — and what does that NOT mean?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/utkarshxy/who-worldhealth-statistics-2020-complete" target="_blank" rel="noopener">World Health Statistics 2020 (Kaggle bundle)</a> <a class="dchip" href="https://ourworldindata.org/health-meta" target="_blank" rel="noopener">Our World in Data — Health</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> feature-importance bar · caveat panel</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Teaches indicator thinking and its limits in one figure.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">How do city AQI categories map worldwide — and which pollutant drives 'unhealthy' days where you live?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/hasibalmuzdadid/global-air-pollution-dataset" target="_blank" rel="noopener">Global Air Pollution (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> world map (choropleth) · pollutant-share stacked bars</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A local-angle global map every audience connects to.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">Which season has the worst air quality where you live, and has that seasonal pattern shifted over the decades?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/epa/epa-historical-air-quality" target="_blank" rel="noopener">EPA Historical Air Quality (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> month-by-year AQI heatmap · decade-overlay seasonal curves</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A local, decades-deep environmental-health trend from official monitors.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Which countries 'break the curve' of life expectancy vs health spending — and what do the outliers have in common?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://ourworldindata.org/health-meta" target="_blank" rel="noopener">Our World in Data — Health</a> <a class="dchip" href="https://www.who.int/data/gho" target="_blank" rel="noopener">WHO Global Health Observatory</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> scatter + fit with named outliers · outlier-profile table-figure</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Moves past the trend line to the interesting residuals.</p>
+  </details></li>
+<li><span class="lvl l3">stretch</span> <span class="qq">Did countries with older populations really fare worse in COVID mortality, adjusted for testing rates?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/caesarmario/our-world-in-data-covid19-dataset" target="_blank" rel="noopener">Our World in Data — COVID-19 (Kaggle mirror)</a> <a class="dchip" href="https://ourworldindata.org/health-meta" target="_blank" rel="noopener">Our World in Data — Health</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> age-vs-mortality scatter, raw and adjusted</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> An adjustment exercise that changes the headline.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Trace one condition (e.g. diabetes prevalence) across three datasets — do Kaggle, WHO, and NHANES even agree?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.who.int/data/gho" target="_blank" rel="noopener">WHO Global Health Observatory</a> <a class="dchip" href="https://www.cdc.gov/nchs/nhanes/index.html" target="_blank" rel="noopener">CDC NHANES</a> <a class="dchip" href="https://archive.ics.uci.edu/dataset/529/early+stage+diabetes+risk+prediction+dataset" target="_blank" rel="noopener">Early Stage Diabetes Risk (UCI)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> estimate-comparison forest plot</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A data-triangulation audit: same fact, three sources, one verdict.</p>
+  </details></li>
+</ol>
+
+<h3 class="qgh" id="qf">F · Security, privacy &amp; trust in eHealth <span class="qcount">11 questions</span></h3>
+<p class="qtopic">HealthCom topic: Security, privacy, trust, and usability in eHealth systems</p>
+<ol class="qlist">
+<li><span class="lvl l2">solid</span> <span class="qq">How re-identifiable is 'anonymous' health data? Count how many survey respondents are unique on age+gender+state alone.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.cdc.gov/brfss/annual_data/annual_data.htm" target="_blank" rel="noopener">CDC BRFSS</a> <a class="dchip" href="https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease" target="_blank" rel="noopener">Indicators of Heart Disease — CDC BRFSS extract</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> uniqueness rate vs #attributes curve</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A k-anonymity demonstration on real public data — no attack, just counting.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">What does privacy cost in accuracy? Add noise to features (a differential-privacy sketch) and measure model degradation.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction" target="_blank" rel="noopener">Heart Failure Prediction (Kaggle)</a> <a class="dchip" href="https://huggingface.co/datasets/khoaguin/pima-indians-diabetes-database" target="_blank" rel="noopener">Pima Indians Diabetes</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> accuracy vs noise-level curve</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> The privacy-utility trade-off as one measured curve.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">Can a model trained on coarsened data (age bands, rounded labs) match one trained on exact values?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction" target="_blank" rel="noopener">Heart Failure Prediction (Kaggle)</a> <a class="dchip" href="https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data" target="_blank" rel="noopener">Breast Cancer Wisconsin (Diagnostic)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> AUC exact vs coarsened bars</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Shows how much precision health apps actually need to collect.</p>
+  </details></li>
+<li><span class="lvl l3">stretch</span> <span class="qq">Federated by hand: train separate models on data split across 3 'hospitals' and average them — how close to centralized training?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease" target="_blank" rel="noopener">Indicators of Heart Disease — CDC BRFSS extract</a> <a class="dchip" href="https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008" target="_blank" rel="noopener">Diabetes 130-US Hospitals (UCI)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> centralized vs federated accuracy bars</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A hand-built federated-learning simulation — very HealthCom.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">Which fields in a health app's export would identify you? Audit a real tracker export's fields against HIPAA identifier categories.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/arashnic/fitbit" target="_blank" rel="noopener">FitBit Fitness Tracker Data (Kaggle)</a> <a class="dchip" href="https://www.kaggle.com/datasets/flaredown/flaredown-autoimmune-symptom-tracker" target="_blank" rel="noopener">Flaredown — Chronic Illness Symptom Tracker (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> field-by-field risk table/heatmap</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A privacy audit template any student can rerun on their own app.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Do people report differently when surveys feel identifiable? Compare sensitive-question skip rates across survey datasets.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/osmi/mental-health-in-tech-survey" target="_blank" rel="noopener">Mental Health in Tech Survey (OSMI, Kaggle)</a> <a class="dchip" href="https://www.kaggle.com/datasets/shariful07/student-mental-health" target="_blank" rel="noopener">Student Mental Health (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> skip/missing rate by question sensitivity</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Trust measured through what respondents refuse to answer.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">How far off are model predictions for the smallest subgroups — the fairness corner of trust?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease" target="_blank" rel="noopener">Indicators of Heart Disease — CDC BRFSS extract</a> <a class="dchip" href="https://www.kaggle.com/datasets/hopesb/student-depression-dataset" target="_blank" rel="noopener">Student Depression Dataset (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> error by subgroup-size scatter</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Connects sample size to who gets misclassified.</p>
+  </details></li>
+<li><span class="lvl l3">stretch</span> <span class="qq">Membership inference lite: does the model behave differently on data it trained on? Measure the confidence gap.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://archive.ics.uci.edu/dataset/45/heart+disease" target="_blank" rel="noopener">UCI Heart Disease (Cleveland)</a> <a class="dchip" href="https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data" target="_blank" rel="noopener">Breast Cancer Wisconsin (Diagnostic)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> confidence histograms train vs holdout</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Makes 'models can leak their training data' visible with two histograms.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">What do drug-review users voluntarily disclose (doses, conditions, dates) that a data broker could harvest?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://archive.ics.uci.edu/dataset/461/drug+review+dataset+druglib+com" target="_blank" rel="noopener">Drug Reviews — Druglib (UCI)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> disclosure-type frequency bars</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Quantifies self-disclosure in public health forums.</p>
+  </details></li>
+<li><span class="lvl l3">stretch</span> <span class="qq">Individual rows vs county averages: how wrong can conclusions drawn from aggregated health data be? (The ecological fallacy, demonstrated.)</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.cdc.gov/brfss/annual_data/annual_data.htm" target="_blank" rel="noopener">CDC BRFSS</a> <a class="dchip" href="https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease" target="_blank" rel="noopener">Indicators of Heart Disease — CDC BRFSS extract</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> individual-level vs aggregated correlation comparison</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Shows privacy-friendly aggregation changes answers — a real privacy-utility subtlety.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Design and run a 10-person usability test of a health-data consent screen: what do people think they agreed to?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <i>your own collected data (design it with your mentor)</i></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> comprehension score bars · misunderstanding quotes</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Original human-subjects-lite data on consent usability (with mentor guidance).</p>
+  </details></li>
+</ol>
+
+<h3 class="qgh" id="qg">G · Student life &amp; behavioral health (prototype-friendly) <span class="qcount">15 questions</span></h3>
+<p class="qtopic">HealthCom topic: Student-led prototypes, case studies, and innovative projects</p>
+<ol class="qlist">
+<li><span class="lvl l1">starter</span> <span class="qq">Does sleep duration track stress level in the Sleep Health &amp; Lifestyle data — and is the relation linear or a cliff?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset" target="_blank" rel="noopener">Sleep Health and Lifestyle (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> scatter + fit vs spline · stress by sleep-band box plots</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Tests the '8 hours' folk rule against data.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">Occupation vs sleep disorder: which jobs in the dataset carry the most insomnia and apnea?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset" target="_blank" rel="noopener">Sleep Health and Lifestyle (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> disorder prevalence by occupation bars</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> An occupational-health snapshot from open data.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Do students who report financial stress also report worse academics AND worse mental health — untangle the triangle.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/hopesb/student-depression-dataset" target="_blank" rel="noopener">Student Depression Dataset (Kaggle)</a> <a class="dchip" href="https://www.kaggle.com/datasets/rxnach/student-stress-factors-a-comprehensive-analysis" target="_blank" rel="noopener">Student Stress Factors (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> correlation triangle diagram · stratified bars</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Separates overlapping stressors instead of headline-correlating.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">Does music genre or listening hours track anxiety scores in the MxMH survey?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/catherinerasgaitis/mxmh-survey-results" target="_blank" rel="noopener">Music &amp; Mental Health Survey (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> anxiety by genre box plots · hours-vs-score scatter</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A teen-relevant association study with careful non-causal framing.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Self-reported music 'improves' mood: do the numbers agree? Compare reported effects to measured score differences.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/catherinerasgaitis/mxmh-survey-results" target="_blank" rel="noopener">Music &amp; Mental Health Survey (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> claimed-vs-measured comparison bars</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Belief vs data on the same survey — a built-in honesty check.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">CGPA vs depression in students: does the association survive splitting by year and sleep?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/hopesb/student-depression-dataset" target="_blank" rel="noopener">Student Depression Dataset (Kaggle)</a> <a class="dchip" href="https://www.kaggle.com/datasets/shariful07/student-mental-health" target="_blank" rel="noopener">Student Mental Health (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> stratified scatter/box grid</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Shows how stratification can dissolve (or sharpen) a scary headline.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Which of 20 stress factors cluster together — is student stress one thing or three?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/rxnach/student-stress-factors-a-comprehensive-analysis" target="_blank" rel="noopener">Student Stress Factors (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> factor correlation heatmap · cluster dendrogram</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A structure-of-stress map for school counselors.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Medical students' burnout vs empathy over training years: does empathy really decline?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/thedevastator/medical-student-mental-health" target="_blank" rel="noopener">Medical Student Mental Health (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> empathy by year box plots + trend</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Replicates a famous claim about medical training on open data.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Build it: a Colab 'sleep report card' that ingests any phone/tracker export and outputs 3 charts + a score.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/arashnic/fitbit" target="_blank" rel="noopener">FitBit Fitness Tracker Data (Kaggle)</a> <a class="dchip" href="https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset" target="_blank" rel="noopener">Sleep Health and Lifestyle (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> the prototype's own output charts</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A working tool (not just an analysis) — YRS explicitly welcomes prototypes.</p>
+  </details></li>
+<li><span class="lvl l3">stretch</span> <span class="qq">Build it: a symptom-diary web page (Guide 04 skills) with a weekly-summary chart, tested by 3 volunteer users.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/flaredown/flaredown-autoimmune-symptom-tracker" target="_blank" rel="noopener">Flaredown — Chronic Illness Symptom Tracker (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> app screenshot · usage/retention mini-chart</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> An end-to-end mHealth prototype with a real (tiny) user study.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Your own N-of-1: 3 weeks of your sleep/screen-time/mood logs, pre-registered hypothesis, honest verdict.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <i>your own collected data (design it with your mentor)</i></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> time-series with intervention marker · before/after box</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Self-experimentation with pre-registration — small data, big rigor.</p>
+  </details></li>
+<li><span class="lvl l1">starter</span> <span class="qq">Reaction-time vs time-of-day: run a 2-week self-test with an online reaction timer, analyzed like a real study.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <i>your own collected data (design it with your mentor)</i></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> RT by hour scatter + fit · day-to-day variance</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> Original data collection with a chronobiology story.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Does the school schedule fight teen chronobiology? Combine your class-start data with published sleep-need numbers.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset" target="_blank" rel="noopener">Sleep Health and Lifestyle (Kaggle)</a> <a class="dchip" href="https://ourworldindata.org/health-meta" target="_blank" rel="noopener">Our World in Data — Health</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> schedule-vs-need gap chart</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A policy-flavored poster from data you can actually get.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Does caffeine timing shift your sleep onset? A 3-week self-logged N-of-1 with alternating rules.</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <i>your own collected data (design it with your mentor)</i></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> sleep-onset time series with rule phases marked · phase comparison box</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A designed self-experiment (A/B/A) — small data, real causal thinking.</p>
+  </details></li>
+<li><span class="lvl l2">solid</span> <span class="qq">Compare two free period/mood/habit apps' exports: which captures better data for research reuse?</span>
+  <details><summary>data · figures · contribution</summary>
+    <p class="qmeta"><b>📦 Data:</b> <a class="dchip" href="https://www.kaggle.com/datasets/flaredown/flaredown-autoimmune-symptom-tracker" target="_blank" rel="noopener">Flaredown — Chronic Illness Symptom Tracker (Kaggle)</a></p>
+    <p class="qmeta"><b>📊 Poster figures:</b> field coverage/quality comparison table-figure</p>
+    <p class="qmeta"><b>🏆 Contribution:</b> A data-quality review of consumer health apps.</p>
+  </details></li>
+</ol>
+<aside class="section-comments" data-section="s4-questions" data-label="Research questions">
+  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
+  <div class="discussion-panel" hidden>
+    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
+    <form class="discussion-form">
+      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
+      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="Which dataset or question are you considering?"></textarea></label>
+      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
+    </form>
+  </div>
+</aside>
+
+<h2 class="sec" id="s5"><span class="no">5</span>Choosing yours — the 15-minute route</h2>
+<table class="cheat"><tr><th>Step</th><th>Do this</th><th>Output</th></tr>
+<tr><td>1 · Feel</td><td>Pick the ONE group (A–G) you'd happily read about for a month.</td><td>a topic group</td></tr>
+<tr><td>2 · Pick</td><td>Choose a question there (or adapt one — swap the dataset, the population, or the metric).</td><td>a draft question</td></tr>
+<tr><td>3 · Check</td><td>Open the dataset link; run the <a href="../download-right-data/">RIGHT checklist</a>; confirm "one row" answers your question.</td><td>a scored dataset</td></tr>
+<tr><td>4 · Shape</td><td>Write it as input → output → metric (Class 2 recipe).</td><td>a proposal-ready question</td></tr>
+<tr><td>5 · Confirm</td><td>Bring question + dataset + one sample figure sketch to your mentor.</td><td>your poster topic ✅</td></tr></table>
+<label class="step"><input type="checkbox" data-k="chosen"><span class="t">Write your chosen question in input → output → metric form and post it in the comments below or bring it to class.</span></label>
+<aside class="section-comments" data-section="s5-choosing" data-label="Choosing your question">
+  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
+  <div class="discussion-panel" hidden>
+    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
+    <form class="discussion-form">
+      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
+      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="Which dataset or question are you considering?"></textarea></label>
+      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
+    </form>
+  </div>
+</aside>
+
+<div class="cta"><h3>Next stop: the poster project 下一步</h3>
+<p>This shelf exists to feed <a href="../../ai-toolbox/poster-symposium/">the Poster Project class</a> — proposal milestones, timelines, and the every-class progress ritual live there. Assignments &amp; due dates: <a href="https://academic.hopeembark.org/assignments">academic.hopeembark.org/assignments</a>.</p>
+<p>Merit Point Academy · 恒点学术 — questions? Ask in class, in the comments above, or via the contact on <a href="https://mpa.hopeembark.org/" target="_blank" rel="noopener">mpa.hopeembark.org</a>.</p></div>
+
+</main><footer class="site">Merit Point Academy · Guides</footer>
+<script>(function(){
+  /* ---------- progress checkboxes ---------- */
+  var KEY='mpa-guide-health-datasets';
+  var saved={}; try{saved=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){}
+  function persist(){try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){}}
+  var boxes=[].slice.call(document.querySelectorAll('.step input[type=checkbox]'));
+  function paint(){var n=boxes.filter(function(b){return b.checked;}).length;
+    var pct=boxes.length?Math.round(100*n/boxes.length):0;
+    document.getElementById('pgfill').style.width=pct+'%';
+    document.getElementById('pgtxt').textContent=pct+'%';}
+  boxes.forEach(function(b){
+    if(saved[b.dataset.k]){b.checked=true;b.closest('.step').classList.add('done');}
+    b.addEventListener('change',function(){
+      saved[b.dataset.k]=b.checked; b.closest('.step').classList.toggle('done',b.checked);
+      persist(); paint();});
+  });
+  paint();
+
+  /* ---------- copy buttons ---------- */
+  [].slice.call(document.querySelectorAll('pre.cmd')).forEach(function(pre){
+    var btn=document.createElement('button');btn.className='copy';btn.textContent='⧉ copy';
+    btn.addEventListener('click',function(){
+      var t=pre.cloneNode(true);
+      [].slice.call(t.querySelectorAll('.c,button')).forEach(function(x){x.remove();});
+      var txt=t.textContent.replace(/\n{2,}/g,'\n').split('\n').map(function(l){return l.replace(/\s+$/,'');}).filter(function(l){return l.trim();}).join('\n');
+      (navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject()).then(
+        function(){btn.textContent='✓ copied';setTimeout(function(){btn.textContent='⧉ copy';},1400);},
+        function(){btn.textContent='select + ⌘C';});
+    });
+    pre.appendChild(btn);
+  });
+
+  /* ---------- quizzes ---------- */
+  [].slice.call(document.querySelectorAll('.quiz')).forEach(function(q){
+    [].slice.call(q.querySelectorAll('button')).forEach(function(b){
+      b.addEventListener('click',function(){
+        if(q.classList.contains('answered'))return;
+        q.classList.add('answered');
+        if(b.hasAttribute('data-ok')){b.classList.add('right');}
+        else{b.classList.add('wrong');
+          var ok=q.querySelector('button[data-ok]');if(ok)ok.classList.add('right');}
+      });
+    });
+  });
+
+})();</script>
+<script>
+(function(){
+  var btns=document.querySelectorAll('#qfilter button');
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on');});b.classList.add('on');
+    var l=b.dataset.l;
+    document.querySelectorAll('.qlist>li').forEach(function(li){
+      var lvl=li.querySelector('.lvl').classList.contains('l1')?'1':li.querySelector('.lvl').classList.contains('l2')?'2':'3';
+      li.style.display=(l==='0'||l===lvl)?'':'none';
+    });
+  });});
+})();
+</script>
+<script>
+(function(){
+  var DECK='guides/health-datasets';
+  function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function when(ts){var d=new Date(ts);return d.toLocaleDateString()+' '+d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});}
+  function load(box){
+    var section=box.dataset.section,list=box.querySelector('.discussion-list'),count=box.querySelector('.discussion-count');
+    list.innerHTML='<p class="discussion-empty">Loading…</p>';
+    fetch('/api/comments?deck='+encodeURIComponent(DECK)+'&slide='+encodeURIComponent(section)).then(function(r){return r.json();}).then(function(j){
+      var cs=j.comments||[];count.textContent=cs.length;
+      list.innerHTML=cs.length?cs.map(function(c){return '<div class="discussion-item"><div class="discussion-meta"><b>'+esc(c.name)+'</b> · '+when(c.created)+'</div><div class="discussion-body">'+esc(c.body)+'</div></div>';}).join(''):'<p class="discussion-empty">No comments yet — ask the first question.</p>';
+    }).catch(function(){list.innerHTML='<p class="discussion-empty">Could not load comments. Please try again.</p>';});
+  }
+  document.querySelectorAll('.section-comments').forEach(function(box){
+    var toggle=box.querySelector('.discussion-toggle'),panel=box.querySelector('.discussion-panel'),form=box.querySelector('.discussion-form'),status=box.querySelector('.discussion-status');
+    toggle.addEventListener('click',function(){var opening=panel.hidden;panel.hidden=!opening;toggle.setAttribute('aria-expanded',String(opening));if(opening)load(box);});
+    form.addEventListener('submit',function(e){
+      e.preventDefault();var body=form.elements.body.value.trim(),submit=form.querySelector('[type="submit"]');if(!body){status.textContent='Write a comment or question first.';return;}
+      submit.disabled=true;status.textContent='Posting…';
+      fetch('/api/comments',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({deck:DECK,slide:box.dataset.section,name:form.elements.name.value,body:body})}).then(function(r){return r.json();}).then(function(j){
+        if(!j.ok)throw new Error(j.error||'Could not post.');form.elements.body.value='';status.textContent='Posted — thank you!';load(box);
+      }).catch(function(err){status.textContent=err.message||'Could not post. Please try again.';}).finally(function(){submit.disabled=false;});
+    });
+  });
+  fetch('/api/comments/counts?deck='+encodeURIComponent(DECK)).then(function(r){return r.json();}).then(function(j){document.querySelectorAll('.section-comments').forEach(function(box){box.querySelector('.discussion-count').textContent=(j.counts||{})[box.dataset.section]||0;});}).catch(function(){});
+})();
+</script>
+</body></html>

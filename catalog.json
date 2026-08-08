@@ -238,6 +238,28 @@
           "status": "ready"
         },
         {
+          "id": "poster-symposium",
+          "n": 0,
+          "numLabel": "PROJECT · POSTER",
+          "noPdf": true,
+          "title": "Your First Research Poster — IEEE HealthCom 2026 Young Researcher Symposium",
+          "summary": "One student, one poster, one real IEEE deadline: the call for posters (NYC, Oct 19–21), poster anatomy & requirements, the AI-tool map for every section (assignments are designed to be done WITH AI), the honest-use ownership test, the full Aug→Oct timeline with mentor review windows, the every-class 3-minute progress-presentation ritual, and five dated milestones posted as assignments.",
+          "tags": [
+            "research poster",
+            "IEEE",
+            "HealthCom",
+            "symposium",
+            "conference",
+            "deadline",
+            "presentation",
+            "AI workflow",
+            "mentoring",
+            "project"
+          ],
+          "duration": "60 min",
+          "status": "ready"
+        },
+        {
           "id": "class-11",
           "n": 11,
           "title": "Classification (Logistic Regression)",
@@ -624,6 +646,32 @@
             "research"
           ],
           "duration": "25–40 min",
+          "status": "ready"
+        },
+        {
+          "id": "health-datasets",
+          "n": 7,
+          "numLabel": "GUIDE 07",
+          "noPdf": true,
+          "title": "Healthcare Datasets & 100+ Research Questions 🏥📊",
+          "summary": "The dataset-first topic shelf for the IEEE HealthCom 2026 YRS poster project: 15 verified health-data portals (PhysioNet, CDC, WHO, Kaggle, UCI, Hugging Face…), 48 ready-to-download datasets curated via the course's own dataset-search API, and 100+ research questions — each mapped to its dataset links, the poster figures to draw, and the one-line contribution it could claim.",
+          "tags": [
+            "healthcare",
+            "datasets",
+            "research questions",
+            "HealthCom",
+            "poster",
+            "PhysioNet",
+            "CDC",
+            "WHO",
+            "Kaggle",
+            "UCI",
+            "wearables",
+            "medical imaging",
+            "public health",
+            "privacy"
+          ],
+          "duration": "self-paced",
           "status": "ready"
         }
       ]
