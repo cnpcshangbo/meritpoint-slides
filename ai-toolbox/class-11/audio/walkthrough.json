@@ -1,0 +1,376 @@
+{
+  "lab-sigmoid-scratch": {
+    "hash": "7f1f816705cbf1b6",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "We start by importing the math module. We need it for the exponential function and for logarithms, which power our sigmoid and our loss.",
+        "file": "lab-sigmoid-scratch-w00.mp3"
+      },
+      {
+        "lines": [
+          3,
+          7
+        ],
+        "text": "Here's our data: a list called conf, holding the detector's confidence scores for fifty detections. This one feature is all we'll use to predict.",
+        "file": "lab-sigmoid-scratch-w01.mp3"
+      },
+      {
+        "lines": [
+          8,
+          10
+        ],
+        "text": "The label list matches each score. A one means it was a real object, a zero means a false alarm. This is the truth we're trying to learn.",
+        "file": "lab-sigmoid-scratch-w02.mp3"
+      },
+      {
+        "lines": [
+          11,
+          11
+        ],
+        "text": "We store the number of examples in n. We'll divide by this later to turn sums into averages.",
+        "file": "lab-sigmoid-scratch-w03.mp3"
+      },
+      {
+        "lines": [
+          13,
+          14
+        ],
+        "text": "This is the sigmoid function. It squashes any number into a value between zero and one, so we can read the output as a probability.",
+        "file": "lab-sigmoid-scratch-w04.mp3"
+      },
+      {
+        "lines": [
+          16,
+          16
+        ],
+        "text": "We set our weight w and bias b to zero. Starting flat means every detection gets a probability of exactly one half before any learning.",
+        "file": "lab-sigmoid-scratch-w05.mp3"
+      },
+      {
+        "lines": [
+          17,
+          17
+        ],
+        "text": "The learning rate lr controls how big a step we take each update. Half is a nice, brisk pace here.",
+        "file": "lab-sigmoid-scratch-w06.mp3"
+      },
+      {
+        "lines": [
+          19,
+          19
+        ],
+        "text": "Now the training loop runs four thousand times. Each pass nudges w and b a little closer to a good fit.",
+        "file": "lab-sigmoid-scratch-w07.mp3"
+      },
+      {
+        "lines": [
+          20,
+          20
+        ],
+        "text": "For every confidence score, we compute a predicted probability using our current w and b. That gives us a list called probs.",
+        "file": "lab-sigmoid-scratch-w08.mp3"
+      },
+      {
+        "lines": [
+          21,
+          21
+        ],
+        "text": "We pair each prediction with its true label and subtract. This error, p minus y, tells us how wrong and in which direction we were.",
+        "file": "lab-sigmoid-scratch-w09.mp3"
+      },
+      {
+        "lines": [
+          23,
+          25
+        ],
+        "text": "Here we measure the cross-entropy loss, averaged over all examples. It punishes confident wrong answers harshly, which is exactly what we want for probabilities.",
+        "file": "lab-sigmoid-scratch-w10.mp3"
+      },
+      {
+        "lines": [
+          27,
+          28
+        ],
+        "text": "These are the gradients: grad w mixes each error with its confidence, and grad b just averages the errors. They point us toward less loss.",
+        "file": "lab-sigmoid-scratch-w11.mp3"
+      },
+      {
+        "lines": [
+          29,
+          30
+        ],
+        "text": "We update w and b by stepping against their gradients, scaled by the learning rate. This is the actual moment of learning.",
+        "file": "lab-sigmoid-scratch-w12.mp3"
+      },
+      {
+        "lines": [
+          32,
+          33
+        ],
+        "text": "Every eight hundred steps we print a progress line. Watching the loss shrink and the values shift shows the model improving in real time.",
+        "file": "lab-sigmoid-scratch-w13.mp3"
+      },
+      {
+        "lines": [
+          35,
+          36
+        ],
+        "text": "After training, we print the learned formula, then the confidence where the prediction crosses fifty-fifty. That tipping point is minus b over w.",
+        "file": "lab-sigmoid-scratch-w14.mp3"
+      },
+      {
+        "lines": [
+          38,
+          38
+        ],
+        "text": "This header line labels the little table we're about to draw, showing confidence, probability, and a visual curve.",
+        "file": "lab-sigmoid-scratch-w15.mp3"
+      },
+      {
+        "lines": [
+          39,
+          41
+        ],
+        "text": "We loop through sample confidence values, compute each probability, and print a bar of hashes. As they lengthen, you literally see the S-curve appear.",
+        "file": "lab-sigmoid-scratch-w16.mp3"
+      },
+      {
+        "lines": [
+          43,
+          44
+        ],
+        "text": "Now we make hard predictions: one if the probability reaches one half, else zero. Then we compute accuracy by counting how many matched the true labels.",
+        "file": "lab-sigmoid-scratch-w17.mp3"
+      },
+      {
+        "lines": [
+          45,
+          45
+        ],
+        "text": "We print that training accuracy so we can see how well the model fits the data it learned from.",
+        "file": "lab-sigmoid-scratch-w18.mp3"
+      },
+      {
+        "lines": [
+          47,
+          50
+        ],
+        "text": "Finally, two challenge comments. One asks why the weight keeps growing without settling, the other invites you to swap in squared error and compare. These are your puzzles to explore.",
+        "file": "lab-sigmoid-scratch-w19.mp3"
+      }
+    ]
+  },
+  "lab-av-classifier": {
+    "hash": "9ea8f9bb01cf7edc",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          3
+        ],
+        "text": "We start by importing our tools from scikit-learn. We grab Logistic Regression as our model, a helper to split data into train and test sets, and two metrics: accuracy score and confusion matrix.",
+        "file": "lab-av-classifier-w00.mp3"
+      },
+      {
+        "lines": [
+          5,
+          9
+        ],
+        "text": "This comment explains our data: each detection has a confidence, a box height, and whether it was real. Here's the confidence list, fifty values between about 0.2 and 0.95, one per detection.",
+        "file": "lab-av-classifier-w01.mp3"
+      },
+      {
+        "lines": [
+          10,
+          12
+        ],
+        "text": "Now box height in pixels for those same fifty detections. These run much larger, from single digits up into the eighties.",
+        "file": "lab-av-classifier-w02.mp3"
+      },
+      {
+        "lines": [
+          13,
+          15
+        ],
+        "text": "And the labels: one means the detection was a real object, zero means a false alarm. This is the answer key our model learns from.",
+        "file": "lab-av-classifier-w03.mp3"
+      },
+      {
+        "lines": [
+          17,
+          19
+        ],
+        "text": "This important comment warns us: box height and confidence live on wildly different scales. If we leave them raw, the model's penalty crushes the confidence weight, so we must put both features on the same scale.",
+        "file": "lab-av-classifier-w04.mp3"
+      },
+      {
+        "lines": [
+          20,
+          20
+        ],
+        "text": "So we build X, pairing each confidence with its box height divided by a hundred. That division shrinks box height into the same rough range as confidence, so both features matter.",
+        "file": "lab-av-classifier-w05.mp3"
+      },
+      {
+        "lines": [
+          21,
+          22
+        ],
+        "text": "We split into training and testing sets, holding back thirty percent for testing. Random state forty-two makes it reproducible, and stratify keeps the same ratio of real to false in both sets.",
+        "file": "lab-av-classifier-w06.mp3"
+      },
+      {
+        "lines": [
+          24,
+          25
+        ],
+        "text": "We create a Logistic Regression model and fit it on the training data. This is where it learns the weights that best separate real detections from false alarms.",
+        "file": "lab-av-classifier-w07.mp3"
+      },
+      {
+        "lines": [
+          27,
+          28
+        ],
+        "text": "We unpack the two learned coefficients into w1 and w2, then print the model's decision formula. This shows exactly how much each feature and the intercept contribute to the score z.",
+        "file": "lab-av-classifier-w08.mp3"
+      },
+      {
+        "lines": [
+          29,
+          30
+        ],
+        "text": "Here we print the accuracy on both the training and the test sets. Comparing them tells us whether the model generalizes, or just memorized the training examples.",
+        "file": "lab-av-classifier-w09.mp3"
+      },
+      {
+        "lines": [
+          32,
+          33
+        ],
+        "text": "Now we test the model on three brand-new detections it has never seen. We loop over three confidence and box-height pairs.",
+        "file": "lab-av-classifier-w10.mp3"
+      },
+      {
+        "lines": [
+          34,
+          34
+        ],
+        "text": "For each one, we ask the model for the probability that it's real. Predict proba returns probabilities, and index one grabs the chance of the positive class.",
+        "file": "lab-av-classifier-w11.mp3"
+      },
+      {
+        "lines": [
+          35,
+          36
+        ],
+        "text": "Then we print the inputs and that probability, and label it REAL if the probability is at least a half, otherwise false alarm. This is the model making a live call.",
+        "file": "lab-av-classifier-w12.mp3"
+      },
+      {
+        "lines": [
+          38,
+          39
+        ],
+        "text": "We build a confusion matrix comparing true labels to predictions on the test set, and print a header. Rows are the truth, columns are what the model guessed.",
+        "file": "lab-av-classifier-w13.mp3"
+      },
+      {
+        "lines": [
+          40,
+          42
+        ],
+        "text": "These lines lay out the matrix as a neat table: predicted zero and one across the top, true zero and one down the side. Now we can see exactly where the mistakes land.",
+        "file": "lab-av-classifier-w14.mp3"
+      },
+      {
+        "lines": [
+          44,
+          45
+        ],
+        "text": "Now the fun part: a threshold sweep. We pull out just the probability that each test detection is real, into the array probs.",
+        "file": "lab-av-classifier-w15.mp3"
+      },
+      {
+        "lines": [
+          46,
+          47
+        ],
+        "text": "We loop over four thresholds. For each, we say something is real only if its probability clears that threshold. A higher threshold means the model is more cautious.",
+        "file": "lab-av-classifier-w16.mp3"
+      },
+      {
+        "lines": [
+          48,
+          50
+        ],
+        "text": "We count three things: true positives, real objects correctly caught; false positives, false alarms we wrongly called real; and false negatives, real objects we missed.",
+        "file": "lab-av-classifier-w17.mp3"
+      },
+      {
+        "lines": [
+          51,
+          52
+        ],
+        "text": "From those counts we compute recall, the fraction of real objects we caught, and precision, how many of our positive calls were actually right. The if guards protect against dividing by zero.",
+        "file": "lab-av-classifier-w18.mp3"
+      },
+      {
+        "lines": [
+          53,
+          54
+        ],
+        "text": "We print each threshold with its recall, precision, and how many real objects were missed. Watch how raising the bar trades catching everything for making fewer mistakes.",
+        "file": "lab-av-classifier-w19.mp3"
+      },
+      {
+        "lines": [
+          56,
+          57
+        ],
+        "text": "Now we print a divider line and introduce the accuracy trap: a model that always says there's no pedestrian.",
+        "file": "lab-av-classifier-w20.mp3"
+      },
+      {
+        "lines": [
+          58,
+          59
+        ],
+        "text": "We set up two hundred frames where only eight contain a pedestrian, and imagine a lazy model that always answers no.",
+        "file": "lab-av-classifier-w21.mp3"
+      },
+      {
+        "lines": [
+          60,
+          61
+        ],
+        "text": "We compute its accuracy: it's right on all the empty frames, so accuracy looks great. But its recall on pedestrians is zero, because it found none of them.",
+        "file": "lab-av-classifier-w22.mp3"
+      },
+      {
+        "lines": [
+          62,
+          62
+        ],
+        "text": "This line drives it home: ninety-six percent accurate yet it misses every single pedestrian. Accuracy alone simply cannot see this danger.",
+        "file": "lab-av-classifier-w23.mp3"
+      },
+      {
+        "lines": [
+          64,
+          68
+        ],
+        "text": "Finally, two challenges for you. First, decide which threshold you'd actually ship in a car and what your choice costs. Second, delete the divide-by-hundred and re-run to see which feature the model stops listening to, and why.",
+        "file": "lab-av-classifier-w24.mp3"
+      }
+    ]
+  }
+}

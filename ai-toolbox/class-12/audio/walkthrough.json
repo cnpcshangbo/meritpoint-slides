@@ -1,0 +1,320 @@
+{
+  "lab-gini-scratch": {
+    "hash": "573d0119e2cb48cc",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          2
+        ],
+        "text": "We're building a tiny decision tree for braking situations, and we'll pick its first question ourselves. This list names our three features: distance, relative speed, and whether it's a pedestrian.",
+        "file": "lab-gini-scratch-w00.mp3"
+      },
+      {
+        "lines": [
+          3,
+          7
+        ],
+        "text": "Here are fourteen rows of data, one per situation. Each row holds those three feature values, so the first row means eight meters away, forty-five kilometers per hour, and yes it's a pedestrian.",
+        "file": "lab-gini-scratch-w01.mp3"
+      },
+      {
+        "lines": [
+          8,
+          8
+        ],
+        "text": "This brake list is the answer for each row: a one means the car should brake, a zero means go. It lines up with the rows above.",
+        "file": "lab-gini-scratch-w02.mp3"
+      },
+      {
+        "lines": [
+          10,
+          11
+        ],
+        "text": "Now we define a function called gini that measures how mixed a group is. Zero means perfectly pure, all one class, and around a half means a total fifty-fifty coin flip.",
+        "file": "lab-gini-scratch-w03.mp3"
+      },
+      {
+        "lines": [
+          12,
+          13
+        ],
+        "text": "First a safety check: if the labels list is empty, there's nothing to measure, so we just return zero.",
+        "file": "lab-gini-scratch-w04.mp3"
+      },
+      {
+        "lines": [
+          14,
+          15
+        ],
+        "text": "We compute p1, the fraction of ones in the group, then plug it into the Gini formula. The lower the result, the more one-sided and confident the group is.",
+        "file": "lab-gini-scratch-w05.mp3"
+      },
+      {
+        "lines": [
+          17,
+          17
+        ],
+        "text": "We call this the root: the impurity of all fourteen rows before we ask any question. This is our starting point to improve on.",
+        "file": "lab-gini-scratch-w06.mp3"
+      },
+      {
+        "lines": [
+          18,
+          19
+        ],
+        "text": "These two prints show a summary at the root, how many brake versus go, and the root's Gini impurity. That tells us how messy things are before splitting.",
+        "file": "lab-gini-scratch-w07.mp3"
+      },
+      {
+        "lines": [
+          21,
+          22
+        ],
+        "text": "We start an empty candidates list to collect possible questions. Then we loop over the three features by index, so we test each column in turn.",
+        "file": "lab-gini-scratch-w08.mp3"
+      },
+      {
+        "lines": [
+          23,
+          23
+        ],
+        "text": "For the current feature, we grab all its unique values and sort them. These are the spots where a meaningful split could happen.",
+        "file": "lab-gini-scratch-w09.mp3"
+      },
+      {
+        "lines": [
+          24,
+          25
+        ],
+        "text": "We walk between each pair of neighboring values and set the threshold halfway between them. Splitting at the midpoint is a fair place to divide the two values.",
+        "file": "lab-gini-scratch-w10.mp3"
+      },
+      {
+        "lines": [
+          26,
+          27
+        ],
+        "text": "Now we split the rows: left holds the answers where the feature is at or below the threshold, and right holds those above it. This is the question actually sorting the data.",
+        "file": "lab-gini-scratch-w11.mp3"
+      },
+      {
+        "lines": [
+          28,
+          29
+        ],
+        "text": "We calculate the weighted impurity after the split, blending both sides by how many rows each holds. This combined number is exactly what a tree tries to make as small as possible.",
+        "file": "lab-gini-scratch-w12.mp3"
+      },
+      {
+        "lines": [
+          30,
+          30
+        ],
+        "text": "We save this candidate: the gain, which is root minus after, plus the feature name, threshold, and both branches. Storing everything lets us rank the questions later.",
+        "file": "lab-gini-scratch-w13.mp3"
+      },
+      {
+        "lines": [
+          32,
+          32
+        ],
+        "text": "After trying every split, we pick the candidate with the biggest gain and unpack its details. This is the single best first question for our tree.",
+        "file": "lab-gini-scratch-w14.mp3"
+      },
+      {
+        "lines": [
+          33,
+          34
+        ],
+        "text": "We announce the winner and print the actual question, asking whether the chosen feature is at or below its threshold. That's the tree's very first decision.",
+        "file": "lab-gini-scratch-w15.mp3"
+      },
+      {
+        "lines": [
+          35,
+          36
+        ],
+        "text": "These lines show how far the impurity dropped after the split and how much information we gained. Bigger gain means a cleaner, more useful question.",
+        "file": "lab-gini-scratch-w16.mp3"
+      },
+      {
+        "lines": [
+          37,
+          38
+        ],
+        "text": "Finally we describe each branch: how many brake versus go landed on the left and right, plus each side's own Gini. This shows how well the question separated things.",
+        "file": "lab-gini-scratch-w17.mp3"
+      },
+      {
+        "lines": [
+          40,
+          42
+        ],
+        "text": "For extra insight we print the top five questions, sorted by highest gain, showing just the gain, feature, and threshold. It reveals how close the runners-up were.",
+        "file": "lab-gini-scratch-w18.mp3"
+      },
+      {
+        "lines": [
+          44,
+          48
+        ],
+        "text": "These comments are your challenges: tweak one row to break a tie, or rerun the search on the impure right branch to find the second question. Do that, and you've built a real decision tree.",
+        "file": "lab-gini-scratch-w19.mp3"
+      }
+    ]
+  },
+  "lab-tree-vs-forest": {
+    "hash": "790121b30ba8f5e2",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          5
+        ],
+        "text": "We start by importing our tools. We grab random for making fake data, decision trees and random forests from scikit-learn, plus helpers to split our data and measure accuracy.",
+        "file": "lab-tree-vs-forest-w00.mp3"
+      },
+      {
+        "lines": [
+          7,
+          8
+        ],
+        "text": "Here's the plan: we'll build 240 braking situations from a physics rule with some real-world messiness added. Setting the random seed to 12 makes sure everyone gets the exact same data every run.",
+        "file": "lab-tree-vs-forest-w01.mp3"
+      },
+      {
+        "lines": [
+          9,
+          10
+        ],
+        "text": "We create two empty lists, rows for our features and labels for the answers. Then we loop 240 times, using underscore because we don't need the counter itself.",
+        "file": "lab-tree-vs-forest-w02.mp3"
+      },
+      {
+        "lines": [
+          11,
+          13
+        ],
+        "text": "For each situation we make up a distance to the object in metres, a closing speed in kilometres per hour, and randomly decide whether there's a pedestrian, zero or one.",
+        "file": "lab-tree-vs-forest-w03.mp3"
+      },
+      {
+        "lines": [
+          14,
+          15
+        ],
+        "text": "We compute time to collision by dividing distance by speed in metres per second. Then we say brake if that time is under 2.5 seconds, or 3.5 if a pedestrian is present, since we want to brake earlier for people.",
+        "file": "lab-tree-vs-forest-w04.mp3"
+      },
+      {
+        "lines": [
+          16,
+          17
+        ],
+        "text": "Eight percent of the time we flip the label with this line, because the real world is noisy and sometimes the data just disagrees with the rule.",
+        "file": "lab-tree-vs-forest-w05.mp3"
+      },
+      {
+        "lines": [
+          18,
+          19
+        ],
+        "text": "Finally we store this situation's three features into rows and its brake answer into labels, building up our dataset one example at a time.",
+        "file": "lab-tree-vs-forest-w06.mp3"
+      },
+      {
+        "lines": [
+          21,
+          21
+        ],
+        "text": "We name our three features: distance, relative speed, and whether it's a pedestrian. These names will make our tree readable later.",
+        "file": "lab-tree-vs-forest-w07.mp3"
+      },
+      {
+        "lines": [
+          22,
+          23
+        ],
+        "text": "We split the data into training and testing sets, holding back 30 percent for testing. The random state of 42 keeps the split consistent so we can compare fairly.",
+        "file": "lab-tree-vs-forest-w08.mp3"
+      },
+      {
+        "lines": [
+          25,
+          26
+        ],
+        "text": "Now we print a header for a comparison table, then loop over different tree depths. None at the end means no depth limit, letting the tree grow as deep as it wants.",
+        "file": "lab-tree-vs-forest-w09.mp3"
+      },
+      {
+        "lines": [
+          27,
+          27
+        ],
+        "text": "For each depth we train a decision tree on the training data. Limiting max depth controls how complicated the tree is allowed to get.",
+        "file": "lab-tree-vs-forest-w10.mp3"
+      },
+      {
+        "lines": [
+          28,
+          29
+        ],
+        "text": "We measure accuracy on the training data and on the test data separately. The training score shows how well it memorized; the test score shows how well it truly learned.",
+        "file": "lab-tree-vs-forest-w11.mp3"
+      },
+      {
+        "lines": [
+          30,
+          30
+        ],
+        "text": "We print each row nicely aligned, including the gap between train and test accuracy. Watch that gap grow as trees get deeper — that's overfitting appearing before your eyes.",
+        "file": "lab-tree-vs-forest-w12.mp3"
+      },
+      {
+        "lines": [
+          32,
+          34
+        ],
+        "text": "Now the fun part: we train a depth-3 tree and print it out as readable text. Because it's shallow, you can actually follow its yes-no questions and see how it decides to go or brake.",
+        "file": "lab-tree-vs-forest-w13.mp3"
+      },
+      {
+        "lines": [
+          36,
+          37
+        ],
+        "text": "Here we train two more models: one deep tree with no depth limit, and a forest of 200 trees that vote together. The forest is our crowd of decision-makers.",
+        "file": "lab-tree-vs-forest-w14.mp3"
+      },
+      {
+        "lines": [
+          38,
+          40
+        ],
+        "text": "We print the test accuracy for all three: the deep tree, the depth-3 tree, and the 200-tree forest. This lets us compare one overfit tree against a whole voting crowd.",
+        "file": "lab-tree-vs-forest-w15.mp3"
+      },
+      {
+        "lines": [
+          42,
+          44
+        ],
+        "text": "Finally we ask the forest what features it found important. We pair each feature name with its importance, sort them highest first, and print a little bar of hash marks to visualize each one.",
+        "file": "lab-tree-vs-forest-w16.mp3"
+      },
+      {
+        "lines": [
+          46,
+          49
+        ],
+        "text": "These comments are your challenges. First, think about why pedestrian importance is near zero given how we defined braking. Second, try shrinking the forest to 5 trees, then 1, and see where its advantage vanishes.",
+        "file": "lab-tree-vs-forest-w17.mp3"
+      }
+    ]
+  }
+}

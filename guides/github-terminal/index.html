@@ -220,16 +220,19 @@ cat ~/.ssh/id_ed25519.pub                    <span class="c"># show your PUBLIC 
 <label class="step"><input type="checkbox" data-k="s-test"><span class="t">Test it: <code>ssh -T git@github.com</code> — you should see <i>"Hi YOURNAME! You've successfully authenticated."</i></span></label>
 <div class="why"><b>How the key works:</b> the <b>public</b> key (<code>.pub</code>) is the lock — you give it to GitHub. The <b>private</b> key stays on your computer and never leaves — it is the only key that opens the lock. That's why there is no password to steal.</div>
 
-<h3>5.2 Mission 6 — log in to OUR real practice server</h3>
-<p>Merit Point Academy runs a <b>real Linux server</b> just for you to practice on. The same key trick from 5.1 gets you in — and everything from these notes (<code>pwd</code>, <code>ls</code>, <code>git</code>, <code>python3</code>) works there for real. You cannot break it, and your home folder is yours alone.</p>
-<label class="step"><input type="checkbox" data-k="s-realkey"><span class="t"><b>Step 1:</b> make your key (5.1 above), then copy the line printed by <code>cat ~/.ssh/id_ed25519.pub</code>.</span></label>
-<label class="step"><input type="checkbox" data-k="s-submit"><span class="t"><b>Step 2:</b> sign in with your class account at <a href="https://academic.hopeembark.org/sshbox" target="_blank" rel="noopener">academic.hopeembark.org/sshbox</a> and paste your <b>public</b> key there. The page tells you your username.</span></label>
-<label class="step"><input type="checkbox" data-k="s-login"><span class="t"><b>Step 3:</b> once your teacher confirms your account is ready, connect (use YOUR username):</span></label>
-<pre class="cmd">ssh -p 2222 yourname@academic.hopeembark.org
+<h3>5.2 Mission 6 — your first real handshake with a real server</h3>
+<p>Everything in 5.1 was setup. This is the payoff: you are going to open an SSH connection to an <b>actual server on the other side of the internet</b> — GitHub's — and have it recognise you by your key, with no password. Nothing here is simulated.</p>
+<label class="step"><input type="checkbox" data-k="s-gh-key"><span class="t"><b>Step 1:</b> make your key (5.1 above) and add the <code>.pub</code> line to GitHub, if you haven't yet.</span></label>
+<label class="step"><input type="checkbox" data-k="s-gh-first"><span class="t"><b>Step 2:</b> connect for the first time:</span></label>
+<pre class="cmd">ssh -T git@github.com
 <span class="c"># first time it asks about a "fingerprint" — type: yes</span>
 <span class="c"># no password needed. Your KEY is the password — that's the whole point!</span></pre>
-<label class="step"><input type="checkbox" data-k="s-explore"><span class="t"><b>Step 4:</b> you're on another computer now! Try <code>pwd</code>, <code>ls</code>, <code>cat notes.txt</code>, <code>cd data</code>, <code>cat titanic.csv</code> — then build a repo from memory: <code>mkdir my-project</code>, <code>git init</code>, <code>touch README.md</code>, <code>git add .</code>, <code>git commit -m "on a real server!"</code>. Type <code>exit</code> to come home.</span></label>
+<label class="step"><input type="checkbox" data-k="s-gh-hi"><span class="t"><b>Step 3:</b> you should see <i>"Hi YOURNAME! You've successfully authenticated…"</i> — that greeting came from a machine in a data centre that just checked your key. GitHub then closes the connection, because it only lets you push and pull, not roam around.</span></label>
+<label class="step"><input type="checkbox" data-k="s-gh-verbose"><span class="t"><b>Step 4:</b> now watch the whole conversation: <code>ssh -Tv git@github.com</code>. The <code>-v</code> is "verbose". Find the lines where it says which key it offered and <i>Server accepts key</i> — that is the lock-and-key from 5.1, happening for real.</span></label>
+<label class="step"><input type="checkbox" data-k="s-gh-clone"><span class="t"><b>Step 5:</b> use it for what it's for — <code>git clone git@github.com:yourname/yourrepo.git</code>. That's the SSH address, not the <code>https://</code> one, so it never asks for a password again.</span></label>
 <div class="why"><b>Why the fingerprint question?</b> The first time you connect, SSH shows the server's "fingerprint" and asks if you trust it. After you say yes once, SSH remembers it — and will loudly warn you if the server ever changes (which could mean someone is pretending to be it).</div>
+<div class="why"><b>Where do I get a shell to roam around in?</b> GitHub deliberately doesn't give you one. When you need a real Linux machine to explore, the usual routes are a free cloud shell (GitHub Codespaces, Google Cloud Shell), a Linux VM on your own laptop, or WSL on Windows — and every command in these notes works the same way on all of them. Ask in class and we'll set one up together.</div>
+<div class="tryit"><b>⚡ Try it now:</b> Practice Terminal → <b>Mission 5: Sync with GitHub</b> — it ends on <code>ssh -T git@github.com</code>, the same command you just ran for real.</div>
 
 <!-- ============================================================ -->
 <h2 class="sec" id="s6"><span class="no">6</span>Cheat sheet — print me</h2>
@@ -245,9 +248,9 @@ cat ~/.ssh/id_ed25519.pub                    <span class="c"># show your PUBLIC 
 <tr><td>Upload / download vs GitHub</td><td><code>git push</code> · <code>git pull</code></td></tr>
 <tr><td>Experiment safely, then keep it</td><td><code>git checkout -b name</code> … <code>git checkout main</code> · <code>git merge name</code></td></tr>
 <tr><td>Control another computer</td><td><code>ssh user@address</code> (leave with <code>exit</code>)</td></tr>
-<tr><td>Log in to the MPA practice server</td><td><code>ssh -p 2222 yourname@academic.hopeembark.org</code></td></tr>
+<tr><td>Check my key works against GitHub</td><td><code>ssh -T git@github.com</code></td></tr>
 </table>
-<p class="lead" style="margin-top:26px"><b>Your homework:</b> close these notes, open the ⚡ Practice Terminal, and redo Missions 3 and 4 from memory. Then do Mission 6 (section 5.2) on the REAL practice server — same commands, real computer. That's how it becomes yours.</p>
+<p class="lead" style="margin-top:26px"><b>Your homework:</b> close these notes, open the ⚡ Practice Terminal, and redo Missions 3 and 4 from memory. Then do Mission 6 (section 5.2) for real — <code>ssh -T git@github.com</code>, against a real server, with your own key. That's how it becomes yours.</p>
 </main>
 
 <button id="termBtn">⚡ Practice Terminal</button>
