@@ -1,0 +1,312 @@
+{
+  "lab-fair-comparison": {
+    "hash": "de36b7dcc322b55f",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          3
+        ],
+        "text": "We start by importing our tools. We grab a function to make fake data, a dummy classifier for a simple baseline, and logistic regression, our real model.",
+        "file": "lab-fair-comparison-w00.mp3"
+      },
+      {
+        "lines": [
+          4,
+          5
+        ],
+        "text": "Here we import several scoring functions — accuracy, precision, recall, F1, and confusion matrix — so we can measure how well each model does from different angles.",
+        "file": "lab-fair-comparison-w01.mp3"
+      },
+      {
+        "lines": [
+          6,
+          8
+        ],
+        "text": "These last imports give us a tool to split data into train and test sets, a way to chain steps into a pipeline, and a scaler to standardize our features.",
+        "file": "lab-fair-comparison-w02.mp3"
+      },
+      {
+        "lines": [
+          10,
+          14
+        ],
+        "text": "This comment reminds us the data is synthetic, just for learning. We call make classification to generate six hundred samples with eight features, some slightly imbalanced between two classes.",
+        "file": "lab-fair-comparison-w03.mp3"
+      },
+      {
+        "lines": [
+          16,
+          18
+        ],
+        "text": "The key idea here: we split the data exactly once. Every model will get these same train and test rows, and stratify keeps the class balance fair on both sides.",
+        "file": "lab-fair-comparison-w04.mp3"
+      },
+      {
+        "lines": [
+          20,
+          24
+        ],
+        "text": "We build a dictionary of our two contenders. First a baseline that always guesses the majority class, and second, a pipeline that scales the data then runs logistic regression.",
+        "file": "lab-fair-comparison-w05.mp3"
+      },
+      {
+        "lines": [
+          26,
+          27
+        ],
+        "text": "These two print lines set up a header. They label the output and name each column, so the numbers we're about to print are easy to read.",
+        "file": "lab-fair-comparison-w06.mp3"
+      },
+      {
+        "lines": [
+          28,
+          30
+        ],
+        "text": "Now we loop over each model. We fit it on the training data, then ask it to predict labels for the test set we held aside.",
+        "file": "lab-fair-comparison-w07.mp3"
+      },
+      {
+        "lines": [
+          31,
+          34
+        ],
+        "text": "For each model we collect four scores into a list: accuracy, precision, recall, and F1. The zero division setting just keeps us safe if a score would divide by zero.",
+        "file": "lab-fair-comparison-w08.mp3"
+      },
+      {
+        "lines": [
+          35,
+          36
+        ],
+        "text": "Here we print the results in a neat row. We pad the name, format each score to three decimals, and show the confusion matrix so we see exactly what got right and wrong.",
+        "file": "lab-fair-comparison-w09.mp3"
+      },
+      {
+        "lines": [
+          38,
+          39
+        ],
+        "text": "This comment raises a good question: what if each model got a lucky or unlucky split? To explore that, we make an empty list to collect F1 scores.",
+        "file": "lab-fair-comparison-w10.mp3"
+      },
+      {
+        "lines": [
+          40,
+          42
+        ],
+        "text": "We loop twenty times, each with a different random seed. Every seed produces a different valid split of the same data into train and test.",
+        "file": "lab-fair-comparison-w11.mp3"
+      },
+      {
+        "lines": [
+          43,
+          44
+        ],
+        "text": "Inside the loop we build a fresh scaled logistic regression pipeline, so each split starts with a clean, untrained model.",
+        "file": "lab-fair-comparison-w12.mp3"
+      },
+      {
+        "lines": [
+          45,
+          46
+        ],
+        "text": "We fit the model on this split's training rows, then record its F1 score on this split's test rows, adding it to our list.",
+        "file": "lab-fair-comparison-w13.mp3"
+      },
+      {
+        "lines": [
+          47,
+          48
+        ],
+        "text": "After the loop we print a heading, then show the smallest and largest F1 across all twenty splits. This reveals how much the score can swing.",
+        "file": "lab-fair-comparison-w14.mp3"
+      },
+      {
+        "lines": [
+          49,
+          49
+        ],
+        "text": "This final line drives the lesson home: because scores wobble with the split, every contender must share one split to be compared fairly.",
+        "file": "lab-fair-comparison-w15.mp3"
+      }
+    ]
+  },
+  "lab-cv-threshold": {
+    "hash": "4336c9d9702817be",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "We start by importing NumPy, the toolkit for working with arrays of numbers. We'll use it for quick math on our results.",
+        "file": "lab-cv-threshold-w00.mp3"
+      },
+      {
+        "lines": [
+          2,
+          3
+        ],
+        "text": "Here we bring in a function to make a fake classification dataset, and the logistic regression model that will learn to sort things into two classes.",
+        "file": "lab-cv-threshold-w01.mp3"
+      },
+      {
+        "lines": [
+          4,
+          5
+        ],
+        "text": "Now we grab several scoring tools: accuracy, precision, recall, F1 score, and the confusion matrix. These let us judge how well the model does from different angles.",
+        "file": "lab-cv-threshold-w02.mp3"
+      },
+      {
+        "lines": [
+          6,
+          7
+        ],
+        "text": "These imports handle cross-validation. Stratified K-fold splits the data fairly, while cross validate and cross val predict run the model across those splits.",
+        "file": "lab-cv-threshold-w03.mp3"
+      },
+      {
+        "lines": [
+          8,
+          9
+        ],
+        "text": "Finally we import a way to chain steps into a pipeline, plus the standard scaler that puts all our features on the same scale.",
+        "file": "lab-cv-threshold-w04.mp3"
+      },
+      {
+        "lines": [
+          11,
+          12
+        ],
+        "text": "This comment tells us we're reusing the same made-up dataset from Lab one. We call make classification to build our features X and labels y.",
+        "file": "lab-cv-threshold-w05.mp3"
+      },
+      {
+        "lines": [
+          13,
+          15
+        ],
+        "text": "We ask for six hundred samples with eight features, five of them genuinely useful. The weights make one class rarer, class separation and flip y add realistic overlap and noise, and the random state keeps it repeatable.",
+        "file": "lab-cv-threshold-w06.mp3"
+      },
+      {
+        "lines": [
+          17,
+          19
+        ],
+        "text": "This comment is the key idea: scaling goes inside the pipeline so each fold learns the scale only from its own training data. We build that pipeline pairing the scaler with logistic regression, giving it plenty of iterations to converge.",
+        "file": "lab-cv-threshold-w07.mp3"
+      },
+      {
+        "lines": [
+          20,
+          20
+        ],
+        "text": "Here we set up our cross-validation splitter: five folds, shuffled first, with a fixed random state so everyone gets the same split.",
+        "file": "lab-cv-threshold-w08.mp3"
+      },
+      {
+        "lines": [
+          21,
+          22
+        ],
+        "text": "Now we run cross validate, which trains and tests the model across all five folds. We ask it to track four metrics: accuracy, precision, recall, and F1.",
+        "file": "lab-cv-threshold-w09.mp3"
+      },
+      {
+        "lines": [
+          24,
+          24
+        ],
+        "text": "We print a header line so the output is clearly labeled as our synthetic data with five-fold cross-validation.",
+        "file": "lab-cv-threshold-w10.mp3"
+      },
+      {
+        "lines": [
+          25,
+          26
+        ],
+        "text": "We loop over each metric name, and for each one we pull out its five fold scores from the results dictionary.",
+        "file": "lab-cv-threshold-w11.mp3"
+      },
+      {
+        "lines": [
+          27,
+          27
+        ],
+        "text": "Here we build a neat string of those values, each formatted to three decimal places and joined with spaces so they read cleanly.",
+        "file": "lab-cv-threshold-w12.mp3"
+      },
+      {
+        "lines": [
+          28,
+          28
+        ],
+        "text": "This line prints everything for the metric: the individual fold scores, then the mean, and its spread as a standard deviation. That plus-minus tells us how stable the model is across folds.",
+        "file": "lab-cv-threshold-w13.mp3"
+      },
+      {
+        "lines": [
+          30,
+          32
+        ],
+        "text": "These comments explain out-of-fold predictions: every row is scored by a model that never saw it during training. We call cross val predict asking for probabilities and keep column one, the chance of the positive class. This makes comparing thresholds honest.",
+        "file": "lab-cv-threshold-w14.mp3"
+      },
+      {
+        "lines": [
+          33,
+          33
+        ],
+        "text": "We print a header row for the table that's coming, showing the columns for threshold, accuracy, precision, recall, F1, and the confusion matrix.",
+        "file": "lab-cv-threshold-w15.mp3"
+      },
+      {
+        "lines": [
+          34,
+          35
+        ],
+        "text": "Now we try three different cutoff values. For each threshold, we mark a row as positive when its probability meets or exceeds it, converting those true-false results into ones and zeros.",
+        "file": "lab-cv-threshold-w16.mp3"
+      },
+      {
+        "lines": [
+          36,
+          39
+        ],
+        "text": "Here we compute our four metrics for this threshold, comparing the true labels y against our predictions. Zero division equals zero just keeps things from crashing when a category is empty.",
+        "file": "lab-cv-threshold-w17.mp3"
+      },
+      {
+        "lines": [
+          40,
+          41
+        ],
+        "text": "This prints the threshold and its four scores in a tidy aligned row, followed by the confusion matrix as a list, so we can see the actual counts of true and false positives and negatives.",
+        "file": "lab-cv-threshold-w18.mp3"
+      },
+      {
+        "lines": [
+          43,
+          43
+        ],
+        "text": "This comment sets up a challenge: pick a threshold for a situation where missing a positive is much costlier than a false alarm.",
+        "file": "lab-cv-threshold-w19.mp3"
+      },
+      {
+        "lines": [
+          44,
+          44
+        ],
+        "text": "It reminds you to state your cost rule clearly before you commit to an answer. Thinking through the tradeoff first is the real skill here.",
+        "file": "lab-cv-threshold-w20.mp3"
+      }
+    ]
+  }
+}

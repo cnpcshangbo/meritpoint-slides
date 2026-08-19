@@ -16,6 +16,29 @@
       "accent": "#0F9DB0",
       "decks": [
         {
+          "id": "workshop-2026-08-20",
+          "n": 0,
+          "numLabel": "FREE · AUG 20",
+          "title": "Agent Arcade — Teach the Bot, Test the Bot, Break the Bot",
+          "summary": "A free 60-minute experience class for Grades 8–12: play a browser game, collect demonstrations, train an imitation-learning agent, watch it take over, test generalization on unseen levels, and leave with a defensible research result.",
+          "tags": [
+            "workshop",
+            "free",
+            "AI agent",
+            "game AI",
+            "imitation learning",
+            "KNN",
+            "generalization",
+            "research",
+            "interactive",
+            "browser",
+            "beginner",
+            "August 20"
+          ],
+          "duration": "60 min",
+          "status": "ready"
+        },
+        {
           "id": "class-01",
           "n": 1,
           "title": "What Is AI? What Can AI Actually Do?",
@@ -309,29 +332,67 @@
           "id": "class-13",
           "n": 13,
           "title": "KNN, SVM & a First Neural Network",
+          "summary": "Three models, one identical test: KNN votes with nearby examples, SVM protects the widest margin, and a small neural network learns layered features. Scale the data, draw all three boundaries, run a fair digits bake-off, and learn why the winner depends on the problem.",
           "tags": [
-            "ML",
-            "neural network"
+            "machine learning",
+            "KNN",
+            "SVM",
+            "neural network",
+            "MLP",
+            "distance",
+            "margin",
+            "scaling",
+            "model comparison",
+            "digits",
+            "quiz",
+            "interactive",
+            "Python"
           ],
-          "status": "planned"
+          "duration": "60 min",
+          "status": "ready"
         },
         {
           "id": "class-14",
           "n": 14,
           "title": "Experiment Design & Analysis",
+          "summary": "Turn a model score into evidence: set a baseline, change one thing, keep the split fixed, prevent leakage, report cross-validation mean ± spread, and choose accuracy, precision, recall, F1, or a threshold to match the real cost of mistakes.",
           "tags": [
-            "experiment"
+            "experiment design",
+            "baseline",
+            "controlled comparison",
+            "cross-validation",
+            "data leakage",
+            "confusion matrix",
+            "precision",
+            "recall",
+            "F1",
+            "threshold",
+            "uncertainty",
+            "quiz",
+            "interactive",
+            "Python"
           ],
-          "status": "planned"
+          "duration": "60 min",
+          "status": "ready"
         },
         {
           "id": "class-15",
           "n": 15,
-          "title": "Research Presentation — Paper & Slides",
+          "title": "Research Showcase & Defense",
+          "summary": "A live capstone showcase, not another lecture: each student defends one Class 14 mini-study in at most six slides, speaks for up to five minutes, answers two evidence questions, and gives Glow · Grow · Next test peer feedback.",
           "tags": [
-            "presentation"
+            "research presentation",
+            "defense",
+            "reproducibility",
+            "Q&A",
+            "peer feedback",
+            "rubric",
+            "showcase",
+            "quiz",
+            "interactive"
           ],
-          "status": "planned"
+          "duration": "120 min",
+          "status": "ready"
         }
       ]
     },
@@ -654,7 +715,7 @@
           "numLabel": "GUIDE 07",
           "noPdf": true,
           "title": "Healthcare Datasets & 100+ Research Questions 🏥📊",
-          "summary": "The dataset-first topic shelf for the IEEE HealthCom 2026 YRS poster project: 15 verified health-data portals (PhysioNet, CDC, WHO, Kaggle, UCI, Hugging Face…), 48 ready-to-download datasets curated via the course's own dataset-search API, and 100+ research questions — each mapped to its dataset links, the poster figures to draw, and the one-line contribution it could claim.",
+          "summary": "The dataset-first topic shelf for the IEEE HealthCom 2026 YRS poster project: 15 verified health-data portals, 57 reviewed data resources, and 100+ research questions — now including driver drowsiness, CARLA studies, medical LLM reliability, rehabilitation robotics, and gaming physiology — each mapped to data, poster figures, and a defensible contribution.",
           "tags": [
             "healthcare",
             "datasets",
@@ -669,7 +730,11 @@
             "wearables",
             "medical imaging",
             "public health",
-            "privacy"
+            "privacy",
+            "CARLA",
+            "gaming",
+            "rehabilitation",
+            "medical LLM"
           ],
           "duration": "self-paced",
           "status": "ready"

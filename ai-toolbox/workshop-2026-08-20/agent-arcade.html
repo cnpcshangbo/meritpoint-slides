@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#071426">
+  <title>Agent Arcade · Teach the Bot, Break the Bot</title>
+  <style>
+    :root{--bg:#071426;--panel:#0d2139;--panel2:#102b49;--line:#28506c;--cyan:#38e5ef;--cyan2:#0f9db0;--pink:#ff5f8f;--amber:#ffc857;--green:#55e6a5;--white:#f5fbff;--muted:#9cb7ca;--ink:#081521}
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:radial-gradient(circle at 18% 0,#173f62 0,#071426 46%,#040b14 100%);color:var(--white);font:15px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,a{font:inherit}.shell{width:min(1500px,100%);margin:auto;padding:18px}.top{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:14px}.brand{display:flex;align-items:center;gap:12px}.mark{width:46px;height:46px;border:2px solid var(--cyan);border-radius:13px;display:grid;place-items:center;color:var(--cyan);font:900 25px/1 ui-monospace,monospace;box-shadow:0 0 24px #38e5ef38 inset,0 0 18px #38e5ef28}.eyebrow{color:var(--cyan);font:800 11px/1.2 ui-monospace,monospace;letter-spacing:.18em;text-transform:uppercase}.top h1{margin:4px 0 0;font-size:clamp(21px,2.2vw,34px);line-height:1.05;letter-spacing:-.03em}.privacy{max-width:435px;padding:9px 13px;border:1px solid #28506c;border-radius:10px;background:#0a1b2dc7;color:var(--muted);font-size:12px}.privacy b{color:var(--green)}
+    .hud{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-bottom:10px}.stat{padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:#0b1c30d9}.stat span{display:block;color:var(--muted);font:700 10px/1.1 ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase}.stat b{display:block;margin-top:4px;font-size:18px}.stat b.cyan{color:var(--cyan)}.stat b.amber{color:var(--amber)}.stat b.green{color:var(--green)}
+    .workspace{display:grid;grid-template-columns:minmax(560px,1.55fr) minmax(330px,.72fr);gap:12px}.gamecard,.panel{border:1px solid var(--line);border-radius:15px;background:linear-gradient(180deg,#0e2742ea,#09192bec);box-shadow:0 20px 50px #0007;overflow:hidden}.gamebar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 13px;border-bottom:1px solid var(--line);background:#091a2c}.lights{display:flex;gap:6px}.lights i{width:9px;height:9px;border-radius:50%;background:var(--pink);box-shadow:16px 0 0 var(--amber),32px 0 0 var(--green)}.mode{color:var(--cyan);font:800 12px/1 ui-monospace,monospace;letter-spacing:.08em}.hint{color:var(--muted);font-size:12px}canvas{display:block;width:100%;aspect-ratio:16/9;background:#061321;touch-action:none}.touch{display:none;grid-template-columns:1fr 1fr;gap:8px;padding:8px;background:#091a2c}.touch button{height:48px;border:1px solid var(--line);border-radius:9px;background:#102b49;color:#fff;font-weight:900}
+    .controls{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:10px;border-top:1px solid var(--line);background:#091a2c}.controls button,.action{min-height:43px;padding:8px 10px;border:1px solid #35607d;border-radius:9px;background:#102b49;color:var(--white);font-weight:800;cursor:pointer;transition:.15s transform,.15s border-color,.15s background}.controls button:hover,.action:hover{transform:translateY(-1px);border-color:var(--cyan)}.controls button.primary{background:linear-gradient(135deg,#0f9db0,#087685);border-color:#32d4e1}.controls button.hot{background:linear-gradient(135deg,#e44072,#a42658);border-color:#ff7ca4}.controls button.test{background:linear-gradient(135deg,#c48616,#865707);border-color:#ffc857}.controls button:disabled{opacity:.45;cursor:not-allowed;transform:none}.statusline{padding:8px 13px;color:var(--muted);font-size:12px;border-top:1px solid #173550}.statusline b{color:var(--white)}
+    .right{display:grid;gap:12px;align-content:start}.panel{padding:14px}.panel h2{margin:0 0 10px;color:var(--cyan);font:900 13px/1.1 ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase}.decision{display:flex;align-items:center;gap:12px;margin-bottom:12px}.decision .arrow{width:62px;height:62px;display:grid;place-items:center;border:2px solid var(--cyan);border-radius:14px;background:#061625;color:var(--cyan);font-size:34px;box-shadow:0 0 25px #38e5ef26 inset}.decision b{display:block;font-size:20px}.decision span{color:var(--muted);font-size:12px}.prob{display:grid;grid-template-columns:48px 1fr 42px;align-items:center;gap:8px;margin:7px 0;font:700 12px ui-monospace,monospace}.track{height:9px;border-radius:9px;background:#071426;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,var(--cyan2),var(--cyan));border-radius:9px;transition:width .16s}.sensor-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:12px}.sensor{padding:8px;border:1px solid #20445f;border-radius:8px;background:#091a2c}.sensor span{display:block;color:var(--muted);font-size:10px}.sensor b{font:800 13px ui-monospace,monospace}.dataset{display:flex;justify-content:space-between;gap:8px;margin:6px 0;color:var(--muted);font-size:12px}.dataset b{color:var(--white)}
+    .research{grid-column:1/-1;display:grid;grid-template-columns:1.1fr 1fr;gap:12px}.question{border-left:4px solid var(--amber)}.question p{margin:.2em 0;color:#dcebf5}.question strong{color:var(--amber)}.experiment .exp-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.experiment .action{min-height:36px;padding:6px 11px;background:#7e5412;border-color:var(--amber)}.bars{display:grid;grid-template-columns:88px 1fr 46px;gap:8px;align-items:center;margin-top:10px}.bars label{color:var(--muted);font-size:12px}.bar{height:18px;border:1px solid #28506c;border-radius:5px;background:#061321;overflow:hidden}.bar i{display:block;height:100%;width:0;transition:width .5s ease}.bar.one i{background:linear-gradient(90deg,#ff5f8f,#be2d5c)}.bar.many i{background:linear-gradient(90deg,#0f9db0,#38e5ef)}.bars output{font:800 12px ui-monospace,monospace;text-align:right}.receipt{margin-top:9px;padding:9px;border:1px dashed #35607d;border-radius:8px;color:var(--muted);font-size:12px}.receipt b{color:var(--green)}.links{margin-top:8px;color:var(--muted);font-size:11px}.links a{color:var(--cyan)}
+    .toast{position:fixed;left:50%;bottom:18px;z-index:5;transform:translate(-50%,20px);opacity:0;padding:10px 16px;border:1px solid var(--cyan);border-radius:999px;background:#071426ef;color:#fff;box-shadow:0 10px 30px #0009;transition:.2s}.toast.on{opacity:1;transform:translate(-50%,0)}
+    @media(max-width:980px){.workspace{grid-template-columns:1fr}.research{grid-column:auto;grid-template-columns:1fr}.touch{display:grid}.hud{grid-template-columns:repeat(3,1fr)}.privacy{display:none}}@media(max-width:640px){.shell{padding:10px}.top{align-items:flex-start}.hud{grid-template-columns:1fr 1fr}.controls{grid-template-columns:1fr 1fr}.hint{display:none}.workspace{display:block}.right{margin-top:10px}.research{margin-top:10px}.stat:last-child{display:none}}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="top">
+    <div class="brand"><div class="mark">A</div><div><div class="eyebrow">Merit Point Academy · AI Toolbox</div><h1>AGENT ARCADE <span style="color:var(--cyan)">/</span> Teach it. Test it. Break it.</h1></div></div>
+    <div class="privacy"><b>Local-only lab.</b> Gameplay rows stay in this browser unless you choose “Export CSV.” No account, camera, microphone, or commercial game connection.</div>
+  </header>
+
+  <section class="hud" aria-label="game statistics">
+    <div class="stat"><span>Mode</span><b class="cyan" id="hudMode">HUMAN</b></div>
+    <div class="stat"><span>Score</span><b class="amber" id="hudScore">0</b></div>
+    <div class="stat"><span>Lives</span><b id="hudLives">♥ ♥ ♥</b></div>
+    <div class="stat"><span>Level seed</span><b id="hudSeed">21</b></div>
+    <div class="stat"><span>Your examples</span><b class="green" id="hudRows">0</b></div>
+  </section>
+
+  <section class="workspace">
+    <article class="gamecard">
+      <div class="gamebar"><div class="lights"><i></i></div><div class="mode" id="modeLabel">PLAYER RUN · COLLECT DEMONSTRATIONS</div><div class="hint">← → or A D · collect ◉ · avoid ▲</div></div>
+      <canvas id="game" width="960" height="540" aria-label="Three-lane arcade game"></canvas>
+      <div class="touch"><button id="touchLeft">◀ LEFT</button><button id="touchRight">RIGHT ▶</button></div>
+      <div class="controls">
+        <button id="humanBtn" class="primary">① Player Run</button>
+        <button id="trainBtn">② Train My Agent</button>
+        <button id="agentBtn" class="hot">③ AI Takeover</button>
+        <button id="unseenBtn">④ Unseen Level</button>
+        <button id="exportBtn">↓ Export CSV</button>
+        <button id="resetBtn">↺ Reset My Data</button>
+      </div>
+      <div class="statusline" id="statusLine"><b>Mission:</b> play for 30 seconds. Every decision becomes one state → action training row.</div>
+    </article>
+
+    <aside class="right">
+      <section class="panel">
+        <h2>AI Brain · live policy</h2>
+        <div class="decision"><div class="arrow" id="decisionArrow">·</div><div><b id="decisionName">Watching you</b><span id="decisionWhy">Collect demonstrations first.</span></div></div>
+        <div class="prob"><span>LEFT</span><div class="track"><div class="fill" id="pLeft"></div></div><output id="vLeft">—</output></div>
+        <div class="prob"><span>STAY</span><div class="track"><div class="fill" id="pStay"></div></div><output id="vStay">—</output></div>
+        <div class="prob"><span>RIGHT</span><div class="track"><div class="fill" id="pRight"></div></div><output id="vRight">—</output></div>
+        <div class="sensor-grid">
+          <div class="sensor"><span>Obstacle Δ lane</span><b id="sObsDx">—</b></div><div class="sensor"><span>Obstacle distance</span><b id="sObsD">—</b></div>
+          <div class="sensor"><span>Coin Δ lane</span><b id="sCoinDx">—</b></div><div class="sensor"><span>Coin distance</span><b id="sCoinD">—</b></div>
+        </div>
+      </section>
+      <section class="panel">
+        <h2>Training receipt</h2>
+        <div class="dataset"><span>Starter demonstrations</span><b id="starterN">180</b></div>
+        <div class="dataset"><span>Your demonstrations</span><b id="yourN">0</b></div>
+        <div class="dataset"><span>Policy</span><b>weighted k-NN · k=9</b></div>
+        <div class="dataset"><span>Inputs</span><b>4 sensors</b></div>
+        <div class="receipt" id="trainReceipt">Press <b>Train My Agent</b>. The model will compare the current sensor vector with nearby examples and vote on the next action.</div>
+      </section>
+    </aside>
+
+    <section class="research">
+      <article class="panel question">
+        <h2>Research question · fixed data budget</h2>
+        <p>With the <strong>same 240 demonstration rows</strong>, does training on more level seeds improve action accuracy on unseen levels?</p>
+        <p style="font-size:12px;color:var(--muted)">Independent variable: 1 seed vs 12 seeds · Controls: same rows, features, model and test seeds · Outcome: held-out action accuracy.</p>
+        <div class="links">Research backing: <a href="https://proceedings.mlr.press/v119/cobbe20a.html" target="_blank" rel="noopener">Procgen benchmark</a> · <a href="https://github.com/GAIGResearch/GVGAI" target="_blank" rel="noopener">GVGAI</a></div>
+      </article>
+      <article class="panel experiment">
+        <div class="exp-head"><h2 style="margin:0">Generalization test</h2><button class="action" id="experimentBtn">▶ Run fair test</button></div>
+        <div class="bars"><label>1 seed</label><div class="bar one"><i id="barOne"></i></div><output id="outOne">—</output>
+          <label>12 seeds</label><div class="bar many"><i id="barMany"></i></div><output id="outMany">—</output></div>
+        <div class="receipt" id="experimentReceipt">Both agents receive exactly 240 labeled actions. The test set uses 20 level seeds that neither agent has seen.</div>
+      </article>
+    </section>
+  </section>
+</main>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(() => {
+  'use strict';
+  const $ = (id) => document.getElementById(id);
+  const canvas = $('game'), ctx = canvas.getContext('2d');
+  const ACTION = { LEFT:-1, STAY:0, RIGHT:1 };
+  const actionName = (a) => a < 0 ? 'LEFT' : a > 0 ? 'RIGHT' : 'STAY';
+  const clamp = (v,a,b) => Math.max(a,Math.min(b,v));
+  function rngFor(seed){ let a=seed>>>0; return function(){ a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return ((t^t>>>14)>>>0)/4294967296; }; }
+
+  function makeWorld(seed){ return {seed,rand:rngFor(seed),step:0,lane:1,score:0,lives:3,entities:[],done:false,lastReward:0,coins:0,hits:0}; }
+  function spawn(w){
+    const lane=Math.floor(w.rand()*3), type=w.rand()<.58?'coin':'hazard';
+    w.entities.push({lane,type,y:-.05,hit:false});
+    if(type==='hazard' && w.rand()<.18){ const safe=(lane+1+Math.floor(w.rand()*2))%3; w.entities.push({lane:safe,type:'coin',y:-.13,hit:false}); }
+  }
+  function stateOf(w){
+    const ahead=w.entities.filter(e=>!e.hit && e.y<.91);
+    const nearest=(type)=>ahead.filter(e=>e.type===type).sort((a,b)=>b.y-a.y)[0];
+    const obs=nearest('hazard'), coin=nearest('coin');
+    return {
+      obsDx:obs?(obs.lane-w.lane)/2:0,
+      obsD:obs?clamp((.88-obs.y)/.93,0,1):1,
+      coinDx:coin?(coin.lane-w.lane)/2:0,
+      coinD:coin?clamp((.88-coin.y)/.93,0,1):1,
+      player:w.lane/2,
+    };
+  }
+  function vector(s){ return [s.obsDx,s.obsD,s.coinDx,s.coinD]; }
+  function expert(s,w){
+    if(s.obsD<.31 && Math.abs(s.obsDx)<.08){
+      if(Math.abs(s.coinDx)>.08 && s.coinD<.46) return Math.sign(s.coinDx);
+      return w.lane===0?1:w.lane===2?-1:(w.step%2?1:-1);
+    }
+    if(s.coinD<.58 && Math.abs(s.coinDx)>.08) return Math.sign(s.coinDx);
+    return 0;
+  }
+  function stepWorld(w,action){
+    if(w.done) return 0;
+    w.step++;
+    w.lane=clamp(w.lane+action,0,2);
+    if(w.step%8===0) spawn(w);
+    const speed=.038+Math.min(.018,w.step/22000);
+    for(const e of w.entities) e.y+=speed;
+    let reward=.02;
+    for(const e of w.entities){
+      if(!e.hit && e.y>=.80 && e.y<=.94 && e.lane===w.lane){
+        e.hit=true;
+        if(e.type==='coin'){ reward+=10;w.score+=10;w.coins++; }
+        else { reward-=12;w.score=Math.max(0,w.score-12);w.lives--;w.hits++; }
+      }
+    }
+    w.entities=w.entities.filter(e=>!e.hit && e.y<1.04);
+    w.score+=.02;
+    w.lastReward=reward;
+    if(w.step>=450 || w.lives<=0) w.done=true;
+    return reward;
+  }
+
+  function collectExpert(seeds,total){
+    const rows=[], each=Math.ceil(total/seeds.length);
+    for(const seed of seeds){
+      const w=makeWorld(seed);
+      for(let i=0;i<34;i++) stepWorld(w,expert(stateOf(w),w));
+      for(let i=0;i<each && rows.length<total;i++){
+        if(w.done){ Object.assign(w,makeWorld(seed+997+i)); }
+        const s=stateOf(w), a=expert(s,w); rows.push({x:vector(s),action:a,seed:w.seed}); stepWorld(w,a);
+      }
+    }
+    return rows.slice(0,total);
+  }
+  function collectBalanced(seeds,perAction){
+    const bins={[-1]:[],[0]:[],[1]:[]}; let si=0, guard=0, w=makeWorld(seeds[0]);
+    while((bins[-1].length<perAction||bins[0].length<perAction||bins[1].length<perAction) && guard++<60000){
+      if(w.done){si=(si+1)%seeds.length;w=makeWorld(seeds[si]+guard);}
+      const s=stateOf(w),a=expert(s,w);
+      if(bins[a].length<perAction) bins[a].push({x:vector(s),action:a,seed:w.seed});
+      stepWorld(w,a);
+    }
+    return bins[-1].concat(bins[0],bins[1]);
+  }
+  function trainKnn(rows,k=9){
+    const counts={[-1]:0,[0]:0,[1]:0}; rows.forEach(r=>counts[r.action]++);
+    const weights={[-1]:rows.length/(3*Math.max(1,counts[-1])),[0]:rows.length/(3*Math.max(1,counts[0])),[1]:rows.length/(3*Math.max(1,counts[1]))};
+    return {
+      rows,k,
+      predict(s){
+        const x=Array.isArray(s)?s:vector(s);
+        const near=rows.map(r=>({a:r.action,d:r.x.reduce((z,v,i)=>z+(v-x[i])*(v-x[i]),0)})).sort((a,b)=>a.d-b.d).slice(0,k);
+        const vote={[-1]:0,[0]:0,[1]:0}; near.forEach(n=>vote[n.a]+=weights[n.a]/(.025+Math.sqrt(n.d)));
+        const sum=vote[-1]+vote[0]+vote[1]||1;
+        const probs={[-1]:vote[-1]/sum,[0]:vote[0]/sum,[1]:vote[1]/sum};
+        const action=[-1,0,1].sort((a,b)=>probs[b]-probs[a])[0];
+        return {action,probs,nearest:near[0]?.d||0};
+      }
+    };
+  }
+  function evaluateAccuracy(model,seeds){
+    const test=collectExpert(seeds,600); let ok=0;
+    test.forEach(r=>{ if(model.predict(r.x).action===r.action) ok++; });
+    return ok/test.length;
+  }
+  function evaluateScore(model,seeds){
+    let total=0;
+    for(const seed of seeds){ const w=makeWorld(seed); for(let i=0;i<300&&!w.done;i++) stepWorld(w,model.predict(stateOf(w)).action); total+=w.score; }
+    return total/seeds.length;
+  }
+
+  const starter=collectBalanced([11,23,37,41,59,71,83,97,109],60);
+  let userRows=[], model=null, mode='human', seed=21, world=makeWorld(seed), queued=0, lastPrediction=null, experimentResult=null;
+  $('starterN').textContent=starter.length;
+
+  function toast(msg){ const t=$('toast');t.textContent=msg;t.classList.add('on');clearTimeout(t._to);t._to=setTimeout(()=>t.classList.remove('on'),2200); }
+  function resetWorld(nextSeed){ seed=nextSeed;world=makeWorld(seed);queued=0;updateHud(); }
+  function setMode(next,nextSeed){
+    mode=next; resetWorld(nextSeed??seed);
+    const human=mode==='human';
+    $('hudMode').textContent=human?'HUMAN':mode==='agent'?'AGENT':'UNSEEN';
+    $('modeLabel').textContent=human?'PLAYER RUN · COLLECT DEMONSTRATIONS':mode==='agent'?'AI TAKEOVER · WATCH THE POLICY':'UNSEEN LEVEL · GENERALIZATION CHECK';
+    $('statusLine').innerHTML=human?'<b>Mission:</b> play for 30 seconds. Every decision becomes one state → action training row.':'<b>Observe:</b> watch the sensor rays, action probabilities, reward, and failure cases. The bot sees numbers—not pixels.';
+  }
+  function trainMine(){
+    // Cap each personal action class so a long period of doing nothing does
+    // not erase every LEFT/RIGHT starter example from the live policy.
+    const human=[-1,0,1].flatMap(a=>userRows.filter(r=>r.action===a).slice(-60))
+      .map(r=>({x:r.x,action:r.action,seed:r.seed}));
+    model=trainKnn(starter.concat(human),9);
+    const by={[-1]:0,[0]:0,[1]:0};model.rows.forEach(r=>by[r.action]++);
+    $('trainReceipt').innerHTML='<b>Model ready.</b> '+model.rows.length+' balanced rows · LEFT '+by[-1]+' · STAY '+by[0]+' · RIGHT '+by[1]+'. No weights left this browser.';
+    toast('Agent trained in this browser');
+  }
+  function queueAction(a){ if(mode==='human') queued=a; }
+  document.addEventListener('keydown',e=>{ if(['ArrowLeft','a','A'].includes(e.key)){e.preventDefault();queueAction(-1);} if(['ArrowRight','d','D'].includes(e.key)){e.preventDefault();queueAction(1);} });
+  $('touchLeft').addEventListener('pointerdown',()=>queueAction(-1));$('touchRight').addEventListener('pointerdown',()=>queueAction(1));
+  canvas.addEventListener('pointerdown',e=>{ const r=canvas.getBoundingClientRect();queueAction((e.clientX-r.left)<r.width/2?-1:1); });
+  $('humanBtn').onclick=()=>setMode('human',21+(Date.now()%400|0));
+  $('trainBtn').onclick=trainMine;
+  $('agentBtn').onclick=()=>{if(!model)trainMine();setMode('agent',301);};
+  $('unseenBtn').onclick=()=>{if(!model)trainMine();setMode('unseen',900+(Date.now()%500|0));};
+  $('resetBtn').onclick=()=>{userRows=[];model=null;setMode('human',21);$('trainReceipt').innerHTML='Press <b>Train My Agent</b>. The model will compare the current sensor vector with nearby examples and vote on the next action.';updateHud();toast('Your local demonstrations were cleared');};
+  $('exportBtn').onclick=()=>{
+    if(!userRows.length){toast('Play first—there are no personal rows to export');return;}
+    const head='seed,step,obs_dx,obs_distance,coin_dx,coin_distance,action,reward\n';
+    const body=userRows.map(r=>[r.seed,r.step,...r.x.map(v=>v.toFixed(4)),actionName(r.action),r.reward.toFixed(3)].join(',')).join('\n');
+    const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([head+body],{type:'text/csv'}));a.download='agent-arcade-demonstrations.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);toast('CSV exported');
+  };
+
+  function runExperiment(){
+    $('experimentBtn').disabled=true;$('experimentBtn').textContent='Computing…';
+    setTimeout(()=>{
+      const oneRows=collectExpert([101],240);
+      const manyRows=collectExpert([101,113,127,139,151,163,179,191,211,223,239,251],240);
+      const one=trainKnn(oneRows,9), many=trainKnn(manyRows,9);
+      const testSeeds=[503,509,521,523,541,547,557,563,577,587,601,607,613,617,619,631,641,643,647,653];
+      const a1=evaluateAccuracy(one,testSeeds), a12=evaluateAccuracy(many,testSeeds);
+      const s1=evaluateScore(one,testSeeds.slice(0,10)), s12=evaluateScore(many,testSeeds.slice(0,10));
+      experimentResult={a1,a12,s1,s12};
+      $('barOne').style.width=(a1*100).toFixed(1)+'%';$('barMany').style.width=(a12*100).toFixed(1)+'%';
+      $('outOne').textContent=(a1*100).toFixed(1)+'%';$('outMany').textContent=(a12*100).toFixed(1)+'%';
+      const delta=(a12-a1)*100, direction=delta>=0?'higher':'lower';
+      $('experimentReceipt').innerHTML='<b>Computed, not prewritten:</b> with the same 240 rows, the 12-seed policy was '+Math.abs(delta).toFixed(1)+' percentage points '+direction+' on 600 held-out actions. Mean game score: '+s1.toFixed(1)+' vs '+s12.toFixed(1)+'. Repeat before making a broad claim.';
+      $('experimentBtn').disabled=false;$('experimentBtn').textContent='↻ Run again';toast('Unseen-level test complete');
+    },80);
+  }
+  $('experimentBtn').onclick=runExperiment;
+
+  function updateBrain(s,pred){
+    $('sObsDx').textContent=s.obsDx.toFixed(2);$('sObsD').textContent=s.obsD.toFixed(2);$('sCoinDx').textContent=s.coinDx.toFixed(2);$('sCoinD').textContent=s.coinD.toFixed(2);
+    if(!pred){$('decisionArrow').textContent='·';$('decisionName').textContent='Watching you';$('decisionWhy').textContent='Your key press becomes the label.';[-1,0,1].forEach((a,i)=>{[$('pLeft'),$('pStay'),$('pRight')][i].style.width='0%';[$('vLeft'),$('vStay'),$('vRight')][i].textContent='—';});return;}
+    const names={[-1]:'Move left',[0]:'Hold lane',[1]:'Move right'}, arrows={[-1]:'←',[0]:'•',[1]:'→'};
+    $('decisionArrow').textContent=arrows[pred.action];$('decisionName').textContent=names[pred.action];$('decisionWhy').textContent=pred.nearest<.01?'Near an observed example':'Weighted vote among 9 neighbors';
+    const ids=[['pLeft','vLeft',-1],['pStay','vStay',0],['pRight','vRight',1]];ids.forEach(([b,o,a])=>{const v=pred.probs[a]*100;$(b).style.width=v.toFixed(1)+'%';$(o).textContent=v.toFixed(0)+'%';});
+  }
+  function updateHud(){
+    $('hudScore').textContent=Math.round(world.score);$('hudLives').textContent='♥ '.repeat(Math.max(0,world.lives)).trim()||'—';$('hudSeed').textContent=world.seed;$('hudRows').textContent=userRows.length;$('yourN').textContent=userRows.length;
+  }
+  function tick(){
+    if(world.done){
+      const next=world.seed+1; resetWorld(next); return;
+    }
+    const s=stateOf(world);let action=0,pred=null;
+    if(mode==='human'){ action=queued;queued=0; }
+    else { if(!model)trainMine();pred=model.predict(s);action=pred.action;lastPrediction=pred; }
+    const reward=stepWorld(world,action);
+    if(mode==='human' && (action!==0 || world.step%2===0)) userRows.push({x:vector(s),action,reward,seed:world.seed,step:world.step});
+    updateBrain(s,pred);updateHud();
+  }
+
+  function draw(){
+    const W=canvas.width,H=canvas.height;ctx.clearRect(0,0,W,H);
+    const g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,'#081c34');g.addColorStop(1,'#040a12');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+    ctx.fillStyle='#163653';for(let i=0;i<54;i++){const x=(i*173+world.seed*29)%W,y=(i*97+world.step*1.2)%H;ctx.globalAlpha=.2+(i%5)/10;ctx.fillRect(x,y,2,2);}ctx.globalAlpha=1;
+    const cx=W/2,topW=225,bottomW=670,topY=18,bottomY=H;
+    ctx.beginPath();ctx.moveTo(cx-topW/2,topY);ctx.lineTo(cx+topW/2,topY);ctx.lineTo(cx+bottomW/2,bottomY);ctx.lineTo(cx-bottomW/2,bottomY);ctx.closePath();ctx.fillStyle='#0a2035';ctx.fill();ctx.strokeStyle='#28506c';ctx.lineWidth=3;ctx.stroke();
+    for(let i=1;i<3;i++){ctx.beginPath();ctx.moveTo(cx-topW/2+topW*i/3,topY);ctx.lineTo(cx-bottomW/2+bottomW*i/3,bottomY);ctx.strokeStyle='#1e5470';ctx.lineWidth=2;ctx.setLineDash([15,18]);ctx.stroke();ctx.setLineDash([]);}
+    for(let i=0;i<9;i++){const t=((i/9+world.step*.012)%1),y=topY+(bottomY-topY)*t*t;const w=topW+(bottomW-topW)*t;ctx.strokeStyle='#123650';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(cx-w/2,y);ctx.lineTo(cx+w/2,y);ctx.stroke();}
+    const laneX=(lane,y)=>{const t=clamp(y,0,1),w=topW+(bottomW-topW)*t;return cx-w/2+w*(lane+.5)/3;};
+    const py=H*.86,px=laneX(world.lane,.86);
+    if(mode!=='human'){
+      const ahead=world.entities.filter(e=>!e.hit&&e.y<.91).sort((a,b)=>b.y-a.y);const coin=ahead.find(e=>e.type==='coin'),obs=ahead.find(e=>e.type==='hazard');
+      [[coin,'#38e5ef'],[obs,'#ff5f8f']].forEach(([e,col])=>{if(!e)return;ctx.strokeStyle=col;ctx.globalAlpha=.55;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(laneX(e.lane,e.y),18+(H-36)*e.y);ctx.stroke();ctx.globalAlpha=1;});
+    }
+    for(const e of world.entities){
+      const y=18+(H-36)*e.y,x=laneX(e.lane,e.y),r=12+22*clamp(e.y,0,1);
+      if(e.type==='coin'){ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle='#ffc857';ctx.shadowColor='#ffc857';ctx.shadowBlur=18;ctx.fill();ctx.shadowBlur=0;ctx.strokeStyle='#fff3bd';ctx.lineWidth=3;ctx.stroke();ctx.fillStyle='#6d4700';ctx.font='900 '+Math.round(r)+'px ui-monospace';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('C',x,y+1);}
+      else {ctx.save();ctx.translate(x,y);ctx.fillStyle='#ff5f8f';ctx.shadowColor='#ff5f8f';ctx.shadowBlur=18;ctx.beginPath();ctx.moveTo(0,-r);ctx.lineTo(r,r);ctx.lineTo(-r,r);ctx.closePath();ctx.fill();ctx.shadowBlur=0;ctx.fillStyle='#561226';ctx.font='900 '+Math.round(r*1.05)+'px ui-monospace';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('!',0,r*.34);ctx.restore();}
+    }
+    ctx.save();ctx.translate(px,py);ctx.shadowColor=mode==='human'?'#55e6a5':'#38e5ef';ctx.shadowBlur=26;ctx.fillStyle=mode==='human'?'#55e6a5':'#38e5ef';ctx.beginPath();ctx.moveTo(0,-28);ctx.lineTo(25,25);ctx.lineTo(0,14);ctx.lineTo(-25,25);ctx.closePath();ctx.fill();ctx.shadowBlur=0;ctx.fillStyle='#071426';ctx.fillRect(-6,-2,12,18);ctx.restore();
+    ctx.fillStyle='#9cb7ca';ctx.font='700 14px ui-monospace';ctx.textAlign='left';ctx.fillText(mode==='human'?'YOU ARE THE LABELER':'POLICY IS DRIVING',24,32);ctx.fillStyle=world.lastReward<0?'#ff5f8f':world.lastReward>1?'#ffc857':'#55e6a5';ctx.fillText('reward '+world.lastReward.toFixed(2),24,54);
+    requestAnimationFrame(draw);
+  }
+
+  setMode('human',21);setInterval(tick,100);requestAnimationFrame(draw);
+})();
+</script>
+</body>
+</html>

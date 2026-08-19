@@ -1,0 +1,1184 @@
+{
+  "title": {
+    "hash": "5a624df9f0115b70",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Welcome to Agent Arcade, the free AI Toolbox experience class for August twentieth. I am Mira, an AI teaching assistant, and this is a synthetic voice rather than a recording of a human instructor. This complete edition includes the actual browser game, a coding-level explanation, a real open-data analysis, and the path from computed results to an extended abstract. The classroom nickname is an AI game cheat because the policy appears to take over the controls. The research name is an automated game-playing agent, and it operates only inside a game that we built and control.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.236,
+        "text": "Welcome to Agent Arcade, the free AI Toolbox experience class for August twentieth."
+      },
+      {
+        "start": 6.236,
+        "end": 13.763,
+        "text": "I am Mira, an AI teaching assistant, and this is a synthetic voice rather than a recording of a human instructor."
+      },
+      {
+        "start": 14.154,
+        "end": 25.236,
+        "text": "This complete edition includes the actual browser game, a coding-level explanation, a real open-data analysis, and the path from computed results to an extended abstract."
+      },
+      {
+        "start": 25.642,
+        "end": 31.451,
+        "text": "The classroom nickname is an AI game cheat because the policy appears to take over the controls."
+      },
+      {
+        "start": 31.451,
+        "end": 38.925,
+        "text": "The research name is an automated game-playing agent, and it operates only inside a game that we built and control."
+      }
+    ],
+    "bytes": 624892,
+    "source": "authored-video-script"
+  },
+  "cold-open": {
+    "hash": "7295e7bec3e4179b",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Start with a prediction. When the level changes, who will survive: the human player, the agent trained on that player, or neither? A precise answer should wait. First we need demonstrations, a model, unseen test levels, and a fair comparison. That sequence separates a game impression from research evidence. Keep your opening vote. At the end, compare it with the measured result and explain why your expectation did or did not match the evidence.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.705,
+        "text": "Start with a prediction."
+      },
+      {
+        "start": 1.705,
+        "end": 8.411,
+        "text": "When the level changes, who will survive: the human player, the agent trained on that player, or neither?"
+      },
+      {
+        "start": 8.802,
+        "end": 10.939,
+        "text": "A precise answer should wait."
+      },
+      {
+        "start": 10.939,
+        "end": 16.994,
+        "text": "First we need demonstrations, a model, unseen test levels, and a fair comparison."
+      },
+      {
+        "start": 16.994,
+        "end": 21.317,
+        "text": "That sequence separates a game impression from research evidence."
+      },
+      {
+        "start": 21.706,
+        "end": 23.309,
+        "text": "Keep your opening vote."
+      },
+      {
+        "start": 23.309,
+        "end": 31.278,
+        "text": "At the end, compare it with the measured result and explain why your expectation did or did not match the evidence."
+      }
+    ],
+    "bytes": 502847,
+    "source": "authored-video-script"
+  },
+  "mission": {
+    "hash": "cb445d8cb2fa7225",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "The workshop has five connected phases. You play, train, hand over control, try to break the agent on unseen levels, and defend a bounded conclusion. Every action in the first phase becomes evidence used later. This is one continuous investigation rather than two disconnected coding labs. You leave with a gameplay CSV if you choose to export it, a trained browser policy, a controlled-experiment receipt, code you can read, and a short research claim.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.877,
+        "text": "The workshop has five connected phases."
+      },
+      {
+        "start": 2.877,
+        "end": 11.184,
+        "text": "You play, train, hand over control, try to break the agent on unseen levels, and defend a bounded conclusion."
+      },
+      {
+        "start": 11.586,
+        "end": 15.767,
+        "text": "Every action in the first phase becomes evidence used later."
+      },
+      {
+        "start": 15.767,
+        "end": 21.093,
+        "text": "This is one continuous investigation rather than two disconnected coding labs."
+      },
+      {
+        "start": 21.49,
+        "end": 31.726,
+        "text": "You leave with a gameplay CSV if you choose to export it, a trained browser policy, a controlled-experiment receipt, code you can read, and a short research claim."
+      }
+    ],
+    "bytes": 509535,
+    "source": "authored-video-script"
+  },
+  "safety": {
+    "hash": "34f0af85b0262e99",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Our safety boundary is simple. We own the game, the rules, the generated levels, and the evaluation code. The agent sees four numeric sensors and cannot connect to a commercial game. We do not bypass access controls or anti-cheat systems, and we do not ask for a camera, microphone, account, or identity. Gameplay remains in the browser unless the student deliberately exports a local CSV. This boundary makes automatic play legitimate, inspectable, and reproducible. It also keeps the exciting moment when software visibly takes control.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.304,
+        "text": "Our safety boundary is simple."
+      },
+      {
+        "start": 2.304,
+        "end": 7.63,
+        "text": "We own the game, the rules, the generated levels, and the evaluation code."
+      },
+      {
+        "start": 7.63,
+        "end": 12.838,
+        "text": "The agent sees four numeric sensors and cannot connect to a commercial game."
+      },
+      {
+        "start": 13.242,
+        "end": 21.811,
+        "text": "We do not bypass access controls or anti-cheat systems, and we do not ask for a camera, microphone, account, or identity."
+      },
+      {
+        "start": 21.811,
+        "end": 27.319,
+        "text": "Gameplay remains in the browser unless the student deliberately exports a local CSV."
+      },
+      {
+        "start": 27.706,
+        "end": 33.241,
+        "text": "This boundary makes automatic play legitimate, inspectable, and reproducible."
+      },
+      {
+        "start": 33.241,
+        "end": 37.76,
+        "text": "It also keeps the exciting moment when software visibly takes control."
+      }
+    ],
+    "bytes": 606501,
+    "source": "authored-video-script"
+  },
+  "rules": {
+    "hash": "3b849e4af8dd19aa",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "The game has three lanes. Move with the left and right arrow keys, or A and D. Collecting a coin adds ten points, while hitting a hazard removes twelve points and one life. Every one hundred milliseconds, the browser records the current sensor state and the action LEFT, STAY, or RIGHT. Doing nothing is not missing data; STAY is a real action label. The game is intentionally simple. Complexity belongs in the research question, not in rules that students spend the whole class trying to learn.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.135,
+        "text": "The game has three lanes."
+      },
+      {
+        "start": 2.135,
+        "end": 12.317,
+        "text": "Move with the left and right arrow keys, or A and D. Collecting a coin adds ten points, while hitting a hazard removes twelve points and one life."
+      },
+      {
+        "start": 12.714,
+        "end": 19.968,
+        "text": "Every one hundred milliseconds, the browser records the current sensor state and the action LEFT, STAY, or RIGHT."
+      },
+      {
+        "start": 19.968,
+        "end": 24.552,
+        "text": "Doing nothing is not missing data; STAY is a real action label."
+      },
+      {
+        "start": 24.946,
+        "end": 27.369,
+        "text": "The game is intentionally simple."
+      },
+      {
+        "start": 27.369,
+        "end": 33.906,
+        "text": "Complexity belongs in the research question, not in rules that students spend the whole class trying to learn."
+      }
+    ],
+    "bytes": 544643,
+    "source": "authored-video-script"
+  },
+  "lab-human": {
+    "hash": "a046786eb0dc594e",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "This is an actual browser capture of a human demonstration. Watch the mode label, score, lives, and the example counter while left and right key presses move the player. The counter rises because each decision moment becomes one row. The player is simultaneously playing the game and labeling a state-to-action example for the imitation learner. In class, play until you have at least eighty personal examples and deliberately try both directions. A long period of doing nothing produces many STAY labels but poor action coverage.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.75,
+        "text": "This is an actual browser capture of a human demonstration."
+      },
+      {
+        "start": 3.75,
+        "end": 10.781,
+        "text": "Watch the mode label, score, lives, and the example counter while left and right key presses move the player."
+      },
+      {
+        "start": 11.178,
+        "end": 15.672,
+        "text": "The counter rises because each decision moment becomes one row."
+      },
+      {
+        "start": 15.672,
+        "end": 22.247,
+        "text": "The player is simultaneously playing the game and labeling a state-to-action example for the imitation learner."
+      },
+      {
+        "start": 22.642,
+        "end": 29.375,
+        "text": "In class, play until you have at least eighty personal examples and deliberately try both directions."
+      },
+      {
+        "start": 29.375,
+        "end": 34.818,
+        "text": "A long period of doing nothing produces many STAY labels but poor action coverage."
+      }
+    ],
+    "bytes": 559272,
+    "source": "authored-video-script"
+  },
+  "row": {
+    "hash": "4382029d500a5395",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "This slide is the key translation from an animated game to a research table. Begin with the picture on the left, not with the abbreviations. The suffix d x means delta x, a horizontal offset relative to the player. A negative obstacle d x places the nearest hazard to the left, zero means the same lane, and a positive value places it to the right. Obstacle distance and coin distance measure how far forward the nearest object is. Zero means very near; one means far away or absent. These values are normalized, so they are not screen pixels or meters. Now read the complete row at the bottom. Four measurements form the state. RIGHT is the human action and therefore the training label. Positive zero point zero two is the immediate survival reward that followed. One row is one decision, not one entire game.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.934,
+        "text": "This slide is the key translation from an animated game to a research table."
+      },
+      {
+        "start": 4.934,
+        "end": 8.75,
+        "text": "Begin with the picture on the left, not with the abbreviations."
+      },
+      {
+        "start": 9.138,
+        "end": 14.66,
+        "text": "The suffix d x means delta x, a horizontal offset relative to the player."
+      },
+      {
+        "start": 14.66,
+        "end": 23.449,
+        "text": "A negative obstacle d x places the nearest hazard to the left, zero means the same lane, and a positive value places it to the right."
+      },
+      {
+        "start": 23.842,
+        "end": 29.664,
+        "text": "Obstacle distance and coin distance measure how far forward the nearest object is."
+      },
+      {
+        "start": 29.664,
+        "end": 34.156,
+        "text": "Zero means very near; one means far away or absent."
+      },
+      {
+        "start": 34.156,
+        "end": 38.635,
+        "text": "These values are normalized, so they are not screen pixels or meters."
+      },
+      {
+        "start": 39.026,
+        "end": 41.515,
+        "text": "Now read the complete row at the bottom."
+      },
+      {
+        "start": 41.515,
+        "end": 43.65,
+        "text": "Four measurements form the state."
+      },
+      {
+        "start": 43.65,
+        "end": 47.595,
+        "text": "RIGHT is the human action and therefore the training label."
+      },
+      {
+        "start": 47.595,
+        "end": 52.699,
+        "text": "Positive zero point zero two is the immediate survival reward that followed."
+      },
+      {
+        "start": 52.699,
+        "end": 56.606,
+        "text": "One row is one decision, not one entire game."
+      }
+    ],
+    "bytes": 908268,
+    "source": "authored-video-script"
+  },
+  "quiz-label": {
+    "hash": "dbef4f0bf4d5dc3c",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Quick check. During Player Run, what is the training label: the level seed, the player's action, the coin color, or only the final score? The answer is the player's LEFT, STAY, or RIGHT action. The four sensor values are features, and reward is an outcome that helps us evaluate the behavior. This method is imitation learning. The agent begins by copying examples rather than discovering the entire policy through trial and error.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.25,
+        "text": "Quick check."
+      },
+      {
+        "start": 1.25,
+        "end": 9.505,
+        "text": "During Player Run, what is the training label: the level seed, the player's action, the coin color, or only the final score?"
+      },
+      {
+        "start": 9.906,
+        "end": 14.048,
+        "text": "The answer is the player's LEFT, STAY, or RIGHT action."
+      },
+      {
+        "start": 14.048,
+        "end": 19.986,
+        "text": "The four sensor values are features, and reward is an outcome that helps us evaluate the behavior."
+      },
+      {
+        "start": 20.386,
+        "end": 22.926,
+        "text": "This method is imitation learning."
+      },
+      {
+        "start": 22.926,
+        "end": 29.502,
+        "text": "The agent begins by copying examples rather than discovering the entire policy through trial and error."
+      }
+    ],
+    "bytes": 474008,
+    "source": "authored-video-script"
+  },
+  "agent-loop": {
+    "hash": "a797c59abdb341f4",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "An agent repeats a loop: observe the state, compare it with experience, choose an action, act, and observe the changed world. The word agent matters because an action changes the next input. Moving right can collect a coin, avoid a hazard, and place the player in a new situation for the next decision. Later work can replace imitation learning with reinforcement learning that optimizes long-term reward. For this experience class, imitation is faster, more stable, and easier to inspect.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 9.27,
+        "text": "An agent repeats a loop: observe the state, compare it with experience, choose an action, act, and observe the changed world."
+      },
+      {
+        "start": 9.666,
+        "end": 13.86,
+        "text": "The word agent matters because an action changes the next input."
+      },
+      {
+        "start": 13.86,
+        "end": 20.67,
+        "text": "Moving right can collect a coin, avoid a hazard, and place the player in a new situation for the next decision."
+      },
+      {
+        "start": 21.058,
+        "end": 27.583,
+        "text": "Later work can replace imitation learning with reinforcement learning that optimizes long-term reward."
+      },
+      {
+        "start": 27.583,
+        "end": 33.494,
+        "text": "For this experience class, imitation is faster, more stable, and easier to inspect."
+      }
+    ],
+    "bytes": 537956,
+    "source": "authored-video-script"
+  },
+  "knn": {
+    "hash": "069fe8a382011bf5",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "The policy is weighted k-nearest neighbors with k equal to nine. It asks what players did in the nine most similar sensor situations. Nearby demonstrations receive more weight. Their votes become scores for LEFT, STAY, and RIGHT, and the action with the highest score controls the player. A simple model is a strength here. Students can connect the exact sensor vector, nearby examples, weighted votes, and resulting movement without treating complexity as quality.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.388,
+        "text": "The policy is weighted k-nearest neighbors with k equal to nine."
+      },
+      {
+        "start": 4.388,
+        "end": 8.815,
+        "text": "It asks what players did in the nine most similar sensor situations."
+      },
+      {
+        "start": 9.21,
+        "end": 12.402,
+        "text": "Nearby demonstrations receive more weight."
+      },
+      {
+        "start": 12.402,
+        "end": 19.107,
+        "text": "Their votes become scores for LEFT, STAY, and RIGHT, and the action with the highest score controls the player."
+      },
+      {
+        "start": 19.498,
+        "end": 21.804,
+        "text": "A simple model is a strength here."
+      },
+      {
+        "start": 21.804,
+        "end": 31.049,
+        "text": "Students can connect the exact sensor vector, nearby examples, weighted votes, and resulting movement without treating complexity as quality."
+      }
+    ],
+    "bytes": 499086,
+    "source": "authored-video-script"
+  },
+  "code-core": {
+    "hash": "9f59847d771eb762",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Here is the readable core of the JavaScript that runs the policy. The function contract is explicit: give predict one current state, demonstration rows, and k equal to nine; receive one action. The second line turns the game state into the four-number vector we just learned to read. The next three lines calculate squared feature differences, sort rows from nearest to farthest, and keep the first nine. The vote object creates three empty buckets, one for each action. Each neighbor contributes one divided by its distance, so closer examples count more. The final line sorts the actions by vote and returns the winner. The production version also balances action classes and returns probabilities for the live AI Brain panel.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.57,
+        "text": "Here is the readable core of the JavaScript that runs the policy."
+      },
+      {
+        "start": 4.57,
+        "end": 13.893,
+        "text": "The function contract is explicit: give predict one current state, demonstration rows, and k equal to nine; receive one action."
+      },
+      {
+        "start": 14.298,
+        "end": 19.13,
+        "text": "The second line turns the game state into the four-number vector we just learned to read."
+      },
+      {
+        "start": 19.13,
+        "end": 26.761,
+        "text": "The next three lines calculate squared feature differences, sort rows from nearest to farthest, and keep the first nine."
+      },
+      {
+        "start": 27.154,
+        "end": 31.817,
+        "text": "The vote object creates three empty buckets, one for each action."
+      },
+      {
+        "start": 31.817,
+        "end": 37.742,
+        "text": "Each neighbor contributes one divided by its distance, so closer examples count more."
+      },
+      {
+        "start": 38.138,
+        "end": 42.098,
+        "text": "The final line sorts the actions by vote and returns the winner."
+      },
+      {
+        "start": 42.098,
+        "end": 48.921,
+        "text": "The production version also balances action classes and returns probabilities for the live AI Brain panel."
+      }
+    ],
+    "bytes": 784970,
+    "source": "authored-video-script"
+  },
+  "code-walk": {
+    "hash": "df0f01d95416c8bf",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Line-by-line explanation is not only syntax translation. Each line makes a behavior claim we can test: representation, comparison, neighbor selection, weighting, and decision. The small constant zero point zero two five prevents division by zero when an example exactly matches the current state. Removing it is a concrete bug students can predict before running the program. Suppose every demonstration says STAY. Which line is wrong? None of them. The program correctly returns the only action represented in the data. The failure is coverage, not syntax. That distinction is a coding-level research habit: trace the executed logic, inspect inputs, and decide whether the problem comes from data, features, model behavior, or implementation.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.479,
+        "text": "Line-by-line explanation is not only syntax translation."
+      },
+      {
+        "start": 4.479,
+        "end": 13.046,
+        "text": "Each line makes a behavior claim we can test: representation, comparison, neighbor selection, weighting, and decision."
+      },
+      {
+        "start": 13.434,
+        "end": 21.717,
+        "text": "The small constant zero point zero two five prevents division by zero when an example exactly matches the current state."
+      },
+      {
+        "start": 21.717,
+        "end": 26.118,
+        "text": "Removing it is a concrete bug students can predict before running the program."
+      },
+      {
+        "start": 26.506,
+        "end": 29.502,
+        "text": "Suppose every demonstration says STAY."
+      },
+      {
+        "start": 29.502,
+        "end": 31.247,
+        "text": "Which line is wrong?"
+      },
+      {
+        "start": 31.247,
+        "end": 32.276,
+        "text": "None of them."
+      },
+      {
+        "start": 32.276,
+        "end": 36.625,
+        "text": "The program correctly returns the only action represented in the data."
+      },
+      {
+        "start": 36.625,
+        "end": 39.594,
+        "text": "The failure is coverage, not syntax."
+      },
+      {
+        "start": 39.986,
+        "end": 52.566,
+        "text": "That distinction is a coding-level research habit: trace the executed logic, inspect inputs, and decide whether the problem comes from data, features, model behavior, or implementation."
+      }
+    ],
+    "bytes": 843066,
+    "source": "authored-video-script"
+  },
+  "lab-takeover": {
+    "hash": "b0cb143796a66539",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Now watch the real handoff. The page trains the local weighted-neighbor policy, switches the HUD from HUMAN to AGENT, and the policy drives without keyboard input. The trained model uses balanced starter demonstrations plus the capped personal examples collected in this browser. The receipt reports the exact row and action counts; no model weights leave the device. This second capture changes the level seed to one the policy did not train on. The HUD says UNSEEN, and the same policy must act under a new sequence of coins and hazards.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.46,
+        "text": "Now watch the real handoff."
+      },
+      {
+        "start": 2.46,
+        "end": 11.041,
+        "text": "The page trains the local weighted-neighbor policy, switches the HUD from HUMAN to AGENT, and the policy drives without keyboard input."
+      },
+      {
+        "start": 11.442,
+        "end": 18.162,
+        "text": "The trained model uses balanced starter demonstrations plus the capped personal examples collected in this browser."
+      },
+      {
+        "start": 18.162,
+        "end": 24.022,
+        "text": "The receipt reports the exact row and action counts; no model weights leave the device."
+      },
+      {
+        "start": 24.418,
+        "end": 29.537,
+        "text": "This second capture changes the level seed to one the policy did not train on."
+      },
+      {
+        "start": 29.537,
+        "end": 36.243,
+        "text": "The HUD says UNSEEN, and the same policy must act under a new sequence of coins and hazards."
+      }
+    ],
+    "bytes": 582260,
+    "source": "authored-video-script"
+  },
+  "brain": {
+    "hash": "292feb3c10a809c5",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Do not confuse animation with explanation. A glowing sensor ray looks informative, but the decision receipt is the evidence. Use three layers: the exact observation, the probability or weighted vote for each action, and the reward or collision that followed. This makes a failure reproducible. Saying the AI wanted the coin is an intuitive story. Saying RIGHT received the highest weighted vote is a claim another person can inspect.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.046,
+        "text": "Do not confuse animation with explanation."
+      },
+      {
+        "start": 3.046,
+        "end": 8.085,
+        "text": "A glowing sensor ray looks informative, but the decision receipt is the evidence."
+      },
+      {
+        "start": 8.49,
+        "end": 17.203,
+        "text": "Use three layers: the exact observation, the probability or weighted vote for each action, and the reward or collision that followed."
+      },
+      {
+        "start": 17.203,
+        "end": 19.703,
+        "text": "This makes a failure reproducible."
+      },
+      {
+        "start": 20.098,
+        "end": 23.628,
+        "text": "Saying the AI wanted the coin is an intuitive story."
+      },
+      {
+        "start": 23.628,
+        "end": 28.837,
+        "text": "Saying RIGHT received the highest weighted vote is a claim another person can inspect."
+      }
+    ],
+    "bytes": 463559,
+    "source": "authored-video-script"
+  },
+  "research-question": {
+    "hash": "91e718db7c5f5d57",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "The classroom research question asks whether more training-level diversity improves performance on levels the agent has never seen. The comparison fixes the data budget at two hundred forty rows. One condition uses demonstrations from one training seed, and the other spreads the same number of rows across twelve seeds. Both conditions use the same four features, weighted-neighbor model, k value, and twenty unseen test seeds. The primary outcome is accuracy on six hundred expert-labeled actions.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.76,
+        "text": "The classroom research question asks whether more training-level diversity improves performance on levels the agent has never seen."
+      },
+      {
+        "start": 8.154,
+        "end": 12.244,
+        "text": "The comparison fixes the data budget at two hundred forty rows."
+      },
+      {
+        "start": 12.244,
+        "end": 20.109,
+        "text": "One condition uses demonstrations from one training seed, and the other spreads the same number of rows across twelve seeds."
+      },
+      {
+        "start": 20.506,
+        "end": 27.812,
+        "text": "Both conditions use the same four features, weighted-neighbor model, k value, and twenty unseen test seeds."
+      },
+      {
+        "start": 27.812,
+        "end": 32.969,
+        "text": "The primary outcome is accuracy on six hundred expert-labeled actions."
+      }
+    ],
+    "bytes": 529597,
+    "source": "authored-video-script"
+  },
+  "quiz-fair": {
+    "hash": "e7a69b8924a6298a",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Quick check. Suppose the twelve-seed agent receives two thousand four hundred rows while the one-seed agent receives only two hundred forty. Can a score difference be attributed to diversity? No. Training amount also changed, so diversity and quantity are confounded. A controlled comparison gives both agents the same number of rows and changes only seed diversity. Controls do not make an experiment perfect. They make one explanation more testable by preventing an obvious second variable from changing at the same time.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.119,
+        "text": "Quick check."
+      },
+      {
+        "start": 1.119,
+        "end": 8.828,
+        "text": "Suppose the twelve-seed agent receives two thousand four hundred rows while the one-seed agent receives only two hundred forty."
+      },
+      {
+        "start": 8.828,
+        "end": 11.783,
+        "text": "Can a score difference be attributed to diversity?"
+      },
+      {
+        "start": 12.162,
+        "end": 13.049,
+        "text": "No."
+      },
+      {
+        "start": 13.049,
+        "end": 18.218,
+        "text": "Training amount also changed, so diversity and quantity are confounded."
+      },
+      {
+        "start": 18.218,
+        "end": 24.781,
+        "text": "A controlled comparison gives both agents the same number of rows and changes only seed diversity."
+      },
+      {
+        "start": 25.162,
+        "end": 28.145,
+        "text": "Controls do not make an experiment perfect."
+      },
+      {
+        "start": 28.145,
+        "end": 34.812,
+        "text": "They make one explanation more testable by preventing an obvious second variable from changing at the same time."
+      }
+    ],
+    "bytes": 559272,
+    "source": "authored-video-script"
+  },
+  "lab-experiment": {
+    "hash": "531afbd4c2433e73",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Lab three runs the fair test directly in the browser. The result is computed when the button is pressed; it is not a number written into the lesson. In our reproducible classroom run, the one-seed policy achieved ninety-one point zero percent held-out action accuracy, while the twelve-seed policy achieved eighty-four point three percent. Mean game scores were one hundred five point zero and sixty-six point seven. More diversity did not automatically win under a fixed row budget. Spreading rows across levels may improve coverage while reducing the density of examples for each situation. That mechanism is a hypothesis, not a proven cause. Repeat across training draws, vary the data budget, and compare another policy model before making a general claim.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.489,
+        "text": "Lab three runs the fair test directly in the browser."
+      },
+      {
+        "start": 3.489,
+        "end": 8.841,
+        "text": "The result is computed when the button is pressed; it is not a number written into the lesson."
+      },
+      {
+        "start": 9.234,
+        "end": 21.072,
+        "text": "In our reproducible classroom run, the one-seed policy achieved ninety-one point zero percent held-out action accuracy, while the twelve-seed policy achieved eighty-four point three percent."
+      },
+      {
+        "start": 21.072,
+        "end": 26.15,
+        "text": "Mean game scores were one hundred five point zero and sixty-six point seven."
+      },
+      {
+        "start": 26.53,
+        "end": 30.881,
+        "text": "More diversity did not automatically win under a fixed row budget."
+      },
+      {
+        "start": 30.881,
+        "end": 37.638,
+        "text": "Spreading rows across levels may improve coverage while reducing the density of examples for each situation."
+      },
+      {
+        "start": 38.042,
+        "end": 41.885,
+        "text": "That mechanism is a hypothesis, not a proven cause."
+      },
+      {
+        "start": 41.885,
+        "end": 49.267,
+        "text": "Repeat across training draws, vary the data budget, and compare another policy model before making a general claim."
+      }
+    ],
+    "bytes": 790403,
+    "source": "authored-video-script"
+  },
+  "claim": {
+    "hash": "26810b1aa658cc79",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Write the result with four parts: scope, measured comparison, limitation, and next test. A strong sentence reports both accuracies and says that each condition had two hundred forty rows. It then limits the finding to one three-lane game and one neighbor-model setting. If the result contradicts your prediction, report it exactly. A surprising result is valuable when the comparison is fair and the next experiment is clear.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.653,
+        "text": "Write the result with four parts: scope, measured comparison, limitation, and next test."
+      },
+      {
+        "start": 7.05,
+        "end": 13.744,
+        "text": "A strong sentence reports both accuracies and says that each condition had two hundred forty rows."
+      },
+      {
+        "start": 13.744,
+        "end": 18.692,
+        "text": "It then limits the finding to one three-lane game and one neighbor-model setting."
+      },
+      {
+        "start": 19.09,
+        "end": 22.972,
+        "text": "If the result contradicts your prediction, report it exactly."
+      },
+      {
+        "start": 22.972,
+        "end": 28.701,
+        "text": "A surprising result is valuable when the comparison is fair and the next experiment is clear."
+      }
+    ],
+    "bytes": 461052,
+    "source": "authored-video-script"
+  },
+  "public-backing": {
+    "hash": "49a93750a81d782e",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "The classroom question mirrors established game-AI research. Procgen uses sixteen procedurally generated game-like environments to study sample efficiency and generalization. GVGAI provides an open framework for agents that must act across many games, including games they did not train on. The NetHack Learning Dataset contains human and symbolic-bot trajectories. These resources establish that generalization, player trajectories, and agent behavior are valuable research areas. Public access still requires careful license and provenance documentation.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.101,
+        "text": "The classroom question mirrors established game-AI research."
+      },
+      {
+        "start": 4.101,
+        "end": 11.94,
+        "text": "Procgen uses sixteen procedurally generated game-like environments to study sample efficiency and generalization."
+      },
+      {
+        "start": 12.33,
+        "end": 20.274,
+        "text": "GVGAI provides an open framework for agents that must act across many games, including games they did not train on."
+      },
+      {
+        "start": 20.274,
+        "end": 25.196,
+        "text": "The NetHack Learning Dataset contains human and symbolic-bot trajectories."
+      },
+      {
+        "start": 25.594,
+        "end": 33.317,
+        "text": "These resources establish that generalization, player trajectories, and agent behavior are valuable research areas."
+      },
+      {
+        "start": 33.317,
+        "end": 38.239,
+        "text": "Public access still requires careful license and provenance documentation."
+      }
+    ],
+    "bytes": 614025,
+    "source": "authored-video-script"
+  },
+  "open-data-question": {
+    "hash": "2d11471957feaca6",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Next we move from an open environment to a real open dataset. SkillCraft One contains three thousand three hundred ninety-five StarCraft Two player records and is licensed Creative Commons Attribution Four Point Zero. The target is League Index at least five, from Diamond through Professional. There are one thousand five hundred seventeen records in this class and one thousand eight hundred seventy-eight in leagues one through four. Our compact condition uses four interpretable sensors: actions per minute, hotkey selection, action latency, and number of perception-action cycles. The extension uses all fifteen behavioral telemetry features. The research question is how much predictive performance is lost with four sensors instead of fifteen. Same players, target, preprocessing, logistic-regression model, and five folds; only the sensor set changes.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.075,
+        "text": "Next we move from an open environment to a real open dataset."
+      },
+      {
+        "start": 4.075,
+        "end": 13.997,
+        "text": "SkillCraft One contains three thousand three hundred ninety-five StarCraft Two player records and is licensed Creative Commons Attribution Four Point Zero."
+      },
+      {
+        "start": 14.394,
+        "end": 18.836,
+        "text": "The target is League Index at least five, from Diamond through Professional."
+      },
+      {
+        "start": 18.836,
+        "end": 26.14,
+        "text": "There are one thousand five hundred seventeen records in this class and one thousand eight hundred seventy-eight in leagues one through four."
+      },
+      {
+        "start": 26.53,
+        "end": 36.766,
+        "text": "Our compact condition uses four interpretable sensors: actions per minute, hotkey selection, action latency, and number of perception-action cycles."
+      },
+      {
+        "start": 36.766,
+        "end": 41.115,
+        "text": "The extension uses all fifteen behavioral telemetry features."
+      },
+      {
+        "start": 41.522,
+        "end": 47.865,
+        "text": "The research question is how much predictive performance is lost with four sensors instead of fifteen."
+      },
+      {
+        "start": 47.865,
+        "end": 56.172,
+        "text": "Same players, target, preprocessing, logistic-regression model, and five folds; only the sensor set changes."
+      }
+    ],
+    "bytes": 900745,
+    "source": "authored-video-script"
+  },
+  "open-data-result": {
+    "hash": "ed571ef42fee0c06",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "The analysis script downloads the data from UCI, verifies the expected row count, runs both models on identical stratified folds, and saves every fold-level metric. The four-sensor model reached mean ROC AUC zero point eight six one with standard deviation zero point zero one one. The fifteen-sensor model reached zero point eight seven nine with standard deviation zero point zero one two. Mean accuracy rose from seventy-seven point six to seventy-eight point nine percent. The observed AUC difference is positive zero point zero one eight: modest, real in this run, and descriptive rather than causal. The open evidence package contains the Python script, source hash, fold-results CSV, aggregate JSON, chart, prompt, and formatted abstract. Another student can trace every displayed number.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 12.005,
+        "text": "The analysis script downloads the data from UCI, verifies the expected row count, runs both models on identical stratified folds, and saves every fold-level metric."
+      },
+      {
+        "start": 12.402,
+        "end": 21.206,
+        "text": "The four-sensor model reached mean ROC AUC zero point eight six one with standard deviation zero point zero one one."
+      },
+      {
+        "start": 21.206,
+        "end": 28.588,
+        "text": "The fifteen-sensor model reached zero point eight seven nine with standard deviation zero point zero one two."
+      },
+      {
+        "start": 28.978,
+        "end": 34.592,
+        "text": "Mean accuracy rose from seventy-seven point six to seventy-eight point nine percent."
+      },
+      {
+        "start": 34.592,
+        "end": 43.654,
+        "text": "The observed AUC difference is positive zero point zero one eight: modest, real in this run, and descriptive rather than causal."
+      },
+      {
+        "start": 44.042,
+        "end": 54.682,
+        "text": "The open evidence package contains the Python script, source hash, fold-results CSV, aggregate JSON, chart, prompt, and formatted abstract."
+      },
+      {
+        "start": 54.682,
+        "end": 57.82,
+        "text": "Another student can trace every displayed number."
+      }
+    ],
+    "bytes": 927494,
+    "source": "authored-video-script"
+  },
+  "abstract-demo": {
+    "hash": "de29f894c5e4e54a",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Only after the evidence receipt exists do we ask generative AI to help draft the extended abstract. The full prompt is published, not hidden behind the final prose. The prompt supplies the sample, target, features, method, fold-level summaries, and observed difference. It requires Background, Method, Results, Limitations, and one runnable next experiment. Its constraints forbid invented p-values, confidence intervals, participants, features, and causal language. It also requires the abstract to call League Index an operational label rather than a complete definition of expertise. The generated takeaway says that four sensors retained most of the discrimination while all fifteen produced a modest gain. It proposes a controlled sensor-ablation ladder as the next study. The disclosure is explicit: AI assisted with wording; the authors supplied and checked every number against the saved evidence receipt.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.263,
+        "text": "Only after the evidence receipt exists do we ask generative AI to help draft the extended abstract."
+      },
+      {
+        "start": 6.263,
+        "end": 10.52,
+        "text": "The full prompt is published, not hidden behind the final prose."
+      },
+      {
+        "start": 10.914,
+        "end": 18.272,
+        "text": "The prompt supplies the sample, target, features, method, fold-level summaries, and observed difference."
+      },
+      {
+        "start": 18.272,
+        "end": 24.796,
+        "text": "It requires Background, Method, Results, Limitations, and one runnable next experiment."
+      },
+      {
+        "start": 25.21,
+        "end": 32.438,
+        "text": "Its constraints forbid invented p-values, confidence intervals, participants, features, and causal language."
+      },
+      {
+        "start": 32.438,
+        "end": 39.912,
+        "text": "It also requires the abstract to call League Index an operational label rather than a complete definition of expertise."
+      },
+      {
+        "start": 40.298,
+        "end": 47.839,
+        "text": "The generated takeaway says that four sensors retained most of the discrimination while all fifteen produced a modest gain."
+      },
+      {
+        "start": 47.839,
+        "end": 52.109,
+        "text": "It proposes a controlled sensor-ablation ladder as the next study."
+      },
+      {
+        "start": 52.506,
+        "end": 61.271,
+        "text": "The disclosure is explicit: AI assisted with wording; the authors supplied and checked every number against the saved evidence receipt."
+      }
+    ],
+    "bytes": 982665,
+    "source": "authored-video-script"
+  },
+  "ai-researcher": {
+    "hash": "680e6e739beced86",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "This is the general AI Toolbox rule: generative AI enters after the experiment produces evidence. Give it exact receipts and ask it to separate observations, possible explanations, confounders, and a next controlled test. A useful prompt forbids invented results and causal claims. That is stronger than merely asking the model to be accurate because the output categories can be inspected. AI can propose an ablation or improve a caption. The student remains responsible for numbers, execution path, evidence boundary, and disclosure of assistance.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.523,
+        "text": "This is the general AI Toolbox rule: generative AI enters after the experiment produces evidence."
+      },
+      {
+        "start": 6.523,
+        "end": 14.752,
+        "text": "Give it exact receipts and ask it to separate observations, possible explanations, confounders, and a next controlled test."
+      },
+      {
+        "start": 15.138,
+        "end": 19.137,
+        "text": "A useful prompt forbids invented results and causal claims."
+      },
+      {
+        "start": 19.137,
+        "end": 25.335,
+        "text": "That is stronger than merely asking the model to be accurate because the output categories can be inspected."
+      },
+      {
+        "start": 25.738,
+        "end": 29.203,
+        "text": "AI can propose an ablation or improve a caption."
+      },
+      {
+        "start": 29.203,
+        "end": 36.547,
+        "text": "The student remains responsible for numbers, execution path, evidence boundary, and disclosure of assistance."
+      }
+    ],
+    "bytes": 586857,
+    "source": "authored-video-script"
+  },
+  "same-pipeline": {
+    "hash": "2990be35c3a80213",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "The game is our first sandbox, not the final destination. The same research pipeline can guide a warehouse robot, a wellness study, sports analysis, or a mobility system. Across these domains, the loop remains recognizable: observe a situation, represent it as data, learn a pattern, test unseen cases, measure outcomes, and improve the next experiment. What transfers is not a game-control trick. It is the ability to define evidence, hold comparisons fair, inspect failures, respect domain boundaries, and support every conclusion with a result another person can check.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.841,
+        "text": "The game is our first sandbox, not the final destination."
+      },
+      {
+        "start": 3.841,
+        "end": 10.937,
+        "text": "The same research pipeline can guide a warehouse robot, a wellness study, sports analysis, or a mobility system."
+      },
+      {
+        "start": 11.322,
+        "end": 25.087,
+        "text": "Across these domains, the loop remains recognizable: observe a situation, represent it as data, learn a pattern, test unseen cases, measure outcomes, and improve the next experiment."
+      },
+      {
+        "start": 25.474,
+        "end": 28.431,
+        "text": "What transfers is not a game-control trick."
+      },
+      {
+        "start": 28.431,
+        "end": 39.89,
+        "text": "It is the ability to define evidence, hold comparisons fair, inspect failures, respect domain boundaries, and support every conclusion with a result another person can check."
+      }
+    ],
+    "bytes": 640356,
+    "source": "authored-video-script"
+  },
+  "publication-ladder": {
+    "hash": "276e4ff938e5a736",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "The project can grow without abandoning its central question. A workshop demonstrates one game and one baseline. A poster adds repeated runs and a failure taxonomy. An extended abstract compares controlled variants. A conference paper adds multiple games and ablations. A journal version would need broader external validation and a reusable artifact. Suitable communities include IEEE Conference on Games, AIIDE, and Foundations of Digital Games. A venue is a research community, not a promise of acceptance.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.684,
+        "text": "The project can grow without abandoning its central question."
+      },
+      {
+        "start": 3.684,
+        "end": 7.734,
+        "text": "A workshop demonstrates one game and one baseline."
+      },
+      {
+        "start": 7.734,
+        "end": 12.187,
+        "text": "A poster adds repeated runs and a failure taxonomy."
+      },
+      {
+        "start": 12.57,
+        "end": 16.113,
+        "text": "An extended abstract compares controlled variants."
+      },
+      {
+        "start": 16.113,
+        "end": 20.176,
+        "text": "A conference paper adds multiple games and ablations."
+      },
+      {
+        "start": 20.176,
+        "end": 25.397,
+        "text": "A journal version would need broader external validation and a reusable artifact."
+      },
+      {
+        "start": 25.786,
+        "end": 33.131,
+        "text": "Suitable communities include IEEE Conference on Games, AIIDE, and Foundations of Digital Games."
+      },
+      {
+        "start": 33.131,
+        "end": 37.741,
+        "text": "A venue is a research community, not a promise of acceptance."
+      }
+    ],
+    "bytes": 606083,
+    "source": "authored-video-script"
+  },
+  "deadline-2027": {
+    "hash": "bc36f5432c0db83e",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "For next year's target cycle, IEEE Conference on Games has published a full-paper deadline of March first, twenty twenty-seven, Anywhere on Earth. The same official schedule lists May fifteenth for auxiliary papers. The workshop page links directly to the twenty twenty-seven conference site. AIIDE and Foundations of Digital Games have not yet released official twenty twenty-seven calls for papers, so their dates are marked T B D. We do not turn last year's pattern into a fake deadline. The research schedule works backward from the confirmed date: freeze the question in October, preregister the experiment in December, complete results in January, and lock the manuscript by February twenty-second.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 10.143,
+        "text": "For next year's target cycle, IEEE Conference on Games has published a full-paper deadline of March first, twenty twenty-seven, Anywhere on Earth."
+      },
+      {
+        "start": 10.53,
+        "end": 14.946,
+        "text": "The same official schedule lists May fifteenth for auxiliary papers."
+      },
+      {
+        "start": 14.946,
+        "end": 19.503,
+        "text": "The workshop page links directly to the twenty twenty-seven conference site."
+      },
+      {
+        "start": 19.906,
+        "end": 28.879,
+        "text": "AIIDE and Foundations of Digital Games have not yet released official twenty twenty-seven calls for papers, so their dates are marked T B D."
+      },
+      {
+        "start": 28.879,
+        "end": 32.551,
+        "text": "We do not turn last year's pattern into a fake deadline."
+      },
+      {
+        "start": 32.954,
+        "end": 46.458,
+        "text": "The research schedule works backward from the confirmed date: freeze the question in October, preregister the experiment in December, complete results in January, and lock the manuscript by February twenty-second."
+      }
+    ],
+    "bytes": 745264,
+    "source": "authored-video-script"
+  },
+  "artifact": {
+    "hash": "87bba92b420c17c4",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "The final student artifact is a one-page Agent Research Card. It records the question, row meaning, results, one failure, the evidence boundary, and one controlled next experiment. Peer review uses four checks: can the numbers be reproduced, did only the intended variable change, does the claim stay inside the evidence, and could the next test actually be run? Student gameplay used in public research begins with appropriate consent, anonymization, and institutional ethics review. The workshop keeps gameplay data local unless the student deliberately exports it.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.153,
+        "text": "The final student artifact is a one-page Agent Research Card."
+      },
+      {
+        "start": 4.153,
+        "end": 12.317,
+        "text": "It records the question, row meaning, results, one failure, the evidence boundary, and one controlled next experiment."
+      },
+      {
+        "start": 12.714,
+        "end": 23.536,
+        "text": "Peer review uses four checks: can the numbers be reproduced, did only the intended variable change, does the claim stay inside the evidence, and could the next test actually be run?"
+      },
+      {
+        "start": 23.938,
+        "end": 32.143,
+        "text": "Student gameplay used in public research begins with appropriate consent, anonymization, and institutional ethics review."
+      },
+      {
+        "start": 32.143,
+        "end": 37.195,
+        "text": "The workshop keeps gameplay data local unless the student deliberately exports it."
+      }
+    ],
+    "bytes": 597306,
+    "source": "authored-video-script"
+  },
+  "exit": {
+    "hash": "3f68e74776719600",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "The bot played, but the student did the research. The student created labels, read the code, inspected the model, designed a controlled comparison, and decided where the evidence stopped. The most useful exit question is not whether the agent looked intelligent. It is what you would inspect first after a failure: data coverage, sensors, model behavior, code, or experiment design. You can now carry that complete research pipeline into a new domain: begin with an observable question, build a fair test, and let evidence determine what you are ready to claim.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.669,
+        "text": "The bot played, but the student did the research."
+      },
+      {
+        "start": 2.669,
+        "end": 10.937,
+        "text": "The student created labels, read the code, inspected the model, designed a controlled comparison, and decided where the evidence stopped."
+      },
+      {
+        "start": 11.322,
+        "end": 15.946,
+        "text": "The most useful exit question is not whether the agent looked intelligent."
+      },
+      {
+        "start": 15.946,
+        "end": 24.344,
+        "text": "It is what you would inspect first after a failure: data coverage, sensors, model behavior, code, or experiment design."
+      },
+      {
+        "start": 24.73,
+        "end": 35.344,
+        "text": "You can now carry that complete research pipeline into a new domain: begin with an observable question, build a fair test, and let evidence determine what you are ready to claim."
+      }
+    ],
+    "bytes": 567631,
+    "source": "authored-video-script"
+  }
+}

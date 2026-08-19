@@ -865,7 +865,9 @@ listenBtn.addEventListener('click',function(){
   listenBtn.classList.add('playing');
   listenBtn.querySelector('.li-ic').textContent='⏹';
   listenBtn.querySelector('.li-tx').textContent='loading…';
-  _audio.src='audio/'+encodeURIComponent(curSid)+'.mp3';
+  const data=_narrationData&&_narrationData[curSid];
+  const version=data&&data.hash?'?v='+encodeURIComponent(data.hash):'';
+  _audio.src='audio/'+encodeURIComponent(curSid)+'.mp3'+version;
   _audio.addEventListener('timeupdate',onListenTimeupdate);
   _audio.addEventListener('ended',stopAudio,{once:true});
   _audio.play().catch(function(){
@@ -1469,7 +1471,8 @@ function walkPlayStep(){
   if(w.lab.dataset.viz) lvWalkStep(w.lab,s); // keep the chart in step with the narration
   w.lab.querySelector('.walk-step').textContent=(w.i+1)+' / '+w.steps.length+' · L'+s+(e>s?'–'+e:'');
   capBar.textContent=st.text; capBar.style.display='block';
-  walkAudio.src='audio/'+encodeURIComponent(st.file);
+  const version=w.hash?'?v='+encodeURIComponent(w.hash):'';
+  walkAudio.src='audio/'+encodeURIComponent(st.file)+version;
   walkAudio.load(); // some Chrome profiles stall a src-swap without an explicit load() (see narratorAudio note)
   walkAudio.onended=function(){ if(!_walk) return; if(_walk.i<_walk.steps.length-1){ _walk.i++; walkPlayStep(); } else stopWalk(true); };
   const tok=w.tok=(w.tok||0)+1; // a newer step's load() aborts this play() — only the latest step may flip the UI
@@ -1491,7 +1494,7 @@ function startWalk(lab){
   let saved=null;
   if(ta.value!==ta.defaultValue){ saved=ta.value; ta.value=ta.defaultValue; } // walkthrough narrates the original code
   ta.readOnly=true; gutterSync(lab);
-  _walk={ lab:lab, steps:data.steps, i:0, playing:false, saved:saved };
+  _walk={ lab:lab, steps:data.steps, hash:data.hash||'', i:0, playing:false, saved:saved };
   walkUI(lab,true);
   lab.querySelector('.lab-status').textContent=saved!=null?'🎧 showing the original code — your edits come back after':'';
   walkPlayStep();

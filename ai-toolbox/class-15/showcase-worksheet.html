@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Class 15 · Research Showcase Worksheet</title>
+  <style>
+    :root{--navy:#0c2d52;--teal:#0f9db0;--coral:#e06455;--amber:#d99717;--ink:#162538;--muted:#52677a;--line:#9eb2c2;--soft:#e8f7f9}
+    *{box-sizing:border-box}html,body{margin:0;background:#eaf0f4;color:var(--ink);font:10pt/1.3 Inter,system-ui,sans-serif}
+    .toolbar{position:sticky;top:0;z-index:2;display:flex;justify-content:center;align-items:center;gap:12px;padding:12px;background:var(--navy);color:#fff;font-weight:700}
+    .toolbar a,.toolbar button{border:1px solid #fff;border-radius:999px;padding:8px 15px;color:#fff;background:transparent;text-decoration:none;font:inherit;cursor:pointer}.toolbar button{background:#fff;color:var(--navy);font-weight:800}
+    main{padding:24px 0 44px}.sheet{width:8.5in;min-height:11in;margin:0 auto 24px;padding:.42in .46in;background:#fff;box-shadow:0 12px 36px #0c2d5228;overflow:hidden}
+    header{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:end;padding-bottom:8px;border-bottom:3px solid var(--navy)}
+    .eyebrow{margin:0;color:var(--teal);font-size:8pt;font-weight:900;letter-spacing:.12em;text-transform:uppercase}h1{margin:2px 0 0;color:var(--navy);font-size:19pt;line-height:1.05}.zh{color:var(--muted);font-size:10pt;font-weight:650}
+    .code{min-width:2.1in;padding:7px 9px;border:2px solid var(--navy);border-radius:7px;font-weight:800;white-space:nowrap}.blank{display:inline-block;width:1.1in;height:1em;border-bottom:1.5px solid var(--ink);vertical-align:bottom}
+    .privacy{margin:8px 0;padding:7px 9px;border-left:4px solid var(--coral);background:#fff2ef;color:#4b2b29;font-size:8.3pt;font-weight:650}
+    .timing{display:grid;grid-template-columns:repeat(4,1fr);margin:8px 0;border:1px solid var(--line);border-radius:8px;overflow:hidden}.timing div{padding:7px;border-right:1px solid var(--line);text-align:center}.timing div:last-child{border:0}.timing b{display:block;color:var(--navy)}.timing span{color:var(--muted);font-size:7.6pt}
+    section{margin-top:9px;border:1.3px solid var(--line);border-radius:8px;overflow:hidden;break-inside:avoid}.head{display:flex;justify-content:space-between;gap:8px;padding:6px 9px;background:var(--navy);color:#fff}.head h2{margin:0;font-size:10.8pt}.head span{font-size:7.5pt;opacity:.9}.body{padding:8px 9px}
+    .checks{display:grid;grid-template-columns:1fr 1fr;gap:4px 14px}.check{display:grid;grid-template-columns:14px 1fr;gap:6px;font-size:8.2pt}.tick{width:12px;height:12px;margin-top:1px;border:1.3px solid var(--ink);border-radius:2px}
+    .frame{padding:7px 9px;border:1px solid #93ccd4;border-radius:6px;background:var(--soft);font-size:8.2pt}.line{height:18px;border-bottom:1px solid var(--line)}.line.tall{height:25px}
+    .peer{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.peer-card,.question,.close{padding:7px;border:1.2px solid var(--line);border-radius:7px}.peer-card{min-height:1.34in;border-top-width:5px}.peer-card:nth-child(1){border-top-color:var(--teal)}.peer-card:nth-child(2){border-top-color:var(--amber)}.peer-card:nth-child(3){border-top-color:var(--coral)}
+    h3{margin:0 0 3px;color:var(--navy);font-size:9.7pt}.peer-card p,.question p{margin:0 0 3px;color:var(--muted);font-size:7.4pt}.micro{margin:6px 0 0;color:var(--muted);font-size:7.3pt}
+    .questions,.close-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.label{margin-top:4px;color:var(--navy);font-size:7.2pt;font-weight:850;text-transform:uppercase}.rule{margin-top:6px;padding:6px 8px;border-radius:6px;background:var(--soft);color:#173b43;font-size:7.7pt;font-weight:700}
+    table{width:100%;border-collapse:collapse;table-layout:fixed}th,td{border:1px solid #93a9ba;padding:4px 5px;vertical-align:top}th{background:var(--navy);color:#fff;font-size:7.5pt;text-align:left}td{height:28px;font-size:7.7pt}th:nth-child(1){width:29%}th:nth-child(2){width:8%}th:nth-child(3){width:10%}td:nth-child(2),td:nth-child(3){text-align:center;font-weight:800}.note{color:var(--muted);font-size:7.1pt;font-weight:400}.total td{background:var(--soft);color:var(--navy);font-weight:900}
+    footer{display:flex;justify-content:space-between;margin-top:8px;padding-top:5px;border-top:1px solid var(--line);color:var(--muted);font-size:7pt}
+    @media(max-width:850px){main{padding:0}.sheet{width:100%;min-height:0;margin:0 0 16px;padding:22px 17px;box-shadow:none}header,.checks,.peer,.questions,.close-grid{grid-template-columns:1fr}.timing{grid-template-columns:1fr 1fr}}
+    @page{size:Letter portrait;margin:0}@media print{html,body{background:#fff;print-color-adjust:exact;-webkit-print-color-adjust:exact}.toolbar{display:none!important}main{padding:0}.sheet{width:8.5in;height:11in;min-height:11in;margin:0;padding:.38in .43in;box-shadow:none;break-after:page;page-break-after:always}.sheet:last-child{break-after:auto;page-break-after:auto}section,.peer-card,.question,table{break-inside:avoid;page-break-inside:avoid}}
+  </style>
+</head>
+<body>
+  <nav class="toolbar" aria-label="Worksheet actions"><span>Two-page worksheet · one copy per presenter</span><button type="button" onclick="window.print()">Print / 打印</button><a href="index.html#/presenter-preflight">Back to deck</a></nav>
+  <main>
+    <article class="sheet" aria-labelledby="p1-title">
+      <header><div><p class="eyebrow">The AI Toolbox · Class 15</p><h1 id="p1-title">Research Showcase Worksheet</h1><div class="zh">学生科研展示与答辩 · Presenter + Peer</div></div><div class="code">Presenter code <span class="blank"></span></div></header>
+      <p class="privacy">Privacy boundary: write only the teacher-assigned presenter code. Do not write a name, email, school, student ID, account handle, or sensitive personal detail.</p>
+      <div class="timing"><div><b>≤ 6 slides</b><span>title included</span></div><div><b>Aim 4:30</b><span>hard stop 5:00</span></div><div><b>2:00 Q&amp;A</b><span>teacher asks ≥ 2</span></div><div><b>1:00 transition</b><span>feedback + switch</span></div></div>
+      <section><div class="head"><h2>A · Presenter preflight / 展示前检查</h2><span>Before screen sharing</span></div><div class="body checks">
+        <div class="check"><span class="tick"></span><span>Deck has six slides or fewer; title counts.</span></div><div class="check"><span class="tick"></span><span>Talk rehearsed to 4:30; stops by 5:00.</span></div>
+        <div class="check"><span class="tick"></span><span>Every result comes from the frozen Class 14 notebook.</span></div><div class="check"><span class="tick"></span><span>Axes, units, denominators and uncertainty are readable.</span></div>
+        <div class="check"><span class="tick"></span><span>Question, baseline, one change and controls are visible.</span></div><div class="check"><span class="tick"></span><span>Largest limitation and one next test are visible.</span></div>
+        <div class="check"><span class="tick"></span><span>Notebook/data links have intended permissions.</span></div><div class="check"><span class="tick"></span><span>AI disclosure names use and verification.</span></div>
+        <div class="check"><span class="tick"></span><span>Validity and interpretation/reproduction answers are ready.</span></div><div class="check"><span class="tick"></span><span>Slides and tabs contain no PII or raw personal records.</span></div>
+      </div></section>
+      <section><div class="head"><h2>B · One-sentence research claim</h2><span>Scope → test → result → boundary</span></div><div class="body"><div class="frame">For <b>[scope]</b>, we tested whether <b>[one change]</b> affected <b>[pre-chosen metric]</b> versus <b>[baseline]</b>, using <b>[saved protocol]</b>; we found <b>[bounded result]</b>, limited by <b>[largest threat]</b>.</div><div class="line tall"></div><div class="line"></div></div></section>
+      <section><div class="head"><h2>C · Peer listener card / 同伴反馈</h2><span>Evidence, never personality</span></div><div class="body"><div class="peer">
+        <div class="peer-card"><h3>Glow</h3><p>Strongest supported claim or clearest evidence link:</p><div class="line"></div><div class="line"></div><div class="line"></div></div>
+        <div class="peer-card"><h3>Grow</h3><p>One unclear question → method → result → conclusion link:</p><div class="line"></div><div class="line"></div><div class="line"></div></div>
+        <div class="peer-card"><h3>Next test</h3><p>One feasible test that could challenge the claim or limitation:</p><div class="line"></div><div class="line"></div><div class="line"></div></div>
+      </div><p class="micro">Useful frame: “Glow: I trusted ___ because ___. Grow: clarify ___. Next test: hold ___ fixed and test ___.” Finish during transition.</p></div></section>
+      <footer><span>Page 1 of 2 · Presenter + peer</span><span>No public ranking · return feedback privately</span></footer>
+    </article>
+
+    <article class="sheet" aria-labelledby="p2-title">
+      <header><div><p class="eyebrow">The AI Toolbox · Class 15</p><h1 id="p2-title">Defense + Rubric Capture</h1><div class="zh">教师提问与评分 · Teacher copy</div></div><div class="code">Presenter code <span class="blank"></span></div></header>
+      <p class="privacy">Use the same presenter code as page 1. Record evidence from the study and defense only—never identifying or sensitive personal information.</p>
+      <section><div class="head"><h2>D · Teacher defense / 教师至少两问</h2><span>Two minutes · one from each lane</span></div><div class="body"><div class="questions">
+        <div class="question"><h3>Question 1 · Validity</h3><p>Design, baseline, one change, controls, leakage, split/folds, pipeline, or metric.</p><div class="label">Question asked</div><div class="line"></div><div class="line"></div><div class="label">Evidence in answer</div><div class="line"></div><div class="line"></div></div>
+        <div class="question"><h3>Question 2 · Interpretation / reproduction</h3><p>Claim boundary, limitation, rival explanation, rerun, AI verification, or next test.</p><div class="label">Question asked</div><div class="line"></div><div class="line"></div><div class="label">Evidence + boundary</div><div class="line"></div><div class="line"></div></div>
+      </div><div class="rule">Required: ask at least two questions—one validity and one interpretation or reproducibility question. Test ownership of evidence, not memory or speaking style.</div></div></section>
+      <section><div class="head"><h2>E · Class 14-aligned rubric capture</h2><span>Exactly 8 categories · 100 points</span></div><div class="body"><table aria-label="Class 15 showcase rubric"><thead><tr><th>Category</th><th>Max</th><th>Score</th><th>Evidence captured during presentation / defense</th></tr></thead><tbody>
+        <tr data-rubric-category="question"><td><b>Question + bounded claim</b><br><span class="note">Specific, measurable, bounded</span></td><td>15</td><td></td><td></td></tr>
+        <tr data-rubric-category="data"><td><b>Data</b><br><span class="note">Source, version, n, unit, scope</span></td><td>10</td><td></td><td></td></tr>
+        <tr data-rubric-category="fairness"><td><b>Experiment fairness</b><br><span class="note">Baseline, change, controls, folds, pipeline</span></td><td>20</td><td></td><td></td></tr>
+        <tr data-rubric-category="results"><td><b>Results + uncertainty</b><br><span class="note">Metric, complete comparison, spread/errors</span></td><td>20</td><td></td><td></td></tr>
+        <tr data-rubric-category="interpretation"><td><b>Interpretation + limits</b><br><span class="note">Meaning, rival explanation, next test</span></td><td>15</td><td></td><td></td></tr>
+        <tr data-rubric-category="reproducibility"><td><b>Reproducibility + AI</b><br><span class="note">Rerunnable artifacts, verified AI record</span></td><td>10</td><td></td><td></td></tr>
+        <tr data-rubric-category="slides"><td><b>Slides + timing</b><br><span class="note">≤6, readable, aim 4:30, stop 5:00</span></td><td>5</td><td></td><td></td></tr>
+        <tr data-rubric-category="qa"><td><b>Q&amp;A</b><br><span class="note">Direct, evidence-linked, honest boundary</span></td><td>5</td><td></td><td></td></tr>
+        <tr class="total"><td>Total</td><td>100</td><td></td><td>A null result can earn full credit; unsupported certainty cannot.</td></tr>
+      </tbody></table></div></section>
+      <section><div class="head"><h2>F · Close the evidence loop</h2><span>Capture before next presenter</span></div><div class="body close-grid"><div class="close"><h3>Strongest thing the evidence supports</h3><div class="line"></div><div class="line"></div></div><div class="close"><h3>Highest-priority next test</h3><div class="line"></div><div class="line"></div></div></div></section>
+      <footer><span>Page 2 of 2 · Teacher defense + rubric</span><span>15 + 10 + 20 + 20 + 15 + 10 + 5 + 5 = 100</span></footer>
+    </article>
+  </main>
+</body>
+</html>

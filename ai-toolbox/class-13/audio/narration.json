@@ -1,0 +1,944 @@
+{
+  "title": {
+    "hash": "44c47ccf7720b188",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Welcome, everyone! Tonight isn't just a tour of three fancy algorithms — it's a bake-off, and here's your one-sentence cheat sheet for each contestant. KNN compares, asking \"who are my nearest neighbors?\" SVM separates, drawing the cleanest possible dividing line. And the neural network learns, building its own representations from scratch. Here's the twist though: there's no automatic champion — the winner depends entirely on the data in front of you, and by the end you'll be able to explain exactly why.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.325,
+        "text": "Welcome, everyone!"
+      },
+      {
+        "start": 1.325,
+        "end": 9.95,
+        "text": "Tonight isn't just a tour of three fancy algorithms — it's a bake-off, and here's your one-sentence cheat sheet for each contestant."
+      },
+      {
+        "start": 9.95,
+        "end": 14.225,
+        "text": "KNN compares, asking \"who are my nearest neighbors?\""
+      },
+      {
+        "start": 14.225,
+        "end": 18.325,
+        "text": "SVM separates, drawing the cleanest possible dividing line."
+      },
+      {
+        "start": 18.325,
+        "end": 23.312,
+        "text": "And the neural network learns, building its own representations from scratch."
+      },
+      {
+        "start": 23.312,
+        "end": 32.8,
+        "text": "Here's the twist though: there's no automatic champion — the winner depends entirely on the data in front of you, and by the end you'll be able to explain exactly why."
+      }
+    ],
+    "bytes": 197136,
+    "model": "claude-opus-4-8"
+  },
+  "recap-class12": {
+    "hash": "406411d9c54f6559",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's take sixty seconds to remember where we were. We built a single decision tree — just a chain of if-then questions you could print out and actually read. Then we grew a whole forest, where many shaky trees vote together and cancel out each other's mistakes. And through all of it, we kept our scoring honest: training and testing stayed separate, and we only touched the test set to judge the final result. Tonight we keep that exact same discipline, but we swap the model's core idea — neighbours, then margins, then a tiny network.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.825,
+        "text": "Let's take sixty seconds to remember where we were."
+      },
+      {
+        "start": 2.825,
+        "end": 8.975,
+        "text": "We built a single decision tree — just a chain of if-then questions you could print out and actually read."
+      },
+      {
+        "start": 8.975,
+        "end": 16.4,
+        "text": "Then we grew a whole forest, where many shaky trees vote together and cancel out each other's mistakes."
+      },
+      {
+        "start": 16.4,
+        "end": 24.737,
+        "text": "And through all of it, we kept our scoring honest: training and testing stayed separate, and we only touched the test set to judge the final result."
+      },
+      {
+        "start": 24.737,
+        "end": 32.562,
+        "text": "Tonight we keep that exact same discipline, but we swap the model's core idea — neighbours, then margins, then a tiny network."
+      }
+    ],
+    "bytes": 195696,
+    "model": "claude-opus-4-8"
+  },
+  "agenda": {
+    "hash": "34bb2f34a260d1aa",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's how our hour is going to unfold. We start with a warm-up and a little story about why there's no single champion algorithm, then we meet our three runners one by one: KNN, support vector machines, and our first neural net. After that, two hands-on labs on the exact same data split, and we finish by reading the results together. Along the way I'll drop a quick question every six to eight minutes, so commit to an answer before I explain — that pause is where the real learning happens.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.125,
+        "text": "Here's how our hour is going to unfold."
+      },
+      {
+        "start": 2.125,
+        "end": 13.487,
+        "text": "We start with a warm-up and a little story about why there's no single champion algorithm, then we meet our three runners one by one: KNN, support vector machines, and our first neural net."
+      },
+      {
+        "start": 13.487,
+        "end": 19.987,
+        "text": "After that, two hands-on labs on the exact same data split, and we finish by reading the results together."
+      },
+      {
+        "start": 19.987,
+        "end": 28.512,
+        "text": "Along the way I'll drop a quick question every six to eight minutes, so commit to an answer before I explain — that pause is where the real learning happens."
+      }
+    ],
+    "bytes": 171504,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-warmup": {
+    "hash": "bf4e2fb480d55320",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a quick warm-up for you. Three models score 97, 98, and 96 percent, but each one was tested on a completely different random split of the data. So which one actually wins? The honest answer is that we can't say anything at all, because they never faced the same test. Think of it like runners on different tracks — you can't crown a champion unless everyone runs the same course, which is exactly why tonight we create one split and reuse it for every model.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.437,
+        "text": "Here's a quick warm-up for you."
+      },
+      {
+        "start": 1.437,
+        "end": 10.837,
+        "text": "Three models score 97, 98, and 96 percent, but each one was tested on a completely different random split of the data."
+      },
+      {
+        "start": 10.837,
+        "end": 12.55,
+        "text": "So which one actually wins?"
+      },
+      {
+        "start": 12.55,
+        "end": 18.437,
+        "text": "The honest answer is that we can't say anything at all, because they never faced the same test."
+      },
+      {
+        "start": 18.437,
+        "end": 29.712,
+        "text": "Think of it like runners on different tracks — you can't crown a champion unless everyone runs the same course, which is exactly why tonight we create one split and reuse it for every model."
+      }
+    ],
+    "bytes": 178704,
+    "model": "claude-opus-4-8"
+  },
+  "story-no-champion": {
+    "hash": "e57b9516c1cd91f0",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a story with no permanent champion. For a while, nearest-neighbour methods ruled by simply remembering examples. Then support-vector machines took over many tricky problems by drawing one disciplined boundary, and in 2012 a deep neural network transformed image recognition by learning its own features. But here's the twist: none of the older methods ever became wrong — they still win on the right data. So on a real project, the honest move isn't reaching for the fanciest model; it's testing sensible options fairly and letting the data decide.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.85,
+        "text": "Here's a story with no permanent champion."
+      },
+      {
+        "start": 2.85,
+        "end": 7.85,
+        "text": "For a while, nearest-neighbour methods ruled by simply remembering examples."
+      },
+      {
+        "start": 7.85,
+        "end": 20.225,
+        "text": "Then support-vector machines took over many tricky problems by drawing one disciplined boundary, and in 2012 a deep neural network transformed image recognition by learning its own features."
+      },
+      {
+        "start": 20.225,
+        "end": 26.55,
+        "text": "But here's the twist: none of the older methods ever became wrong — they still win on the right data."
+      },
+      {
+        "start": 26.55,
+        "end": 35.55,
+        "text": "So on a real project, the honest move isn't reaching for the fanciest model; it's testing sensible options fairly and letting the data decide."
+      }
+    ],
+    "bytes": 213696,
+    "model": "claude-opus-4-8"
+  },
+  "concept-three-minds": {
+    "hash": "4a054f65c496f70b",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a neat way to think about three different machine learning models. Give them all the exact same data, and each one makes a different bet about what really matters. K-nearest neighbors trusts the examples sitting closest to you, saying \"you're probably like your neighbors.\" An SVM instead hunts for the widest, safest boundary between the classes. And a neural network takes a bolder approach, learning its own intermediate features that make the groups easier to tell apart.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.6870000000000003,
+        "text": "Here's a neat way to think about three different machine learning models."
+      },
+      {
+        "start": 3.6870000000000003,
+        "end": 9.925,
+        "text": "Give them all the exact same data, and each one makes a different bet about what really matters."
+      },
+      {
+        "start": 9.925,
+        "end": 15.925,
+        "text": "K-nearest neighbors trusts the examples sitting closest to you, saying \"you're probably like your neighbors.\""
+      },
+      {
+        "start": 15.925,
+        "end": 21.287,
+        "text": "An SVM instead hunts for the widest, safest boundary between the classes."
+      },
+      {
+        "start": 21.287,
+        "end": 29.187,
+        "text": "And a neural network takes a bolder approach, learning its own intermediate features that make the groups easier to tell apart."
+      }
+    ],
+    "bytes": 175536,
+    "model": "claude-opus-4-8"
+  },
+  "concept-knn": {
+    "hash": "f8efc9dad056c5ac",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's one of the simplest ideas in machine learning: to classify a new point, just look at the examples nearest to it and let them vote. Training does almost nothing, but every prediction means measuring distance to all your data, which gets expensive. Now watch what happens with our mystery point. Its single closest neighbour is a pedestrian, so k equals one says pedestrian, but widen the circle to three or seven and signs win the vote. That number k is really a dial that controls how local or how smooth your decisions are.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.65,
+        "text": "Here's one of the simplest ideas in machine learning: to classify a new point, just look at the examples nearest to it and let them vote."
+      },
+      {
+        "start": 7.65,
+        "end": 15.425,
+        "text": "Training does almost nothing, but every prediction means measuring distance to all your data, which gets expensive."
+      },
+      {
+        "start": 15.425,
+        "end": 17.85,
+        "text": "Now watch what happens with our mystery point."
+      },
+      {
+        "start": 17.85,
+        "end": 27.875,
+        "text": "Its single closest neighbour is a pedestrian, so k equals one says pedestrian, but widen the circle to three or seven and signs win the vote."
+      },
+      {
+        "start": 27.875,
+        "end": 33.525,
+        "text": "That number k is really a dial that controls how local or how smooth your decisions are."
+      }
+    ],
+    "bytes": 201456,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-knn-k": {
+    "hash": "4960186de08abe75",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a really interesting situation. Your model gets every single training example right, but the moment one noisy point sneaks in, its predictions go haywire. Does that pattern sound familiar? It should — remember last class, that deep decision tree that memorized everything and then fell apart? Different model, same symptom: it's memorizing, not learning. So the smart move is to try a larger odd value of k and check it on data the model hasn't seen, letting validation tell you how much smoothing this dataset can actually handle.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.075,
+        "text": "Here's a really interesting situation."
+      },
+      {
+        "start": 2.075,
+        "end": 9.925,
+        "text": "Your model gets every single training example right, but the moment one noisy point sneaks in, its predictions go haywire."
+      },
+      {
+        "start": 9.925,
+        "end": 11.775,
+        "text": "Does that pattern sound familiar?"
+      },
+      {
+        "start": 11.775,
+        "end": 19.112,
+        "text": "It should — remember last class, that deep decision tree that memorized everything and then fell apart?"
+      },
+      {
+        "start": 19.112,
+        "end": 23.525,
+        "text": "Different model, same symptom: it's memorizing, not learning."
+      },
+      {
+        "start": 23.525,
+        "end": 34.45,
+        "text": "So the smart move is to try a larger odd value of k and check it on data the model hasn't seen, letting validation tell you how much smoothing this dataset can actually handle."
+      }
+    ],
+    "bytes": 207072,
+    "model": "claude-opus-4-8"
+  },
+  "concept-scaling": {
+    "hash": "c6ff2d1120207d75",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's something sneaky about KNN that trips up a lot of people. When it measures distance between points, it listens loudest to whatever feature has the biggest numbers. If one feature ranges from one to ten and another from zero to one, that first one totally dominates, even though it isn't more important. Watch what happens here: the exact same query's nearest neighbor flips from sign to car after we standardize. No labels changed, only the ruler we used to measure. And always fit your scaler on training data only, then reuse it, or you'll leak information.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.8,
+        "text": "Here's something sneaky about KNN that trips up a lot of people."
+      },
+      {
+        "start": 3.8,
+        "end": 9.775,
+        "text": "When it measures distance between points, it listens loudest to whatever feature has the biggest numbers."
+      },
+      {
+        "start": 9.775,
+        "end": 17.962,
+        "text": "If one feature ranges from one to ten and another from zero to one, that first one totally dominates, even though it isn't more important."
+      },
+      {
+        "start": 17.962,
+        "end": 24.8,
+        "text": "Watch what happens here: the exact same query's nearest neighbor flips from sign to car after we standardize."
+      },
+      {
+        "start": 24.8,
+        "end": 28.437,
+        "text": "No labels changed, only the ruler we used to measure."
+      },
+      {
+        "start": 28.437,
+        "end": 34.462,
+        "text": "And always fit your scaler on training data only, then reuse it, or you'll leak information."
+      }
+    ],
+    "bytes": 207072,
+    "model": "claude-opus-4-8"
+  },
+  "concept-svm": {
+    "hash": "dc1732e09d2d32cd",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Imagine all of you are data points scattered across this room, and I need to draw a line that separates two groups. Now, lots of lines would do the job — but the support-vector machine is picky. It wants the widest possible aisle, the biggest empty corridor between the two sides. The students standing right at the edge of that aisle? They're the support vectors, and they alone decide where the line goes. Move someone in the back row and nothing changes, but nudge a support vector and the whole boundary shifts.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.712,
+        "text": "Imagine all of you are data points scattered across this room, and I need to draw a line that separates two groups."
+      },
+      {
+        "start": 7.712,
+        "end": 12.212,
+        "text": "Now, lots of lines would do the job — but the support-vector machine is picky."
+      },
+      {
+        "start": 12.212,
+        "end": 17.775,
+        "text": "It wants the widest possible aisle, the biggest empty corridor between the two sides."
+      },
+      {
+        "start": 17.775,
+        "end": 20.862,
+        "text": "The students standing right at the edge of that aisle?"
+      },
+      {
+        "start": 20.862,
+        "end": 25,
+        "text": "They're the support vectors, and they alone decide where the line goes."
+      },
+      {
+        "start": 25,
+        "end": 31.65,
+        "text": "Move someone in the back row and nothing changes, but nudge a support vector and the whole boundary shifts."
+      }
+    ],
+    "bytes": 190224,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-svm-margin": {
+    "hash": "043c3d29e0fbac09",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a quick geometry check for you. Imagine you grab one training point that's sitting way out, far from the margin, and you slide it around while all the support vectors stay put. What happens to the decision boundary? The key insight is that support vectors are the ones anchoring everything — they're literally what the machine is named for. So moving a faraway point usually does nothing, while nudging a point right on the edge is what actually shifts things.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.075,
+        "text": "Here's a quick geometry check for you."
+      },
+      {
+        "start": 2.075,
+        "end": 10.562,
+        "text": "Imagine you grab one training point that's sitting way out, far from the margin, and you slide it around while all the support vectors stay put."
+      },
+      {
+        "start": 10.562,
+        "end": 12.812,
+        "text": "What happens to the decision boundary?"
+      },
+      {
+        "start": 12.812,
+        "end": 20.15,
+        "text": "The key insight is that support vectors are the ones anchoring everything — they're literally what the machine is named for."
+      },
+      {
+        "start": 20.15,
+        "end": 27.537,
+        "text": "So moving a faraway point usually does nothing, while nudging a point right on the edge is what actually shifts things."
+      }
+    ],
+    "bytes": 165600,
+    "model": "claude-opus-4-8"
+  },
+  "concept-kernel": {
+    "hash": "ce75d5b42e483e89",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "So here's the beautiful second trick of support vector machines. Sometimes no straight line can separate your data — picture two interlocking crescent moons, there's just no flat cut that works. A linear kernel gives you that one flat boundary, fast and easy to interpret, but it fails on the moons. The RBF kernel instead measures how similar points are to certain landmarks, which lets it draw a smooth curved boundary. Just remember: the settings C and gamma both control flexibility, and you tune those on validation data, never on your final test set.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.987,
+        "text": "So here's the beautiful second trick of support vector machines."
+      },
+      {
+        "start": 3.987,
+        "end": 12.137,
+        "text": "Sometimes no straight line can separate your data — picture two interlocking crescent moons, there's just no flat cut that works."
+      },
+      {
+        "start": 12.137,
+        "end": 19.65,
+        "text": "A linear kernel gives you that one flat boundary, fast and easy to interpret, but it fails on the moons."
+      },
+      {
+        "start": 19.65,
+        "end": 27.412,
+        "text": "The RBF kernel instead measures how similar points are to certain landmarks, which lets it draw a smooth curved boundary."
+      },
+      {
+        "start": 27.412,
+        "end": 36.175,
+        "text": "Just remember: the settings C and gamma both control flexibility, and you tune those on validation data, never on your final test set."
+      }
+    ],
+    "bytes": 217440,
+    "model": "claude-opus-4-8"
+  },
+  "concept-first-nn": {
+    "hash": "4cb515581b673283",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's build our very first neural network. Picture it as three layers: we feed in the 64 pixel values from an 8-by-8 image of a digit, those flow into 32 hidden units that learn useful combinations like strokes and loops, and finally we get 10 scores, one for each possible digit. Now, each unit takes a weighted sum of its inputs, adds a little bias, and then applies a non-linear twist. That twist is the secret ingredient, because without it, stacking layers would just collapse back into a single boring straight-line model.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.5,
+        "text": "Alright, let's build our very first neural network."
+      },
+      {
+        "start": 3.5,
+        "end": 20.125,
+        "text": "Picture it as three layers: we feed in the 64 pixel values from an 8-by-8 image of a digit, those flow into 32 hidden units that learn useful combinations like strokes and loops, and finally we get 10 scores, one for each possible digit."
+      },
+      {
+        "start": 20.125,
+        "end": 27.487,
+        "text": "Now, each unit takes a weighted sum of its inputs, adds a little bias, and then applies a non-linear twist."
+      },
+      {
+        "start": 27.487,
+        "end": 36.225,
+        "text": "That twist is the secret ingredient, because without it, stacking layers would just collapse back into a single boring straight-line model."
+      }
+    ],
+    "bytes": 217728,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-nn-parameters": {
+    "hash": "f35c33c6d083f6f3",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's a quick one for you. Imagine a single hidden neuron that's taking in 64 pixel values, and it also has one bias. So how many numbers does it actually learn? Think about it — one weight for each of those 64 inputs, and then that single extra bias makes 65. And once you scale that up to 32 neurons in a layer, you're suddenly training over two thousand numbers. See how fast this grows?",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.087,
+        "text": "Alright, here's a quick one for you."
+      },
+      {
+        "start": 2.087,
+        "end": 9,
+        "text": "Imagine a single hidden neuron that's taking in 64 pixel values, and it also has one bias."
+      },
+      {
+        "start": 9,
+        "end": 11.212,
+        "text": "So how many numbers does it actually learn?"
+      },
+      {
+        "start": 11.212,
+        "end": 18.837,
+        "text": "Think about it — one weight for each of those 64 inputs, and then that single extra bias makes 65."
+      },
+      {
+        "start": 18.837,
+        "end": 25.587,
+        "text": "And once you scale that up to 32 neurons in a layer, you're suddenly training over two thousand numbers."
+      },
+      {
+        "start": 25.587,
+        "end": 27.562,
+        "text": "See how fast this grows?"
+      }
+    ],
+    "bytes": 165744,
+    "model": "claude-opus-4-8"
+  },
+  "concept-nn-learning": {
+    "hash": "9044be9d4ce9083f",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the beautiful thing: the network learns through the very same loop we saw before, just at a much bigger scale. Pixels flow forward and become ten scores, we measure how wrong those scores are, then backpropagation works out exactly how much each weight contributed to the error, and finally we nudge every weight a little downhill. What do we gain? Flexible, curved boundaries and features the network discovers on its own. But it costs us more parameters, more tuning, harder interpretation, and usually a lot more data.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.037,
+        "text": "Here's the beautiful thing: the network learns through the very same loop we saw before, just at a much bigger scale."
+      },
+      {
+        "start": 7.037,
+        "end": 21.237,
+        "text": "Pixels flow forward and become ten scores, we measure how wrong those scores are, then backpropagation works out exactly how much each weight contributed to the error, and finally we nudge every weight a little downhill."
+      },
+      {
+        "start": 21.237,
+        "end": 22.2,
+        "text": "What do we gain?"
+      },
+      {
+        "start": 22.2,
+        "end": 27.087,
+        "text": "Flexible, curved boundaries and features the network discovers on its own."
+      },
+      {
+        "start": 27.087,
+        "end": 33.462,
+        "text": "But it costs us more parameters, more tuning, harder interpretation, and usually a lot more data."
+      }
+    ],
+    "bytes": 201168,
+    "model": "claude-opus-4-8"
+  },
+  "case-digits": {
+    "hash": "a548ccda159c54b5",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's ground everything in one real dataset today: nearly eighteen hundred handwritten digits, each one an eight-by-eight grid of pixels that we flatten into sixty-four features. We split it once, keeping about thirteen hundred for training and four hundred and fifty held back for testing, with stratification so all ten digits stay balanced. Now you might wonder why we don't use the giant forty-two thousand row MNIST set. The answer is simple: this smaller set is still completely real, but it runs fast enough for you to experiment and get reproducible results right here.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 11.925,
+        "text": "Let's ground everything in one real dataset today: nearly eighteen hundred handwritten digits, each one an eight-by-eight grid of pixels that we flatten into sixty-four features."
+      },
+      {
+        "start": 11.925,
+        "end": 21.625,
+        "text": "We split it once, keeping about thirteen hundred for training and four hundred and fifty held back for testing, with stratification so all ten digits stay balanced."
+      },
+      {
+        "start": 21.625,
+        "end": 26.137,
+        "text": "Now you might wonder why we don't use the giant forty-two thousand row MNIST set."
+      },
+      {
+        "start": 26.137,
+        "end": 36.187,
+        "text": "The answer is simple: this smaller set is still completely real, but it runs fast enough for you to experiment and get reproducible results right here."
+      }
+    ],
+    "bytes": 217440,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-fair-pipeline": {
+    "hash": "a2ef8c3c388f0cb1",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a subtle but important question about keeping your model comparison honest. Look closely at that first tempting option: if you scale the entire dataset before splitting, your scaler has already peeked at the test data's distribution. That's leakage, even if it only nudges your score a tiny bit. The clean approach is one shared split where each model gets a pipeline whose scaler learns only from the training rows. Scientific discipline is built from exactly these small, honest choices.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.325,
+        "text": "Here's a subtle but important question about keeping your model comparison honest."
+      },
+      {
+        "start": 4.325,
+        "end": 13.437,
+        "text": "Look closely at that first tempting option: if you scale the entire dataset before splitting, your scaler has already peeked at the test data's distribution."
+      },
+      {
+        "start": 13.437,
+        "end": 17.337,
+        "text": "That's leakage, even if it only nudges your score a tiny bit."
+      },
+      {
+        "start": 17.337,
+        "end": 24.85,
+        "text": "The clean approach is one shared split where each model gets a pipeline whose scaler learns only from the training rows."
+      },
+      {
+        "start": 24.85,
+        "end": 29.887,
+        "text": "Scientific discipline is built from exactly these small, honest choices."
+      }
+    ],
+    "bytes": 179712,
+    "model": "claude-opus-4-8"
+  },
+  "lab-knn-scratch": {
+    "hash": "7766a16b2113519d",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's where we build KNN with our own hands — no libraries doing the magic for us. We've got twelve labelled points, one mystery point, and all we do is measure distances and let the neighbors vote. Watch what happens as we change k: with k equal to one, the single closest neighbor says pedestrian, but bump k up to three, five, or seven and suddenly it votes sign. That disagreement is the whole lesson — k decides how local and how noise-sensitive your prediction is.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.225,
+        "text": "Alright, here's where we build KNN with our own hands — no libraries doing the magic for us."
+      },
+      {
+        "start": 6.225,
+        "end": 13.15,
+        "text": "We've got twelve labelled points, one mystery point, and all we do is measure distances and let the neighbors vote."
+      },
+      {
+        "start": 13.15,
+        "end": 24.537,
+        "text": "Watch what happens as we change k: with k equal to one, the single closest neighbor says pedestrian, but bump k up to three, five, or seven and suddenly it votes sign."
+      },
+      {
+        "start": 24.537,
+        "end": 31.525,
+        "text": "That disagreement is the whole lesson — k decides how local and how noise-sensitive your prediction is."
+      }
+    ],
+    "bytes": 189504,
+    "model": "claude-opus-4-8"
+  },
+  "lab-three-models": {
+    "hash": "0d2ff8026161a082",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Today we're running a fair race between three very different algorithms on the same handwritten digits, with one fixed split and one honest metric. Watch what happens: the SVM edges out the others, the neural network actually comes in last, and that surprises a lot of people. That's the real lesson here — there's no single best model for every problem, and a bigger, fancier method doesn't automatically win. Once you run it, try the challenges and see how much scaling and small choices really matter.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 9.287,
+        "text": "Today we're running a fair race between three very different algorithms on the same handwritten digits, with one fixed split and one honest metric."
+      },
+      {
+        "start": 9.287,
+        "end": 17.4,
+        "text": "Watch what happens: the SVM edges out the others, the neural network actually comes in last, and that surprises a lot of people."
+      },
+      {
+        "start": 17.4,
+        "end": 26.012,
+        "text": "That's the real lesson here — there's no single best model for every problem, and a bigger, fancier method doesn't automatically win."
+      },
+      {
+        "start": 26.012,
+        "end": 31.787,
+        "text": "Once you run it, try the challenges and see how much scaling and small choices really matter."
+      }
+    ],
+    "bytes": 191088,
+    "model": "claude-opus-4-8"
+  },
+  "results-bakeoff": {
+    "hash": "59d27390a487b2fb",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, let's see who won this little race. The support vector machine came out on top with 98.22 percent, beating k-nearest neighbors and the neural network. But here's the trick I want you to notice — instead of thinking in percentages, count the actual mistakes. SVM missed eight digits, KNN missed twelve, and the neural net missed fourteen out of 450. And notice our chart starts at 94 percent, so those gaps look bigger than they really are. One honest sentence: SVM scored highest on this split, with these settings — that's not the same as saying it's the best image model forever.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.025,
+        "text": "Alright, let's see who won this little race."
+      },
+      {
+        "start": 3.025,
+        "end": 10.837,
+        "text": "The support vector machine came out on top with 98.22 percent, beating k-nearest neighbors and the neural network."
+      },
+      {
+        "start": 10.837,
+        "end": 16.987,
+        "text": "But here's the trick I want you to notice — instead of thinking in percentages, count the actual mistakes."
+      },
+      {
+        "start": 16.987,
+        "end": 24.25,
+        "text": "SVM missed eight digits, KNN missed twelve, and the neural net missed fourteen out of 450."
+      },
+      {
+        "start": 24.25,
+        "end": 29.987,
+        "text": "And notice our chart starts at 94 percent, so those gaps look bigger than they really are."
+      },
+      {
+        "start": 29.987,
+        "end": 38.825,
+        "text": "One honest sentence: SVM scored highest on this split, with these settings — that's not the same as saying it's the best image model forever."
+      }
+    ],
+    "bytes": 233280,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-interpret-results": {
+    "hash": "b2ff96cd5aa3fd14",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's a real thinking moment. Your Lab 2 gave you SVM at 98.22 percent and KNN at 97.33 on the same 450 digits, so which headline would an honest scientist write? Notice the trap in saying SVM is \"always the best\" — all you really know is it edged ahead by less than one percentage point on this one split. That's an eight-versus-twelve-error gap, and before you trust it, you'd want to repeat the experiment or run cross-validation. That's exactly where we're headed next class.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.637,
+        "text": "Alright, here's a real thinking moment."
+      },
+      {
+        "start": 2.637,
+        "end": 14.112,
+        "text": "Your Lab 2 gave you SVM at 98.22 percent and KNN at 97.33 on the same 450 digits, so which headline would an honest scientist write?"
+      },
+      {
+        "start": 14.112,
+        "end": 23.1,
+        "text": "Notice the trap in saying SVM is \"always the best\" — all you really know is it edged ahead by less than one percentage point on this one split."
+      },
+      {
+        "start": 23.1,
+        "end": 30.337,
+        "text": "That's an eight-versus-twelve-error gap, and before you trust it, you'd want to repeat the experiment or run cross-validation."
+      },
+      {
+        "start": 30.337,
+        "end": 32.712,
+        "text": "That's exactly where we're headed next class."
+      }
+    ],
+    "bytes": 196704,
+    "model": "claude-opus-4-8"
+  },
+  "discuss-deployment": {
+    "hash": "76281cfb7198f2e4",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's where it gets real. There's no single right answer to these — the best model depends entirely on your situation. Think about it: with a tiny dataset where you need to explain every prediction, KNN pointing to nearest neighbors is beautiful, but it pays a heavy price at prediction time. Millions of raw images? That's neural network territory, but only if you have the compute to feed it. So pick one deployment and defend your choice using data size, speed, interpretability, and boundary shape — not because it's trendy.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.362,
+        "text": "Here's where it gets real."
+      },
+      {
+        "start": 1.362,
+        "end": 6.912,
+        "text": "There's no single right answer to these — the best model depends entirely on your situation."
+      },
+      {
+        "start": 6.912,
+        "end": 17.75,
+        "text": "Think about it: with a tiny dataset where you need to explain every prediction, KNN pointing to nearest neighbors is beautiful, but it pays a heavy price at prediction time."
+      },
+      {
+        "start": 17.75,
+        "end": 19.662,
+        "text": "Millions of raw images?"
+      },
+      {
+        "start": 19.662,
+        "end": 24.05,
+        "text": "That's neural network territory, but only if you have the compute to feed it."
+      },
+      {
+        "start": 24.05,
+        "end": 33.1,
+        "text": "So pick one deployment and defend your choice using data size, speed, interpretability, and boundary shape — not because it's trendy."
+      }
+    ],
+    "bytes": 199008,
+    "model": "claude-opus-4-8"
+  },
+  "your-project": {
+    "hash": "03e59e60134f553b",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's your project, and I'm calling it the fixed race for a reason. You'll pick one dataset, make a single train-test split, and lock in that seed so everyone runs on exactly the same rows. Then you build three models — KNN, SVM, and a small neural net — competing on that identical setup. Your fourth row is the fun part: change just one knob, like k or kernel or hidden size, and nothing else, so you can actually see what that one change did. Report accuracy and the integer error count, and make sure it all runs top to bottom cleanly.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.95,
+        "text": "Alright, here's your project, and I'm calling it the fixed race for a reason."
+      },
+      {
+        "start": 4.95,
+        "end": 12.575,
+        "text": "You'll pick one dataset, make a single train-test split, and lock in that seed so everyone runs on exactly the same rows."
+      },
+      {
+        "start": 12.575,
+        "end": 20.412,
+        "text": "Then you build three models — KNN, SVM, and a small neural net — competing on that identical setup."
+      },
+      {
+        "start": 20.412,
+        "end": 29.662,
+        "text": "Your fourth row is the fun part: change just one knob, like k or kernel or hidden size, and nothing else, so you can actually see what that one change did."
+      },
+      {
+        "start": 29.662,
+        "end": 35.487,
+        "text": "Report accuracy and the integer error count, and make sure it all runs top to bottom cleanly."
+      }
+    ],
+    "bytes": 213264,
+    "model": "claude-opus-4-8"
+  },
+  "build-it-now": {
+    "hash": "40d00d19a4417d47",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the deal for tonight: we're running a fair race between three classifiers, and fairness comes from rules we set before we ever look at the results. Same data for everyone, one honest split with the seed written down, all our preprocessing tucked inside the pipeline so it only ever learns from the training data, and the metric chosen in advance. And here's the golden rule — that final test set is not a scoreboard you keep refreshing. If you want to tune your settings, that instinct is great, but do it with a validation split first and leave the test set alone.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 9,
+        "text": "Here's the deal for tonight: we're running a fair race between three classifiers, and fairness comes from rules we set before we ever look at the results."
+      },
+      {
+        "start": 9,
+        "end": 22.212,
+        "text": "Same data for everyone, one honest split with the seed written down, all our preprocessing tucked inside the pipeline so it only ever learns from the training data, and the metric chosen in advance."
+      },
+      {
+        "start": 22.212,
+        "end": 27.75,
+        "text": "And here's the golden rule — that final test set is not a scoreboard you keep refreshing."
+      },
+      {
+        "start": 27.75,
+        "end": 34.787,
+        "text": "If you want to tune your settings, that instinct is great, but do it with a validation split first and leave the test set alone."
+      }
+    ],
+    "bytes": 209088,
+    "model": "claude-opus-4-8"
+  },
+  "benchmark-model": {
+    "hash": "7f31fc5c0cce8016",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's what a finished piece of work actually looks like. We've got three models tested on the same 450 rows, and the RBF SVM comes out ahead with just eight errors, compared to twelve for KNN and fourteen for the little neural net. But look closely at how we wrote the conclusion — we named the dataset, we named the seed, and crucially, we admitted the margin is small and needs more testing. That honesty is what separates real analysis from just crowning a winner.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3,
+        "text": "Here's what a finished piece of work actually looks like."
+      },
+      {
+        "start": 3,
+        "end": 14.537,
+        "text": "We've got three models tested on the same 450 rows, and the RBF SVM comes out ahead with just eight errors, compared to twelve for KNN and fourteen for the little neural net."
+      },
+      {
+        "start": 14.537,
+        "end": 25.05,
+        "text": "But look closely at how we wrote the conclusion — we named the dataset, we named the seed, and crucially, we admitted the margin is small and needs more testing."
+      },
+      {
+        "start": 25.05,
+        "end": 29.412,
+        "text": "That honesty is what separates real analysis from just crowning a winner."
+      }
+    ],
+    "bytes": 176832,
+    "model": "claude-opus-4-8"
+  },
+  "homework": {
+    "hash": "4ed4e3fc7dbaad1f",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Alright, here's your homework, and I want to be clear up front: this isn't about getting the highest accuracy. It's about doing a fair comparison. You'll make one stratified split, record your seed, and run three models—KNN, SVM, and a small neural net—through the exact same preprocessing and the same train-test rows. Then change just one thing, like k or the kernel, so the comparison stays honest. Fill in your four result rows, write two grounded conclusions plus a limitation, and disclose any AI tools you verified.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.825,
+        "text": "Alright, here's your homework, and I want to be clear up front: this isn't about getting the highest accuracy."
+      },
+      {
+        "start": 6.825,
+        "end": 9.012,
+        "text": "It's about doing a fair comparison."
+      },
+      {
+        "start": 9.012,
+        "end": 21.912,
+        "text": "You'll make one stratified split, record your seed, and run three models—KNN, SVM, and a small neural net—through the exact same preprocessing and the same train-test rows."
+      },
+      {
+        "start": 21.912,
+        "end": 27.75,
+        "text": "Then change just one thing, like k or the kernel, so the comparison stays honest."
+      },
+      {
+        "start": 27.75,
+        "end": 36.975,
+        "text": "Fill in your four result rows, write two grounded conclusions plus a limitation, and disclose any AI tools you verified."
+      }
+    ],
+    "bytes": 222192,
+    "model": "claude-opus-4-8"
+  },
+  "line-to-remember": {
+    "hash": "f898ab3731bcd86e",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the one line I want you to carry out of this room today: there is no best model, there is only the best-tested claim. What does that mean in practice? It means when you compare two approaches, you test them on the same unseen data, you're honest about the conditions you ran them under, and you keep your conclusion smaller than the evidence you actually have. Say a little less than you're tempted to, and you'll almost never be wrong.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.412,
+        "text": "Here's the one line I want you to carry out of this room today: there is no best model, there is only the best-tested claim."
+      },
+      {
+        "start": 7.412,
+        "end": 9.162,
+        "text": "What does that mean in practice?"
+      },
+      {
+        "start": 9.162,
+        "end": 20.275,
+        "text": "It means when you compare two approaches, you test them on the same unseen data, you're honest about the conditions you ran them under, and you keep your conclusion smaller than the evidence you actually have."
+      },
+      {
+        "start": 20.275,
+        "end": 24.487,
+        "text": "Say a little less than you're tempted to, and you'll almost never be wrong."
+      }
+    ],
+    "bytes": 147312,
+    "model": "claude-opus-4-8"
+  },
+  "wrap-up": {
+    "hash": "b50b3af06dd11419",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "So let's pull it all together. We met three models today: KNN, which compares neighbours, so remember to scale your ruler and validate your choice of k; SVM, which carves out the widest possible margin and can bend its boundary with kernels; and the MLP, which learns its own hidden features but is powerful, hungry for parameters, and harder to read. And a fair comparison always uses one split, one metric, and a modest, honest claim. Now here's your exit ticket: tell me which model you'd try first, and justify it with a real property of your data — not \"it's the best,\" but something like \"SVM, because I have five hundred rows and a hundred and twenty features.\"",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.55,
+        "text": "So let's pull it all together."
+      },
+      {
+        "start": 1.55,
+        "end": 23.287,
+        "text": "We met three models today: KNN, which compares neighbours, so remember to scale your ruler and validate your choice of k; SVM, which carves out the widest possible margin and can bend its boundary with kernels; and the MLP, which learns its own hidden features but is powerful, hungry for parameters, and harder to read."
+      },
+      {
+        "start": 23.287,
+        "end": 30.062,
+        "text": "And a fair comparison always uses one split, one metric, and a modest, honest claim."
+      },
+      {
+        "start": 30.062,
+        "end": 43.287,
+        "text": "Now here's your exit ticket: tell me which model you'd try first, and justify it with a real property of your data — not \"it's the best,\" but something like \"SVM, because I have five hundred rows and a hundred and twenty features.\""
+      }
+    ],
+    "bytes": 260064,
+    "model": "claude-opus-4-8"
+  }
+}

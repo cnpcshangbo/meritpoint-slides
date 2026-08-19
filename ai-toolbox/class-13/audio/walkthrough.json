@@ -1,0 +1,272 @@
+{
+  "lab-knn-scratch": {
+    "hash": "feb98ee0334c6bf1",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          2
+        ],
+        "text": "We start by importing two helpers. Dist from the math module measures the straight-line distance between two points, and Counter from collections will tally up votes for us later.",
+        "file": "lab-knn-scratch-w00.mp3"
+      },
+      {
+        "lines": [
+          4,
+          5
+        ],
+        "text": "Here we build our training data as a list. Each entry is a point with two coordinates paired with a label. This first row gives us four examples all labelled sign.",
+        "file": "lab-knn-scratch-w01.mp3"
+      },
+      {
+        "lines": [
+          6,
+          6
+        ],
+        "text": "This row adds four more examples, this time labelled car, sitting over in a different region of our two-dimensional space.",
+        "file": "lab-knn-scratch-w02.mp3"
+      },
+      {
+        "lines": [
+          7,
+          9
+        ],
+        "text": "And here are four pedestrian examples, closing off the list. So we now have twelve labelled points spread across three groups that our model can learn from.",
+        "file": "lab-knn-scratch-w03.mp3"
+      },
+      {
+        "lines": [
+          10,
+          10
+        ],
+        "text": "This is our query, the mystery point we want to classify. It sits at one, three point five, and we'll ask its nearest neighbors to vote on what it is.",
+        "file": "lab-knn-scratch-w04.mp3"
+      },
+      {
+        "lines": [
+          12,
+          12
+        ],
+        "text": "Now the heart of it. For every training point we compute its distance to the query and pair it with the label, then sort those tuples. Sorting puts the closest neighbors first because distance comes first in each tuple.",
+        "file": "lab-knn-scratch-w05.mp3"
+      },
+      {
+        "lines": [
+          13,
+          13
+        ],
+        "text": "We print a little header so the output is easy to read, announcing that the nearest examples are coming up.",
+        "file": "lab-knn-scratch-w06.mp3"
+      },
+      {
+        "lines": [
+          14,
+          15
+        ],
+        "text": "We loop over the seven closest neighbors and print each one's label, its position, and how far it is from the query, rounded to three decimals. This lets us see who's actually nearby.",
+        "file": "lab-knn-scratch-w07.mp3"
+      },
+      {
+        "lines": [
+          17,
+          17
+        ],
+        "text": "Now the fun part. We try several values of k, one, three, five, and seven, so we can watch how the number of voters changes the outcome.",
+        "file": "lab-knn-scratch-w08.mp3"
+      },
+      {
+        "lines": [
+          18,
+          18
+        ],
+        "text": "For the current k, we take the k nearest neighbors and use Counter to tally how many votes each label gets. The underscores just ignore the distance and coordinates we don't need here.",
+        "file": "lab-knn-scratch-w09.mp3"
+      },
+      {
+        "lines": [
+          19,
+          19
+        ],
+        "text": "We ask most common for the single top label. It hands back the winning label and its vote count, which we unpack into prediction and count.",
+        "file": "lab-knn-scratch-w10.mp3"
+      },
+      {
+        "lines": [
+          20,
+          20
+        ],
+        "text": "Finally we print the full vote breakdown, the winning prediction, and how many out of k votes it got. This is how we see k reshape the decision.",
+        "file": "lab-knn-scratch-w11.mp3"
+      },
+      {
+        "lines": [
+          22,
+          23
+        ],
+        "text": "These two comments are your challenges. Try moving the query and see which k values still agree, then add a mislabelled point and notice which k stays the most stable.",
+        "file": "lab-knn-scratch-w12.mp3"
+      }
+    ]
+  },
+  "lab-three-models": {
+    "hash": "bb150bb55a48343a",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "model": "claude-opus-4-8",
+    "steps": [
+      {
+        "lines": [
+          1,
+          2
+        ],
+        "text": "We start by importing our tools. The first line loads a built-in dataset of handwritten digits, and the second gives us a helper to split data into training and testing groups.",
+        "file": "lab-three-models-w00.mp3"
+      },
+      {
+        "lines": [
+          3,
+          4
+        ],
+        "text": "Here we bring in make pipeline, which chains steps together, and standard scaler, which rescales our numbers so no feature dominates just because it has bigger values.",
+        "file": "lab-three-models-w01.mp3"
+      },
+      {
+        "lines": [
+          5,
+          7
+        ],
+        "text": "Now we import our three classifiers: k nearest neighbors, a support vector machine, and a small neural network called MLP classifier. These are the three models we'll compare.",
+        "file": "lab-three-models-w02.mp3"
+      },
+      {
+        "lines": [
+          8,
+          8
+        ],
+        "text": "Finally we grab two scoring tools: accuracy score to measure how often we're right, and confusion matrix to see exactly which digits get mixed up.",
+        "file": "lab-three-models-w03.mp3"
+      },
+      {
+        "lines": [
+          10,
+          10
+        ],
+        "text": "We load the digits data into X and y. X holds the pixel values of each image, and y holds the correct digit label for each one.",
+        "file": "lab-three-models-w04.mp3"
+      },
+      {
+        "lines": [
+          11,
+          12
+        ],
+        "text": "This splits our data, keeping twenty-five percent for testing. The random state makes the split repeatable, and stratify by y keeps each digit fairly balanced across both groups.",
+        "file": "lab-three-models-w05.mp3"
+      },
+      {
+        "lines": [
+          14,
+          16
+        ],
+        "text": "Now we build a dictionary of models. Each one is a pipeline that first scales the data, then classifies. The KNN looks at three nearest neighbors, and the SVM uses an RBF kernel with tuned settings.",
+        "file": "lab-three-models-w06.mp3"
+      },
+      {
+        "lines": [
+          17,
+          19
+        ],
+        "text": "The third model is our neural net, again wrapped in a scaler pipeline. It has one hidden layer of thirty-two neurons and trains for up to three hundred rounds.",
+        "file": "lab-three-models-w07.mp3"
+      },
+      {
+        "lines": [
+          21,
+          21
+        ],
+        "text": "This print shows a quick summary: total rows, how many went to training and testing, and the number of features per image. It's a sanity check before we begin.",
+        "file": "lab-three-models-w08.mp3"
+      },
+      {
+        "lines": [
+          22,
+          23
+        ],
+        "text": "We set up two empty containers: results will store each model's score, and predictions will remember what each model guessed on the test set.",
+        "file": "lab-three-models-w09.mp3"
+      },
+      {
+        "lines": [
+          24,
+          25
+        ],
+        "text": "Now we loop through every model by name. Inside, we call fit, which trains the model on our training images and their correct labels.",
+        "file": "lab-three-models-w10.mp3"
+      },
+      {
+        "lines": [
+          26,
+          27
+        ],
+        "text": "After training, we ask the model to predict on the unseen test images, and we save those guesses in our predictions dictionary under the model's name.",
+        "file": "lab-three-models-w11.mp3"
+      },
+      {
+        "lines": [
+          28,
+          29
+        ],
+        "text": "We compute accuracy by comparing predictions to the true labels, then store the score, the name, and the count of wrong guesses as a tuple in results.",
+        "file": "lab-three-models-w12.mp3"
+      },
+      {
+        "lines": [
+          31,
+          33
+        ],
+        "text": "Here we print a header, then loop through results sorted from best to worst. The formatting neatly lines up each model's name, its accuracy, and its error count in columns.",
+        "file": "lab-three-models-w13.mp3"
+      },
+      {
+        "lines": [
+          35,
+          36
+        ],
+        "text": "We find the winner by taking the max of results, since the highest accuracy sorts first. Then we build a confusion matrix for that winning model's predictions.",
+        "file": "lab-three-models-w14.mp3"
+      },
+      {
+        "lines": [
+          37,
+          39
+        ],
+        "text": "We copy the matrix, then zero out the diagonal. The diagonal holds correct answers, so removing them leaves only the mistakes, letting us hunt for the worst one.",
+        "file": "lab-three-models-w15.mp3"
+      },
+      {
+        "lines": [
+          40,
+          40
+        ],
+        "text": "We find the position of the largest remaining value, the most frequent mistake. Divmod turns that flat index back into a row i and column j on our ten by ten grid.",
+        "file": "lab-three-models-w16.mp3"
+      },
+      {
+        "lines": [
+          41,
+          42
+        ],
+        "text": "Finally we announce the winning model, then report its most common confusion: which true digit it mistook for which other, and how many times that happened.",
+        "file": "lab-three-models-w17.mp3"
+      },
+      {
+        "lines": [
+          44,
+          46
+        ],
+        "text": "These comments are your challenges. Try different neighbor counts, swap the kernel to linear, or remove the scaler from a pipeline, and notice which model reacts the most.",
+        "file": "lab-three-models-w18.mp3"
+      }
+    ]
+  }
+}

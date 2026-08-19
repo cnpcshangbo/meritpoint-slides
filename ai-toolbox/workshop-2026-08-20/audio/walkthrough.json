@@ -1,0 +1,65 @@
+{
+  "code-core": {
+    "hash": "bdb3670a6de4ca17",
+    "voice": "en-US-AvaMultilingualNeural",
+    "source": "authored-code-walkthrough",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "Line one defines the prediction function. It receives the current game state, the demonstration rows, and a default neighbor count of nine.",
+        "file": "code-core-w00.mp3"
+      },
+      {
+        "lines": [
+          2,
+          2
+        ],
+        "text": "Line two converts the visible game situation into the same four-number sensor vector used by every training example.",
+        "file": "code-core-w01.mp3"
+      },
+      {
+        "lines": [
+          3,
+          5
+        ],
+        "text": "Lines three through five measure the squared distance from the current vector to every demonstration, sort from nearest to farthest, and keep the closest nine.",
+        "file": "code-core-w02.mp3"
+      },
+      {
+        "lines": [
+          6,
+          6
+        ],
+        "text": "Line six creates one empty vote bucket for LEFT, STAY, and RIGHT. The keys minus one, zero, and one are the three possible actions.",
+        "file": "code-core-w03.mp3"
+      },
+      {
+        "lines": [
+          7,
+          7
+        ],
+        "text": "Line seven gives each neighbor an inverse-distance vote. Closer examples count more, and the small constant prevents division by zero on an exact match.",
+        "file": "code-core-w04.mp3"
+      },
+      {
+        "lines": [
+          8,
+          8
+        ],
+        "text": "Line eight sorts the three actions by their accumulated vote and returns the strongest one as the agent's next move.",
+        "file": "code-core-w05.mp3"
+      },
+      {
+        "lines": [
+          9,
+          9
+        ],
+        "text": "The closing brace ends the function. One sensor state has now become one inspectable action.",
+        "file": "code-core-w06.mp3"
+      }
+    ]
+  }
+}

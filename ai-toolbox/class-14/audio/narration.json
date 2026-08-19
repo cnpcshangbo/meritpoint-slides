@@ -1,0 +1,991 @@
+{
+  "title": {
+    "hash": "23040aacd5953d2e",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Welcome back, everyone! Tonight we hit a real turning point. You already know how to fit a model and get a score, but here's the tricky part: how do you turn that number into something another person can actually believe? Over the next hour, we'll run a couple of hands-on labs and work through some quick checks, all built on a dataset you can reproduce yourself. By the end, you'll be able to make a fair, honest claim about your models.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.4,
+        "text": "Welcome back, everyone!"
+      },
+      {
+        "start": 1.4,
+        "end": 4.237,
+        "text": "Tonight we hit a real turning point."
+      },
+      {
+        "start": 4.237,
+        "end": 12.1,
+        "text": "You already know how to fit a model and get a score, but here's the tricky part: how do you turn that number into something another person can actually believe?"
+      },
+      {
+        "start": 12.1,
+        "end": 20.05,
+        "text": "Over the next hour, we'll run a couple of hands-on labs and work through some quick checks, all built on a dataset you can reproduce yourself."
+      },
+      {
+        "start": 20.05,
+        "end": 24.687,
+        "text": "By the end, you'll be able to make a fair, honest claim about your models."
+      }
+    ],
+    "bytes": 148464,
+    "model": "claude-opus-4-8"
+  },
+  "recap-class13": {
+    "hash": "7f92b07516c68fc6",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's pick up where we left off. We've now met three models—one that votes with its neighbors, one that guards a wide margin, and one that learns features in layers. But here's the thing: having three models running isn't yet an experiment. When their scores come out different, how do you actually know it was the model that made the difference, and not a lucky split or some knob you happened to turn? That's the question we're chasing today.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.625,
+        "text": "Let's pick up where we left off."
+      },
+      {
+        "start": 1.625,
+        "end": 10,
+        "text": "We've now met three models—one that votes with its neighbors, one that guards a wide margin, and one that learns features in layers."
+      },
+      {
+        "start": 10,
+        "end": 14.762,
+        "text": "But here's the thing: having three models running isn't yet an experiment."
+      },
+      {
+        "start": 14.762,
+        "end": 22.737,
+        "text": "When their scores come out different, how do you actually know it was the model that made the difference, and not a lucky split or some knob you happened to turn?"
+      },
+      {
+        "start": 22.737,
+        "end": 24.75,
+        "text": "That's the question we're chasing today."
+      }
+    ],
+    "bytes": 148896,
+    "model": "claude-opus-4-8"
+  },
+  "agenda": {
+    "hash": "dc829361448fbe1c",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's how our hour together is going to flow. We're building one single claim, layer by layer: we start with a question and a baseline that any model has to beat, then we change just one thing at a time while keeping everything else frozen. Along the way we'll tackle leakage, cross-validation, the confusion matrix, and how to pick your metric before you peek at results. Two hands-on labs let you reproduce every number you see, and eight quick checks are spaced throughout — so pause, make your choice, and we'll talk it through before moving on.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.8,
+        "text": "Here's how our hour together is going to flow."
+      },
+      {
+        "start": 2.8,
+        "end": 14.787,
+        "text": "We're building one single claim, layer by layer: we start with a question and a baseline that any model has to beat, then we change just one thing at a time while keeping everything else frozen."
+      },
+      {
+        "start": 14.787,
+        "end": 22.512,
+        "text": "Along the way we'll tackle leakage, cross-validation, the confusion matrix, and how to pick your metric before you peek at results."
+      },
+      {
+        "start": 22.512,
+        "end": 32.875,
+        "text": "Two hands-on labs let you reproduce every number you see, and eight quick checks are spaced throughout — so pause, make your choice, and we'll talk it through before moving on."
+      }
+    ],
+    "bytes": 197568,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-fair-claim": {
+    "hash": "d7bdaf73f95a841d",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a quick puzzle for you. Model A scores 0.91, Model B scores 0.86, and it's tempting to just say A wins by 0.05, right? But look closer — two things changed at once here: the model *and* the test data they were measured on. When two things change together, you can't tell which one caused the difference — that's what we call a confound. So the honest answer is that we can conclude nothing yet, until we test both models on the exact same split.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.512,
+        "text": "Here's a quick puzzle for you."
+      },
+      {
+        "start": 1.512,
+        "end": 10.6,
+        "text": "Model A scores 0.91, Model B scores 0.86, and it's tempting to just say A wins by 0.05, right?"
+      },
+      {
+        "start": 10.6,
+        "end": 16.5,
+        "text": "But look closer — two things changed at once here: the model *and* the test data they were measured on."
+      },
+      {
+        "start": 16.5,
+        "end": 22.712,
+        "text": "When two things change together, you can't tell which one caused the difference — that's what we call a confound."
+      },
+      {
+        "start": 22.712,
+        "end": 29.437,
+        "text": "So the honest answer is that we can conclude nothing yet, until we test both models on the exact same split."
+      }
+    ],
+    "bytes": 176976,
+    "model": "claude-opus-4-8"
+  },
+  "concept-question": {
+    "hash": "f9c1643617a416fe",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a habit that will save you so much confusion: before you write a single line of code, write your experiment as one sentence. Something like, \"On the same data, split, and metric, does model B beat the baseline on F1?\" That one sentence forces you to name three things — the one thing you're changing, the outcome you'll measure, and everything you're holding constant. If your sentence can't name all three, no amount of clever code will rescue the design.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 8.725,
+        "text": "Here's a habit that will save you so much confusion: before you write a single line of code, write your experiment as one sentence."
+      },
+      {
+        "start": 8.725,
+        "end": 16.125,
+        "text": "Something like, \"On the same data, split, and metric, does model B beat the baseline on F1?\""
+      },
+      {
+        "start": 16.125,
+        "end": 25.4,
+        "text": "That one sentence forces you to name three things — the one thing you're changing, the outcome you'll measure, and everything you're holding constant."
+      },
+      {
+        "start": 25.4,
+        "end": 30.85,
+        "text": "If your sentence can't name all three, no amount of clever code will rescue the design."
+      }
+    ],
+    "bytes": 185472,
+    "model": "claude-opus-4-8"
+  },
+  "concept-baseline": {
+    "hash": "30520d406708bbaf",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a rule I want you to live by: every model you build must beat a baseline, the simplest credible rule that answers your question. Look what happens when our baseline just always predicts the majority class — it gets 71 percent accuracy, correct on 107 out of 150 rows. Sounds impressive, right? But it finds zero of the positive cases, so its recall and F1 are both flat zero. That high accuracy was just sitting there, free, without learning anything useful — so now you know exactly how much your real model has to earn.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 8,
+        "text": "Here's a rule I want you to live by: every model you build must beat a baseline, the simplest credible rule that answers your question."
+      },
+      {
+        "start": 8,
+        "end": 18.325,
+        "text": "Look what happens when our baseline just always predicts the majority class — it gets 71 percent accuracy, correct on 107 out of 150 rows."
+      },
+      {
+        "start": 18.325,
+        "end": 19.737,
+        "text": "Sounds impressive, right?"
+      },
+      {
+        "start": 19.737,
+        "end": 25.725,
+        "text": "But it finds zero of the positive cases, so its recall and F1 are both flat zero."
+      },
+      {
+        "start": 25.725,
+        "end": 34.437,
+        "text": "That high accuracy was just sitting there, free, without learning anything useful — so now you know exactly how much your real model has to earn."
+      }
+    ],
+    "bytes": 206928,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-baseline": {
+    "hash": "187bbd4f688611bf",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's think carefully about this one. Your dataset is 72 percent class zero, so a lazy model that always guesses zero already scores 72 percent accuracy — but it never catches a single case of class one. Now your model hits 74 percent and catches only 5 percent of class one. So beating the baseline is nice, but a two-point gain that tiny needs uncertainty and the metric that actually matters for the cost of being wrong. Beating baseline is necessary, but never sufficient.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.862,
+        "text": "Let's think carefully about this one."
+      },
+      {
+        "start": 1.862,
+        "end": 14.2,
+        "text": "Your dataset is 72 percent class zero, so a lazy model that always guesses zero already scores 72 percent accuracy — but it never catches a single case of class one."
+      },
+      {
+        "start": 14.2,
+        "end": 20.187,
+        "text": "Now your model hits 74 percent and catches only 5 percent of class one."
+      },
+      {
+        "start": 20.187,
+        "end": 29.175,
+        "text": "So beating the baseline is nice, but a two-point gain that tiny needs uncertainty and the metric that actually matters for the cost of being wrong."
+      },
+      {
+        "start": 29.175,
+        "end": 33.15,
+        "text": "Beating baseline is necessary, but never sufficient."
+      }
+    ],
+    "bytes": 199296,
+    "model": "claude-opus-4-8"
+  },
+  "concept-control": {
+    "hash": "2a2b2647d9ccf011",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the golden rule of a fair experiment: change one thing, and freeze everything else. If you want to know whether SVM beats logistic regression, you keep the same data, the same split, the same scaling, and the same metric — then only the model changes, so any difference is genuinely down to the model. But if you swap the model and add new features and change the split and tune the threshold all at once, and the score goes up, you honestly can't say what caused it. That messy version might still help you ship a product, but it can never explain why it worked.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.412,
+        "text": "Here's the golden rule of a fair experiment: change one thing, and freeze everything else."
+      },
+      {
+        "start": 6.412,
+        "end": 19.937,
+        "text": "If you want to know whether SVM beats logistic regression, you keep the same data, the same split, the same scaling, and the same metric — then only the model changes, so any difference is genuinely down to the model."
+      },
+      {
+        "start": 19.937,
+        "end": 29.625,
+        "text": "But if you swap the model and add new features and change the split and tune the threshold all at once, and the score goes up, you honestly can't say what caused it."
+      },
+      {
+        "start": 29.625,
+        "end": 34.987,
+        "text": "That messy version might still help you ship a product, but it can never explain why it worked."
+      }
+    ],
+    "bytes": 210240,
+    "model": "claude-opus-4-8"
+  },
+  "concept-same-split": {
+    "hash": "c20816e50cf69824",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's something that should make you a little nervous. Take the exact same model, the exact same data, and just change how you randomly split it into training and testing sets. Do that twenty times, and your F1 score bounces between 0.563 and 0.737 — a swing of 0.174, larger than many improvements people brag about in papers. So the fix is simple: create one split, save those indices, and hand the identical split to every model you're comparing. Never reroll until you get the number you like.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.35,
+        "text": "Here's something that should make you a little nervous."
+      },
+      {
+        "start": 2.35,
+        "end": 10.125,
+        "text": "Take the exact same model, the exact same data, and just change how you randomly split it into training and testing sets."
+      },
+      {
+        "start": 10.125,
+        "end": 23.875,
+        "text": "Do that twenty times, and your F1 score bounces between 0.563 and 0.737 — a swing of 0.174, larger than many improvements people brag about in papers."
+      },
+      {
+        "start": 23.875,
+        "end": 31.962,
+        "text": "So the fix is simple: create one split, save those indices, and hand the identical split to every model you're comparing."
+      },
+      {
+        "start": 31.962,
+        "end": 34.662,
+        "text": "Never reroll until you get the number you like."
+      }
+    ],
+    "bytes": 208368,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-same-split": {
+    "hash": "1d6834914e273390",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a tricky one. Our KNN model used one random seed, and our SVM used a completely different one, and now SVM looks better by a tiny 0.04 in F1. But think about what those different seeds actually did — they shuffled the data differently, so each model was tested on a different set of rows. That gap could be pure luck, not real skill. Before you trust any winner, run both models on the exact same saved split, and freeze those evaluation rows so you only tune inside the training data.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.3,
+        "text": "Here's a tricky one."
+      },
+      {
+        "start": 1.3,
+        "end": 12.275,
+        "text": "Our KNN model used one random seed, and our SVM used a completely different one, and now SVM looks better by a tiny 0.04 in F1."
+      },
+      {
+        "start": 12.275,
+        "end": 20.575,
+        "text": "But think about what those different seeds actually did — they shuffled the data differently, so each model was tested on a different set of rows."
+      },
+      {
+        "start": 20.575,
+        "end": 23.287,
+        "text": "That gap could be pure luck, not real skill."
+      },
+      {
+        "start": 23.287,
+        "end": 33.612,
+        "text": "Before you trust any winner, run both models on the exact same saved split, and freeze those evaluation rows so you only tune inside the training data."
+      }
+    ],
+    "bytes": 202032,
+    "model": "claude-opus-4-8"
+  },
+  "concept-leakage": {
+    "hash": "8245bb467c9b0875",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's one of the sneakiest traps in machine learning: leakage, where information from the future or from the answer itself slips into your training data. Watch what happens in our little experiment. An honest model scores about 81 percent accuracy, which is respectable. But when I secretly add a feature that's basically a copy of the answer, accuracy jumps to a perfect 100 percent. That perfect score isn't success, it's an alarm bell telling you something has leaked.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 8.75,
+        "text": "Here's one of the sneakiest traps in machine learning: leakage, where information from the future or from the answer itself slips into your training data."
+      },
+      {
+        "start": 8.75,
+        "end": 10.95,
+        "text": "Watch what happens in our little experiment."
+      },
+      {
+        "start": 10.95,
+        "end": 16.1,
+        "text": "An honest model scores about 81 percent accuracy, which is respectable."
+      },
+      {
+        "start": 16.1,
+        "end": 23.337,
+        "text": "But when I secretly add a feature that's basically a copy of the answer, accuracy jumps to a perfect 100 percent."
+      },
+      {
+        "start": 23.337,
+        "end": 28.487,
+        "text": "That perfect score isn't success, it's an alarm bell telling you something has leaked."
+      }
+    ],
+    "bytes": 171216,
+    "model": "claude-opus-4-8"
+  },
+  "concept-pipeline": {
+    "hash": "9573b2348a1c2007",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a mistake that quietly ruins a lot of experiments. If you scale your entire dataset before cross-validation, the test rows secretly help calculate the means and standard deviations, so your model peeks at data it shouldn't see. The fix is to wrap your preprocessing and model together in a pipeline, so each fold learns its scaling from only its own training rows. Remember the order: split first, fit your transformations second, then apply them to the held-out rows. And this isn't just scaling — it covers imputation, PCA, and feature selection too.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.2620000000000005,
+        "text": "Here's a mistake that quietly ruins a lot of experiments."
+      },
+      {
+        "start": 4.2620000000000005,
+        "end": 15.362,
+        "text": "If you scale your entire dataset before cross-validation, the test rows secretly help calculate the means and standard deviations, so your model peeks at data it shouldn't see."
+      },
+      {
+        "start": 15.362,
+        "end": 24.312,
+        "text": "The fix is to wrap your preprocessing and model together in a pipeline, so each fold learns its scaling from only its own training rows."
+      },
+      {
+        "start": 24.312,
+        "end": 31.087,
+        "text": "Remember the order: split first, fit your transformations second, then apply them to the held-out rows."
+      },
+      {
+        "start": 31.087,
+        "end": 37.162,
+        "text": "And this isn't just scaling — it covers imputation, PCA, and feature selection too."
+      }
+    ],
+    "bytes": 223344,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-leakage": {
+    "hash": "51f2b6c7c9b282db",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a subtle trap. Imagine you fill in all your missing values using the median of the entire dataset before you split for cross-validation. It feels harmless, right? But that full-data median secretly contains information from every fold you're about to validate on, so each held-out fold has quietly influenced its own preprocessing. Even if the score barely shifts, this is unfair by process — the fix is to put your imputer inside a pipeline so each training fold learns its own median.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.425,
+        "text": "Here's a subtle trap."
+      },
+      {
+        "start": 1.425,
+        "end": 9.2,
+        "text": "Imagine you fill in all your missing values using the median of the entire dataset before you split for cross-validation."
+      },
+      {
+        "start": 9.2,
+        "end": 10.737,
+        "text": "It feels harmless, right?"
+      },
+      {
+        "start": 10.737,
+        "end": 21.05,
+        "text": "But that full-data median secretly contains information from every fold you're about to validate on, so each held-out fold has quietly influenced its own preprocessing."
+      },
+      {
+        "start": 21.05,
+        "end": 31.25,
+        "text": "Even if the score barely shifts, this is unfair by process — the fix is to put your imputer inside a pipeline so each training fold learns its own median."
+      }
+    ],
+    "bytes": 187920,
+    "model": "claude-opus-4-8"
+  },
+  "concept-cv": {
+    "hash": "8cc18dc74a086eca",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's an honest way to test your model: instead of trusting one lucky split, you make five versions. Each time you train on four parts of your data and test on the one part left out, so every single row gets a turn being tested. Now, five isn't magic — what really matters is how you split. If your rows have classes, keep the proportions balanced; if they involve the same person or time order, keep them together so your test mirrors the real world you'll deploy in.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.362,
+        "text": "Here's an honest way to test your model: instead of trusting one lucky split, you make five versions."
+      },
+      {
+        "start": 6.362,
+        "end": 13.737,
+        "text": "Each time you train on four parts of your data and test on the one part left out, so every single row gets a turn being tested."
+      },
+      {
+        "start": 13.737,
+        "end": 17.937,
+        "text": "Now, five isn't magic — what really matters is how you split."
+      },
+      {
+        "start": 17.937,
+        "end": 28.225,
+        "text": "If your rows have classes, keep the proportions balanced; if they involve the same person or time order, keep them together so your test mirrors the real world you'll deploy in."
+      }
+    ],
+    "bytes": 169776,
+    "model": "claude-opus-4-8"
+  },
+  "concept-cv-results": {
+    "hash": "990ad51adc543c24",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Look at these five scores from our folds, and notice something important. If I just told you the model scores 0.618, you'd think it was steady and reliable. But that last fold dropped to 0.448, and the spread of plus or minus 0.112 tells the real story. That low fold isn't noise to delete — it's a signal that one group of data is much harder, and it's begging you to investigate why.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.237,
+        "text": "Look at these five scores from our folds, and notice something important."
+      },
+      {
+        "start": 4.237,
+        "end": 9.712,
+        "text": "If I just told you the model scores 0.618, you'd think it was steady and reliable."
+      },
+      {
+        "start": 9.712,
+        "end": 17.925,
+        "text": "But that last fold dropped to 0.448, and the spread of plus or minus 0.112 tells the real story."
+      },
+      {
+        "start": 17.925,
+        "end": 26.85,
+        "text": "That low fold isn't noise to delete — it's a signal that one group of data is much harder, and it's begging you to investigate why."
+      }
+    ],
+    "bytes": 161424,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-cv": {
+    "hash": "38c26e40cf0f73f6",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Look closely at these two models. Model A has a higher average F1, but notice that huge spread — plus or minus fourteen points — compared to Model B, which is rock steady at plus or minus two. So can we really say A is definitely better? Not from the means alone. Because these were tested on the same folds, the smartest move is to compare them fold by fold and weigh how much stability matters where you'll actually deploy.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.175,
+        "text": "Look closely at these two models."
+      },
+      {
+        "start": 2.175,
+        "end": 13.837,
+        "text": "Model A has a higher average F1, but notice that huge spread — plus or minus fourteen points — compared to Model B, which is rock steady at plus or minus two."
+      },
+      {
+        "start": 13.837,
+        "end": 17.1,
+        "text": "So can we really say A is definitely better?"
+      },
+      {
+        "start": 17.1,
+        "end": 18.537,
+        "text": "Not from the means alone."
+      },
+      {
+        "start": 18.537,
+        "end": 27.587,
+        "text": "Because these were tested on the same folds, the smartest move is to compare them fold by fold and weigh how much stability matters where you'll actually deploy."
+      }
+    ],
+    "bytes": 165888,
+    "model": "claude-opus-4-8"
+  },
+  "concept-confusion": {
+    "hash": "f66f67a3f0d877a2",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's open up the score and read these four boxes carefully. We correctly rejected 97 cases and correctly flagged 27, but look at the mistakes: 16 positive cases slipped through as false negatives, and 10 times we raised a false alarm. Every fancy metric you'll ever hear is just a summary of these four numbers. And here's the key habit—always say which class you're calling \"positive,\" because swapping it flips your precision and recall even when accuracy stays exactly the same. So which of these boxes does your own project fear the most?",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.337,
+        "text": "Let's open up the score and read these four boxes carefully."
+      },
+      {
+        "start": 3.337,
+        "end": 17.212,
+        "text": "We correctly rejected 97 cases and correctly flagged 27, but look at the mistakes: 16 positive cases slipped through as false negatives, and 10 times we raised a false alarm."
+      },
+      {
+        "start": 17.212,
+        "end": 22.012,
+        "text": "Every fancy metric you'll ever hear is just a summary of these four numbers."
+      },
+      {
+        "start": 22.012,
+        "end": 32.1,
+        "text": "And here's the key habit—always say which class you're calling \"positive,\" because swapping it flips your precision and recall even when accuracy stays exactly the same."
+      },
+      {
+        "start": 32.1,
+        "end": 35.687,
+        "text": "So which of these boxes does your own project fear the most?"
+      }
+    ],
+    "bytes": 214416,
+    "model": "claude-opus-4-8"
+  },
+  "concept-metrics": {
+    "hash": "641ee64866d4046e",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's something crucial: these four numbers all describe the same model, but they ask completely different questions. Accuracy tells us how often we got any label right, precision asks how trustworthy our positive predictions are, and recall asks how many of the real positives we actually caught. F1 blends precision and recall together, but it's not just a polite compromise. The real skill is deciding before you look which mistake hurts more, and if missing positives is costly, you lean on recall.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.975,
+        "text": "Here's something crucial: these four numbers all describe the same model, but they ask completely different questions."
+      },
+      {
+        "start": 6.975,
+        "end": 17.575,
+        "text": "Accuracy tells us how often we got any label right, precision asks how trustworthy our positive predictions are, and recall asks how many of the real positives we actually caught."
+      },
+      {
+        "start": 17.575,
+        "end": 23.162,
+        "text": "F1 blends precision and recall together, but it's not just a polite compromise."
+      },
+      {
+        "start": 23.162,
+        "end": 30.912,
+        "text": "The real skill is deciding before you look which mistake hurts more, and if missing positives is costly, you lean on recall."
+      }
+    ],
+    "bytes": 185904,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-metrics": {
+    "hash": "f51ae526ef60726a",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the key idea: when missing a real positive is much more expensive than dealing with a false alarm, you want to prioritize recall, because recall tells you what fraction of the actual positives you actually caught. But here's the catch — you can cheat your way to high recall by flagging almost everything, so always report precision and the confusion matrix alongside it. The portable rule is simple: name your most expensive mistake first, then choose the metric that guards against it.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 12.375,
+        "text": "Here's the key idea: when missing a real positive is much more expensive than dealing with a false alarm, you want to prioritize recall, because recall tells you what fraction of the actual positives you actually caught."
+      },
+      {
+        "start": 12.375,
+        "end": 21.775,
+        "text": "But here's the catch — you can cheat your way to high recall by flagging almost everything, so always report precision and the confusion matrix alongside it."
+      },
+      {
+        "start": 21.775,
+        "end": 29.037,
+        "text": "The portable rule is simple: name your most expensive mistake first, then choose the metric that guards against it."
+      }
+    ],
+    "bytes": 174528,
+    "model": "claude-opus-4-8"
+  },
+  "concept-threshold": {
+    "hash": "beec199b560668e9",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's something really powerful: the model gives you a score, but you get to choose where to draw the line. Look what happens as we move that threshold. When we lower it to 0.30, we catch more of the real cases, so recall jumps up, but we also raise a lot of false alarms. Push it up to 0.70 and we're much more precise, but now we miss far more. And the beautiful part is you never retrain the model to do this — you're just picking the rule that fits what mistakes you can live with.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.8870000000000005,
+        "text": "Here's something really powerful: the model gives you a score, but you get to choose where to draw the line."
+      },
+      {
+        "start": 5.8870000000000005,
+        "end": 8.337,
+        "text": "Look what happens as we move that threshold."
+      },
+      {
+        "start": 8.337,
+        "end": 17.137,
+        "text": "When we lower it to 0.30, we catch more of the real cases, so recall jumps up, but we also raise a lot of false alarms."
+      },
+      {
+        "start": 17.137,
+        "end": 23.2,
+        "text": "Push it up to 0.70 and we're much more precise, but now we miss far more."
+      },
+      {
+        "start": 23.2,
+        "end": 30.287,
+        "text": "And the beautiful part is you never retrain the model to do this — you're just picking the rule that fits what mistakes you can live with."
+      }
+    ],
+    "bytes": 182016,
+    "model": "claude-opus-4-8"
+  },
+  "concept-cost-rule": {
+    "hash": "cebeae10443fa4a1",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's something crucial that often gets buried in machine learning projects. When you set a threshold, you're making a value judgment, and I want you to write down the cost of your mistakes before you ever look at the results. Say it plainly, something like \"a false negative costs five times a false positive,\" and then decide who actually owns that statement. That five-to-one ratio I'm using is just for teaching, real weights come from domain experts, affected people, and sometimes the law. The model gives you probabilities, but the people decide what to do with them, so never hide that second decision behind the words \"the AI chose.\"",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.175,
+        "text": "Here's something crucial that often gets buried in machine learning projects."
+      },
+      {
+        "start": 4.175,
+        "end": 12.137,
+        "text": "When you set a threshold, you're making a value judgment, and I want you to write down the cost of your mistakes before you ever look at the results."
+      },
+      {
+        "start": 12.137,
+        "end": 20.2,
+        "text": "Say it plainly, something like \"a false negative costs five times a false positive,\" and then decide who actually owns that statement."
+      },
+      {
+        "start": 20.2,
+        "end": 28.662,
+        "text": "That five-to-one ratio I'm using is just for teaching, real weights come from domain experts, affected people, and sometimes the law."
+      },
+      {
+        "start": 28.662,
+        "end": 37.5,
+        "text": "The model gives you probabilities, but the people decide what to do with them, so never hide that second decision behind the words \"the AI chose.\""
+      }
+    ],
+    "bytes": 225360,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-threshold": {
+    "hash": "b675988474ea3399",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's a great question to test your intuition. When you lower the threshold from 0.70 down to 0.30, you're basically lowering the bar that a case has to clear to be flagged as positive. So more cases sneak over that lower bar — which means you catch more true positives, but you also raise more false alarms. And here's the key insight: the model itself doesn't change at all. Its coefficients stay exactly the same; you've only adjusted the decision rule you apply on top of it.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.787,
+        "text": "Here's a great question to test your intuition."
+      },
+      {
+        "start": 2.787,
+        "end": 12.062,
+        "text": "When you lower the threshold from 0.70 down to 0.30, you're basically lowering the bar that a case has to clear to be flagged as positive."
+      },
+      {
+        "start": 12.062,
+        "end": 19.912,
+        "text": "So more cases sneak over that lower bar — which means you catch more true positives, but you also raise more false alarms."
+      },
+      {
+        "start": 19.912,
+        "end": 24.162,
+        "text": "And here's the key insight: the model itself doesn't change at all."
+      },
+      {
+        "start": 24.162,
+        "end": 30.537,
+        "text": "Its coefficients stay exactly the same; you've only adjusted the decision rule you apply on top of it."
+      }
+    ],
+    "bytes": 183600,
+    "model": "claude-opus-4-8"
+  },
+  "lab-fair-comparison": {
+    "hash": "1c2896d0526149ff",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the golden rule of fair comparison: every model has to be tested on exactly the same data. We build one dataset, make one split, and hand those identical rows to both a lazy baseline that always guesses the majority class and a proper scaled logistic regression. Then watch this second experiment closely — we take the same good model and just reshuffle the split twenty times, and its F1 score swings from about point five six all the way to point seven four. That huge wobble is precisely why contenders must share one split, or you're comparing luck, not skill.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.587,
+        "text": "Here's the golden rule of fair comparison: every model has to be tested on exactly the same data."
+      },
+      {
+        "start": 6.587,
+        "end": 17.512,
+        "text": "We build one dataset, make one split, and hand those identical rows to both a lazy baseline that always guesses the majority class and a proper scaled logistic regression."
+      },
+      {
+        "start": 17.512,
+        "end": 29.012,
+        "text": "Then watch this second experiment closely — we take the same good model and just reshuffle the split twenty times, and its F1 score swings from about point five six all the way to point seven four."
+      },
+      {
+        "start": 29.012,
+        "end": 36.162,
+        "text": "That huge wobble is precisely why contenders must share one split, or you're comparing luck, not skill."
+      }
+    ],
+    "bytes": 217296,
+    "model": "claude-opus-4-8"
+  },
+  "lab-cv-threshold": {
+    "hash": "dc864b65871c5a26",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Okay, here's where we get honest about our numbers. Instead of one lucky score, we run five folds and report the mean plus the spread, so we see that our F1 wobbles around 0.62 give or take 0.11. Notice we tuck the scaling inside the pipeline, so each fold only learns from its own training data — no peeking. Then we slide the threshold and watch the trade-off: drop it to 0.30 and recall jumps, push it to 0.70 and precision climbs. Your challenge is to pick a threshold when a missed positive hurts five times more than a false alarm.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.8369999999999997,
+        "text": "Okay, here's where we get honest about our numbers."
+      },
+      {
+        "start": 2.8369999999999997,
+        "end": 14.237,
+        "text": "Instead of one lucky score, we run five folds and report the mean plus the spread, so we see that our F1 wobbles around 0.62 give or take 0.11."
+      },
+      {
+        "start": 14.237,
+        "end": 21.35,
+        "text": "Notice we tuck the scaling inside the pipeline, so each fold only learns from its own training data — no peeking."
+      },
+      {
+        "start": 21.35,
+        "end": 32.137,
+        "text": "Then we slide the threshold and watch the trade-off: drop it to 0.30 and recall jumps, push it to 0.70 and precision climbs."
+      },
+      {
+        "start": 32.137,
+        "end": 38.562,
+        "text": "Your challenge is to pick a threshold when a missed positive hurts five times more than a false alarm."
+      }
+    ],
+    "bytes": 231696,
+    "model": "claude-opus-4-8"
+  },
+  "quiz-reporting": {
+    "hash": "3ff3f22941fcc4da",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Let's put your judgment to the test here. Look at these four sentences and ask yourself which one is actually the most honest and scientifically strong. It's tempting to pick the confident-sounding ones, but real strength comes from the sentence that names its data, its evaluation method, the exact metric with its uncertainty, and its limitations. Notice how that winning sentence reports evidence without pretending one small experiment proves something universal.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.425,
+        "text": "Let's put your judgment to the test here."
+      },
+      {
+        "start": 2.425,
+        "end": 9.525,
+        "text": "Look at these four sentences and ask yourself which one is actually the most honest and scientifically strong."
+      },
+      {
+        "start": 9.525,
+        "end": 21.45,
+        "text": "It's tempting to pick the confident-sounding ones, but real strength comes from the sentence that names its data, its evaluation method, the exact metric with its uncertainty, and its limitations."
+      },
+      {
+        "start": 21.45,
+        "end": 29.512,
+        "text": "Notice how that winning sentence reports evidence without pretending one small experiment proves something universal."
+      }
+    ],
+    "bytes": 177408,
+    "model": "claude-opus-4-8"
+  },
+  "report-template": {
+    "hash": "67edb5e2bf11bb4c",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the thing about science: a screenshot of a good result proves almost nothing. If someone can't hand you the code, the exact data split they used, the software versions, and the results for every model they tried, then the claim isn't really reproducible. So I want you to keep a one-page record for every experiment, covering your design, your protocol, and your honest results, including the runs that failed. And notice that last sentence at the bottom, it forces you to state not just what you found but what your experiment does not prove.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.3870000000000005,
+        "text": "Here's the thing about science: a screenshot of a good result proves almost nothing."
+      },
+      {
+        "start": 5.3870000000000005,
+        "end": 15.787,
+        "text": "If someone can't hand you the code, the exact data split they used, the software versions, and the results for every model they tried, then the claim isn't really reproducible."
+      },
+      {
+        "start": 15.787,
+        "end": 25.112,
+        "text": "So I want you to keep a one-page record for every experiment, covering your design, your protocol, and your honest results, including the runs that failed."
+      },
+      {
+        "start": 25.112,
+        "end": 32.212,
+        "text": "And notice that last sentence at the bottom, it forces you to state not just what you found but what your experiment does not prove."
+      }
+    ],
+    "bytes": 193680,
+    "model": "claude-opus-4-8"
+  },
+  "presentation-assignment": {
+    "hash": "66b1e4ec8229d59b",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's where everything you've built comes together. You'll submit three things: your slide deck, a notebook that runs cleanly from top to bottom when I hit Run all, and your one-page experiment record. The key is that these three must agree — every number on a slide has to trace straight back to that notebook and record. I'm not looking for a flashy research performance; I want an honest, checkable account of what you actually did. Then you'll talk for about four and a half minutes, up to six slides, followed by two minutes of my questions.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.7,
+        "text": "Here's where everything you've built comes together."
+      },
+      {
+        "start": 2.7,
+        "end": 11.962,
+        "text": "You'll submit three things: your slide deck, a notebook that runs cleanly from top to bottom when I hit Run all, and your one-page experiment record."
+      },
+      {
+        "start": 11.962,
+        "end": 19.287,
+        "text": "The key is that these three must agree — every number on a slide has to trace straight back to that notebook and record."
+      },
+      {
+        "start": 19.287,
+        "end": 25.475,
+        "text": "I'm not looking for a flashy research performance; I want an honest, checkable account of what you actually did."
+      },
+      {
+        "start": 25.475,
+        "end": 31.325,
+        "text": "Then you'll talk for about four and a half minutes, up to six slides, followed by two minutes of my questions."
+      }
+    ],
+    "bytes": 188352,
+    "model": "claude-opus-4-8"
+  },
+  "presentation-structure": {
+    "hash": "cbd75f6c21835d83",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the shape your whole talk needs to take: six slides, including the title, and you stop cold at five minutes. Notice these suggested times only add up to four and a half minutes — that extra thirty seconds is your safety net, not spare space to fill. Rehearse with a timer you can actually see, and resist the urge to cram twelve slides into one unreadable mess. Choosing what to leave out is real scientific communication, so spend that precious extra minute on your strongest evidence.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.9,
+        "text": "Here's the shape your whole talk needs to take: six slides, including the title, and you stop cold at five minutes."
+      },
+      {
+        "start": 6.9,
+        "end": 16.4,
+        "text": "Notice these suggested times only add up to four and a half minutes — that extra thirty seconds is your safety net, not spare space to fill."
+      },
+      {
+        "start": 16.4,
+        "end": 24.662,
+        "text": "Rehearse with a timer you can actually see, and resist the urge to cram twelve slides into one unreadable mess."
+      },
+      {
+        "start": 24.662,
+        "end": 32.612,
+        "text": "Choosing what to leave out is real scientific communication, so spend that precious extra minute on your strongest evidence."
+      }
+    ],
+    "bytes": 195984,
+    "model": "claude-opus-4-8"
+  },
+  "presentation-evidence": {
+    "hash": "123bd70b2c43791e",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Here's the deal: if your audience can't see it, they can't check it, and that means it doesn't count as evidence. So be concrete. Don't just say \"we used Kaggle\" — name the exact dataset and its version. Don't just claim \"we controlled everything\" — actually list at least three things you held constant. And when it comes to AI, a logo isn't disclosure; what matters is the column where you show how you verified, reran, or corrected it to make the work truly yours.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.237,
+        "text": "Here's the deal: if your audience can't see it, they can't check it, and that means it doesn't count as evidence."
+      },
+      {
+        "start": 6.237,
+        "end": 7.562,
+        "text": "So be concrete."
+      },
+      {
+        "start": 7.562,
+        "end": 12.187,
+        "text": "Don't just say \"we used Kaggle\" — name the exact dataset and its version."
+      },
+      {
+        "start": 12.187,
+        "end": 18.45,
+        "text": "Don't just claim \"we controlled everything\" — actually list at least three things you held constant."
+      },
+      {
+        "start": 18.45,
+        "end": 28.65,
+        "text": "And when it comes to AI, a logo isn't disclosure; what matters is the column where you show how you verified, reran, or corrected it to make the work truly yours."
+      }
+    ],
+    "bytes": 172224,
+    "model": "claude-opus-4-8"
+  },
+  "presentation-qa-rubric": {
+    "hash": "4fb3d2d454d5770c",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "Today is all about defending your work, so be ready to walk me through your chain of custody from start to finish. I'll ask you at least two questions — things like what changed and what stayed fixed, why your metric fits the error costs, and what AI suggestion you rejected or double-checked. These questions test whether you truly own your project, not whether you memorized it. And here's the key: a null result can earn full marks, but hiding one cannot. When you give peer feedback, keep it simple — one glow, one grow, and one next test to try.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.862,
+        "text": "Today is all about defending your work, so be ready to walk me through your chain of custody from start to finish."
+      },
+      {
+        "start": 6.862,
+        "end": 16.975,
+        "text": "I'll ask you at least two questions — things like what changed and what stayed fixed, why your metric fits the error costs, and what AI suggestion you rejected or double-checked."
+      },
+      {
+        "start": 16.975,
+        "end": 22.15,
+        "text": "These questions test whether you truly own your project, not whether you memorized it."
+      },
+      {
+        "start": 22.15,
+        "end": 27.25,
+        "text": "And here's the key: a null result can earn full marks, but hiding one cannot."
+      },
+      {
+        "start": 27.25,
+        "end": 33.712,
+        "text": "When you give peer feedback, keep it simple — one glow, one grow, and one next test to try."
+      }
+    ],
+    "bytes": 202608,
+    "model": "claude-opus-4-8"
+  },
+  "wrap-up": {
+    "hash": "5dd731b9009f87e4",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "script": "So here's the big idea I want you to carry out the door: a trustworthy score has a chain of custody. You earn complexity from a baseline, you keep everything else fixed as a control, you hold out truly unseen data, you report the spread and not just the average, and you're honest about what the evidence still can't prove. Your exit ticket is simple but powerful — name the one variable you changed, and the three things you froze to keep it fair. And next time, you're in the spotlight: you speak, and your evidence answers back.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.875,
+        "text": "So here's the big idea I want you to carry out the door: a trustworthy score has a chain of custody."
+      },
+      {
+        "start": 5.875,
+        "end": 18.887,
+        "text": "You earn complexity from a baseline, you keep everything else fixed as a control, you hold out truly unseen data, you report the spread and not just the average, and you're honest about what the evidence still can't prove."
+      },
+      {
+        "start": 18.887,
+        "end": 27,
+        "text": "Your exit ticket is simple but powerful — name the one variable you changed, and the three things you froze to keep it fair."
+      },
+      {
+        "start": 27,
+        "end": 32.212,
+        "text": "And next time, you're in the spotlight: you speak, and your evidence answers back."
+      }
+    ],
+    "bytes": 193680,
+    "model": "claude-opus-4-8"
+  }
+}
