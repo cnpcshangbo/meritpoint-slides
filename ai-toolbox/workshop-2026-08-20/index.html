@@ -270,7 +270,7 @@
     .reveal .knn-query{position:absolute;left:59%;top:48%;z-index:10;transform:translate(-50%,-50%) scale(.4);opacity:0;color:#071426;font:900 .92em/1 ui-monospace,monospace;text-shadow:0 0 0 #fff,0 0 5px #fff;transition:opacity .35s,transform .35s}.reveal .knn-query.is-visible{opacity:1;transform:translate(-50%,-50%) scale(1)}.reveal .knn-query-label{position:absolute;left:calc(59% + .75em);top:calc(48% - .52em);z-index:10;padding:.12em .34em;border-radius:5px;background:#071426;color:#fff;font:800 .4em ui-monospace,monospace;opacity:0;transition:opacity .3s}.reveal .knn-query-label.is-visible{opacity:1}.reveal .knn-ring{position:absolute;left:59%;top:48%;width:7.4em;height:7.4em;border:3px dashed #071426;border-radius:50%;transform:translate(-50%,-50%) scale(.25);opacity:0;z-index:3;background:#53edf40d;transition:opacity .42s,transform .5s cubic-bezier(.2,.8,.2,1)}.reveal .knn-ring.is-visible{opacity:.82;transform:translate(-50%,-50%) scale(1)}
     .reveal .knn-side{display:flex;flex-direction:column;gap:.25em}.reveal .knn-card{border:1px solid var(--line);border-radius:11px;background:#fff;padding:.28em .38em}.reveal .knn-card h3{font-size:.5em;margin:0 0 .12em;color:var(--navy)}.reveal .knn-legend{display:grid;grid-template-columns:repeat(3,1fr);gap:.1em}.reveal .knn-legend span{display:flex;align-items:center;gap:.18em;color:var(--muted);font:800 .4em ui-monospace,monospace;opacity:.22;transition:opacity .3s}.reveal .knn-legend span.is-visible{opacity:1}.reveal .knn-key{display:inline-block;width:.72em;height:.72em;background:currentColor}.reveal .knn-key.left{color:#e85d8a;border-radius:50%}.reveal .knn-key.stay{color:#e5a11b}.reveal .knn-key.right{color:#0f9db0;clip-path:polygon(50% 0,100% 100%,0 100%)}.reveal .knn-k{opacity:0;transform:translateY(.15em);transition:opacity .3s,transform .3s}.reveal .knn-k.is-visible{opacity:1;transform:none}.reveal .knn-status{min-height:2.1em;color:#425c70;font-size:.42em;line-height:1.28}.reveal .knn-votes{opacity:0;transform:translateY(.2em);transition:opacity .35s,transform .35s}.reveal .knn-votes.is-visible{opacity:1;transform:none}.reveal .knn-vote{display:grid;grid-template-columns:2.2em 1fr 2.3em;align-items:center;gap:.2em;margin:.1em 0;color:#385065;font:800 .4em ui-monospace,monospace}.reveal .knn-vote-bar{height:.5em;border-radius:99px;background:#e5edf2;overflow:hidden}.reveal .knn-vote-bar i{display:block;height:100%;width:0;border-radius:99px;transition:width .7s ease}.reveal .knn-votes.is-visible .left i{width:17%;background:#e85d8a}.reveal .knn-votes.is-visible .stay i{width:33%;background:#e5a11b}.reveal .knn-votes.is-visible .right i{width:50%;background:#0f9db0}.reveal .knn-result{opacity:0;transform:scale(.88);padding:.24em;border-radius:9px;background:#eaf9f4;color:#086944;text-align:center;font:900 .5em ui-monospace,monospace;transition:opacity .35s,transform .35s}.reveal .knn-result.is-visible{opacity:1;transform:scale(1)}.reveal .knn-controls{display:flex;justify-content:center;gap:.28em;margin-top:.18em}.reveal .knn-controls button{border:1px solid var(--teal);border-radius:999px;background:#fff;color:var(--teal);font:750 .42em -apple-system,sans-serif;padding:.24em .62em;cursor:pointer}.reveal .knn-foot{text-align:center;color:var(--muted);font-size:.4em;margin:.16em 0 0}.reveal .knn-foot b{color:var(--navy)}
     @keyframes knn-pulse{0%{transform:scale(1);box-shadow:0 0 0 2px #fff,0 0 0 0 #07142699}45%{transform:scale(1.8);box-shadow:0 0 0 2px #fff,0 0 0 .42em #07142600}100%{transform:scale(1);box-shadow:0 0 0 2px #fff,0 2px 5px #18354a44}}
-    .reveal .js-walk.lab{height:11.7em;margin-top:.12em}.reveal .js-walk textarea.code,.reveal .js-walk .code-wrap .gutter{font-size:16.5px;line-height:1.35}.reveal .js-walk .lab-bar{min-height:2.3em}.reveal .js-walk .lab-status{color:#c9dceb}
+    .reveal .js-walk.lab{height:11.7em;margin-top:.12em}.reveal .js-walk textarea.code,.reveal .js-walk .code-wrap .gutter{font-size:18px;line-height:1.42}.reveal .js-walk .lab-bar{min-height:2.3em}.reveal .js-walk .lab-status{color:#c9dceb}
   </style>
   <div class="kicker" style="color:#7fd3df">FREE EXPERIENCE CLASS · 体验课</div>
   <div class="arcade-title">AGENT <span class="neon">ARCADE</span></div>
@@ -450,95 +450,41 @@
     <aside class="notes">按图的顺序讲，不先给答案：先逐类显示 LEFT、STAY、RIGHT demonstrations，再出现黑色新点；说到 k=9 时画出虚线圆。随后让九个最近点按 1 到 9 逐个闪烁并保留编号。最后数出 LEFT 2、STAY 3、RIGHT 4，再显示距离加权后的 17%、33%、50%，得出 RIGHT。明确这是为了看清距离而画的二维教学投影；真实游戏使用四个 sensors，并额外做 class balancing。</aside>
 </section>
 <section id="code-core" data-sid="code-core">
-<div class="kicker">Coding-level map · complete policy.js from GitHub</div>
-    <h2>The entire policy file is small enough to inspect line by line.</h2>
+<div class="kicker">Coding-level demo · focused JavaScript teaching extract</div>
+    <h2>Nine lines turn nearby demonstrations into the next action.</h2>
     <div class="agent-map" role="img" aria-label="Overall agent flow: game frame, four sensors, compare with demonstrations, weighted vote, action, changed game frame, then repeat"><div class="am-node"><b>① GAME FRAME</b><span>player · coin · hazard</span></div><div class="am-node"><b>② OBSERVE</b><span>convert picture to 4 sensors</span></div><div class="am-node am-code"><b>③ PREDICT · CODE BELOW</b><span>compare rows → weighted vote</span></div><div class="am-node"><b>④ ACTION</b><span>LEFT · STAY · RIGHT</span></div><div class="am-node"><b>⑤ ENVIRONMENT</b><span>movement changes next frame</span></div><div class="am-node am-loop"><b>↺ REPEAT</b><span>every 100 milliseconds</span></div></div>
     <div class="lab folded js-walk">
       <div class="lab-main">
-        <div class="code-wrap"><div class="gutter"></div><div class="line-hi"></div><textarea class="code" spellcheck="false" wrap="off" aria-label="Complete source of Agent Arcade policy.js">/*
- * Weighted k-nearest-neighbors imitation policy.
- * The intentionally small model makes every prediction inspectable.
- */
-(function attachPolicy(root) {
-  "use strict";
-
-  function squaredDistance(a, b) {
-    return a.reduce((sum, value, index) =&gt; sum + (value - b[index]) ** 2, 0);
-  }
-
-  function trainKnn(rows, k = 9) {
-    if (!Array.isArray(rows) || rows.length === 0) {
-      throw new Error("trainKnn needs at least one demonstration row");
-    }
-    if (!Number.isInteger(k) || k &lt; 1) throw new Error("k must be a positive integer");
-
-    const counts = { [-1]: 0, [0]: 0, [1]: 0 };
-    rows.forEach((row) =&gt; { counts[row.action] += 1; });
-    const weights = {
-      [-1]: rows.length / (3 * Math.max(1, counts[-1])),
-      [0]: rows.length / (3 * Math.max(1, counts[0])),
-      [1]: rows.length / (3 * Math.max(1, counts[1])),
-    };
-
-    return {
-      rows,
-      k,
-      counts,
-      predict(input) {
-        const near = rows
-          .map((row) =&gt; ({ action: row.action, distance: squaredDistance(row.x, input) }))
-          .sort((a, b) =&gt; a.distance - b.distance)
-          .slice(0, Math.min(k, rows.length));
-
-        const vote = { [-1]: 0, [0]: 0, [1]: 0 };
-        near.forEach((neighbor) =&gt; {
-          vote[neighbor.action] += weights[neighbor.action]
-            / (0.025 + Math.sqrt(neighbor.distance));
-        });
-
-        const sum = vote[-1] + vote[0] + vote[1] || 1;
-        const probabilities = {
-          [-1]: vote[-1] / sum,
-          [0]: vote[0] / sum,
-          [1]: vote[1] / sum,
-        };
-        const action = [-1, 0, 1].sort((a, b) =&gt; probabilities[b] - probabilities[a])[0];
-
-        return {
-          action,
-          probabilities,
-          vote,
-          neighbors: near,
-          nearestDistance: near[0]?.distance ?? 0,
-        };
-      },
-    };
-  }
-
-  const api = { squaredDistance, trainKnn };
-  if (typeof module !== "undefined" &amp;&amp; module.exports) module.exports = api;
-  if (root) Object.assign(root.AgentArcade ||= {}, api);
-})(typeof window !== "undefined" ? window : null);</textarea></div>
-        <div class="lab-bar"><button class="walk" hidden>🎧 Explain complete policy.js line by line</button><span class="walk-controls" hidden><button class="walk-prev" title="Previous step">⏮</button><button class="walk-pause" title="Pause / resume">⏸</button><button class="walk-next" title="Next step">⏭</button><button class="walk-stop" title="Stop walkthrough">✕</button><span class="walk-step"></span></span><span class="lab-status">Complete src/policy.js · 64 lines</span></div>
+        <div class="code-wrap"><div class="gutter"></div><div class="line-hi"></div><textarea class="code" spellcheck="false" wrap="off" aria-label="Nine-line teaching extract of the Agent Arcade prediction policy">function predict(state, rows, k = 9) {
+  const x = vector(state);
+  const near = rows.map(r =&gt; ({ action: r.action,
+    d: r.x.reduce((sum, v, i) =&gt; sum + (v - x[i]) ** 2, 0)
+  })).sort((a, b) =&gt; a.d - b.d).slice(0, k);
+  const vote = { "-1": 0, "0": 0, "1": 0 };
+  near.forEach(n =&gt; vote[n.action] += 1 / (.025 + Math.sqrt(n.d)));
+  return [-1, 0, 1].sort((a, b) =&gt; vote[b] - vote[a])[0];
+}</textarea></div>
+        <div class="lab-bar"><button class="walk" hidden>🎧 Explain the nine-line predict example</button><span class="walk-controls" hidden><button class="walk-prev" title="Previous step">⏮</button><button class="walk-pause" title="Pause / resume">⏸</button><button class="walk-next" title="Next step">⏭</button><button class="walk-stop" title="Stop walkthrough">✕</button><span class="walk-step"></span></span><span class="lab-status">9 lines · focused predict()</span></div>
       </div>
     </div>
     <div class="source-map" aria-label="GitHub source structure"><div class="sm-node"><b>environment.js</b>state · sensors · rewards</div><div class="sm-node sm-policy"><b>policy.js</b>train · predict · votes</div><div class="sm-node"><b>app.js</b>controls · loop · CSV</div><div class="sm-node"><b>experiment.js</b>unseen-level evaluation</div></div>
-    <p class="source"><b>Listen:</b> runtime + source tour. &nbsp; <b>Orange audio:</b> all 64 lines of <code>policy.js</code>. &nbsp; <a href="https://github.com/MeritPoint-Academy/agent-arcade/blob/main/src/policy.js" target="_blank" rel="noopener">Open this exact file on GitHub</a></p>
-    <aside class="notes">右下角 Listen 只讲六阶段 runtime 与四个 source files。代码框现在是完整的 policy.js：包括 file wrapper、distance helper、input validation、class balancing、nearest-neighbor search、weighted vote、probabilities、decision receipt，以及 Node/browser exports。橙色按钮逐段讲完 64 行，并自动滚动到当前行；两套音频不要重复。</aside>
+    <p class="source"><b>Listen:</b> runtime + source tour. &nbsp; <b>Orange audio:</b> the nine-line <code>predict</code> example. &nbsp; <a href="https://github.com/MeritPoint-Academy/agent-arcade/blob/main/src/policy.js" target="_blank" rel="noopener">Open the complete production policy.js on GitHub</a></p>
+    <aside class="notes">右下角 Listen 讲六阶段 runtime 与四个 source files。代码框只保留九行教学版 predict，让学生集中理解 vector、distance、nearest nine、inverse-distance vote 和 winner。橙色按钮逐段讲这九行并自动高亮；完整 production policy.js 保留在 GitHub 链接中供课后阅读，不要求课堂逐行讲完。</aside>
 </section>
 <section id="code-walk" data-sid="code-walk">
 <div class="kicker">Read code like a scientist · line by line</div>
     <h2>Every line makes a claim we can test.</h2>
     <div class="trace">
-      <b>01–10</b><p><b>Boundary + distance:</b> document the file, isolate its scope, and define squared distance.</p>
-      <b>12–24</b><p><b>Train safely:</b> validate rows and <code>k</code>, count action classes, and calculate balancing weights.</p>
-      <b>26–34</b><p><b>Build the model:</b> retain the training receipt, compare every row, sort, and keep the nearest <code>k</code>.</p>
-      <b>36–48</b><p><b>Vote + normalize:</b> combine class balance with inverse distance, convert votes to probabilities, and choose the winner.</p>
-      <b>50–56</b><p><b>Return a decision receipt:</b> action, probabilities, raw votes, neighbors, and nearest distance.</p>
-      <b>57–64</b><p><b>Publish the API:</b> expose the same functions to Node tests and the browser game.</p>
+      <b>01</b><p><b>Contract:</b> one state + demonstration rows → one action.</p>
+      <b>02</b><p><b>Represent:</b> convert the visible situation to four numbers.</p>
+      <b>03–05</b><p><b>Compare:</b> square feature differences, sort by distance, keep the nearest nine.</p>
+      <b>06</b><p><b>Initialize:</b> start LEFT, STAY, and RIGHT votes at zero.</p>
+      <b>07</b><p><b>Weight:</b> closer examples contribute a larger vote; <code>.025</code> prevents division by zero.</p>
+      <b>08</b><p><b>Decide:</b> sort actions by vote and return the winner.</p>
+      <b>09</b><p><b>Close:</b> finish one inspectable prediction.</p>
     </div>
-    <div class="callout"><b>Debugging question:</b> If every demonstration says STAY, the syntax can still be correct. Inspect <b>counts</b>, <b>weights</b>, and data coverage before blaming the vote.</div>
-    <aside class="notes">把完整文件分成六个可测试的责任区：boundary、distance、validation and class balance、neighbor search、vote and receipt、exports。把 probabilities 对应 AI Brain 三根条，把 counts 对应 Training Receipt。全 STAY 反例现在可以定位到数据覆盖，而不是误以为 64 行中必有语法错误。</aside>
+    <div class="callout"><b>Debugging question:</b> If every demonstration says STAY, which line is wrong? <b>None.</b> The data—not the syntax—fails to cover LEFT and RIGHT.</div>
+    <aside class="notes">按九行教学版逐步解释：contract、representation、comparison、neighbor selection、vote initialization、inverse-distance weighting、decision。最后用全 STAY 反例强调：代码可以完全正确，但示范数据覆盖不足。完整 production version 还会做 class balancing 并返回 probabilities。</aside>
 </section>
 <section id="lab-takeover" data-sid="lab-takeover">
 <div class="kicker">Lab 2 · 10 minutes · Train and release</div>

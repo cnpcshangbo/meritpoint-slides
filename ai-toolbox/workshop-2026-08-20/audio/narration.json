@@ -490,132 +490,147 @@
     "source": "authored-video-script"
   },
   "code-core": {
-    "hash": "f5ae65c75778aad7",
+    "hash": "d241c1ae537dc5cb",
     "voice": "en-US-AvaMultilingualNeural",
-    "script": "Before reading individual lines, step back and follow the complete agent loop. Game Frame is the current world: the player's lane, coins, and hazards. Observe means environment.js converts that world into four numeric sensors. Predict means policy.js compares those numbers with demonstration rows, combines the nearest weighted votes, and chooses an action. Action sends LEFT, STAY, or RIGHT back to the game. Environment applies that move, advances the objects, calculates the reward, and creates the next frame. Repeat means app.js coordinates this loop every one hundred milliseconds while it also updates the display, records demonstrations, and exports the CSV. Now connect those stages to the four files in the GitHub source. environment.js defines the world, sensors, rewards, seeded levels, and expert labels. policy.js contains trainKnn and the live weighted k-NN predictor shown here. app.js connects the controls, animation, agent loop, receipts, CSV export, and local run history. experiment.js runs the controlled one-seed-versus-twelve-seed evaluation on unseen levels. The editor now contains the complete policy.js file: its distance helper, input checks, class balancing, neighbor search, weighted probabilities, decision receipt, and exports for both the browser and Node tests. After this overview, use Explain complete policy dot J S line by line for the separate code walkthrough.",
+    "script": "Before reading individual lines, step back and follow the complete agent loop. Game Frame is the current world: the player's lane, coins, and hazards. Observe means environment.js converts that world into four numeric sensors. Predict means policy.js compares those numbers with demonstration rows, combines the nearest weighted votes, and chooses an action. Action sends LEFT, STAY, or RIGHT back to the game. Environment applies that move, advances the objects, calculates the reward, and creates the next frame. Repeat means app.js coordinates this loop every one hundred milliseconds while it also updates the display, records demonstrations, and exports the CSV. Now connect those stages to the four files in the GitHub source. environment.js defines the world, sensors, rewards, seeded levels, and expert labels. policy.js contains trainKnn and the live weighted k-NN predictor. app.js connects the controls, animation, agent loop, receipts, CSV export, and local run history. experiment.js runs the controlled one-seed-versus-twelve-seed evaluation on unseen levels. The code panel uses a nine-line teaching extract of predict so you can trace one decision without teaching the whole implementation. The complete production policy remains linked on GitHub. After this overview, use Explain the nine-line predict example for the separate code walkthrough.",
     "cues": [
       {
         "start": 0.05,
-        "end": 5.125,
+        "end": 5.212,
         "text": "Before reading individual lines, step back and follow the complete agent loop."
       },
       {
-        "start": 5.125,
-        "end": 10.137,
+        "start": 5.212,
+        "end": 10.187,
         "text": "Game Frame is the current world: the player's lane, coins, and hazards."
       },
       {
-        "start": 10.137,
-        "end": 15.225,
+        "start": 10.187,
+        "end": 15.287,
         "text": "Observe means environment.js converts that world into four numeric sensors."
       },
       {
-        "start": 15.225,
-        "end": 23.837,
+        "start": 15.287,
+        "end": 24.025,
         "text": "Predict means policy.js compares those numbers with demonstration rows, combines the nearest weighted votes, and chooses an action."
       },
       {
-        "start": 23.837,
-        "end": 28.237,
+        "start": 24.025,
+        "end": 28.137,
         "text": "Action sends LEFT, STAY, or RIGHT back to the game."
       },
       {
-        "start": 28.237,
-        "end": 35.187,
+        "start": 28.137,
+        "end": 35.2,
         "text": "Environment applies that move, advances the objects, calculates the reward, and creates the next frame."
       },
       {
-        "start": 35.187,
-        "end": 44.925,
+        "start": 35.2,
+        "end": 44.975,
         "text": "Repeat means app.js coordinates this loop every one hundred milliseconds while it also updates the display, records demonstrations, and exports the CSV."
       },
       {
-        "start": 44.925,
-        "end": 49.087,
+        "start": 44.975,
+        "end": 49.187,
         "text": "Now connect those stages to the four files in the GitHub source."
       },
       {
-        "start": 49.087,
-        "end": 55.875,
+        "start": 49.187,
+        "end": 55.912,
         "text": "environment.js defines the world, sensors, rewards, seeded levels, and expert labels."
       },
       {
-        "start": 55.875,
-        "end": 62.187,
-        "text": "policy.js contains trainKnn and the live weighted k-NN predictor shown here."
+        "start": 55.912,
+        "end": 61.587,
+        "text": "policy.js contains trainKnn and the live weighted k-NN predictor."
       },
       {
-        "start": 62.187,
-        "end": 70.125,
+        "start": 61.587,
+        "end": 69.475,
         "text": "app.js connects the controls, animation, agent loop, receipts, CSV export, and local run history."
       },
       {
-        "start": 70.125,
-        "end": 76.975,
+        "start": 69.475,
+        "end": 76.412,
         "text": "experiment.js runs the controlled one-seed-versus-twelve-seed evaluation on unseen levels."
       },
       {
-        "start": 76.975,
-        "end": 90.437,
-        "text": "The editor now contains the complete policy.js file: its distance helper, input checks, class balancing, neighbor search, weighted probabilities, decision receipt, and exports for both the browser and Node tests."
+        "start": 76.412,
+        "end": 83.787,
+        "text": "The code panel uses a nine-line teaching extract of predict so you can trace one decision without teaching the whole implementation."
       },
       {
-        "start": 90.437,
-        "end": 97.687,
-        "text": "After this overview, use Explain complete policy dot J S line by line for the separate code walkthrough."
+        "start": 83.787,
+        "end": 87.35,
+        "text": "The complete production policy remains linked on GitHub."
+      },
+      {
+        "start": 87.35,
+        "end": 92.862,
+        "text": "After this overview, use Explain the nine-line predict example for the separate code walkthrough."
       }
     ],
-    "bytes": 586512,
+    "bytes": 557568,
     "source": "authored-runtime-source-tour"
   },
   "code-walk": {
-    "hash": "3077716ec3428a19",
+    "hash": "df0f01d95416c8bf",
     "voice": "en-US-AvaMultilingualNeural",
-    "script": "Read the complete file as six testable responsibilities, not as one sixty-four-line block. The wrapper creates a safe module boundary, and squaredDistance defines exactly what nearby means. trainKnn validates its inputs, counts LEFT, STAY, and RIGHT examples, and gives rarer classes more weight. The returned model keeps rows, k, and counts as an inspectable training receipt. Inside predict, the code measures every demonstration, sorts by distance, keeps the nearest k, and accumulates class-balanced inverse-distance votes. It then normalizes those votes into probabilities, chooses the winning action, and returns the evidence behind the decision: probabilities, raw votes, neighbors, and nearest distance. Finally, the export lines make the same tested functions available to Node and the browser. If every demonstration says STAY, inspect counts and data coverage before blaming the syntax.",
+    "script": "Line-by-line explanation is not only syntax translation. Each line makes a behavior claim we can test: representation, comparison, neighbor selection, weighting, and decision. The small constant zero point zero two five prevents division by zero when an example exactly matches the current state. Removing it is a concrete bug students can predict before running the program. Suppose every demonstration says STAY. Which line is wrong? None of them. The program correctly returns the only action represented in the data. The failure is coverage, not syntax. That distinction is a coding-level research habit: trace the executed logic, inspect inputs, and decide whether the problem comes from data, features, model behavior, or implementation.",
     "cues": [
       {
         "start": 0.05,
-        "end": 6.212,
-        "text": "Read the complete file as six testable responsibilities, not as one sixty-four-line block."
+        "end": 4.479,
+        "text": "Line-by-line explanation is not only syntax translation."
       },
       {
-        "start": 6.212,
-        "end": 12.65,
-        "text": "The wrapper creates a safe module boundary, and squaredDistance defines exactly what nearby means."
+        "start": 4.479,
+        "end": 13.046,
+        "text": "Each line makes a behavior claim we can test: representation, comparison, neighbor selection, weighting, and decision."
       },
       {
-        "start": 12.65,
-        "end": 20.062,
-        "text": "trainKnn validates its inputs, counts LEFT, STAY, and RIGHT examples, and gives rarer classes more weight."
+        "start": 13.434,
+        "end": 21.717,
+        "text": "The small constant zero point zero two five prevents division by zero when an example exactly matches the current state."
       },
       {
-        "start": 20.062,
-        "end": 25.525,
-        "text": "The returned model keeps rows, k, and counts as an inspectable training receipt."
+        "start": 21.717,
+        "end": 26.118,
+        "text": "Removing it is a concrete bug students can predict before running the program."
       },
       {
-        "start": 25.525,
-        "end": 35.55,
-        "text": "Inside predict, the code measures every demonstration, sorts by distance, keeps the nearest k, and accumulates class-balanced inverse-distance votes."
+        "start": 26.506,
+        "end": 29.502,
+        "text": "Suppose every demonstration says STAY."
       },
       {
-        "start": 35.55,
-        "end": 46.537,
-        "text": "It then normalizes those votes into probabilities, chooses the winning action, and returns the evidence behind the decision: probabilities, raw votes, neighbors, and nearest distance."
+        "start": 29.502,
+        "end": 31.247,
+        "text": "Which line is wrong?"
       },
       {
-        "start": 46.537,
-        "end": 52.45,
-        "text": "Finally, the export lines make the same tested functions available to Node and the browser."
+        "start": 31.247,
+        "end": 32.276,
+        "text": "None of them."
       },
       {
-        "start": 52.45,
-        "end": 58.787,
-        "text": "If every demonstration says STAY, inspect counts and data coverage before blaming the syntax."
+        "start": 32.276,
+        "end": 36.625,
+        "text": "The program correctly returns the only action represented in the data."
+      },
+      {
+        "start": 36.625,
+        "end": 39.594,
+        "text": "The failure is coverage, not syntax."
+      },
+      {
+        "start": 39.986,
+        "end": 52.566,
+        "text": "That distinction is a coding-level research habit: trace the executed logic, inspect inputs, and decide whether the problem comes from data, features, model behavior, or implementation."
       }
     ],
-    "bytes": 353088,
-    "source": "authored-complete-policy-map"
+    "bytes": 843066,
+    "source": "authored-video-script"
   },
   "lab-takeover": {
     "hash": "3b29a73161c68362",
