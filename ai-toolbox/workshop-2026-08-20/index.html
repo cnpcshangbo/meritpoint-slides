@@ -263,6 +263,8 @@
     .reveal .domain-visual{position:relative;margin:.22em auto 0;max-width:93%;border-radius:16px;overflow:hidden;background:#071426;box-shadow:0 18px 40px #07142644}.reveal .domain-visual img{display:block;width:100%;height:8.15em;object-fit:cover}.reveal .domain-labels{position:absolute;left:1.4%;right:1.4%;top:.35em;display:grid;grid-template-columns:repeat(4,1fr);gap:.25em}.reveal .domain-labels span{justify-self:center;padding:.28em .55em;border:1px solid #53edf488;border-radius:999px;background:#071426d9;color:#fff;font:800 .44em ui-monospace,monospace;letter-spacing:.03em}.reveal .transfer-pipeline{display:flex;align-items:center;justify-content:center;gap:.28em;margin-top:.32em}.reveal .transfer-pipeline b{padding:.28em .55em;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--navy);font-size:.46em}.reveal .transfer-pipeline i{color:var(--coral);font-style:normal;font-size:.55em}
     .reveal .agent-map{display:flex;align-items:stretch;gap:.22em;margin:.18em 0 .25em}.reveal .agent-map .am-node{flex:1;position:relative;border:1px solid var(--line);border-radius:8px;background:#fff;padding:.25em .3em;text-align:center}.reveal .agent-map .am-node+.am-node:before{content:"→";position:absolute;left:-.28em;top:50%;transform:translate(-50%,-50%);color:var(--coral);font-weight:900;font-size:.55em;z-index:2}.reveal .agent-map b{display:block;color:var(--navy);font-size:.47em;line-height:1.15}.reveal .agent-map span{display:block;color:var(--muted);font-size:.42em;line-height:1.2;margin-top:.12em}.reveal .agent-map .am-code{border:2px solid var(--amber);background:#fff8e8}.reveal .agent-map .am-code b{color:#8a5a00}.reveal .agent-map .am-loop{border-style:dashed;border-color:var(--teal)}
     .reveal .source-map{display:grid;grid-template-columns:repeat(4,1fr);gap:.25em;margin-top:.23em}.reveal .source-map .sm-node{min-width:0;padding:.22em .3em;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--muted);text-align:center;font-size:.4em;line-height:1.2}.reveal .source-map .sm-node b{display:block;color:var(--navy);font:850 1.08em ui-monospace,Consolas,monospace;margin-bottom:.1em}.reveal .source-map .sm-policy{border:2px solid var(--amber);background:#fff8e8}.reveal .source-map .sm-policy b{color:#8a5a00}
+    .reveal #code-core [data-listen-cue]{transition:transform .2s ease,box-shadow .2s ease,outline-color .2s ease,filter .2s ease}.reveal #code-core .is-listen-active{position:relative;z-index:8;outline:3px solid #0f9db0;outline-offset:2px;box-shadow:0 0 0 5px #53edf433,0 0 24px #0f9db088;filter:saturate(1.18);animation:listen-focus-pulse 1.05s ease-in-out infinite}.reveal #code-core .agent-map .is-listen-active,.reveal #code-core .source-map .is-listen-active{transform:translateY(-.06em) scale(1.025)}.reveal #code-core .lab.is-listen-active{transform:scale(1.006)}.reveal #code-core .source a.is-listen-active,.reveal #code-core button.is-listen-active{border-radius:6px}
+    @keyframes listen-focus-pulse{0%,100%{box-shadow:0 0 0 3px #53edf422,0 0 13px #0f9db066}50%{box-shadow:0 0 0 7px #53edf455,0 0 28px #0f9db0aa}}@media (prefers-reduced-motion:reduce){.reveal #code-core .is-listen-active{animation:none}}
     .reveal #row .row-reveal{opacity:0;visibility:hidden;transition:opacity .42s ease,visibility .42s}.reveal #row .row-reveal.is-visible{opacity:1;visibility:visible}.reveal #row .row-controls{display:flex;justify-content:flex-end;gap:.35em;margin-top:.18em}.reveal #row .row-controls button{border:1px solid var(--teal);border-radius:999px;background:#fff;color:var(--teal);font:700 .46em -apple-system,sans-serif;padding:.3em .75em;cursor:pointer}
     .reveal .reward-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:.35em;margin-top:.28em}.reveal .reward-strip .box{padding:.38em .3em;text-align:center}.reveal .reward-value{font:900 .94em ui-monospace,Consolas,monospace}.reveal .reward-formula{display:flex;align-items:center;justify-content:center;gap:.42em;margin-top:.42em;padding:.36em .5em;border:2px solid var(--teal);border-radius:12px;background:#effbfc;color:var(--navy);font-size:.47em}.reveal .reward-formula code{font-size:1em}.reveal .reward-examples{text-align:center;color:var(--muted);font:700 .45em ui-monospace,Consolas,monospace;margin-top:.22em}
     .reveal .knn-layout{display:grid;grid-template-columns:2.05fr .95fr;gap:.42em;margin-top:.12em}.reveal .knn-plot{position:relative;height:10.05em;border:1px solid #bdd0dc;border-radius:14px;background-color:#fbfdff;background-image:linear-gradient(#dce8ef 1px,transparent 1px),linear-gradient(90deg,#dce8ef 1px,transparent 1px);background-size:2em 2em;overflow:hidden}.reveal .knn-axis{position:absolute;background:#314e67;z-index:1}.reveal .knn-axis-x{left:.92em;right:.35em;bottom:.76em;height:2px}.reveal .knn-axis-y{left:.92em;top:.3em;bottom:.76em;width:2px}.reveal .knn-axis-label{position:absolute;color:#476178;font:800 .42em ui-monospace,Consolas,monospace;z-index:2}.reveal .knn-axis-label.x{right:.4em;bottom:.17em}.reveal .knn-axis-label.y{left:.18em;top:.2em;writing-mode:vertical-rl;transform:rotate(180deg)}
@@ -452,8 +454,8 @@
 <section id="code-core" data-sid="code-core">
 <div class="kicker">Coding-level demo · focused JavaScript teaching extract</div>
     <h2>Nine lines turn nearby demonstrations into the next action.</h2>
-    <div class="agent-map" role="img" aria-label="Overall agent flow: game frame, four sensors, compare with demonstrations, weighted vote, action, changed game frame, then repeat"><div class="am-node"><b>① GAME FRAME</b><span>player · coin · hazard</span></div><div class="am-node"><b>② OBSERVE</b><span>convert picture to 4 sensors</span></div><div class="am-node am-code"><b>③ PREDICT · CODE BELOW</b><span>compare rows → weighted vote</span></div><div class="am-node"><b>④ ACTION</b><span>LEFT · STAY · RIGHT</span></div><div class="am-node"><b>⑤ ENVIRONMENT</b><span>movement changes next frame</span></div><div class="am-node am-loop"><b>↺ REPEAT</b><span>every 100 milliseconds</span></div></div>
-    <div class="lab folded js-walk">
+    <div class="agent-map" data-listen-cue="0" role="img" aria-label="Overall agent flow: game frame, four sensors, compare with demonstrations, weighted vote, action, changed game frame, then repeat"><div class="am-node" data-listen-cue="1"><b>① GAME FRAME</b><span>player · coin · hazard</span></div><div class="am-node" data-listen-cue="2"><b>② OBSERVE</b><span>convert picture to 4 sensors</span></div><div class="am-node am-code" data-listen-cue="3"><b>③ PREDICT · CODE BELOW</b><span>compare rows → weighted vote</span></div><div class="am-node" data-listen-cue="4"><b>④ ACTION</b><span>LEFT · STAY · RIGHT</span></div><div class="am-node" data-listen-cue="5"><b>⑤ ENVIRONMENT</b><span>movement changes next frame</span></div><div class="am-node am-loop" data-listen-cue="6"><b>↺ REPEAT</b><span>every 100 milliseconds</span></div></div>
+    <div class="lab folded js-walk" data-listen-cue="12">
       <div class="lab-main">
         <div class="code-wrap"><div class="gutter"></div><div class="line-hi"></div><textarea class="code" spellcheck="false" wrap="off" aria-label="Nine-line teaching extract of the Agent Arcade prediction policy">function predict(state, rows, k = 9) {
   const x = vector(state);
@@ -464,11 +466,11 @@
   near.forEach(n =&gt; vote[n.action] += 1 / (.025 + Math.sqrt(n.d)));
   return [-1, 0, 1].sort((a, b) =&gt; vote[b] - vote[a])[0];
 }</textarea></div>
-        <div class="lab-bar"><button class="walk" hidden>🎧 Explain the nine-line predict example</button><span class="walk-controls" hidden><button class="walk-prev" title="Previous step">⏮</button><button class="walk-pause" title="Pause / resume">⏸</button><button class="walk-next" title="Next step">⏭</button><button class="walk-stop" title="Stop walkthrough">✕</button><span class="walk-step"></span></span><span class="lab-status">9 lines · focused predict()</span></div>
+        <div class="lab-bar"><button class="walk" data-listen-cue="14" hidden>🎧 Explain the nine-line predict example</button><span class="walk-controls" hidden><button class="walk-prev" title="Previous step">⏮</button><button class="walk-pause" title="Pause / resume">⏸</button><button class="walk-next" title="Next step">⏭</button><button class="walk-stop" title="Stop walkthrough">✕</button><span class="walk-step"></span></span><span class="lab-status">9 lines · focused predict()</span></div>
       </div>
     </div>
-    <div class="source-map" aria-label="GitHub source structure"><div class="sm-node"><b>environment.js</b>state · sensors · rewards</div><div class="sm-node sm-policy"><b>policy.js</b>train · predict · votes</div><div class="sm-node"><b>app.js</b>controls · loop · CSV</div><div class="sm-node"><b>experiment.js</b>unseen-level evaluation</div></div>
-    <p class="source"><b>Listen:</b> runtime + source tour. &nbsp; <b>Orange audio:</b> the nine-line <code>predict</code> example. &nbsp; <a href="https://github.com/MeritPoint-Academy/agent-arcade/blob/main/src/policy.js" target="_blank" rel="noopener">Open the complete production policy.js on GitHub</a></p>
+    <div class="source-map" data-listen-cue="7" aria-label="GitHub source structure"><div class="sm-node" data-listen-cue="8"><b>environment.js</b>state · sensors · rewards</div><div class="sm-node sm-policy" data-listen-cue="9"><b>policy.js</b>train · predict · votes</div><div class="sm-node" data-listen-cue="10"><b>app.js</b>controls · loop · CSV</div><div class="sm-node" data-listen-cue="11"><b>experiment.js</b>unseen-level evaluation</div></div>
+    <p class="source"><b>Listen:</b> runtime + source tour. &nbsp; <b>Orange audio:</b> the nine-line <code>predict</code> example. &nbsp; <a data-listen-cue="13" href="https://github.com/MeritPoint-Academy/agent-arcade/blob/main/src/policy.js" target="_blank" rel="noopener">Open the complete production policy.js on GitHub</a></p>
     <aside class="notes">右下角 Listen 讲六阶段 runtime 与四个 source files。代码框只保留九行教学版 predict，让学生集中理解 vector、distance、nearest nine、inverse-distance vote 和 winner。橙色按钮逐段讲这九行并自动高亮；完整 production policy.js 保留在 GitHub 链接中供课后阅读，不要求课堂逐行讲完。</aside>
 </section>
 <section id="code-walk" data-sid="code-walk">
@@ -738,6 +740,25 @@ function syncKnnReveal(t){
   for(const cue of cues){ if(t<cue.start) break; step=knnStepFromCue(cue.text,step); }
   setKnnStep(step);
 }
+let _listenFocusCue=-1,_listenFocusSid='';
+function clearNarrationFocus(){
+  document.querySelectorAll('.is-listen-active').forEach(function(el){ el.classList.remove('is-listen-active'); });
+  _listenFocusCue=-1; _listenFocusSid='';
+}
+function syncNarrationFocus(t){
+  const data=_narrationData&&_narrationData[curSid], cues=data&&data.cues||[];
+  let cueIndex=-1;
+  for(let i=0;i<cues.length;i++){ if(t>=cues[i].start&&t<cues[i].end){ cueIndex=i; break; } }
+  if(cueIndex===_listenFocusCue&&curSid===_listenFocusSid) return;
+  document.querySelectorAll('.is-listen-active').forEach(function(el){ el.classList.remove('is-listen-active'); });
+  _listenFocusCue=cueIndex; _listenFocusSid=curSid;
+  if(cueIndex<0) return;
+  const sec=document.getElementById(curSid); if(!sec) return;
+  sec.querySelectorAll('[data-listen-cue]').forEach(function(el){
+    const indexes=String(el.dataset.listenCue||'').split(/[\s,]+/).map(Number);
+    el.classList.toggle('is-listen-active',indexes.includes(cueIndex));
+  });
+}
 function stopAudio(){
   stopWalk(); // lab walkthrough shares the stage with narration — never both
   _playToken++; // invalidate any in-flight play() for the old src
@@ -745,6 +766,7 @@ function stopAudio(){
   _audio.removeEventListener('timeupdate',onListenTimeupdate); // else it'd animate listenBtn during a .speak clip
   if(curSid==='row') setRowReveal(0);
   if(curSid==='knn') setKnnStep(0);
+  clearNarrationFocus();
   capBar.style.display='none';
   if(_btn){
     _btn.classList.remove('playing');
@@ -804,6 +826,7 @@ function onListenTimeupdate(){
   updateCaption();
   syncRowReveal(_audio.currentTime);
   syncKnnReveal(_audio.currentTime);
+  syncNarrationFocus(_audio.currentTime);
 }
 listenBtn.addEventListener('click',function(){
   if(_btn===listenBtn && !_audio.paused){ stopAudio(); return; } // toggles play/stop even mid-buffer
@@ -818,6 +841,7 @@ listenBtn.addEventListener('click',function(){
   _audio.src='audio/'+encodeURIComponent(curSid)+'.mp3'+version;
   if(curSid==='row') setRowReveal(0);
   if(curSid==='knn') setKnnStep(0);
+  clearNarrationFocus();
   _audio.addEventListener('timeupdate',onListenTimeupdate);
   _audio.addEventListener('ended',stopAudio,{once:true});
   _audio.play().catch(function(){
