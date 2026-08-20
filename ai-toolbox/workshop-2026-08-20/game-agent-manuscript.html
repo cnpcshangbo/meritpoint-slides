@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>From Recorded Demonstrations to an Inspectable Game-Playing Agent</title>
+<style>
+  @page{size:letter;margin:.65in}
+  :root{--navy:#0c2d52;--teal:#0f9db0;--amber:#f2a93b;--coral:#ee6b36;--ink:#21303f;--muted:#5e7183;--line:#d7e2ec;--cloud:#eef4fa;--paper:#fff}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#edf2f6;color:var(--ink);font:17px/1.62 Georgia,serif}
+  a{color:#087f90}.screenbar{position:sticky;top:0;z-index:5;background:#071426f2;color:#fff;padding:10px 24px;font:700 13px/1.4 system-ui,sans-serif;backdrop-filter:blur(10px)}
+  .screenbar a{color:#76edf4;text-decoration:none;margin-right:20px}.paper{max-width:940px;margin:30px auto 60px;background:var(--paper);padding:64px 72px;box-shadow:0 18px 60px #17324b2b}
+  h1,h2,h3{font-family:Arial,sans-serif;color:var(--navy);line-height:1.15}h1{font-size:38px;text-align:center;margin:0 0 12px}h2{font-size:23px;margin:34px 0 9px;border-bottom:1px solid var(--line);padding-bottom:6px}h3{font-size:17px;margin:22px 0 5px}
+  p{margin:0 0 12px}.meta{text-align:center;color:var(--muted);font:14px/1.45 Arial,sans-serif;margin-bottom:26px}.label{color:var(--teal);font:800 12px/1 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+  .abstract{border-left:6px solid var(--amber);background:#fff8e8;padding:18px 22px;margin:22px 0}.abstract p:last-child{margin-bottom:0}
+  .plain{background:var(--cloud);border-radius:12px;padding:18px 22px;margin:18px 0}.plain h2{margin:0 0 8px;border:0;padding:0;font-size:19px}.plain p:last-child{margin:0}
+  .flow{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:20px 0;font:12px/1.35 Arial,sans-serif}.flow div{position:relative;border:1px solid var(--line);border-radius:9px;padding:10px 8px;text-align:center;background:#fff}.flow div:nth-child(3){border:2px solid var(--amber);background:#fff8e8}.flow b{display:block;color:var(--navy);font-size:12px}.flow span{color:var(--muted)}
+  table{width:100%;border-collapse:collapse;margin:14px 0 20px;font:13px/1.45 Arial,sans-serif}th{background:var(--navy);color:#fff;text-align:left;padding:9px}td{border-bottom:1px solid var(--line);padding:9px;vertical-align:top}tr:nth-child(even) td{background:#f7fafc}
+  .formula{background:#071426;color:#d9f8fb;border-radius:10px;padding:15px 18px;margin:15px 0;font:14px/1.55 ui-monospace,Consolas,monospace;overflow:auto}.formula b{color:#ffc857}
+  .result{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}.result article{border:1px solid var(--line);border-top:5px solid var(--teal);border-radius:12px;padding:16px}.result article:first-child{border-top-color:var(--coral)}.result strong{display:block;color:var(--navy);font:800 30px/1 Arial,sans-serif;margin:6px 0}.result small{color:var(--muted);font:13px Arial,sans-serif}
+  .caution{border:1px solid #efc46e;background:#fff9eb;border-radius:10px;padding:14px 17px}.caution strong{color:#8a5a00}.term{font-weight:700;color:var(--navy)}
+  .refs{font-size:14px;padding-left:1.5em}.refs li{margin:7px 0}.disclosure{border-top:1px solid var(--line);margin-top:30px;padding-top:12px;color:var(--muted);font:13px/1.5 Arial,sans-serif}
+  @media(max-width:760px){.paper{margin:0;padding:34px 22px;box-shadow:none}.flow{grid-template-columns:1fr 1fr}.result{grid-template-columns:1fr}h1{font-size:30px}.screenbar{position:static}}
+  @media print{body{background:#fff;font-size:10.2pt;line-height:1.42}.screenbar{display:none}.paper{max-width:none;margin:0;padding:0;box-shadow:none}h1{font-size:22pt}h2{font-size:14pt;margin-top:20pt}.abstract,.plain,.caution,.formula,.result article{break-inside:avoid}.flow{break-inside:avoid}.result strong{font-size:20pt}a{color:inherit;text-decoration:none}.refs{font-size:8.8pt}.disclosure{font-size:8.5pt}}
+</style>
+</head>
+<body>
+<nav class="screenbar"><a href="index.html#/claim">← Return to slides</a><a href="game-agent-manuscript.pdf">Download PDF</a><a href="agent-arcade.html">Open Agent Arcade</a></nav>
+<article class="paper">
+  <div class="label" style="text-align:center">Classroom research manuscript · Agent Arcade</div>
+  <h1>From Recorded Demonstrations to an Inspectable Game-Playing Agent</h1>
+  <p class="meta">A controlled classroom study of imitation learning, training-data coverage, and unseen-level generalization<br>Merit Point Academy · prepared for the 20 August 2026 AI Toolbox workshop</p>
+
+  <section class="abstract">
+    <div class="label">Abstract</div>
+    <p>How does a sequence of human game actions become a working artificial-intelligence agent, and what can a classroom experiment legitimately conclude about that agent? We developed Agent Arcade, a local browser game in which each player action is recorded with four interpretable sensor values, an action label, and the immediate reward. A class-balanced, distance-weighted <span class="term">k-nearest-neighbors (k-NN)</span> policy compares a current state with recorded demonstrations and selects LEFT, STAY, or RIGHT by weighted vote. The personal-training activity demonstrates the complete data-to-policy loop without uploading student records. A separate controlled experiment holds the model and 240-row data budget fixed while changing demonstration coverage from one training level seed to twelve. Evaluation uses 600 expert-labeled actions from twenty unseen seeds, with mean game score as a secondary outcome. In the current deterministic reference run, the one-seed policy achieved 91.0% action accuracy and mean score 105.0, while the twelve-seed policy achieved 84.3% and mean score 66.7. The observed 6.7-percentage-point decrease contradicts a simple “more diverse is always better” expectation. It does not establish that diversity is harmful: with a fixed data budget, broader seed coverage also reduces the number of demonstrations available per seed and may alter local neighborhood density. The study shows how recorded behavior can train an inspectable agent and how a surprising result becomes a prompt for a better controlled experiment rather than a broad causal claim.</p>
+  </section>
+
+  <section class="plain">
+    <h2>Plain-language takeaway</h2>
+    <p>The agent does not watch the colorful screen or “understand” the game as a person does. It receives four numbers, searches recorded situations that look numerically similar, and imitates the actions attached to those rows. In our built-in fair test, spreading the same 240 demonstrations across more levels did not improve performance. That is a real result from this implementation—but one run is a clue, not a universal law.</p>
+  </section>
+
+  <h2>1. Introduction</h2>
+  <p>Classroom discussions of game-playing artificial intelligence often begin with an impressive animation and end before the evidence pipeline becomes visible. Agent Arcade reverses that order. A learner first plays a controlled three-lane game, creating a dataset through ordinary choices. The learner then trains an agent, watches the policy act, inspects its decision receipt, and tests it on an unseen level. The animation is therefore not the explanation. The explanation is the trace from a measured state, through recorded demonstrations and a reproducible decision rule, to an action and outcome.</p>
+  <p>This manuscript addresses two related questions. First, how are locally recorded human demonstrations represented and converted into a policy? Second, with a fixed number of expert-labeled demonstration rows, does collecting those rows from more procedurally generated level seeds improve action accuracy on unseen seeds? The first question is instructional and descriptive. The second is a controlled empirical comparison.</p>
+
+  <div class="flow" aria-label="Agent pipeline">
+    <div><b>1 · PLAY</b><span>human controls the ship</span></div><div><b>2 · RECORD</b><span>state, action, reward</span></div><div><b>3 · TRAIN</b><span>weighted k-NN policy</span></div><div><b>4 · ACT</b><span>LEFT, STAY, RIGHT</span></div><div><b>5 · TEST</b><span>unseen level seeds</span></div><div><b>6 · INSPECT</b><span>accuracy, score, failures</span></div>
+  </div>
+
+  <h2>2. Environment and recorded data</h2>
+  <h3>2.1 Controlled three-lane game</h3>
+  <p>The environment contains a player ship, collectible coins, and hazards. The player or agent may move one lane left, remain in the current lane, or move one lane right. A pseudorandom level seed determines the object sequence, making levels reproducible while allowing unseen seeds to create new arrangements. A run ends after 450 decision steps or when three lives are lost. Coins add 10 points, hazards subtract 12 points without allowing the score to fall below zero, and survival adds 0.02 per step.</p>
+
+  <h3>2.2 One decision becomes one row</h3>
+  <p>During Player Run, the browser records a row after a human decision. A row represents one decision—not an entire game. The comma-separated-values (CSV) export contains the following fields:</p>
+  <table>
+    <thead><tr><th>Field</th><th>Meaning</th><th>Role in learning</th></tr></thead>
+    <tbody>
+      <tr><td><code>seed</code>, <code>step</code></td><td>Level identifier and decision time</td><td>Provenance; not policy inputs</td></tr>
+      <tr><td><code>obs_dx</code></td><td>Horizontal obstacle offset: negative = left, zero = same lane, positive = right</td><td>Input feature</td></tr>
+      <tr><td><code>obs_distance</code></td><td>Normalized forward distance to the nearest hazard: zero = near, one = far or absent</td><td>Input feature</td></tr>
+      <tr><td><code>coin_dx</code></td><td>Horizontal coin offset relative to the player</td><td>Input feature</td></tr>
+      <tr><td><code>coin_distance</code></td><td>Normalized forward distance to the nearest coin</td><td>Input feature</td></tr>
+      <tr><td><code>action</code></td><td>Human choice: LEFT, STAY, or RIGHT</td><td>Training label</td></tr>
+      <tr><td><code>reward</code></td><td>Immediate consequence after the action</td><td>Outcome for inspection; not the imitation-learning label</td></tr>
+    </tbody>
+  </table>
+  <p>The suffix <code>dx</code> means <em>delta x</em>, or horizontal displacement relative to the player. The four features are normalized values rather than screen pixels or physical distances.</p>
+
+  <h3>2.3 Privacy and scope of the human records</h3>
+  <p>Personal gameplay rows remain in the learner’s browser unless the learner explicitly chooses Export CSV. The activity requires no account, camera, microphone, or connection to a commercial game. Because the workshop does not centrally collect personal rows, this manuscript does not report a class-level sample size, average student performance, or a claim that training caused student learning. Those quantities do not exist in the project evidence.</p>
+
+  <h2>3. From demonstrations to a policy</h2>
+  <h3>3.1 Training set construction for the personal agent</h3>
+  <p>Every personal policy begins with 180 balanced starter demonstrations: 60 LEFT, 60 STAY, and 60 RIGHT examples generated from nine seeds. The browser then adds up to the most recent 60 personal examples for each action class. This cap prevents a long sequence of STAY actions from overwhelming all LEFT and RIGHT examples. The displayed training receipt reports the resulting row count and action balance.</p>
+
+  <h3>3.2 Distance-weighted k-nearest neighbors</h3>
+  <p>For each decision, the policy converts the current state into a four-element vector. It computes squared Euclidean distance to every training row, retains the nine nearest rows (<em>k</em> = 9), and gives closer rows more influence. It also applies inverse-frequency class weights so an action with fewer training examples is not automatically ignored.</p>
+  <div class="formula"><b>distance</b>(x,r) = Σᵢ (rᵢ − xᵢ)²<br><b>vote</b>(action) = Σ neighbors of that action class_weight ÷ (0.025 + √distance)</div>
+  <p>The action with the largest normalized vote is returned. The constant 0.025 prevents division by zero. The policy is an imitation learner: it learns to reproduce labeled actions in similar measured states. Reward is displayed for evaluation, but this version does not use reinforcement learning to optimize long-term reward.</p>
+
+  <h2>4. Controlled generalization experiment</h2>
+  <h3>4.1 Research question and hypothesis</h3>
+  <p>The research question is: <em>With the same 240 demonstration rows, does training on more level seeds improve action accuracy on unseen levels?</em> A reasonable preregistered hypothesis is that twelve-seed coverage will expose the policy to more varied situations and improve unseen-seed accuracy. The experiment must keep data quantity fixed; otherwise seed diversity would be confounded with the number of training examples.</p>
+
+  <h3>4.2 Conditions and controls</h3>
+  <table>
+    <thead><tr><th>Component</th><th>One-seed condition</th><th>Twelve-seed condition</th></tr></thead>
+    <tbody>
+      <tr><td>Training seeds</td><td>101</td><td>101, 113, 127, 139, 151, 163, 179, 191, 211, 223, 239, 251</td></tr>
+      <tr><td>Training rows</td><td>240</td><td>240 total</td></tr>
+      <tr><td>Labels</td><td>Rule-based expert policy</td><td>Same expert policy</td></tr>
+      <tr><td>Features</td><td>Four normalized sensors</td><td>Same four sensors</td></tr>
+      <tr><td>Model</td><td>Class-balanced weighted k-NN, k = 9</td><td>Same model and k</td></tr>
+      <tr><td>Accuracy test</td><td colspan="2">The same 600 expert-labeled actions from 20 previously unseen seeds</td></tr>
+      <tr><td>Score test</td><td colspan="2">The same first 10 unseen seeds, up to 300 steps per seed</td></tr>
+    </tbody>
+  </table>
+  <p>The controlled comparison deliberately uses reproducible expert-generated rows rather than the learners’ personal records. Personal demonstrations vary in quantity, action balance, timing, and strategy, so substituting them here would prevent the experiment from isolating seed coverage.</p>
+
+  <h3>4.3 Outcomes</h3>
+  <p>The primary outcome is <span class="term">action accuracy</span>: the percentage of 600 held-out states for which the learned policy returns the same action as the expert label. Mean game score is secondary because score is sequential: one wrong action can change later states, making it informative but less direct as a measure of label imitation.</p>
+
+  <h2>5. Results</h2>
+  <div class="result">
+    <article><div class="label">1 training seed</div><strong>91.0%</strong><small>held-out action accuracy · mean game score 105.0</small></article>
+    <article><div class="label">12 training seeds</div><strong>84.3%</strong><small>held-out action accuracy · mean game score 66.7</small></article>
+  </div>
+  <p>In the current deterministic reference run, the twelve-seed policy was 6.7 percentage points lower in action accuracy than the one-seed policy. It was also 38.3 points lower in mean game score. Thus, the observed result did not support the simple directional hypothesis that broader seed coverage would improve performance under a fixed 240-row budget.</p>
+  <p class="caution"><strong>Evidence boundary.</strong> These numbers describe this implementation, its expert policy, its selected training and test seeds, one value of <em>k</em>, and one fixed row budget. No repeated resampling, confidence interval, or inferential test is currently included. The result is deterministic for the listed seeds; determinism is not the same as evidence of broad generality.</p>
+
+  <h2>6. Discussion</h2>
+  <h3>6.1 What the result establishes</h3>
+  <p>The experiment establishes that, for the specified seeds and evaluation set, distributing 240 expert demonstrations across twelve training seeds produced lower expert-action agreement and lower game score than collecting 240 rows from one seed. It also demonstrates that a plausible classroom hypothesis can fail without the experiment itself failing.</p>
+
+  <h3>6.2 Possible explanations that remain hypotheses</h3>
+  <p>Several mechanisms could produce this pattern. First, the fixed data budget creates a coverage-density trade-off: twelve seeds provide only about twenty rows per seed, whereas one seed supplies a denser local trajectory. Second, the four-feature representation may map different underlying situations to similar vectors, producing conflicting neighbor labels. Third, the chosen expert policy and seed 101 may align unusually well with the held-out state distribution. Fourth, class balancing and inverse-distance weighting may interact with the action distribution differently across conditions. The present comparison does not distinguish among these possibilities.</p>
+
+  <h3>6.3 Why personal demonstrations still matter</h3>
+  <p>The controlled experiment is not a replacement for the personal-training activity. Human records reveal data-quality problems the synthetic comparison intentionally removes: incomplete action coverage, inconsistent labels, delayed key presses, rare failure states, and different play strategies. Those problems are central to understanding real imitation learning. They should be analyzed as their own study, with consent, a defined collection protocol, anonymization, and a preregistered unit of analysis.</p>
+
+  <h2>7. Limitations</h2>
+  <p>The environment is a small, authored browser game and not evidence about commercial-game agents. The expert label is a deterministic rule, not a gold-standard account of optimal play. Action accuracy measures agreement with that rule and may not perfectly track survival or score. The test uses twenty selected seeds and the score summary uses ten of them. Only one four-feature representation, one distance metric, and <em>k</em> = 9 were evaluated. The experiment does not compare against a majority-action baseline, a non-weighted k-NN model, a decision tree, or reinforcement learning. Finally, no personal demonstration records were centrally collected, so student-specific and class-level performance claims are outside the evidence.</p>
+
+  <h2>8. Next experiments</h2>
+  <ol>
+    <li><b>Coverage ladder:</b> compare 1, 2, 4, 8, and 12 training seeds at several fixed row budgets rather than one 1-versus-12 contrast.</li>
+    <li><b>Repeated seed sets:</b> repeat each condition across many sampled training/test seed groups and report the distribution of accuracy differences.</li>
+    <li><b>Learning curves:</b> vary total rows to separate the effect of diversity from insufficient local density.</li>
+    <li><b>Representation ablation:</b> add player lane or time-to-contact features and test whether conflicting neighbor labels decrease.</li>
+    <li><b>Policy comparison:</b> compare weighted k-NN with a majority baseline, decision tree, and compact neural policy while keeping folds and data budgets identical.</li>
+    <li><b>Human-data study:</b> with explicit consent, compare personal-only, starter-only, and combined demonstrations using predefined unseen seeds and de-identified participant codes.</li>
+  </ol>
+
+  <h2>9. Reproducibility and terminology</h2>
+  <p>The complete game, data export, policy, expert generator, listed seeds, and evaluation functions run in the browser from <a href="agent-arcade.html">Agent Arcade</a>. The experiment is deterministic because each seed initializes the same pseudorandom generator. <span class="term">CSV</span> means comma-separated values; <span class="term">k-NN</span> means k-nearest neighbors; <span class="term">AI</span> means artificial intelligence; and a <span class="term">policy</span> is a function that maps the measured state to an action.</p>
+
+  <h2>References</h2>
+  <ol class="refs">
+    <li>Cobbe, K., Hesse, C., Hilton, J., &amp; Schulman, J. (2020). Leveraging procedural generation to benchmark reinforcement learning. <i>Proceedings of the 37th International Conference on Machine Learning</i>. <a href="https://proceedings.mlr.press/v119/cobbe20a.html">Procgen paper and benchmark</a>.</li>
+    <li>Perez-Liebana, D., et al. General Video Game AI (GVGAI) framework. <a href="https://github.com/GAIGResearch/GVGAI">Official repository</a>.</li>
+    <li>Hambro, E., et al. (2022). Insights from the NeurIPS 2021 NetHack Challenge. <i>NeurIPS Datasets and Benchmarks</i>. <a href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/9d9258fd703057246cb341e615426e2d-Abstract-Datasets_and_Benchmarks.html">Dataset paper</a>.</li>
+  </ol>
+
+  <p class="disclosure"><b>Artificial-intelligence-use disclosure.</b> AI assisted with manuscript organization and wording. The implementation details and reported values were checked against the workshop’s local game code and a browser execution of the deterministic generalization test. No missing student results, inferential statistics, or causal claims were invented.</p>
+</article>
+</body>
+</html>

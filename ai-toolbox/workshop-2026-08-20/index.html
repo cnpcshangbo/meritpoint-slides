@@ -251,16 +251,26 @@
     .reveal .arcade-title{font:900 2.25em/1 ui-monospace,Consolas,monospace;letter-spacing:-.07em;color:#fff;text-shadow:0 0 26px #35dbe866}
     .reveal .neon{color:#53edf4}.reveal .pink{color:#ff7aa5}.reveal .amber{color:#ffc857}.reveal .mini-zh{display:block;margin-top:.25em;color:#9db8d6;font-size:.58em;font-weight:650}
     .reveal .game-window{background:#071426;border:2px solid #2bc4d4;border-radius:14px;box-shadow:0 0 0 6px #0e2944,0 18px 48px #0006,0 0 30px #2bc4d433;overflow:hidden}
-    .reveal .game-head{display:flex;justify-content:space-between;padding:.3em .55em;background:#0a1c30;color:#8eafc8;font:.38em ui-monospace,monospace}.reveal .game-head b{color:#53edf4}
-    .reveal .lane-demo{position:relative;height:7.7em;background:linear-gradient(180deg,#0c2742,#040a12);overflow:hidden}.reveal .lane-demo:before{content:"";position:absolute;inset:0;background:linear-gradient(73deg,transparent 36%,#22506b 36.4%,transparent 37%),linear-gradient(107deg,transparent 36%,#22506b 36.4%,transparent 37%)}
-    .reveal .ship,.reveal .coin,.reveal .hazard{position:absolute;display:grid;place-items:center}.reveal .ship{left:47%;bottom:.5em;color:#53edf4;font-size:1.2em}.reveal .coin{left:31%;top:1.6em;width:1.2em;height:1.2em;border-radius:50%;background:#ffc857;color:#654200;font:900 .55em ui-monospace;box-shadow:0 0 22px #ffc857}.reveal .hazard{right:28%;top:.8em;color:#ff6b99;font-size:1.25em;text-shadow:0 0 20px #ff6b99}
-    .reveal .phase{display:flex;align-items:center;gap:.25em}.reveal .phase div{flex:1;padding:.45em .35em;border:1px solid var(--line);border-radius:10px;background:#fff;text-align:center}.reveal .phase b{display:block;color:var(--navy);font-size:.58em}.reveal .phase span{color:var(--muted);font-size:.43em}.reveal .phase i{color:var(--coral);font-style:normal;font-size:.7em}
-    .reveal .source{margin-top:.55em;color:var(--muted);font-size:.38em}.reveal .source a{color:var(--teal)}.reveal .research-card{border-left:6px solid var(--amber);background:#fff9eb;border-radius:10px;padding:.55em .7em}.reveal .research-card p{font:700 .7em Georgia,serif;color:var(--navy);margin:.1em 0}
+    .reveal .game-head{display:flex;justify-content:space-between;padding:.3em .55em;background:#0a1c30;color:#8eafc8;font:.45em ui-monospace,monospace}.reveal .game-head b{color:#53edf4}
+    .reveal .lane-demo{position:relative;height:7.7em;background:linear-gradient(180deg,#0c2742,#040a12);overflow:hidden}.reveal .lane-road{position:absolute;inset:.42em 9% 0;display:grid;grid-template-columns:repeat(3,1fr);clip-path:polygon(24% 0,76% 0,100% 100%,0 100%);background:linear-gradient(180deg,#173650aa,#09131dcc);border-bottom:3px solid #2bc4d466}.reveal .lane-road span{position:relative;border-right:2px dashed #53edf466}.reveal .lane-road span:last-child{border-right:0}.reveal .lane-road b{position:absolute;left:50%;bottom:.35em;transform:translateX(-50%);color:#9bb9cc;font:800 .4em ui-monospace,monospace;letter-spacing:.08em}
+    .reveal .ship,.reveal .coin,.reveal .hazard{position:absolute;z-index:2;display:grid;place-items:center}.reveal .ship{left:47%;bottom:.5em;color:#53edf4;font-size:1.2em}.reveal .coin{left:27%;top:1.6em;width:1.2em;height:1.2em;border-radius:50%;background:#ffc857;color:#654200;font:900 .55em ui-monospace;box-shadow:0 0 22px #ffc857}.reveal .hazard{right:24%;top:.8em;color:#ff6b99;font-size:1.25em;text-shadow:0 0 20px #ff6b99}
+    .reveal .quiz .opt.selected{background:#e8f7fa;border-color:var(--teal);color:var(--navy);font-weight:700}
+    .reveal .phase{display:flex;align-items:center;gap:.25em}.reveal .phase div{flex:1;padding:.45em .35em;border:1px solid var(--line);border-radius:10px;background:#fff;text-align:center}.reveal .phase b{display:block;color:var(--navy);font-size:.58em}.reveal .phase span{color:var(--muted);font-size:.46em}.reveal .phase i{color:var(--coral);font-style:normal;font-size:.7em}
+    .reveal .source{margin-top:.55em;color:var(--muted);font-size:.45em}.reveal .source a{color:var(--teal)}.reveal section a.btn{font-size:16px}.reveal .research-card{border-left:6px solid var(--amber);background:#fff9eb;border-radius:10px;padding:.55em .7em}.reveal .research-card p{font:700 .7em Georgia,serif;color:var(--navy);margin:.1em 0}
     .reveal .meter{height:.42em;border-radius:99px;background:#e4edf3;overflow:hidden;margin:.25em 0}.reveal .meter i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--teal),#2bc4d4)}
     .reveal .code-demo{margin:.28em 0 0;padding:.45em .55em;background:#061321;border:1px solid #2d5873;border-radius:12px;color:#d9f8fb;font:500 .42em/1.48 ui-monospace,SFMono-Regular,Consolas,monospace;text-align:left;counter-reset:line;white-space:pre-wrap}.reveal .code-demo>span{display:block;counter-increment:line}.reveal .code-demo>span:before{content:counter(line);display:inline-block;width:2.1em;margin-right:.65em;color:#6688a0;text-align:right}.reveal .code-demo .kw{color:#ff8fb1}.reveal .code-demo .fn{color:#67e8f9}.reveal .code-demo .num{color:#ffc857}
-    .reveal .trace{display:grid;grid-template-columns:.4fr 1.6fr;gap:.3em;margin-top:.25em}.reveal .trace b{color:var(--coral);font:800 .5em ui-monospace,monospace}.reveal .trace p{font-size:.45em;margin:0}.reveal .deadline{display:flex;align-items:center;justify-content:space-between;gap:.6em;padding:.42em .6em;margin:.25em 0;border:1px solid var(--line);border-radius:10px;background:#fff}.reveal .deadline strong{color:var(--navy);font-size:.58em}.reveal .deadline time{color:var(--coral);font:850 .55em ui-monospace,monospace;white-space:nowrap}
-    .reveal .domain-visual{position:relative;margin:.22em auto 0;max-width:93%;border-radius:16px;overflow:hidden;background:#071426;box-shadow:0 18px 40px #07142644}.reveal .domain-visual img{display:block;width:100%;height:8.15em;object-fit:cover}.reveal .domain-labels{position:absolute;left:1.4%;right:1.4%;top:.35em;display:grid;grid-template-columns:repeat(4,1fr);gap:.25em}.reveal .domain-labels span{justify-self:center;padding:.28em .55em;border:1px solid #53edf488;border-radius:999px;background:#071426d9;color:#fff;font:800 .4em ui-monospace,monospace;letter-spacing:.04em}.reveal .transfer-pipeline{display:flex;align-items:center;justify-content:center;gap:.28em;margin-top:.32em}.reveal .transfer-pipeline b{padding:.28em .55em;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--navy);font-size:.43em}.reveal .transfer-pipeline i{color:var(--coral);font-style:normal;font-size:.55em}
-    .reveal .js-walk.lab{height:14.2em;margin-top:.2em}.reveal .js-walk textarea.code,.reveal .js-walk .code-wrap .gutter{font-size:18px;line-height:1.42}.reveal .js-walk .lab-bar{min-height:2.3em}.reveal .js-walk .lab-status{color:#c9dceb}
+    .reveal .trace{display:grid;grid-template-columns:.4fr 1.6fr;gap:.3em;margin-top:.25em}.reveal .trace> b{color:var(--coral);font:800 .52em ui-monospace,monospace}.reveal .trace p{font-size:.54em;margin:0}.reveal .trace p b{color:var(--navy);font:800 1em -apple-system,sans-serif}.reveal .deadline{display:flex;align-items:center;justify-content:space-between;gap:.6em;padding:.42em .6em;margin:.25em 0;border:1px solid var(--line);border-radius:10px;background:#fff}.reveal .deadline strong{color:var(--navy);font-size:.58em}.reveal .deadline time{color:var(--coral);font:850 .55em ui-monospace,monospace;white-space:nowrap}
+    .reveal .domain-visual{position:relative;margin:.22em auto 0;max-width:93%;border-radius:16px;overflow:hidden;background:#071426;box-shadow:0 18px 40px #07142644}.reveal .domain-visual img{display:block;width:100%;height:8.15em;object-fit:cover}.reveal .domain-labels{position:absolute;left:1.4%;right:1.4%;top:.35em;display:grid;grid-template-columns:repeat(4,1fr);gap:.25em}.reveal .domain-labels span{justify-self:center;padding:.28em .55em;border:1px solid #53edf488;border-radius:999px;background:#071426d9;color:#fff;font:800 .44em ui-monospace,monospace;letter-spacing:.03em}.reveal .transfer-pipeline{display:flex;align-items:center;justify-content:center;gap:.28em;margin-top:.32em}.reveal .transfer-pipeline b{padding:.28em .55em;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--navy);font-size:.46em}.reveal .transfer-pipeline i{color:var(--coral);font-style:normal;font-size:.55em}
+    .reveal .agent-map{display:flex;align-items:stretch;gap:.22em;margin:.18em 0 .25em}.reveal .agent-map .am-node{flex:1;position:relative;border:1px solid var(--line);border-radius:8px;background:#fff;padding:.25em .3em;text-align:center}.reveal .agent-map .am-node+.am-node:before{content:"→";position:absolute;left:-.28em;top:50%;transform:translate(-50%,-50%);color:var(--coral);font-weight:900;font-size:.55em;z-index:2}.reveal .agent-map b{display:block;color:var(--navy);font-size:.47em;line-height:1.15}.reveal .agent-map span{display:block;color:var(--muted);font-size:.42em;line-height:1.2;margin-top:.12em}.reveal .agent-map .am-code{border:2px solid var(--amber);background:#fff8e8}.reveal .agent-map .am-code b{color:#8a5a00}.reveal .agent-map .am-loop{border-style:dashed;border-color:var(--teal)}
+    .reveal .source-map{display:grid;grid-template-columns:repeat(4,1fr);gap:.25em;margin-top:.23em}.reveal .source-map .sm-node{min-width:0;padding:.22em .3em;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--muted);text-align:center;font-size:.4em;line-height:1.2}.reveal .source-map .sm-node b{display:block;color:var(--navy);font:850 1.08em ui-monospace,Consolas,monospace;margin-bottom:.1em}.reveal .source-map .sm-policy{border:2px solid var(--amber);background:#fff8e8}.reveal .source-map .sm-policy b{color:#8a5a00}
+    .reveal #row .row-reveal{opacity:0;visibility:hidden;transition:opacity .42s ease,visibility .42s}.reveal #row .row-reveal.is-visible{opacity:1;visibility:visible}.reveal #row .row-controls{display:flex;justify-content:flex-end;gap:.35em;margin-top:.18em}.reveal #row .row-controls button{border:1px solid var(--teal);border-radius:999px;background:#fff;color:var(--teal);font:700 .46em -apple-system,sans-serif;padding:.3em .75em;cursor:pointer}
+    .reveal .reward-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:.35em;margin-top:.28em}.reveal .reward-strip .box{padding:.38em .3em;text-align:center}.reveal .reward-value{font:900 .94em ui-monospace,Consolas,monospace}.reveal .reward-formula{display:flex;align-items:center;justify-content:center;gap:.42em;margin-top:.42em;padding:.36em .5em;border:2px solid var(--teal);border-radius:12px;background:#effbfc;color:var(--navy);font-size:.47em}.reveal .reward-formula code{font-size:1em}.reveal .reward-examples{text-align:center;color:var(--muted);font:700 .45em ui-monospace,Consolas,monospace;margin-top:.22em}
+    .reveal .knn-layout{display:grid;grid-template-columns:2.05fr .95fr;gap:.42em;margin-top:.12em}.reveal .knn-plot{position:relative;height:10.05em;border:1px solid #bdd0dc;border-radius:14px;background-color:#fbfdff;background-image:linear-gradient(#dce8ef 1px,transparent 1px),linear-gradient(90deg,#dce8ef 1px,transparent 1px);background-size:2em 2em;overflow:hidden}.reveal .knn-axis{position:absolute;background:#314e67;z-index:1}.reveal .knn-axis-x{left:.92em;right:.35em;bottom:.76em;height:2px}.reveal .knn-axis-y{left:.92em;top:.3em;bottom:.76em;width:2px}.reveal .knn-axis-label{position:absolute;color:#476178;font:800 .42em ui-monospace,Consolas,monospace;z-index:2}.reveal .knn-axis-label.x{right:.4em;bottom:.17em}.reveal .knn-axis-label.y{left:.18em;top:.2em;writing-mode:vertical-rl;transform:rotate(180deg)}
+    .reveal .knn-point{position:absolute;width:.54em;height:.54em;transform:translate(-50%,-50%) scale(.45);opacity:0;z-index:4;transition:opacity .35s ease,transform .35s ease,filter .25s ease}.reveal .knn-point .knn-mark{display:block;width:100%;height:100%;background:currentColor;box-shadow:0 0 0 2px #fff,0 2px 5px #18354a44}.reveal .knn-point.action-left{color:#e85d8a}.reveal .knn-point.action-left .knn-mark{border-radius:50%}.reveal .knn-point.action-stay{color:#e5a11b}.reveal .knn-point.action-stay .knn-mark{border-radius:2px}.reveal .knn-point.action-right{color:#0f9db0}.reveal .knn-point.action-right .knn-mark{clip-path:polygon(50% 0,100% 100%,0 100%)}.reveal .knn-point.is-visible{opacity:1;transform:translate(-50%,-50%) scale(1)}.reveal .knn-point.is-muted{opacity:.16;filter:saturate(.25)}.reveal .knn-point.is-neighbor{filter:saturate(1.15)}.reveal .knn-point.is-active{z-index:9;filter:none}.reveal .knn-point.is-active .knn-mark{animation:knn-pulse .85s ease both}.reveal .knn-num{position:absolute;left:50%;top:-1.2em;transform:translateX(-50%) scale(.65);display:grid;place-items:center;width:1.15em;height:1.15em;border-radius:50%;background:#071426;color:#fff;font:900 .4em ui-monospace,monospace;opacity:0;transition:opacity .2s,transform .2s}.reveal .knn-point.is-counted .knn-num{opacity:1;transform:translateX(-50%) scale(1)}
+    .reveal .knn-query{position:absolute;left:59%;top:48%;z-index:10;transform:translate(-50%,-50%) scale(.4);opacity:0;color:#071426;font:900 .92em/1 ui-monospace,monospace;text-shadow:0 0 0 #fff,0 0 5px #fff;transition:opacity .35s,transform .35s}.reveal .knn-query.is-visible{opacity:1;transform:translate(-50%,-50%) scale(1)}.reveal .knn-query-label{position:absolute;left:calc(59% + .75em);top:calc(48% - .52em);z-index:10;padding:.12em .34em;border-radius:5px;background:#071426;color:#fff;font:800 .4em ui-monospace,monospace;opacity:0;transition:opacity .3s}.reveal .knn-query-label.is-visible{opacity:1}.reveal .knn-ring{position:absolute;left:59%;top:48%;width:7.4em;height:7.4em;border:3px dashed #071426;border-radius:50%;transform:translate(-50%,-50%) scale(.25);opacity:0;z-index:3;background:#53edf40d;transition:opacity .42s,transform .5s cubic-bezier(.2,.8,.2,1)}.reveal .knn-ring.is-visible{opacity:.82;transform:translate(-50%,-50%) scale(1)}
+    .reveal .knn-side{display:flex;flex-direction:column;gap:.25em}.reveal .knn-card{border:1px solid var(--line);border-radius:11px;background:#fff;padding:.28em .38em}.reveal .knn-card h3{font-size:.5em;margin:0 0 .12em;color:var(--navy)}.reveal .knn-legend{display:grid;grid-template-columns:repeat(3,1fr);gap:.1em}.reveal .knn-legend span{display:flex;align-items:center;gap:.18em;color:var(--muted);font:800 .4em ui-monospace,monospace;opacity:.22;transition:opacity .3s}.reveal .knn-legend span.is-visible{opacity:1}.reveal .knn-key{display:inline-block;width:.72em;height:.72em;background:currentColor}.reveal .knn-key.left{color:#e85d8a;border-radius:50%}.reveal .knn-key.stay{color:#e5a11b}.reveal .knn-key.right{color:#0f9db0;clip-path:polygon(50% 0,100% 100%,0 100%)}.reveal .knn-k{opacity:0;transform:translateY(.15em);transition:opacity .3s,transform .3s}.reveal .knn-k.is-visible{opacity:1;transform:none}.reveal .knn-status{min-height:2.1em;color:#425c70;font-size:.42em;line-height:1.28}.reveal .knn-votes{opacity:0;transform:translateY(.2em);transition:opacity .35s,transform .35s}.reveal .knn-votes.is-visible{opacity:1;transform:none}.reveal .knn-vote{display:grid;grid-template-columns:2.2em 1fr 2.3em;align-items:center;gap:.2em;margin:.1em 0;color:#385065;font:800 .4em ui-monospace,monospace}.reveal .knn-vote-bar{height:.5em;border-radius:99px;background:#e5edf2;overflow:hidden}.reveal .knn-vote-bar i{display:block;height:100%;width:0;border-radius:99px;transition:width .7s ease}.reveal .knn-votes.is-visible .left i{width:17%;background:#e85d8a}.reveal .knn-votes.is-visible .stay i{width:33%;background:#e5a11b}.reveal .knn-votes.is-visible .right i{width:50%;background:#0f9db0}.reveal .knn-result{opacity:0;transform:scale(.88);padding:.24em;border-radius:9px;background:#eaf9f4;color:#086944;text-align:center;font:900 .5em ui-monospace,monospace;transition:opacity .35s,transform .35s}.reveal .knn-result.is-visible{opacity:1;transform:scale(1)}.reveal .knn-controls{display:flex;justify-content:center;gap:.28em;margin-top:.18em}.reveal .knn-controls button{border:1px solid var(--teal);border-radius:999px;background:#fff;color:var(--teal);font:750 .42em -apple-system,sans-serif;padding:.24em .62em;cursor:pointer}.reveal .knn-foot{text-align:center;color:var(--muted);font-size:.4em;margin:.16em 0 0}.reveal .knn-foot b{color:var(--navy)}
+    @keyframes knn-pulse{0%{transform:scale(1);box-shadow:0 0 0 2px #fff,0 0 0 0 #07142699}45%{transform:scale(1.8);box-shadow:0 0 0 2px #fff,0 0 0 .42em #07142600}100%{transform:scale(1);box-shadow:0 0 0 2px #fff,0 2px 5px #18354a44}}
+    .reveal .js-walk.lab{height:11.7em;margin-top:.12em}.reveal .js-walk textarea.code,.reveal .js-walk .code-wrap .gutter{font-size:16.5px;line-height:1.35}.reveal .js-walk .lab-bar{min-height:2.3em}.reveal .js-walk .lab-status{color:#c9dceb}
   </style>
   <div class="kicker" style="color:#7fd3df">FREE EXPERIENCE CLASS · 体验课</div>
   <div class="arcade-title">AGENT <span class="neon">ARCADE</span></div>
@@ -274,9 +284,13 @@
     <h2>Who will survive an unseen level: you, your bot, or neither?</h2>
     <div class="game-window" style="width:78%;margin:.4em auto 0">
       <div class="game-head"><span>LEVEL SEED · ???</span><b>AI TAKEOVER</b><span>SCORE · 000</span></div>
-      <div class="lane-demo"><div class="coin">C</div><div class="hazard">▲</div><div class="ship">▲</div></div>
+      <div class="lane-demo"><div class="lane-road" aria-hidden="true"><span><b>LEFT</b></span><span><b>CENTER</b></span><span><b>RIGHT</b></span></div><div class="coin">C</div><div class="hazard">▲</div><div class="ship">▲</div></div>
     </div>
-    <div class="callout"><b>Vote first:</b> What will make the biggest difference—more rows, more diverse levels, or a more complicated model?</div>
+    <div class="quiz" data-poll="true" style="max-width:none;margin-top:.42em">
+      <p class="qq"><b>Vote first:</b> What will make the biggest difference?</p>
+      <div class="opts"><button class="opt" data-i="0">More training rows</button><button class="opt" data-i="1">More diverse levels</button><button class="opt" data-i="2">A more complicated model</button></div>
+      <p class="quiz-exp">Prediction saved. We’ll compare this class vote with the controlled experiment later.</p>
+    </div>
     <aside class="notes">让学生投票并保留答案，不立即揭晓。告诉他们最后会用同样的数据量做公平实验，检验“多样性”而不是靠感觉讨论。</aside>
 </section>
 <section id="mission" data-sid="mission">
@@ -307,26 +321,29 @@
 </section>
 <section id="rules" data-sid="rules">
 <div class="kicker">Game rules · 90-second briefing</div>
-    <h2>Collect coins. Avoid hazards. Every key press becomes a label.</h2>
-    <div class="grid3" style="margin-top:.35em">
-      <div class="box" style="text-align:center"><div style="font-size:1.45em;color:var(--teal)">← →</div><h3>Choose a lane</h3><p>Arrow keys or A / D. On a phone, tap the left or right half.</p></div>
-      <div class="box" style="text-align:center"><div style="font-size:1.4em;color:var(--amber)">◉ +10</div><h3>Collect</h3><p>Align with a coin before it reaches the player.</p></div>
-      <div class="box" style="text-align:center"><div style="font-size:1.4em;color:var(--coral)">▲ −12</div><h3>Avoid</h3><p>Three collisions end the current episode.</p></div>
+    <h2>Every step earns +0.02 survival; events add a bonus or penalty.</h2>
+    <div class="reward-strip">
+      <div class="box"><div class="reward-value" style="color:var(--teal)">← →</div><h3>Choose</h3><p>LEFT · STAY · RIGHT</p></div>
+      <div class="box"><div class="reward-value" style="color:var(--green)">+0.02</div><h3>Survive</h3><p>Base reward every decision step</p></div>
+      <div class="box"><div class="reward-value" style="color:var(--amber)">◉ +10</div><h3>Collect</h3><p>Coin event bonus</p></div>
+      <div class="box"><div class="reward-value" style="color:var(--coral)">▲ −12</div><h3>Avoid</h3><p>Hazard event penalty</p></div>
     </div>
-    <p style="text-align:center;margin-top:.65em"><a class="btn" href="https://meritpoint-academy.github.io/agent-arcade/" target="_blank" rel="noopener">▶ Open the game in a new tab</a></p>
-    <aside class="notes">全班打开游戏但先不点 Train。确认每个人能用左右键移动。提醒不要刷新页面，否则个人示范会清空；导出 CSV 是可选的。</aside>
+    <div class="reward-formula"><b>CSV reward for one row</b><code>= +0.02 survival + event reward</code></div>
+    <div class="reward-examples">no event → 0.020 &nbsp;·&nbsp; coin → 10.020 &nbsp;·&nbsp; hazard → −11.980</div>
+    <p style="text-align:center;margin-top:.32em"><a class="btn" href="https://meritpoint-academy.github.io/agent-arcade/" target="_blank" rel="noopener">▶ Open the game in a new tab</a></p>
+    <aside class="notes">先把 reward 公式说完整：每个决策步先有 +0.02 survival；同一步收集金币再加 10，撞障碍再减 12。因此 CSV 大多数行是 0.020，事件行才是 10.020 或 −11.980。reward 是即时结果，不是累计 score，也不是模仿学习的 action label。然后确认每个人能用左右键移动；不要刷新页面，否则个人示范会清空。</aside>
 </section>
 <section id="lab-human" data-sid="lab-human">
 <div class="kicker">Lab 1 · 8 minutes · Teach the Bot</div>
-    <h2>Play two rounds—and become the dataset.</h2>
+    <h2>Play purposefully—not perfectly—and become the dataset.</h2>
     <div class="grid2" style="grid-template-columns:1.12fr .88fr;margin-top:.25em">
       <div class="game-window">
         <div class="game-head"><span>MODE · HUMAN</span><b>COLLECT DEMONSTRATIONS</b><span>ROWS · ↑</span></div>
-        <div class="lane-demo"><div class="coin">C</div><div class="hazard">▲</div><div class="ship" style="color:#55e6a5">▲</div></div>
+        <div class="lane-demo"><div class="lane-road" aria-hidden="true"><span><b>LEFT</b></span><span><b>CENTER</b></span><span><b>RIGHT</b></span></div><div class="coin">C</div><div class="hazard">▲</div><div class="ship" style="color:#55e6a5">▲</div></div>
       </div>
-      <div class="box"><h3 style="color:var(--teal)">Your checklist</h3><ol><li>Press <b>Player Run</b>.</li><li>Play until you have ≥ 80 personal examples.</li><li>Try both left and right moves.</li><li>Record one failure in Part A.</li></ol><p style="margin-top:.5em"><b>Notice:</b> doing nothing is also an action: <code>STAY</code>.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">Your checklist</h3><ol><li>Press <b>Player Run</b>.</li><li>Play purposefully until you have ≥ 80 recorded examples.</li><li>Use LEFT, STAY, and RIGHT; avoid long idle runs.</li><li>From those rows, copy one difficult moment into Part A.</li></ol><p style="margin-top:.5em"><b>Part A is an analysis note:</b> that moment already remains in the training data. Do not add or remove a row.</p></div>
     </div>
-    <aside class="notes">计时八分钟。巡视时不要指导“最佳策略”，让行为产生差异。若某位学生只收集到 STAY，提醒主动尝试左右移动。快速完成者可导出 CSV 看字段。</aside>
+    <aside class="notes">计时八分钟。说明不要求高分或完美操作，但要有目的地做出合理动作，并覆盖 LEFT、STAY、RIGHT；长时间不动会产生大量 STAY 标签。Part A 是从已经记录的 ≥80 条数据中挑一个困难时刻进行分析，不额外添加，也不从训练集删除。快速完成者可导出 CSV 看字段。</aside>
 </section>
 <section id="row" data-sid="row">
 <div class="kicker">Open the black box · picture → numbers → decision</div>
@@ -337,28 +354,30 @@
           <defs><marker id="arrC" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f9db0"/></marker><marker id="arrP" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#e85d8a"/></marker></defs>
           <rect x="28" y="18" width="464" height="308" rx="18" fill="#071426"/>
           <path d="M92 300 L170 40 M260 300 L260 40 M428 300 L350 40" stroke="#275571" stroke-width="3" fill="none"/><path d="M176 300 L215 40 M344 300 L305 40" stroke="#1b405a" stroke-width="2" stroke-dasharray="10 10" fill="none"/>
-          <path d="M260 278 L247 306 L273 306 Z" fill="#55e6a5"/><text x="260" y="330" text-anchor="middle" fill="#d9e9f5" font-size="18" font-weight="700">PLAYER · lane 0</text>
+          <path d="M260 278 L247 306 L273 306 Z" fill="#55e6a5"/>
+          <g class="player-label"><rect x="171" y="308" width="178" height="32" rx="16" fill="#0c2d52" stroke="#53edf4" stroke-width="2"/><text x="260" y="329" text-anchor="middle" fill="#f7fbff" font-size="17" font-weight="800">PLAYER · lane 0</text></g>
           <path d="M176 88 L161 116 L191 116 Z" fill="#ff6b99"/><text x="176" y="78" text-anchor="middle" fill="#ff91b3" font-size="17" font-weight="800">HAZARD</text>
           <circle cx="338" cy="170" r="19" fill="#ffc857"/><text x="338" y="177" text-anchor="middle" fill="#654200" font-size="17" font-weight="900">C</text>
-          <line x1="118" y1="120" x2="118" y2="278" stroke="#e85d8a" stroke-width="3" marker-start="url(#arrP)" marker-end="url(#arrP)"/><text x="130" y="205" fill="#ff91b3" font-size="17" font-weight="800">obs_distance</text><text x="130" y="224" fill="#ffbfd1" font-size="14">0 near · 1 far</text>
-          <line x1="430" y1="190" x2="430" y2="278" stroke="#0f9db0" stroke-width="3" marker-start="url(#arrC)" marker-end="url(#arrC)"/><text x="418" y="246" text-anchor="end" fill="#53edf4" font-size="17" font-weight="800">coin_distance</text>
-          <line x1="180" y1="135" x2="260" y2="135" stroke="#e85d8a" stroke-width="3" marker-start="url(#arrP)" marker-end="url(#arrP)"/><text x="220" y="127" text-anchor="middle" fill="#ff91b3" font-size="17" font-weight="800">obs_dx = −0.50</text>
-          <line x1="260" y1="158" x2="334" y2="158" stroke="#0f9db0" stroke-width="3" marker-start="url(#arrC)" marker-end="url(#arrC)"/><text x="300" y="150" text-anchor="middle" fill="#53edf4" font-size="17" font-weight="800">coin_dx = +0.50</text>
+          <g class="row-reveal" data-row-stage="2"><line x1="118" y1="120" x2="118" y2="278" stroke="#e85d8a" stroke-width="3" marker-start="url(#arrP)" marker-end="url(#arrP)"/><text x="130" y="205" fill="#ff91b3" font-size="17" font-weight="800">obs_distance</text><text x="130" y="224" fill="#ffbfd1" font-size="14">0 near · 1 far</text>
+          <line x1="430" y1="190" x2="430" y2="278" stroke="#0f9db0" stroke-width="3" marker-start="url(#arrC)" marker-end="url(#arrC)"/><text x="418" y="246" text-anchor="end" fill="#53edf4" font-size="17" font-weight="800">coin_distance</text></g>
+          <g class="row-reveal" data-row-stage="1"><line x1="180" y1="135" x2="260" y2="135" stroke="#e85d8a" stroke-width="3" marker-start="url(#arrP)" marker-end="url(#arrP)"/><text x="220" y="127" text-anchor="middle" fill="#ff91b3" font-size="17" font-weight="800">obs_dx = −0.50</text>
+          <line x1="260" y1="158" x2="334" y2="158" stroke="#0f9db0" stroke-width="3" marker-start="url(#arrC)" marker-end="url(#arrC)"/><text x="300" y="150" text-anchor="middle" fill="#53edf4" font-size="17" font-weight="800">coin_dx = +0.50</text></g>
         </svg>
       </div>
       <div>
-        <div class="box" style="padding:.38em .5em"><table style="width:100%;border-collapse:collapse;font-size:.39em;line-height:1.35">
+        <div class="box" style="padding:.38em .5em"><table style="width:100%;border-collapse:collapse;font-size:.52em;line-height:1.4">
           <tr style="background:var(--navy);color:#fff"><th style="padding:.48em;text-align:left">Field</th><th style="text-align:left">Plain-English meaning</th></tr>
-          <tr><td style="padding:.42em;color:var(--coral);font-weight:800">obs_dx</td><td><b>obs</b>tacle horizontal offset: − left · 0 same lane · + right</td></tr>
-          <tr style="background:#f4f8fb"><td style="padding:.42em;color:var(--coral);font-weight:800">obs_distance</td><td>forward distance to nearest hazard: 0 near · 1 far / none</td></tr>
-          <tr><td style="padding:.42em;color:var(--teal);font-weight:800">coin_dx</td><td>coin horizontal offset: − left · 0 same lane · + right</td></tr>
-          <tr style="background:#f4f8fb"><td style="padding:.42em;color:var(--teal);font-weight:800">coin_distance</td><td>forward distance to nearest coin: 0 near · 1 far / none</td></tr>
+          <tr class="row-reveal" data-row-stage="1"><td style="padding:.42em;color:var(--coral);font-weight:800">obs_dx</td><td><b>obs</b>tacle horizontal offset: − left · 0 same lane · + right</td></tr>
+          <tr class="row-reveal" data-row-stage="2" style="background:#f4f8fb"><td style="padding:.42em;color:var(--coral);font-weight:800">obs_distance</td><td>forward distance to nearest hazard: 0 near · 1 far / none</td></tr>
+          <tr class="row-reveal" data-row-stage="1"><td style="padding:.42em;color:var(--teal);font-weight:800">coin_dx</td><td>coin horizontal offset: − left · 0 same lane · + right</td></tr>
+          <tr class="row-reveal" data-row-stage="2" style="background:#f4f8fb"><td style="padding:.42em;color:var(--teal);font-weight:800">coin_distance</td><td>forward distance to nearest coin: 0 near · 1 far / none</td></tr>
         </table></div>
-        <p style="font-size:.43em;margin:.35em .1em 0"><b><code>dx</code> means “delta x”</b>: horizontal position relative to the player—not absolute screen pixels.</p>
+        <p class="row-reveal" data-row-stage="1" style="font-size:.5em;margin:.35em .1em 0"><b><code>dx</code> means “delta x”</b>: horizontal position relative to the player—not absolute screen pixels.</p>
+        <div class="row-controls"><button type="button" data-row-show>Show all measurements</button><button type="button" data-row-hide>Hide all</button></div>
       </div>
     </div>
-    <div class="phase" style="margin-top:.3em"><div><b>STATE · what it sees</b><span>[−0.50, 0.18, +0.50, 0.44]</span></div><i>→</i><div><b>ACTION · your label</b><span style="color:var(--teal);font-weight:800">RIGHT</span></div><i>→</i><div><b>REWARD · what followed</b><span>+0.02 survival</span></div></div>
-    <aside class="notes">先不要看表。用图逐个指：粉色横线是障碍物在左边，所以 obs_dx 为负；粉色斜线很短，所以 obs_distance 接近零，危险很近。蓝色横线说明金币在右边，所以 coin_dx 为正。最后才读底部一行：四个数字是 state，RIGHT 是人给的 label，+0.02 是随后观察到的 reward。一行代表一次决策，而不是一整局。Agent 不看彩色画面，只接收这四个归一化数值。</aside>
+    <div class="phase row-reveal" data-row-stage="3" style="margin-top:.3em"><div><b>STATE · what it sees</b><span>[−0.50, 0.18, +0.50, 0.44]</span></div><i>→</i><div><b>ACTION · your label</b><span style="color:var(--teal);font-weight:800">RIGHT</span></div><i>→</i><div><b>REWARD · immediate total</b><span>+0.02 survival only · coin 10.02 · hazard −11.98</span></div></div>
+    <aside class="notes">先不要看表。用图逐个指：粉色横线是障碍物在左边，所以 obs_dx 为负；粉色斜线很短，所以 obs_distance 接近零，危险很近。蓝色横线说明金币在右边，所以 coin_dx 为正。最后才读底部一行：四个数字是 state，RIGHT 是人给的 label，+0.02 是这一步没有事件时的 survival reward；同一步金币或障碍会把总 reward 变成 10.02 或 −11.98。一行代表一次决策，而不是一整局。</aside>
 </section>
 <section id="quiz-label" data-sid="quiz-label">
 <div class="kicker">Quick check · who is doing the labeling?</div>
@@ -366,9 +385,9 @@
   <div class="quiz" data-correct="1">
     <p class="qq">During Player Run, what is the training label for each row?</p>
     <div class="opts"><button class="opt" data-i="0">The level seed</button><button class="opt" data-i="1">The player’s LEFT / STAY / RIGHT action</button><button class="opt" data-i="2">The coin color</button><button class="opt" data-i="3">The final score only</button></div>
-    <p class="quiz-exp">The human action is the label. The four sensor values are the input features; reward is a consequence that helps us evaluate behavior.</p>
+    <p class="quiz-exp">The current k-NN learns sensor state → human action. Reward is logged for evaluation, not used to train this policy. Every demonstration—including a mistake—is a label the agent may copy.</p>
   </div>
-  <aside class="notes">答案后引出 imitation learning：不是 AI 自己发现所有规则，而是先学习模仿示范。这也是为什么示范的覆盖度与质量会影响 Agent。</aside>
+  <aside class="notes">答案后明确：当前 k-NN 只用 sensor state 与 human action 训练，不根据 reward 过滤样本。因此模型可能继承人的错误；若要用 reward 判断动作好坏，需要人工纠错、reward weighting 或 reinforcement learning，那是另一种方法。</aside>
 </section>
 <section id="agent-loop" data-sid="agent-loop">
 <div class="kicker">The agent loop · every 100 milliseconds</div>
@@ -380,48 +399,146 @@
     <aside class="notes">用手指沿循环走一遍。区别普通分类：动作改变环境，环境又产生下一次输入。告诉学生后续强化学习会直接优化长期 reward；今天先用稳定、快速的模仿学习。</aside>
 </section>
 <section id="knn" data-sid="knn">
-<div class="kicker">The model · simple enough to inspect</div>
-    <h2>Weighted k-NN asks: “What did players do in similar situations?”</h2>
-    <div class="grid2" style="margin-top:.35em">
-      <div class="box"><h3 style="color:var(--teal)">Current state</h3><p><code>[obstacle Δ, obstacle distance,<br>coin Δ, coin distance]</code></p><div class="meter"><i style="width:72%"></i></div><p>Find the 9 closest demonstration rows.</p></div>
-      <div class="box"><h3 style="color:var(--coral)">Weighted vote</h3><p>LEFT&nbsp; 18% · STAY&nbsp; 27% · <b>RIGHT&nbsp; 55%</b></p><div class="meter"><i style="width:55%;background:linear-gradient(90deg,var(--coral),#ff9cbd)"></i></div><p>The closest examples receive more weight.</p></div>
-    </div>
-    <blockquote style="margin-top:.55em">A more complicated model is not automatically a better first experiment.</blockquote>
-    <aside class="notes">不推导距离公式。重点是可解释：学生可以看概率，也能理解“附近示范投票”。体验课中它比现场深度强化学习稳定，并能在几毫秒内训练。</aside>
-</section>
-<section id="code-core" data-sid="code-core">
-<div class="kicker">Coding-level demo · real JavaScript from the game</div>
-    <h2>Nine lines turn nearby demonstrations into the next action.</h2>
-    <div class="lab folded js-walk">
-      <div class="lab-main">
-        <div class="code-wrap"><div class="gutter"></div><div class="line-hi"></div><textarea class="code" spellcheck="false" wrap="off">function predict(state, rows, k = 9) {
-  const x = vector(state);
-  const near = rows.map(r =&gt; ({ action: r.action,
-    d: r.x.reduce((sum, v, i) =&gt; sum + (v - x[i]) ** 2, 0)
-  })).sort((a, b) =&gt; a.d - b.d).slice(0, k);
-  const vote = { "-1": 0, "0": 0, "1": 0 };
-  near.forEach(n =&gt; vote[n.action] += 1 / (.025 + Math.sqrt(n.d)));
-  return [-1, 0, 1].sort((a, b) =&gt; vote[b] - vote[a])[0];
-}</textarea></div>
-        <div class="lab-bar"><button class="walk" hidden>🎧 Explain each line</button><span class="walk-controls" hidden><button class="walk-prev" title="Previous step">⏮</button><button class="walk-pause" title="Pause / resume">⏸</button><button class="walk-next" title="Next step">⏭</button><button class="walk-stop" title="Stop walkthrough">✕</button><span class="walk-step"></span></span><span class="lab-status">Interactive JavaScript walkthrough</span></div>
+<div class="kicker">The model · watch k-NN make one decision</div>
+    <h2>New point → 9 nearest demonstrations → weighted vote → RIGHT</h2>
+    <div class="knn-layout">
+      <div>
+        <div class="knn-plot" role="img" aria-label="Two-feature k-nearest-neighbors teaching plot. Demonstrations are colored by LEFT, STAY, and RIGHT action. A new query point is classified from its nine nearest demonstrations.">
+          <div class="knn-axis knn-axis-x"></div><div class="knn-axis knn-axis-y"></div>
+          <span class="knn-axis-label x">Feature 1 →</span><span class="knn-axis-label y">Feature 2 →</span>
+          <span class="knn-ring" aria-hidden="true"></span>
+
+          <span class="knn-point action-left" data-action="left" style="left:15%;top:24%"><i class="knn-mark"></i></span>
+          <span class="knn-point action-left" data-action="left" style="left:20%;top:40%"><i class="knn-mark"></i></span>
+          <span class="knn-point action-left" data-action="left" style="left:18%;top:67%"><i class="knn-mark"></i></span>
+          <span class="knn-point action-left" data-action="left" style="left:27%;top:31%"><i class="knn-mark"></i></span>
+          <span class="knn-point action-left" data-action="left" style="left:31%;top:58%"><i class="knn-mark"></i></span>
+          <span class="knn-point action-left" data-action="left" style="left:36%;top:76%"><i class="knn-mark"></i></span>
+          <span class="knn-point action-left" data-action="left" data-neighbor="5" data-distance="0.16" style="left:51%;top:52%"><i class="knn-mark"></i><b class="knn-num">5</b></span>
+          <span class="knn-point action-left" data-action="left" data-neighbor="9" data-distance="0.26" style="left:47%;top:39%"><i class="knn-mark"></i><b class="knn-num">9</b></span>
+
+          <span class="knn-point action-stay" data-action="stay" style="left:36%;top:17%"><i class="knn-mark"></i></span>
+          <span class="knn-point action-stay" data-action="stay" style="left:41%;top:83%"><i class="knn-mark"></i></span>
+          <span class="knn-point action-stay" data-action="stay" style="left:48%;top:18%"><i class="knn-mark"></i></span>
+          <span class="knn-point action-stay" data-action="stay" style="left:72%;top:82%"><i class="knn-mark"></i></span>
+          <span class="knn-point action-stay" data-action="stay" data-neighbor="2" data-distance="0.11" style="left:55%;top:43%"><i class="knn-mark"></i><b class="knn-num">2</b></span>
+          <span class="knn-point action-stay" data-action="stay" data-neighbor="4" data-distance="0.15" style="left:60%;top:36%"><i class="knn-mark"></i><b class="knn-num">4</b></span>
+          <span class="knn-point action-stay" data-action="stay" data-neighbor="7" data-distance="0.22" style="left:53%;top:61%"><i class="knn-mark"></i><b class="knn-num">7</b></span>
+
+          <span class="knn-point action-right" data-action="right" style="left:82%;top:24%"><i class="knn-mark"></i></span>
+          <span class="knn-point action-right" data-action="right" style="left:86%;top:42%"><i class="knn-mark"></i></span>
+          <span class="knn-point action-right" data-action="right" style="left:83%;top:68%"><i class="knn-mark"></i></span>
+          <span class="knn-point action-right" data-action="right" style="left:76%;top:77%"><i class="knn-mark"></i></span>
+          <span class="knn-point action-right" data-action="right" data-neighbor="1" data-distance="0.065" style="left:62%;top:45%"><i class="knn-mark"></i><b class="knn-num">1</b></span>
+          <span class="knn-point action-right" data-action="right" data-neighbor="3" data-distance="0.13" style="left:66%;top:50%"><i class="knn-mark"></i><b class="knn-num">3</b></span>
+          <span class="knn-point action-right" data-action="right" data-neighbor="6" data-distance="0.19" style="left:68%;top:41%"><i class="knn-mark"></i><b class="knn-num">6</b></span>
+          <span class="knn-point action-right" data-action="right" data-neighbor="8" data-distance="0.24" style="left:71%;top:56%"><i class="knn-mark"></i><b class="knn-num">8</b></span>
+
+          <span class="knn-query" aria-hidden="true">★</span><span class="knn-query-label">NEW POINT</span>
+        </div>
+        <div class="knn-controls"><button type="button" data-knn-reset>Reset</button><button type="button" data-knn-next>Next step</button><button type="button" data-knn-all>Show result</button></div>
+      </div>
+      <div class="knn-side">
+        <div class="knn-card"><h3>Action labels</h3><div class="knn-legend"><span data-knn-legend="left"><i class="knn-key left"></i>LEFT</span><span data-knn-legend="stay"><i class="knn-key stay"></i>STAY</span><span data-knn-legend="right"><i class="knn-key right"></i>RIGHT</span></div></div>
+        <div class="knn-card knn-k"><h3>① Find neighbors</h3><div style="font:900 .5em ui-monospace,monospace;color:var(--navy)">k = 9</div><p style="font-size:.42em;margin:.1em 0 0">Smallest two-feature distances; the real game repeats this in four dimensions.</p></div>
+        <div class="knn-card"><h3>What is happening?</h3><div class="knn-status" aria-live="polite">Start with the two feature axes.</div></div>
+        <div class="knn-card knn-votes"><h3>② Weighted vote</h3><div class="knn-vote left"><span>LEFT</span><span class="knn-vote-bar"><i></i></span><b>17%</b></div><div class="knn-vote stay"><span>STAY</span><span class="knn-vote-bar"><i></i></span><b>33%</b></div><div class="knn-vote right"><span>RIGHT</span><span class="knn-vote-bar"><i></i></span><b>50%</b></div><p style="font-size:.4em;margin:.12em 0 0;color:var(--muted)">Neighbors: LEFT 2 · STAY 3 · RIGHT 4<br>Closer points contribute more.</p></div>
+        <div class="knn-result">③ PREDICTION · RIGHT →</div>
       </div>
     </div>
-    <p class="source">Press <b>Explain each line</b> to hear the walkthrough and watch the matching code lines highlight.</p>
-    <aside class="notes">这是 coding-level 教学示范，不要求学生背语法。先让学生用手指出 inputs、intermediate list 和 output。逐行读：state 与 rows 进入，action 出来。</aside>
+    <p class="knn-foot"><b>Teaching projection:</b> two features make distance visible. The production policy uses all four sensors, k = 9, inverse-distance votes, and class balancing.</p>
+    <aside class="notes">按图的顺序讲，不先给答案：先逐类显示 LEFT、STAY、RIGHT demonstrations，再出现黑色新点；说到 k=9 时画出虚线圆。随后让九个最近点按 1 到 9 逐个闪烁并保留编号。最后数出 LEFT 2、STAY 3、RIGHT 4，再显示距离加权后的 17%、33%、50%，得出 RIGHT。明确这是为了看清距离而画的二维教学投影；真实游戏使用四个 sensors，并额外做 class balancing。</aside>
+</section>
+<section id="code-core" data-sid="code-core">
+<div class="kicker">Coding-level map · complete policy.js from GitHub</div>
+    <h2>The entire policy file is small enough to inspect line by line.</h2>
+    <div class="agent-map" role="img" aria-label="Overall agent flow: game frame, four sensors, compare with demonstrations, weighted vote, action, changed game frame, then repeat"><div class="am-node"><b>① GAME FRAME</b><span>player · coin · hazard</span></div><div class="am-node"><b>② OBSERVE</b><span>convert picture to 4 sensors</span></div><div class="am-node am-code"><b>③ PREDICT · CODE BELOW</b><span>compare rows → weighted vote</span></div><div class="am-node"><b>④ ACTION</b><span>LEFT · STAY · RIGHT</span></div><div class="am-node"><b>⑤ ENVIRONMENT</b><span>movement changes next frame</span></div><div class="am-node am-loop"><b>↺ REPEAT</b><span>every 100 milliseconds</span></div></div>
+    <div class="lab folded js-walk">
+      <div class="lab-main">
+        <div class="code-wrap"><div class="gutter"></div><div class="line-hi"></div><textarea class="code" spellcheck="false" wrap="off" aria-label="Complete source of Agent Arcade policy.js">/*
+ * Weighted k-nearest-neighbors imitation policy.
+ * The intentionally small model makes every prediction inspectable.
+ */
+(function attachPolicy(root) {
+  "use strict";
+
+  function squaredDistance(a, b) {
+    return a.reduce((sum, value, index) =&gt; sum + (value - b[index]) ** 2, 0);
+  }
+
+  function trainKnn(rows, k = 9) {
+    if (!Array.isArray(rows) || rows.length === 0) {
+      throw new Error("trainKnn needs at least one demonstration row");
+    }
+    if (!Number.isInteger(k) || k &lt; 1) throw new Error("k must be a positive integer");
+
+    const counts = { [-1]: 0, [0]: 0, [1]: 0 };
+    rows.forEach((row) =&gt; { counts[row.action] += 1; });
+    const weights = {
+      [-1]: rows.length / (3 * Math.max(1, counts[-1])),
+      [0]: rows.length / (3 * Math.max(1, counts[0])),
+      [1]: rows.length / (3 * Math.max(1, counts[1])),
+    };
+
+    return {
+      rows,
+      k,
+      counts,
+      predict(input) {
+        const near = rows
+          .map((row) =&gt; ({ action: row.action, distance: squaredDistance(row.x, input) }))
+          .sort((a, b) =&gt; a.distance - b.distance)
+          .slice(0, Math.min(k, rows.length));
+
+        const vote = { [-1]: 0, [0]: 0, [1]: 0 };
+        near.forEach((neighbor) =&gt; {
+          vote[neighbor.action] += weights[neighbor.action]
+            / (0.025 + Math.sqrt(neighbor.distance));
+        });
+
+        const sum = vote[-1] + vote[0] + vote[1] || 1;
+        const probabilities = {
+          [-1]: vote[-1] / sum,
+          [0]: vote[0] / sum,
+          [1]: vote[1] / sum,
+        };
+        const action = [-1, 0, 1].sort((a, b) =&gt; probabilities[b] - probabilities[a])[0];
+
+        return {
+          action,
+          probabilities,
+          vote,
+          neighbors: near,
+          nearestDistance: near[0]?.distance ?? 0,
+        };
+      },
+    };
+  }
+
+  const api = { squaredDistance, trainKnn };
+  if (typeof module !== "undefined" &amp;&amp; module.exports) module.exports = api;
+  if (root) Object.assign(root.AgentArcade ||= {}, api);
+})(typeof window !== "undefined" ? window : null);</textarea></div>
+        <div class="lab-bar"><button class="walk" hidden>🎧 Explain complete policy.js line by line</button><span class="walk-controls" hidden><button class="walk-prev" title="Previous step">⏮</button><button class="walk-pause" title="Pause / resume">⏸</button><button class="walk-next" title="Next step">⏭</button><button class="walk-stop" title="Stop walkthrough">✕</button><span class="walk-step"></span></span><span class="lab-status">Complete src/policy.js · 64 lines</span></div>
+      </div>
+    </div>
+    <div class="source-map" aria-label="GitHub source structure"><div class="sm-node"><b>environment.js</b>state · sensors · rewards</div><div class="sm-node sm-policy"><b>policy.js</b>train · predict · votes</div><div class="sm-node"><b>app.js</b>controls · loop · CSV</div><div class="sm-node"><b>experiment.js</b>unseen-level evaluation</div></div>
+    <p class="source"><b>Listen:</b> runtime + source tour. &nbsp; <b>Orange audio:</b> all 64 lines of <code>policy.js</code>. &nbsp; <a href="https://github.com/MeritPoint-Academy/agent-arcade/blob/main/src/policy.js" target="_blank" rel="noopener">Open this exact file on GitHub</a></p>
+    <aside class="notes">右下角 Listen 只讲六阶段 runtime 与四个 source files。代码框现在是完整的 policy.js：包括 file wrapper、distance helper、input validation、class balancing、nearest-neighbor search、weighted vote、probabilities、decision receipt，以及 Node/browser exports。橙色按钮逐段讲完 64 行，并自动滚动到当前行；两套音频不要重复。</aside>
 </section>
 <section id="code-walk" data-sid="code-walk">
 <div class="kicker">Read code like a scientist · line by line</div>
     <h2>Every line makes a claim we can test.</h2>
     <div class="trace">
-      <b>01</b><p><b>Contract:</b> one state + demonstration rows → one action.</p>
-      <b>02</b><p><b>Represent:</b> convert the visible situation to four numbers.</p>
-      <b>03–05</b><p><b>Compare:</b> square feature differences, sort by distance, keep the nearest nine.</p>
-      <b>06</b><p><b>Initialize:</b> start LEFT, STAY, and RIGHT votes at zero.</p>
-      <b>07</b><p><b>Weight:</b> closer examples contribute a larger vote; <code>.025</code> prevents division by zero.</p>
-      <b>08</b><p><b>Decide:</b> sort actions by vote and return the winner.</p>
+      <b>01–10</b><p><b>Boundary + distance:</b> document the file, isolate its scope, and define squared distance.</p>
+      <b>12–24</b><p><b>Train safely:</b> validate rows and <code>k</code>, count action classes, and calculate balancing weights.</p>
+      <b>26–34</b><p><b>Build the model:</b> retain the training receipt, compare every row, sort, and keep the nearest <code>k</code>.</p>
+      <b>36–48</b><p><b>Vote + normalize:</b> combine class balance with inverse distance, convert votes to probabilities, and choose the winner.</p>
+      <b>50–56</b><p><b>Return a decision receipt:</b> action, probabilities, raw votes, neighbors, and nearest distance.</p>
+      <b>57–64</b><p><b>Publish the API:</b> expose the same functions to Node tests and the browser game.</p>
     </div>
-    <div class="callout"><b>Debugging question:</b> If every demonstration says STAY, which line is wrong? <b>None.</b> The data—not the syntax—fails to cover LEFT and RIGHT.</div>
-    <aside class="notes">逐行解释时把代码与界面连起来：vector 对应四条 sensor 数值，near 对应最近案例，vote 对应 AI Brain 三根概率条。最后用全 STAY 的反例说明 coding 教学也必须教 data reasoning。</aside>
+    <div class="callout"><b>Debugging question:</b> If every demonstration says STAY, the syntax can still be correct. Inspect <b>counts</b>, <b>weights</b>, and data coverage before blaming the vote.</div>
+    <aside class="notes">把完整文件分成六个可测试的责任区：boundary、distance、validation and class balance、neighbor search、vote and receipt、exports。把 probabilities 对应 AI Brain 三根条，把 counts 对应 Training Receipt。全 STAY 反例现在可以定位到数据覆盖，而不是误以为 64 行中必有语法错误。</aside>
 </section>
 <section id="lab-takeover" data-sid="lab-takeover">
 <div class="kicker">Lab 2 · 10 minutes · Train and release</div>
@@ -429,11 +546,11 @@
     <div class="grid3" style="margin-top:.35em">
       <div class="box"><h3 style="color:var(--teal)">1 · Train</h3><p>Press <b>Train My Agent</b>. Read the training receipt: rows and action balance.</p></div>
       <div class="box"><h3 style="color:var(--coral)">2 · Take over</h3><p>Press <b>AI Takeover</b>. Keep your hands off the keyboard and watch its sensor rays.</p></div>
-      <div class="box"><h3 style="color:var(--amber)">3 · Break it</h3><p>Press <b>Unseen Level</b>. Record one success and one failure in Part B.</p></div>
+      <div class="box"><h3 style="color:var(--amber)">3 · Compare unseen</h3><p>Run <b>AI · Unseen</b>, then <b>Human · Unseen</b>. Record the completed scores and one failure in Part B.</p></div>
     </div>
-    <div class="callout"><b>Ask while watching:</b> Is this a bad decision, a missing example, an insufficient sensor, or simply a hard situation?</div>
+    <div class="callout"><b>Read the local score panel:</b> completed runs, best, and average. Both unseen modes follow the same held-out seed sequence; Human · Unseen actions never enter training.</div>
     <p style="text-align:center;margin-top:.55em"><a class="btn" href="https://meritpoint-academy.github.io/agent-arcade/" target="_blank" rel="noopener">Return to your running game</a></p>
-    <aside class="notes">计时十分钟。让学生说出 AI 失败类型，而不是只评价“笨”。提醒训练使用 180 条 starter demonstrations 加个人示范，所以即使某人示范少，Agent 仍可运行；界面对此明确披露。</aside>
+    <aside class="notes">计时十分钟。先用 AI Takeover 看策略，再依次完成 AI · Unseen 和 Human · Unseen；两者按相同 held-out seed 顺序运行，Human · Unseen 不收集训练行。让学生比较本地面板中的 runs、best、average，并说出 AI 失败类型，而不是只评价“笨”。固定的 Generalization Test 是另一项可复现实验，不会被这些现场 runs 改写。</aside>
 </section>
 <section id="brain" data-sid="brain">
 <div class="kicker">Read the overlay · do not anthropomorphize</div>
@@ -470,7 +587,7 @@
 <div class="kicker">Lab 3 · 8 minutes · Run the fair test</div>
     <h2>Same rows. Same model. New test levels.</h2>
     <div class="grid2" style="margin-top:.35em">
-      <div class="box"><h3 style="color:var(--teal)">In Agent Arcade</h3><ol><li>Scroll to <b>Generalization test</b>.</li><li>Press <b>Run fair test</b>.</li><li>Record both accuracies and mean scores.</li><li>Calculate the percentage-point difference.</li></ol></div>
+      <div class="box"><h3 style="color:var(--teal)">In Agent Arcade</h3><ol><li>Scroll to <b>Generalization test</b>.</li><li>Press <b>Compute fixed test</b>.</li><li>Record both accuracies and mean scores.</li><li>Calculate the percentage-point difference.</li></ol></div>
       <div class="box" style="border-top:4px solid var(--amber)"><h3 style="color:var(--amber)">Before seeing the result</h3><p>Write your prediction and mechanism:</p><blockquote style="font-size:.72em">“I predict ___ because diverse levels should / should not ___.”</blockquote></div>
     </div>
     <p style="text-align:center;margin-top:.55em"><a class="btn" href="https://meritpoint-academy.github.io/agent-arcade/#research" target="_blank" rel="noopener">▶ Run the generalization test</a></p>
@@ -481,7 +598,8 @@
     <h2>Use a four-part evidence sentence.</h2>
     <div class="phase" style="margin-top:.45em"><div><i>①</i><b>SCOPE</b><span>this browser experiment</span></div><i>+</i><div><i>②</i><b>RESULT</b><span>two measured accuracies</span></div><i>+</i><div><i>③</i><b>LIMIT</b><span>one game · one model</span></div><i>+</i><div><i>④</i><b>NEXT TEST</b><span>repeat and extend</span></div></div>
     <div class="prompt" style="margin-top:.65em"><span class="you">Sentence frame ▸</span> In this three-lane game, the agent trained on [12 / 1] seed(s) achieved [A]% versus [B]% unseen-level action accuracy with 240 rows each. Because we tested one environment and one k-NN setting, the result is preliminary. Next, we would repeat across seeds and compare another policy model.</div>
-    <aside class="notes">让学生把真实数值填入学习单 Part D。必须先写 observed result，再写可能机制。若结果与假设相反，也照实报告；这不是失败，而是下一实验的起点。</aside>
+    <p style="text-align:center;margin-top:.42em"><a class="btn" href="game-agent-manuscript.html" target="_blank" rel="noopener">Read the full game-agent manuscript</a> &nbsp; <a class="btn" href="game-agent-manuscript.pdf" target="_blank" rel="noopener">PDF</a></p>
+    <aside class="notes">让学生把真实数值填入学习单 Part D。必须先写 observed result，再写可能机制。若结果与假设相反，也照实报告；这不是失败，而是下一实验的起点。这里打开完整 manuscript，对比个人录制数据与可控的 expert-generated 公平实验；强调两条证据链不能混为一谈。</aside>
 </section>
 <section id="public-backing" data-sid="public-backing">
 <div class="kicker">Open research backing · this question already matters</div>
@@ -510,7 +628,7 @@
 <section id="abstract-demo" data-sid="abstract-demo">
 <div class="kicker">Open data → extended abstract · exact AI handoff</div>
     <h2>The prompt carries the evidence boundary into the writing.</h2>
-    <div class="grid2" style="grid-template-columns:1.08fr .92fr;margin-top:.25em"><div class="prompt" style="font-size:.42em"><span class="you">Prompt used ▸</span> Use only this evidence receipt: n=3,395; same 5 folds; 4-sensor AUC 0.861 ± 0.011; 15-sensor AUC 0.879 ± 0.012; observed Δ=+0.018. Draft Background, Method, Results, Limitations, and Next Experiment. Say “associated with,” not “caused.” Do not invent p-values or confidence intervals. State that LeagueIndex is an operational label.</div><div class="box" style="border-top:4px solid var(--amber)"><h3 style="color:var(--amber)">Generated result</h3><p><b>Title:</b> How Much Telemetry Is Enough?</p><p><b>Bounded takeaway:</b> four sensors retained most of the discrimination; all 15 produced a modest gain that motivates a sensor-ablation study.</p><p><a class="btn" href="extended-abstract.pdf" target="_blank" rel="noopener">Read the extended abstract</a></p></div></div>
+    <div class="grid2" style="grid-template-columns:1.08fr .92fr;margin-top:.25em"><div class="prompt" style="font-size:.42em"><span class="you">Prompt used ▸</span> Use only this evidence receipt: n=3,395; same 5 folds; 4-sensor AUC 0.861 ± 0.011; 15-sensor AUC 0.879 ± 0.012; observed Δ=+0.018. Draft Background, Method, Results, Limitations, and Next Experiment. Say “associated with,” not “caused.” Do not invent p-values or confidence intervals. State that LeagueIndex is an operational label.</div><div class="box" style="border-top:4px solid var(--amber)"><h3 style="color:var(--amber)">Generated result</h3><p><b>Title:</b> How Much Telemetry Is Enough?</p><p><b>Bounded takeaway:</b> four sensors retained most of the discrimination; all 15 produced a modest gain that motivates a sensor-ablation study.</p><p><a class="btn" href="extended-abstract.pdf" target="_blank" rel="noopener">Read the extended abstract</a></p></div></div><div class="callout" style="font-size:.47em;margin-top:.42em"><b>Metric key:</b> <b>ROC</b> = receiver operating characteristic curve, showing the true-positive/false-positive trade-off across thresholds. <b>AUC</b> = area under that ROC curve: 0.5 is chance ranking, 1.0 is perfect ranking. <b>SD</b> = standard deviation, the spread across the five folds.</div>
     <p class="source"><a href="open-data-demo.html" target="_blank" rel="noopener">See the full exact prompt, generated draft, source hash, code, fold results, and disclosure</a>.</p>
     <aside class="notes">现场打开 open-data-demo.html。把 prompt 中的 EVIDENCE RECEIPT、TASK、CONSTRAINTS 三块指出来，再对照输出中的数字。强调 AI 辅助措辞，作者提供并核查全部数字。</aside>
 </section>
@@ -616,11 +734,71 @@ const _audio=document.getElementById('narratorAudio');
 let _btn=null,_playToken=0;
 function fmtClock(s){ s=Math.max(0,Math.floor(s||0)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
 function resetListenUI(){ listenBtn.style.setProperty('--p','0%'); listenBtn.querySelector('.li-ic').textContent='▶'; listenBtn.querySelector('.li-tx').textContent='Listen'; }
+function setRowReveal(stage){ document.querySelectorAll('#row .row-reveal').forEach(function(el){ el.classList.toggle('is-visible',Number(el.dataset.rowStage)<=stage); }); }
+function syncRowReveal(t){ if(curSid==='row') setRowReveal(t>=39.0?3:t>=23.8?2:t>=9.1?1:0); }
+const KNN_NUMBER={one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9};
+function setKnnStep(step){
+  const sec=document.querySelector('#knn'); if(!sec) return;
+  step=Math.max(0,Math.min(16,Number(step)||0)); sec._knnStep=step;
+  const shown={left:step>=1,stay:step>=2,right:step>=3};
+  sec.querySelectorAll('.knn-point').forEach(function(point){
+    const neighbor=Number(point.dataset.neighbor)||0;
+    point.classList.toggle('is-visible',!!shown[point.dataset.action]);
+    point.classList.toggle('is-muted',step>=5&&!neighbor);
+    point.classList.toggle('is-neighbor',step>=5&&!!neighbor);
+    point.classList.toggle('is-counted',!!neighbor&&(step>=15||(step>=6&&neighbor<=step-5)));
+    point.classList.toggle('is-active',step>=6&&step<=14&&neighbor===step-5);
+  });
+  sec.querySelectorAll('[data-knn-legend]').forEach(function(item){ item.classList.toggle('is-visible',!!shown[item.dataset.knnLegend]); });
+  ['.knn-query','.knn-query-label'].forEach(function(selector){ const el=sec.querySelector(selector); if(el) el.classList.toggle('is-visible',step>=4); });
+  const ring=sec.querySelector('.knn-ring'); if(ring) ring.classList.toggle('is-visible',step>=5);
+  const k=sec.querySelector('.knn-k'); if(k) k.classList.toggle('is-visible',step>=5);
+  const votes=sec.querySelector('.knn-votes'); if(votes) votes.classList.toggle('is-visible',step>=15);
+  const result=sec.querySelector('.knn-result'); if(result) result.classList.toggle('is-visible',step>=16);
+  const active=sec.querySelector('.knn-point.is-active');
+  const status=sec.querySelector('.knn-status');
+  if(status){
+    const messages=[
+      'Start with the two feature axes.',
+      'LEFT demonstrations appear as pink circles.',
+      'STAY demonstrations appear as gold squares.',
+      'RIGHT demonstrations appear as teal triangles.',
+      'The black star is the new, unlabeled state.',
+      'The dashed circle encloses the 9 nearest samples.'
+    ];
+    if(step<=5) status.textContent=messages[step];
+    else if(step<=14) status.textContent='Neighbor '+(step-5)+' of 9 · distance '+(active?active.dataset.distance:'—');
+    else if(step===15) status.textContent='Count and weight the nine labels: 2 LEFT · 3 STAY · 4 RIGHT.';
+    else status.textContent='RIGHT has the largest weighted vote, so the policy moves right.';
+  }
+}
+function knnStepFromCue(text,previous){
+  const s=String(text||'').toLowerCase();
+  if(s.includes('pink circles')) return 1;
+  if(s.includes('gold squares')) return 2;
+  if(s.includes('teal triangles')) return 3;
+  if(s.includes('black star')) return 4;
+  if(s.includes('set k equal to nine')) return 5;
+  const number=s.match(/neighbor\s+(one|two|three|four|five|six|seven|eight|nine)/);
+  if(number) return 5+KNN_NUMBER[number[1]];
+  if(s.includes('now vote')) return 15;
+  if(s.includes('after inverse-distance weighting')) return 16;
+  return previous;
+}
+function syncKnnReveal(t){
+  if(curSid!=='knn') return;
+  const data=_narrationData&&_narrationData.knn, cues=data&&data.cues||[];
+  let step=0;
+  for(const cue of cues){ if(t<cue.start) break; step=knnStepFromCue(cue.text,step); }
+  setKnnStep(step);
+}
 function stopAudio(){
   stopWalk(); // lab walkthrough shares the stage with narration — never both
   _playToken++; // invalidate any in-flight play() for the old src
   _audio.pause(); _audio.currentTime=0; _audio.removeAttribute('src'); _audio.load();
   _audio.removeEventListener('timeupdate',onListenTimeupdate); // else it'd animate listenBtn during a .speak clip
+  if(curSid==='row') setRowReveal(0);
+  if(curSid==='knn') setKnnStep(0);
   capBar.style.display='none';
   if(_btn){
     _btn.classList.remove('playing');
@@ -678,6 +856,8 @@ function onListenTimeupdate(){
   if(_audio.duration) listenBtn.style.setProperty('--p',(_audio.currentTime/_audio.duration*100)+'%');
   listenBtn.querySelector('.li-tx').textContent=fmtClock(_audio.currentTime)+' / '+fmtClock(_audio.duration);
   updateCaption();
+  syncRowReveal(_audio.currentTime);
+  syncKnnReveal(_audio.currentTime);
 }
 listenBtn.addEventListener('click',function(){
   if(_btn===listenBtn && !_audio.paused){ stopAudio(); return; } // toggles play/stop even mid-buffer
@@ -690,6 +870,8 @@ listenBtn.addEventListener('click',function(){
   const data=_narrationData&&_narrationData[curSid];
   const version=data&&data.hash?'?v='+encodeURIComponent(data.hash):'';
   _audio.src='audio/'+encodeURIComponent(curSid)+'.mp3'+version;
+  if(curSid==='row') setRowReveal(0);
+  if(curSid==='knn') setKnnStep(0);
   _audio.addEventListener('timeupdate',onListenTimeupdate);
   _audio.addEventListener('ended',stopAudio,{once:true});
   _audio.play().catch(function(){
@@ -700,6 +882,15 @@ listenBtn.addEventListener('click',function(){
     setTimeout(resetListenUI,2200);
   });
 });
+document.addEventListener('click',function(e){ if(e.target.closest('[data-row-show]')) setRowReveal(3); if(e.target.closest('[data-row-hide]')) setRowReveal(0); });
+document.addEventListener('click',function(e){
+  const control=e.target.closest('[data-knn-reset],[data-knn-next],[data-knn-all]'); if(!control) return;
+  if(_btn===listenBtn) stopAudio();
+  const sec=document.querySelector('#knn'); if(!sec) return;
+  if(control.hasAttribute('data-knn-reset')) setKnnStep(0);
+  else if(control.hasAttribute('data-knn-all')) setKnnStep(16);
+  else setKnnStep((sec._knnStep||0)+1);
+});
 
 /* ---------- Quizzes (answers feed the live class distribution) ---------- */
 function renderQuizStats(quiz,data){
@@ -708,12 +899,12 @@ function renderQuizStats(quiz,data){
   if(!box){ box=document.createElement('div'); box.className='qstats'; quiz.appendChild(box); }
   const mode=quiz._qmode||'today';
   const st=(data&&data[mode])||{counts:{},total:0};
-  const opts=quiz.querySelectorAll('.opt'), correct=parseInt(quiz.dataset.correct,10);
+  const opts=quiz.querySelectorAll('.opt'), isPoll=quiz.dataset.poll==='true', correct=parseInt(quiz.dataset.correct,10);
   let bars='';
   for(let i=0;i<opts.length;i++){
     const c=st.counts[i]||0, pct=st.total?Math.round(c*100/st.total):0;
     bars+='<div class="qrow"><span class="ql">'+String.fromCharCode(65+i)+'</span>'
-      +'<div class="qbar"><div class="qfill'+(i===correct?' qok':'')+'" style="width:'+pct+'%"></div></div>'
+      +'<div class="qbar"><div class="qfill'+(!isPoll&&i===correct?' qok':'')+'" style="width:'+pct+'%"></div></div>'
       +'<span class="qp">'+pct+'% ('+c+')</span></div>';
   }
   box.innerHTML='<div class="qhead"><span>Class results · '+st.total+' answered</span>'
@@ -725,16 +916,19 @@ document.addEventListener('click',function(e){
   if(m){ const q=m.closest('.quiz'); q._qmode=m.dataset.m; renderQuizStats(q,q._qstats); return; }
   const opt=e.target.closest('.quiz .opt'); if(!opt) return;
   const quiz=opt.closest('.quiz'); if(quiz.classList.contains('answered')) return;
-  const correct=parseInt(quiz.dataset.correct,10);
+  const isPoll=quiz.dataset.poll==='true', correct=parseInt(quiz.dataset.correct,10);
   quiz.querySelectorAll('.opt').forEach(function(o){o.setAttribute('disabled','');});
   const chosen=parseInt(opt.dataset.i,10);
-  quiz.querySelectorAll('.opt')[correct].classList.add('correct');
-  if(chosen!==correct) opt.classList.add('wrong');
+  if(isPoll) opt.classList.add('selected');
+  else {
+    quiz.querySelectorAll('.opt')[correct].classList.add('correct');
+    if(chosen!==correct) opt.classList.add('wrong');
+  }
   quiz.classList.add('answered');
   const sec=quiz.closest('section');
   const sid=(sec&&sec.dataset.sid)||_hashSid(sec);
   fetch('/api/quiz/answer',{method:'POST',headers:{'content-type':'application/json'},
-    body:JSON.stringify({deck:DECK,slide:sid,choice:chosen,correct:chosen===correct})})
+    body:JSON.stringify({deck:DECK,slide:sid,choice:chosen,correct:isPoll?false:chosen===correct})})
     .then(function(r){return r.json();})
     .then(function(j){ if(j&&j.today) renderQuizStats(quiz,{today:j.today,all:j.all}); })
     .catch(function(){ fetch('/api/quiz/stats?deck='+encodeURIComponent(DECK)+'&slide='+encodeURIComponent(sid))
@@ -1398,8 +1592,14 @@ function updateWatch(){
   btn.querySelector('span').textContent='录播 '+mm+':'+ss;
   btn.hidden=false;
 }
-Reveal.on('slidechanged',function(){ stopAudio(); curSid=sidOf(); updateBadge(); updateListen(); sendSlide(); updateWatch(); if(panel.classList.contains('open')){ cph.textContent='Comments · '+curSid; loadComments(); } });
-Reveal.on('ready',function(){ curSid=sidOf(); loadCounts(); loadNarrated(); });
+Reveal.on('slidechanged',function(){ stopAudio(); curSid=sidOf(); if(curSid==='row') setRowReveal(0); if(curSid==='knn') setKnnStep(0); updateBadge(); updateListen(); sendSlide(); updateWatch(); if(panel.classList.contains('open')){ cph.textContent='Comments · '+curSid; loadComments(); } });
+Reveal.on('ready',function(){
+  curSid=sidOf();
+  const printMode=new URLSearchParams(location.search).has('print-pdf');
+  if(printMode){ setRowReveal(3); setKnnStep(16); }
+  else { if(curSid==='row') setRowReveal(0); if(curSid==='knn') setKnnStep(0); }
+  loadCounts(); loadNarrated();
+});
 
 /* ---------- Live classroom: presence chip + quiz stream (SSE) ---------- */
 let liveId=null;

@@ -156,82 +156,82 @@
     "source": "authored-video-script"
   },
   "rules": {
-    "hash": "3b849e4af8dd19aa",
+    "hash": "c613ddc1042a41ae",
     "voice": "en-US-AvaMultilingualNeural",
-    "script": "The game has three lanes. Move with the left and right arrow keys, or A and D. Collecting a coin adds ten points, while hitting a hazard removes twelve points and one life. Every one hundred milliseconds, the browser records the current sensor state and the action LEFT, STAY, or RIGHT. Doing nothing is not missing data; STAY is a real action label. The game is intentionally simple. Complexity belongs in the research question, not in rules that students spend the whole class trying to learn.",
+    "script": "Every decision step begins with a survival reward of positive zero point zero two. If a coin is collected on that step, add ten; if a hazard is hit, subtract twelve. That is why the CSV usually shows zero point zero two. A coin row is ten point zero two, and a hazard row is negative eleven point nine eight. Every one hundred milliseconds, the browser records the current sensor state and the action LEFT, STAY, or RIGHT. Doing nothing is not missing data; STAY is a real action label. Reward is the immediate outcome recorded in the row. The action is the imitation-learning label, and the displayed score is the running game total.",
     "cues": [
       {
         "start": 0.05,
-        "end": 2.135,
-        "text": "The game has three lanes."
+        "end": 5.937,
+        "text": "Every decision step begins with a survival reward of positive zero point zero two."
       },
       {
-        "start": 2.135,
-        "end": 12.317,
-        "text": "Move with the left and right arrow keys, or A and D. Collecting a coin adds ten points, while hitting a hazard removes twelve points and one life."
+        "start": 5.937,
+        "end": 11.809,
+        "text": "If a coin is collected on that step, add ten; if a hazard is hit, subtract twelve."
       },
       {
-        "start": 12.714,
-        "end": 19.968,
+        "start": 12.21,
+        "end": 16.508,
+        "text": "That is why the CSV usually shows zero point zero two."
+      },
+      {
+        "start": 16.508,
+        "end": 22.902,
+        "text": "A coin row is ten point zero two, and a hazard row is negative eleven point nine eight."
+      },
+      {
+        "start": 23.29,
+        "end": 30.544,
         "text": "Every one hundred milliseconds, the browser records the current sensor state and the action LEFT, STAY, or RIGHT."
       },
       {
-        "start": 19.968,
-        "end": 24.552,
+        "start": 30.544,
+        "end": 35.128,
         "text": "Doing nothing is not missing data; STAY is a real action label."
       },
       {
-        "start": 24.946,
-        "end": 27.369,
-        "text": "The game is intentionally simple."
+        "start": 35.522,
+        "end": 38.597,
+        "text": "Reward is the immediate outcome recorded in the row."
       },
       {
-        "start": 27.369,
-        "end": 33.906,
-        "text": "Complexity belongs in the research question, not in rules that students spend the whole class trying to learn."
+        "start": 38.597,
+        "end": 44.482,
+        "text": "The action is the imitation-learning label, and the displayed score is the running game total."
       }
     ],
-    "bytes": 544643,
+    "bytes": 713917,
     "source": "authored-video-script"
   },
   "lab-human": {
-    "hash": "a046786eb0dc594e",
+    "hash": "14a3a146c7bd2fac",
     "voice": "en-US-AvaMultilingualNeural",
-    "script": "This is an actual browser capture of a human demonstration. Watch the mode label, score, lives, and the example counter while left and right key presses move the player. The counter rises because each decision moment becomes one row. The player is simultaneously playing the game and labeling a state-to-action example for the imitation learner. In class, play until you have at least eighty personal examples and deliberately try both directions. A long period of doing nothing produces many STAY labels but poor action coverage.",
+    "script": "Your goal is to play purposefully, not perfectly. Every decision is recorded as a state-to-action label, so use LEFT, STAY, and RIGHT instead of waiting in one lane. Once you have at least eighty examples, choose one difficult moment from those same rows and copy its sensors, action, and reward into Part A. Do not add a new row or remove the mistake: it remains part of the demonstration data.",
     "cues": [
       {
         "start": 0.05,
-        "end": 3.75,
-        "text": "This is an actual browser capture of a human demonstration."
+        "end": 3.425,
+        "text": "Your goal is to play purposefully, not perfectly."
       },
       {
-        "start": 3.75,
-        "end": 10.781,
-        "text": "Watch the mode label, score, lives, and the example counter while left and right key presses move the player."
+        "start": 3.425,
+        "end": 11.362,
+        "text": "Every decision is recorded as a state-to-action label, so use LEFT, STAY, and RIGHT instead of waiting in one lane."
       },
       {
-        "start": 11.178,
-        "end": 15.672,
-        "text": "The counter rises because each decision moment becomes one row."
+        "start": 11.362,
+        "end": 20.2,
+        "text": "Once you have at least eighty examples, choose one difficult moment from those same rows and copy its sensors, action, and reward into Part A."
       },
       {
-        "start": 15.672,
-        "end": 22.247,
-        "text": "The player is simultaneously playing the game and labeling a state-to-action example for the imitation learner."
-      },
-      {
-        "start": 22.642,
-        "end": 29.375,
-        "text": "In class, play until you have at least eighty personal examples and deliberately try both directions."
-      },
-      {
-        "start": 29.375,
-        "end": 34.818,
-        "text": "A long period of doing nothing produces many STAY labels but poor action coverage."
+        "start": 20.2,
+        "end": 25.687,
+        "text": "Do not add a new row or remove the mistake: it remains part of the demonstration data."
       }
     ],
-    "bytes": 559272,
-    "source": "authored-video-script"
+    "bytes": 154512,
+    "model": "human-reviewed"
   },
   "row": {
     "hash": "4382029d500a5395",
@@ -303,43 +303,38 @@
     "source": "authored-video-script"
   },
   "quiz-label": {
-    "hash": "dbef4f0bf4d5dc3c",
+    "hash": "7a3b2f19374e4450",
     "voice": "en-US-AvaMultilingualNeural",
-    "script": "Quick check. During Player Run, what is the training label: the level seed, the player's action, the coin color, or only the final score? The answer is the player's LEFT, STAY, or RIGHT action. The four sensor values are features, and reward is an outcome that helps us evaluate the behavior. This method is imitation learning. The agent begins by copying examples rather than discovering the entire policy through trial and error.",
+    "script": "The label is the human action: LEFT, STAY, or RIGHT. The four sensor values are the inputs. Reward is saved only as an outcome for evaluation; this k-nearest-neighbors policy does not use it during training. That means a mistaken human action is still a label the agent may copy. Filtering or weighting examples by reward would be a different learning method.",
     "cues": [
       {
         "start": 0.05,
-        "end": 1.25,
-        "text": "Quick check."
+        "end": 4.337,
+        "text": "The label is the human action: LEFT, STAY, or RIGHT."
       },
       {
-        "start": 1.25,
-        "end": 9.505,
-        "text": "During Player Run, what is the training label: the level seed, the player's action, the coin color, or only the final score?"
+        "start": 4.337,
+        "end": 7.125,
+        "text": "The four sensor values are the inputs."
       },
       {
-        "start": 9.906,
-        "end": 14.048,
-        "text": "The answer is the player's LEFT, STAY, or RIGHT action."
+        "start": 7.125,
+        "end": 14.4,
+        "text": "Reward is saved only as an outcome for evaluation; this k-nearest-neighbors policy does not use it during training."
       },
       {
-        "start": 14.048,
-        "end": 19.986,
-        "text": "The four sensor values are features, and reward is an outcome that helps us evaluate the behavior."
+        "start": 14.4,
+        "end": 18.812,
+        "text": "That means a mistaken human action is still a label the agent may copy."
       },
       {
-        "start": 20.386,
-        "end": 22.926,
-        "text": "This method is imitation learning."
-      },
-      {
-        "start": 22.926,
-        "end": 29.502,
-        "text": "The agent begins by copying examples rather than discovering the entire policy through trial and error."
+        "start": 18.812,
+        "end": 23.912,
+        "text": "Filtering or weighting examples by reward would be a different learning method."
       }
     ],
-    "bytes": 474008,
-    "source": "authored-video-script"
+    "bytes": 143856,
+    "model": "human-reviewed"
   },
   "agent-loop": {
     "hash": "a797c59abdb341f4",
@@ -376,190 +371,310 @@
     "source": "authored-video-script"
   },
   "knn": {
-    "hash": "069fe8a382011bf5",
+    "hash": "224dd5fce8d0cd4e",
     "voice": "en-US-AvaMultilingualNeural",
-    "script": "The policy is weighted k-nearest neighbors with k equal to nine. It asks what players did in the nine most similar sensor situations. Nearby demonstrations receive more weight. Their votes become scores for LEFT, STAY, and RIGHT, and the action with the highest score controls the player. A simple model is a strength here. Students can connect the exact sensor vector, nearby examples, weighted votes, and resulting movement without treating complexity as quality.",
+    "script": "To make k nearest neighbors visible, we temporarily project the demonstration rows onto two features. The real game uses four. Pink circles are LEFT examples. Gold squares are STAY examples. Teal triangles are RIGHT examples. The black star is a new state the agent has never labeled. Set k equal to nine. The dashed circle encloses the nine closest demonstrations. Neighbor one. Neighbor two. Neighbor three. Neighbor four. Neighbor five. Neighbor six. Neighbor seven. Neighbor eight. Neighbor nine. Now vote. Among these nine, LEFT has two examples, STAY has three, and RIGHT has four. After inverse-distance weighting, the shares are about seventeen percent LEFT, thirty-three percent STAY, and fifty percent RIGHT. RIGHT wins and becomes the next action. The production policy repeats the same idea in four dimensions and also balances action classes.",
     "cues": [
       {
         "start": 0.05,
-        "end": 4.388,
-        "text": "The policy is weighted k-nearest neighbors with k equal to nine."
+        "end": 6.783,
+        "text": "To make k nearest neighbors visible, we temporarily project the demonstration rows onto two features."
       },
       {
-        "start": 4.388,
-        "end": 8.815,
-        "text": "It asks what players did in the nine most similar sensor situations."
+        "start": 6.783,
+        "end": 8.645,
+        "text": "The real game uses four."
       },
       {
-        "start": 9.21,
-        "end": 12.402,
-        "text": "Nearby demonstrations receive more weight."
+        "start": 9.042,
+        "end": 11.505,
+        "text": "Pink circles are LEFT examples."
       },
       {
-        "start": 12.402,
-        "end": 19.107,
-        "text": "Their votes become scores for LEFT, STAY, and RIGHT, and the action with the highest score controls the player."
+        "start": 11.89,
+        "end": 14.366,
+        "text": "Gold squares are STAY examples."
       },
       {
-        "start": 19.498,
-        "end": 21.804,
-        "text": "A simple model is a strength here."
+        "start": 14.762,
+        "end": 17.485,
+        "text": "Teal triangles are RIGHT examples."
       },
       {
-        "start": 21.804,
-        "end": 31.049,
-        "text": "Students can connect the exact sensor vector, nearby examples, weighted votes, and resulting movement without treating complexity as quality."
+        "start": 17.874,
+        "end": 21.873,
+        "text": "The black star is a new state the agent has never labeled."
+      },
+      {
+        "start": 22.258,
+        "end": 24.213,
+        "text": "Set k equal to nine."
+      },
+      {
+        "start": 24.213,
+        "end": 28.471,
+        "text": "The dashed circle encloses the nine closest demonstrations."
+      },
+      {
+        "start": 28.874,
+        "end": 30.021,
+        "text": "Neighbor one."
+      },
+      {
+        "start": 30.93,
+        "end": 32.012,
+        "text": "Neighbor two."
+      },
+      {
+        "start": 32.986,
+        "end": 34.212,
+        "text": "Neighbor three."
+      },
+      {
+        "start": 35.042,
+        "end": 36.281,
+        "text": "Neighbor four."
+      },
+      {
+        "start": 37.098,
+        "end": 38.35,
+        "text": "Neighbor five."
+      },
+      {
+        "start": 39.154,
+        "end": 40.445,
+        "text": "Neighbor six."
+      },
+      {
+        "start": 41.21,
+        "end": 42.501,
+        "text": "Neighbor seven."
+      },
+      {
+        "start": 43.266,
+        "end": 44.492,
+        "text": "Neighbor eight."
+      },
+      {
+        "start": 45.322,
+        "end": 46.508,
+        "text": "Neighbor nine."
+      },
+      {
+        "start": 47.378,
+        "end": 48.486,
+        "text": "Now vote."
+      },
+      {
+        "start": 48.486,
+        "end": 54.085,
+        "text": "Among these nine, LEFT has two examples, STAY has three, and RIGHT has four."
+      },
+      {
+        "start": 54.474,
+        "end": 63.004,
+        "text": "After inverse-distance weighting, the shares are about seventeen percent LEFT, thirty-three percent STAY, and fifty percent RIGHT."
+      },
+      {
+        "start": 63.004,
+        "end": 66.077,
+        "text": "RIGHT wins and becomes the next action."
+      },
+      {
+        "start": 66.466,
+        "end": 72.978,
+        "text": "The production policy repeats the same idea in four dimensions and also balances action classes."
       }
     ],
-    "bytes": 499086,
+    "bytes": 1169910,
     "source": "authored-video-script"
   },
   "code-core": {
-    "hash": "9f59847d771eb762",
+    "hash": "f5ae65c75778aad7",
     "voice": "en-US-AvaMultilingualNeural",
-    "script": "Here is the readable core of the JavaScript that runs the policy. The function contract is explicit: give predict one current state, demonstration rows, and k equal to nine; receive one action. The second line turns the game state into the four-number vector we just learned to read. The next three lines calculate squared feature differences, sort rows from nearest to farthest, and keep the first nine. The vote object creates three empty buckets, one for each action. Each neighbor contributes one divided by its distance, so closer examples count more. The final line sorts the actions by vote and returns the winner. The production version also balances action classes and returns probabilities for the live AI Brain panel.",
+    "script": "Before reading individual lines, step back and follow the complete agent loop. Game Frame is the current world: the player's lane, coins, and hazards. Observe means environment.js converts that world into four numeric sensors. Predict means policy.js compares those numbers with demonstration rows, combines the nearest weighted votes, and chooses an action. Action sends LEFT, STAY, or RIGHT back to the game. Environment applies that move, advances the objects, calculates the reward, and creates the next frame. Repeat means app.js coordinates this loop every one hundred milliseconds while it also updates the display, records demonstrations, and exports the CSV. Now connect those stages to the four files in the GitHub source. environment.js defines the world, sensors, rewards, seeded levels, and expert labels. policy.js contains trainKnn and the live weighted k-NN predictor shown here. app.js connects the controls, animation, agent loop, receipts, CSV export, and local run history. experiment.js runs the controlled one-seed-versus-twelve-seed evaluation on unseen levels. The editor now contains the complete policy.js file: its distance helper, input checks, class balancing, neighbor search, weighted probabilities, decision receipt, and exports for both the browser and Node tests. After this overview, use Explain complete policy dot J S line by line for the separate code walkthrough.",
     "cues": [
       {
         "start": 0.05,
-        "end": 4.57,
-        "text": "Here is the readable core of the JavaScript that runs the policy."
+        "end": 5.125,
+        "text": "Before reading individual lines, step back and follow the complete agent loop."
       },
       {
-        "start": 4.57,
-        "end": 13.893,
-        "text": "The function contract is explicit: give predict one current state, demonstration rows, and k equal to nine; receive one action."
+        "start": 5.125,
+        "end": 10.137,
+        "text": "Game Frame is the current world: the player's lane, coins, and hazards."
       },
       {
-        "start": 14.298,
-        "end": 19.13,
-        "text": "The second line turns the game state into the four-number vector we just learned to read."
+        "start": 10.137,
+        "end": 15.225,
+        "text": "Observe means environment.js converts that world into four numeric sensors."
       },
       {
-        "start": 19.13,
-        "end": 26.761,
-        "text": "The next three lines calculate squared feature differences, sort rows from nearest to farthest, and keep the first nine."
+        "start": 15.225,
+        "end": 23.837,
+        "text": "Predict means policy.js compares those numbers with demonstration rows, combines the nearest weighted votes, and chooses an action."
       },
       {
-        "start": 27.154,
-        "end": 31.817,
-        "text": "The vote object creates three empty buckets, one for each action."
+        "start": 23.837,
+        "end": 28.237,
+        "text": "Action sends LEFT, STAY, or RIGHT back to the game."
       },
       {
-        "start": 31.817,
-        "end": 37.742,
-        "text": "Each neighbor contributes one divided by its distance, so closer examples count more."
+        "start": 28.237,
+        "end": 35.187,
+        "text": "Environment applies that move, advances the objects, calculates the reward, and creates the next frame."
       },
       {
-        "start": 38.138,
-        "end": 42.098,
-        "text": "The final line sorts the actions by vote and returns the winner."
+        "start": 35.187,
+        "end": 44.925,
+        "text": "Repeat means app.js coordinates this loop every one hundred milliseconds while it also updates the display, records demonstrations, and exports the CSV."
       },
       {
-        "start": 42.098,
-        "end": 48.921,
-        "text": "The production version also balances action classes and returns probabilities for the live AI Brain panel."
+        "start": 44.925,
+        "end": 49.087,
+        "text": "Now connect those stages to the four files in the GitHub source."
+      },
+      {
+        "start": 49.087,
+        "end": 55.875,
+        "text": "environment.js defines the world, sensors, rewards, seeded levels, and expert labels."
+      },
+      {
+        "start": 55.875,
+        "end": 62.187,
+        "text": "policy.js contains trainKnn and the live weighted k-NN predictor shown here."
+      },
+      {
+        "start": 62.187,
+        "end": 70.125,
+        "text": "app.js connects the controls, animation, agent loop, receipts, CSV export, and local run history."
+      },
+      {
+        "start": 70.125,
+        "end": 76.975,
+        "text": "experiment.js runs the controlled one-seed-versus-twelve-seed evaluation on unseen levels."
+      },
+      {
+        "start": 76.975,
+        "end": 90.437,
+        "text": "The editor now contains the complete policy.js file: its distance helper, input checks, class balancing, neighbor search, weighted probabilities, decision receipt, and exports for both the browser and Node tests."
+      },
+      {
+        "start": 90.437,
+        "end": 97.687,
+        "text": "After this overview, use Explain complete policy dot J S line by line for the separate code walkthrough."
       }
     ],
-    "bytes": 784970,
-    "source": "authored-video-script"
+    "bytes": 586512,
+    "source": "authored-runtime-source-tour"
   },
   "code-walk": {
-    "hash": "df0f01d95416c8bf",
+    "hash": "3077716ec3428a19",
     "voice": "en-US-AvaMultilingualNeural",
-    "script": "Line-by-line explanation is not only syntax translation. Each line makes a behavior claim we can test: representation, comparison, neighbor selection, weighting, and decision. The small constant zero point zero two five prevents division by zero when an example exactly matches the current state. Removing it is a concrete bug students can predict before running the program. Suppose every demonstration says STAY. Which line is wrong? None of them. The program correctly returns the only action represented in the data. The failure is coverage, not syntax. That distinction is a coding-level research habit: trace the executed logic, inspect inputs, and decide whether the problem comes from data, features, model behavior, or implementation.",
+    "script": "Read the complete file as six testable responsibilities, not as one sixty-four-line block. The wrapper creates a safe module boundary, and squaredDistance defines exactly what nearby means. trainKnn validates its inputs, counts LEFT, STAY, and RIGHT examples, and gives rarer classes more weight. The returned model keeps rows, k, and counts as an inspectable training receipt. Inside predict, the code measures every demonstration, sorts by distance, keeps the nearest k, and accumulates class-balanced inverse-distance votes. It then normalizes those votes into probabilities, chooses the winning action, and returns the evidence behind the decision: probabilities, raw votes, neighbors, and nearest distance. Finally, the export lines make the same tested functions available to Node and the browser. If every demonstration says STAY, inspect counts and data coverage before blaming the syntax.",
     "cues": [
       {
         "start": 0.05,
-        "end": 4.479,
-        "text": "Line-by-line explanation is not only syntax translation."
+        "end": 6.212,
+        "text": "Read the complete file as six testable responsibilities, not as one sixty-four-line block."
       },
       {
-        "start": 4.479,
-        "end": 13.046,
-        "text": "Each line makes a behavior claim we can test: representation, comparison, neighbor selection, weighting, and decision."
+        "start": 6.212,
+        "end": 12.65,
+        "text": "The wrapper creates a safe module boundary, and squaredDistance defines exactly what nearby means."
       },
       {
-        "start": 13.434,
-        "end": 21.717,
-        "text": "The small constant zero point zero two five prevents division by zero when an example exactly matches the current state."
+        "start": 12.65,
+        "end": 20.062,
+        "text": "trainKnn validates its inputs, counts LEFT, STAY, and RIGHT examples, and gives rarer classes more weight."
       },
       {
-        "start": 21.717,
-        "end": 26.118,
-        "text": "Removing it is a concrete bug students can predict before running the program."
+        "start": 20.062,
+        "end": 25.525,
+        "text": "The returned model keeps rows, k, and counts as an inspectable training receipt."
       },
       {
-        "start": 26.506,
-        "end": 29.502,
-        "text": "Suppose every demonstration says STAY."
+        "start": 25.525,
+        "end": 35.55,
+        "text": "Inside predict, the code measures every demonstration, sorts by distance, keeps the nearest k, and accumulates class-balanced inverse-distance votes."
       },
       {
-        "start": 29.502,
-        "end": 31.247,
-        "text": "Which line is wrong?"
+        "start": 35.55,
+        "end": 46.537,
+        "text": "It then normalizes those votes into probabilities, chooses the winning action, and returns the evidence behind the decision: probabilities, raw votes, neighbors, and nearest distance."
       },
       {
-        "start": 31.247,
-        "end": 32.276,
-        "text": "None of them."
+        "start": 46.537,
+        "end": 52.45,
+        "text": "Finally, the export lines make the same tested functions available to Node and the browser."
       },
       {
-        "start": 32.276,
-        "end": 36.625,
-        "text": "The program correctly returns the only action represented in the data."
-      },
-      {
-        "start": 36.625,
-        "end": 39.594,
-        "text": "The failure is coverage, not syntax."
-      },
-      {
-        "start": 39.986,
-        "end": 52.566,
-        "text": "That distinction is a coding-level research habit: trace the executed logic, inspect inputs, and decide whether the problem comes from data, features, model behavior, or implementation."
+        "start": 52.45,
+        "end": 58.787,
+        "text": "If every demonstration says STAY, inspect counts and data coverage before blaming the syntax."
       }
     ],
-    "bytes": 843066,
-    "source": "authored-video-script"
+    "bytes": 353088,
+    "source": "authored-complete-policy-map"
   },
   "lab-takeover": {
-    "hash": "b0cb143796a66539",
+    "hash": "3b29a73161c68362",
     "voice": "en-US-AvaMultilingualNeural",
-    "script": "Now watch the real handoff. The page trains the local weighted-neighbor policy, switches the HUD from HUMAN to AGENT, and the policy drives without keyboard input. The trained model uses balanced starter demonstrations plus the capped personal examples collected in this browser. The receipt reports the exact row and action counts; no model weights leave the device. This second capture changes the level seed to one the policy did not train on. The HUD says UNSEEN, and the same policy must act under a new sequence of coins and hazards.",
+    "script": "Now watch the real handoff. First train the local weighted-neighbor policy and press AI Takeover; the policy drives without keyboard input using balanced starter demonstrations plus your capped personal examples. Next choose AI Unseen. It runs the policy on a held-out level sequence. Then choose Human Unseen and drive the same held-out seed order yourself. Those human test actions are evaluation only and never become training rows. The local comparison panel records completed runs, best score, and average separately for Human, AI Takeover, Human Unseen, and AI Unseen. Use the two unseen rows for the fairest human-versus-agent comparison. One important boundary: the Generalization Test farther down the page is a separate deterministic benchmark with fixed training and test seeds. Live unseen runs change the score panel, but they do not change that fixed benchmark.",
     "cues": [
       {
         "start": 0.05,
-        "end": 2.46,
+        "end": 2.437,
         "text": "Now watch the real handoff."
       },
       {
-        "start": 2.46,
-        "end": 11.041,
-        "text": "The page trains the local weighted-neighbor policy, switches the HUD from HUMAN to AGENT, and the policy drives without keyboard input."
+        "start": 2.437,
+        "end": 13.125,
+        "text": "First train the local weighted-neighbor policy and press AI Takeover; the policy drives without keyboard input using balanced starter demonstrations plus your capped personal examples."
       },
       {
-        "start": 11.442,
-        "end": 18.162,
-        "text": "The trained model uses balanced starter demonstrations plus the capped personal examples collected in this browser."
+        "start": 13.125,
+        "end": 15.4,
+        "text": "Next choose AI Unseen."
       },
       {
-        "start": 18.162,
-        "end": 24.022,
-        "text": "The receipt reports the exact row and action counts; no model weights leave the device."
+        "start": 15.4,
+        "end": 18.725,
+        "text": "It runs the policy on a held-out level sequence."
       },
       {
-        "start": 24.418,
-        "end": 29.537,
-        "text": "This second capture changes the level seed to one the policy did not train on."
+        "start": 18.725,
+        "end": 23.762,
+        "text": "Then choose Human Unseen and drive the same held-out seed order yourself."
       },
       {
-        "start": 29.537,
-        "end": 36.243,
-        "text": "The HUD says UNSEEN, and the same policy must act under a new sequence of coins and hazards."
+        "start": 23.762,
+        "end": 28.962,
+        "text": "Those human test actions are evaluation only and never become training rows."
+      },
+      {
+        "start": 28.962,
+        "end": 38.662,
+        "text": "The local comparison panel records completed runs, best score, and average separately for Human, AI Takeover, Human Unseen, and AI Unseen."
+      },
+      {
+        "start": 38.662,
+        "end": 43.2,
+        "text": "Use the two unseen rows for the fairest human-versus-agent comparison."
+      },
+      {
+        "start": 43.2,
+        "end": 51.675,
+        "text": "One important boundary: the Generalization Test farther down the page is a separate deterministic benchmark with fixed training and test seeds."
+      },
+      {
+        "start": 51.675,
+        "end": 56.887,
+        "text": "Live unseen runs change the score panel, but they do not change that fixed benchmark."
       }
     ],
-    "bytes": 582260,
-    "source": "authored-video-script"
+    "bytes": 341712,
+    "source": "authored-unseen-comparison-tour"
   },
   "brain": {
     "hash": "292feb3c10a809c5",

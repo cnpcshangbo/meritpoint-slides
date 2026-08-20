@@ -1,64 +1,88 @@
 {
   "code-core": {
-    "hash": "bdb3670a6de4ca17",
+    "hash": "6bdb832d8c2a251b",
     "voice": "en-US-AvaMultilingualNeural",
-    "source": "authored-code-walkthrough",
+    "source": "authored-complete-policy-walkthrough",
     "steps": [
       {
-        "lines": [
-          1,
-          1
-        ],
-        "text": "Line one defines the prediction function. It receives the current game state, the demonstration rows, and a default neighbor count of nine.",
+        "lines": [1, 4],
+        "text": "Lines one through four document the purpose of the file. This is a weighted k-nearest-neighbors imitation policy designed so every prediction remains inspectable.",
         "file": "code-core-w00.mp3"
       },
       {
-        "lines": [
-          2,
-          2
-        ],
-        "text": "Line two converts the visible game situation into the same four-number sensor vector used by every training example.",
+        "lines": [5, 7],
+        "text": "Lines five through seven open a small wrapper function and enable strict JavaScript rules. The root parameter will later let the same policy attach safely to a browser.",
         "file": "code-core-w01.mp3"
       },
       {
-        "lines": [
-          3,
-          5
-        ],
-        "text": "Lines three through five measure the squared distance from the current vector to every demonstration, sort from nearest to farthest, and keep the closest nine.",
+        "lines": [8, 10],
+        "text": "The squaredDistance helper compares two sensor vectors. It subtracts matching features, squares each difference, and adds them, producing the distance used to rank demonstrations.",
         "file": "code-core-w02.mp3"
       },
       {
-        "lines": [
-          6,
-          6
-        ],
-        "text": "Line six creates one empty vote bucket for LEFT, STAY, and RIGHT. The keys minus one, zero, and one are the three possible actions.",
+        "lines": [11, 16],
+        "text": "trainKnn receives demonstration rows and a default k of nine. These guard clauses reject an empty dataset or an invalid neighbor count before the model can make misleading predictions.",
         "file": "code-core-w03.mp3"
       },
       {
-        "lines": [
-          7,
-          7
-        ],
-        "text": "Line seven gives each neighbor an inverse-distance vote. Closer examples count more, and the small constant prevents division by zero on an exact match.",
+        "lines": [17, 19],
+        "text": "The counts object starts LEFT, STAY, and RIGHT at zero, then scans every row and increments the matching action. This becomes an inspectable class-balance receipt.",
         "file": "code-core-w04.mp3"
       },
       {
-        "lines": [
-          8,
-          8
-        ],
-        "text": "Line eight sorts the three actions by their accumulated vote and returns the strongest one as the agent's next move.",
+        "lines": [20, 24],
+        "text": "These weights give rarer action classes more influence. Dividing total rows by three class counts compensates for imbalance, while Math max prevents division by zero when a class is missing.",
         "file": "code-core-w05.mp3"
       },
       {
-        "lines": [
-          9,
-          9
-        ],
-        "text": "The closing brace ends the function. One sensor state has now become one inspectable action.",
+        "lines": [25, 30],
+        "text": "trainKnn now returns the model object. It preserves the original rows, k, and counts, then defines predict as the operation that turns a new sensor vector into a decision.",
         "file": "code-core-w06.mp3"
+      },
+      {
+        "lines": [31, 34],
+        "text": "The prediction maps every demonstration to its action and squared distance, sorts from nearest to farthest, and slices out at most k rows. Math min also handles a dataset smaller than k.",
+        "file": "code-core-w07.mp3"
+      },
+      {
+        "lines": [35, 36],
+        "text": "Before voting, the model creates one empty bucket for each action: minus one for LEFT, zero for STAY, and one for RIGHT.",
+        "file": "code-core-w08.mp3"
+      },
+      {
+        "lines": [37, 40],
+        "text": "Each neighbor adds its class-balance weight divided by distance. Taking the square root restores ordinary Euclidean distance, and zero point zero two five keeps an exact match from dividing by zero.",
+        "file": "code-core-w09.mp3"
+      },
+      {
+        "lines": [41, 47],
+        "text": "The three raw votes are added into a total. Each vote is divided by that total to produce LEFT, STAY, and RIGHT probabilities; the fallback of one protects against an empty total.",
+        "file": "code-core-w10.mp3"
+      },
+      {
+        "lines": [48, 49],
+        "text": "The action array is sorted by probability, highest first. The first entry is the winning action that the agent will send back to the environment.",
+        "file": "code-core-w11.mp3"
+      },
+      {
+        "lines": [50, 56],
+        "text": "The decision receipt returns more than the winner. It includes probabilities, raw votes, the selected neighbors, and the nearest distance so the interface and a researcher can inspect why the action won.",
+        "file": "code-core-w12.mp3"
+      },
+      {
+        "lines": [57, 59],
+        "text": "These closing braces finish predict, the returned model object, and trainKnn. Training has produced one reusable and inspectable predictor.",
+        "file": "code-core-w13.mp3"
+      },
+      {
+        "lines": [60, 61],
+        "text": "The API object names the two public functions: squaredDistance for comparison and trainKnn for building the policy.",
+        "file": "code-core-w14.mp3"
+      },
+      {
+        "lines": [62, 64],
+        "text": "The final lines publish that API in two environments. Node receives module exports for automated tests, while the browser adds the same functions to AgentArcade before the wrapper closes.",
+        "file": "code-core-w15.mp3"
       }
     ]
   }

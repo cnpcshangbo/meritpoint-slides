@@ -17,11 +17,11 @@
     <p class="mission"><b>Research mission:</b> With the same 240 demonstration rows, test whether training on more level seeds improves an imitation-learning agent’s accuracy on unseen levels. <b>任务：</b>固定数据量，检验训练关卡多样性是否提升未见关卡表现。</p>
     <p class="privacy">The game stores demonstrations locally. Exporting your CSV is optional. Do not upload names or identifying information with a research dataset.</p>
 
-    <section><div class="head"><h2>A · Human demonstration / 真人示范</h2><span>PLAY · ≥ 80 personal rows</span></div><div class="body grid2">
+    <section><div class="head"><h2>A · Human demonstration / 真人示范</h2><span>PLAY PURPOSEFULLY · ≥ 80 RECORDED ROWS</span></div><div class="body grid2">
       <div class="card"><h3>What does one row represent?</h3><div class="line"></div><div class="line"></div></div>
-      <div class="card"><h3>One difficult moment</h3><p>What did you observe, choose, and receive?</p><div class="line"></div><div class="line"></div></div>
+      <div class="card"><h3>One recorded difficult moment</h3><p>Choose one of your ≥ 80 rows; do not add or remove a row. What did you observe, choose, and receive?</p><div class="line"></div><div class="line"></div></div>
       <div class="card"><h3>Inputs / features</h3><p><span class="pill">obs Δ lane</span> <span class="pill">obs distance</span> <span class="pill">coin Δ lane</span> <span class="pill">coin distance</span></p></div>
-      <div class="card"><h3>Label and outcome</h3><p>Label = LEFT / STAY / RIGHT &nbsp; · &nbsp; Outcome = reward</p></div>
+      <div class="card"><h3>Label and outcome</h3><p>Label = LEFT / STAY / RIGHT &nbsp; · &nbsp; Outcome = reward<br>The current k-NN trains on the action label—not reward—and can inherit mistakes.</p></div>
     </div></section>
 
     <section><div class="head"><h2>B · Agent takeover / AI 接管</h2><span>TRAIN → TAKE OVER → UNSEEN</span></div><div class="body">
