@@ -1,6 +1,6 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Class 15 · Research Showcase &amp; Defense — The AI Toolbox</title>
+<title>Class 15 · Research Showcase, Defense &amp; Portfolio Launch — The AI Toolbox</title>
 <link rel="icon" type="image/png" href="/meritpoint-slides/assets/favicon.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
@@ -53,10 +53,11 @@
 /* QUIZ */
 .reveal .quiz{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.7em .85em;box-shadow:0 6px 18px rgba(20,40,70,.07);max-width:18em}
 .reveal .quiz .qq{font-size:.72em;font-weight:600;color:var(--navy);margin:0 0 .5em}
-.reveal .quiz .opt{display:block;width:100%;text-align:left;background:var(--cloud2);border:1px solid var(--line);border-radius:9px;padding:.4em .6em;margin:.25em 0;font-size:.6em;color:var(--ink);cursor:pointer;transition:.1s;font-family:-apple-system,sans-serif}
+.reveal .quiz .opt{display:grid;grid-template-columns:1.8em minmax(0,1fr);gap:.48em;align-items:center;width:100%;text-align:left;background:var(--cloud2);border:1px solid var(--line);border-radius:9px;padding:.4em .6em;margin:.25em 0;font-size:.6em;color:var(--ink);cursor:pointer;transition:.1s;font-family:-apple-system,sans-serif}
+.reveal .quiz .opt:before{content:attr(data-label);display:flex;align-items:center;justify-content:center;width:1.65em;height:1.65em;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;line-height:1}
 .reveal .quiz .opt:hover{border-color:var(--teal);background:#fff}
-.reveal .quiz .opt.correct{background:#E6F4EE;border-color:var(--green);color:#0d6b4f;font-weight:600}
-.reveal .quiz .opt.wrong{background:#FBEAE7;border-color:var(--coral);color:#a23c1c}
+.reveal .quiz .opt.correct{background:#E6F4EE;border-color:var(--green);color:#0d6b4f;font-weight:600}.reveal .quiz .opt.correct:before{background:var(--green)}
+.reveal .quiz .opt.wrong{background:#FBEAE7;border-color:var(--coral);color:#a23c1c}.reveal .quiz .opt.wrong:before{background:var(--coral)}
 .reveal .quiz .opt[disabled]{cursor:default}
 .reveal .quiz-exp{font-size:.56em;color:var(--muted);margin:.4em 0 0;display:none}
 .reveal .quiz.answered .quiz-exp{display:block}
@@ -242,23 +243,57 @@
 #watchBtn{position:fixed;left:256px;top:19px;z-index:60;background:var(--navy);color:#fff;border:1px solid var(--navy);border-radius:999px;padding:8px 14px;font-size:12.5px;font-weight:700;font-family:-apple-system,sans-serif;text-decoration:none;box-shadow:0 4px 14px rgba(20,40,70,.18)}
 #watchBtn:hover{filter:brightness(1.15);text-decoration:none}
 #watchBtn[hidden]{display:none}
-/* keep screen-only chrome out of print / the exported PDF (fixed elements repeat on every page) */
-@media print{#donateBtn,#mpaLogo,#pdfBtn,#ccBtn,#listenBtn,#commentBtn,#commentPanel,#capBar,#mpAuth{display:none!important}}
+/* Keep controls out of print, but retain the institutional mark. The PDF is
+   also the recording backdrop, so hiding the logo here broke visual continuity
+   between the interactive deck and the lesson video. */
+@media print{
+  #donateBtn,#pdfBtn,#watchBtn,#ccBtn,#listenBtn,#commentBtn,#commentPanel,#capBar,#mpAuth{display:none!important}
+  #mpaLogo{display:block!important;left:16px;top:14px;width:44px;height:44px;box-shadow:none;opacity:1}
+}
 </style></head><body>
 <div class="reveal"><div class="slides">
 <section id="title" data-sid="title" class="center" data-background-gradient="linear-gradient(135deg,#0C2D52,#16406e)">
-<div class="kicker" style="color:#7fd3df">The AI Toolbox · Class 15</div>
-    <h1 style="color:#fff">Research Showcase &amp; Defense<br><span style="font-size:.72em">学生科研展示与答辩</span></h1>
-    <p style="color:#cfe0ef;margin-top:.45em">You present. The evidence speaks. The room asks what makes it trustworthy.</p>
-    <p style="color:#9db8d6;font-size:.58em;margin-top:1em">Live session · ≤ 6 slides including title · aim 4:30, hard stop 5:00 · 2:00 Q&amp;A</p>
-    <aside class="notes">Welcome students, then hand over the room. This is not a second content lecture. Use slides 2–23 as a fast preflight only; once presenters are ready, jump to the live timer screens.</aside>
+<style>
+.reveal section[data-sid] h2{font-size:1.22em;margin:.08em 0 .26em}
+.reveal section[data-sid] .grid2,.reveal section[data-sid] .grid3{gap:.72em!important;align-items:stretch}
+.reveal section[data-sid] .box{padding:.72em .82em;display:flex;flex-direction:column;justify-content:center;border-top:4px solid rgba(15,157,176,.7);box-shadow:0 8px 22px rgba(20,40,70,.08)}
+.reveal section[data-sid] .grid2>.box{min-height:4.55em}.reveal section[data-sid] .grid3>.box{min-height:4.85em}
+.reveal section[data-sid] .box p{font-size:.62em}.reveal section[data-sid] .box li{font-size:.68em}
+.reveal section[data-sid] .callout{padding:.6em .9em;margin-top:.62em;box-shadow:0 5px 16px rgba(20,40,70,.05)}
+.reveal section[data-sid] .flow{gap:.5em!important}.reveal section[data-sid] .flow .step{min-height:4.2em;padding:.62em .5em;display:flex;flex-direction:column;justify-content:center}
+.reveal section[data-sid] table{box-shadow:0 8px 24px rgba(20,40,70,.07);background:#fff}.reveal section[data-sid] th,.reveal section[data-sid] td{padding:.43em .58em}
+.reveal section[data-sid] .prompt{padding:.62em .78em;box-shadow:0 8px 20px rgba(9,29,49,.18)}
+.reveal section[data-sid^="quiz-"] .quiz{max-width:none;min-height:8.6em;padding:.78em .9em;display:flex;flex-direction:column;justify-content:center}
+.reveal section[data-sid^="quiz-"] .quiz .qq{font-size:.82em;max-width:30em}
+.reveal section[data-sid^="quiz-"] .quiz .opts{display:grid;grid-template-columns:1fr 1fr;gap:.34em .55em}
+.reveal section[data-sid^="quiz-"] .quiz .opt{font-size:.63em;min-height:3.2em;margin:0;display:grid;grid-template-columns:1.9em minmax(0,1fr);gap:.55em;align-items:center}
+.reveal .c15-split{display:grid;grid-template-columns:.86fr 1.14fr;gap:.72em;align-items:stretch;margin-top:.22em}
+.reveal .c15-stack{display:grid;gap:.42em}.reveal .c15-stack .box{min-height:0;padding:.52em .68em}
+.reveal .c15-example{position:relative;overflow:hidden;background:linear-gradient(145deg,#0C2D52,#16406e);color:#fff;border-radius:16px;padding:.72em .82em;box-shadow:0 12px 30px rgba(12,45,82,.20);min-height:9.4em}
+.reveal .c15-example:after{content:"";position:absolute;width:7em;height:7em;border:1px solid rgba(127,211,223,.28);border-radius:50%;right:-2.4em;top:-2.7em}
+.reveal .c15-example h3{color:#fff;font-size:.86em;margin:.2em 0 .28em;max-width:92%}.reveal .c15-example p{color:#d9e8f5;font-size:.58em;margin:.18em 0;position:relative;z-index:1}
+.reveal .c15-example.compact{min-height:4.8em;margin-top:.55em;padding:.58em .72em}.reveal .c15-example.compact h3{font-size:.68em;margin:.12em 0}
+.reveal .c15-label{display:inline-block;background:var(--amber);color:#3c2a00;border-radius:999px;padding:.18em .62em;font:800 .43em -apple-system,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.reveal .c15-pills{display:flex;flex-wrap:wrap;gap:.28em;margin-top:.5em}.reveal .c15-pills span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:.2em .48em;font-size:.48em}
+.reveal .c15-penguins{display:flex;gap:.38em;align-items:flex-end;margin:.28em 0 .18em;position:relative;z-index:1}.reveal .c15-penguin{display:grid;grid-template-columns:1.15em auto;align-items:center;gap:.16em;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:.18em .34em}.reveal .c15-penguin svg{width:1.05em;height:1.28em}.reveal .c15-penguin span{font-size:.42em;color:#fff;font-weight:700}
+.reveal .c15-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.35em;margin-top:.52em}.reveal .c15-row div{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:9px;padding:.42em}.reveal .c15-row b{display:block;color:#7fd3df;font-size:.5em}.reveal .c15-row span{display:block;color:#fff;font-size:.47em;margin-top:.12em}
+.reveal .c15-lanes{display:grid;gap:.38em;margin-top:.45em}.reveal .c15-lane{display:grid;grid-template-columns:5.3em 1fr 5.3em;gap:.35em;align-items:center;background:rgba(255,255,255,.10);border-radius:10px;padding:.42em}.reveal .c15-lane b{color:#fff;font-size:.52em}.reveal .c15-lane span{color:#cfe0ef;font-size:.46em}.reveal .c15-lane em{font-style:normal;color:#7fd3df;font-size:.46em;text-align:right}
+.reveal .c15-bars{display:grid;gap:.46em;margin-top:.48em}.reveal .c15-bar{display:grid;grid-template-columns:4.9em 1fr 3.2em;gap:.38em;align-items:center}.reveal .c15-bar label{font-size:.48em;color:#fff}.reveal .c15-track{height:.74em;background:rgba(255,255,255,.14);border-radius:999px;overflow:hidden}.reveal .c15-fill{height:100%;background:var(--amber);border-radius:999px}.reveal .c15-fill.good{background:#34d3a0}.reveal .c15-bar strong{color:#fff;font-size:.5em;text-align:right}
+.reveal .c15-receipt{background:#071a2f;border:1px solid rgba(127,211,223,.35);border-radius:10px;padding:.48em .58em;margin-top:.42em;font:.47em/1.5 Consolas,monospace;color:#d9e8f5;white-space:pre-line}
+.reveal .c15-example-note{color:#9db8d6!important;font-size:.43em!important;margin-top:.48em!important}
+@media print{.reveal section[data-sid] .box,.reveal .c15-example{break-inside:avoid}}
+</style><div class="kicker" style="color:#7fd3df">The AI Toolbox · Class 15</div>
+    <h1 style="color:#fff">Research Showcase, Defense<br>&amp; Portfolio Launch<br><span style="font-size:.68em">学生科研展示、答辩与在线作品集</span></h1>
+    <p style="color:#cfe0ef;margin-top:.4em">Defend one honest claim. Then turn the evidence into a page a future reviewer can open.</p>
+    <p style="color:#9db8d6;font-size:.56em;margin-top:.85em">60-minute capstone · ≤ 6-slide talk · 2:00 Q&amp;A · public-safe portfolio + resume link</p>
+    <aside class="notes">Welcome students and name both outcomes: a defensible mini-study and a public-safe portfolio page. The live class stays student-led; the recording uses the build sprints in the second half as the hands-on equivalent.</aside>
 </section>
 <section id="class14-handoff" data-sid="class14-handoff">
 <div class="kicker">Handoff · Class 14 → Class 15</div>
     <h2>Bring evidence, not a new experiment</h2>
     <div class="grid2" style="margin-top:.3em">
       <div class="box"><h3 style="color:var(--teal)">Frozen from Class 14</h3><ul><li>Question and bounded claim</li><li>Data source, version and scope</li><li>Saved split or folds + controls</li><li>Pre-chosen metric and full results</li><li>Notebook, limitation and next test</li></ul></div>
-      <div class="box"><h3 style="color:var(--coral)">Today adds</h3><ul><li>A six-slide evidence story</li><li>A five-minute defense-ready talk</li><li>Two teacher questions</li><li>Glow · Grow · Next test feedback</li></ul></div>
+      <div class="box"><h3 style="color:var(--coral)">Today adds</h3><ul><li>A six-slide evidence story</li><li>A five-minute defense-ready talk</li><li>Glow · Grow · Next test feedback</li><li>A portfolio project card + resume-ready link</li></ul></div>
     </div>
     <div class="callout"><b>Do not rerun until the answer looks better.</b> If something changed after Class 14, disclose exactly what and why.</div>
     <aside class="notes">One-minute handoff. Students should present the experiment they already completed, not quietly tune a new winner during showcase day.</aside>
@@ -275,25 +310,27 @@
     <aside class="notes">Read only the bold roles and privacy boundary. Feedback addresses the work, never the person. Stop any screen share that exposes student PII.</aside>
 </section>
 <section id="run-of-show" data-sid="run-of-show">
-<div class="kicker">Run of show · two-hour default</div>
-    <h2>One student = one eight-minute slot</h2>
-    <div class="flow" style="margin-top:.35em">
-      <div class="step"><b>Talk</b><span>aim 4:30 · hard stop 5:00</span></div><div class="arrow">→</div>
-      <div class="step"><b>Teacher Q&amp;A</b><span>2:00 · at least 2 questions</span></div><div class="arrow">→</div>
-      <div class="step"><b>Transition</b><span>1:00 · feedback + next screen</span></div>
+<div class="kicker">Run of show · one-hour capstone</div>
+    <h2>Sixty minutes, with student work protected</h2>
+    <div class="flow" style="margin-top:.28em">
+      <div class="step"><b>0–5</b><span>open + roles</span></div><div class="arrow">→</div>
+      <div class="step"><b>5–13</b><span>preflight + mock Q&amp;A</span></div><div class="arrow">→</div>
+      <div class="step"><b>13–45</b><span>up to 4 × 8-minute rounds</span></div><div class="arrow">→</div>
+      <div class="step"><b>45–55</b><span>portfolio launch</span></div><div class="arrow">→</div>
+      <div class="step"><b>55–60</b><span>peer scan + exit</span></div>
     </div>
-    <div class="grid2" style="margin-top:.45em">
-      <div class="box"><h3 style="color:var(--green)">Eight or fewer presenters</h3><p><b>8 × 8 min = 64 min.</b> A short preflight, opening, break and wrap all fit inside two hours.</p></div>
-      <div class="box"><h3 style="color:var(--coral)">More than eight</h3><p><b>Split the showcase into separate sessions.</b> Do not shrink talks, questions or feedback to force everyone into one room.</p></div>
+    <div class="grid2" style="margin-top:.42em">
+      <div class="box"><h3 style="color:var(--green)">Fewer than four presenters</h3><p>Use the recovered minutes for a longer portfolio build, rehearsal, or second-round defense question.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">More than four presenters</h3><p>Use parallel rooms or a second full session. Do not shrink the defense until it becomes ceremonial.</p></div>
     </div>
-    <aside class="notes">State the timing once and enforce it equally. The one-minute transition is inside the eight-minute slot. Never schedule more than eight presenters in one two-hour session.</aside>
+    <aside class="notes">This replaces the old two-hour default and now matches the syllabus: fifteen sixty-minute classes. One presenter slot remains five minutes talk, two minutes Q&A, one minute transition.</aside>
 </section>
 <section id="quiz-supported-claim" data-sid="quiz-supported-claim">
 <div class="kicker">Preflight 1 of 4 · supported claim</div>
   <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
   <div class="quiz" data-correct="1">
     <p class="qq">A candidate model outperformed the baseline on the same predefined folds, but only one dataset was tested. Which headline is defensible?</p>
-    <div class="opts"><button class="opt" data-i="0">The candidate is best for every future dataset</button><button class="opt" data-i="1">On this dataset and protocol, the candidate performed better; outside generalization is untested</button><button class="opt" data-i="2">The experiment proves the model caused every improvement</button><button class="opt" data-i="3">Remove the limitation so the conclusion sounds stronger</button></div>
+    <div class="opts"><button class="opt" data-i="0" data-label="A" aria-label="A. The candidate is best for every future dataset">The candidate is best for every future dataset</button><button class="opt" data-i="1" data-label="B" aria-label="B. On this dataset and protocol, the candidate performed better; outside generalization is untested">On this dataset and protocol, the candidate performed better; outside generalization is untested</button><button class="opt" data-i="2" data-label="C" aria-label="C. The experiment proves the model caused every improvement">The experiment proves the model caused every improvement</button><button class="opt" data-i="3" data-label="D" aria-label="D. Remove the limitation so the conclusion sounds stronger">Remove the limitation so the conclusion sounds stronger</button></div>
     <p class="quiz-exp">Bound the claim to the data and protocol actually tested. A stronger-sounding sentence is not a stronger result.</p>
   </div>
   <aside class="notes">Quick vote only. This is a preflight ownership check, not the start of another lecture.</aside>
@@ -325,66 +362,173 @@
 </section>
 <section id="slide-question" data-sid="slide-question">
 <div class="kicker">Student slide 1 · question</div>
-    <h2>Open with the decision the study can inform</h2>
-    <div class="grid2" style="margin-top:.3em">
-      <div class="box"><h3 style="color:var(--navy)">Show</h3><ul><li>Research title</li><li>One precise, measurable question</li><li>Presenter code — no identifying information</li></ul></div>
-      <div class="box"><h3 style="color:var(--teal)">Say</h3><p>“I tested whether ___ changes ___ for ___.” Then explain why that question matters in one sentence.</p></div>
+    <h2>Give the audience a question they can hold</h2>
+    <div class="c15-split">
+      <div class="c15-stack">
+        <div class="box"><h3>Title formula</h3><p><b>One change + one outcome + one scope.</b> Prefer a question or bounded finding over “My AI Project.”</p></div>
+        <div class="box"><h3>Opening line</h3><p>“I tested whether ___ changes ___ for ___.” Add one sentence explaining the decision or uncertainty.</p></div>
+        <div class="box"><h3>Keep off the screen</h3><p>Biography, table of contents, inflated impact claims and identifying student information.</p></div>
+      </div>
+      <div class="c15-example">
+        <span class="c15-label">Running teaching example</span>
+        <h3>Does feature scaling help 5-NN classify penguin species?</h3>
+        <p>A controlled comparison on complete Palmer Penguins measurements</p>
+        <div class="c15-penguins" role="img" aria-label="Three illustrated penguin species: Adelie, Chinstrap, and Gentoo">
+  <div class="c15-penguin"><svg viewBox="0 0 80 96" aria-hidden="true">
+  <ellipse cx="40" cy="54" rx="24" ry="36" fill="#071a2f"/>
+  <ellipse cx="40" cy="61" rx="15" ry="25" fill="#f7fbff"/>
+  <circle cx="40" cy="25" r="16" fill="#071a2f"/>
+  <circle cx="34" cy="22" r="2.4" fill="#fff"/><circle cx="46" cy="22" r="2.4" fill="#fff"/>
+  <path d="M40 27 L54 33 L40 36 Z" fill="#F2A93B"/>
+  <path d="M18 44 Q2 58 14 72" fill="none" stroke="#071a2f" stroke-width="8" stroke-linecap="round"/>
+  <path d="M62 44 Q78 58 66 72" fill="none" stroke="#071a2f" stroke-width="8" stroke-linecap="round"/>
+  <ellipse cx="31" cy="91" rx="11" ry="4" fill="#F2A93B"/><ellipse cx="49" cy="91" rx="11" ry="4" fill="#F2A93B"/>
+  <path d="M21 76 Q40 88 59 76" fill="none" stroke="#7fd3df" stroke-width="4" stroke-linecap="round"/>
+  </svg><span>Adelie</span></div><div class="c15-penguin"><svg viewBox="0 0 80 96" aria-hidden="true">
+  <ellipse cx="40" cy="54" rx="24" ry="36" fill="#071a2f"/>
+  <ellipse cx="40" cy="61" rx="15" ry="25" fill="#f7fbff"/>
+  <circle cx="40" cy="25" r="16" fill="#071a2f"/>
+  <circle cx="34" cy="22" r="2.4" fill="#fff"/><circle cx="46" cy="22" r="2.4" fill="#fff"/>
+  <path d="M40 27 L54 33 L40 36 Z" fill="#F2A93B"/>
+  <path d="M18 44 Q2 58 14 72" fill="none" stroke="#071a2f" stroke-width="8" stroke-linecap="round"/>
+  <path d="M62 44 Q78 58 66 72" fill="none" stroke="#071a2f" stroke-width="8" stroke-linecap="round"/>
+  <ellipse cx="31" cy="91" rx="11" ry="4" fill="#F2A93B"/><ellipse cx="49" cy="91" rx="11" ry="4" fill="#F2A93B"/>
+  <path d="M21 76 Q40 88 59 76" fill="none" stroke="#F2A93B" stroke-width="4" stroke-linecap="round"/>
+  </svg><span>Chinstrap</span></div><div class="c15-penguin"><svg viewBox="0 0 80 96" aria-hidden="true">
+  <ellipse cx="40" cy="54" rx="24" ry="36" fill="#071a2f"/>
+  <ellipse cx="40" cy="61" rx="15" ry="25" fill="#f7fbff"/>
+  <circle cx="40" cy="25" r="16" fill="#071a2f"/>
+  <circle cx="34" cy="22" r="2.4" fill="#fff"/><circle cx="46" cy="22" r="2.4" fill="#fff"/>
+  <path d="M40 27 L54 33 L40 36 Z" fill="#F2A93B"/>
+  <path d="M18 44 Q2 58 14 72" fill="none" stroke="#071a2f" stroke-width="8" stroke-linecap="round"/>
+  <path d="M62 44 Q78 58 66 72" fill="none" stroke="#071a2f" stroke-width="8" stroke-linecap="round"/>
+  <ellipse cx="31" cy="91" rx="11" ry="4" fill="#F2A93B"/><ellipse cx="49" cy="91" rx="11" ry="4" fill="#F2A93B"/>
+  <path d="M21 76 Q40 88 59 76" fill="none" stroke="#34d3a0" stroke-width="4" stroke-linecap="round"/>
+  </svg><span>Gentoo</span></div>
+</div>
+        <div class="c15-pills"><span>One change · scaling</span><span>One outcome · accuracy</span><span>One scope · Palmer Penguins</span></div>
+        <p class="c15-example-note">Computed classroom example · not student work · not a claim about new datasets</p>
+      </div>
     </div>
-    <div class="callout">Do not begin with a biography, a table of contents, or five minutes of background.</div>
-    <aside class="notes">Fast coaching card. The research question should define the audience's listening job immediately.</aside>
+    <aside class="notes">Use the running penguin example to model a title that names the comparison and scope. Then ask students to rewrite “My AI Project” in the same bounded pattern.</aside>
 </section>
 <section id="slide-data" data-sid="slide-data">
 <div class="kicker">Student slide 2 · data</div>
-    <h2>Let the audience see what one row means</h2>
-    <div class="grid3" style="margin-top:.3em">
-      <div class="box"><h3>Provenance</h3><p>Dataset name, source, version/date and license.</p></div>
-      <div class="box"><h3>Scope</h3><p>Sample size, unit of analysis, target and relevant balance/range.</p></div>
-      <div class="box"><h3>Boundaries</h3><p>Exclusions, missingness, likely bias and who/what is not represented.</p></div>
+    <h2>Turn “we used data” into one visible row</h2>
+    <div class="c15-split">
+      <div class="c15-stack">
+        <div class="box"><h3>Provenance</h3><p>Name, source, version or collection window, license and access path.</p></div>
+        <div class="box"><h3>Unit + target</h3><p>Say what one row represents, what is measured and what label or outcome is predicted.</p></div>
+        <div class="box"><h3>Boundary</h3><p>Counts, exclusions, missingness, coverage gaps and who or what is absent.</p></div>
+      </div>
+      <div class="c15-example">
+        <span class="c15-label">Example · data card</span>
+        <h3>Palmer Penguins</h3>
+        <p>One row = one observed penguin. The label is Adelie, Chinstrap or Gentoo.</p>
+        <div class="c15-penguins" role="img" aria-label="Three illustrated penguin species: Adelie, Chinstrap, and Gentoo">
+  <div class="c15-penguin"><svg viewBox="0 0 80 96" aria-hidden="true">
+  <ellipse cx="40" cy="54" rx="24" ry="36" fill="#071a2f"/>
+  <ellipse cx="40" cy="61" rx="15" ry="25" fill="#f7fbff"/>
+  <circle cx="40" cy="25" r="16" fill="#071a2f"/>
+  <circle cx="34" cy="22" r="2.4" fill="#fff"/><circle cx="46" cy="22" r="2.4" fill="#fff"/>
+  <path d="M40 27 L54 33 L40 36 Z" fill="#F2A93B"/>
+  <path d="M18 44 Q2 58 14 72" fill="none" stroke="#071a2f" stroke-width="8" stroke-linecap="round"/>
+  <path d="M62 44 Q78 58 66 72" fill="none" stroke="#071a2f" stroke-width="8" stroke-linecap="round"/>
+  <ellipse cx="31" cy="91" rx="11" ry="4" fill="#F2A93B"/><ellipse cx="49" cy="91" rx="11" ry="4" fill="#F2A93B"/>
+  <path d="M21 76 Q40 88 59 76" fill="none" stroke="#7fd3df" stroke-width="4" stroke-linecap="round"/>
+  </svg><span>Adelie</span></div><div class="c15-penguin"><svg viewBox="0 0 80 96" aria-hidden="true">
+  <ellipse cx="40" cy="54" rx="24" ry="36" fill="#071a2f"/>
+  <ellipse cx="40" cy="61" rx="15" ry="25" fill="#f7fbff"/>
+  <circle cx="40" cy="25" r="16" fill="#071a2f"/>
+  <circle cx="34" cy="22" r="2.4" fill="#fff"/><circle cx="46" cy="22" r="2.4" fill="#fff"/>
+  <path d="M40 27 L54 33 L40 36 Z" fill="#F2A93B"/>
+  <path d="M18 44 Q2 58 14 72" fill="none" stroke="#071a2f" stroke-width="8" stroke-linecap="round"/>
+  <path d="M62 44 Q78 58 66 72" fill="none" stroke="#071a2f" stroke-width="8" stroke-linecap="round"/>
+  <ellipse cx="31" cy="91" rx="11" ry="4" fill="#F2A93B"/><ellipse cx="49" cy="91" rx="11" ry="4" fill="#F2A93B"/>
+  <path d="M21 76 Q40 88 59 76" fill="none" stroke="#F2A93B" stroke-width="4" stroke-linecap="round"/>
+  </svg><span>Chinstrap</span></div><div class="c15-penguin"><svg viewBox="0 0 80 96" aria-hidden="true">
+  <ellipse cx="40" cy="54" rx="24" ry="36" fill="#071a2f"/>
+  <ellipse cx="40" cy="61" rx="15" ry="25" fill="#f7fbff"/>
+  <circle cx="40" cy="25" r="16" fill="#071a2f"/>
+  <circle cx="34" cy="22" r="2.4" fill="#fff"/><circle cx="46" cy="22" r="2.4" fill="#fff"/>
+  <path d="M40 27 L54 33 L40 36 Z" fill="#F2A93B"/>
+  <path d="M18 44 Q2 58 14 72" fill="none" stroke="#071a2f" stroke-width="8" stroke-linecap="round"/>
+  <path d="M62 44 Q78 58 66 72" fill="none" stroke="#071a2f" stroke-width="8" stroke-linecap="round"/>
+  <ellipse cx="31" cy="91" rx="11" ry="4" fill="#F2A93B"/><ellipse cx="49" cy="91" rx="11" ry="4" fill="#F2A93B"/>
+  <path d="M21 76 Q40 88 59 76" fill="none" stroke="#34d3a0" stroke-width="4" stroke-linecap="round"/>
+  </svg><span>Gentoo</span></div>
+</div>
+        <div class="c15-row">
+          <div><b>342</b><span>complete penguins</span></div>
+          <div><b>4</b><span>body measurements</span></div>
+          <div><b>3</b><span>species</span></div>
+        </div>
+        <div class="c15-pills"><span>bill length</span><span>bill depth</span><span>flipper length</span><span>body mass</span></div>
+        <p class="c15-example-note">344 source rows · 2 incomplete rows excluded · <a href="https://github.com/allisonhorst/palmerpenguins/blob/8957207b78d6ccd1b4654a9dd9c9041b657478ab/inst/extdata/penguins.csv" target="_blank" rel="noopener" style="color:#7fd3df">Palmer Station LTER / palmerpenguins · CC0-1.0</a></p>
+      </div>
     </div>
-    <div class="callout"><b>Privacy:</b> show aggregates, diagrams or de-identified examples. Never project raw student or participant records.</div>
-    <aside class="notes">Ask “what does one row represent?” if the data story is vague. Provenance is a source identity, not merely “from Kaggle.”</aside>
+    <aside class="notes">Point to the three example measurements and ask what one row means. The iconography supports the unit; the provenance, count and target remain the evidence.</aside>
 </section>
 <section id="slide-method" data-sid="slide-method">
 <div class="kicker">Student slide 3 · method</div>
-    <h2>Make the Class 14 contract visible</h2>
-    <div class="flow" style="margin-top:.32em">
-      <div class="step"><b>Baseline</b><span>what must be beaten?</span></div><div class="arrow">→</div>
-      <div class="step"><b>One change</b><span>independent variable</span></div><div class="arrow">→</div>
-      <div class="step"><b>Controls</b><span>same rows · folds · pipeline</span></div><div class="arrow">→</div>
-      <div class="step"><b>Metric</b><span>chosen before results</span></div>
+    <h2>Show two lanes so the one change is obvious</h2>
+    <div class="c15-split">
+      <div class="c15-stack">
+        <div class="box"><h3>Comparison contract</h3><p>Baseline · one intended change · controls · pre-chosen metric.</p></div>
+        <div class="box"><h3>Protocol receipt</h3><p>Saved folds, seed, model settings, preprocessing boundary and threshold rule.</p></div>
+        <div class="box"><h3>Leakage defense</h3><p>Fit learned preprocessing inside each training fold—never on all rows before validation.</p></div>
+      </div>
+      <div class="c15-example">
+        <span class="c15-label">Example · fair comparison</span>
+        <h3>Same penguins · same 5 folds · same 5-NN · same accuracy function</h3>
+        <div class="c15-lanes">
+          <div class="c15-lane"><b>Baseline</b><span>raw feature scales → 5-NN</span><em>accuracy receipt</em></div>
+          <div class="c15-lane"><b>Contender</b><span>StandardScaler → 5-NN</span><em>accuracy receipt</em></div>
+        </div>
+        <div class="c15-pills"><span>seed 15</span><span>stratified folds</span><span>scaler fit inside training fold</span></div>
+        <p class="c15-example-note">The only intended change is standardization; the evaluation rows and classifier settings stay fixed.</p>
+      </div>
     </div>
-    <div class="grid2" style="margin-top:.45em">
-      <div class="box"><h3>Protocol details</h3><p>Split/fold rule, seed, preprocessing, model settings and threshold rule.</p></div>
-      <div class="box"><h3>Leakage defense</h3><p>What was learned from training only? Were people, groups or future rows kept apart?</p></div>
-    </div>
-    <aside class="notes">This is the validity slide. Students need not show code, but the audience must be able to tell what changed and what stayed fixed.</aside>
+    <aside class="notes">Trace the two example lanes with a finger. Students should be able to circle the single changed component and underline every shared control.</aside>
 </section>
 <section id="quiz-fair-test" data-sid="quiz-fair-test">
 <div class="kicker">Preflight 2 of 4 · fair test</div>
   <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
   <div class="quiz" data-correct="2">
     <p class="qq">The candidate uses a new feature set and a new train/test split; the baseline uses the old features and old split. The candidate wins. What can the presenter defend?</p>
-    <div class="opts"><button class="opt" data-i="0">The new features caused the gain</button><button class="opt" data-i="1">The candidate is universally better</button><button class="opt" data-i="2">Only that the two completed runs differ; the cause is confounded</button><button class="opt" data-i="3">The split never matters when the metric is identical</button></div>
+    <div class="opts"><button class="opt" data-i="0" data-label="A" aria-label="A. The new features caused the gain">The new features caused the gain</button><button class="opt" data-i="1" data-label="B" aria-label="B. The candidate is universally better">The candidate is universally better</button><button class="opt" data-i="2" data-label="C" aria-label="C. Only that the two completed runs differ; the cause is confounded">Only that the two completed runs differ; the cause is confounded</button><button class="opt" data-i="3" data-label="D" aria-label="D. The split never matters when the metric is identical">The split never matters when the metric is identical</button></div>
     <p class="quiz-exp">Both the feature set and evaluation rows changed. Re-run contenders on the same saved protocol before attributing the difference.</p>
   </div>
   <aside class="notes">Quick vote. Ask students to name both changed variables; then move on.</aside>
 </section>
 <section id="slide-results" data-sid="slide-results">
 <div class="kicker">Student slide 4 · results</div>
-    <h2>Show the whole comparison, not one winning number</h2>
-    <div class="grid2" style="margin-top:.28em">
-      <div class="box"><h3 style="color:var(--teal)">Minimum evidence</h3><ul><li>Baseline and every contender</li><li>Pre-chosen metric</li><li>Fold scores or interval/spread</li><li>Confusion matrix or error plot when relevant</li></ul></div>
-      <div class="box"><h3 style="color:var(--coral)">Keep visible</h3><ul><li>Same evaluation protocol</li><li>Units and denominators</li><li>Null, failed or surprising result</li><li>No cropped axis or cherry-picked subgroup</li></ul></div>
+    <h2>Give one focal comparison—and keep the receipts nearby</h2>
+    <div class="c15-split">
+      <div class="c15-stack">
+        <div class="box"><h3>Focal visual</h3><p>Put baseline and contender adjacent. Label metric, units, sample count and evaluation protocol.</p></div>
+        <div class="box"><h3>Variation</h3><p>Show every fold or an honest center plus spread; keep failed and weak runs visible.</p></div>
+        <div class="box"><h3>Reading sentence</h3><p>Say what the chart establishes, then stop before mechanism or outside generalization.</p></div>
+      </div>
+      <div class="c15-example">
+        <span class="c15-label">Example · computed result</span>
+        <h3>Five-fold accuracy on 342 Palmer penguins</h3>
+        <div class="c15-bars">
+          <div class="c15-bar"><label>Raw 5-NN</label><div class="c15-track"><div class="c15-fill" style="width:79.5%"></div></div><strong>79.5%</strong></div>
+          <div class="c15-bar"><label>Scaled 5-NN</label><div class="c15-track"><div class="c15-fill good" style="width:98.5%"></div></div><strong>98.5%</strong></div>
+        </div>
+        <div class="c15-pills"><span>Observed difference +19.0 pp</span><span>raw folds 76.8% · 76.8% · 82.4% · 75.0% · 86.8%</span><span>scaled folds 98.6% · 98.6% · 97.1% · 100.0% · 98.5%</span></div>
+        <p class="c15-example-note">Zero-based bars · same frozen folds · classroom computation, not a student submission.</p>
+      </div>
     </div>
-    <div class="callout"><b>Evidence rule:</b> every displayed number must be reproducible from the linked notebook. Placeholder or illustrative numbers must be labeled and cannot support the conclusion.</div>
-    <aside class="notes">No numbers from an old sample deck count as student evidence. A null result can earn full credit when the protocol and interpretation are honest.</aside>
+    <aside class="notes">Read only the comparison sentence: on these five fixed folds, scaled 5-NN averaged higher accuracy. Then point to the fold receipts and explicitly stop before claiming all datasets benefit.</aside>
 </section>
 <section id="quiz-honest-headline" data-sid="quiz-honest-headline">
 <div class="kicker">Preflight 3 of 4 · honest headline</div>
   <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
   <div class="quiz" data-correct="2">
     <p class="qq">A candidate catches more positives but also creates more false alarms than the baseline. Which headline is honest?</p>
-    <div class="opts"><button class="opt" data-i="0">The candidate is simply more accurate</button><button class="opt" data-i="1">The candidate solves the task</button><button class="opt" data-i="2">The candidate trades precision for recall; whether that helps depends on the stated error costs</button><button class="opt" data-i="3">Hide precision because recall was the chosen metric</button></div>
+    <div class="opts"><button class="opt" data-i="0" data-label="A" aria-label="A. The candidate is simply more accurate">The candidate is simply more accurate</button><button class="opt" data-i="1" data-label="B" aria-label="B. The candidate solves the task">The candidate solves the task</button><button class="opt" data-i="2" data-label="C" aria-label="C. The candidate trades precision for recall; whether that helps depends on the stated error costs">The candidate trades precision for recall; whether that helps depends on the stated error costs</button><button class="opt" data-i="3" data-label="D" aria-label="D. Hide precision because recall was the chosen metric">Hide precision because recall was the chosen metric</button></div>
     <p class="quiz-exp">Name the trade-off and connect it to the cost rule chosen before results. A headline should not erase the metric that became inconvenient.</p>
   </div>
   <aside class="notes">Quick vote only. Students should be ready to say which stakeholder bears each error.</aside>
@@ -397,18 +541,39 @@
       <div class="box"><h3>Largest limitation</h3><p>Name the threat most likely to change the result — not a generic “more data.”</p></div>
       <div class="box"><h3>Rival explanation</h3><p>What else could have produced the pattern, and what evidence would separate it?</p></div>
     </div>
-    <div class="callout">Finish with the smallest claim that is still useful. “I cannot tell from this study” is a valid boundary.</div>
-    <aside class="notes">This slide tests interpretation. Push back gently on causal or universal language when the design supports only an association on one dataset.</aside>
+    <div class="c15-example compact">
+      <span class="c15-label">Example · three different sentences</span>
+      <div class="c15-row">
+        <div><b>Conclusion</b><span>On these fixed penguin folds, scaled 5-NN averaged 98.5% versus 79.5%.</span></div>
+        <div><b>Boundary</b><span>One dataset, one classifier setting and one fold assignment do not establish a universal scaling benefit.</span></div>
+        <div><b>Next test</b><span>Repeat the frozen comparison across other datasets, k values and fold seeds.</span></div>
+      </div>
+    </div>
+    <aside class="notes">Contrast the three example sentences. The first reports the observed comparison, the second blocks overreach, and the third turns uncertainty into an experiment.</aside>
 </section>
 <section id="slide-repro-ai" data-sid="slide-repro-ai">
 <div class="kicker">Student slide 6 · reproduce</div>
-    <h2>Leave a route back to the evidence</h2>
-    <div class="grid2" style="margin-top:.3em">
-      <div class="box"><h3 style="color:var(--navy)">Reproduction card</h3><ul><li>Notebook/repository link</li><li>Dataset identity and access instructions</li><li>Environment/package versions</li><li>Seed, split/fold and one-command rerun</li></ul></div>
-      <div class="box"><h3 style="color:var(--teal)">AI disclosure</h3><ul><li>Tool/model used</li><li>What it helped produce</li><li>What you checked, reran, corrected or rejected</li><li>Or: “No generative AI used”</li></ul></div>
+    <h2>Finish with a compact receipt, not a wall of code</h2>
+    <div class="c15-split">
+      <div class="c15-stack">
+        <div class="box"><h3>Reproduction card</h3><p>Code/version · environment · data identity · seed/folds · settings · saved outputs.</p></div>
+        <div class="box"><h3>AI-use disclosure</h3><p>What the tool generated, what you changed, and which outputs you independently reran and checked.</p></div>
+        <div class="box"><h3>One next test</h3><p>Name an analysis that could challenge the conclusion—not decoration that assumes it is already true.</p></div>
+      </div>
+      <div class="c15-example">
+        <span class="c15-label">Example · reproducibility footer</span>
+        <h3>From data loader to both accuracy receipts</h3>
+        <div class="c15-receipt">data: palmer-penguins.csv @ 8957207 (342 complete × 4)
+features: bill length/depth · flipper length · body mass
+cv: StratifiedKFold(5, shuffle=True, seed=15)
+model: KNeighborsClassifier(k=5)
+change: StandardScaler fitted inside each training fold
+metric: accuracy · sklearn 1.9.0</div>
+        <p>AI-use example: AI helped draft the slide wording; the code was rerun and every displayed value was checked against saved output.</p>
+        <p class="c15-example-note">A file, cell, query or calculation should answer “where did this number come from?”</p>
+      </div>
     </div>
-    <div class="callout"><b>End with one next test</b> that could challenge — not merely decorate — the conclusion.</div>
-    <aside class="notes">Links may be shown as short URLs or QR codes only after checking access. They must not reveal private repositories, account emails or student identity.</aside>
+    <aside class="notes">The receipt is short enough to read and specific enough to rerun. It demonstrates disclosure as a verification record rather than a tool logo.</aside>
 </section>
 <section id="paper-map" data-sid="paper-map">
 <div class="kicker">Bridge · slides ↔ short paper</div>
@@ -456,7 +621,7 @@
   <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
   <div class="quiz" data-correct="2">
     <p class="qq">A teacher asks whether the result holds for a subgroup the project never analyzed. What is the strongest response?</p>
-    <div class="opts"><button class="opt" data-i="0">Yes, because the overall score was good</button><button class="opt" data-i="1">Probably — then change the subject</button><button class="opt" data-i="2">I do not know from this study; I would predefine the subgroup test and evaluate it without reusing the final test set</button><button class="opt" data-i="3">Delete that subgroup from the dataset</button></div>
+    <div class="opts"><button class="opt" data-i="0" data-label="A" aria-label="A. Yes, because the overall score was good">Yes, because the overall score was good</button><button class="opt" data-i="1" data-label="B" aria-label="B. Probably — then change the subject">Probably — then change the subject</button><button class="opt" data-i="2" data-label="C" aria-label="C. I do not know from this study; I would predefine the subgroup test and evaluate it without reusing the final test set">I do not know from this study; I would predefine the subgroup test and evaluate it without reusing the final test set</button><button class="opt" data-i="3" data-label="D" aria-label="D. Delete that subgroup from the dataset">Delete that subgroup from the dataset</button></div>
     <p class="quiz-exp">Ownership includes knowing where the evidence ends. State the boundary and a valid next test instead of improvising certainty.</p>
   </div>
   <aside class="notes">Last preflight vote. After this, no more quizzes: move into question roles, rubric and live showcase controls.</aside>
@@ -542,27 +707,182 @@
     <div class="callout">No public ranking. Return feedback privately or through the class's approved channel.</div>
     <aside class="notes">This minute completes the eight-minute slot. Keep comments private and evidence-focused; never photograph or display a roster with scores.</aside>
 </section>
+<section id="portfolio-bridge" data-sid="portfolio-bridge">
+<div class="kicker">After the defense · keep the work alive</div>
+    <h2>A submission ends a class.<br>A portfolio starts the next conversation.</h2>
+    <div class="flow" style="margin-top:.34em">
+      <div class="step"><b>Course artifacts</b><span>notebook · chart · deck · report</span></div><div class="arrow">→</div>
+      <div class="step"><b>Project story</b><span>question · action · evidence · limit</span></div><div class="arrow">→</div>
+      <div class="step"><b>Online page</b><span>one stable, public-safe URL</span></div><div class="arrow">→</div>
+      <div class="step"><b>Resume</b><span>one line + one link</span></div>
+    </div>
+    <div class="callout"><b>The portfolio is not a trophy shelf.</b> It is a short route from “What did you do?” to evidence another person can inspect.</div>
+    <aside class="notes">Transition from evaluation to future use. Students already made the hard parts across Classes 2–15; this section curates them into one reviewer-facing story rather than creating a new research project.</aside>
+</section>
+<section id="portfolio-audience" data-sid="portfolio-audience">
+<div class="kicker">Audience test · design backward</div>
+    <h2>What should a reviewer know in ten seconds?</h2>
+    <div class="grid3" style="margin-top:.3em">
+      <div class="box"><h3>1 · Your direction</h3><p>“I investigate how data and models answer questions in ___.”</p></div>
+      <div class="box"><h3>2 · Your best project</h3><p>A title plus one sentence explaining the question and what you built.</p></div>
+      <div class="box"><h3>3 · Your evidence</h3><p>One readable result, one artifact link and one honest limitation.</p></div>
+    </div>
+    <div class="prompt" style="margin-top:.45em">Ten-second test: cover your name. Can a stranger still tell what problem you studied, what you did, and why the result is credible?</div>
+    <aside class="notes">Give a fast silent scan. The page is for a busy teacher, mentor, admissions reader or internship reviewer—not for someone who already knows the course.</aside>
+</section>
+<section id="portfolio-platform" data-sid="portfolio-platform">
+<div class="kicker">Choose a lane · same evidence, different container</div>
+    <h2>Pick the simplest platform you can keep updated</h2>
+    <div class="grid3" style="margin-top:.25em">
+      <div class="box"><h3 style="color:var(--green)">Fastest · no code</h3><p><b>Google Sites, Notion or Canva website.</b><br>Best when tomorrow's goal is a working link.</p></div>
+      <div class="box"><h3 style="color:var(--teal)">Code-forward</h3><p><b>GitHub Pages.</b><br>Best when the repository itself is part of the evidence.</p></div>
+      <div class="box"><h3 style="color:var(--coral)">Private / reviewer-only</h3><p><b>PDF or access-controlled page.</b><br>Use when age, policy, licensing or data sensitivity makes public sharing inappropriate.</p></div>
+    </div>
+    <div class="callout">Platform choice is not the achievement. A clear project card on a simple page beats an elaborate site with no evidence.</div>
+    <aside class="notes">Do not require a public identity or account. Students may use a teacher-approved alias, reviewer-only link or PDF. The course Portfolio Launchpad can export one HTML file for the GitHub Pages lane.</aside>
+</section>
+<section id="portfolio-architecture" data-sid="portfolio-architecture">
+<div class="kicker">One-page architecture · four reading depths</div>
+    <h2>Make the page useful at a glance—and on inspection</h2>
+    <div class="grid2" style="margin-top:.24em">
+      <div class="box"><h3>Top · 10 seconds</h3><p>Professional display name or approved alias · one-line focus · one featured project.</p></div>
+      <div class="box"><h3>Project card · 30 seconds</h3><p>Question · your role · methods/tools · supported result · limitation.</p></div>
+      <div class="box"><h3>Evidence · 2 minutes</h3><p>Chart with caption · notebook/repository · short report/deck · reproducibility note.</p></div>
+      <div class="box"><h3>Next step · 10 seconds</h3><p>What you learned · next test · safe contact or application route.</p></div>
+    </div>
+    <aside class="notes">The architecture supports skimming and auditing. Keep each layer self-contained; do not make the reviewer hunt through a repository to discover the research question.</aside>
+</section>
+<section id="artifact-inventory" data-sid="artifact-inventory">
+<div class="kicker">Curate · do not upload everything</div>
+    <h2>Choose three artifacts that prove different skills</h2>
+    <table style="width:100%;font-size:.59em;margin-top:.25em"><thead><tr><th>Artifact</th><th>Course evidence</th><th>What it proves</th></tr></thead><tbody>
+      <tr><td><b>One focal visual</b></td><td>Class 9 or Class 14 chart/result</td><td>You can find and explain a pattern honestly</td></tr>
+      <tr><td><b>One reproducible artifact</b></td><td>Notebook, code or experiment record</td><td>You can make the result inspectable</td></tr>
+      <tr><td><b>One communication artifact</b></td><td>Deck, short paper or research map</td><td>You can explain the work to another person</td></tr>
+    </tbody></table>
+    <div class="callout">Remove duplicates, broken drafts, private data and unexplained files. Curating is part of authorship.</div>
+    <aside class="notes">In the recording, this becomes a five-minute work sprint. Students list candidates from Classes 2–15, then star one visual, one reproducible artifact and one communication artifact.</aside>
+</section>
+<section id="project-card" data-sid="project-card">
+<div class="kicker">Featured project · the six-line card</div>
+    <h2>Turn the mini-study into a reviewer-facing story</h2>
+    <div class="grid2" style="margin-top:.22em">
+      <div class="box"><ol><li><b>Question:</b> What did you try to learn?</li><li><b>Role:</b> What did you personally do?</li><li><b>Method:</b> Data, baseline and one controlled change.</li></ol></div>
+      <div class="box"><ol start="4"><li><b>Evidence:</b> What did the fair comparison show?</li><li><b>Boundary:</b> What can it not establish?</li><li><b>Next test:</b> What would reduce the uncertainty?</li></ol></div>
+    </div>
+    <div class="prompt" style="margin-top:.42em">Write for a reader who has not taken this class. Expand acronyms once. Replace “we used AI” with the exact task, tool and verification.</div>
+    <aside class="notes">The six-line card reuses the defense structure. Personal role matters for team projects. Evidence should be a bounded result, not a list of libraries.</aside>
+</section>
+<section id="evidence-gallery" data-sid="evidence-gallery">
+<div class="kicker">Evidence gallery · one image, three receipts</div>
+    <h2>Show less—and explain each item more</h2>
+    <div class="grid3" style="margin-top:.28em">
+      <div class="box"><h3>Focal result</h3><p>One chart or table with metric, units, comparison and a self-contained caption.</p></div>
+      <div class="box"><h3>Reproduce</h3><p>Notebook/repository + data identity + environment or “how to rerun” note.</p></div>
+      <div class="box"><h3>Read further</h3><p>Short report or ≤6-slide deck for the reasoning and limitations.</p></div>
+    </div>
+    <div class="callout"><b>Link hygiene:</b> descriptive link text, working permissions, stable filenames, no “click here,” no credentials, and no raw personal record.</div>
+    <aside class="notes">Explain that screenshots of code are not reproducible artifacts. The chart earns its place only if the caption states what it shows and the project card states what it does not show.</aside>
+</section>
+<section id="reflection-story" data-sid="reflection-story">
+<div class="kicker">Reflection · make growth visible</div>
+    <h2>The most interesting sentence may be what changed</h2>
+    <div class="flow" style="margin-top:.34em">
+      <div class="step"><b>I first assumed…</b><span>initial model of the problem</span></div><div class="arrow">→</div>
+      <div class="step"><b>The evidence showed…</b><span>result or failure that changed it</span></div><div class="arrow">→</div>
+      <div class="step"><b>So I revised…</b><span>claim, method or next question</span></div>
+    </div>
+    <div class="grid2" style="margin-top:.45em">
+      <div class="box"><h3>Strong reflection</h3><p>Names a concrete decision, evidence and revision.</p></div>
+      <div class="box"><h3>Weak reflection</h3><p>“I learned a lot about AI” with no trace of what changed.</p></div>
+    </div>
+    <aside class="notes">For students without a dramatic positive result, process and revision are still strong evidence of research maturity. A null result can anchor an excellent reflection.</aside>
+</section>
+<section id="portfolio-sprint-one" data-sid="portfolio-sprint-one">
+<div class="kicker">Build sprint 1 · eight minutes</div>
+    <h2>Write the top of the page + your project card</h2>
+    <div class="grid2" style="margin-top:.22em">
+      <div class="box"><h3>Minutes 0–2</h3><p>Professional display name or approved alias + one-line focus.</p><h3>Minutes 2–4</h3><p>Project title + question + your personal role.</p></div>
+      <div class="box"><h3>Minutes 4–6</h3><p>Method + supported evidence, with scope attached.</p><h3>Minutes 6–8</h3><p>Largest limitation + one next test.</p></div>
+    </div>
+    <div class="callout"><a class="btn" href="portfolio-launchpad.html" target="_blank" rel="noopener">Open Portfolio Launchpad ↗</a> <span style="margin-left:.35em">Your entries stay in this browser unless you download the page.</span></div>
+    <aside class="notes">For the live class, use recovered time after presentations; for the recording, pause for the full sprint. Students may draft on page 3 of the printable worksheet instead of using the browser tool.</aside>
+</section>
+<section id="portfolio-sprint-two" data-sid="portfolio-sprint-two">
+<div class="kicker">Build sprint 2 · six minutes</div>
+    <h2>Add evidence, links and a growth sentence</h2>
+    <div class="grid3" style="margin-top:.28em">
+      <div class="box"><h3>Evidence</h3><p>Choose one chart and write a caption: what it shows → why it supports the claim.</p></div>
+      <div class="box"><h3>Receipts</h3><p>Add repository/notebook and report/deck links; test them in a private window.</p></div>
+      <div class="box"><h3>Growth</h3><p>“I first assumed __; evidence showed __; so I revised __.”</p></div>
+    </div>
+    <div class="callout">If a link cannot be public safely, write “available to approved reviewers” and keep the artifact in the approved private channel.</div>
+    <aside class="notes">In the recording, pause for six minutes. A student may leave link fields blank rather than invent or over-share. The draft is successful when the story works even before publication.</aside>
+</section>
+<section id="resume-bullet" data-sid="resume-bullet">
+<div class="kicker">Resume · turn nouns into evidence</div>
+    <h2>Action + artifact + method + evidence + boundary</h2>
+    <div class="prompt" style="font-size:.78em">Designed and evaluated <b>[project / model]</b> on <b>[named data]</b> using <b>[fair-comparison method]</b>; found <b>[bounded result]</b>, documented <b>[limitation]</b>, and published a reproducible project page.</div>
+    <div class="grid2" style="margin-top:.42em">
+      <div class="box"><h3 style="color:var(--coral)">Avoid</h3><p>“Used Python and AI for a machine-learning project.”</p></div>
+      <div class="box"><h3 style="color:var(--green)">Prefer</h3><p>A verb, a concrete artifact, the comparison you owned and the scope of the evidence.</p></div>
+    </div>
+    <aside class="notes">Do not force a numeric improvement when the result was null or the metric is not meaningful out of context. The Portfolio Launchpad generates a first draft, but the student must edit it for truth and readability.</aside>
+</section>
+<section id="resume-link-map" data-sid="resume-link-map">
+<div class="kicker">Link map · make the evidence reachable</div>
+    <h2>One stable portfolio URL, placed where readers look</h2>
+    <div class="grid3" style="margin-top:.28em">
+      <div class="box"><h3>Resume header</h3><p><b>Portfolio:</b> short readable URL beside email / GitHub / LinkedIn, if those are appropriate.</p></div>
+      <div class="box"><h3>Project entry</h3><p>Link the project title to the exact project card—not only the site homepage.</p></div>
+      <div class="box"><h3>Applications</h3><p>Use the same stable link in forms, emails and mentor introductions; test on mobile.</p></div>
+    </div>
+    <div class="callout">A QR code is optional and secondary. Always print the readable URL because scanners, PDFs and applicant systems may strip images.</div>
+    <aside class="notes">Students should avoid disposable share links or URLs that require the reviewer's school login. If access is restricted by design, label it and provide the intended access route.</aside>
+</section>
+<section id="publish-audit" data-sid="publish-audit">
+<div class="kicker">Before publish · public, private or remove</div>
+    <h2>Every item needs an audience decision</h2>
+    <table style="width:100%;font-size:.59em;margin-top:.25em"><thead><tr><th>Public-safe by default</th><th>Reviewer-only unless approved</th><th>Remove</th></tr></thead><tbody><tr>
+      <td>Aggregate charts · original explanations · licensed/project-owned images · de-identified code</td>
+      <td>Full notebook with controlled data · manuscript under review · team artifacts · age/school details</td>
+      <td>Passwords/API keys · raw personal records · private emails · precise address/schedule · unlicensed data</td>
+    </tr></tbody></table>
+    <div class="callout"><b>Minors:</b> follow family, school and program rules. A professional alias, private link or PDF is a valid portfolio—not a lesser one.</div>
+    <aside class="notes">Privacy is a design choice, not a last-minute warning. Also check dataset license, team permission and whether collaborators are credited without exposing their personal information.</aside>
+</section>
+<section id="peer-scan-test" data-sid="peer-scan-test">
+<div class="kicker">Peer QA · five-minute scan test</div>
+    <h2>Review the page as a stranger, not as a classmate</h2>
+    <div class="grid3" style="margin-top:.27em">
+      <div class="box"><h3>10 seconds</h3><p>Say the problem, the student's role and the strongest evidence—without asking the author.</p></div>
+      <div class="box"><h3>2 minutes</h3><p>Open every link. Check access, labels, captions, mobile readability and private information.</p></div>
+      <div class="box"><h3>Final note</h3><p>Write one Glow, one missing receipt and one sentence to cut or clarify.</p></div>
+    </div>
+    <div class="prompt" style="margin-top:.44em">Pass condition: the reviewer can explain the claim and its boundary, then reach the evidence in two clicks or fewer.</div>
+    <aside class="notes">Use pairs in the live room. In the recording, students can simulate the stranger by leaving the page for a moment, returning on a phone-size window, and reading only headings and captions.</aside>
+</section>
 <section id="submission-checklist" data-sid="submission-checklist">
 <div class="kicker">After the defense · final package</div>
-    <h2>Submit what another student needs to rerun</h2>
+    <h2>Submit the evidence—and launch the route to it</h2>
     <div class="grid2" style="margin-top:.25em">
-      <div class="box"><h3 style="color:var(--navy)">Required</h3><ul><li>Final ≤6-slide deck</li><li>Short paper or structured report</li><li>Runnable notebook/repository</li><li>Dataset citation + access instructions</li><li>Environment, seed and split/fold record</li></ul></div>
-      <div class="box"><h3 style="color:var(--teal)">Final audit</h3><ul><li>Results agree across paper, slides and code</li><li>Limitation and next test are consistent</li><li>AI-use disclosure is specific</li><li>Private data and student PII are removed</li><li>Links work for the intended reviewer</li></ul></div>
+      <div class="box"><h3 style="color:var(--navy)">Research package</h3><ul><li>Final ≤6-slide deck</li><li>Short paper or structured report</li><li>Runnable notebook/repository</li><li>Dataset citation + access instructions</li><li>Environment, seed and split/fold record</li></ul></div>
+      <div class="box"><h3 style="color:var(--teal)">Portfolio launch</h3><ul><li>One project card and focal visual</li><li>Results agree across page, slides and code</li><li>Limitation + AI disclosure remain visible</li><li>Public/private/license audit complete</li><li>Stable URL tested on mobile and in a private window</li></ul></div>
     </div>
-    <div class="callout"><b>Do not submit raw personal records.</b> Use the course's approved private workflow for any sensitive source data; public artifacts contain aggregates or de-identified derivatives only.</div>
-    <aside class="notes">This is a packaging checklist, not permission to create a new assignment or publish externally. Follow the teacher's existing submission channel.</aside>
+    <div class="callout"><b>Required for class:</b> research package + portfolio draft. <b>Public publishing is optional</b> and must follow the student's approved privacy path.</div>
+    <aside class="notes">A complete offline or reviewer-only portfolio draft satisfies the learning goal. Do not require minors to publish identity, contact details or artifacts publicly.</aside>
 </section>
 <section id="wrap-up" data-sid="wrap-up" class="center" data-background-gradient="linear-gradient(135deg,#0C2D52,#16406e)">
 <div class="kicker" style="color:#7fd3df">Wrap-up · the research loop closes</div>
-    <h2 style="color:#fff">A defense is not certainty.<br>It is visible ownership of the evidence.</h2>
+    <h2 style="color:#fff">The course ends.<br>Your evidence now has somewhere to go.</h2>
     <div class="grid3" style="margin-top:.42em;text-align:left">
-      <div class="box"><h3>Claim</h3><p>Small enough for the design to support.</p></div>
-      <div class="box"><h3>Chain of custody</h3><p>Question → data → protocol → result → limit.</p></div>
-      <div class="box"><h3>Next test</h3><p>Specific enough to challenge what you believe.</p></div>
+      <div class="box"><h3>Defend</h3><p>One claim, small enough for the design to support.</p></div>
+      <div class="box"><h3>Publish safely</h3><p>One page that connects the claim to inspectable evidence.</p></div>
+      <div class="box"><h3>Carry forward</h3><p>One resume line, one stable link and one next test.</p></div>
     </div>
-    <p style="color:#cfe0ef;margin-top:.6em"><b>Exit line:</b> “The strongest thing my evidence supports is ___; the next test is ___.”</p>
-    <p style="color:#9db8d6;font-size:.58em;margin-top:.45em">More than eight presenters? Continue in a separate full-length showcase session.</p>
-    <aside class="notes">Celebrate the work without ranking students publicly. Collect the exit line, confirm any second session, and end. No additional lecture.</aside>
+    <p style="color:#cfe0ef;margin-top:.6em"><b>Exit line:</b> “I studied ___; the evidence supports ___; you can inspect it at ___; next I would test ___.”</p>
+    <p style="color:#9db8d6;font-size:.56em;margin-top:.42em">Public, private or reviewer-only—the audience choice is part of responsible research.</p>
+    <aside class="notes">Celebrate completion without public ranking. Collect the exit line and confirm the chosen publication audience. Students leave with a defensible study, a portfolio draft and a concrete route into future applications or mentorship.</aside>
 </section>
 </div></div>
 
@@ -608,11 +928,91 @@ const _audio=document.getElementById('narratorAudio');
 let _btn=null,_playToken=0;
 function fmtClock(s){ s=Math.max(0,Math.floor(s||0)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
 function resetListenUI(){ listenBtn.style.setProperty('--p','0%'); listenBtn.querySelector('.li-ic').textContent='▶'; listenBtn.querySelector('.li-tx').textContent='Listen'; }
+function setRowReveal(stage){ document.querySelectorAll('#row .row-reveal').forEach(function(el){ el.classList.toggle('is-visible',Number(el.dataset.rowStage)<=stage); }); }
+function syncRowReveal(t){ if(curSid==='row') setRowReveal(t>=39.0?3:t>=23.8?2:t>=9.1?1:0); }
+const KNN_NUMBER={one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9};
+function setKnnStep(step){
+  const sec=document.querySelector('#knn'); if(!sec) return;
+  step=Math.max(0,Math.min(16,Number(step)||0)); sec._knnStep=step;
+  const shown={left:step>=1,stay:step>=2,right:step>=3};
+  sec.querySelectorAll('.knn-point').forEach(function(point){
+    const neighbor=Number(point.dataset.neighbor)||0;
+    point.classList.toggle('is-visible',!!shown[point.dataset.action]);
+    point.classList.toggle('is-muted',step>=5&&!neighbor);
+    point.classList.toggle('is-neighbor',step>=5&&!!neighbor);
+    point.classList.toggle('is-counted',!!neighbor&&(step>=15||(step>=6&&neighbor<=step-5)));
+    point.classList.toggle('is-active',step>=6&&step<=14&&neighbor===step-5);
+  });
+  sec.querySelectorAll('[data-knn-legend]').forEach(function(item){ item.classList.toggle('is-visible',!!shown[item.dataset.knnLegend]); });
+  ['.knn-query','.knn-query-label'].forEach(function(selector){ const el=sec.querySelector(selector); if(el) el.classList.toggle('is-visible',step>=4); });
+  const ring=sec.querySelector('.knn-ring'); if(ring) ring.classList.toggle('is-visible',step>=5);
+  const k=sec.querySelector('.knn-k'); if(k) k.classList.toggle('is-visible',step>=5);
+  const votes=sec.querySelector('.knn-votes'); if(votes) votes.classList.toggle('is-visible',step>=15);
+  const result=sec.querySelector('.knn-result'); if(result) result.classList.toggle('is-visible',step>=16);
+  const active=sec.querySelector('.knn-point.is-active');
+  const status=sec.querySelector('.knn-status');
+  if(status){
+    const messages=[
+      'Start with the two feature axes.',
+      'LEFT demonstrations appear as pink circles.',
+      'STAY demonstrations appear as gold squares.',
+      'RIGHT demonstrations appear as teal triangles.',
+      'The black star is the new, unlabeled state.',
+      'The dashed circle encloses the 9 nearest samples.'
+    ];
+    if(step<=5) status.textContent=messages[step];
+    else if(step<=14) status.textContent='Neighbor '+(step-5)+' of 9 · distance '+(active?active.dataset.distance:'—');
+    else if(step===15) status.textContent='Count and weight the nine labels: 2 LEFT · 3 STAY · 4 RIGHT.';
+    else status.textContent='RIGHT has the largest weighted vote, so the policy moves right.';
+  }
+}
+function knnStepFromCue(text,previous){
+  const s=String(text||'').toLowerCase();
+  if(s.includes('pink circles')) return 1;
+  if(s.includes('gold squares')) return 2;
+  if(s.includes('teal triangles')) return 3;
+  if(s.includes('black star')) return 4;
+  if(s.includes('set k equal to nine')) return 5;
+  const number=s.match(/neighbor\s+(one|two|three|four|five|six|seven|eight|nine)/);
+  if(number) return 5+KNN_NUMBER[number[1]];
+  if(s.includes('now vote')) return 15;
+  if(s.includes('after inverse-distance weighting')) return 16;
+  return previous;
+}
+function syncKnnReveal(t){
+  if(curSid!=='knn') return;
+  const data=_narrationData&&_narrationData.knn, cues=data&&data.cues||[];
+  let step=0;
+  for(const cue of cues){ if(t<cue.start) break; step=knnStepFromCue(cue.text,step); }
+  setKnnStep(step);
+}
+let _listenFocusCue=-1,_listenFocusSid='';
+function clearNarrationFocus(){
+  document.querySelectorAll('.is-listen-active').forEach(function(el){ el.classList.remove('is-listen-active'); });
+  _listenFocusCue=-1; _listenFocusSid='';
+}
+function syncNarrationFocus(t){
+  const data=_narrationData&&_narrationData[curSid], cues=data&&data.cues||[];
+  let cueIndex=-1;
+  for(let i=0;i<cues.length;i++){ if(t>=cues[i].start&&t<cues[i].end){ cueIndex=i; break; } }
+  if(cueIndex===_listenFocusCue&&curSid===_listenFocusSid) return;
+  document.querySelectorAll('.is-listen-active').forEach(function(el){ el.classList.remove('is-listen-active'); });
+  _listenFocusCue=cueIndex; _listenFocusSid=curSid;
+  if(cueIndex<0) return;
+  const sec=document.getElementById(curSid); if(!sec) return;
+  sec.querySelectorAll('[data-listen-cue]').forEach(function(el){
+    const indexes=String(el.dataset.listenCue||'').split(/[\s,]+/).map(Number);
+    el.classList.toggle('is-listen-active',indexes.includes(cueIndex));
+  });
+}
 function stopAudio(){
   stopWalk(); // lab walkthrough shares the stage with narration — never both
   _playToken++; // invalidate any in-flight play() for the old src
   _audio.pause(); _audio.currentTime=0; _audio.removeAttribute('src'); _audio.load();
   _audio.removeEventListener('timeupdate',onListenTimeupdate); // else it'd animate listenBtn during a .speak clip
+  if(curSid==='row') setRowReveal(0);
+  if(curSid==='knn') setKnnStep(0);
+  clearNarrationFocus();
   capBar.style.display='none';
   if(_btn){
     _btn.classList.remove('playing');
@@ -670,6 +1070,9 @@ function onListenTimeupdate(){
   if(_audio.duration) listenBtn.style.setProperty('--p',(_audio.currentTime/_audio.duration*100)+'%');
   listenBtn.querySelector('.li-tx').textContent=fmtClock(_audio.currentTime)+' / '+fmtClock(_audio.duration);
   updateCaption();
+  syncRowReveal(_audio.currentTime);
+  syncKnnReveal(_audio.currentTime);
+  syncNarrationFocus(_audio.currentTime);
 }
 listenBtn.addEventListener('click',function(){
   if(_btn===listenBtn && !_audio.paused){ stopAudio(); return; } // toggles play/stop even mid-buffer
@@ -682,6 +1085,9 @@ listenBtn.addEventListener('click',function(){
   const data=_narrationData&&_narrationData[curSid];
   const version=data&&data.hash?'?v='+encodeURIComponent(data.hash):'';
   _audio.src='audio/'+encodeURIComponent(curSid)+'.mp3'+version;
+  if(curSid==='row') setRowReveal(0);
+  if(curSid==='knn') setKnnStep(0);
+  clearNarrationFocus();
   _audio.addEventListener('timeupdate',onListenTimeupdate);
   _audio.addEventListener('ended',stopAudio,{once:true});
   _audio.play().catch(function(){
@@ -692,6 +1098,15 @@ listenBtn.addEventListener('click',function(){
     setTimeout(resetListenUI,2200);
   });
 });
+document.addEventListener('click',function(e){ if(e.target.closest('[data-row-show]')) setRowReveal(3); if(e.target.closest('[data-row-hide]')) setRowReveal(0); });
+document.addEventListener('click',function(e){
+  const control=e.target.closest('[data-knn-reset],[data-knn-next],[data-knn-all]'); if(!control) return;
+  if(_btn===listenBtn) stopAudio();
+  const sec=document.querySelector('#knn'); if(!sec) return;
+  if(control.hasAttribute('data-knn-reset')) setKnnStep(0);
+  else if(control.hasAttribute('data-knn-all')) setKnnStep(16);
+  else setKnnStep((sec._knnStep||0)+1);
+});
 
 /* ---------- Quizzes (answers feed the live class distribution) ---------- */
 function renderQuizStats(quiz,data){
@@ -700,12 +1115,12 @@ function renderQuizStats(quiz,data){
   if(!box){ box=document.createElement('div'); box.className='qstats'; quiz.appendChild(box); }
   const mode=quiz._qmode||'today';
   const st=(data&&data[mode])||{counts:{},total:0};
-  const opts=quiz.querySelectorAll('.opt'), correct=parseInt(quiz.dataset.correct,10);
+  const opts=quiz.querySelectorAll('.opt'), isPoll=quiz.dataset.poll==='true', correct=parseInt(quiz.dataset.correct,10);
   let bars='';
   for(let i=0;i<opts.length;i++){
     const c=st.counts[i]||0, pct=st.total?Math.round(c*100/st.total):0;
     bars+='<div class="qrow"><span class="ql">'+String.fromCharCode(65+i)+'</span>'
-      +'<div class="qbar"><div class="qfill'+(i===correct?' qok':'')+'" style="width:'+pct+'%"></div></div>'
+      +'<div class="qbar"><div class="qfill'+(!isPoll&&i===correct?' qok':'')+'" style="width:'+pct+'%"></div></div>'
       +'<span class="qp">'+pct+'% ('+c+')</span></div>';
   }
   box.innerHTML='<div class="qhead"><span>Class results · '+st.total+' answered</span>'
@@ -717,16 +1132,19 @@ document.addEventListener('click',function(e){
   if(m){ const q=m.closest('.quiz'); q._qmode=m.dataset.m; renderQuizStats(q,q._qstats); return; }
   const opt=e.target.closest('.quiz .opt'); if(!opt) return;
   const quiz=opt.closest('.quiz'); if(quiz.classList.contains('answered')) return;
-  const correct=parseInt(quiz.dataset.correct,10);
+  const isPoll=quiz.dataset.poll==='true', correct=parseInt(quiz.dataset.correct,10);
   quiz.querySelectorAll('.opt').forEach(function(o){o.setAttribute('disabled','');});
   const chosen=parseInt(opt.dataset.i,10);
-  quiz.querySelectorAll('.opt')[correct].classList.add('correct');
-  if(chosen!==correct) opt.classList.add('wrong');
+  if(isPoll) opt.classList.add('selected');
+  else {
+    quiz.querySelectorAll('.opt')[correct].classList.add('correct');
+    if(chosen!==correct) opt.classList.add('wrong');
+  }
   quiz.classList.add('answered');
   const sec=quiz.closest('section');
   const sid=(sec&&sec.dataset.sid)||_hashSid(sec);
   fetch('/api/quiz/answer',{method:'POST',headers:{'content-type':'application/json'},
-    body:JSON.stringify({deck:DECK,slide:sid,choice:chosen,correct:chosen===correct})})
+    body:JSON.stringify({deck:DECK,slide:sid,choice:chosen,correct:isPoll?false:chosen===correct})})
     .then(function(r){return r.json();})
     .then(function(j){ if(j&&j.today) renderQuizStats(quiz,{today:j.today,all:j.all}); })
     .catch(function(){ fetch('/api/quiz/stats?deck='+encodeURIComponent(DECK)+'&slide='+encodeURIComponent(sid))
@@ -1390,8 +1808,14 @@ function updateWatch(){
   btn.querySelector('span').textContent='录播 '+mm+':'+ss;
   btn.hidden=false;
 }
-Reveal.on('slidechanged',function(){ stopAudio(); curSid=sidOf(); updateBadge(); updateListen(); sendSlide(); updateWatch(); if(panel.classList.contains('open')){ cph.textContent='Comments · '+curSid; loadComments(); } });
-Reveal.on('ready',function(){ curSid=sidOf(); loadCounts(); loadNarrated(); });
+Reveal.on('slidechanged',function(){ stopAudio(); curSid=sidOf(); if(curSid==='row') setRowReveal(0); if(curSid==='knn') setKnnStep(0); updateBadge(); updateListen(); sendSlide(); updateWatch(); if(panel.classList.contains('open')){ cph.textContent='Comments · '+curSid; loadComments(); } });
+Reveal.on('ready',function(){
+  curSid=sidOf();
+  const printMode=new URLSearchParams(location.search).has('print-pdf');
+  if(printMode){ setRowReveal(3); setKnnStep(16); }
+  else { if(curSid==='row') setRowReveal(0); if(curSid==='knn') setKnnStep(0); }
+  loadCounts(); loadNarrated();
+});
 
 /* ---------- Live classroom: presence chip + quiz stream (SSE) ---------- */
 let liveId=null;

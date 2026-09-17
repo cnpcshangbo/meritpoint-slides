@@ -53,10 +53,11 @@
 /* QUIZ */
 .reveal .quiz{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.7em .85em;box-shadow:0 6px 18px rgba(20,40,70,.07);max-width:18em}
 .reveal .quiz .qq{font-size:.72em;font-weight:600;color:var(--navy);margin:0 0 .5em}
-.reveal .quiz .opt{display:block;width:100%;text-align:left;background:var(--cloud2);border:1px solid var(--line);border-radius:9px;padding:.4em .6em;margin:.25em 0;font-size:.6em;color:var(--ink);cursor:pointer;transition:.1s;font-family:-apple-system,sans-serif}
+.reveal .quiz .opt{display:grid;grid-template-columns:1.8em minmax(0,1fr);gap:.48em;align-items:center;width:100%;text-align:left;background:var(--cloud2);border:1px solid var(--line);border-radius:9px;padding:.4em .6em;margin:.25em 0;font-size:.6em;color:var(--ink);cursor:pointer;transition:.1s;font-family:-apple-system,sans-serif}
+.reveal .quiz .opt:before{content:attr(data-label);display:flex;align-items:center;justify-content:center;width:1.65em;height:1.65em;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;line-height:1}
 .reveal .quiz .opt:hover{border-color:var(--teal);background:#fff}
-.reveal .quiz .opt.correct{background:#E6F4EE;border-color:var(--green);color:#0d6b4f;font-weight:600}
-.reveal .quiz .opt.wrong{background:#FBEAE7;border-color:var(--coral);color:#a23c1c}
+.reveal .quiz .opt.correct{background:#E6F4EE;border-color:var(--green);color:#0d6b4f;font-weight:600}.reveal .quiz .opt.correct:before{background:var(--green)}
+.reveal .quiz .opt.wrong{background:#FBEAE7;border-color:var(--coral);color:#a23c1c}.reveal .quiz .opt.wrong:before{background:var(--coral)}
 .reveal .quiz .opt[disabled]{cursor:default}
 .reveal .quiz-exp{font-size:.56em;color:var(--muted);margin:.4em 0 0;display:none}
 .reveal .quiz.answered .quiz-exp{display:block}
@@ -242,8 +243,13 @@
 #watchBtn{position:fixed;left:256px;top:19px;z-index:60;background:var(--navy);color:#fff;border:1px solid var(--navy);border-radius:999px;padding:8px 14px;font-size:12.5px;font-weight:700;font-family:-apple-system,sans-serif;text-decoration:none;box-shadow:0 4px 14px rgba(20,40,70,.18)}
 #watchBtn:hover{filter:brightness(1.15);text-decoration:none}
 #watchBtn[hidden]{display:none}
-/* keep screen-only chrome out of print / the exported PDF (fixed elements repeat on every page) */
-@media print{#donateBtn,#mpaLogo,#pdfBtn,#ccBtn,#listenBtn,#commentBtn,#commentPanel,#capBar,#mpAuth{display:none!important}}
+/* Keep controls out of print, but retain the institutional mark. The PDF is
+   also the recording backdrop, so hiding the logo here broke visual continuity
+   between the interactive deck and the lesson video. */
+@media print{
+  #donateBtn,#pdfBtn,#watchBtn,#ccBtn,#listenBtn,#commentBtn,#commentPanel,#capBar,#mpAuth{display:none!important}
+  #mpaLogo{display:block!important;left:16px;top:14px;width:44px;height:44px;box-shadow:none;opacity:1}
+}
 </style></head><body>
 <div class="reveal"><div class="slides">
 <section id="title" data-sid="title" class="center" data-background-gradient="linear-gradient(135deg,#06111f,#0c2d52 55%,#132844)">
@@ -386,7 +392,7 @@
   <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
   <div class="quiz" data-correct="1">
     <p class="qq">During Player Run, what is the training label for each row?</p>
-    <div class="opts"><button class="opt" data-i="0">The level seed</button><button class="opt" data-i="1">The player’s LEFT / STAY / RIGHT action</button><button class="opt" data-i="2">The coin color</button><button class="opt" data-i="3">The final score only</button></div>
+    <div class="opts"><button class="opt" data-i="0" data-label="A" aria-label="A. The level seed">The level seed</button><button class="opt" data-i="1" data-label="B" aria-label="B. The player’s LEFT / STAY / RIGHT action">The player’s LEFT / STAY / RIGHT action</button><button class="opt" data-i="2" data-label="C" aria-label="C. The coin color">The coin color</button><button class="opt" data-i="3" data-label="D" aria-label="D. The final score only">The final score only</button></div>
     <p class="quiz-exp">The current k-NN learns sensor state → human action. Reward is logged for evaluation, not used to train this policy. Every demonstration—including a mistake—is a label the agent may copy.</p>
   </div>
   <aside class="notes">答案后明确：当前 k-NN 只用 sensor state 与 human action 训练，不根据 reward 过滤样本。因此模型可能继承人的错误；若要用 reward 判断动作好坏，需要人工纠错、reward weighting 或 reinforcement learning，那是另一种方法。</aside>
@@ -526,7 +532,7 @@
   <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
   <div class="quiz" data-correct="1">
     <p class="qq">The 12-seed agent has 2,400 training rows; the 1-seed agent has 240. Can a score difference be attributed to level diversity?</p>
-    <div class="opts"><button class="opt" data-i="0">Yes—more seeds always means diversity</button><button class="opt" data-i="1">No—training amount also changed</button><button class="opt" data-i="2">Yes—both use k-NN</button><button class="opt" data-i="3">Only if the score is above 90%</button></div>
+    <div class="opts"><button class="opt" data-i="0" data-label="A" aria-label="A. Yes—more seeds always means diversity">Yes—more seeds always means diversity</button><button class="opt" data-i="1" data-label="B" aria-label="B. No—training amount also changed">No—training amount also changed</button><button class="opt" data-i="2" data-label="C" aria-label="C. Yes—both use k-NN">Yes—both use k-NN</button><button class="opt" data-i="3" data-label="D" aria-label="D. Only if the score is above 90%">Only if the score is above 90%</button></div>
     <p class="quiz-exp">No. Diversity and data amount are confounded. Give both agents the same number of rows, then change only how many level seeds produced them.</p>
   </div>
   <aside class="notes">用这一题检查 controlled comparison。让学生用一句话说出 independent variable、control 和 outcome。</aside>

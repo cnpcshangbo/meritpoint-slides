@@ -1,0 +1,2160 @@
+{
+  "title": {
+    "hash": "36179e23add3e4f6",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Welcome to the Class Fifteen capstone workshop. Today is different from a normal lecture: the important voices in the live room will be yours, and the final evidence will leave with you as a portfolio story. I am Mira, an AI teaching assistant. This is a synthetic voice. Leo and Xiaoyu, when you hear them, are simulated classmates rather than real students. This recording prepares your deck, timing, defense, online portfolio project card, and resume link. It does not replace the live showcase, your own research presentation, or the instructor's questions. No real student's name, project, data, or result appears here. The running Palmer Penguins example is a computed classroom demonstration from public ecological teaching data; it is not student work and it does not claim universal performance. Your goal is not to sound certain about everything. Your goal is to make one supported conclusion easy to inspect, answer questions with honest boundaries, and give a future reviewer a safe route back to the evidence.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.346,
+        "text": "Welcome to the Class Fifteen capstone workshop."
+      },
+      {
+        "start": 3.346,
+        "end": 13.19,
+        "text": "Today is different from a normal lecture: the important voices in the live room will be yours, and the final evidence will leave with you as a portfolio story."
+      },
+      {
+        "start": 13.578,
+        "end": 17.186,
+        "text": "I am Mira, an AI teaching assistant."
+      },
+      {
+        "start": 17.186,
+        "end": 19.491,
+        "text": "This is a synthetic voice."
+      },
+      {
+        "start": 19.491,
+        "end": 25.767,
+        "text": "Leo and Xiaoyu, when you hear them, are simulated classmates rather than real students."
+      },
+      {
+        "start": 26.17,
+        "end": 33.346,
+        "text": "This recording prepares your deck, timing, defense, online portfolio project card, and resume link."
+      },
+      {
+        "start": 33.346,
+        "end": 39.765,
+        "text": "It does not replace the live showcase, your own research presentation, or the instructor's questions."
+      },
+      {
+        "start": 40.154,
+        "end": 45.416,
+        "text": "No real student's name, project, data, or result appears here."
+      },
+      {
+        "start": 45.416,
+        "end": 56.041,
+        "text": "The running Palmer Penguins example is a computed classroom demonstration from public ecological teaching data; it is not student work and it does not claim universal performance."
+      },
+      {
+        "start": 56.442,
+        "end": 59.503,
+        "text": "Your goal is not to sound certain about everything."
+      },
+      {
+        "start": 59.503,
+        "end": 69.49,
+        "text": "Your goal is to make one supported conclusion easy to inspect, answer questions with honest boundaries, and give a future reviewer a safe route back to the evidence."
+      }
+    ],
+    "bytes": 1113904,
+    "source": "authored-video-script"
+  },
+  "class14-handoff": {
+    "hash": "27d81c43467913ea",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Class Fourteen ended with an experiment record: question, baseline, controlled comparison, metric, uncertainty, errors, and limitation. Class Fifteen does not invent a new experiment. It compresses that record for an audience without breaking the chain of evidence. Bring the same saved split or folds, the same result receipt, and the same limitation. A presentation is a view of the evidence, not permission to upgrade the claim. Before rehearsing, compare every sentence in the deck with the Class Fourteen record. Circle anything that is stronger, broader, or more certain. Either supply the missing evidence or narrow the sentence.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 10.859,
+        "text": "Class Fourteen ended with an experiment record: question, baseline, controlled comparison, metric, uncertainty, errors, and limitation."
+      },
+      {
+        "start": 11.25,
+        "end": 14.702,
+        "text": "Class Fifteen does not invent a new experiment."
+      },
+      {
+        "start": 14.702,
+        "end": 19.468,
+        "text": "It compresses that record for an audience without breaking the chain of evidence."
+      },
+      {
+        "start": 19.858,
+        "end": 26.031,
+        "text": "Bring the same saved split or folds, the same result receipt, and the same limitation."
+      },
+      {
+        "start": 26.031,
+        "end": 31.044,
+        "text": "A presentation is a view of the evidence, not permission to upgrade the claim."
+      },
+      {
+        "start": 31.442,
+        "end": 37.121,
+        "text": "Before rehearsing, compare every sentence in the deck with the Class Fourteen record."
+      },
+      {
+        "start": 37.121,
+        "end": 41.261,
+        "text": "Circle anything that is stronger, broader, or more certain."
+      },
+      {
+        "start": 41.261,
+        "end": 44.933,
+        "text": "Either supply the missing evidence or narrow the sentence."
+      }
+    ],
+    "bytes": 721022,
+    "source": "authored-video-script"
+  },
+  "showcase-contract": {
+    "hash": "9092a4dc439626c5",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Here is the live-class contract: students present, the teacher asks questions, and peers listen for useful feedback. This is not a second round of long instructor teaching. Each presenter gets an eight-minute slot: at most five minutes to speak, two minutes for teacher questions, and one minute to transition. The teacher asks at least two questions: one about Class Fourteen validity and one about interpretation or reproducibility. Those questions are part of the learning, not a trap. Once the showcase begins, there are no quick checks interrupting student talks. The four checks in this recording belong only to preflight, so the live floor stays with each presenter.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.89,
+        "text": "Here is the live-class contract: students present, the teacher asks questions, and peers listen for useful feedback."
+      },
+      {
+        "start": 7.89,
+        "end": 11.223,
+        "text": "This is not a second round of long instructor teaching."
+      },
+      {
+        "start": 11.61,
+        "end": 20.153,
+        "text": "Each presenter gets an eight-minute slot: at most five minutes to speak, two minutes for teacher questions, and one minute to transition."
+      },
+      {
+        "start": 20.554,
+        "end": 28.759,
+        "text": "The teacher asks at least two questions: one about Class Fourteen validity and one about interpretation or reproducibility."
+      },
+      {
+        "start": 28.759,
+        "end": 31.897,
+        "text": "Those questions are part of the learning, not a trap."
+      },
+      {
+        "start": 32.282,
+        "end": 37.179,
+        "text": "Once the showcase begins, there are no quick checks interrupting student talks."
+      },
+      {
+        "start": 37.179,
+        "end": 43.742,
+        "text": "The four checks in this recording belong only to preflight, so the live floor stays with each presenter."
+      }
+    ],
+    "bytes": 701796,
+    "source": "authored-video-script"
+  },
+  "run-of-show": {
+    "hash": "bf864f31994abbd4",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "The syllabus promises a sixty-minute class, so the capstone now has a sixty-minute plan rather than the old two-hour default. Minutes zero to five open the room. Minutes five to thirteen run a fast preflight and mock question. Minutes thirteen to forty-five protect up to four complete eight-minute presenter rounds. Minutes forty-five to fifty-five launch the portfolio, and the last five minutes run the peer scan and exit line. Five plus eight plus thirty-two plus ten plus five equals sixty. If more than four students need to present, use parallel rooms or a second full session. Do not quietly cut every student's defense time until questions become meaningless. While one student presents, the next student gets ready quietly and every peer completes one listener card. That parallel preparation protects the transition minute without stealing attention.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 7.812,
+        "text": "The syllabus promises a sixty-minute class, so the capstone now has a sixty-minute plan rather than the old two-hour default."
+      },
+      {
+        "start": 8.202,
+        "end": 10.482,
+        "text": "Minutes zero to five open the room."
+      },
+      {
+        "start": 10.482,
+        "end": 14.844,
+        "text": "Minutes five to thirteen run a fast preflight and mock question."
+      },
+      {
+        "start": 14.844,
+        "end": 20.352,
+        "text": "Minutes thirteen to forty-five protect up to four complete eight-minute presenter rounds."
+      },
+      {
+        "start": 20.746,
+        "end": 27.935,
+        "text": "Minutes forty-five to fifty-five launch the portfolio, and the last five minutes run the peer scan and exit line."
+      },
+      {
+        "start": 27.935,
+        "end": 32.623,
+        "text": "Five plus eight plus thirty-two plus ten plus five equals sixty."
+      },
+      {
+        "start": 33.026,
+        "end": 38.952,
+        "text": "If more than four students need to present, use parallel rooms or a second full session."
+      },
+      {
+        "start": 38.952,
+        "end": 44.577,
+        "text": "Do not quietly cut every student's defense time until questions become meaningless."
+      },
+      {
+        "start": 44.97,
+        "end": 52.094,
+        "text": "While one student presents, the next student gets ready quietly and every peer completes one listener card."
+      },
+      {
+        "start": 52.094,
+        "end": 57.159,
+        "text": "That parallel preparation protects the transition minute without stealing attention."
+      }
+    ],
+    "bytes": 916209,
+    "source": "authored-video-script"
+  },
+  "quiz-supported-claim": {
+    "hash": "160c54f6420104c3",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Quick check one. A candidate model outperformed the baseline on the same predefined folds, but only one dataset was tested. Which headline is defensible? Option A: the candidate is best for every future dataset. Option B: on this dataset and protocol, the candidate performed better; outside generalization is untested. Option C: the experiment proves the model caused every improvement. Option D: remove the limitation so the conclusion sounds stronger. I choose option B: on this dataset and protocol, the candidate performed better; outside generalization is untested. Correct. Bound the claim to the data and protocol actually tested. A stronger-sounding sentence is not a stronger result.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.25,
+        "text": "Quick check one."
+      },
+      {
+        "start": 1.25,
+        "end": 8.333,
+        "text": "A candidate model outperformed the baseline on the same predefined folds, but only one dataset was tested."
+      },
+      {
+        "start": 8.333,
+        "end": 10.455,
+        "text": "Which headline is defensible?"
+      },
+      {
+        "start": 10.455,
+        "end": 14.947,
+        "text": "Option A: the candidate is best for every future dataset."
+      },
+      {
+        "start": 14.947,
+        "end": 23.111,
+        "text": "Option B: on this dataset and protocol, the candidate performed better; outside generalization is untested."
+      },
+      {
+        "start": 23.111,
+        "end": 27.838,
+        "text": "Option C: the experiment proves the model caused every improvement."
+      },
+      {
+        "start": 27.838,
+        "end": 32.669,
+        "text": "Option D: remove the limitation so the conclusion sounds stronger."
+      },
+      {
+        "start": 33.116,
+        "end": 40.84,
+        "text": "I choose option B: on this dataset and protocol, the candidate performed better; outside generalization is untested."
+      },
+      {
+        "start": 41.17,
+        "end": 42.031,
+        "text": "Correct."
+      },
+      {
+        "start": 42.031,
+        "end": 45.833,
+        "text": "Bound the claim to the data and protocol actually tested."
+      },
+      {
+        "start": 45.833,
+        "end": 49.7,
+        "text": "A stronger-sounding sentence is not a stronger result."
+      }
+    ],
+    "bytes": 797091,
+    "source": "authored-video-script"
+  },
+  "research-one-sentence": {
+    "hash": "0cd710ad6c96887b",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Before designing slides, write the research story in one sentence. Start with the question: we asked whether one controlled change affected one pre-chosen outcome. Then name the evidence: on a named dataset, under a named evaluation, the contender changed the metric relative to a baseline. End with the boundary: this study does not establish a broader population, a causal mechanism, deployment safety, or anything else your design did not test. If the sentence needs three ands, the talk probably contains multiple stories. Choose the one claim your evidence can defend. Now test the sentence by asking where each phrase is evidenced. Data should point to provenance, evaluation to a protocol, change to a result, and limitation to the edge of the design.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.687,
+        "text": "Before designing slides, write the research story in one sentence."
+      },
+      {
+        "start": 4.687,
+        "end": 10.807,
+        "text": "Start with the question: we asked whether one controlled change affected one pre-chosen outcome."
+      },
+      {
+        "start": 11.202,
+        "end": 19.875,
+        "text": "Then name the evidence: on a named dataset, under a named evaluation, the contender changed the metric relative to a baseline."
+      },
+      {
+        "start": 20.266,
+        "end": 30.385,
+        "text": "End with the boundary: this study does not establish a broader population, a causal mechanism, deployment safety, or anything else your design did not test."
+      },
+      {
+        "start": 30.77,
+        "end": 36.266,
+        "text": "If the sentence needs three ands, the talk probably contains multiple stories."
+      },
+      {
+        "start": 36.266,
+        "end": 39.365,
+        "text": "Choose the one claim your evidence can defend."
+      },
+      {
+        "start": 39.762,
+        "end": 44.073,
+        "text": "Now test the sentence by asking where each phrase is evidenced."
+      },
+      {
+        "start": 44.073,
+        "end": 52.003,
+        "text": "Data should point to provenance, evaluation to a protocol, change to a result, and limitation to the edge of the design."
+      }
+    ],
+    "bytes": 834289,
+    "source": "authored-video-script"
+  },
+  "deck-map": {
+    "hash": "04d1fa20cb8026e8",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Your deck has at most six slides, including the title. The limit is a design constraint: it forces the evidence hierarchy to stay visible. Instead of reading that six-part list and hoping it becomes concrete, we will build one running example: does feature scaling help five-nearest-neighbor classification of Palmer penguin species? Watch the same example change form across the deck: a bounded title, a visible data row, two fair method lanes, one result chart, three interpretation sentences, and a compact reproduction receipt. That is a maximum, not a target you must fill. Five readable slides are stronger than six crowded slides. The title counts as one of the six. Appendix pages are not a loophole for a second presentation; keep only a small evidence appendix if the instructor's local rules allow it.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.71,
+        "text": "Your deck has at most six slides, including the title."
+      },
+      {
+        "start": 3.71,
+        "end": 9.713,
+        "text": "The limit is a design constraint: it forces the evidence hierarchy to stay visible."
+      },
+      {
+        "start": 10.098,
+        "end": 22.053,
+        "text": "Instead of reading that six-part list and hoping it becomes concrete, we will build one running example: does feature scaling help five-nearest-neighbor classification of Palmer penguin species?"
+      },
+      {
+        "start": 22.45,
+        "end": 36.163,
+        "text": "Watch the same example change form across the deck: a bounded title, a visible data row, two fair method lanes, one result chart, three interpretation sentences, and a compact reproduction receipt."
+      },
+      {
+        "start": 36.554,
+        "end": 39.837,
+        "text": "That is a maximum, not a target you must fill."
+      },
+      {
+        "start": 39.837,
+        "end": 44.069,
+        "text": "Five readable slides are stronger than six crowded slides."
+      },
+      {
+        "start": 44.466,
+        "end": 46.968,
+        "text": "The title counts as one of the six."
+      },
+      {
+        "start": 46.968,
+        "end": 55.666,
+        "text": "Appendix pages are not a loophole for a second presentation; keep only a small evidence appendix if the instructor's local rules allow it."
+      }
+    ],
+    "bytes": 892803,
+    "source": "authored-video-script"
+  },
+  "slide-question": {
+    "hash": "1b8121c8c6654a67",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Begin with a title that contains one change, one outcome, and one scope. Our example is: does feature scaling help five-nearest-neighbor classification of Palmer penguin species? That is stronger than My Artificial Intelligence Project because the audience already knows what changed, what was measured, and where the claim must stop. The subtitle adds the protocol: a controlled comparison on one saved five-fold evaluation. Now the teacher can anticipate the validity question before it is asked. Use the same pattern for your title. A decision, uncertainty, or scientific gap is enough; you do not need a product slogan or dramatic promise.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.091,
+        "text": "Begin with a title that contains one change, one outcome, and one scope."
+      },
+      {
+        "start": 5.091,
+        "end": 12.031,
+        "text": "Our example is: does feature scaling help five-nearest-neighbor classification of Palmer penguin species?"
+      },
+      {
+        "start": 12.426,
+        "end": 21.191,
+        "text": "That is stronger than My Artificial Intelligence Project because the audience already knows what changed, what was measured, and where the claim must stop."
+      },
+      {
+        "start": 21.586,
+        "end": 28.033,
+        "text": "The subtitle adds the protocol: a controlled comparison on one saved five-fold evaluation."
+      },
+      {
+        "start": 28.033,
+        "end": 32.252,
+        "text": "Now the teacher can anticipate the validity question before it is asked."
+      },
+      {
+        "start": 32.642,
+        "end": 35.013,
+        "text": "Use the same pattern for your title."
+      },
+      {
+        "start": 35.013,
+        "end": 43.034,
+        "text": "A decision, uncertainty, or scientific gap is enough; you do not need a product slogan or dramatic promise."
+      }
+    ],
+    "bytes": 690929,
+    "source": "authored-video-script"
+  },
+  "slide-data": {
+    "hash": "fe7e5275a73987dd",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Now make one row visible. In the teaching example, one row is one observed penguin, four columns are body measurements, and the label is Adelie, Chinstrap, or Gentoo. The data card names Palmer Station LTER and the palmerpenguins project, starts with 344 source rows, and reports 342 complete cases after excluding 2 rows with missing measurements. Those details are more useful than saying only that the data came from a CSV. The illustrated species and feature chips—bill length, bill depth, flipper length, and body mass—help the audience picture one row. They are illustration with a job, not decoration replacing provenance. The boundary belongs here too: these adult penguins were observed around three Palmer Archipelago islands from 2007 through 2009. This classroom comparison does not establish performance for every penguin population, age group, place, or future year.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.2,
+        "text": "Now make one row visible."
+      },
+      {
+        "start": 2.2,
+        "end": 11.601,
+        "text": "In the teaching example, one row is one observed penguin, four columns are body measurements, and the label is Adelie, Chinstrap, or Gentoo."
+      },
+      {
+        "start": 11.994,
+        "end": 25.615,
+        "text": "The data card names Palmer Station LTER and the palmerpenguins project, starts with 344 source rows, and reports 342 complete cases after excluding 2 rows with missing measurements."
+      },
+      {
+        "start": 25.615,
+        "end": 30.68,
+        "text": "Those details are more useful than saying only that the data came from a CSV."
+      },
+      {
+        "start": 31.066,
+        "end": 39.909,
+        "text": "The illustrated species and feature chips—bill length, bill depth, flipper length, and body mass—help the audience picture one row."
+      },
+      {
+        "start": 39.909,
+        "end": 44.453,
+        "text": "They are illustration with a job, not decoration replacing provenance."
+      },
+      {
+        "start": 44.858,
+        "end": 54.052,
+        "text": "The boundary belongs here too: these adult penguins were observed around three Palmer Archipelago islands from 2007 through 2009."
+      },
+      {
+        "start": 54.052,
+        "end": 62.321,
+        "text": "This classroom comparison does not establish performance for every penguin population, age group, place, or future year."
+      }
+    ],
+    "bytes": 999383,
+    "source": "authored-video-script"
+  },
+  "slide-method": {
+    "hash": "81de910cdf1b60ad",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "The method slide should show two lanes, not a software inventory. The baseline sends raw feature scales into five-nearest neighbors. The contender inserts one Standard Scaler before the same classifier. Everything else stays fixed: the same 342 complete penguins, the same 5 stratified folds, the same five neighbors, and the same accuracy function. The fold shuffle seed is 15. More importantly, the scaler is fitted inside each training fold. Fitting it once on all rows before validation would leak information. Now the audience can circle the single intended change. If your own method slide cannot support that gesture, either redraw the comparison or admit that you ran a broader system comparison.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.388,
+        "text": "The method slide should show two lanes, not a software inventory."
+      },
+      {
+        "start": 4.388,
+        "end": 8.736,
+        "text": "The baseline sends raw feature scales into five-nearest neighbors."
+      },
+      {
+        "start": 8.736,
+        "end": 13.255,
+        "text": "The contender inserts one Standard Scaler before the same classifier."
+      },
+      {
+        "start": 13.65,
+        "end": 24.303,
+        "text": "Everything else stays fixed: the same 342 complete penguins, the same 5 stratified folds, the same five neighbors, and the same accuracy function."
+      },
+      {
+        "start": 24.682,
+        "end": 27.249,
+        "text": "The fold shuffle seed is 15."
+      },
+      {
+        "start": 27.249,
+        "end": 31.806,
+        "text": "More importantly, the scaler is fitted inside each training fold."
+      },
+      {
+        "start": 31.806,
+        "end": 36.363,
+        "text": "Fitting it once on all rows before validation would leak information."
+      },
+      {
+        "start": 36.77,
+        "end": 40.756,
+        "text": "Now the audience can circle the single intended change."
+      },
+      {
+        "start": 40.756,
+        "end": 48.998,
+        "text": "If your own method slide cannot support that gesture, either redraw the comparison or admit that you ran a broader system comparison."
+      }
+    ],
+    "bytes": 785806,
+    "source": "authored-video-script"
+  },
+  "quiz-fair-test": {
+    "hash": "b305cda28409402c",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Quick check two. The candidate uses a new feature set and a new train-test split; the baseline uses the old features and old split. The candidate wins. What can the presenter defend? Option A: the new features caused the gain. Option B: the candidate is universally better. Option C: only that the two completed runs differ; the cause is confounded. Option D: the split never matters when the metric is identical. Option C. Only the two completed runs are known to differ; the cause is confounded because both the features and the evaluation rows changed. Exactly. Re-run the contenders on the same saved protocol before attributing the difference to the new features.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.315,
+        "text": "Quick check two."
+      },
+      {
+        "start": 1.315,
+        "end": 8.763,
+        "text": "The candidate uses a new feature set and a new train-test split; the baseline uses the old features and old split."
+      },
+      {
+        "start": 8.763,
+        "end": 10.429,
+        "text": "The candidate wins."
+      },
+      {
+        "start": 10.429,
+        "end": 12.395,
+        "text": "What can the presenter defend?"
+      },
+      {
+        "start": 12.395,
+        "end": 15.82,
+        "text": "Option A: the new features caused the gain."
+      },
+      {
+        "start": 15.82,
+        "end": 19.531,
+        "text": "Option B: the candidate is universally better."
+      },
+      {
+        "start": 19.531,
+        "end": 25.338,
+        "text": "Option C: only that the two completed runs differ; the cause is confounded."
+      },
+      {
+        "start": 25.338,
+        "end": 30.091,
+        "text": "Option D: the split never matters when the metric is identical."
+      },
+      {
+        "start": 30.548,
+        "end": 32.323,
+        "text": "Option C."
+      },
+      {
+        "start": 32.273,
+        "end": 39.823,
+        "text": "Only the two completed runs are known to differ; the cause is confounded because both the features and the evaluation rows changed."
+      },
+      {
+        "start": 40.21,
+        "end": 41.214,
+        "text": "Exactly."
+      },
+      {
+        "start": 41.214,
+        "end": 47.139,
+        "text": "Re-run the contenders on the same saved protocol before attributing the difference to the new features."
+      }
+    ],
+    "bytes": 756131,
+    "source": "authored-video-script"
+  },
+  "slide-results": {
+    "hash": "35044b28c919d994",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Here is the focal result. Across the same five folds, raw five-nearest neighbors averaged 79.5 percent accuracy, while the scaled pipeline averaged 98.5 percent. The observed difference is 19.0 percentage points. The bars begin at zero, use the same scale, and place baseline and contender next to each other. The fold chips remain visible because the mean is not the whole receipt. They show that the comparison was repeated rather than chosen from one convenient split. The reading sentence stops at the tested protocol: scaled five-nearest neighbors averaged higher accuracy on these Palmer Penguins folds. It does not yet explain the mechanism or promise the same gain elsewhere. For your own slide, use one chart, table, confusion matrix, or example that directly supports the claim. Keep failed or weak runs visible and move secondary receipts to the linked notebook.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.304,
+        "text": "Here is the focal result."
+      },
+      {
+        "start": 2.304,
+        "end": 13.151,
+        "text": "Across the same five folds, raw five-nearest neighbors averaged 79.5 percent accuracy, while the scaled pipeline averaged 98.5 percent."
+      },
+      {
+        "start": 13.554,
+        "end": 17.618,
+        "text": "The observed difference is 19.0 percentage points."
+      },
+      {
+        "start": 17.618,
+        "end": 24.233,
+        "text": "The bars begin at zero, use the same scale, and place baseline and contender next to each other."
+      },
+      {
+        "start": 24.634,
+        "end": 28.841,
+        "text": "The fold chips remain visible because the mean is not the whole receipt."
+      },
+      {
+        "start": 28.841,
+        "end": 34.258,
+        "text": "They show that the comparison was repeated rather than chosen from one convenient split."
+      },
+      {
+        "start": 34.658,
+        "end": 43.058,
+        "text": "The reading sentence stops at the tested protocol: scaled five-nearest neighbors averaged higher accuracy on these Palmer Penguins folds."
+      },
+      {
+        "start": 43.058,
+        "end": 47.446,
+        "text": "It does not yet explain the mechanism or promise the same gain elsewhere."
+      },
+      {
+        "start": 47.85,
+        "end": 55.43,
+        "text": "For your own slide, use one chart, table, confusion matrix, or example that directly supports the claim."
+      },
+      {
+        "start": 55.43,
+        "end": 60.833,
+        "text": "Keep failed or weak runs visible and move secondary receipts to the linked notebook."
+      }
+    ],
+    "bytes": 975559,
+    "source": "authored-video-script"
+  },
+  "quiz-honest-headline": {
+    "hash": "9771bfc76344db3b",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Quick check three. A candidate catches more positives but also creates more false alarms than the baseline. Which headline is honest? Option A: the candidate is simply more accurate. Option B: the candidate solves the task. Option C: the candidate trades precision for recall; whether that helps depends on the stated error costs. Option D: hide precision because recall was the chosen metric. Option C. It names the precision-recall trade-off and leaves the decision tied to the error costs. Correct. A headline should not erase the metric that became inconvenient. State who bears each kind of error and use the cost rule chosen before results.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.419,
+        "text": "Quick check three."
+      },
+      {
+        "start": 1.419,
+        "end": 6.861,
+        "text": "A candidate catches more positives but also creates more false alarms than the baseline."
+      },
+      {
+        "start": 6.861,
+        "end": 8.658,
+        "text": "Which headline is honest?"
+      },
+      {
+        "start": 8.658,
+        "end": 12.421,
+        "text": "Option A: the candidate is simply more accurate."
+      },
+      {
+        "start": 12.421,
+        "end": 15.611,
+        "text": "Option B: the candidate solves the task."
+      },
+      {
+        "start": 15.611,
+        "end": 22.578,
+        "text": "Option C: the candidate trades precision for recall; whether that helps depends on the stated error costs."
+      },
+      {
+        "start": 22.578,
+        "end": 27.447,
+        "text": "Option D: hide precision because recall was the chosen metric."
+      },
+      {
+        "start": 27.908,
+        "end": 29.704,
+        "text": "Option C."
+      },
+      {
+        "start": 29.654,
+        "end": 34.739,
+        "text": "It names the precision-recall trade-off and leaves the decision tied to the error costs."
+      },
+      {
+        "start": 35.074,
+        "end": 35.961,
+        "text": "Correct."
+      },
+      {
+        "start": 35.961,
+        "end": 40.154,
+        "text": "A headline should not erase the metric that became inconvenient."
+      },
+      {
+        "start": 40.154,
+        "end": 45.596,
+        "text": "State who bears each kind of error and use the cost rule chosen before results."
+      }
+    ],
+    "bytes": 731471,
+    "source": "authored-video-script"
+  },
+  "slide-conclusion-limits": {
+    "hash": "5542c2bd51f5bc17",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Now separate three sentences. Conclusion: on these fixed Palmer Penguins folds, scaled five-nearest neighbors averaged higher accuracy than the raw-feature baseline. Boundary: one dataset, one neighbor setting, and one fold assignment do not establish a universal benefit from scaling. Next test: repeat the frozen comparison across other datasets, neighbor values, and fold seeds. That action targets the boundary instead of merely decorating the result. A limitation is not an apology. It tells the audience exactly where not to carry the result. Avoid proves, always, safe, unbiased, or ready unless the design truly tested those properties.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.643,
+        "text": "Now separate three sentences."
+      },
+      {
+        "start": 2.643,
+        "end": 11.484,
+        "text": "Conclusion: on these fixed Palmer Penguins folds, scaled five-nearest neighbors averaged higher accuracy than the raw-feature baseline."
+      },
+      {
+        "start": 11.874,
+        "end": 20.131,
+        "text": "Boundary: one dataset, one neighbor setting, and one fold assignment do not establish a universal benefit from scaling."
+      },
+      {
+        "start": 20.53,
+        "end": 27.368,
+        "text": "Next test: repeat the frozen comparison across other datasets, neighbor values, and fold seeds."
+      },
+      {
+        "start": 27.368,
+        "end": 32.068,
+        "text": "That action targets the boundary instead of merely decorating the result."
+      },
+      {
+        "start": 32.45,
+        "end": 35.186,
+        "text": "A limitation is not an apology."
+      },
+      {
+        "start": 35.186,
+        "end": 39.196,
+        "text": "It tells the audience exactly where not to carry the result."
+      },
+      {
+        "start": 39.196,
+        "end": 47.543,
+        "text": "Avoid proves, always, safe, unbiased, or ready unless the design truly tested those properties."
+      }
+    ],
+    "bytes": 762818,
+    "source": "authored-video-script"
+  },
+  "slide-repro-ai": {
+    "hash": "57e554dc4a1dfa0a",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Finish the example with a compact receipt, not a screenshot of a full program. It names the pinned Palmer Penguins CSV and complete-case rule, five stratified folds, seed fifteen, five neighbors, and accuracy. It also names the exact change: Standard Scaler fitted inside each training fold. That one line is both a reproduction instruction and a leakage defense. The environment line records scikit-learn version 1.9.0. A repository version, environment file, data identity, and saved output path can complete the route. An honest AI-use example would say: AI helped draft the slide wording; I reran the code and checked every displayed value against saved output. The verification action matters more than the tool logo. When the teacher asks where one number came from, point to a file, cell, query, or calculation. If you cannot, the number is not ready for the slide.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.091,
+        "text": "Finish the example with a compact receipt, not a screenshot of a full program."
+      },
+      {
+        "start": 5.091,
+        "end": 14.518,
+        "text": "It names the pinned Palmer Penguins CSV and complete-case rule, five stratified folds, seed fifteen, five neighbors, and accuracy."
+      },
+      {
+        "start": 14.922,
+        "end": 20.666,
+        "text": "It also names the exact change: Standard Scaler fitted inside each training fold."
+      },
+      {
+        "start": 20.666,
+        "end": 25.757,
+        "text": "That one line is both a reproduction instruction and a leakage defense."
+      },
+      {
+        "start": 26.146,
+        "end": 31.03,
+        "text": "The environment line records scikit-learn version 1.9.0."
+      },
+      {
+        "start": 31.03,
+        "end": 37.814,
+        "text": "A repository version, environment file, data identity, and saved output path can complete the route."
+      },
+      {
+        "start": 38.21,
+        "end": 48.042,
+        "text": "An honest AI-use example would say: AI helped draft the slide wording; I reran the code and checked every displayed value against saved output."
+      },
+      {
+        "start": 48.042,
+        "end": 51.936,
+        "text": "The verification action matters more than the tool logo."
+      },
+      {
+        "start": 52.338,
+        "end": 59.527,
+        "text": "When the teacher asks where one number came from, point to a file, cell, query, or calculation."
+      },
+      {
+        "start": 59.527,
+        "end": 62.795,
+        "text": "If you cannot, the number is not ready for the slide."
+      }
+    ],
+    "bytes": 1006488,
+    "source": "authored-video-script"
+  },
+  "paper-map": {
+    "hash": "51a84f7ff2955764",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "The six-slide deck is a compressed research paper. The question and data become introduction and data sections; the fair comparison becomes methods. The focal visual becomes results. The bounded conclusion, limitations, reproducibility, and next test become discussion and reproducibility notes. Compression does not mean deletion. Details leave the spoken path but remain in the notebook, appendix, or one-page experiment record for audit. After the showcase, the same map helps you expand the work: each spoken claim becomes a paragraph, each visual gets a caption, and each defense answer suggests a discussion point.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.19,
+        "text": "The six-slide deck is a compressed research paper."
+      },
+      {
+        "start": 3.19,
+        "end": 9.869,
+        "text": "The question and data become introduction and data sections; the fair comparison becomes methods."
+      },
+      {
+        "start": 10.266,
+        "end": 12.716,
+        "text": "The focal visual becomes results."
+      },
+      {
+        "start": 12.716,
+        "end": 20.02,
+        "text": "The bounded conclusion, limitations, reproducibility, and next test become discussion and reproducibility notes."
+      },
+      {
+        "start": 20.41,
+        "end": 22.794,
+        "text": "Compression does not mean deletion."
+      },
+      {
+        "start": 22.794,
+        "end": 30.555,
+        "text": "Details leave the spoken path but remain in the notebook, appendix, or one-page experiment record for audit."
+      },
+      {
+        "start": 30.938,
+        "end": 43.609,
+        "text": "After the showcase, the same map helps you expand the work: each spoken claim becomes a paragraph, each visual gets a caption, and each defense answer suggests a discussion point."
+      }
+    ],
+    "bytes": 700124,
+    "source": "authored-video-script"
+  },
+  "model-three-minute-talk": {
+    "hash": "331519234d14e7cb",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Let us model the shape of a short talk with a fictional example. No dataset, score, or outcome here belongs to a real study. The presenter says: we asked whether a single preprocessing change affected a pre-chosen metric on a named teaching dataset, while keeping the split and model settings fixed. Then: the visual shows baseline and contender under the same evaluation. The comparison supports a bounded change in this setting, not a claim about new populations. Finally: the main uncertainty is external validity, so the next test repeats the frozen protocol on a separately sourced dataset. Notice the structure, not imaginary numbers. The fictional presenter spends little time naming libraries. They spend time on why the comparison is fair, what the visual establishes, and where the evidence stops. Their last sentence returns to the original question. This closes the story without claiming that an unrun next test already succeeded.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.893,
+        "text": "Let us model the shape of a short talk with a fictional example."
+      },
+      {
+        "start": 3.893,
+        "end": 9.036,
+        "text": "No dataset, score, or outcome here belongs to a real study."
+      },
+      {
+        "start": 9.426,
+        "end": 20.417,
+        "text": "The presenter says: we asked whether a single preprocessing change affected a pre-chosen metric on a named teaching dataset, while keeping the split and model settings fixed."
+      },
+      {
+        "start": 20.818,
+        "end": 26.119,
+        "text": "Then: the visual shows baseline and contender under the same evaluation."
+      },
+      {
+        "start": 26.119,
+        "end": 31.796,
+        "text": "The comparison supports a bounded change in this setting, not a claim about new populations."
+      },
+      {
+        "start": 32.186,
+        "end": 40.365,
+        "text": "Finally: the main uncertainty is external validity, so the next test repeats the frozen protocol on a separately sourced dataset."
+      },
+      {
+        "start": 40.365,
+        "end": 43.828,
+        "text": "Notice the structure, not imaginary numbers."
+      },
+      {
+        "start": 44.226,
+        "end": 48.095,
+        "text": "The fictional presenter spends little time naming libraries."
+      },
+      {
+        "start": 48.095,
+        "end": 54.631,
+        "text": "They spend time on why the comparison is fair, what the visual establishes, and where the evidence stops."
+      },
+      {
+        "start": 55.018,
+        "end": 58.145,
+        "text": "Their last sentence returns to the original question."
+      },
+      {
+        "start": 58.145,
+        "end": 63.535,
+        "text": "This closes the story without claiming that an unrun next test already succeeded."
+      }
+    ],
+    "bytes": 1018609,
+    "source": "authored-video-script"
+  },
+  "qa-answer-structure": {
+    "hash": "c09dd8b8a58ba098",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "For a defense answer, use four moves: answer the question directly, point to evidence, name the boundary, and propose the next test when needed. A concise answer can begin, yes under this protocol, because the paired comparison shows the stated pattern. Then add, we have not tested it outside this dataset. If the premise is wrong, correct it politely. If the question needs a new analysis, do not improvise a result. Define the analysis you would run. Two minutes is enough for two focused answers when the first sentence is the answer rather than a tour through your whole notebook. For a follow-up, connect back to the visible evidence: this chart answers the within-dataset comparison, while the question asks about a new population. That contrast makes the boundary concrete.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 9.908,
+        "text": "For a defense answer, use four moves: answer the question directly, point to evidence, name the boundary, and propose the next test when needed."
+      },
+      {
+        "start": 10.29,
+        "end": 17.323,
+        "text": "A concise answer can begin, yes under this protocol, because the paired comparison shows the stated pattern."
+      },
+      {
+        "start": 17.323,
+        "end": 21.555,
+        "text": "Then add, we have not tested it outside this dataset."
+      },
+      {
+        "start": 21.946,
+        "end": 25.086,
+        "text": "If the premise is wrong, correct it politely."
+      },
+      {
+        "start": 25.086,
+        "end": 29.539,
+        "text": "If the question needs a new analysis, do not improvise a result."
+      },
+      {
+        "start": 29.539,
+        "end": 31.817,
+        "text": "Define the analysis you would run."
+      },
+      {
+        "start": 32.21,
+        "end": 39.269,
+        "text": "Two minutes is enough for two focused answers when the first sentence is the answer rather than a tour through your whole notebook."
+      },
+      {
+        "start": 39.666,
+        "end": 49.277,
+        "text": "For a follow-up, connect back to the visible evidence: this chart answers the within-dataset comparison, while the question asks about a new population."
+      },
+      {
+        "start": 49.277,
+        "end": 52.558,
+        "text": "That contrast makes the boundary concrete."
+      }
+    ],
+    "bytes": 843066,
+    "source": "authored-video-script"
+  },
+  "quiz-unknown-answer": {
+    "hash": "acf0631f6308f0f1",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Quick check four. A teacher asks whether the result holds for a subgroup the project never analyzed. What is the strongest response? Option A: yes, because the overall score was good. Option B: probably, then change the subject. Option C: I do not know from this study; I would predefine the subgroup test and evaluate it without reusing the final test set. Option D: delete that subgroup from the dataset. Option C. It says the study cannot answer the subgroup question and proposes a valid test without reusing the final test set. Correct. Ownership includes knowing where the evidence ends. State the boundary and a valid next test instead of improvising certainty.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.458,
+        "text": "Quick check four."
+      },
+      {
+        "start": 1.458,
+        "end": 7.031,
+        "text": "A teacher asks whether the result holds for a subgroup the project never analyzed."
+      },
+      {
+        "start": 7.031,
+        "end": 9.231,
+        "text": "What is the strongest response?"
+      },
+      {
+        "start": 9.231,
+        "end": 13.151,
+        "text": "Option A: yes, because the overall score was good."
+      },
+      {
+        "start": 13.151,
+        "end": 16.927,
+        "text": "Option B: probably, then change the subject."
+      },
+      {
+        "start": 16.927,
+        "end": 25.781,
+        "text": "Option C: I do not know from this study; I would predefine the subgroup test and evaluate it without reusing the final test set."
+      },
+      {
+        "start": 25.781,
+        "end": 29.427,
+        "text": "Option D: delete that subgroup from the dataset."
+      },
+      {
+        "start": 29.876,
+        "end": 31.651,
+        "text": "Option C."
+      },
+      {
+        "start": 31.601,
+        "end": 38.276,
+        "text": "It says the study cannot answer the subgroup question and proposes a valid test without reusing the final test set."
+      },
+      {
+        "start": 38.674,
+        "end": 39.535,
+        "text": "Correct."
+      },
+      {
+        "start": 39.535,
+        "end": 42.855,
+        "text": "Ownership includes knowing where the evidence ends."
+      },
+      {
+        "start": 42.855,
+        "end": 48.064,
+        "text": "State the boundary and a valid next test instead of improvising certainty."
+      }
+    ],
+    "bytes": 771177,
+    "source": "authored-video-script"
+  },
+  "teacher-question-bank": {
+    "hash": "30245318ef22ec71",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Every presenter should expect at least one Class Fourteen validity question. For example: what was the baseline, what changed, and were the same rows or folds used? The teacher may ask about leakage, metric choice, threshold, uncertainty, or an error pattern. Keep the experiment receipt ready. Expect a second question about interpretation or reproducibility: what does this not prove, what would change your mind, and could another person rerun the comparison? Prepare categories, not memorized speeches. Listen to the exact question, answer it, and use the next-test move when evidence ends. Validity questions inspect whether the comparison deserves belief. Interpretation questions inspect what that comparison means. Reproducibility questions inspect whether the evidence path can be rebuilt.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.609,
+        "text": "Every presenter should expect at least one Class Fourteen validity question."
+      },
+      {
+        "start": 4.609,
+        "end": 10.95,
+        "text": "For example: what was the baseline, what changed, and were the same rows or folds used?"
+      },
+      {
+        "start": 11.346,
+        "end": 18.366,
+        "text": "The teacher may ask about leakage, metric choice, threshold, uncertainty, or an error pattern."
+      },
+      {
+        "start": 18.366,
+        "end": 20.605,
+        "text": "Keep the experiment receipt ready."
+      },
+      {
+        "start": 21.01,
+        "end": 30.621,
+        "text": "Expect a second question about interpretation or reproducibility: what does this not prove, what would change your mind, and could another person rerun the comparison?"
+      },
+      {
+        "start": 31.01,
+        "end": 34.41,
+        "text": "Prepare categories, not memorized speeches."
+      },
+      {
+        "start": 34.41,
+        "end": 40.582,
+        "text": "Listen to the exact question, answer it, and use the next-test move when evidence ends."
+      },
+      {
+        "start": 40.986,
+        "end": 45.115,
+        "text": "Validity questions inspect whether the comparison deserves belief."
+      },
+      {
+        "start": 45.115,
+        "end": 49.087,
+        "text": "Interpretation questions inspect what that comparison means."
+      },
+      {
+        "start": 49.087,
+        "end": 53.852,
+        "text": "Reproducibility questions inspect whether the evidence path can be rebuilt."
+      }
+    ],
+    "bytes": 863546,
+    "source": "authored-video-script"
+  },
+  "peer-listener-card": {
+    "hash": "7dcd413655de7509",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Peers use a three-part listener card. Glow identifies one evidence choice that made the claim clearer. Grow names one specific place where validity, interpretation, or delivery could improve. It should describe an action, not a personality. Next test proposes one experiment that would reduce the most important uncertainty. Complete the card after the slot so the talk is not interrupted. For example, a Glow might praise the shared-fold diagram. A Grow might request a clearer population boundary. A Next test might repeat the protocol on separately collected data.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.656,
+        "text": "Peers use a three-part listener card."
+      },
+      {
+        "start": 2.656,
+        "end": 6.731,
+        "text": "Glow identifies one evidence choice that made the claim clearer."
+      },
+      {
+        "start": 7.122,
+        "end": 13.569,
+        "text": "Grow names one specific place where validity, interpretation, or delivery could improve."
+      },
+      {
+        "start": 13.569,
+        "end": 16.954,
+        "text": "It should describe an action, not a personality."
+      },
+      {
+        "start": 17.362,
+        "end": 22.585,
+        "text": "Next test proposes one experiment that would reduce the most important uncertainty."
+      },
+      {
+        "start": 22.585,
+        "end": 26.739,
+        "text": "Complete the card after the slot so the talk is not interrupted."
+      },
+      {
+        "start": 27.122,
+        "end": 31.486,
+        "text": "For example, a Glow might praise the shared-fold diagram."
+      },
+      {
+        "start": 31.486,
+        "end": 34.819,
+        "text": "A Grow might request a clearer population boundary."
+      },
+      {
+        "start": 34.819,
+        "end": 39.272,
+        "text": "A Next test might repeat the protocol on separately collected data."
+      }
+    ],
+    "bytes": 630325,
+    "source": "authored-video-script"
+  },
+  "showcase-rubric": {
+    "hash": "6b51843a9a164cd9",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "The rubric totals one hundred points and matches the Class Fourteen evidence contract. Question and bounded claim are fifteen. Data are ten. Experiment fairness is twenty, and results plus uncertainty are twenty. Interpretation and limits are fifteen. Reproducibility plus AI disclosure are ten. Slides and timing are five, and question-and-answer is five. The sum is one hundred. Notice the weighting: polished speaking cannot rescue an unfair comparison, while honest limitations earn credit rather than weaken the work. Use the rubric before rehearsal. If the deck spends four slides on background and one on evidence, the allocation is warning you to rebalance the story.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.572,
+        "text": "The rubric totals one hundred points and matches the Class Fourteen evidence contract."
+      },
+      {
+        "start": 5.97,
+        "end": 9.084,
+        "text": "Question and bounded claim are fifteen."
+      },
+      {
+        "start": 9.084,
+        "end": 10.633,
+        "text": "Data are ten."
+      },
+      {
+        "start": 10.633,
+        "end": 16.063,
+        "text": "Experiment fairness is twenty, and results plus uncertainty are twenty."
+      },
+      {
+        "start": 16.45,
+        "end": 19.381,
+        "text": "Interpretation and limits are fifteen."
+      },
+      {
+        "start": 19.381,
+        "end": 23.391,
+        "text": "Reproducibility plus AI disclosure are ten."
+      },
+      {
+        "start": 23.391,
+        "end": 27.754,
+        "text": "Slides and timing are five, and question-and-answer is five."
+      },
+      {
+        "start": 27.754,
+        "end": 29.798,
+        "text": "The sum is one hundred."
+      },
+      {
+        "start": 30.194,
+        "end": 39.675,
+        "text": "Notice the weighting: polished speaking cannot rescue an unfair comparison, while honest limitations earn credit rather than weaken the work."
+      },
+      {
+        "start": 40.074,
+        "end": 42.315,
+        "text": "Use the rubric before rehearsal."
+      },
+      {
+        "start": 42.315,
+        "end": 49.594,
+        "text": "If the deck spends four slides on background and one on evidence, the allocation is warning you to rebalance the story."
+      }
+    ],
+    "bytes": 795419,
+    "source": "authored-video-script"
+  },
+  "presenter-preflight": {
+    "hash": "ee65330674ee6389",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Before class, open the deck on the device you will use. Verify fonts, charts, links, presenter view, and offline backup. Check that every chart label can be read from the back of the room and every result traces to the submitted receipt. Rehearse once at normal pace, once with a deliberate interruption, and once starting from your result slide. That prepares you for real questions without scripting every breath. Bring a PDF backup and a local copy. Remove notifications, close unrelated tabs, and never expose credentials, private data, or student information on the projector.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.023,
+        "text": "Before class, open the deck on the device you will use."
+      },
+      {
+        "start": 4.023,
+        "end": 9.453,
+        "text": "Verify fonts, charts, links, presenter view, and offline backup."
+      },
+      {
+        "start": 9.834,
+        "end": 17.075,
+        "text": "Check that every chart label can be read from the back of the room and every result traces to the submitted receipt."
+      },
+      {
+        "start": 17.458,
+        "end": 24.243,
+        "text": "Rehearse once at normal pace, once with a deliberate interruption, and once starting from your result slide."
+      },
+      {
+        "start": 24.243,
+        "end": 28.436,
+        "text": "That prepares you for real questions without scripting every breath."
+      },
+      {
+        "start": 28.826,
+        "end": 31.64,
+        "text": "Bring a PDF backup and a local copy."
+      },
+      {
+        "start": 31.64,
+        "end": 40.768,
+        "text": "Remove notifications, close unrelated tabs, and never expose credentials, private data, or student information on the projector."
+      }
+    ],
+    "bytes": 654149,
+    "source": "authored-video-script"
+  },
+  "presenter-timer": {
+    "hash": "6b927be57df34f4c",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Aim to finish the prepared talk at four minutes thirty seconds. The hard stop is five minutes. Use the first minute for question and data, the middle for method and result, and the final minute for conclusion, limitation, and next test. If rehearsal runs long, remove detail from the spoken path. Do not accelerate until the evidence becomes unintelligible. Mark a four-minute cue in your notes. At that cue, move to the bounded conclusion even if an earlier explanation was imperfect. The hard stop protects every presenter.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.958,
+        "text": "Aim to finish the prepared talk at four minutes thirty seconds."
+      },
+      {
+        "start": 3.958,
+        "end": 6.289,
+        "text": "The hard stop is five minutes."
+      },
+      {
+        "start": 6.69,
+        "end": 15.298,
+        "text": "Use the first minute for question and data, the middle for method and result, and the final minute for conclusion, limitation, and next test."
+      },
+      {
+        "start": 15.682,
+        "end": 20.098,
+        "text": "If rehearsal runs long, remove detail from the spoken path."
+      },
+      {
+        "start": 20.098,
+        "end": 24.134,
+        "text": "Do not accelerate until the evidence becomes unintelligible."
+      },
+      {
+        "start": 24.53,
+        "end": 26.927,
+        "text": "Mark a four-minute cue in your notes."
+      },
+      {
+        "start": 26.927,
+        "end": 33.008,
+        "text": "At that cue, move to the bounded conclusion even if an earlier explanation was imperfect."
+      },
+      {
+        "start": 33.008,
+        "end": 35.703,
+        "text": "The hard stop protects every presenter."
+      }
+    ],
+    "bytes": 573065,
+    "source": "authored-video-script"
+  },
+  "qa-timer": {
+    "hash": "c7ca00fa457e108e",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "The next two minutes belong to teacher questions. The required pair is one validity question and one interpretation or reproducibility question. Answer the first sentence in roughly ten seconds, use evidence for the next twenty or thirty, and stop when the boundary is clear. The final minute is transition: save feedback, close files, and let the next presenter connect without losing their time. Questions belong after the five-minute talk, not inside it. That separation keeps the presenter in control of the story and still preserves a real defense.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.89,
+        "text": "The next two minutes belong to teacher questions."
+      },
+      {
+        "start": 2.89,
+        "end": 9.309,
+        "text": "The required pair is one validity question and one interpretation or reproducibility question."
+      },
+      {
+        "start": 9.714,
+        "end": 17.971,
+        "text": "Answer the first sentence in roughly ten seconds, use evidence for the next twenty or thirty, and stop when the boundary is clear."
+      },
+      {
+        "start": 18.37,
+        "end": 26.34,
+        "text": "The final minute is transition: save feedback, close files, and let the next presenter connect without losing their time."
+      },
+      {
+        "start": 26.738,
+        "end": 30.828,
+        "text": "Questions belong after the five-minute talk, not inside it."
+      },
+      {
+        "start": 30.828,
+        "end": 36.922,
+        "text": "That separation keeps the presenter in control of the story and still preserves a real defense."
+      }
+    ],
+    "bytes": 592709,
+    "source": "authored-video-script"
+  },
+  "feedback-capture": {
+    "hash": "87ad8aecd1b180d3",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "After presenting, capture the teacher's questions and the peer Glow, Grow, and Next test. Do not edit the claim while adrenaline is still answering for you. Sort feedback into clarification, analysis, evidence gap, and future work. A wording fix is different from a new experiment. Record which change you will make, which evidence supports it, and which suggestions you are deferring. That decision log keeps revision reproducible. Never change a result just because an audience expected a different one. Revise the explanation, inspect the protocol, or run a declared new analysis and preserve both receipts.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.445,
+        "text": "After presenting, capture the teacher's questions and the peer Glow, Grow, and Next test."
+      },
+      {
+        "start": 6.445,
+        "end": 10.351,
+        "text": "Do not edit the claim while adrenaline is still answering for you."
+      },
+      {
+        "start": 10.746,
+        "end": 16.099,
+        "text": "Sort feedback into clarification, analysis, evidence gap, and future work."
+      },
+      {
+        "start": 16.099,
+        "end": 19.276,
+        "text": "A wording fix is different from a new experiment."
+      },
+      {
+        "start": 19.666,
+        "end": 25.461,
+        "text": "Record which change you will make, which evidence supports it, and which suggestions you are deferring."
+      },
+      {
+        "start": 25.461,
+        "end": 28.626,
+        "text": "That decision log keeps revision reproducible."
+      },
+      {
+        "start": 29.018,
+        "end": 33.369,
+        "text": "Never change a result just because an audience expected a different one."
+      },
+      {
+        "start": 33.369,
+        "end": 41.09,
+        "text": "Revise the explanation, inspect the protocol, or run a declared new analysis and preserve both receipts."
+      }
+    ],
+    "bytes": 659582,
+    "source": "authored-video-script"
+  },
+  "portfolio-bridge": {
+    "hash": "bae1ebb5dd927730",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "The defense closes the classroom loop, but it does not have to bury the work inside a submission folder. The same evidence can start a future conversation. A portfolio is not a trophy shelf. It is a short route from what did you do to evidence another person can inspect. Your notebook, focal chart, deck, and report already exist. The new task is curation: turn them into one project story, one stable page, and one resume-ready link. This is why portfolio building belongs in the final class rather than as unrelated career advice. It converts the course's tangible results into a durable outcome.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.015,
+        "text": "The defense closes the classroom loop, but it does not have to bury the work inside a submission folder."
+      },
+      {
+        "start": 6.015,
+        "end": 9.414,
+        "text": "The same evidence can start a future conversation."
+      },
+      {
+        "start": 9.81,
+        "end": 12.741,
+        "text": "A portfolio is not a trophy shelf."
+      },
+      {
+        "start": 12.741,
+        "end": 17.207,
+        "text": "It is a short route from what did you do to evidence another person can inspect."
+      },
+      {
+        "start": 17.602,
+        "end": 22.239,
+        "text": "Your notebook, focal chart, deck, and report already exist."
+      },
+      {
+        "start": 22.239,
+        "end": 29.674,
+        "text": "The new task is curation: turn them into one project story, one stable page, and one resume-ready link."
+      },
+      {
+        "start": 30.074,
+        "end": 36.833,
+        "text": "This is why portfolio building belongs in the final class rather than as unrelated career advice."
+      },
+      {
+        "start": 36.833,
+        "end": 41.0,
+        "text": "It converts the course's tangible results into a durable outcome."
+      }
+    ],
+    "bytes": 657910,
+    "source": "authored-video-script"
+  },
+  "portfolio-audience": {
+    "hash": "d7ff0a64fac86c71",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Design backward from a busy reviewer. In ten seconds, they should know your direction, your best project, and the strongest evidence. Cover your name and look only at headings. Could a stranger still say what problem you studied, what you personally did, and why the result deserves attention? Pause for forty-five seconds. Write the three things you want a teacher, mentor, admissions reader, or internship reviewer to remember.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.513,
+        "text": "Design backward from a busy reviewer."
+      },
+      {
+        "start": 2.513,
+        "end": 8.528,
+        "text": "In ten seconds, they should know your direction, your best project, and the strongest evidence."
+      },
+      {
+        "start": 8.922,
+        "end": 11.944,
+        "text": "Cover your name and look only at headings."
+      },
+      {
+        "start": 11.944,
+        "end": 18.676,
+        "text": "Could a stranger still say what problem you studied, what you personally did, and why the result deserves attention?"
+      },
+      {
+        "start": 19.066,
+        "end": 21.476,
+        "text": "Pause for forty-five seconds."
+      },
+      {
+        "start": 21.476,
+        "end": 27.779,
+        "text": "Write the three things you want a teacher, mentor, admissions reader, or internship reviewer to remember."
+      }
+    ],
+    "bytes": 446841,
+    "source": "authored-video-script"
+  },
+  "portfolio-platform": {
+    "hash": "f6d95be495f77b79",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Now choose a container. The fastest no-code lane is a simple page in Google Sites, Notion, or Canva. It is a good choice when the immediate goal is a working link. The code-forward lane is GitHub Pages. It makes the page and the repository part of the same evidence path, and the course launchpad can export one standalone HTML file. The private lane is a PDF or access-controlled page. Use it when age, program policy, licensing, team permission, or data sensitivity makes public sharing inappropriate. Platform choice is not the achievement. A clear project card on a plain page is stronger than an elaborate website with no claim, no boundary, and no receipts.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.809,
+        "text": "Now choose a container."
+      },
+      {
+        "start": 1.809,
+        "end": 7.369,
+        "text": "The fastest no-code lane is a simple page in Google Sites, Notion, or Canva."
+      },
+      {
+        "start": 7.369,
+        "end": 10.963,
+        "text": "It is a good choice when the immediate goal is a working link."
+      },
+      {
+        "start": 11.37,
+        "end": 14.145,
+        "text": "The code-forward lane is GitHub Pages."
+      },
+      {
+        "start": 14.145,
+        "end": 23.129,
+        "text": "It makes the page and the repository part of the same evidence path, and the course launchpad can export one standalone HTML file."
+      },
+      {
+        "start": 23.53,
+        "end": 27.373,
+        "text": "The private lane is a PDF or access-controlled page."
+      },
+      {
+        "start": 27.373,
+        "end": 36.123,
+        "text": "Use it when age, program policy, licensing, team permission, or data sensitivity makes public sharing inappropriate."
+      },
+      {
+        "start": 36.53,
+        "end": 39.37,
+        "text": "Platform choice is not the achievement."
+      },
+      {
+        "start": 39.37,
+        "end": 47.73,
+        "text": "A clear project card on a plain page is stronger than an elaborate website with no claim, no boundary, and no receipts."
+      }
+    ],
+    "bytes": 765744,
+    "source": "authored-video-script"
+  },
+  "portfolio-architecture": {
+    "hash": "df38e1fcb4c97703",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "A strong one-page portfolio supports four reading depths. At the top, a ten-second reader sees a professional display name or approved alias, one-line focus, and featured project. In thirty seconds, the project card answers question, role, method, evidence, and limitation. In two minutes, the evidence section opens the chart, repository or notebook, and short report. At the end, a next-test sentence shows where the inquiry goes next, and a safe contact or application route tells the intended reader what to do. Do not force the reader to excavate a repository to discover the research question. The page explains the path; the repository verifies it.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.192,
+        "text": "A strong one-page portfolio supports four reading depths."
+      },
+      {
+        "start": 4.192,
+        "end": 12.343,
+        "text": "At the top, a ten-second reader sees a professional display name or approved alias, one-line focus, and featured project."
+      },
+      {
+        "start": 12.738,
+        "end": 20.122,
+        "text": "In thirty seconds, the project card answers question, role, method, evidence, and limitation."
+      },
+      {
+        "start": 20.122,
+        "end": 26.724,
+        "text": "In two minutes, the evidence section opens the chart, repository or notebook, and short report."
+      },
+      {
+        "start": 27.13,
+        "end": 36.676,
+        "text": "At the end, a next-test sentence shows where the inquiry goes next, and a safe contact or application route tells the intended reader what to do."
+      },
+      {
+        "start": 37.058,
+        "end": 42.307,
+        "text": "Do not force the reader to excavate a repository to discover the research question."
+      },
+      {
+        "start": 42.307,
+        "end": 46.617,
+        "text": "The page explains the path; the repository verifies it."
+      }
+    ],
+    "bytes": 747772,
+    "source": "authored-video-script"
+  },
+  "artifact-inventory": {
+    "hash": "991f0934c088abf7",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Curate three artifacts that prove different skills. Choose one focal visual, one reproducible artifact, and one communication artifact. The focal visual proves you can find and explain a pattern. The notebook, code, or experiment record proves the result can be inspected. The deck or report proves you can communicate the reasoning. Open page three of the worksheet, or a blank note. List candidates from Classes Two through Fifteen, then star one item in each category. Remove duplicates, broken drafts, private data, and unexplained files.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.359,
+        "text": "Curate three artifacts that prove different skills."
+      },
+      {
+        "start": 3.359,
+        "end": 9.049,
+        "text": "Choose one focal visual, one reproducible artifact, and one communication artifact."
+      },
+      {
+        "start": 9.45,
+        "end": 13.228,
+        "text": "The focal visual proves you can find and explain a pattern."
+      },
+      {
+        "start": 13.228,
+        "end": 18.696,
+        "text": "The notebook, code, or experiment record proves the result can be inspected."
+      },
+      {
+        "start": 18.696,
+        "end": 22.303,
+        "text": "The deck or report proves you can communicate the reasoning."
+      },
+      {
+        "start": 22.69,
+        "end": 26.376,
+        "text": "Open page three of the worksheet, or a blank note."
+      },
+      {
+        "start": 26.376,
+        "end": 32.327,
+        "text": "List candidates from Classes Two through Fifteen, then star one item in each category."
+      },
+      {
+        "start": 32.327,
+        "end": 38.004,
+        "text": "Remove duplicates, broken drafts, private data, and unexplained files."
+      }
+    ],
+    "bytes": 610263,
+    "source": "authored-video-script"
+  },
+  "project-card": {
+    "hash": "7a8b67b5ec542bb9",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "The featured-project card has six lines. First, state the question in language a person outside this course can understand. Second, name your personal role. In team work, do not use we to hide who designed, coded, analyzed, verified, or wrote each part. Third, summarize the method: named data, baseline, one controlled change, protocol, and metric. Fourth, state the supported evidence with the scope attached. Fifth, name the largest limitation. Sixth, name one next test that could reduce that uncertainty or challenge the current claim. Replace vague phrases such as used AI with the exact task, tool, and verification. Expand an acronym once, then write for a reader who never saw the class slides.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.942,
+        "text": "The featured-project card has six lines."
+      },
+      {
+        "start": 2.942,
+        "end": 8.776,
+        "text": "First, state the question in language a person outside this course can understand."
+      },
+      {
+        "start": 9.162,
+        "end": 11.442,
+        "text": "Second, name your personal role."
+      },
+      {
+        "start": 11.442,
+        "end": 18.161,
+        "text": "In team work, do not use we to hide who designed, coded, analyzed, verified, or wrote each part."
+      },
+      {
+        "start": 18.562,
+        "end": 26.48,
+        "text": "Third, summarize the method: named data, baseline, one controlled change, protocol, and metric."
+      },
+      {
+        "start": 26.48,
+        "end": 30.347,
+        "text": "Fourth, state the supported evidence with the scope attached."
+      },
+      {
+        "start": 30.746,
+        "end": 33.964,
+        "text": "Fifth, name the largest limitation."
+      },
+      {
+        "start": 33.964,
+        "end": 40.005,
+        "text": "Sixth, name one next test that could reduce that uncertainty or challenge the current claim."
+      },
+      {
+        "start": 40.41,
+        "end": 46.609,
+        "text": "Replace vague phrases such as used AI with the exact task, tool, and verification."
+      },
+      {
+        "start": 46.609,
+        "end": 52.391,
+        "text": "Expand an acronym once, then write for a reader who never saw the class slides."
+      }
+    ],
+    "bytes": 840558,
+    "source": "authored-video-script"
+  },
+  "evidence-gallery": {
+    "hash": "9e0876a406a990af",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "The evidence gallery needs one focal result, not every plot you generated. Label the metric, units, comparison, and evaluation scope, then write a self-contained caption. Add a reproduction receipt: a notebook or repository, the data identity, and a short environment or rerun note. A screenshot of code is not a reproducible artifact. Add one communication receipt: the short report or six-slide deck. Use descriptive link text and stable filenames rather than click here or final final version two. If an artifact cannot be shared safely, say available to approved reviewers and keep it in the program's approved private channel. A blank public link is better than an unsafe one.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.091,
+        "text": "The evidence gallery needs one focal result, not every plot you generated."
+      },
+      {
+        "start": 5.091,
+        "end": 11.809,
+        "text": "Label the metric, units, comparison, and evaluation scope, then write a self-contained caption."
+      },
+      {
+        "start": 12.21,
+        "end": 20.454,
+        "text": "Add a reproduction receipt: a notebook or repository, the data identity, and a short environment or rerun note."
+      },
+      {
+        "start": 20.454,
+        "end": 24.256,
+        "text": "A screenshot of code is not a reproducible artifact."
+      },
+      {
+        "start": 24.658,
+        "end": 29.529,
+        "text": "Add one communication receipt: the short report or six-slide deck."
+      },
+      {
+        "start": 29.529,
+        "end": 36.092,
+        "text": "Use descriptive link text and stable filenames rather than click here or final final version two."
+      },
+      {
+        "start": 36.482,
+        "end": 44.791,
+        "text": "If an artifact cannot be shared safely, say available to approved reviewers and keep it in the program's approved private channel."
+      },
+      {
+        "start": 44.791,
+        "end": 48.293,
+        "text": "A blank public link is better than an unsafe one."
+      }
+    ],
+    "bytes": 774939,
+    "source": "authored-video-script"
+  },
+  "reflection-story": {
+    "hash": "90d25eb0d5ab81db",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Reflection makes intellectual growth visible. Use three moves: I first assumed, the evidence showed, so I revised. A strong reflection names a concrete decision, the evidence that challenged it, and the claim, method, or next question that changed. A weak reflection says I learned a lot about AI, but gives the reviewer no trace of what changed. Specific revision is evidence of research maturity. A null result or failed approach can support an excellent reflection because it shows how the evidence constrained your belief rather than merely decorating it.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.085,
+        "text": "Reflection makes intellectual growth visible."
+      },
+      {
+        "start": 3.085,
+        "end": 8.411,
+        "text": "Use three moves: I first assumed, the evidence showed, so I revised."
+      },
+      {
+        "start": 8.802,
+        "end": 17.567,
+        "text": "A strong reflection names a concrete decision, the evidence that challenged it, and the claim, method, or next question that changed."
+      },
+      {
+        "start": 17.962,
+        "end": 23.94,
+        "text": "A weak reflection says I learned a lot about AI, but gives the reviewer no trace of what changed."
+      },
+      {
+        "start": 23.94,
+        "end": 27.807,
+        "text": "Specific revision is evidence of research maturity."
+      },
+      {
+        "start": 28.202,
+        "end": 37.136,
+        "text": "A null result or failed approach can support an excellent reflection because it shows how the evidence constrained your belief rather than merely decorating it."
+      }
+    ],
+    "bytes": 596470,
+    "source": "authored-video-script"
+  },
+  "portfolio-sprint-one": {
+    "hash": "d704fbc6ca65095d",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Open the Portfolio Launchpad from the slide, or use page three of the printable worksheet. The tool keeps draft text in this browser and sends nothing to the course server. For the next seven minutes, write the top of the page and the six-line project card. Use two minutes for your display name, focus, title, and question; then complete role, method, evidence, limitation, and next test. Read the draft once without filling in what you meant. If the scope is missing, attach it to the evidence sentence. If your role is hidden inside we, make the action personal and specific.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 5.742,
+        "text": "Open the Portfolio Launchpad from the slide, or use page three of the printable worksheet."
+      },
+      {
+        "start": 5.742,
+        "end": 10.481,
+        "text": "The tool keeps draft text in this browser and sends nothing to the course server."
+      },
+      {
+        "start": 10.866,
+        "end": 16.115,
+        "text": "For the next seven minutes, write the top of the page and the six-line project card."
+      },
+      {
+        "start": 16.115,
+        "end": 26.128,
+        "text": "Use two minutes for your display name, focus, title, and question; then complete role, method, evidence, limitation, and next test."
+      },
+      {
+        "start": 26.53,
+        "end": 30.073,
+        "text": "Read the draft once without filling in what you meant."
+      },
+      {
+        "start": 30.073,
+        "end": 34.331,
+        "text": "If the scope is missing, attach it to the evidence sentence."
+      },
+      {
+        "start": 34.331,
+        "end": 39.266,
+        "text": "If your role is hidden inside we, make the action personal and specific."
+      }
+    ],
+    "bytes": 630325,
+    "source": "authored-video-script"
+  },
+  "portfolio-sprint-two": {
+    "hash": "2ef442f122febb3e",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Now add the receipts. Choose one focal visual and write a caption that says what it shows and why it supports the claim. Add the approved notebook or repository and report or deck links. Finish with the growth sentence: I first assumed, the evidence showed, so I revised. Then test every link in a private window, or label it reviewer-only rather than weakening the privacy boundary. The draft is successful when the research story works even before publication. Public sharing is a separate audience decision, not the condition for completing this class.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 1.848,
+        "text": "Now add the receipts."
+      },
+      {
+        "start": 1.848,
+        "end": 8.528,
+        "text": "Choose one focal visual and write a caption that says what it shows and why it supports the claim."
+      },
+      {
+        "start": 8.528,
+        "end": 13.372,
+        "text": "Add the approved notebook or repository and report or deck links."
+      },
+      {
+        "start": 13.77,
+        "end": 19.605,
+        "text": "Finish with the growth sentence: I first assumed, the evidence showed, so I revised."
+      },
+      {
+        "start": 19.605,
+        "end": 26.519,
+        "text": "Then test every link in a private window, or label it reviewer-only rather than weakening the privacy boundary."
+      },
+      {
+        "start": 26.914,
+        "end": 32.085,
+        "text": "The draft is successful when the research story works even before publication."
+      },
+      {
+        "start": 32.085,
+        "end": 37.697,
+        "text": "Public sharing is a separate audience decision, not the condition for completing this class."
+      }
+    ],
+    "bytes": 605247,
+    "source": "authored-video-script"
+  },
+  "resume-bullet": {
+    "hash": "4f9738b669900d7c",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "A resume bullet turns nouns into evidence. Use an action, the artifact, the fair-comparison method, the bounded result, and the limitation or reproducibility outcome. Avoid used Python and AI for a machine-learning project. Prefer designed and evaluated, followed by named data, the comparison you owned, the supported result, and the page or repository you published. Draft one bullet now. Do not invent a percentage improvement when the result was null or the number is meaningless without context. Edit the launchpad's generated sentence until every clause is true and readable. Read the bullet aloud once. If it sounds like a tool list, restore the research question and your decision. If it sounds universal, restore the dataset and protocol boundary.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 3.177,
+        "text": "A resume bullet turns nouns into evidence."
+      },
+      {
+        "start": 3.177,
+        "end": 11.549,
+        "text": "Use an action, the artifact, the fair-comparison method, the bounded result, and the limitation or reproducibility outcome."
+      },
+      {
+        "start": 11.946,
+        "end": 15.88,
+        "text": "Avoid used Python and AI for a machine-learning project."
+      },
+      {
+        "start": 15.88,
+        "end": 25.906,
+        "text": "Prefer designed and evaluated, followed by named data, the comparison you owned, the supported result, and the page or repository you published."
+      },
+      {
+        "start": 26.29,
+        "end": 28.115,
+        "text": "Draft one bullet now."
+      },
+      {
+        "start": 28.115,
+        "end": 34.573,
+        "text": "Do not invent a percentage improvement when the result was null or the number is meaningless without context."
+      },
+      {
+        "start": 34.573,
+        "end": 40.081,
+        "text": "Edit the launchpad's generated sentence until every clause is true and readable."
+      },
+      {
+        "start": 40.466,
+        "end": 42.68,
+        "text": "Read the bullet aloud once."
+      },
+      {
+        "start": 42.68,
+        "end": 47.46,
+        "text": "If it sounds like a tool list, restore the research question and your decision."
+      },
+      {
+        "start": 47.46,
+        "end": 52.173,
+        "text": "If it sounds universal, restore the dataset and protocol boundary."
+      }
+    ],
+    "bytes": 837215,
+    "source": "authored-video-script"
+  },
+  "resume-link-map": {
+    "hash": "0a705a614a37d859",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Use one stable portfolio URL where readers already look. In a resume header, place Portfolio beside the appropriate email, GitHub, or professional profile. In the project entry, link the project title to the exact project card rather than only the site homepage. In application forms and mentor emails, reuse the same stable URL. A QR code is optional and secondary. Always keep a readable URL because scanners, exported PDFs, and applicant systems can remove images. Avoid disposable share links that expire or require the reviewer's school login. If restricted access is intentional, label it and provide the approved route.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 4.361,
+        "text": "Use one stable portfolio URL where readers already look."
+      },
+      {
+        "start": 4.361,
+        "end": 11.328,
+        "text": "In a resume header, place Portfolio beside the appropriate email, GitHub, or professional profile."
+      },
+      {
+        "start": 11.73,
+        "end": 18.698,
+        "text": "In the project entry, link the project title to the exact project card rather than only the site homepage."
+      },
+      {
+        "start": 18.698,
+        "end": 24.114,
+        "text": "In application forms and mentor emails, reuse the same stable URL."
+      },
+      {
+        "start": 24.514,
+        "end": 27.68,
+        "text": "A QR code is optional and secondary."
+      },
+      {
+        "start": 27.68,
+        "end": 34.906,
+        "text": "Always keep a readable URL because scanners, exported PDFs, and applicant systems can remove images."
+      },
+      {
+        "start": 35.306,
+        "end": 40.36,
+        "text": "Avoid disposable share links that expire or require the reviewer's school login."
+      },
+      {
+        "start": 40.36,
+        "end": 45.542,
+        "text": "If restricted access is intentional, label it and provide the approved route."
+      }
+    ],
+    "bytes": 730635,
+    "source": "authored-video-script"
+  },
+  "publish-audit": {
+    "hash": "a1a607ac094dfa89",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Before publishing, give every item one audience decision: public, reviewer-only, or remove. Aggregate charts, original explanations, licensed images, and de-identified code may be public when policy allows. Controlled data, manuscripts under review, team artifacts, and age or school details usually need explicit approval. Remove passwords, API keys, raw personal records, private emails, precise address or schedule, unlicensed data, and any collaborator details you do not have permission to expose. For minors, follow family, school, and program rules. A professional alias, private link, or PDF is a valid portfolio, not a lesser one.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 6.966,
+        "text": "Before publishing, give every item one audience decision: public, reviewer-only, or remove."
+      },
+      {
+        "start": 7.362,
+        "end": 15.957,
+        "text": "Aggregate charts, original explanations, licensed images, and de-identified code may be public when policy allows."
+      },
+      {
+        "start": 15.957,
+        "end": 24.16,
+        "text": "Controlled data, manuscripts under review, team artifacts, and age or school details usually need explicit approval."
+      },
+      {
+        "start": 24.562,
+        "end": 37.324,
+        "text": "Remove passwords, API keys, raw personal records, private emails, precise address or schedule, unlicensed data, and any collaborator details you do not have permission to expose."
+      },
+      {
+        "start": 37.706,
+        "end": 41.666,
+        "text": "For minors, follow family, school, and program rules."
+      },
+      {
+        "start": 41.666,
+        "end": 48.463,
+        "text": "A professional alias, private link, or PDF is a valid portfolio, not a lesser one."
+      }
+    ],
+    "bytes": 777447,
+    "source": "authored-video-script"
+  },
+  "peer-scan-test": {
+    "hash": "fa9ee93b441a775c",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "Run the final scan as a stranger. In ten seconds, name the problem, the student's role, the strongest evidence, and the boundary. In two clicks, reach the artifact that supports it. For the next five minutes, ask a partner to test headings, captions, links, mobile readability, and privacy. If you are working alone, leave the page, return in a narrow window, and read only headings and captions. Capture one Glow, one missing receipt, and one sentence to cut or clarify. Fix the highest-impact issue before adding decoration.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 2.589,
+        "text": "Run the final scan as a stranger."
+      },
+      {
+        "start": 2.589,
+        "end": 9.205,
+        "text": "In ten seconds, name the problem, the student's role, the strongest evidence, and the boundary."
+      },
+      {
+        "start": 9.205,
+        "end": 12.747,
+        "text": "In two clicks, reach the artifact that supports it."
+      },
+      {
+        "start": 13.146,
+        "end": 20.569,
+        "text": "For the next five minutes, ask a partner to test headings, captions, links, mobile readability, and privacy."
+      },
+      {
+        "start": 20.569,
+        "end": 27.835,
+        "text": "If you are working alone, leave the page, return in a narrow window, and read only headings and captions."
+      },
+      {
+        "start": 28.234,
+        "end": 34.017,
+        "text": "Capture one Glow, one missing receipt, and one sentence to cut or clarify."
+      },
+      {
+        "start": 34.017,
+        "end": 37.728,
+        "text": "Fix the highest-impact issue before adding decoration."
+      }
+    ],
+    "bytes": 605665,
+    "source": "authored-video-script"
+  },
+  "submission-checklist": {
+    "hash": "863782d1cabe4285",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "The final research package still leaves an audit trail: a deck of no more than six slides, the experiment record or short paper, and the runnable notebook or code. Include the data source or access note, environment and dependencies, saved split or folds, seed, settings, primary outputs, and any failed or excluded runs. The portfolio launch adds one project card, one focal visual, the approved receipts, a visible limitation, a specific AI-use disclosure, and a stable link plan. The class requires a portfolio draft, not a public identity. Publishing can remain private, reviewer-only, or offline when that is the responsible audience choice. Make filenames stable and links testable. A future reader should connect the portfolio claim to the exact evidence without guessing or requesting private data.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 10.651,
+        "text": "The final research package still leaves an audit trail: a deck of no more than six slides, the experiment record or short paper, and the runnable notebook or code."
+      },
+      {
+        "start": 11.034,
+        "end": 22.598,
+        "text": "Include the data source or access note, environment and dependencies, saved split or folds, seed, settings, primary outputs, and any failed or excluded runs."
+      },
+      {
+        "start": 22.978,
+        "end": 34.125,
+        "text": "The portfolio launch adds one project card, one focal visual, the approved receipts, a visible limitation, a specific AI-use disclosure, and a stable link plan."
+      },
+      {
+        "start": 34.514,
+        "end": 38.422,
+        "text": "The class requires a portfolio draft, not a public identity."
+      },
+      {
+        "start": 38.422,
+        "end": 45.193,
+        "text": "Publishing can remain private, reviewer-only, or offline when that is the responsible audience choice."
+      },
+      {
+        "start": 45.594,
+        "end": 48.46,
+        "text": "Make filenames stable and links testable."
+      },
+      {
+        "start": 48.46,
+        "end": 55.4,
+        "text": "A future reader should connect the portfolio claim to the exact evidence without guessing or requesting private data."
+      }
+    ],
+    "bytes": 888206,
+    "source": "authored-video-script"
+  },
+  "wrap-up": {
+    "hash": "b6f99a0f16724ae4",
+    "voice": "en-US-AvaMultilingualNeural",
+    "script": "You are ready when you can state one question, show one fair comparison, defend one bounded conclusion, and give a future reader a safe path to the evidence. The course ends with three portable outcomes: a defensible mini-study, a portfolio project card, and a resume line with one stable link. Your exit line is: I studied blank; the evidence supports blank; you can inspect it at blank; next I would test blank. Public, private, or reviewer-only, the audience choice is part of responsible research. Carry the evidence forward, keep the boundary visible, and let the next question begin.",
+    "cues": [
+      {
+        "start": 0.05,
+        "end": 10.208,
+        "text": "You are ready when you can state one question, show one fair comparison, defend one bounded conclusion, and give a future reader a safe path to the evidence."
+      },
+      {
+        "start": 10.602,
+        "end": 20.408,
+        "text": "The course ends with three portable outcomes: a defensible mini-study, a portfolio project card, and a resume line with one stable link."
+      },
+      {
+        "start": 20.794,
+        "end": 28.973,
+        "text": "Your exit line is: I studied blank; the evidence supports blank; you can inspect it at blank; next I would test blank."
+      },
+      {
+        "start": 29.378,
+        "end": 35.46,
+        "text": "Public, private, or reviewer-only, the audience choice is part of responsible research."
+      },
+      {
+        "start": 35.46,
+        "end": 41.033,
+        "text": "Carry the evidence forward, keep the boundary visible, and let the next question begin."
+      }
+    ],
+    "bytes": 658328,
+    "source": "authored-video-script"
+  }
+}

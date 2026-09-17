@@ -378,11 +378,13 @@
         {
           "id": "class-15",
           "n": 15,
-          "title": "Research Showcase & Defense",
-          "summary": "A live capstone showcase, not another lecture: each student defends one Class 14 mini-study in at most six slides, speaks for up to five minutes, answers two evidence questions, and gives Glow · Grow · Next test peer feedback.",
+          "title": "Research Showcase, Defense & Portfolio Launch",
+          "summary": "A sixty-minute capstone: defend one Class 14 mini-study, convert its evidence into a public-safe online portfolio project card, and carry one stable project link into a resume or future application.",
           "tags": [
             "research presentation",
             "defense",
+            "online portfolio",
+            "resume",
             "reproducibility",
             "Q&A",
             "peer feedback",
@@ -391,7 +393,7 @@
             "quiz",
             "interactive"
           ],
-          "duration": "120 min",
+          "duration": "60 min",
           "status": "ready"
         }
       ]
@@ -552,6 +554,8 @@
           "numLabel": "GUIDE 01",
           "noPdf": true,
           "title": "The Terminal, File Paths, VS Code, Git & GitHub, SSH",
+          "publishedAt": "2026-07-19",
+          "domain": "developer-tools",
           "summary": "Step-by-step notes with a built-in practice terminal: pwd/ls/cd, finding a file's path for read_csv, VS Code basics, git init → add → commit → push/pull, branch & merge, and SSH keys — with guided missions, quizzes, and saved progress.",
           "tags": [
             "terminal",
@@ -575,6 +579,8 @@
           "numLabel": "GUIDE 02",
           "noPdf": true,
           "title": "Git & the Terminal — The Video Game Edition 🎮",
+          "publishedAt": "2026-07-19",
+          "domain": "developer-tools",
           "summary": "Guide 01 retold entirely in gamer language for younger students: the terminal is a command console, commits are save points, GitHub is cloud saves + multiplayer, branches are creative-mode worlds, SSH keys are keycards — with 5 quests in the built-in practice terminal.",
           "tags": [
             "terminal",
@@ -599,6 +605,8 @@
           "numLabel": "GUIDE 03",
           "noPdf": true,
           "title": "Your First Video-Game Research Project 🎮📊",
+          "publishedAt": "2026-07-19",
+          "domain": "gaming-research",
           "summary": "Research methods for a student who loves games: what makes a data-answerable question, an interactive question builder, a sortable slice of the real vgsales dataset with a live genre chart, a catalog of free game datasets (Kaggle, Steam, esports, Twitch), and the 6-step pipeline with pandas starter code.",
           "tags": [
             "research",
@@ -623,6 +631,8 @@
           "numLabel": "GUIDE 04",
           "noPdf": true,
           "title": "Publish Your Research — a Real Website on GitHub Pages 🌐",
+          "publishedAt": "2026-07-19",
+          "domain": "research-workflow",
           "summary": "Continue from Guide 03 (or start from zero): an interactive research-page builder (fill the form, watch a live preview, download index.html), modeled on a real academic companion site — then two publish paths: clicks-only upload, or the git ritual with a practice-terminal mission. Ends with a live link at USERNAME.github.io/my-research/.",
           "tags": [
             "GitHub Pages",
@@ -646,6 +656,8 @@
           "numLabel": "GAME 01",
           "noPdf": true,
           "title": "Terminal Quest — Launch Night 🕹️",
+          "publishedAt": "2026-07-19",
+          "domain": "developer-tools",
           "summary": "A 6-level command-line adventure game: you are the new engineer at a game studio on launch night. Find the door code with pwd/ls/cd, dig up a lost save file, make git save points, branch a risky fix — then the boss fight: SSH into the crashed game server, repair it with cp, and restart it. Real commands, XP, level map, saved progress.",
           "tags": [
             "game",
@@ -669,6 +681,8 @@
           "numLabel": "GUIDE 05",
           "noPdf": true,
           "title": "Downloading the Right Data 📥",
+          "publishedAt": "2026-07-31",
+          "domain": "data-literacy",
           "summary": "A practical shared note for choosing, verifying, downloading, organizing, and documenting research data: define what one row means, compare candidate datasets with the RIGHT checklist, inspect source and license, preserve raw files, run quick pandas quality checks, and leave a reproducible dataset receipt.",
           "tags": [
             "data",
@@ -691,6 +705,8 @@
           "numLabel": "GUIDE 06",
           "noPdf": true,
           "title": "From a Colab Script to a Conference Manuscript with Claude Code 📄",
+          "publishedAt": "2026-08-02",
+          "domain": "research-workflow",
           "summary": "The written version of the Class 10 live demo: download your linear-regression notebook as a .py, open the folder in Claude Code, and ask for a five-page LaTeX manuscript with 5–8 figures. Screenshots from the recording show what the agent actually does — explore the folder, check the LaTeX stack, write and RUN experiments.py, then quote the numbers back out of summary.json. Ends with the Overleaf zip, five honesty checks, and a reusable prompt library.",
           "tags": [
             "Claude Code",
@@ -715,6 +731,8 @@
           "numLabel": "GUIDE 07",
           "noPdf": true,
           "title": "Healthcare Datasets & 100+ Research Questions 🏥📊",
+          "publishedAt": "2026-08-08",
+          "domain": "healthcare",
           "summary": "The dataset-first topic shelf for the IEEE HealthCom 2026 YRS poster project: 15 verified health-data portals, 57 reviewed data resources, and 100+ research questions — now including driver drowsiness, CARLA studies, medical LLM reliability, rehabilitation robotics, and gaming physiology — each mapped to data, poster figures, and a defensible contribution.",
           "tags": [
             "healthcare",
@@ -738,20 +756,327 @@
           ],
           "duration": "self-paced",
           "status": "ready"
+        },
+        {
+          "id": "cybersecurity-datasets",
+          "n": 8,
+          "numLabel": "GUIDE 08",
+          "noPdf": true,
+          "title": "Grades 9–12 Cybersecurity Research Topic Pack 🛡️📊",
+          "publishedAt": "2026-08-30",
+          "domain": "cybersecurity",
+          "summary": "A free, English-first bilingual pack with 9 curated data sources, 24 research questions, suggested figures, defensible contributions, safe starting points, and a detailed English/Chinese video tour.",
+          "tags": [
+            "Grades 9–12",
+            "high-school research",
+            "research questions",
+            "cybersecurity",
+            "malware",
+            "public datasets",
+            "intrusion detection",
+            "EMBER",
+            "BODMAS",
+            "UNSW-NB15",
+            "Android",
+            "temporal drift",
+            "open set",
+            "bilingual"
+          ],
+          "duration": "self-paced",
+          "status": "ready"
+        },
+        {
+          "id": "biomedical-ai",
+          "n": 9,
+          "numLabel": "GUIDE 09",
+          "noPdf": true,
+          "title": "Grades 9–12 Biomedical AI Research Topic Pack 🧬💊",
+          "publishedAt": "2026-08-30",
+          "domain": "biomedical-ai",
+          "summary": "A free, English-first bilingual pack with 12 public-data entrances and 30 research questions, each mapped to data, suggested figures, compute, and a defensible contribution. Covers Cell2Sentence, cancer signals, drug response, and efficient trustworthy AI.",
+          "tags": [
+            "Grades 9–12",
+            "high-school research",
+            "research questions",
+            "biomedical AI",
+            "Cell2Sentence",
+            "single-cell",
+            "cancer",
+            "drug response",
+            "public datasets",
+            "interpretable AI",
+            "data leakage",
+            "research poster",
+            "bilingual"
+          ],
+          "duration": "self-paced",
+          "status": "ready"
+        },
+        {
+          "id": "biomedical-ai-shorts",
+          "n": 10,
+          "numLabel": "GUIDE 10",
+          "noPdf": true,
+          "title": "Biomedical AI 60-Second Shorts · English / 中文 🎬",
+          "publishedAt": "2026-08-30",
+          "domain": "biomedical-ai",
+          "summary": "Six playable bilingual 60-second storyboards, from cell sentences to a two-week research poster; each includes a WeChat-ready Chinese caption and a system share action.",
+          "tags": [
+            "biomedical AI",
+            "60-second Shorts",
+            "bilingual",
+            "WeChat caption",
+            "research outreach",
+            "Cell2Sentence",
+            "drug response",
+            "research poster"
+          ],
+          "duration": "6 × 1 min",
+          "status": "ready"
         }
       ]
     },
     {
       "id": "python",
-      "title": "Python, Gently",
-      "subtitle": "A beginner-friendly path to coding for data & research. (Coming soon.)",
+      "title": "Phase I: Python for AI Research",
+      "subtitle": "Python Class 2 · Sundays 8:30–9:30pm ET · student × AI: games, experiments and a research project.",
       "tags": [
-        "python",
-        "coding",
-        "beginner"
+        "Python",
+        "AI research",
+        "beginner",
+        "interactive",
+        "English"
       ],
-      "accent": "#1769C0",
-      "decks": []
+      "accent": "#0F9DB0",
+      "registrationUrl": "https://us06web.zoom.us/meeting/register/mnXWAd7MTu6uTSRapF--zQ",
+      "researchHubUrl": "/meritpoint-slides/python/research/",
+      "trialLessonUrl": "/meritpoint-slides/python/trial-lesson/",
+      "decks": [
+        {
+          "id": "trial-lesson",
+          "n": 0,
+          "numLabel": "TRIAL · 50 MIN",
+          "title": "Your First Python Research Experiment · Huaxia Trial Lesson",
+          "summary": "A complete first research experience: predict, run Python, explore soccer data, make a chart and explain your evidence. English Listen audio, captions and beginner / stretch activities. Open to visiting students and families.",
+          "tags": [
+            "trial lesson",
+            "interactive",
+            "Python",
+            "Listen audio"
+          ],
+          "duration": "50 min",
+          "status": "ready"
+        },
+        {
+          "id": "class-00",
+          "n": 0,
+          "title": "Learning Python in the Age of AI · Family Introduction",
+          "summary": "An in-person Class 0 for students and families: Bo Shang’s programming journey, two partner activities, and how we learn with AI. English slides with Chinese speaker notes.",
+          "tags": [
+            "Python",
+            "families",
+            "in-person",
+            "AI literacy"
+          ],
+          "duration": "60 min",
+          "status": "ready"
+        },
+        {
+          "id": "class-01",
+          "n": 1,
+          "title": "Your First Python Experiment",
+          "summary": "Predict, run, change and explain: variables, output, lists and a tiny sports-data experiment.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "ready"
+        },
+        {
+          "id": "class-02",
+          "n": 2,
+          "title": "Decisions & Loops",
+          "summary": "Turn a rule into code, test its boundary, and repeat it over a collection.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-03",
+          "n": 3,
+          "title": "Functions & Research Records",
+          "summary": "Organize data and write small reusable functions.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-04",
+          "n": 4,
+          "title": "NumPy & Simulation",
+          "summary": "Use arrays to explore variation and repeated experiments.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-05",
+          "n": 5,
+          "title": "pandas & Tables",
+          "summary": "Inspect, filter and summarize a small dataset.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-06",
+          "n": 6,
+          "title": "Cleaning With a Reason",
+          "summary": "Handle missing, duplicate and unusual values, keeping a decision log.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-07",
+          "n": 7,
+          "title": "Charts That Answer Questions",
+          "summary": "Match a chart to a question and explain what it shows.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-08",
+          "n": 8,
+          "title": "Exploring a Research Question",
+          "summary": "Connect data patterns to a question and its limitations.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-09",
+          "n": 9,
+          "title": "Your First Machine-Learning Baseline",
+          "summary": "Separate training from testing and compare against a simple baseline.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-10",
+          "n": 10,
+          "title": "Predicting Numbers",
+          "summary": "Fit a regression model and examine its errors.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-11",
+          "n": 11,
+          "title": "Predicting Categories",
+          "summary": "Compare classifiers and read a confusion matrix.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-12",
+          "n": 12,
+          "title": "Trees & Overfitting",
+          "summary": "Explore model complexity and why memorization is not learning.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-13",
+          "n": 13,
+          "title": "A Fair Model Comparison",
+          "summary": "Keep data splits and metrics fixed while comparing models.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-14",
+          "n": 14,
+          "title": "A Reproducible Research Story",
+          "summary": "Bring the question, code, figures and limitations together.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-15",
+          "n": 15,
+          "title": "Project Showcase",
+          "summary": "Present a small project, explain the evidence and respond to questions.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        }
+      ]
     }
   ]
 }

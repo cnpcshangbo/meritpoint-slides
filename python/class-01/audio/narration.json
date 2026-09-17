@@ -1,0 +1,873 @@
+{
+  "title": {
+    "hash": "6c07f811b0dbdd050ca6",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Can you teach a computer to keep score? Today, you will use Python to investigate a small question about practice shots. You will make a prediction, test it with code, and explain what the result means. AI can help you think and build, but you will make the decisions and check the evidence. Our practice data is invented for learning, so no personal sports records are needed.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 2.331,
+        "text": "Can you teach a computer to keep score?"
+      },
+      {
+        "start": 2.331,
+        "end": 7.422,
+        "text": "Today, you will use Python to investigate a small question about practice shots."
+      },
+      {
+        "start": 7.422,
+        "end": 12.5,
+        "text": "You will make a prediction, test it with code, and explain what the result means."
+      },
+      {
+        "start": 12.5,
+        "end": 17.708,
+        "text": "AI can help you think and build, but you will make the decisions and check the evidence."
+      },
+      {
+        "start": 17.708,
+        "end": 23.208,
+        "text": "Our practice data is invented for learning, so no personal sports records are needed."
+      }
+    ],
+    "duration": 23.208,
+    "bytes": 139248
+  },
+  "mission": {
+    "hash": "a3a61c96d494bf6c27e3",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Your goal is to leave with a small experiment you can explain. First, predict what a few lines of Python will do. Next, change one value and investigate the result. Finally, save your code, its output, and one limitation. Keep a record of an AI suggestion you checked, too. A working program matters, and understanding why you trust its result matters just as much.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.88,
+        "text": "Your goal is to leave with a small experiment you can explain."
+      },
+      {
+        "start": 3.88,
+        "end": 7.122,
+        "text": "First, predict what a few lines of Python will do."
+      },
+      {
+        "start": 7.122,
+        "end": 11.458,
+        "text": "Next, change one value and investigate the result."
+      },
+      {
+        "start": 11.458,
+        "end": 15.898,
+        "text": "Finally, save your code, its output, and one limitation."
+      },
+      {
+        "start": 15.898,
+        "end": 19.922,
+        "text": "Keep a record of an AI suggestion you checked, too."
+      },
+      {
+        "start": 19.922,
+        "end": 25.656,
+        "text": "A working program matters, and understanding why you trust its result matters just as much."
+      }
+    ],
+    "duration": 25.656,
+    "bytes": 153936
+  },
+  "warmup": {
+    "hash": "8d1bbf4087fbb0243991",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "A bot scored three goals in five shots. Another scored four in ten. Which had the higher success rate? Your choices are: A, the first bot; B, the second bot; or C, they are equal. Make your prediction before checking. Pause here and explain how you would compare the two bots. What information would your comparison need to use?",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.099,
+        "text": "A bot scored three goals in five shots."
+      },
+      {
+        "start": 3.099,
+        "end": 5.156,
+        "text": "Another scored four in ten."
+      },
+      {
+        "start": 5.156,
+        "end": 7.409,
+        "text": "Which had the higher success rate?"
+      },
+      {
+        "start": 7.409,
+        "end": 13.945,
+        "text": "Your choices are: A, the first bot; B, the second bot; or C, they are equal."
+      },
+      {
+        "start": 13.945,
+        "end": 16.172,
+        "text": "Make your prediction before checking."
+      },
+      {
+        "start": 16.172,
+        "end": 20.299,
+        "text": "Pause here and explain how you would compare the two bots."
+      },
+      {
+        "start": 20.299,
+        "end": 23.232,
+        "text": "What information would your comparison need to use?"
+      }
+    ],
+    "duration": 23.232,
+    "bytes": 139392
+  },
+  "research-loop": {
+    "hash": "1afdc45519fbc09c7343",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Follow the illustrated path from a question to evidence. Step through it or play the animation. First, ask how often a shot went in. Next, record the attempts. Code counts the goals and calculates a percentage. Finally, explain what the sample supports and what it cannot prove. This is arithmetic, not a trained AI model. You choose the question and check the conclusion; AI can help build a test.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.633,
+        "text": "Follow the illustrated path from a question to evidence."
+      },
+      {
+        "start": 3.633,
+        "end": 6.38,
+        "text": "Step through it or play the animation."
+      },
+      {
+        "start": 6.38,
+        "end": 8.996,
+        "text": "First, ask how often a shot went in."
+      },
+      {
+        "start": 8.996,
+        "end": 11.107,
+        "text": "Next, record the attempts."
+      },
+      {
+        "start": 11.107,
+        "end": 14.557,
+        "text": "Code counts the goals and calculates a percentage."
+      },
+      {
+        "start": 14.557,
+        "end": 18.971,
+        "text": "Finally, explain what the sample supports and what it cannot prove."
+      },
+      {
+        "start": 18.971,
+        "end": 22.396,
+        "text": "This is arithmetic, not a trained AI model."
+      },
+      {
+        "start": 22.396,
+        "end": 27.288,
+        "text": "You choose the question and check the conclusion; AI can help build a test."
+      }
+    ],
+    "duration": 27.288,
+    "bytes": 163728
+  },
+  "hello": {
+    "hash": "13caafd652ac4bd91707",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "This program stores a researcher name and a question, then displays two lines of text. Read the code from top to bottom and predict those lines before executing it. Quotation marks tell Python that the words are text. Now change only the researcher name and try again. Which output changes, and which stays the same? An invented name is completely fine for this experiment.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 5.859,
+        "text": "This program stores a researcher name and a question, then displays two lines of text."
+      },
+      {
+        "start": 5.859,
+        "end": 10.677,
+        "text": "Read the code from top to bottom and predict those lines before executing it."
+      },
+      {
+        "start": 10.677,
+        "end": 14.284,
+        "text": "Quotation marks tell Python that the words are text."
+      },
+      {
+        "start": 14.284,
+        "end": 17.956,
+        "text": "Now change only the researcher name and try again."
+      },
+      {
+        "start": 17.956,
+        "end": 21.315,
+        "text": "Which output changes, and which stays the same?"
+      },
+      {
+        "start": 21.315,
+        "end": 25.128,
+        "text": "An invented name is completely fine for this experiment."
+      }
+    ],
+    "duration": 25.128,
+    "bytes": 150768
+  },
+  "variables": {
+    "hash": "ad244205b30a2bb023a7",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "A variable is a name that keeps a value available for later. Here, goals holds three, and shots holds five. The equals sign assigns a value to a name; it is not asking a question about equality. Follow the lines in order and predict what displaying goals will show. Now imagine assigning four to goals. Explain which value the final line would receive.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.984,
+        "text": "A variable is a name that keeps a value available for later."
+      },
+      {
+        "start": 3.984,
+        "end": 8.164,
+        "text": "Here, goals holds three, and shots holds five."
+      },
+      {
+        "start": 8.164,
+        "end": 13.815,
+        "text": "The equals sign assigns a value to a name; it is not asking a question about equality."
+      },
+      {
+        "start": 13.815,
+        "end": 18.007,
+        "text": "Follow the lines in order and predict what displaying goals will show."
+      },
+      {
+        "start": 18.007,
+        "end": 21.055,
+        "text": "Now imagine assigning four to goals."
+      },
+      {
+        "start": 21.055,
+        "end": 24.432,
+        "text": "Explain which value the final line would receive."
+      }
+    ],
+    "duration": 24.432,
+    "bytes": 146592
+  },
+  "types": {
+    "hash": "881bdc50f6010c1b00d0",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "What does print, opening parenthesis, quotation mark three quotation mark, plus, quotation mark two quotation mark, closing parenthesis, display? Your choices are: A, five; B, thirty-two, written as the digits three followed by two; or C, an error. Make a prediction before executing any code. Pause and explain your reasoning. Pay close attention to every symbol in the expression, including the quotation marks.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0.012,
+        "end": 10.599,
+        "text": "What does print, opening parenthesis, quotation mark three quotation mark, plus, quotation mark two quotation mark, closing parenthesis, display?"
+      },
+      {
+        "start": 10.599,
+        "end": 20.065,
+        "text": "Your choices are: A, five; B, thirty-two, written as the digits three followed by two; or C, an error."
+      },
+      {
+        "start": 20.065,
+        "end": 23.268,
+        "text": "Make a prediction before executing any code."
+      },
+      {
+        "start": 23.268,
+        "end": 25.938,
+        "text": "Pause and explain your reasoning."
+      },
+      {
+        "start": 25.938,
+        "end": 31.296,
+        "text": "Pay close attention to every symbol in the expression, including the quotation marks."
+      }
+    ],
+    "duration": 31.296,
+    "bytes": 187776
+  },
+  "rate": {
+    "hash": "8930637384049613d1f4",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "We can describe success as a percentage. This program divides goals by shots, then multiplies by one hundred. Start by checking the result for three goals in five attempts. Next, predict the result for four goals in five attempts before changing only the goals value. Compare your prediction with the actual output. Explain why keeping the number of attempts fixed makes this a different experiment from adding another shot.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.034,
+        "text": "We can describe success as a percentage."
+      },
+      {
+        "start": 3.034,
+        "end": 7.786,
+        "text": "This program divides goals by shots, then multiplies by one hundred."
+      },
+      {
+        "start": 7.786,
+        "end": 11.823,
+        "text": "Start by checking the result for three goals in five attempts."
+      },
+      {
+        "start": 11.823,
+        "end": 17.865,
+        "text": "Next, predict the result for four goals in five attempts before changing only the goals value."
+      },
+      {
+        "start": 17.865,
+        "end": 20.638,
+        "text": "Compare your prediction with the actual output."
+      },
+      {
+        "start": 20.638,
+        "end": 27.096,
+        "text": "Explain why keeping the number of attempts fixed makes this a different experiment from adding another shot."
+      }
+    ],
+    "duration": 27.096,
+    "bytes": 162576
+  },
+  "list": {
+    "hash": "6b373ed411f18397c3bc",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "A list keeps the individual attempts, instead of remembering only a total. In this invented dataset, one means a goal and zero means a miss. Each position represents one attempt. Read the sequence and count both goals and attempts yourself. Python can help: sum adds the entries, and len counts how many entries there are. Those operations answer different questions, even though they use the same list.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 4.948,
+        "text": "A list keeps the individual attempts, instead of remembering only a total."
+      },
+      {
+        "start": 4.948,
+        "end": 10.417,
+        "text": "In this invented dataset, one means a goal and zero means a miss."
+      },
+      {
+        "start": 10.417,
+        "end": 13.203,
+        "text": "Each position represents one attempt."
+      },
+      {
+        "start": 13.203,
+        "end": 17.76,
+        "text": "Read the sequence and count both goals and attempts yourself."
+      },
+      {
+        "start": 17.76,
+        "end": 23.398,
+        "text": "Python can help: sum adds the entries, and len counts how many entries there are."
+      },
+      {
+        "start": 23.398,
+        "end": 28.44,
+        "text": "Those operations answer different questions, even though they use the same list."
+      }
+    ],
+    "duration": 28.44,
+    "bytes": 170640
+  },
+  "records": {
+    "hash": "c17dfd69ffce057d9c16",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Now let the computer calculate from the individual records. The program counts goals and attempts separately, then uses both to calculate a success rate. Predict what will happen if the next shot is a goal. Add one more one at the end of the list and inspect the new output. Remember to explain every count that changed. Your prediction is useful evidence even when you decide to revise it.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.75,
+        "text": "Now let the computer calculate from the individual records."
+      },
+      {
+        "start": 3.75,
+        "end": 9.753,
+        "text": "The program counts goals and attempts separately, then uses both to calculate a success rate."
+      },
+      {
+        "start": 9.753,
+        "end": 12.734,
+        "text": "Predict what will happen if the next shot is a goal."
+      },
+      {
+        "start": 12.734,
+        "end": 16.913,
+        "text": "Add one more one at the end of the list and inspect the new output."
+      },
+      {
+        "start": 16.913,
+        "end": 20.352,
+        "text": "Remember to explain every count that changed."
+      },
+      {
+        "start": 20.352,
+        "end": 24.576,
+        "text": "Your prediction is useful evidence even when you decide to revise it."
+      }
+    ],
+    "duration": 24.576,
+    "bytes": 147456
+  },
+  "debug": {
+    "hash": "306c2a119778b5f96cc5",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "This program contains an intentional mistake in a variable name. Execute it and read the final error message carefully. Compare the name mentioned there with the names defined earlier. Try to locate the mismatch before changing anything else. If you ask AI for help, request one hint instead of a corrected program. After your repair, check both whether the code executes and whether the answer makes sense.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 4.31,
+        "text": "This program contains an intentional mistake in a variable name."
+      },
+      {
+        "start": 4.31,
+        "end": 7.93,
+        "text": "Execute it and read the final error message carefully."
+      },
+      {
+        "start": 7.93,
+        "end": 11.654,
+        "text": "Compare the name mentioned there with the names defined earlier."
+      },
+      {
+        "start": 11.654,
+        "end": 15.195,
+        "text": "Try to locate the mismatch before changing anything else."
+      },
+      {
+        "start": 15.195,
+        "end": 20.508,
+        "text": "If you ask AI for help, request one hint instead of a corrected program."
+      },
+      {
+        "start": 20.508,
+        "end": 25.92,
+        "text": "After your repair, check both whether the code executes and whether the answer makes sense."
+      }
+    ],
+    "duration": 25.92,
+    "bytes": 155520
+  },
+  "shot-lab": {
+    "hash": "39c09be27bf3df612071",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Make a prediction about one extra goal, then test it right on this slide. Watch the counts and the chart change together. Try switching a miss to a goal instead. Why do those two changes give different results? Ask AI for one test that could challenge your prediction, then check it yourself. Explain the evidence and download a Notebook containing your displayed sample. These are invented practice shots.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 4.635,
+        "text": "Make a prediction about one extra goal, then test it right on this slide."
+      },
+      {
+        "start": 4.635,
+        "end": 7.6690000000000005,
+        "text": "Watch the counts and the chart change together."
+      },
+      {
+        "start": 7.6690000000000005,
+        "end": 10.221,
+        "text": "Try switching a miss to a goal instead."
+      },
+      {
+        "start": 10.221,
+        "end": 13.216,
+        "text": "Why do those two changes give different results?"
+      },
+      {
+        "start": 13.216,
+        "end": 18.633,
+        "text": "Ask AI for one test that could challenge your prediction, then check it yourself."
+      },
+      {
+        "start": 18.633,
+        "end": 23.41,
+        "text": "Explain the evidence and download a Notebook containing your displayed sample."
+      },
+      {
+        "start": 23.41,
+        "end": 25.8,
+        "text": "These are invented practice shots."
+      }
+    ],
+    "duration": 25.8,
+    "bytes": 154800
+  },
+  "evidence": {
+    "hash": "95a46230c4a270d50903",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Our imaginary player made four of six shots. Which claim is supported? Your choices are: A, this player is always better than everyone else; B, the success rate in this six-shot practice sample is about sixty-seven percent; or C, Python proved our training method works. Pause and choose before checking. Explain how you connected your claim to the evidence we actually collected.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.099,
+        "text": "Our imaginary player made four of six shots."
+      },
+      {
+        "start": 3.099,
+        "end": 4.753,
+        "text": "Which claim is supported?"
+      },
+      {
+        "start": 4.753,
+        "end": 19.115,
+        "text": "Your choices are: A, this player is always better than everyone else; B, the success rate in this six-shot practice sample is about sixty-seven percent; or C, Python proved our training method works."
+      },
+      {
+        "start": 19.115,
+        "end": 21.745,
+        "text": "Pause and choose before checking."
+      },
+      {
+        "start": 21.745,
+        "end": 25.944,
+        "text": "Explain how you connected your claim to the evidence we actually collected."
+      }
+    ],
+    "duration": 25.944,
+    "bytes": 155664
+  },
+  "project": {
+    "hash": "d1b8fbcc0ded20583273",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Your research note brings together a question, code, a result, and a limitation. Invent at least five attempts and define what zero and one mean. Calculate the count and success rate, change something, and explain its effect. You can tell a soccer, basketball, or game-character story. Clearly label the data as synthetic. Include one AI suggestion you tested, changed, or rejected, and explain your decision.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 5.833,
+        "text": "Your research note brings together a question, code, a result, and a limitation."
+      },
+      {
+        "start": 5.833,
+        "end": 10.312,
+        "text": "Invent at least five attempts and define what zero and one mean."
+      },
+      {
+        "start": 10.312,
+        "end": 15.638,
+        "text": "Calculate the count and success rate, change something, and explain its effect."
+      },
+      {
+        "start": 15.638,
+        "end": 19.844,
+        "text": "You can tell a soccer, basketball, or game-character story."
+      },
+      {
+        "start": 19.844,
+        "end": 22.461,
+        "text": "Clearly label the data as synthetic."
+      },
+      {
+        "start": 22.461,
+        "end": 29.088,
+        "text": "Include one AI suggestion you tested, changed, or rejected, and explain your decision."
+      }
+    ],
+    "duration": 29.088,
+    "bytes": 174528
+  },
+  "project-code": {
+    "hash": "d59ed06809356e1f6722",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Here is a complete starting experiment. Read each line, predict the output, and then execute the program. Replace the practice list with your own invented zeros and ones, keeping at least five attempts. Add a comment explaining your change. Check that the reported goals, attempts, and percentage match your records. The final limitation belongs in your explanation too: this tiny synthetic sample cannot establish facts about real players.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 2.76,
+        "text": "Here is a complete starting experiment."
+      },
+      {
+        "start": 2.76,
+        "end": 7.291,
+        "text": "Read each line, predict the output, and then execute the program."
+      },
+      {
+        "start": 7.291,
+        "end": 13.307,
+        "text": "Replace the practice list with your own invented zeros and ones, keeping at least five attempts."
+      },
+      {
+        "start": 13.307,
+        "end": 15.716,
+        "text": "Add a comment explaining your change."
+      },
+      {
+        "start": 15.716,
+        "end": 20.625,
+        "text": "Check that the reported goals, attempts, and percentage match your records."
+      },
+      {
+        "start": 20.625,
+        "end": 28.752,
+        "text": "The final limitation belongs in your explanation too: this tiny synthetic sample cannot establish facts about real players."
+      }
+    ],
+    "duration": 28.752,
+    "bytes": 172512
+  },
+  "save": {
+    "hash": "4daff958f7eb19dff016",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Return to the interactive shot slide and download the Notebook for your displayed sample. If you made further edits in a Python code box, copy those into the Notebook too. Keep your research record describing an AI suggestion, your test, and your decision. Later, import the Notebook into Kaggle and execute it from beginning to end. If account setup takes longer, keep your files and ask a parent for help afterward.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 5.299,
+        "text": "Return to the interactive shot slide and download the Notebook for your displayed sample."
+      },
+      {
+        "start": 5.299,
+        "end": 9.961,
+        "text": "If you made further edits in a Python code box, copy those into the Notebook too."
+      },
+      {
+        "start": 9.961,
+        "end": 15.586,
+        "text": "Keep your research record describing an AI suggestion, your test, and your decision."
+      },
+      {
+        "start": 15.586,
+        "end": 20.508,
+        "text": "Later, import the Notebook into Kaggle and execute it from beginning to end."
+      },
+      {
+        "start": 20.508,
+        "end": 25.512,
+        "text": "If account setup takes longer, keep your files and ask a parent for help afterward."
+      }
+    ],
+    "duration": 25.512,
+    "bytes": 153072
+  },
+  "exit-ticket": {
+    "hash": "8a64b73579c06046bdc9",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Before you finish, explain one line and predict one change. What does len of shots measure? What would happen to the success rate if you added a miss? What can this tiny sample not prove? Choose a question and explain your reasoning. Then name one decision you made and one AI suggestion you checked. Keep your saved Notebook ready to submit through the course assignment page.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 4.805,
+        "text": "Before you finish, explain one line and predict one change."
+      },
+      {
+        "start": 4.805,
+        "end": 6.7059999999999995,
+        "text": "What does len of shots measure?"
+      },
+      {
+        "start": 6.7059999999999995,
+        "end": 10.012,
+        "text": "What would happen to the success rate if you added a miss?"
+      },
+      {
+        "start": 10.012,
+        "end": 12.695,
+        "text": "What can this tiny sample not prove?"
+      },
+      {
+        "start": 12.695,
+        "end": 15.625,
+        "text": "Choose a question and explain your reasoning."
+      },
+      {
+        "start": 15.625,
+        "end": 20.182,
+        "text": "Then name one decision you made and one AI suggestion you checked."
+      },
+      {
+        "start": 20.182,
+        "end": 24.6,
+        "text": "Keep your saved Notebook ready to submit through the course assignment page."
+      }
+    ],
+    "duration": 24.6,
+    "bytes": 147600
+  },
+  "ai-contract": {
+    "hash": "9e56e5c29eeea45ef796",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "This optional resource describes your partnership with AI. You choose the question, make predictions, decide what counts as a fair test, and check the results. AI can explain an idea, suggest an alternative, help implement a small change, or propose a failure case. Keep an example you corrected or rejected. Your judgment is part of the research, and an AI answer still needs evidence.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.789,
+        "text": "This optional resource describes your partnership with AI."
+      },
+      {
+        "start": 3.789,
+        "end": 9.714,
+        "text": "You choose the question, make predictions, decide what counts as a fair test, and check the results."
+      },
+      {
+        "start": 9.714,
+        "end": 17.044,
+        "text": "AI can explain an idea, suggest an alternative, help implement a small change, or propose a failure case."
+      },
+      {
+        "start": 17.044,
+        "end": 19.805,
+        "text": "Keep an example you corrected or rejected."
+      },
+      {
+        "start": 19.805,
+        "end": 24.888,
+        "text": "Your judgment is part of the research, and an AI answer still needs evidence."
+      }
+    ],
+    "duration": 24.888,
+    "bytes": 149328
+  },
+  "research-path": {
+    "hash": "af5e7f2e11c3ab454261",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Try this optional image experiment after the core lesson. Predict what a filter will do, then compare the original image with the processed pixels. Change one setting and watch the difference. Can a brightness threshold separate the ball from white field markings? Ask AI to suggest a case where that idea fails, then test it. These are simple image filters, not a trained AI model or a ball tracker.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.815,
+        "text": "Try this optional image experiment after the core lesson."
+      },
+      {
+        "start": 3.815,
+        "end": 9.193,
+        "text": "Predict what a filter will do, then compare the original image with the processed pixels."
+      },
+      {
+        "start": 9.193,
+        "end": 12.344,
+        "text": "Change one setting and watch the difference."
+      },
+      {
+        "start": 12.344,
+        "end": 16.745,
+        "text": "Can a brightness threshold separate the ball from white field markings?"
+      },
+      {
+        "start": 16.745,
+        "end": 21.419,
+        "text": "Ask AI to suggest a case where that idea fails, then test it."
+      },
+      {
+        "start": 21.419,
+        "end": 26.544,
+        "text": "These are simple image filters, not a trained AI model or a ball tracker."
+      }
+    ],
+    "duration": 26.544,
+    "bytes": 159264
+  },
+  "family-map": {
+    "hash": "98ff791e2e6f3a48c787",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Share an interest with your family and explore where it might lead. Games connect with algorithms and software. Tracking connects with computer vision, signals, and robotics. Movement connects with mechanics and biomedical engineering. Fair comparisons connect with statistics and data science. The optional exploration map can help you discuss these connections. Our project goal includes reproducible work and a student-written poster abstract draft; conference reviewers decide acceptance.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 4.401,
+        "text": "Share an interest with your family and explore where it might lead."
+      },
+      {
+        "start": 4.401,
+        "end": 7.396,
+        "text": "Games connect with algorithms and software."
+      },
+      {
+        "start": 7.396,
+        "end": 11.263,
+        "text": "Tracking connects with computer vision, signals, and robotics."
+      },
+      {
+        "start": 11.263,
+        "end": 15.104,
+        "text": "Movement connects with mechanics and biomedical engineering."
+      },
+      {
+        "start": 15.104,
+        "end": 19.193,
+        "text": "Fair comparisons connect with statistics and data science."
+      },
+      {
+        "start": 19.193,
+        "end": 23.607,
+        "text": "The optional exploration map can help you discuss these connections."
+      },
+      {
+        "start": 23.607,
+        "end": 32.232,
+        "text": "Our project goal includes reproducible work and a student-written poster abstract draft; conference reviewers decide acceptance."
+      }
+    ],
+    "duration": 32.232,
+    "bytes": 193392
+  },
+  "next": {
+    "hash": "4dc7ae65a965d592469b",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Explore Python in Motion after the core lesson. Predict where the duck will finish, then run the Python example. Replay the recorded steps and watch the highlighted code line, position and variable values. Change one instruction or one wall and explain the new result. The concept menu includes later lessons on decisions, loops and functions. In any code lab, Visualize this code opens your current program, so you can inspect the values you actually used. Save your prediction and evidence.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.203,
+        "text": "Explore Python in Motion after the core lesson."
+      },
+      {
+        "start": 3.203,
+        "end": 7.188,
+        "text": "Predict where the duck will finish, then run the Python example."
+      },
+      {
+        "start": 7.188,
+        "end": 13.398,
+        "text": "Replay the recorded steps and watch the highlighted code line, position and variable values."
+      },
+      {
+        "start": 13.398,
+        "end": 17.943,
+        "text": "Change one instruction or one wall and explain the new result."
+      },
+      {
+        "start": 17.943,
+        "end": 23.242,
+        "text": "The concept menu includes later lessons on decisions, loops and functions."
+      },
+      {
+        "start": 23.242,
+        "end": 30.599,
+        "text": "In any code lab, Visualize this code opens your current program, so you can inspect the values you actually used."
+      },
+      {
+        "start": 30.599,
+        "end": 33.408,
+        "text": "Save your prediction and evidence."
+      }
+    ],
+    "duration": 33.408,
+    "bytes": 200448
+  }
+}

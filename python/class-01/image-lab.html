@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pixel Lab · Python for AI Research</title>
+<style>
+:root{font-family:system-ui,-apple-system,sans-serif;color:#193c4b;background:#eef5f5;color-scheme:light}*{box-sizing:border-box}body{margin:0}a{color:#0a7475}header{padding:28px max(5vw,20px);background:#10344a;color:#fff}header a{color:#9ae2d6}header p{max-width:760px;line-height:1.6;color:#d6e7ec}.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:#3d8e83}header .eyebrow{color:#8ce0cf;margin:18px 0 8px}h1{font-size:clamp(30px,4vw,46px);margin:0 0 8px}h2{margin:0 0 10px;font-size:21px}p{line-height:1.6}main{max-width:1120px;margin:auto;padding:24px 20px}.lab{background:#fff;border:1px solid #d2e3e5;border-radius:18px;padding:22px;box-shadow:0 10px 25px #10344a06}.lab-title{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}.lab-title h2{margin:0}.badge{padding:5px 9px;background:#e7f5ef;color:#286454;font-size:11px;border-radius:7px;font-weight:700}.controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}.select-group{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:700}select,button,.upload-button{font:inherit;border:1px solid #bdd3d9;border-radius:8px;padding:9px 12px;background:#f3f8f8;color:#19424f;cursor:pointer;font-size:13px;white-space:nowrap}select{background:white}button.primary{background:#087c7d;color:white;border-color:#087c7d}button:hover,.upload-button:hover{background:#dff1ed}button.primary:hover{background:#096967}:focus-visible{outline:3px solid #e8a743;outline-offset:3px}.parameter{display:flex;align-items:center;gap:8px;font-size:12px;min-width:230px;flex:1}.parameter[hidden]{display:none}.parameter input{min-width:70px;flex:1;accent-color:#087c7d}.parameter output{min-width:24px;font-weight:800;font-variant-numeric:tabular-nums}.parameter label{white-space:nowrap}.upload-button{display:inline-flex;position:relative;overflow:hidden}.upload-button input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}.upload-button:focus-within{outline:3px solid #e8a743;outline-offset:3px}.panels{display:grid;grid-template-columns:1fr 1fr;gap:14px}.panel{min-width:0;margin:0;background:#123b43;border-radius:12px;overflow:hidden}.panel figcaption{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px;color:#daeeeb;font-size:12px}.panel figcaption b{color:white}.panel figcaption span{font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.panel canvas{display:block;width:100%;aspect-ratio:600/340;object-fit:contain;background:#eef3f4}.explain{font-size:13px;line-height:1.45;margin:13px 0 10px;color:#42616b;min-height:19px}.results{display:flex;gap:18px;align-items:center;padding:12px 14px;border-radius:10px;background:#edf7f4}.metric{font-size:12px;flex:1}.metric strong{font-size:23px;color:#096e6c;font-variant-numeric:tabular-nums}.meter{height:5px;background:#cfe4e0;border-radius:4px;margin-top:6px;overflow:hidden}.meter span{display:block;height:100%;background:#0b9b8d;transition:width .16s}.results p{margin:0;font-size:12px;color:#3c655d;flex:1}.status{font-size:12px;color:#546e79;min-height:18px;margin:8px 0 0}.learning{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}.card{padding:22px;border:1px solid #d2e3e5;background:white;border-radius:16px}.card p,.card li{font-size:14px;line-height:1.7}.steps{padding-left:20px;margin:12px 0}.steps li{padding-left:6px;margin:6px 0}.prediction{display:block;margin-top:14px;font-size:13px;font-weight:700}textarea{display:block;width:100%;min-height:75px;resize:vertical;font:inherit;font-size:14px;margin-top:8px;padding:12px;border-radius:8px;border:1px solid #bfd5d9}.prompt{font-size:13px!important;background:#eef6f5;padding:14px;border-left:3px solid #19a391;border-radius:0 8px 8px 0;user-select:text}.footnote{color:#566f77;font-size:12px!important}.embedded header,.embedded .learning,.embedded .standalone-only{display:none}.embedded body{background:transparent}.embedded main{padding:0;max-width:none}.embedded .lab{padding:12px 14px;box-shadow:none;border-radius:14px}.embedded .lab-title{margin-bottom:9px}.embedded .lab-title h2{font-size:16px}.embedded .controls{gap:8px;margin-bottom:9px}.embedded button,.embedded select{padding:6px 9px;font-size:12px}.embedded .select-group{font-size:12px}.embedded .parameter{min-width:200px}.embedded .panels{gap:10px}.embedded .panel figcaption{padding:6px 10px;font-size:11px}.embedded .panel figcaption span{font-size:10px}.embedded .panel canvas{height:210px;width:100%;aspect-ratio:auto}.embedded .explain{font-size:11px;margin:8px 0;min-height:0}.embedded .results{padding:7px 10px;gap:12px}.embedded .metric{font-size:10px}.embedded .metric strong{font-size:18px}.embedded .results p{font-size:10px}.embedded .meter{margin-top:3px;height:4px}.embedded .status{display:none}@media(max-width:640px){main{padding:16px 12px}.lab{padding:14px}.learning{grid-template-columns:1fr}.controls{gap:8px}.parameter{order:5;flex-basis:100%}.panel figcaption{display:block}.panel figcaption span{display:block;margin-top:3px}.panels{gap:8px}.results{align-items:flex-start;gap:12px}.embedded .panel canvas{height:104px}.embedded .panel figcaption span{display:none}.embedded .parameter{order:5}.embedded .lab{padding:10px}.embedded .badge{font-size:9px}.embedded .results p{font-size:10px}}@media(prefers-reduced-motion:reduce){.meter span{transition:none}}
+</style></head><body>
+<header><a href="./index.html#/research-path">← Back to the lesson</a><p class="eyebrow">Optional discovery · Pixels → Patterns → Questions</p><h1>Can a filter find the ball?</h1><p>Change one rule and inspect the pixels. A useful-looking picture is only the start: your job is to test what the filter keeps, what it loses, and when it fails.</p></header>
+<main><section class="lab" aria-labelledby="lab-heading"><div class="lab-title"><h2 id="lab-heading">Pixel Lab</h2><span class="badge">Simple filters · no trained AI</span></div>
+<div class="controls"><div class="select-group"><label for="filter">Filter</label><select id="filter"><option value="original">Original / baseline</option><option value="grayscale">Grayscale</option><option value="threshold" selected>Black &amp; white threshold</option><option value="blur">Box blur</option></select></div><div id="parameter" class="parameter"><label id="amount-label" for="amount">Brightness cutoff</label><input id="amount" type="range" min="0" max="255" value="150" step="1"><output id="amount-value" for="amount">150</output></div><button id="baseline" type="button">Baseline</button><button id="reset" type="button">Reset</button><label class="upload-button standalone-only">Use my image<input id="upload" type="file" accept="image/*" aria-label="Use an image from your device"></label></div>
+<div class="panels"><figure class="panel"><figcaption><b>BEFORE</b><span id="source-name">Synthetic soccer scene</span></figcaption><canvas id="before" width="600" height="340" role="img" aria-label="Original soccer scene: a ball, field markings, and an orange cone. Upload an image to replace it.">Original image. Use the text description and change metric below.</canvas></figure><figure class="panel"><figcaption><b>AFTER</b><span id="after-name">Threshold · 150</span></figcaption><canvas id="after" width="600" height="340" role="img" aria-label="Filtered image; the selected filter and numeric change are described below.">Processed image. Use the text description and change metric below.</canvas></figure></div>
+<p id="description" class="explain">Bright pixels become white; darker pixels become black. Can field lines be mistaken for the ball?</p><div class="results"><div id="metric" class="metric">Mean RGB change <strong id="change">0.0</strong> / 255<div class="meter" aria-hidden="true"><span id="change-fill"></span></div></div><p id="detail" aria-live="polite">Change measures difference, not accuracy.</p></div><p id="status" class="status" aria-live="polite">Your image stays in this browser. No upload to a server.</p></section>
+<div class="learning"><section class="card"><span class="eyebrow">You choose the experiment</span><h2>Predict. Change one thing. Explain.</h2><ol class="steps"><li><b>Predict:</b> If you raise the brightness cutoff, will more or fewer pixels remain white?</li><li><b>Test:</b> Compare cutoffs 100, 150, and 200 on the same image. Record the white-pixel percentages.</li><li><b>Explain:</b> Which bright objects survive besides the ball? Why is a white pixel not evidence of a ball?</li><li><b>Extend:</b> Try grayscale or blur. Can you describe information each operation removes?</li></ol><label class="prediction" for="prediction">My prediction and evidence<textarea id="prediction" placeholder="I predict… I changed only… I observed… This cannot prove…"></textarea></label><p class="footnote">These notes stay on this page until you leave. Copy your evidence into your research journal before closing.</p></section>
+<section class="card"><span class="eyebrow">Student × AI</span><h2>Ask for a test, then run it yourself</h2><p id="ai-prompt" class="prompt">I am testing brightness thresholding on a soccer image. First ask me to predict what a higher threshold will do. Suggest one fair comparison and one example that might fool the filter. Do not invent results or identify a player. Wait for my measurements, then help me explain a limitation and plan the next test.</p><button id="copy-prompt" class="primary" type="button">Copy AI prompt</button><p id="copy-status" class="status" aria-live="polite"></p><p><b>Research connection:</b> a ball tracker must connect observations across frames. This lab processes one image at a time; it does not track motion or stabilize video.</p><p class="footnote">The brightness rule uses weighted RGB values (21.26% red, 71.52% green, 7.22% blue), without linear-light conversion. Box blur averages RGB values inside a square window, clipped at image edges. Mean RGB change is the average absolute before/after difference across all color channels. It measures change, not image quality or model accuracy.</p><a href="motion-lab.html">Explore camera motion and noisy tracking →</a></section></div></main>
+<script>function validatePixels(pixels, width, height) {
+  if (!Number.isInteger(width) || width < 1 || !Number.isInteger(height) || height < 1 || !pixels || pixels.length !== width * height * 4) throw new RangeError('Expected RGBA pixels matching the image dimensions.');
+}
+function filterPixels(pixels, width, height, mode = 'grayscale', amount = 150) {
+  validatePixels(pixels, width, height);
+  if (!['original', 'grayscale', 'threshold', 'blur'].includes(mode)) throw new RangeError('Unknown image filter.');
+  if (!Number.isFinite(amount) || (mode === 'threshold' && (amount < 0 || amount > 255)) || (mode === 'blur' && (!Number.isInteger(amount) || amount < 0 || amount > 20))) throw new RangeError('Invalid filter setting.');
+  const output = new Uint8ClampedArray(pixels);
+  if (mode === 'original' || (mode === 'blur' && amount === 0)) return output;
+  if (mode !== 'blur') {
+    for (let i = 0; i < pixels.length; i += 4) {
+      const brightness = 0.2126 * pixels[i] + 0.7152 * pixels[i + 1] + 0.0722 * pixels[i + 2];
+      const value = mode === 'threshold' ? (brightness >= amount ? 255 : 0) : Math.round(brightness);
+      output[i] = output[i + 1] = output[i + 2] = value;
+    }
+    return output;
+  }
+  // Summed-area tables give the exact clipped-window RGB box average.
+  // Alpha is preserved; the page draws uploads onto an opaque background first.
+  const stride = width + 1;
+  for (let channel = 0; channel < 3; channel += 1) {
+    const sums = new Float64Array(stride * (height + 1));
+    for (let y = 0; y < height; y += 1) {
+      let row = 0;
+      for (let x = 0; x < width; x += 1) {
+        row += pixels[(y * width + x) * 4 + channel];
+        sums[(y + 1) * stride + x + 1] = sums[y * stride + x + 1] + row;
+      }
+    }
+    for (let y = 0; y < height; y += 1) for (let x = 0; x < width; x += 1) {
+      const left = Math.max(0, x - amount), top = Math.max(0, y - amount);
+      const right = Math.min(width, x + amount + 1), bottom = Math.min(height, y + amount + 1);
+      const sum = sums[bottom * stride + right] - sums[top * stride + right] - sums[bottom * stride + left] + sums[top * stride + left];
+      output[(y * width + x) * 4 + channel] = Math.round(sum / ((right - left) * (bottom - top)));
+    }
+  }
+  return output;
+}
+function meanChannelChange(before, after) {
+  if (!before || !after || !before.length || before.length % 4 || before.length !== after.length) throw new RangeError('Expected two equal, nonempty RGBA images.');
+  let sum = 0;
+  for (let i = 0; i < before.length; i += 4) for (let channel = 0; channel < 3; channel += 1) sum += Math.abs(before[i + channel] - after[i + channel]);
+  return sum / (before.length / 4 * 3);
+}
+(function imageLabClient() {
+  const $ = id => document.getElementById(id);
+  if (new URLSearchParams(location.search).get('embed') === '1') document.documentElement.classList.add('embedded');
+  const before = $('before'), after = $('after');
+  const ctx = before.getContext('2d', { willReadFrequently: true });
+  const resultCtx = after.getContext('2d');
+  let source, currentMode = 'threshold', imageLoad = 0;
+  const settings = { threshold: 150, blur: 3 };
+  const descriptions = {
+    original: 'Baseline: every pixel is unchanged. Use this as your reference.',
+    grayscale: 'Keep brightness; remove color. What clues disappear?',
+    threshold: 'Bright pixels become white; darker pixels become black. Can field lines be mistaken for the ball?',
+    blur: 'Average neighboring pixels. Smoother edges can also lose useful detail.'
+  };
+  function polygon(x, y, radius, count, rotation, fill) {
+    ctx.beginPath();
+    for (let i = 0; i < count; i += 1) {
+      const angle = rotation + i * Math.PI * 2 / count;
+      ctx.lineTo(x + Math.cos(angle) * radius, y + Math.sin(angle) * radius);
+    }
+    ctx.closePath(); ctx.fillStyle = fill; ctx.fill();
+  }
+  function preset() {
+    imageLoad += 1;
+    const w = before.width, h = before.height;
+    ctx.fillStyle = '#216f55'; ctx.fillRect(0, 0, w, h);
+    for (let i = 0; i < 6; i += 1) { ctx.fillStyle = i % 2 ? '#287e5f' : '#236e54'; ctx.fillRect(i * 100, 0, 100, h); }
+    ctx.lineWidth = 5; ctx.strokeStyle = '#bed8bf';
+    ctx.strokeRect(25, 26, w - 50, h - 52);
+    ctx.beginPath(); ctx.moveTo(300, 26); ctx.lineTo(300, h - 26); ctx.stroke();
+    ctx.beginPath(); ctx.arc(300, 170, 69, 0, Math.PI * 2); ctx.stroke();
+    ctx.fillStyle = 'rgba(10,30,30,.25)'; ctx.beginPath(); ctx.ellipse(226, 253, 59, 14, 0, 0, Math.PI * 2); ctx.fill();
+    // The two bright distractors make thresholding's limitation visible.
+    ctx.fillStyle = '#efae63'; ctx.beginPath(); ctx.moveTo(463, 146); ctx.lineTo(438, 198); ctx.lineTo(488, 198); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = '#ecf0df'; ctx.fillRect(435, 196, 55, 7);
+    const gradient = ctx.createRadialGradient(201, 185, 3, 220, 215, 50);
+    gradient.addColorStop(0, '#ffffff'); gradient.addColorStop(1, '#c0d7da');
+    ctx.fillStyle = gradient; ctx.beginPath(); ctx.arc(218, 210, 44, 0, Math.PI * 2); ctx.fill();
+    polygon(218, 209, 15, 5, -Math.PI / 2, '#243645');
+    for (let i = 0; i < 5; i += 1) { const a = -Math.PI / 2 + i * Math.PI * 2 / 5; polygon(218 + Math.cos(a) * 33, 210 + Math.sin(a) * 33, 9, 5, a, '#314957'); }
+    source = ctx.getImageData(0, 0, w, h);
+    $('source-name').textContent = 'Synthetic soccer scene';
+    before.setAttribute('aria-label', 'Original synthetic soccer scene: a ball, field markings, and an orange cone.');
+    $('upload').value = '';
+    render();
+  }
+  function render() {
+    if (!source) return;
+    const amount = settings[currentMode] ?? 0;
+    const pixels = filterPixels(source.data, source.width, source.height, currentMode, amount);
+    resultCtx.putImageData(new ImageData(pixels, source.width, source.height), 0, 0);
+    const change = meanChannelChange(source.data, pixels);
+    $('change').textContent = change.toFixed(1);
+    $('change-fill').style.width = change / 255 * 100 + '%';
+    $('description').textContent = descriptions[currentMode];
+    $('after-name').textContent = currentMode === 'original' ? 'Unchanged baseline' : currentMode === 'threshold' ? 'Threshold · ' + amount : currentMode === 'blur' ? 'Box blur · radius ' + amount : 'Grayscale';
+    $('metric').setAttribute('aria-label', 'Mean absolute RGB channel change: ' + change.toFixed(1) + ' out of 255. This measures change, not accuracy.');
+    let detail = 'Change measures difference, not accuracy.';
+    if (currentMode === 'threshold') {
+      let white = 0; for (let i = 0; i < pixels.length; i += 4) if (pixels[i] === 255) white += 1;
+      detail = (white / (pixels.length / 4) * 100).toFixed(1) + '% white pixels · not a ball detection score';
+    }
+    $('detail').textContent = detail;
+  }
+  function changeMode() {
+    currentMode = $('filter').value;
+    const adjustable = currentMode === 'threshold' || currentMode === 'blur';
+    $('parameter').hidden = !adjustable;
+    if (adjustable) {
+      $('amount').min = 0; $('amount').max = currentMode === 'threshold' ? 255 : 12;
+      $('amount').value = settings[currentMode];
+      $('amount-label').textContent = currentMode === 'threshold' ? 'Brightness cutoff' : 'Blur radius';
+      $('amount-value').textContent = settings[currentMode];
+    }
+    render();
+  }
+  $('filter').addEventListener('change', changeMode);
+  $('amount').addEventListener('input', () => { settings[currentMode] = Number($('amount').value); $('amount-value').textContent = settings[currentMode]; render(); });
+  $('baseline').addEventListener('click', () => { $('filter').value = 'original'; changeMode(); });
+  $('reset').addEventListener('click', () => { settings.threshold = 150; settings.blur = 3; $('filter').value = 'threshold'; currentMode = 'threshold'; preset(); changeMode(); $('status').textContent = 'Synthetic scene and starting settings restored.'; });
+  $('upload').addEventListener('change', () => {
+    const file = $('upload').files[0]; if (!file) return;
+    if (!/^image\//.test(file.type)) { $('status').textContent = 'Choose an image file.'; return; }
+    const sequence = ++imageLoad, url = URL.createObjectURL(file), img = new Image();
+    img.onload = () => {
+      URL.revokeObjectURL(url);
+      if (sequence !== imageLoad) return;
+      const scale = Math.min(before.width / img.naturalWidth, before.height / img.naturalHeight);
+      const w = Math.round(img.naturalWidth * scale), h = Math.round(img.naturalHeight * scale);
+      ctx.fillStyle = '#eef3f4'; ctx.fillRect(0, 0, before.width, before.height);
+      ctx.drawImage(img, Math.round((before.width - w) / 2), Math.round((before.height - h) / 2), w, h);
+      source = ctx.getImageData(0, 0, before.width, before.height);
+      $('source-name').textContent = 'Your image · fitted to canvas';
+      before.setAttribute('aria-label', 'Your selected image, fitted to a six hundred by three hundred forty pixel canvas.');
+      $('status').textContent = 'Image processed in this browser. The metric includes any canvas borders.';
+      render();
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); if (sequence === imageLoad) $('status').textContent = 'This image could not be opened. Try a PNG or JPEG.'; };
+    img.src = url;
+  });
+  $('copy-prompt').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText($('ai-prompt').textContent); $('copy-status').textContent = 'Prompt copied. Add your own prediction and measurements.'; }
+    catch (_) { $('copy-status').textContent = 'Select the prompt text and copy it manually.'; }
+  });
+  preset(); changeMode();
+})();</script></body></html>

@@ -1,0 +1,416 @@
+{
+  "hello": {
+    "hash": "b3b6dbc5b73b35a4b616",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "This line stores the text Alex under the name researcher. The quotation marks tell Python that Alex is text, rather than another variable to look up.",
+        "file": "hello-w00.mp3",
+        "duration": 9.864,
+        "bytes": 59184
+      },
+      {
+        "lines": [
+          2,
+          2
+        ],
+        "text": "Here we store our research question as text. Nothing appears on screen yet; this line gives the question a name so we can use it later.",
+        "file": "hello-w01.mp3",
+        "duration": 9.672,
+        "bytes": 58032
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "Print displays a greeting followed by the value stored in researcher. Python adds a space between these two items, so the output is Hello, Alex.",
+        "file": "hello-w02.mp3",
+        "duration": 9.48,
+        "bytes": 56880
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "This line displays the question we stored earlier: How often did the shot go in? It appears on a new line, after the greeting.",
+        "file": "hello-w03.mp3",
+        "duration": 7.872,
+        "bytes": 47232
+      }
+    ]
+  },
+  "variables": {
+    "hash": "16688996572d513efe74",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "This line assigns the number three to goals. The equals sign stores a value; it does not ask whether two values are equal.",
+        "file": "variables-w00.mp3",
+        "duration": 8.544,
+        "bytes": 51264
+      },
+      {
+        "lines": [
+          2,
+          2
+        ],
+        "text": "This line stores five under the name shots. Goals and shots are separate variables, so setting shots does not change the value of goals.",
+        "file": "variables-w01.mp3",
+        "duration": 9.12,
+        "bytes": 54720
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "Print looks up the current value of goals and displays three. If you change the first line to four and run again, this output becomes four.",
+        "file": "variables-w02.mp3",
+        "duration": 8.664,
+        "bytes": 51984
+      }
+    ]
+  },
+  "types": {
+    "hash": "ba5641483e67535d17db",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "The quotation marks make three and two text strings. Plus joins those strings, so print displays the characters three then two: 32. Without quotes, addition would produce five.",
+        "file": "types-w00.mp3",
+        "duration": 13.032,
+        "bytes": 78192
+      }
+    ]
+  },
+  "rate": {
+    "hash": "58fa0e5596c0780af8f1",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "We begin by storing three goals. This is one input to our calculation, and changing it lets us test a different practice result.",
+        "file": "rate-w00.mp3",
+        "duration": 8.904,
+        "bytes": 53424
+      },
+      {
+        "lines": [
+          2,
+          2
+        ],
+        "text": "We store five shot attempts. This total includes both goals and misses; dividing by attempts lets us compare results from different numbers of shots.",
+        "file": "rate-w01.mp3",
+        "duration": 9.48,
+        "bytes": 56880
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "Divide three goals by five shots, then multiply by one hundred to get a percentage. Python stores sixty point zero in the variable named success rate.",
+        "file": "rate-w02.mp3",
+        "duration": 10.944,
+        "bytes": 65664
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "This line prints the label Goals followed by three. A label makes the output easier to interpret than showing an unexplained number by itself.",
+        "file": "rate-w03.mp3",
+        "duration": 8.808,
+        "bytes": 52848
+      },
+      {
+        "lines": [
+          5,
+          5
+        ],
+        "text": "This line prints Success rate followed by sixty point zero and a percent sign. It displays the value already calculated; it does not perform the division again.",
+        "file": "rate-w04.mp3",
+        "duration": 10.512,
+        "bytes": 63072
+      }
+    ]
+  },
+  "list": {
+    "hash": "1c3ee51eb7d6b9e4befd",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "This list stores five attempts in order. One means a goal and zero means a miss, so the list preserves more detail than a single total.",
+        "file": "list-w00.mp3",
+        "duration": 9.048,
+        "bytes": 54288
+      },
+      {
+        "lines": [
+          2,
+          2
+        ],
+        "text": "Sum adds the list entries, and print displays three. This counts goals because every goal contributes one and every miss contributes zero.",
+        "file": "list-w01.mp3",
+        "duration": 9.816,
+        "bytes": 58896
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "Len counts how many entries the list contains, so print displays five. Misses still count as attempts, even though their stored value is zero.",
+        "file": "list-w02.mp3",
+        "duration": 9.744,
+        "bytes": 58464
+      }
+    ]
+  },
+  "records": {
+    "hash": "368e9becb3c902aa4fd3",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "This comment explains our data: the practice records are invented, one means goal, and zero means miss. Python skips comments, but readers need this context.",
+        "file": "records-w00.mp3",
+        "duration": 11.832,
+        "bytes": 70992
+      },
+      {
+        "lines": [
+          2,
+          2
+        ],
+        "text": "We store five attempts as a list containing three ones and two zeros. Adding another goal means appending a new one, which also increases the attempt count.",
+        "file": "records-w01.mp3",
+        "duration": 10.8,
+        "bytes": 64800
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "Sum adds all the entries and stores three in goals. Using the list means the total will update automatically when we change the data and run again.",
+        "file": "records-w02.mp3",
+        "duration": 10.176,
+        "bytes": 61056
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "Len counts the entries and stores five in attempts. This counts every shot, including misses, so our percentage uses the full number of opportunities.",
+        "file": "records-w03.mp3",
+        "duration": 10.656,
+        "bytes": 63936
+      },
+      {
+        "lines": [
+          5,
+          5
+        ],
+        "text": "This line displays Goals followed by three. Check that this agrees with the number of ones in the list before trusting the final percentage.",
+        "file": "records-w04.mp3",
+        "duration": 8.592,
+        "bytes": 51552
+      },
+      {
+        "lines": [
+          6,
+          6
+        ],
+        "text": "This line displays Attempts followed by five. After appending another goal, it should display six; the extra goal is also an extra attempt.",
+        "file": "records-w05.mp3",
+        "duration": 9.912,
+        "bytes": 59472
+      },
+      {
+        "lines": [
+          7,
+          7
+        ],
+        "text": "This prints the success rate: three divided by five times one hundred, or sixty percent. Appending a goal gives four out of six, about sixty-seven percent.",
+        "file": "records-w06.mp3",
+        "duration": 10.752,
+        "bytes": 64512
+      }
+    ]
+  },
+  "debug": {
+    "hash": "1549111a8e7471ffe867",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "This line creates a variable named goals, ending with an s, and stores three. Remember that exact name when you inspect the calculation below.",
+        "file": "debug-w00.mp3",
+        "duration": 9.744,
+        "bytes": 58464
+      },
+      {
+        "lines": [
+          2,
+          2
+        ],
+        "text": "This line creates shots and stores five. Both intended inputs now exist, so our next check is whether the calculation uses their names consistently.",
+        "file": "debug-w01.mp3",
+        "duration": 10.296,
+        "bytes": 61776
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "This comment gives us a debugging task. Python ignores the comment; we should compare the variable names already defined with the names used on the next line.",
+        "file": "debug-w02.mp3",
+        "duration": 9.936,
+        "bytes": 59616
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "This line asks for goal without the final s. That name is undefined in this program, so Python raises a NameError before print can display a percentage.",
+        "file": "debug-w03.mp3",
+        "duration": 10.776,
+        "bytes": 64656
+      }
+    ]
+  },
+  "project-code": {
+    "hash": "756d698286f49c17f797",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "This comment identifies our records as synthetic practice data. We can use them to check code, but they are not evidence about an actual player.",
+        "file": "project-code-w00.mp3",
+        "duration": 8.952,
+        "bytes": 53712
+      },
+      {
+        "lines": [
+          2,
+          2
+        ],
+        "text": "We save the research question as text. Writing the question explicitly helps another reader understand what the calculation is intended to describe.",
+        "file": "project-code-w01.mp3",
+        "duration": 9.072,
+        "bytes": 54432
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "This list records five invented attempts, with one for a goal and zero for a miss. Keep that meaning consistent when replacing the example data.",
+        "file": "project-code-w02.mp3",
+        "duration": 9.792,
+        "bytes": 58752
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "Print displays our question before the results: How often did each practice shot go in? This connects the following numbers to the purpose of our experiment.",
+        "file": "project-code-w03.mp3",
+        "duration": 9.288,
+        "bytes": 55728
+      },
+      {
+        "lines": [
+          5,
+          5
+        ],
+        "text": "Sum counts three goals from the list, and print displays that count beside the Goals label. The result comes from the current data, rather than a separate handwritten total.",
+        "file": "project-code-w04.mp3",
+        "duration": 10.752,
+        "bytes": 64512
+      },
+      {
+        "lines": [
+          6,
+          6
+        ],
+        "text": "Len counts all five attempts, and print displays the total beside Attempts. A reader needs this sample size to understand how much evidence the rate summarizes.",
+        "file": "project-code-w05.mp3",
+        "duration": 10.776,
+        "bytes": 64656
+      },
+      {
+        "lines": [
+          7,
+          7
+        ],
+        "text": "This divides three goals by five attempts and multiplies by one hundred, printing sixty percent. It describes this sample; it does not establish a player’s general skill.",
+        "file": "project-code-w06.mp3",
+        "duration": 11.4,
+        "bytes": 68400
+      },
+      {
+        "lines": [
+          8,
+          8
+        ],
+        "text": "The final line prints a limitation: this is a tiny synthetic sample. Keeping that statement beside the results helps prevent a correct calculation from becoming an unsupported claim.",
+        "file": "project-code-w07.mp3",
+        "duration": 11.856,
+        "bytes": 71136
+      }
+    ]
+  }
+}

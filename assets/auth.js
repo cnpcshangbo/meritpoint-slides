@@ -1,4 +1,7 @@
 (function(){
+  if(/^\/guides(?:\/|$)/.test(location.pathname)&&!document.querySelector('script[data-guide-analytics]')){
+    var analytics=document.createElement('script');analytics.src='/meritpoint-slides/assets/guide-analytics.js';analytics.defer=true;analytics.dataset.guideAnalytics='';document.head.appendChild(analytics);
+  }
   var css = '#mpAuth{position:fixed;top:12px;right:14px;z-index:4000;font-family:-apple-system,"Segoe UI",Roboto,sans-serif}'
     + '#mpAuth .chip{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #D7E2EC;border-radius:999px;'
     + 'padding:5px 12px 5px 5px;box-shadow:0 3px 10px rgba(20,40,70,.12);cursor:pointer;font-size:13px;color:#21303F;text-decoration:none}'
@@ -22,7 +25,7 @@
       el.innerHTML = '<div class="chip" role="button" aria-haspopup="true">'
         + '<span class="av">' + initial + '</span><span>' + label.split(' ')[0].split('@')[0] + '</span></div>'
         + '<div class="menu"><div class="who"><b></b><span></span></div>'
-        + '<a href="/ai-toolbox/">📚 My classes · 课程</a>'
+        + '<a href="/meritpoint-slides/ai-toolbox/">📚 My classes · 课程</a>'
         + '<a href="https://academic.hopeembark.org/assignments">📝 Assignments &amp; grades · 作业与成绩</a>'
         + '<a class="out" href="/auth/logout">Sign out · 退出登录</a></div>';
       el.querySelector('.who b').textContent = d.user.name || '(no name)';

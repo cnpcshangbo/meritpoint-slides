@@ -6,15 +6,19 @@
   Object.keys(tagSet).sort().forEach(function(t){var c=document.createElement('span');c.className='chip';c.textContent=t;c.onclick=function(){if(active.has(t)){active.delete(t);c.classList.remove('on')}else{active.add(t);c.classList.add('on')}render()};tagsEl.appendChild(c)});
   function matches(it){var s=q.value.trim().toLowerCase();if(s&&it.hay.indexOf(s)<0)return false;if(active.size){var dt=new Set([].concat(it.d.tags||[],it.co.tags||[]));for(var t of active){if(!dt.has(t))return false}}return true}
   function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+  function guideDate(value){var bits=String(value||'').match(/^(\d{4})-(\d{2})-(\d{2})$/);if(!bits)return String(value||'');return new Date(Date.UTC(Number(bits[1]),Number(bits[2])-1,Number(bits[3]))).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'})}
+  function guideAttrs(co,d){return co.id==='guides'?' data-guide-id="'+esc(d.id)+'" data-guide-domain="'+esc(d.domain||'')+'" data-guide-published-at="'+esc(d.publishedAt||'')+'"':''}
+  function guideMeta(co,d){return co.id==='guides'&&d.publishedAt?'<div class="guide-meta"><span>Published <time datetime="'+esc(d.publishedAt)+'">'+esc(guideDate(d.publishedAt))+'</time></span><span><span data-guide-reads data-guide-views aria-live="polite">—</span> views</span></div>':''}
   function render(){var shown=items.filter(matches);countEl.textContent=shown.length+' class'+(shown.length===1?'':'es')+(q.value||active.size?' match':' available');var html='';
     cat.courses.forEach(function(co){var ds=shown.filter(function(it){return it.co.id===co.id});if(!ds.length)return;
       html+='<section class="course"><h2>'+esc(co.title)+'</h2><p class="sub">'+esc(co.subtitle||'')+'</p><div class="grid">';
       ds.forEach(function(it){var d=it.d,ready=d.status==='ready',href=ready?co.id+'/'+d.id+'/':'#';
         var pdf=(ready&&!d.noPdf)?'<span class="pdf-link" data-pdf="'+href+'slides.pdf" title="Download these slides as a PDF">⬇ PDF</span>':'';
-        html+='<a class="card '+(ready?'ready':'planned')+'" href="'+href+'"><div class="num">'+(d.numLabel?esc(d.numLabel):'CLASS '+String(d.n).padStart(2,"0"))+'</div><h3>'+esc(d.title||'')+'</h3><div class="asg-badge" data-deck="'+esc(d.id)+'"></div><p>'+esc(d.summary||'')+'</p><div class="ct">'+(d.tags||[]).slice(0,4).map(function(t){return '<span class="t">'+esc(t)+'</span>'}).join('')+pdf+'</div></a>'});
+        html+='<a class="card '+(ready?'ready':'planned')+'"'+guideAttrs(co,d)+' href="'+href+'"><div class="num">'+(d.numLabel?esc(d.numLabel):'CLASS '+String(d.n).padStart(2,"0"))+'</div><h3>'+esc(d.title||'')+'</h3><div class="asg-badge" data-course="'+esc(co.id)+'" data-deck="'+esc(d.id)+'"></div><p>'+esc(d.summary||'')+'</p>'+guideMeta(co,d)+'<div class="ct">'+(d.tags||[]).slice(0,4).map(function(t){return '<span class="t">'+esc(t)+'</span>'}).join('')+pdf+'</div></a>'});
       html+='</div></section>'});
     resEl.innerHTML=html||'<p class="empty">No classes match. Try a different search or clear the tags.</p>';
     if(window.applyAsgBadges)window.applyAsgBadges();
+    document.dispatchEvent(new CustomEvent('meritpoint:guide-cards-rendered'));
     var tc=document.getElementById('tagCount'); if(tc) tc.innerHTML=active.size?'<span class="n">'+active.size+'</span>':'';}
   // pdf chips live inside the card link — swallow the card navigation
   resEl.addEventListener('click',function(e){var p=e.target.closest('.pdf-link');if(p){e.preventDefault();e.stopPropagation();location.href=p.dataset.pdf;}});

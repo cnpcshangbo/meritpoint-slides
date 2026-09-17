@@ -1,0 +1,1259 @@
+{
+  "title": {
+    "hash": "cd5771c7c4f8d1c1cbe6",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Welcome, Morris Chinese Academy students and families, to this Python trial lesson with Merit Point Academy. Today, you will predict, run code, and explain a small soccer experiment. First, meet the people behind the course.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 7.617,
+        "text": "Welcome, Morris Chinese Academy students and families, to this Python trial lesson with Merit Point Academy."
+      },
+      {
+        "start": 7.617,
+        "end": 12.695,
+        "text": "Today, you will predict, run code, and explain a small soccer experiment."
+      },
+      {
+        "start": 12.695,
+        "end": 15.624,
+        "text": "First, meet the people behind the course."
+      }
+    ],
+    "duration": 15.624,
+    "bytes": 93744
+  },
+  "academy": {
+    "hash": "1efd01015941c401db3a",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Merit Point Academy connects classroom learning with research for secondary-school students. Our mission is wholehearted service to students. That means starting with each student's interests and readiness, supporting authentic work they can explain, and building lasting ability through practice and feedback. AI tools and interdisciplinary projects support this process. We want students to become more independent as they learn. What is one question you would enjoy investigating?",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 5.417,
+        "text": "Merit Point Academy connects classroom learning with research for secondary-school students."
+      },
+      {
+        "start": 5.417,
+        "end": 8.555,
+        "text": "Our mission is wholehearted service to students."
+      },
+      {
+        "start": 8.555,
+        "end": 18.086,
+        "text": "That means starting with each student's interests and readiness, supporting authentic work they can explain, and building lasting ability through practice and feedback."
+      },
+      {
+        "start": 18.086,
+        "end": 22.721,
+        "text": "AI tools and interdisciplinary projects support this process."
+      },
+      {
+        "start": 22.721,
+        "end": 26.484,
+        "text": "We want students to become more independent as they learn."
+      },
+      {
+        "start": 26.484,
+        "end": 29.376,
+        "text": "What is one question you would enjoy investigating?"
+      }
+    ],
+    "duration": 29.376,
+    "bytes": 176256
+  },
+  "history": {
+    "hash": "441bde777e7b5c364a56",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Our programs grew from students' needs. Around twenty twenty-five, Xiwang Guo at NJIT began free Sunday research mentoring for high-school students at Livingston Library. This gradually developed into structured one-to-one guidance, from choosing a question and finding data to analysis and writing. In summer twenty twenty-six, Bo Shang led two small AI Toolbox cohorts, with around fifteen lessons and no more than five students per group. After limited one-to-one Python teaching that summer, fall brought the formal launch of Python group classes. As the programs grew, support extended to the foundations students needed. A beginner can now start with Python, progress to AI Toolbox, and later pursue research with a mentor. The mission continues: help each student take the next step.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 2.721,
+        "text": "Our programs grew from students' needs."
+      },
+      {
+        "start": 2.721,
+        "end": 11.654,
+        "text": "Around twenty twenty-five, Xiwang Guo at NJIT began free Sunday research mentoring for high-school students at Livingston Library."
+      },
+      {
+        "start": 11.654,
+        "end": 19.323,
+        "text": "This gradually developed into structured one-to-one guidance, from choosing a question and finding data to analysis and writing."
+      },
+      {
+        "start": 19.323,
+        "end": 29.31,
+        "text": "In summer twenty twenty-six, Bo Shang led two small AI Toolbox cohorts, with around fifteen lessons and no more than five students per group."
+      },
+      {
+        "start": 29.31,
+        "end": 36.549,
+        "text": "After limited one-to-one Python teaching that summer, fall brought the formal launch of Python group classes."
+      },
+      {
+        "start": 36.549,
+        "end": 41.563,
+        "text": "As the programs grew, support extended to the foundations students needed."
+      },
+      {
+        "start": 41.563,
+        "end": 48.125,
+        "text": "A beginner can now start with Python, progress to AI Toolbox, and later pursue research with a mentor."
+      },
+      {
+        "start": 48.125,
+        "end": 52.392,
+        "text": "The mission continues: help each student take the next step."
+      }
+    ],
+    "duration": 52.392,
+    "bytes": 314352
+  },
+  "ai-approach": {
+    "hash": "97a96689dd91a376dd4b",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "AI expands the tools students can use, while students lead the research. AI can help with ideas, code, editing, and analysis. Students disclose its use, check its suggestions, and explain their decisions. Mentors teach, ask questions, and review progress. Today, you will practice a small version of that process: predict, run, change, and explain. Who needs to understand the final conclusion? You do.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 5.156,
+        "text": "AI expands the tools students can use, while students lead the research."
+      },
+      {
+        "start": 5.156,
+        "end": 9.609,
+        "text": "AI can help with ideas, code, editing, and analysis."
+      },
+      {
+        "start": 9.609,
+        "end": 14.831,
+        "text": "Students disclose its use, check its suggestions, and explain their decisions."
+      },
+      {
+        "start": 14.831,
+        "end": 18.711,
+        "text": "Mentors teach, ask questions, and review progress."
+      },
+      {
+        "start": 18.711,
+        "end": 25.404,
+        "text": "Today, you will practice a small version of that process: predict, run, change, and explain."
+      },
+      {
+        "start": 25.404,
+        "end": 28.216,
+        "text": "Who needs to understand the final conclusion?"
+      },
+      {
+        "start": 28.216,
+        "end": 29.28,
+        "text": "You do."
+      }
+    ],
+    "duration": 29.28,
+    "bytes": 175680
+  },
+  "mentors": {
+    "hash": "9a496ab0266b365be36d",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Your instructor and Lab Director is Bo Shang, a PhD and postdoctoral associate at the University of Maryland. His work includes robotics, multi-sensor perception, computer vision, and machine learning. The wider mentor and advisor team covers software and collaborative systems with Professor Zhu; AI and optimization with Professor Guo; AI strategy and foresight with Doctor Wang; and model governance and financial risk with Doctor Li. Mentors are matched to projects and availability. Families can explore the linked team page after class.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 7.396,
+        "text": "Your instructor and Lab Director is Bo Shang, a PhD and postdoctoral associate at the University of Maryland."
+      },
+      {
+        "start": 7.396,
+        "end": 13.32,
+        "text": "His work includes robotics, multi-sensor perception, computer vision, and machine learning."
+      },
+      {
+        "start": 13.32,
+        "end": 29.01,
+        "text": "The wider mentor and advisor team covers software and collaborative systems with Professor Zhu; AI and optimization with Professor Guo; AI strategy and foresight with Doctor Wang; and model governance and financial risk with Doctor Li."
+      },
+      {
+        "start": 29.01,
+        "end": 32.344,
+        "text": "Mentors are matched to projects and availability."
+      },
+      {
+        "start": 32.344,
+        "end": 35.904,
+        "text": "Families can explore the linked team page after class."
+      }
+    ],
+    "duration": 35.904,
+    "bytes": 215424
+  },
+  "pathway": {
+    "hash": "a5c9306d2703d70e237b",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Merit Point Academy’s research growth pathway has three stages. Stage one is Python for AI Research. Students build programming, data analysis, and scientific computing foundations. Today, we are trying a small part of that first stage. Stage two is AI Toolbox: learn machine learning and other AI methods, follow a research process, read papers, and develop an AI project. Stage three is AI Research Mentorship: work with doctoral mentors on an individual research question, from literature and model design to experiments, analysis, and writing. A portfolio, poster, and presentation help communicate that work. The pathway welcomes beginners in grades eight through twelve. What question would you like to investigate as your skills grow?",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 4.427,
+        "text": "Merit Point Academy’s research growth pathway has three stages."
+      },
+      {
+        "start": 4.427,
+        "end": 7.37,
+        "text": "Stage one is Python for AI Research."
+      },
+      {
+        "start": 7.37,
+        "end": 12.799,
+        "text": "Students build programming, data analysis, and scientific computing foundations."
+      },
+      {
+        "start": 12.799,
+        "end": 16.25,
+        "text": "Today, we are trying a small part of that first stage."
+      },
+      {
+        "start": 16.25,
+        "end": 26.315,
+        "text": "Stage two is AI Toolbox: learn machine learning and other AI methods, follow a research process, read papers, and develop an AI project."
+      },
+      {
+        "start": 26.315,
+        "end": 37.826,
+        "text": "Stage three is AI Research Mentorship: work with doctoral mentors on an individual research question, from literature and model design to experiments, analysis, and writing."
+      },
+      {
+        "start": 37.826,
+        "end": 42.76,
+        "text": "A portfolio, poster, and presentation help communicate that work."
+      },
+      {
+        "start": 42.76,
+        "end": 46.667,
+        "text": "The pathway welcomes beginners in grades eight through twelve."
+      },
+      {
+        "start": 46.667,
+        "end": 50.04,
+        "text": "What question would you like to investigate as your skills grow?"
+      }
+    ],
+    "duration": 50.04,
+    "bytes": 300240
+  },
+  "phase-one": {
+    "hash": "cdf077bc8d9b8b700e6a",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Our Python course has fifteen lessons, organized into four learning units. In lessons one through three, you learn to read and change a small program: variables and lists, decisions and loops, then reusable functions and research records. You also begin choosing a question of your own. Lessons four through eight build the evidence. Use NumPy for simulations, pandas for tables, and charts to explore a question. Keep reasons for your data-cleaning choices and plan how to test an idea. Each unit gives you something to build on. Today’s trial is a small taste of lesson one: predict, run, change, and explain.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 5.273,
+        "text": "Our Python course has fifteen lessons, organized into four learning units."
+      },
+      {
+        "start": 5.273,
+        "end": 16.133,
+        "text": "In lessons one through three, you learn to read and change a small program: variables and lists, decisions and loops, then reusable functions and research records."
+      },
+      {
+        "start": 16.133,
+        "end": 18.815,
+        "text": "You also begin choosing a question of your own."
+      },
+      {
+        "start": 18.815,
+        "end": 21.615,
+        "text": "Lessons four through eight build the evidence."
+      },
+      {
+        "start": 21.615,
+        "end": 27.734,
+        "text": "Use NumPy for simulations, pandas for tables, and charts to explore a question."
+      },
+      {
+        "start": 27.734,
+        "end": 32.344,
+        "text": "Keep reasons for your data-cleaning choices and plan how to test an idea."
+      },
+      {
+        "start": 32.344,
+        "end": 34.909,
+        "text": "Each unit gives you something to build on."
+      },
+      {
+        "start": 34.909,
+        "end": 41.304,
+        "text": "Today’s trial is a small taste of lesson one: predict, run, change, and explain."
+      }
+    ],
+    "duration": 41.304,
+    "bytes": 247824
+  },
+  "syllabus-project": {
+    "hash": "02d7993d20876d811b6f",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "The second half of the Python course connects these foundations to a small research project. Lessons nine through thirteen introduce a machine-learning baseline, numerical and category predictions, decision trees, and fair model comparisons. Learn to inspect mistakes and compare methods on the same test. These are introductory modeling lessons within Python, preparing you for the broader AI Toolbox program. In lessons fourteen and fifteen, bring your question, code, figures, actual results, and limitations into a project others can check. Prepare an abstract and poster draft, present your work, and answer questions. You choose one small project and use the methods that fit its question.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 5.664,
+        "text": "The second half of the Python course connects these foundations to a small research project."
+      },
+      {
+        "start": 5.664,
+        "end": 15.365,
+        "text": "Lessons nine through thirteen introduce a machine-learning baseline, numerical and category predictions, decision trees, and fair model comparisons."
+      },
+      {
+        "start": 15.365,
+        "end": 19.805,
+        "text": "Learn to inspect mistakes and compare methods on the same test."
+      },
+      {
+        "start": 19.805,
+        "end": 26.354,
+        "text": "These are introductory modeling lessons within Python, preparing you for the broader AI Toolbox program."
+      },
+      {
+        "start": 26.354,
+        "end": 34.961,
+        "text": "In lessons fourteen and fifteen, bring your question, code, figures, actual results, and limitations into a project others can check."
+      },
+      {
+        "start": 34.961,
+        "end": 40.299,
+        "text": "Prepare an abstract and poster draft, present your work, and answer questions."
+      },
+      {
+        "start": 40.299,
+        "end": 44.784,
+        "text": "You choose one small project and use the methods that fit its question."
+      }
+    ],
+    "duration": 44.784,
+    "bytes": 268704
+  },
+  "mission": {
+    "hash": "ff6d6653f05cb931f9c2",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Your goal today is to make something you can explain. You will begin with a prediction, run Python, make one small change, and compare the result with your expectation. You will also keep a chart and one sentence about what the evidence cannot prove. If you are working in pairs, choose who will operate the code and who will predict and record first. Swap roles along the way. If this is your first program, running it and explaining one change is a strong place to start.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.112,
+        "text": "Your goal today is to make something you can explain."
+      },
+      {
+        "start": 3.112,
+        "end": 10.065,
+        "text": "You will begin with a prediction, run Python, make one small change, and compare the result with your expectation."
+      },
+      {
+        "start": 10.065,
+        "end": 14.87,
+        "text": "You will also keep a chart and one sentence about what the evidence cannot prove."
+      },
+      {
+        "start": 14.87,
+        "end": 21.081,
+        "text": "If you are working in pairs, choose who will operate the code and who will predict and record first."
+      },
+      {
+        "start": 21.081,
+        "end": 23.125,
+        "text": "Swap roles along the way."
+      },
+      {
+        "start": 23.125,
+        "end": 29.208,
+        "text": "If this is your first program, running it and explaining one change is a strong place to start."
+      }
+    ],
+    "duration": 29.208,
+    "bytes": 175248
+  },
+  "python-uses": {
+    "hash": "b6bc8b88ac95ce054d43",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "What can Python do? It can turn data into charts, build and test a prediction model, and help locate an object in an image. You can also use it to make games and simulations, automate repeated file tasks, or power the calculations behind a website. These are examples of a broad toolkit. Pick one that interests you. Today, we will start with a small data experiment: use Python to explore soccer shots, then explain what our evidence can and cannot tell us.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 1.4969999999999999,
+        "text": "What can Python do?"
+      },
+      {
+        "start": 1.4969999999999999,
+        "end": 8.438,
+        "text": "It can turn data into charts, build and test a prediction model, and help locate an object in an image."
+      },
+      {
+        "start": 8.438,
+        "end": 16.496,
+        "text": "You can also use it to make games and simulations, automate repeated file tasks, or power the calculations behind a website."
+      },
+      {
+        "start": 16.496,
+        "end": 18.997,
+        "text": "These are examples of a broad toolkit."
+      },
+      {
+        "start": 18.997,
+        "end": 20.82,
+        "text": "Pick one that interests you."
+      },
+      {
+        "start": 20.82,
+        "end": 30.168,
+        "text": "Today, we will start with a small data experiment: use Python to explore soccer shots, then explain what our evidence can and cannot tell us."
+      }
+    ],
+    "duration": 30.168,
+    "bytes": 181008
+  },
+  "question": {
+    "hash": "6272eb91e2fb5657065e",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Does scoring change with distance? Imagine taking practice shots from three, six, and nine meters away. Before seeing the results, make a prediction. Would the closest shots have the highest success rate, would the rates be similar, or do we need more information? Our data will be synthetic, which means invented for this lesson. A real investigation would need a fair comparison. Pause here, record your prediction, and name one condition you would try to keep similar, such as the player, the angle, or the number of attempts.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 2.357,
+        "text": "Does scoring change with distance?"
+      },
+      {
+        "start": 2.357,
+        "end": 7.279,
+        "text": "Imagine taking practice shots from three, six, and nine meters away."
+      },
+      {
+        "start": 7.279,
+        "end": 10.182,
+        "text": "Before seeing the results, make a prediction."
+      },
+      {
+        "start": 10.182,
+        "end": 17.031,
+        "text": "Would the closest shots have the highest success rate, would the rates be similar, or do we need more information?"
+      },
+      {
+        "start": 17.031,
+        "end": 21.393,
+        "text": "Our data will be synthetic, which means invented for this lesson."
+      },
+      {
+        "start": 21.393,
+        "end": 25.091,
+        "text": "A real investigation would need a fair comparison."
+      },
+      {
+        "start": 25.091,
+        "end": 34.08,
+        "text": "Pause here, record your prediction, and name one condition you would try to keep similar, such as the player, the angle, or the number of attempts."
+      }
+    ],
+    "duration": 34.08,
+    "bytes": 204480
+  },
+  "workspace": {
+    "hash": "de25fe75118704af8bdc",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Your research lab is built into these slides. Each code box lets you read, edit, and run a short Python program right here, with its output shown beside it. The first run may take a little longer while the browser loads Python. You do not need to install software or sign into a separate account. We also provide a downloadable Notebook to keep practicing afterward. Before moving on, find the code area and the output area. Your routine will be: predict, run, observe, and explain.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.255,
+        "text": "Your research lab is built into these slides."
+      },
+      {
+        "start": 3.255,
+        "end": 10.56,
+        "text": "Each code box lets you read, edit, and run a short Python program right here, with its output shown beside it."
+      },
+      {
+        "start": 10.56,
+        "end": 14.779,
+        "text": "The first run may take a little longer while the browser loads Python."
+      },
+      {
+        "start": 14.779,
+        "end": 18.568,
+        "text": "You do not need to install software or sign into a separate account."
+      },
+      {
+        "start": 18.568,
+        "end": 22.708,
+        "text": "We also provide a downloadable Notebook to keep practicing afterward."
+      },
+      {
+        "start": 22.708,
+        "end": 26.953,
+        "text": "Before moving on, find the code area and the output area."
+      },
+      {
+        "start": 26.953,
+        "end": 32.136,
+        "text": "Your routine will be: predict, run, observe, and explain."
+      }
+    ],
+    "duration": 32.136,
+    "bytes": 192816
+  },
+  "hello": {
+    "hash": "dba9c33d65be0ca9b917",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Here is your first program. Before running it, predict what will appear in the output. Print tells Python to display something, and the quotation marks tell it that the words inside are text. Now run the code and compare the output with your prediction. Change only the words inside the quotation marks to make your own greeting, then run it again. An invented greeting is fine. If an error appears, check that the quotation marks and parentheses still come in pairs. Pause and try both versions yourself.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 2.37,
+        "text": "Here is your first program."
+      },
+      {
+        "start": 2.37,
+        "end": 5.898,
+        "text": "Before running it, predict what will appear in the output."
+      },
+      {
+        "start": 5.898,
+        "end": 12.604,
+        "text": "Print tells Python to display something, and the quotation marks tell it that the words inside are text."
+      },
+      {
+        "start": 12.604,
+        "end": 16.042,
+        "text": "Now run the code and compare the output with your prediction."
+      },
+      {
+        "start": 16.042,
+        "end": 21.602,
+        "text": "Change only the words inside the quotation marks to make your own greeting, then run it again."
+      },
+      {
+        "start": 21.602,
+        "end": 23.711,
+        "text": "An invented greeting is fine."
+      },
+      {
+        "start": 23.711,
+        "end": 29.076,
+        "text": "If an error appears, check that the quotation marks and parentheses still come in pairs."
+      },
+      {
+        "start": 29.076,
+        "end": 31.992,
+        "text": "Pause and try both versions yourself."
+      }
+    ],
+    "duration": 31.992,
+    "bytes": 191952
+  },
+  "variables": {
+    "hash": "f9a0d02a9903ad47d597",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "A variable gives a value a name so our calculation is easier to read. Here, goals holds three, and attempts holds five. Attempts includes every shot, including the misses. The program divides goals by attempts and multiplies by one hundred to calculate a percentage. Before running it, work out what three out of five should be. Then compare your answer with Python. Explain which line stores a value and which line displays one. The equals sign assigns a value to a name; it is not asking whether two things are equal.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 5.039,
+        "text": "A variable gives a value a name so our calculation is easier to read."
+      },
+      {
+        "start": 5.039,
+        "end": 9.375,
+        "text": "Here, goals holds three, and attempts holds five."
+      },
+      {
+        "start": 9.375,
+        "end": 12.917,
+        "text": "Attempts includes every shot, including the misses."
+      },
+      {
+        "start": 12.917,
+        "end": 18.763,
+        "text": "The program divides goals by attempts and multiplies by one hundred to calculate a percentage."
+      },
+      {
+        "start": 18.763,
+        "end": 22.565,
+        "text": "Before running it, work out what three out of five should be."
+      },
+      {
+        "start": 22.565,
+        "end": 25.078,
+        "text": "Then compare your answer with Python."
+      },
+      {
+        "start": 25.078,
+        "end": 29.557,
+        "text": "Explain which line stores a value and which line displays one."
+      },
+      {
+        "start": 29.557,
+        "end": 35.472,
+        "text": "The equals sign assigns a value to a name; it is not asking whether two things are equal."
+      }
+    ],
+    "duration": 35.472,
+    "bytes": 212832
+  },
+  "attempts": {
+    "hash": "c7e66c8af39266a82322",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "A list remembers the individual attempts. In this synthetic sample, one means a goal and zero means a miss. Read the five entries and count the goals yourself before running the code. Sum adds the entries, so it counts goals here. Len counts how many entries there are, so it counts all attempts. The final line uses both to calculate the percentage. Run the program, then point to the output for each of those three questions. Explain to a partner why a zero still belongs in the attempt count.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 2.904,
+        "text": "A list remembers the individual attempts."
+      },
+      {
+        "start": 2.904,
+        "end": 8.125,
+        "text": "In this synthetic sample, one means a goal and zero means a miss."
+      },
+      {
+        "start": 8.125,
+        "end": 12.812,
+        "text": "Read the five entries and count the goals yourself before running the code."
+      },
+      {
+        "start": 12.812,
+        "end": 16.458,
+        "text": "Sum adds the entries, so it counts goals here."
+      },
+      {
+        "start": 16.458,
+        "end": 20.859,
+        "text": "Len counts how many entries there are, so it counts all attempts."
+      },
+      {
+        "start": 20.859,
+        "end": 24.271,
+        "text": "The final line uses both to calculate the percentage."
+      },
+      {
+        "start": 24.271,
+        "end": 28.776,
+        "text": "Run the program, then point to the output for each of those three questions."
+      },
+      {
+        "start": 28.776,
+        "end": 33.168,
+        "text": "Explain to a partner why a zero still belongs in the attempt count."
+      }
+    ],
+    "duration": 33.168,
+    "bytes": 199008
+  },
+  "distances": {
+    "hash": "ea79dea985d9b9030fad",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Now we have three groups of synthetic shots, with five attempts in each group. Near, middle, and far refer to three, six, and nine meters. Choose one group and count its goals before running the program. Then compare your count with the output. Because these groups have equal numbers of attempts, their goal totals can be compared within this example. The mean here is the average number of goals per five-shot group. It is not a distance or a percentage. If you finish early, explain what the largest and smallest counts describe.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 5.052,
+        "text": "Now we have three groups of synthetic shots, with five attempts in each group."
+      },
+      {
+        "start": 5.052,
+        "end": 9.948,
+        "text": "Near, middle, and far refer to three, six, and nine meters."
+      },
+      {
+        "start": 9.948,
+        "end": 14.167,
+        "text": "Choose one group and count its goals before running the program."
+      },
+      {
+        "start": 14.167,
+        "end": 16.523,
+        "text": "Then compare your count with the output."
+      },
+      {
+        "start": 16.523,
+        "end": 22.839,
+        "text": "Because these groups have equal numbers of attempts, their goal totals can be compared within this example."
+      },
+      {
+        "start": 22.839,
+        "end": 26.979,
+        "text": "The mean here is the average number of goals per five-shot group."
+      },
+      {
+        "start": 26.979,
+        "end": 29.896,
+        "text": "It is not a distance or a percentage."
+      },
+      {
+        "start": 29.896,
+        "end": 34.848,
+        "text": "If you finish early, explain what the largest and smallest counts describe."
+      }
+    ],
+    "duration": 34.848,
+    "bytes": 209088
+  },
+  "chart-code": {
+    "hash": "604d94217b1583bf7f42",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Let us turn the records into a picture. This code includes the same synthetic shots and calculates a percentage for each distance before drawing the bars. The drawing instructions are already provided, so you can run the whole example without memorizing a plotting library. Find the distance labels, the calculated rates, and the line that sets the vertical scale from zero to one hundred. Then run the program and inspect the chart. Pause and explain what one bar represents, including which attempts were used to calculate its height.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 2.344,
+        "text": "Let us turn the records into a picture."
+      },
+      {
+        "start": 2.344,
+        "end": 9.089,
+        "text": "This code includes the same synthetic shots and calculates a percentage for each distance before drawing the bars."
+      },
+      {
+        "start": 9.089,
+        "end": 15.664,
+        "text": "The drawing instructions are already provided, so you can run the whole example without memorizing a plotting library."
+      },
+      {
+        "start": 15.664,
+        "end": 22.721,
+        "text": "Find the distance labels, the calculated rates, and the line that sets the vertical scale from zero to one hundred."
+      },
+      {
+        "start": 22.721,
+        "end": 25.755,
+        "text": "Then run the program and inspect the chart."
+      },
+      {
+        "start": 25.755,
+        "end": 32.088,
+        "text": "Pause and explain what one bar represents, including which attempts were used to calculate its height."
+      }
+    ],
+    "duration": 32.088,
+    "bytes": 192528
+  },
+  "read-chart": {
+    "hash": "a19837fbd6a8b7ba0b54",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Take a quiet moment to inspect the chart before deciding what to say about it. What do you notice as distance increases in this synthetic sample? Connect your observation to the bar heights and remember that each group contains only five attempts. A correct calculation can describe these records, but it cannot establish how all real players perform. Try explaining one observation, then one limitation. Finally, suggest more data you would want before making a stronger claim. Keep your language tied to this small sample and the question we actually asked.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 4.297,
+        "text": "Take a quiet moment to inspect the chart before deciding what to say about it."
+      },
+      {
+        "start": 4.297,
+        "end": 8.268,
+        "text": "What do you notice as distance increases in this synthetic sample?"
+      },
+      {
+        "start": 8.268,
+        "end": 14.909,
+        "text": "Connect your observation to the bar heights and remember that each group contains only five attempts."
+      },
+      {
+        "start": 14.909,
+        "end": 22.096,
+        "text": "A correct calculation can describe these records, but it cannot establish how all real players perform."
+      },
+      {
+        "start": 22.096,
+        "end": 26.263,
+        "text": "Try explaining one observation, then one limitation."
+      },
+      {
+        "start": 26.263,
+        "end": 30.755,
+        "text": "Finally, suggest more data you would want before making a stronger claim."
+      },
+      {
+        "start": 30.755,
+        "end": 36,
+        "text": "Keep your language tied to this small sample and the question we actually asked."
+      }
+    ],
+    "duration": 36,
+    "bytes": 216000
+  },
+  "challenge": {
+    "hash": "de0d51a9952502d928ed",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Choose one small change, and predict its effect before testing it. Both challenges begin with the original five attempts: one, zero, one, one, zero. In the first challenge, replace an existing miss with a goal. In the second, add a new goal after the original list. These are separate hypothetical examples, so reset to the original sample before switching challenges. Write down your predicted percentage and explain which counts you expect to change. Then test your choice. Pause here until you have a result and a reason; the next slide compares the answers.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 4.414,
+        "text": "Choose one small change, and predict its effect before testing it."
+      },
+      {
+        "start": 4.414,
+        "end": 11.667,
+        "text": "Both challenges begin with the original five attempts: one, zero, one, one, zero."
+      },
+      {
+        "start": 11.667,
+        "end": 15.924,
+        "text": "In the first challenge, replace an existing miss with a goal."
+      },
+      {
+        "start": 15.924,
+        "end": 19.831,
+        "text": "In the second, add a new goal after the original list."
+      },
+      {
+        "start": 19.831,
+        "end": 26.25,
+        "text": "These are separate hypothetical examples, so reset to the original sample before switching challenges."
+      },
+      {
+        "start": 26.25,
+        "end": 31.328,
+        "text": "Write down your predicted percentage and explain which counts you expect to change."
+      },
+      {
+        "start": 31.328,
+        "end": 33.086,
+        "text": "Then test your choice."
+      },
+      {
+        "start": 33.086,
+        "end": 38.664,
+        "text": "Pause here until you have a result and a reason; the next slide compares the answers."
+      }
+    ],
+    "duration": 38.664,
+    "bytes": 231984
+  },
+  "reveal": {
+    "hash": "399bfb68f69da3ce89be",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "The original sample has three goals in five attempts, which is sixty percent. Replacing a miss with a goal gives four goals in five attempts, or eighty percent. Adding a new goal gives four goals in six attempts, or about sixty-six point seven percent. Both changes add one goal, but only the second adds an attempt. That is why the percentages differ. Compare these results with your prediction and explain the denominator in each case. If your prediction changed, record what you learned. Revising an explanation after checking evidence is useful research work.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 5.207,
+        "text": "The original sample has three goals in five attempts, which is sixty percent."
+      },
+      {
+        "start": 5.207,
+        "end": 10.508,
+        "text": "Replacing a miss with a goal gives four goals in five attempts, or eighty percent."
+      },
+      {
+        "start": 10.508,
+        "end": 16.862,
+        "text": "Adding a new goal gives four goals in six attempts, or about sixty-six point seven percent."
+      },
+      {
+        "start": 16.862,
+        "end": 21.341,
+        "text": "Both changes add one goal, but only the second adds an attempt."
+      },
+      {
+        "start": 21.341,
+        "end": 23.75,
+        "text": "That is why the percentages differ."
+      },
+      {
+        "start": 23.75,
+        "end": 28.854,
+        "text": "Compare these results with your prediction and explain the denominator in each case."
+      },
+      {
+        "start": 28.854,
+        "end": 32.174,
+        "text": "If your prediction changed, record what you learned."
+      },
+      {
+        "start": 32.174,
+        "end": 36.888,
+        "text": "Revising an explanation after checking evidence is useful research work."
+      }
+    ],
+    "duration": 36.888,
+    "bytes": 221328
+  },
+  "ai-next": {
+    "hash": "88a6ace5f7f4fe48294c",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Today, Python summarizes the records we supplied. What could happen when the question and data become more complex? A future model might use records such as distance, angle, and previous outcomes to estimate the chance of a new shot scoring. That would require more representative data and careful evaluation on shots it had not learned from. This picture is a concept, not a trained model or an accuracy result. Pause and suggest one additional measurement that might help. Then explain why three invented group percentages cannot tell us how well that future model would predict.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 4.01,
+        "text": "Today, Python summarizes the records we supplied."
+      },
+      {
+        "start": 4.01,
+        "end": 7.812,
+        "text": "What could happen when the question and data become more complex?"
+      },
+      {
+        "start": 7.812,
+        "end": 15.299,
+        "text": "A future model might use records such as distance, angle, and previous outcomes to estimate the chance of a new shot scoring."
+      },
+      {
+        "start": 15.299,
+        "end": 21.367,
+        "text": "That would require more representative data and careful evaluation on shots it had not learned from."
+      },
+      {
+        "start": 21.367,
+        "end": 26.224,
+        "text": "This picture is a concept, not a trained model or an accuracy result."
+      },
+      {
+        "start": 26.224,
+        "end": 30.26,
+        "text": "Pause and suggest one additional measurement that might help."
+      },
+      {
+        "start": 30.26,
+        "end": 36.576,
+        "text": "Then explain why three invented group percentages cannot tell us how well that future model would predict."
+      }
+    ],
+    "duration": 36.576,
+    "bytes": 219456
+  },
+  "ai-check": {
+    "hash": "867aadca1ea97e5cd6f8",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "AI can suggest an explanation, but you still check it. Consider this classroom-written claim: adding one extra goal raises the success rate from sixty percent to eighty percent. This is a prepared statement to investigate, not a live AI conversation. Use the original five-shot sample to test it. What happens to the total number of attempts when another shot is added? Discuss whether the claim matches the calculation, then explain your decision. You do not need an AI account for this activity. Your evidence comes from the records and the calculation you can inspect.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.503,
+        "text": "AI can suggest an explanation, but you still check it."
+      },
+      {
+        "start": 3.503,
+        "end": 11.419,
+        "text": "Consider this classroom-written claim: adding one extra goal raises the success rate from sixty percent to eighty percent."
+      },
+      {
+        "start": 11.419,
+        "end": 16.927,
+        "text": "This is a prepared statement to investigate, not a live AI conversation."
+      },
+      {
+        "start": 16.927,
+        "end": 20.052,
+        "text": "Use the original five-shot sample to test it."
+      },
+      {
+        "start": 20.052,
+        "end": 24.245,
+        "text": "What happens to the total number of attempts when another shot is added?"
+      },
+      {
+        "start": 24.245,
+        "end": 29.102,
+        "text": "Discuss whether the claim matches the calculation, then explain your decision."
+      },
+      {
+        "start": 29.102,
+        "end": 32.005,
+        "text": "You do not need an AI account for this activity."
+      },
+      {
+        "start": 32.005,
+        "end": 36.456,
+        "text": "Your evidence comes from the records and the calculation you can inspect."
+      }
+    ],
+    "duration": 36.456,
+    "bytes": 218736
+  },
+  "real-project": {
+    "hash": "c9e98a83be1159c99c32",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "The same habit appears in an existing student project about wearable sensors. This anonymized project summary describes comparisons across multiple physical activities, looking at sensing performance and stability. Its activity-by-activity results showed why one overall metric could miss important differences. The listed artifact is a poster abstract. We are not showing the original measurements or claiming a particular device, numerical result, or software implementation. Think about the connection with today: we kept groups visible instead of hiding them in one number. Which part of your Python investigation could help you reason about a comparison like this?",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 5.221,
+        "text": "The same habit appears in an existing student project about wearable sensors."
+      },
+      {
+        "start": 5.221,
+        "end": 13.893,
+        "text": "This anonymized project summary describes comparisons across multiple physical activities, looking at sensing performance and stability."
+      },
+      {
+        "start": 13.893,
+        "end": 19.831,
+        "text": "Its activity-by-activity results showed why one overall metric could miss important differences."
+      },
+      {
+        "start": 19.831,
+        "end": 22.826,
+        "text": "The listed artifact is a poster abstract."
+      },
+      {
+        "start": 22.826,
+        "end": 30.469,
+        "text": "We are not showing the original measurements or claiming a particular device, numerical result, or software implementation."
+      },
+      {
+        "start": 30.469,
+        "end": 36.249,
+        "text": "Think about the connection with today: we kept groups visible instead of hiding them in one number."
+      },
+      {
+        "start": 36.249,
+        "end": 41.712,
+        "text": "Which part of your Python investigation could help you reason about a comparison like this?"
+      }
+    ],
+    "duration": 41.712,
+    "bytes": 250272
+  },
+  "poster": {
+    "hash": "018021ebcfad890e8c41",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Your small investigation already has some ingredients of a research poster: a question, data, a finding, and a limitation. The example here is a possible poster made from today’s synthetic practice data. It is an illustration, not a completed student submission. Later, a project can add fuller methods, checked outputs, and references. For now, point to the part you could fill using your own work. Explain which result you actually observed and which question remains open. A useful poster helps another person understand both your evidence and the limits of your conclusion.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 9.076,
+        "text": "Your small investigation already has some ingredients of a research poster: a question, data, a finding, and a limitation."
+      },
+      {
+        "start": 9.076,
+        "end": 13.906,
+        "text": "The example here is a possible poster made from today’s synthetic practice data."
+      },
+      {
+        "start": 13.906,
+        "end": 17.786,
+        "text": "It is an illustration, not a completed student submission."
+      },
+      {
+        "start": 17.786,
+        "end": 23.229,
+        "text": "Later, a project can add fuller methods, checked outputs, and references."
+      },
+      {
+        "start": 23.229,
+        "end": 26.836,
+        "text": "For now, point to the part you could fill using your own work."
+      },
+      {
+        "start": 26.836,
+        "end": 31.745,
+        "text": "Explain which result you actually observed and which question remains open."
+      },
+      {
+        "start": 31.745,
+        "end": 37.728,
+        "text": "A useful poster helps another person understand both your evidence and the limits of your conclusion."
+      }
+    ],
+    "duration": 37.728,
+    "bytes": 226368
+  },
+  "share": {
+    "hash": "af51e859c88af1327c89",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Prepare a short research talk for a partner. Begin with the question you asked and the prediction you made. Describe one change you tested, the result you observed, and why it happened. Finish with a limitation or a next question. You can explain in English or Chinese, and you can use your own words. If you worked by hand, say so; if you ran Python, describe what the output showed. Listeners, let the speaker finish, then ask about one decision. Pause now and give each partner a turn to explain.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.138,
+        "text": "Prepare a short research talk for a partner."
+      },
+      {
+        "start": 3.138,
+        "end": 6.836,
+        "text": "Begin with the question you asked and the prediction you made."
+      },
+      {
+        "start": 6.836,
+        "end": 11.667,
+        "text": "Describe one change you tested, the result you observed, and why it happened."
+      },
+      {
+        "start": 11.667,
+        "end": 14.844,
+        "text": "Finish with a limitation or a next question."
+      },
+      {
+        "start": 14.844,
+        "end": 19.154,
+        "text": "You can explain in English or Chinese, and you can use your own words."
+      },
+      {
+        "start": 19.154,
+        "end": 24.87,
+        "text": "If you worked by hand, say so; if you ran Python, describe what the output showed."
+      },
+      {
+        "start": 24.87,
+        "end": 28.867,
+        "text": "Listeners, let the speaker finish, then ask about one decision."
+      },
+      {
+        "start": 28.867,
+        "end": 32.424,
+        "text": "Pause now and give each partner a turn to explain."
+      }
+    ],
+    "duration": 32.424,
+    "bytes": 194544
+  },
+  "exit-ticket": {
+    "hash": "b1ef5702922e8f5530ca",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "You have followed a small research loop: ask, predict, test, observe, and explain. Before you finish, choose one idea to explain in your own words. What does len of shots count? Why does adding a new goal change the denominator? Or what data would you collect next? Keep your prediction, the results before and after your change, and one limitation with your work. Use the download options to keep the lesson materials, and check that your personal notes and edits are saved too. Pause now to explain one answer and keep your evidence.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 6.198,
+        "text": "You have followed a small research loop: ask, predict, test, observe, and explain."
+      },
+      {
+        "start": 6.198,
+        "end": 10.624,
+        "text": "Before you finish, choose one idea to explain in your own words."
+      },
+      {
+        "start": 10.624,
+        "end": 12.396,
+        "text": "What does len of shots count?"
+      },
+      {
+        "start": 12.396,
+        "end": 15.586,
+        "text": "Why does adding a new goal change the denominator?"
+      },
+      {
+        "start": 15.586,
+        "end": 18.242,
+        "text": "Or what data would you collect next?"
+      },
+      {
+        "start": 18.242,
+        "end": 24.141,
+        "text": "Keep your prediction, the results before and after your change, and one limitation with your work."
+      },
+      {
+        "start": 24.141,
+        "end": 30.547,
+        "text": "Use the download options to keep the lesson materials, and check that your personal notes and edits are saved too."
+      },
+      {
+        "start": 30.547,
+        "end": 34.968,
+        "text": "Pause now to explain one answer and keep your evidence."
+      }
+    ],
+    "duration": 34.968,
+    "bytes": 209808
+  },
+  "next": {
+    "hash": "f1f70e0e8da9fb15e68c",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "What would you like to try next? You might explore rules that respond to different outcomes, repeat a test, or compare more results. Those are possible next steps in learning Python; the school group’s final schedule and enrollment details still need confirmation. Today, you used a small dataset to ask a question and check an explanation. Keep the evidence you made, and choose one question you want to carry forward. Share it with your instructor or your family. Your next investigation can begin with something that made you curious today.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 1.8359999999999999,
+        "text": "What would you like to try next?"
+      },
+      {
+        "start": 1.8359999999999999,
+        "end": 7.982,
+        "text": "You might explore rules that respond to different outcomes, repeat a test, or compare more results."
+      },
+      {
+        "start": 7.982,
+        "end": 15.651,
+        "text": "Those are possible next steps in learning Python; the school group’s final schedule and enrollment details still need confirmation."
+      },
+      {
+        "start": 15.651,
+        "end": 20.677,
+        "text": "Today, you used a small dataset to ask a question and check an explanation."
+      },
+      {
+        "start": 20.677,
+        "end": 25.443,
+        "text": "Keep the evidence you made, and choose one question you want to carry forward."
+      },
+      {
+        "start": 25.443,
+        "end": 28.32,
+        "text": "Share it with your instructor or your family."
+      },
+      {
+        "start": 28.32,
+        "end": 32.568,
+        "text": "Your next investigation can begin with something that made you curious today."
+      }
+    ],
+    "duration": 32.568,
+    "bytes": 195408
+  }
+}

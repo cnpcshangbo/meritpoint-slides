@@ -15,9 +15,9 @@
     window.location.href='https://academic.hopeembark.org/assignments#'+encodeURIComponent(deck); }; }
   window.applyAsgBadges=function(){ status().then(function(decks){
     var slots=document.querySelectorAll('.asg-badge[data-deck]');
-    for(var i=0;i<slots.length;i++){ var deck=slots[i].getAttribute('data-deck'), s=decks[deck];
+    for(var i=0;i<slots.length;i++){ var deck=slots[i].getAttribute('data-deck'), course=slots[i].getAttribute('data-course'), key=course?course+'/'+deck:deck, s=decks[key];
       slots[i].innerHTML=badge(s);
-      if(s&&s.total){ slots[i].classList.add('clickable'); slots[i].setAttribute('title','查看作业 · View homework'); slots[i].onclick=go(deck); }
+      if(s&&s.total){ slots[i].classList.add('clickable'); slots[i].setAttribute('title','查看作业 · View homework'); slots[i].onclick=go(key); }
       else { slots[i].classList.remove('clickable'); slots[i].onclick=null; }
     }
   }); };

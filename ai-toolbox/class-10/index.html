@@ -53,10 +53,11 @@
 /* QUIZ */
 .reveal .quiz{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.7em .85em;box-shadow:0 6px 18px rgba(20,40,70,.07);max-width:18em}
 .reveal .quiz .qq{font-size:.72em;font-weight:600;color:var(--navy);margin:0 0 .5em}
-.reveal .quiz .opt{display:block;width:100%;text-align:left;background:var(--cloud2);border:1px solid var(--line);border-radius:9px;padding:.4em .6em;margin:.25em 0;font-size:.6em;color:var(--ink);cursor:pointer;transition:.1s;font-family:-apple-system,sans-serif}
+.reveal .quiz .opt{display:grid;grid-template-columns:1.8em minmax(0,1fr);gap:.48em;align-items:center;width:100%;text-align:left;background:var(--cloud2);border:1px solid var(--line);border-radius:9px;padding:.4em .6em;margin:.25em 0;font-size:.6em;color:var(--ink);cursor:pointer;transition:.1s;font-family:-apple-system,sans-serif}
+.reveal .quiz .opt:before{content:attr(data-label);display:flex;align-items:center;justify-content:center;width:1.65em;height:1.65em;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;line-height:1}
 .reveal .quiz .opt:hover{border-color:var(--teal);background:#fff}
-.reveal .quiz .opt.correct{background:#E6F4EE;border-color:var(--green);color:#0d6b4f;font-weight:600}
-.reveal .quiz .opt.wrong{background:#FBEAE7;border-color:var(--coral);color:#a23c1c}
+.reveal .quiz .opt.correct{background:#E6F4EE;border-color:var(--green);color:#0d6b4f;font-weight:600}.reveal .quiz .opt.correct:before{background:var(--green)}
+.reveal .quiz .opt.wrong{background:#FBEAE7;border-color:var(--coral);color:#a23c1c}.reveal .quiz .opt.wrong:before{background:var(--coral)}
 .reveal .quiz .opt[disabled]{cursor:default}
 .reveal .quiz-exp{font-size:.56em;color:var(--muted);margin:.4em 0 0;display:none}
 .reveal .quiz.answered .quiz-exp{display:block}
@@ -242,8 +243,13 @@
 #watchBtn{position:fixed;left:256px;top:19px;z-index:60;background:var(--navy);color:#fff;border:1px solid var(--navy);border-radius:999px;padding:8px 14px;font-size:12.5px;font-weight:700;font-family:-apple-system,sans-serif;text-decoration:none;box-shadow:0 4px 14px rgba(20,40,70,.18)}
 #watchBtn:hover{filter:brightness(1.15);text-decoration:none}
 #watchBtn[hidden]{display:none}
-/* keep screen-only chrome out of print / the exported PDF (fixed elements repeat on every page) */
-@media print{#donateBtn,#mpaLogo,#pdfBtn,#ccBtn,#listenBtn,#commentBtn,#commentPanel,#capBar,#mpAuth{display:none!important}}
+/* Keep controls out of print, but retain the institutional mark. The PDF is
+   also the recording backdrop, so hiding the logo here broke visual continuity
+   between the interactive deck and the lesson video. */
+@media print{
+  #donateBtn,#pdfBtn,#watchBtn,#ccBtn,#listenBtn,#commentBtn,#commentPanel,#capBar,#mpAuth{display:none!important}
+  #mpaLogo{display:block!important;left:16px;top:14px;width:44px;height:44px;box-shadow:none;opacity:1}
+}
 </style></head><body>
 <div class="reveal"><div class="slides">
 <section id="title" data-sid="title" class="center" data-background-gradient="linear-gradient(135deg,#0C2D52,#16406e)">
@@ -289,7 +295,7 @@
   <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
   <div class="quiz" data-correct="1">
     <p class="qq">A taller bounding box in a camera frame usually means a closer object. Could a single straight line turn box height into a distance estimate?</p>
-    <div class="opts"><button class="opt" data-i="0">No — distance is far too complex for a straight line</button><button class="opt" data-i="1">Yes, in principle: fit a line through (box height, distance) examples, then read predictions off it</button><button class="opt" data-i="2">Only if you already know the camera's focal length by hand</button><button class="opt" data-i="3">Lines can only describe things that are already exactly straight, like roads</button></div>
+    <div class="opts"><button class="opt" data-i="0" data-label="A" aria-label="A. No — distance is far too complex for a straight line">No — distance is far too complex for a straight line</button><button class="opt" data-i="1" data-label="B" aria-label="B. Yes, in principle: fit a line through (box height, distance) examples, then read predictions off it">Yes, in principle: fit a line through (box height, distance) examples, then read predictions off it</button><button class="opt" data-i="2" data-label="C" aria-label="C. Only if you already know the camera's focal length by hand">Only if you already know the camera's focal length by hand</button><button class="opt" data-i="3" data-label="D" aria-label="D. Lines can only describe things that are already exactly straight, like roads">Lines can only describe things that are already exactly straight, like roads</button></div>
     <p class="quiz-exp">That's exactly what regression is: given examples of (feature, target) pairs, fit the line that best describes the trend, then use it to predict for a NEW box height it hasn't seen. Whether a line is the RIGHT shape for this relationship is a question we'll test today.</p>
   </div>
   <aside class="notes">Plants healthy skepticism about linearity (paid off later by the extrapolation-danger lab) while still landing the core idea: a model is a fitted relationship.</aside>
@@ -340,7 +346,7 @@
   <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
   <div class="quiz" data-correct="1">
     <p class="qq">Two candidate lines fit the same cloud of points. Line A has SSE = 12. Line B has SSE = 340. Which line does the data prefer, and why?</p>
-    <div class="opts"><button class="opt" data-i="0">Line B — bigger numbers mean a stronger model</button><button class="opt" data-i="1">Line A — its predictions are collectively much closer to the true values</button><button class="opt" data-i="2">Neither — SSE doesn't measure fit quality</button><button class="opt" data-i="3">They're equally good; SSE only matters for classification</button></div>
+    <div class="opts"><button class="opt" data-i="0" data-label="A" aria-label="A. Line B — bigger numbers mean a stronger model">Line B — bigger numbers mean a stronger model</button><button class="opt" data-i="1" data-label="B" aria-label="B. Line A — its predictions are collectively much closer to the true values">Line A — its predictions are collectively much closer to the true values</button><button class="opt" data-i="2" data-label="C" aria-label="C. Neither — SSE doesn't measure fit quality">Neither — SSE doesn't measure fit quality</button><button class="opt" data-i="3" data-label="D" aria-label="D. They're equally good; SSE only matters for classification">They're equally good; SSE only matters for classification</button></div>
     <p class="quiz-exp">Loss measures total wrongness — lower is better. SSE 12 means the line's predictions land close to the real points; SSE 340 means they're far off. Training is the search for the parameters that make this number as small as reasonably possible.</p>
   </div>
   <aside class="notes">A pure vocabulary check before gradient descent needs it. If this misses, pause here — everything from here assumes 'lower loss = better fit' is second nature.</aside>
@@ -687,7 +693,7 @@ for h in [30, 60, 100, 160, 200]:
   <h2>Quick check <span class="quiz-badge">· tap an answer</span></h2>
   <div class="quiz" data-correct="1">
     <p class="qq">Your model gets R² = 0.99 on the TRAINING set but R² = 0.41 on the TEST set. What's the honest headline?</p>
-    <div class="opts"><button class="opt" data-i="0">The model is excellent — report the 0.99</button><button class="opt" data-i="1">The model is overfitting: it memorized training quirks and generalizes poorly — the 0.41 is the truth</button><button class="opt" data-i="2">Test sets are unreliable; trust training scores</button><button class="opt" data-i="3">R² can't be compared between train and test</button></div>
+    <div class="opts"><button class="opt" data-i="0" data-label="A" aria-label="A. The model is excellent — report the 0.99">The model is excellent — report the 0.99</button><button class="opt" data-i="1" data-label="B" aria-label="B. The model is overfitting: it memorized training quirks and generalizes poorly — the 0.41 is the truth">The model is overfitting: it memorized training quirks and generalizes poorly — the 0.41 is the truth</button><button class="opt" data-i="2" data-label="C" aria-label="C. Test sets are unreliable; trust training scores">Test sets are unreliable; trust training scores</button><button class="opt" data-i="3" data-label="D" aria-label="D. R² can't be compared between train and test">R² can't be compared between train and test</button></div>
     <p class="quiz-exp">A huge train-vs-test gap is the overfitting signature from Class 3, now showing up in regression's own units. The training score flatters; the test score is what a new, unseen example would actually get — and that's the number that matters.</p>
   </div>
   <aside class="notes">Direct rerun of Class 3's overfitting lesson in R²'s vocabulary instead of accuracy's — checks whether the concept transfers across metrics, not just memorized in one form.</aside>
@@ -736,11 +742,91 @@ const _audio=document.getElementById('narratorAudio');
 let _btn=null,_playToken=0;
 function fmtClock(s){ s=Math.max(0,Math.floor(s||0)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
 function resetListenUI(){ listenBtn.style.setProperty('--p','0%'); listenBtn.querySelector('.li-ic').textContent='▶'; listenBtn.querySelector('.li-tx').textContent='Listen'; }
+function setRowReveal(stage){ document.querySelectorAll('#row .row-reveal').forEach(function(el){ el.classList.toggle('is-visible',Number(el.dataset.rowStage)<=stage); }); }
+function syncRowReveal(t){ if(curSid==='row') setRowReveal(t>=39.0?3:t>=23.8?2:t>=9.1?1:0); }
+const KNN_NUMBER={one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9};
+function setKnnStep(step){
+  const sec=document.querySelector('#knn'); if(!sec) return;
+  step=Math.max(0,Math.min(16,Number(step)||0)); sec._knnStep=step;
+  const shown={left:step>=1,stay:step>=2,right:step>=3};
+  sec.querySelectorAll('.knn-point').forEach(function(point){
+    const neighbor=Number(point.dataset.neighbor)||0;
+    point.classList.toggle('is-visible',!!shown[point.dataset.action]);
+    point.classList.toggle('is-muted',step>=5&&!neighbor);
+    point.classList.toggle('is-neighbor',step>=5&&!!neighbor);
+    point.classList.toggle('is-counted',!!neighbor&&(step>=15||(step>=6&&neighbor<=step-5)));
+    point.classList.toggle('is-active',step>=6&&step<=14&&neighbor===step-5);
+  });
+  sec.querySelectorAll('[data-knn-legend]').forEach(function(item){ item.classList.toggle('is-visible',!!shown[item.dataset.knnLegend]); });
+  ['.knn-query','.knn-query-label'].forEach(function(selector){ const el=sec.querySelector(selector); if(el) el.classList.toggle('is-visible',step>=4); });
+  const ring=sec.querySelector('.knn-ring'); if(ring) ring.classList.toggle('is-visible',step>=5);
+  const k=sec.querySelector('.knn-k'); if(k) k.classList.toggle('is-visible',step>=5);
+  const votes=sec.querySelector('.knn-votes'); if(votes) votes.classList.toggle('is-visible',step>=15);
+  const result=sec.querySelector('.knn-result'); if(result) result.classList.toggle('is-visible',step>=16);
+  const active=sec.querySelector('.knn-point.is-active');
+  const status=sec.querySelector('.knn-status');
+  if(status){
+    const messages=[
+      'Start with the two feature axes.',
+      'LEFT demonstrations appear as pink circles.',
+      'STAY demonstrations appear as gold squares.',
+      'RIGHT demonstrations appear as teal triangles.',
+      'The black star is the new, unlabeled state.',
+      'The dashed circle encloses the 9 nearest samples.'
+    ];
+    if(step<=5) status.textContent=messages[step];
+    else if(step<=14) status.textContent='Neighbor '+(step-5)+' of 9 · distance '+(active?active.dataset.distance:'—');
+    else if(step===15) status.textContent='Count and weight the nine labels: 2 LEFT · 3 STAY · 4 RIGHT.';
+    else status.textContent='RIGHT has the largest weighted vote, so the policy moves right.';
+  }
+}
+function knnStepFromCue(text,previous){
+  const s=String(text||'').toLowerCase();
+  if(s.includes('pink circles')) return 1;
+  if(s.includes('gold squares')) return 2;
+  if(s.includes('teal triangles')) return 3;
+  if(s.includes('black star')) return 4;
+  if(s.includes('set k equal to nine')) return 5;
+  const number=s.match(/neighbor\s+(one|two|three|four|five|six|seven|eight|nine)/);
+  if(number) return 5+KNN_NUMBER[number[1]];
+  if(s.includes('now vote')) return 15;
+  if(s.includes('after inverse-distance weighting')) return 16;
+  return previous;
+}
+function syncKnnReveal(t){
+  if(curSid!=='knn') return;
+  const data=_narrationData&&_narrationData.knn, cues=data&&data.cues||[];
+  let step=0;
+  for(const cue of cues){ if(t<cue.start) break; step=knnStepFromCue(cue.text,step); }
+  setKnnStep(step);
+}
+let _listenFocusCue=-1,_listenFocusSid='';
+function clearNarrationFocus(){
+  document.querySelectorAll('.is-listen-active').forEach(function(el){ el.classList.remove('is-listen-active'); });
+  _listenFocusCue=-1; _listenFocusSid='';
+}
+function syncNarrationFocus(t){
+  const data=_narrationData&&_narrationData[curSid], cues=data&&data.cues||[];
+  let cueIndex=-1;
+  for(let i=0;i<cues.length;i++){ if(t>=cues[i].start&&t<cues[i].end){ cueIndex=i; break; } }
+  if(cueIndex===_listenFocusCue&&curSid===_listenFocusSid) return;
+  document.querySelectorAll('.is-listen-active').forEach(function(el){ el.classList.remove('is-listen-active'); });
+  _listenFocusCue=cueIndex; _listenFocusSid=curSid;
+  if(cueIndex<0) return;
+  const sec=document.getElementById(curSid); if(!sec) return;
+  sec.querySelectorAll('[data-listen-cue]').forEach(function(el){
+    const indexes=String(el.dataset.listenCue||'').split(/[\s,]+/).map(Number);
+    el.classList.toggle('is-listen-active',indexes.includes(cueIndex));
+  });
+}
 function stopAudio(){
   stopWalk(); // lab walkthrough shares the stage with narration — never both
   _playToken++; // invalidate any in-flight play() for the old src
   _audio.pause(); _audio.currentTime=0; _audio.removeAttribute('src'); _audio.load();
   _audio.removeEventListener('timeupdate',onListenTimeupdate); // else it'd animate listenBtn during a .speak clip
+  if(curSid==='row') setRowReveal(0);
+  if(curSid==='knn') setKnnStep(0);
+  clearNarrationFocus();
   capBar.style.display='none';
   if(_btn){
     _btn.classList.remove('playing');
@@ -798,6 +884,9 @@ function onListenTimeupdate(){
   if(_audio.duration) listenBtn.style.setProperty('--p',(_audio.currentTime/_audio.duration*100)+'%');
   listenBtn.querySelector('.li-tx').textContent=fmtClock(_audio.currentTime)+' / '+fmtClock(_audio.duration);
   updateCaption();
+  syncRowReveal(_audio.currentTime);
+  syncKnnReveal(_audio.currentTime);
+  syncNarrationFocus(_audio.currentTime);
 }
 listenBtn.addEventListener('click',function(){
   if(_btn===listenBtn && !_audio.paused){ stopAudio(); return; } // toggles play/stop even mid-buffer
@@ -810,6 +899,9 @@ listenBtn.addEventListener('click',function(){
   const data=_narrationData&&_narrationData[curSid];
   const version=data&&data.hash?'?v='+encodeURIComponent(data.hash):'';
   _audio.src='audio/'+encodeURIComponent(curSid)+'.mp3'+version;
+  if(curSid==='row') setRowReveal(0);
+  if(curSid==='knn') setKnnStep(0);
+  clearNarrationFocus();
   _audio.addEventListener('timeupdate',onListenTimeupdate);
   _audio.addEventListener('ended',stopAudio,{once:true});
   _audio.play().catch(function(){
@@ -820,6 +912,15 @@ listenBtn.addEventListener('click',function(){
     setTimeout(resetListenUI,2200);
   });
 });
+document.addEventListener('click',function(e){ if(e.target.closest('[data-row-show]')) setRowReveal(3); if(e.target.closest('[data-row-hide]')) setRowReveal(0); });
+document.addEventListener('click',function(e){
+  const control=e.target.closest('[data-knn-reset],[data-knn-next],[data-knn-all]'); if(!control) return;
+  if(_btn===listenBtn) stopAudio();
+  const sec=document.querySelector('#knn'); if(!sec) return;
+  if(control.hasAttribute('data-knn-reset')) setKnnStep(0);
+  else if(control.hasAttribute('data-knn-all')) setKnnStep(16);
+  else setKnnStep((sec._knnStep||0)+1);
+});
 
 /* ---------- Quizzes (answers feed the live class distribution) ---------- */
 function renderQuizStats(quiz,data){
@@ -828,12 +929,12 @@ function renderQuizStats(quiz,data){
   if(!box){ box=document.createElement('div'); box.className='qstats'; quiz.appendChild(box); }
   const mode=quiz._qmode||'today';
   const st=(data&&data[mode])||{counts:{},total:0};
-  const opts=quiz.querySelectorAll('.opt'), correct=parseInt(quiz.dataset.correct,10);
+  const opts=quiz.querySelectorAll('.opt'), isPoll=quiz.dataset.poll==='true', correct=parseInt(quiz.dataset.correct,10);
   let bars='';
   for(let i=0;i<opts.length;i++){
     const c=st.counts[i]||0, pct=st.total?Math.round(c*100/st.total):0;
     bars+='<div class="qrow"><span class="ql">'+String.fromCharCode(65+i)+'</span>'
-      +'<div class="qbar"><div class="qfill'+(i===correct?' qok':'')+'" style="width:'+pct+'%"></div></div>'
+      +'<div class="qbar"><div class="qfill'+(!isPoll&&i===correct?' qok':'')+'" style="width:'+pct+'%"></div></div>'
       +'<span class="qp">'+pct+'% ('+c+')</span></div>';
   }
   box.innerHTML='<div class="qhead"><span>Class results · '+st.total+' answered</span>'
@@ -845,16 +946,19 @@ document.addEventListener('click',function(e){
   if(m){ const q=m.closest('.quiz'); q._qmode=m.dataset.m; renderQuizStats(q,q._qstats); return; }
   const opt=e.target.closest('.quiz .opt'); if(!opt) return;
   const quiz=opt.closest('.quiz'); if(quiz.classList.contains('answered')) return;
-  const correct=parseInt(quiz.dataset.correct,10);
+  const isPoll=quiz.dataset.poll==='true', correct=parseInt(quiz.dataset.correct,10);
   quiz.querySelectorAll('.opt').forEach(function(o){o.setAttribute('disabled','');});
   const chosen=parseInt(opt.dataset.i,10);
-  quiz.querySelectorAll('.opt')[correct].classList.add('correct');
-  if(chosen!==correct) opt.classList.add('wrong');
+  if(isPoll) opt.classList.add('selected');
+  else {
+    quiz.querySelectorAll('.opt')[correct].classList.add('correct');
+    if(chosen!==correct) opt.classList.add('wrong');
+  }
   quiz.classList.add('answered');
   const sec=quiz.closest('section');
   const sid=(sec&&sec.dataset.sid)||_hashSid(sec);
   fetch('/api/quiz/answer',{method:'POST',headers:{'content-type':'application/json'},
-    body:JSON.stringify({deck:DECK,slide:sid,choice:chosen,correct:chosen===correct})})
+    body:JSON.stringify({deck:DECK,slide:sid,choice:chosen,correct:isPoll?false:chosen===correct})})
     .then(function(r){return r.json();})
     .then(function(j){ if(j&&j.today) renderQuizStats(quiz,{today:j.today,all:j.all}); })
     .catch(function(){ fetch('/api/quiz/stats?deck='+encodeURIComponent(DECK)+'&slide='+encodeURIComponent(sid))
@@ -1518,8 +1622,14 @@ function updateWatch(){
   btn.querySelector('span').textContent='录播 '+mm+':'+ss;
   btn.hidden=false;
 }
-Reveal.on('slidechanged',function(){ stopAudio(); curSid=sidOf(); updateBadge(); updateListen(); sendSlide(); updateWatch(); if(panel.classList.contains('open')){ cph.textContent='Comments · '+curSid; loadComments(); } });
-Reveal.on('ready',function(){ curSid=sidOf(); loadCounts(); loadNarrated(); });
+Reveal.on('slidechanged',function(){ stopAudio(); curSid=sidOf(); if(curSid==='row') setRowReveal(0); if(curSid==='knn') setKnnStep(0); updateBadge(); updateListen(); sendSlide(); updateWatch(); if(panel.classList.contains('open')){ cph.textContent='Comments · '+curSid; loadComments(); } });
+Reveal.on('ready',function(){
+  curSid=sidOf();
+  const printMode=new URLSearchParams(location.search).has('print-pdf');
+  if(printMode){ setRowReveal(3); setKnnStep(16); }
+  else { if(curSid==='row') setRowReveal(0); if(curSid==='knn') setKnnStep(0); }
+  loadCounts(); loadNarrated();
+});
 
 /* ---------- Live classroom: presence chip + quiz stream (SSE) ---------- */
 let liveId=null;

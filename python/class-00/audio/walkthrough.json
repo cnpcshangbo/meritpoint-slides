@@ -1,0 +1,70 @@
+{
+  "lamp-lab": {
+    "hash": "f5066e0f88c3adaa1983",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "This comment defines our invented brightness scale. Zero means dark and one hundred means bright. It is teaching data, not a physical sensor measurement.",
+        "file": "lamp-lab-w00.mp3",
+        "duration": 10.296,
+        "bytes": 61776
+      },
+      {
+        "lines": [
+          2,
+          2
+        ],
+        "text": "Assign ten to brightness. This is the input for this run. Change this value to test a different reading, then run the program again.",
+        "file": "lamp-lab-w01.mp3",
+        "duration": 9.216,
+        "bytes": 55296
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "The condition checks whether brightness is less than or equal to thirty. Notice that it includes exactly thirty. Compare that with our requirement, which says below thirty.",
+        "file": "lamp-lab-w02.mp3",
+        "duration": 11.112,
+        "bytes": 66672
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "When the condition is true, this indented line displays Lamp ON. It prints a message; it does not control real hardware.",
+        "file": "lamp-lab-w03.mp3",
+        "duration": 8.472,
+        "bytes": 50832
+      },
+      {
+        "lines": [
+          5,
+          5
+        ],
+        "text": "Else introduces the alternative branch. Python follows this branch when the condition is false.",
+        "file": "lamp-lab-w04.mp3",
+        "duration": 6.792,
+        "bytes": 40752
+      },
+      {
+        "lines": [
+          6,
+          6
+        ],
+        "text": "This indented line displays Lamp OFF when the condition is false. With the draft, exactly thirty follows the other branch. Repair the condition and check all your cases again.",
+        "file": "lamp-lab-w05.mp3",
+        "duration": 11.28,
+        "bytes": 67680
+      }
+    ]
+  }
+}

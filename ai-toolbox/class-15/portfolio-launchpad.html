@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Class 15 · Portfolio Launchpad</title>
+  <style>
+    :root{--navy:#0c2d52;--teal:#0f9db0;--coral:#e06455;--amber:#d99717;--ink:#17283a;--muted:#5d7183;--line:#c9d7e2;--soft:#edf7f8;--paper:#fff;--bg:#e9f0f4;--green:#177c5b}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    button,input,textarea{font:inherit}.topbar{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;gap:18px;align-items:center;padding:11px clamp(16px,4vw,44px);background:#071e38f3;color:#fff;backdrop-filter:blur(12px)}
+    .brand{font-weight:850;letter-spacing:.02em}.top-actions{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid #ffffff70;border-radius:999px;padding:8px 13px;background:transparent;color:#fff;text-decoration:none;font-weight:800;cursor:pointer}.btn.primary{border-color:#fff;background:#fff;color:var(--navy)}.btn.danger{color:#ffd8d0}
+    .hero{padding:clamp(34px,6vw,76px) clamp(18px,6vw,76px) 30px;background:linear-gradient(135deg,#0c2d52,#115c75);color:#fff}.eyebrow{margin:0 0 8px;color:#86dce4;font-size:.78rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase}.hero h1{max-width:900px;margin:0;font-size:clamp(2rem,5vw,4.25rem);line-height:1.02}.hero p{max-width:760px;margin:18px 0 0;color:#d4e7f0;font-size:clamp(1rem,2vw,1.2rem)}
+    .status{display:inline-flex;align-items:center;gap:7px;margin-top:18px;padding:7px 11px;border:1px solid #ffffff55;border-radius:999px;color:#d8f4f6;font-size:.86rem}.dot{width:8px;height:8px;border-radius:50%;background:#68d4a7}
+    .layout{display:grid;grid-template-columns:minmax(310px,.92fr) minmax(390px,1.35fr);gap:20px;max-width:1500px;margin:0 auto;padding:22px}.panel{border:1px solid var(--line);border-radius:18px;background:var(--paper);box-shadow:0 14px 40px #0c2d5212;overflow:hidden}.panel-head{padding:18px 20px;border-bottom:1px solid var(--line);background:#f8fbfc}.panel-head h2{margin:0;color:var(--navy);font-size:1.12rem}.panel-head p{margin:5px 0 0;color:var(--muted);font-size:.86rem}.fields{padding:18px 20px}.field{margin-bottom:15px}.field label{display:flex;justify-content:space-between;gap:12px;margin-bottom:5px;color:var(--navy);font-size:.84rem;font-weight:850}.hint{color:var(--muted);font-weight:500}.field input,.field textarea{width:100%;border:1px solid #adbfcd;border-radius:10px;padding:10px 11px;background:#fff;color:var(--ink);outline:none}.field textarea{min-height:76px;resize:vertical}.field input:focus,.field textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px #0f9db01f}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .privacy{margin:0 20px 20px;padding:12px 14px;border-left:4px solid var(--coral);border-radius:8px;background:#fff2ee;color:#5b342e;font-size:.83rem}.privacy strong{color:#7a3026}.preview-wrap{padding:20px;background:#dbe5ea}.browser{overflow:hidden;border:1px solid #9bb0bf;border-radius:15px;background:#fff;box-shadow:0 18px 45px #0c2d5226}.browser-bar{display:flex;align-items:center;gap:7px;padding:10px 13px;background:#edf2f5}.browser-bar i{width:10px;height:10px;border-radius:50%;background:#d7a296}.browser-bar i:nth-child(2){background:#e2c15f}.browser-bar i:nth-child(3){background:#70bc95}.address{flex:1;margin-left:8px;padding:5px 10px;border-radius:999px;background:#fff;color:#788997;font-size:.72rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .portfolio{min-height:760px;background:#fcfdfe}.p-hero{padding:54px clamp(24px,5vw,68px) 38px;background:linear-gradient(145deg,#071f3a,#0e5268);color:#fff}.p-kicker{color:#7fd3df;font-size:.72rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase}.p-name{margin:10px 0 7px;font-size:clamp(2rem,4vw,3.5rem);line-height:1}.p-focus{max-width:720px;margin:0;color:#d6e9f0;font-size:1.05rem}.p-main{padding:34px clamp(22px,5vw,62px) 54px}.project-label{color:var(--coral);font-size:.73rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase}.project-title{margin:8px 0 8px;color:var(--navy);font-size:clamp(1.55rem,3vw,2.4rem);line-height:1.08}.question{max-width:800px;margin:0 0 24px;color:var(--muted);font-size:1.02rem}.story{display:grid;grid-template-columns:1fr 1fr;gap:12px}.story article{padding:16px;border:1px solid #c8d8e2;border-radius:12px;background:#fff}.story h3{margin:0 0 5px;color:var(--teal);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}.story p{margin:0;color:#31485b;font-size:.92rem;white-space:pre-wrap}.story .evidence{grid-column:1/-1;border-top:5px solid var(--teal);background:#f0fafb}.reflection{margin-top:17px;padding:16px 18px;border-left:5px solid var(--amber);border-radius:8px;background:#fff8e9;color:#4b4539;white-space:pre-wrap}.tools{margin:18px 0 0;color:var(--muted);font-size:.86rem}.links{display:flex;gap:9px;flex-wrap:wrap;margin-top:19px}.links a{display:none;border-radius:999px;padding:8px 13px;background:var(--navy);color:#fff;text-decoration:none;font-size:.83rem;font-weight:800}.resume{margin:20px;padding:17px;border:1px solid #9fcfd5;border-radius:12px;background:var(--soft)}.resume h3{margin:0 0 7px;color:var(--navy);font-size:.93rem}.resume p{margin:0;color:#284b55;font-size:.88rem}.resume-actions{display:flex;gap:8px;margin-top:10px}.resume-actions button{border:1px solid var(--teal);border-radius:999px;padding:7px 11px;background:#fff;color:var(--navy);font-size:.8rem;font-weight:800;cursor:pointer}
+    .publish{max-width:1500px;margin:0 auto 30px;padding:0 22px}.publish-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.lane{padding:18px;border:1px solid var(--line);border-radius:14px;background:#fff}.lane h3{margin:0 0 6px;color:var(--navy);font-size:1rem}.lane p,.lane ol{margin:0;color:var(--muted);font-size:.86rem}.lane ol{padding-left:19px}.lane .tag{display:inline-block;margin-bottom:10px;padding:4px 8px;border-radius:999px;background:var(--soft);color:#17606c;font-size:.72rem;font-weight:900}.audit{margin-top:12px;padding:16px 18px;border-radius:14px;background:#fff2ee;color:#5b342e}.audit h3{margin:0 0 6px}.audit p{margin:0;font-size:.88rem}.fine{max-width:1500px;margin:0 auto;padding:0 22px 40px;color:var(--muted);font-size:.78rem}
+    @media(max-width:980px){.layout{grid-template-columns:1fr}.portfolio{min-height:0}.publish-grid{grid-template-columns:1fr}.topbar{position:static}.top-actions{justify-content:flex-end}.story{grid-template-columns:1fr}.story .evidence{grid-column:auto}}@media(max-width:600px){.topbar{align-items:flex-start;flex-direction:column}.grid2{grid-template-columns:1fr}.layout,.publish{padding-left:12px;padding-right:12px}.preview-wrap{padding:10px}.p-hero{padding-top:35px}.p-main{padding-top:25px}}
+  </style>
+</head>
+<body>
+  <nav class="topbar" aria-label="Portfolio actions">
+    <div class="brand">The AI Toolbox · Portfolio Launchpad</div>
+    <div class="top-actions"><a class="btn" href="index.html#/portfolio-sprint-one">Back to class</a><button class="btn" id="example" type="button">Load example</button><button class="btn danger" id="reset" type="button">Reset</button><button class="btn primary" id="download" type="button">Download portfolio.html</button></div>
+  </nav>
+  <header class="hero">
+    <p class="eyebrow">Class 15 · build locally, publish deliberately</p>
+    <h1>Turn one research project into a page worth linking.</h1>
+    <p>Complete the evidence story on the left. The preview updates instantly; download one standalone HTML file when the privacy and link audit passes.</p>
+    <div class="status"><span class="dot"></span><span id="save-status">Saved only in this browser</span></div>
+  </header>
+
+  <main class="layout">
+    <section class="panel" aria-labelledby="editor-title">
+      <div class="panel-head"><h2 id="editor-title">1 · Write the evidence story</h2><p>Bracket-free, reviewer-facing language. Blank links stay hidden.</p></div>
+      <div class="fields">
+        <div class="grid2">
+          <div class="field"><label for="displayName">Display name <span class="hint">or approved alias</span></label><input id="displayName" data-field value="Your Name"></div>
+          <div class="field"><label for="focus">One-line focus</label><input id="focus" data-field value="Student researcher using data and machine learning to test real questions."></div>
+        </div>
+        <div class="field"><label for="projectTitle">Featured project title</label><input id="projectTitle" data-field value="My AI Research Mini-Study"></div>
+        <div class="field"><label for="question">Question <span class="hint">specific + measurable</span></label><textarea id="question" data-field>What did you try to learn, for which data or population?</textarea></div>
+        <div class="grid2">
+          <div class="field"><label for="role">My role</label><textarea id="role" data-field>What did you personally design, build, analyze, verify or write?</textarea></div>
+          <div class="field"><label for="method">Method</label><textarea id="method" data-field>Named data, baseline, one controlled change, saved protocol and metric.</textarea></div>
+        </div>
+        <div class="field"><label for="evidence">Supported evidence <span class="hint">scope attached</span></label><textarea id="evidence" data-field>What did the fair comparison show—and under exactly which conditions?</textarea></div>
+        <div class="grid2">
+          <div class="field"><label for="limitation">Largest limitation</label><textarea id="limitation" data-field>What can this study not establish?</textarea></div>
+          <div class="field"><label for="nextTest">Next test</label><textarea id="nextTest" data-field>What one test would reduce the most important uncertainty?</textarea></div>
+        </div>
+        <div class="field"><label for="reflection">Growth sentence</label><textarea id="reflection" data-field>I first assumed __. The evidence showed __. So I revised __.</textarea></div>
+        <div class="field"><label for="tools">Methods / tools <span class="hint">only what you can explain</span></label><input id="tools" data-field value="Python · pandas · scikit-learn · matplotlib"></div>
+        <div class="grid2">
+          <div class="field"><label for="repoUrl">Notebook / repository URL</label><input id="repoUrl" data-field inputmode="url" placeholder="https://..."></div>
+          <div class="field"><label for="reportUrl">Report / slide deck URL</label><input id="reportUrl" data-field inputmode="url" placeholder="https://..."></div>
+        </div>
+      </div>
+      <p class="privacy"><strong>Before public sharing:</strong> remove passwords, API keys, raw personal records, private email, precise address/schedule, unlicensed data and unapproved collaborator details. For minors, a professional alias, private link or PDF is a complete and valid portfolio.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="preview-title">
+      <div class="panel-head"><h2 id="preview-title">2 · Preview the reviewer experience</h2><p>Run the ten-second scan, then open every artifact link in a private window.</p></div>
+      <div class="preview-wrap">
+        <div class="browser">
+          <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span class="address">your-portfolio.example / featured-project</span></div>
+          <article class="portfolio" id="portfolio">
+            <header class="p-hero"><div class="p-kicker">Research portfolio</div><h2 class="p-name" id="p-displayName"></h2><p class="p-focus" id="p-focus"></p></header>
+            <div class="p-main"><div class="project-label">Featured project</div><h2 class="project-title" id="p-projectTitle"></h2><p class="question" id="p-question"></p>
+              <div class="story">
+                <article><h3>My role</h3><p id="p-role"></p></article><article><h3>Method</h3><p id="p-method"></p></article>
+                <article class="evidence"><h3>Supported evidence</h3><p id="p-evidence"></p></article><article><h3>Largest limitation</h3><p id="p-limitation"></p></article><article><h3>Next test</h3><p id="p-nextTest"></p></article>
+              </div>
+              <div class="reflection" id="p-reflection"></div><p class="tools"><b>Methods / tools:</b> <span id="p-tools"></span></p>
+              <div class="links"><a id="p-repoUrl" target="_blank" rel="noopener">Notebook / repository ↗</a><a id="p-reportUrl" target="_blank" rel="noopener">Report / slides ↗</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="resume"><h3>Resume bullet draft</h3><p id="resume-text"></p><div class="resume-actions"><button id="copy-bullet" type="button">Copy bullet</button><button id="copy-link-line" type="button">Copy link line</button></div></div>
+    </section>
+  </main>
+
+  <section class="publish" aria-labelledby="publish-title">
+    <div class="panel-head panel"><h2 id="publish-title">3 · Choose the publication lane</h2><p>The evidence story stays the same; the audience and container can change.</p></div>
+    <div class="publish-grid">
+      <article class="lane"><span class="tag">Fastest · no code</span><h3>Google Sites / Notion / Canva</h3><ol><li>Create one blank page.</li><li>Copy the preview section by section.</li><li>Add the focal chart and approved links.</li><li>Publish to the intended audience and test access.</li></ol></article>
+      <article class="lane"><span class="tag">Code-forward</span><h3>GitHub Pages</h3><ol><li>Download this page and rename it <b>index.html</b>.</li><li>Add it to a public, teacher-approved repository.</li><li>Enable Pages from the repository settings.</li><li>Test the final URL on mobile and in a private window.</li></ol></article>
+      <article class="lane"><span class="tag">Private / reviewer-only</span><h3>PDF or controlled link</h3><ol><li>Print the preview to PDF or keep the page behind approved access.</li><li>Label unavailable artifacts honestly.</li><li>Share only through the application or program's approved channel.</li><li>Never trade privacy for polish.</li></ol></article>
+    </div>
+    <div class="audit"><h3>Final two-click audit</h3><p>A reviewer should identify the question, your role, the supported result and its boundary in ten seconds—and reach the evidence in two clicks or fewer. Put the stable URL in the resume header as <b>Portfolio: https://…</b> and link the project title to the exact project page.</p></div>
+  </section>
+  <p class="fine">This tool sends nothing to the course server. Draft text is stored in this browser's local storage until Reset is pressed. Downloaded files are fully standalone; publishing them is a separate, deliberate choice.</p>
+
+  <script>
+    (function(){
+      "use strict";
+      var KEY="mpa-class15-portfolio-v1";
+      var ids=["displayName","focus","projectTitle","question","role","method","evidence","limitation","nextTest","reflection","tools","repoUrl","reportUrl"];
+      var example={displayName:"Jordan Lee",focus:"Student researcher using machine learning to study when visual classifiers fail.",projectTitle:"Low-light image classification: a controlled comparison",question:"On a fixed teaching dataset, does adding low-light preprocessing change pedestrian recall relative to the baseline pipeline?",role:"I documented the data, implemented both pipelines, froze the evaluation split, compared the results and audited error cases.",method:"Same rows, saved split and classifier; one preprocessing change; recall chosen before the final comparison.",evidence:"Under this dataset and protocol, the contender changed recall relative to the baseline. Generalization to new cameras and real roads remains untested.",limitation:"One teaching dataset cannot establish performance across devices, weather or real deployment conditions.",nextTest:"Repeat the frozen protocol on separately sourced low-light images and report both recall and false alarms.",reflection:"I first assumed the highest overall score would settle the choice. The evidence showed that error type and data scope mattered. So I revised the headline around recall and its limits.",tools:"Python · pandas · scikit-learn · matplotlib",repoUrl:"",reportUrl:""};
+      var fields={};
+      function value(id){return fields[id].value.trim()}
+      function safeUrl(raw){var s=(raw||"").trim();if(!s)return "";try{var u=new URL(s);return u.protocol==="https:"||u.protocol==="http:"?u.href:""}catch(e){return ""}}
+      function esc(raw){return String(raw||"").replace(/[&<>"]/g,function(ch){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]})}
+      function bullet(){var title=value("projectTitle")||"a research project";var method=value("method")||"a controlled comparison";var evidence=value("evidence")||"reported the bounded result";var limitation=value("limitation")||"documented the main limitation";return "Designed and evaluated "+title+" using "+method+"; "+evidence+", while "+limitation.charAt(0).toLowerCase()+limitation.slice(1)+"."}
+      function updateLink(id){var a=document.getElementById("p-"+id);var url=safeUrl(value(id));a.style.display=url?"inline-block":"none";if(url)a.href=url}
+      function render(){ids.forEach(function(id){if(id==="repoUrl"||id==="reportUrl")return;var target=document.getElementById("p-"+id);if(target)target.textContent=value(id)});updateLink("repoUrl");updateLink("reportUrl");document.getElementById("resume-text").textContent=bullet();try{var data={};ids.forEach(function(id){data[id]=fields[id].value});localStorage.setItem(KEY,JSON.stringify(data));document.getElementById("save-status").textContent="Saved only in this browser"}catch(e){document.getElementById("save-status").textContent="Preview only · browser storage unavailable"}}
+      function load(data){ids.forEach(function(id){if(Object.prototype.hasOwnProperty.call(data,id))fields[id].value=data[id]});render()}
+      function copy(text,button){navigator.clipboard.writeText(text).then(function(){var old=button.textContent;button.textContent="Copied";setTimeout(function(){button.textContent=old},1200)}).catch(function(){window.prompt("Copy this text:",text)})}
+      function exportHtml(){
+        var repo=safeUrl(value("repoUrl")),report=safeUrl(value("reportUrl"));
+        var linkHtml=(repo?'<a href="'+esc(repo)+'" rel="noopener">Notebook / repository ↗</a>':'')+(report?'<a href="'+esc(report)+'" rel="noopener">Report / slides ↗</a>':'');
+        var css="*{box-sizing:border-box}body{margin:0;color:#17283a;font:16px/1.55 system-ui,sans-serif;background:#f3f7f9}.hero{padding:70px max(7vw,24px) 48px;background:linear-gradient(145deg,#071f3a,#0e5268);color:white}.k{color:#7fd3df;font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}h1{margin:10px 0 8px;font-size:clamp(38px,7vw,72px);line-height:1}.focus{max-width:760px;color:#d6e9f0;font-size:19px}.main{max-width:1050px;margin:auto;padding:48px 24px 70px}.label{color:#e06455;font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}h2{margin:8px 0;color:#0c2d52;font-size:clamp(30px,5vw,48px);line-height:1.08}.q{color:#5d7183;font-size:18px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}.card{padding:19px;border:1px solid #c9d7e2;border-radius:14px;background:white}.card.ev{grid-column:1/-1;border-top:5px solid #0f9db0;background:#edf7f8}.card h3{margin:0 0 7px;color:#0f8193;font-size:13px;letter-spacing:.09em;text-transform:uppercase}.card p{margin:0;white-space:pre-wrap}.reflect{margin-top:18px;padding:18px;border-left:5px solid #d99717;border-radius:8px;background:#fff8e9;white-space:pre-wrap}.tools{color:#5d7183}.links{display:flex;gap:10px;flex-wrap:wrap}.links a{padding:9px 14px;border-radius:999px;background:#0c2d52;color:white;text-decoration:none;font-weight:800}@media(max-width:650px){.grid{grid-template-columns:1fr}.card.ev{grid-column:auto}}";
+        var html=['<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>',esc(value("displayName")+" · Research Portfolio"),'</title><meta name="description" content="',esc(value("focus")),'"><style>',css,'</style></head><body><header class="hero"><div class="k">Research portfolio</div><h1>',esc(value("displayName")),'</h1><p class="focus">',esc(value("focus")),'</p></header><main class="main"><div class="label">Featured project</div><h2>',esc(value("projectTitle")),'</h2><p class="q">',esc(value("question")),'</p><section class="grid"><article class="card"><h3>My role</h3><p>',esc(value("role")),'</p></article><article class="card"><h3>Method</h3><p>',esc(value("method")),'</p></article><article class="card ev"><h3>Supported evidence</h3><p>',esc(value("evidence")),'</p></article><article class="card"><h3>Largest limitation</h3><p>',esc(value("limitation")),'</p></article><article class="card"><h3>Next test</h3><p>',esc(value("nextTest")),'</p></article></section><div class="reflect">',esc(value("reflection")),'</div><p class="tools"><b>Methods / tools:</b> ',esc(value("tools")),'</p><nav class="links">',linkHtml,'</nav></main></body></html>'].join('');
+        var blob=new Blob([html],{type:"text/html;charset=utf-8"});var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="portfolio.html";a.click();setTimeout(function(){URL.revokeObjectURL(a.href)},1000)
+      }
+      ids.forEach(function(id){fields[id]=document.getElementById(id);fields[id].addEventListener("input",render)});
+      try{var saved=JSON.parse(localStorage.getItem(KEY)||"null");if(saved)load(saved);else render()}catch(e){render()}
+      document.getElementById("example").addEventListener("click",function(){load(example)});
+      document.getElementById("reset").addEventListener("click",function(){if(window.confirm("Clear this browser's portfolio draft?")){try{localStorage.removeItem(KEY)}catch(e){}location.reload()}});
+      document.getElementById("download").addEventListener("click",exportHtml);
+      document.getElementById("copy-bullet").addEventListener("click",function(){copy(bullet(),this)});
+      document.getElementById("copy-link-line").addEventListener("click",function(){copy("Portfolio: https://your-stable-portfolio-url",this)});
+    }());
+  </script>
+</body>
+</html>

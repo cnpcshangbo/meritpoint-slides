@@ -1,0 +1,1535 @@
+{
+  "title": {
+    "hash": "8e13720f8218e3445a76",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Welcome to Class Zero: learning Python in the age of AI. This is an in-person introduction for students and families, led by Bo Shang. Today we will turn an idea into a precise rule, test it together, and explore what it means to learn programming when AI can help write code. No coding experience is needed.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 4.388,
+        "text": "Welcome to Class Zero: learning Python in the age of AI."
+      },
+      {
+        "start": 4.388,
+        "end": 9.701,
+        "text": "This is an in-person introduction for students and families, led by Bo Shang."
+      },
+      {
+        "start": 9.701,
+        "end": 18.372,
+        "text": "Today we will turn an idea into a precise rule, test it together, and explore what it means to learn programming when AI can help write code."
+      },
+      {
+        "start": 18.372,
+        "end": 20.64,
+        "text": "No coding experience is needed."
+      }
+    ],
+    "duration": 20.64,
+    "bytes": 123840
+  },
+  "opening-question": {
+    "hash": "f6cb7574abb61b583a11",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "If AI can write code, what should you learn? Think for twenty seconds. Would you most like to create something, understand how a digital system works, or judge whether a result deserves your trust? There is no single correct choice. Students, share your reason first. Parents, add a question you hope this class will answer.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.411,
+        "text": "If AI can write code, what should you learn?"
+      },
+      {
+        "start": 3.411,
+        "end": 5.26,
+        "text": "Think for twenty seconds."
+      },
+      {
+        "start": 5.26,
+        "end": 12.721,
+        "text": "Would you most like to create something, understand how a digital system works, or judge whether a result deserves your trust?"
+      },
+      {
+        "start": 12.721,
+        "end": 15.143,
+        "text": "There is no single correct choice."
+      },
+      {
+        "start": 15.143,
+        "end": 17.591,
+        "text": "Students, share your reason first."
+      },
+      {
+        "start": 17.591,
+        "end": 21.36,
+        "text": "Parents, add a question you hope this class will answer."
+      }
+    ],
+    "duration": 21.36,
+    "bytes": 128160
+  },
+  "my-start": {
+    "hash": "b9c3ef82a85b650b4bc1",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Bo Shang began learning BASIC in primary school. After the gaokao, he explored Visual Basic and visual interfaces. As an undergraduate, he built a lottery program in VB. These steps connect written instructions, interface events, and a tool that people can use. Imagine pressing a lucky-draw button. What rules would you want that program to follow?",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.294,
+        "text": "Bo Shang began learning BASIC in primary school."
+      },
+      {
+        "start": 3.294,
+        "end": 7.578,
+        "text": "After the gaokao, he explored Visual Basic and visual interfaces."
+      },
+      {
+        "start": 7.578,
+        "end": 11.68,
+        "text": "As an undergraduate, he built a lottery program in VB."
+      },
+      {
+        "start": 11.68,
+        "end": 16.849,
+        "text": "These steps connect written instructions, interface events, and a tool that people can use."
+      },
+      {
+        "start": 16.849,
+        "end": 19.466,
+        "text": "Imagine pressing a lucky-draw button."
+      },
+      {
+        "start": 19.466,
+        "end": 22.128,
+        "text": "What rules would you want that program to follow?"
+      }
+    ],
+    "duration": 22.128,
+    "bytes": 132768
+  },
+  "into-the-world": {
+    "hash": "49001ce0ee89bbbfeec0",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "The next part of the journey was microcontroller programming, followed by electronic design and Freescale intelligent car competitions. Programming became connected with hardware: reading inputs and controlling outputs. A useful way to picture this is a sensor, a decision, and an action. The code is one part of a larger system that must work together.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 8.086,
+        "text": "The next part of the journey was microcontroller programming, followed by electronic design and Freescale intelligent car competitions."
+      },
+      {
+        "start": 8.086,
+        "end": 13.555,
+        "text": "Programming became connected with hardware: reading inputs and controlling outputs."
+      },
+      {
+        "start": 13.555,
+        "end": 18.659,
+        "text": "A useful way to picture this is a sensor, a decision, and an action."
+      },
+      {
+        "start": 18.659,
+        "end": 22.968,
+        "text": "The code is one part of a larger system that must work together."
+      }
+    ],
+    "duration": 22.968,
+    "bytes": 137808
+  },
+  "systems-research": {
+    "hash": "6d2c9a73a635cfbe46d4",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "International Aerial Robotics Competition experience continued this path toward mechatronics and automation science. Mechatronics combines mechanical systems, electronics, and computing. Automation research asks how systems can sense, decide, and act reliably. This is one possible path, not a required destination. Your own starting question might come from games, sports, art, biology, or everyday life.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 7.409,
+        "text": "International Aerial Robotics Competition experience continued this path toward mechatronics and automation science."
+      },
+      {
+        "start": 7.409,
+        "end": 12.526,
+        "text": "Mechatronics combines mechanical systems, electronics, and computing."
+      },
+      {
+        "start": 12.526,
+        "end": 18.112,
+        "text": "Automation research asks how systems can sense, decide, and act reliably."
+      },
+      {
+        "start": 18.112,
+        "end": 22.174,
+        "text": "This is one possible path, not a required destination."
+      },
+      {
+        "start": 22.174,
+        "end": 28.848,
+        "text": "Your own starting question might come from games, sports, art, biology, or everyday life."
+      }
+    ],
+    "duration": 28.848,
+    "bytes": 173088
+  },
+  "what-is-programming": {
+    "hash": "f69b67f1a264aa9005d1",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Give the lamp a rule and change its world. Move the brightness slider from dark to daylight. Watch the sensor reading, the condition and the lamp change together. Our instruction turns the lamp on below thirty and off at thirty or above. This room is a simulation. A program makes the goal precise enough to execute and check. Open Build this with blocks to edit the same idea visually.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.06,
+        "text": "Give the lamp a rule and change its world."
+      },
+      {
+        "start": 3.06,
+        "end": 6.081,
+        "text": "Move the brightness slider from dark to daylight."
+      },
+      {
+        "start": 6.081,
+        "end": 10.378,
+        "text": "Watch the sensor reading, the condition and the lamp change together."
+      },
+      {
+        "start": 10.378,
+        "end": 15.572,
+        "text": "Our instruction turns the lamp on below thirty and off at thirty or above."
+      },
+      {
+        "start": 15.572,
+        "end": 17.682,
+        "text": "This room is a simulation."
+      },
+      {
+        "start": 17.682,
+        "end": 21.758,
+        "text": "A program makes the goal precise enough to execute and check."
+      },
+      {
+        "start": 21.758,
+        "end": 25.464,
+        "text": "Open Build this with blocks to edit the same idea visually."
+      }
+    ],
+    "duration": 25.464,
+    "bytes": 152784
+  },
+  "three-building-blocks": {
+    "hash": "8b8ca3b3c951296eb156",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Three ideas appear in many programs. Sequence means following steps in order. A condition chooses an action using a rule, such as turning on a lamp when it is dark. A loop repeats steps, perhaps checking the next reading. Data gives those rules something to work on: a name, a number, or a list. Today we will recognize these ideas without trying to master all their syntax.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 2.878,
+        "text": "Three ideas appear in many programs."
+      },
+      {
+        "start": 2.878,
+        "end": 6.159,
+        "text": "Sequence means following steps in order."
+      },
+      {
+        "start": 6.159,
+        "end": 11.224,
+        "text": "A condition chooses an action using a rule, such as turning on a lamp when it is dark."
+      },
+      {
+        "start": 11.224,
+        "end": 14.922,
+        "text": "A loop repeats steps, perhaps checking the next reading."
+      },
+      {
+        "start": 14.922,
+        "end": 20.234,
+        "text": "Data gives those rules something to work on: a name, a number, or a list."
+      },
+      {
+        "start": 20.234,
+        "end": 25.056,
+        "text": "Today we will recognize these ideas without trying to master all their syntax."
+      }
+    ],
+    "duration": 25.056,
+    "bytes": 150336
+  },
+  "why-python": {
+    "hash": "4412528ed949f6f8cce7",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Why do we choose Python? It gives us a readable bridge from a question to evidence. You can begin with a small rule, change an input and inspect the output. NumPy helps with arrays, and pandas with tables. Matplotlib helps us draw charts, and scikit-learn supplies tools for comparing models. A Jupyter notebook keeps code, outputs and explanations together. These are tools around Python, not separate languages. Python can also call compiled calculations inside libraries. We choose this combination because it fits our first projects.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 1.927,
+        "text": "Why do we choose Python?"
+      },
+      {
+        "start": 1.927,
+        "end": 5.573,
+        "text": "It gives us a readable bridge from a question to evidence."
+      },
+      {
+        "start": 5.573,
+        "end": 10.247,
+        "text": "You can begin with a small rule, change an input and inspect the output."
+      },
+      {
+        "start": 10.247,
+        "end": 14.115,
+        "text": "NumPy helps with arrays, and pandas with tables."
+      },
+      {
+        "start": 14.115,
+        "end": 19.922,
+        "text": "Matplotlib helps us draw charts, and scikit-learn supplies tools for comparing models."
+      },
+      {
+        "start": 19.922,
+        "end": 24.83,
+        "text": "A Jupyter notebook keeps code, outputs and explanations together."
+      },
+      {
+        "start": 24.83,
+        "end": 28.281,
+        "text": "These are tools around Python, not separate languages."
+      },
+      {
+        "start": 28.281,
+        "end": 32.734,
+        "text": "Python can also call compiled calculations inside libraries."
+      },
+      {
+        "start": 32.734,
+        "end": 36.72,
+        "text": "We choose this combination because it fits our first projects."
+      }
+    ],
+    "duration": 36.72,
+    "bytes": 220320
+  },
+  "language-landscape": {
+    "hash": "626de83cfd176aa69438",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Start with the job you want to do. For a data investigation, SQL can select records, while Python or R analyzes them. An interactive website may combine JavaScript in the browser, a Python service and a database. A robot may combine Python planning with C or C plus plus close to the hardware. Java and C sharp provide substantial application ecosystems. Scratch supports creative coding, while Blockly helps developers build visual editors like our lamp companion. These roles overlap. You do not need to learn every language before building something useful.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 2.201,
+        "text": "Start with the job you want to do."
+      },
+      {
+        "start": 2.201,
+        "end": 9.115,
+        "text": "For a data investigation, SQL can select records, while Python or R analyzes them."
+      },
+      {
+        "start": 9.115,
+        "end": 15.521,
+        "text": "An interactive website may combine JavaScript in the browser, a Python service and a database."
+      },
+      {
+        "start": 15.521,
+        "end": 21.016,
+        "text": "A robot may combine Python planning with C or C plus plus close to the hardware."
+      },
+      {
+        "start": 21.016,
+        "end": 25.82,
+        "text": "Java and C sharp provide substantial application ecosystems."
+      },
+      {
+        "start": 25.82,
+        "end": 32.786,
+        "text": "Scratch supports creative coding, while Blockly helps developers build visual editors like our lamp companion."
+      },
+      {
+        "start": 32.786,
+        "end": 34.714,
+        "text": "These roles overlap."
+      },
+      {
+        "start": 34.714,
+        "end": 38.88,
+        "text": "You do not need to learn every language before building something useful."
+      }
+    ],
+    "duration": 38.88,
+    "bytes": 233280
+  },
+  "language-stories": {
+    "hash": "8b2b520ffe02b51d2516",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "BASIC began at Dartmouth in nineteen sixty-four. It worked with time-sharing to open computing to students across campus, and undergraduates helped build the system. Who should get to try programming? Visual Basic brought another inviting starting point. Version one was demonstrated in May nineteen ninety-one. You could work with forms, buttons and the events behind them. A button still needs a rule: what should happen after the click? Python began during Guido van Rossum’s Christmas holidays in nineteen eighty-nine and became public in February nineteen ninety-one. Its name came from the comedy show Monty Python. These are selected stories about changing tools. Today AI offers another way to begin, while we still need to decide what to build and how to check it.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.216,
+        "text": "BASIC began at Dartmouth in nineteen sixty-four."
+      },
+      {
+        "start": 3.216,
+        "end": 9.883,
+        "text": "It worked with time-sharing to open computing to students across campus, and undergraduates helped build the system."
+      },
+      {
+        "start": 9.883,
+        "end": 11.693,
+        "text": "Who should get to try programming?"
+      },
+      {
+        "start": 11.693,
+        "end": 15.311,
+        "text": "Visual Basic brought another inviting starting point."
+      },
+      {
+        "start": 15.311,
+        "end": 18.854,
+        "text": "Version one was demonstrated in May nineteen ninety-one."
+      },
+      {
+        "start": 18.854,
+        "end": 22.604,
+        "text": "You could work with forms, buttons and the events behind them."
+      },
+      {
+        "start": 22.604,
+        "end": 26.615,
+        "text": "A button still needs a rule: what should happen after the click?"
+      },
+      {
+        "start": 26.615,
+        "end": 34.688,
+        "text": "Python began during Guido van Rossum’s Christmas holidays in nineteen eighty-nine and became public in February nineteen ninety-one."
+      },
+      {
+        "start": 34.688,
+        "end": 37.942,
+        "text": "Its name came from the comedy show Monty Python."
+      },
+      {
+        "start": 37.942,
+        "end": 40.977,
+        "text": "These are selected stories about changing tools."
+      },
+      {
+        "start": 40.977,
+        "end": 47.184,
+        "text": "Today AI offers another way to begin, while we still need to decide what to build and how to check it."
+      }
+    ],
+    "duration": 47.184,
+    "bytes": 283104
+  },
+  "sensor-model": {
+    "hash": "b3d40572842de6c0db72",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Consider a tiny automatic lamp. The input is a brightness reading. Our rule says the lamp should turn on below thirty and turn off at thirty or above. The output is an on or off command. We use an invented scale from zero for dark to one hundred for bright. This is a classroom model, not a real sensor standard or a physical lamp controller.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 2.63,
+        "text": "Consider a tiny automatic lamp."
+      },
+      {
+        "start": 2.63,
+        "end": 4.87,
+        "text": "The input is a brightness reading."
+      },
+      {
+        "start": 4.87,
+        "end": 10.312,
+        "text": "Our rule says the lamp should turn on below thirty and turn off at thirty or above."
+      },
+      {
+        "start": 10.312,
+        "end": 13.216,
+        "text": "The output is an on or off command."
+      },
+      {
+        "start": 13.216,
+        "end": 17.721,
+        "text": "We use an invented scale from zero for dark to one hundred for bright."
+      },
+      {
+        "start": 17.721,
+        "end": 23.208,
+        "text": "This is a classroom model, not a real sensor standard or a physical lamp controller."
+      }
+    ],
+    "duration": 23.208,
+    "bytes": 139248
+  },
+  "human-robot": {
+    "hash": "3385ac877d06af189dfa",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Work with a partner. Start at A one and reach C three in four commands. B two is blocked. E moves one cell east, and N moves one cell north. Stay on the board and stop at a wall. The student writes the instructions first. The partner follows them exactly without silently fixing anything. Then swap roles. You can do the whole activity on paper.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0.025,
+        "end": 1.4969999999999999,
+        "text": "Work with a partner."
+      },
+      {
+        "start": 1.4969999999999999,
+        "end": 5.586,
+        "text": "Start at A one and reach C three in four commands."
+      },
+      {
+        "start": 5.586,
+        "end": 7.161,
+        "text": "B two is blocked."
+      },
+      {
+        "start": 7.161,
+        "end": 11.094,
+        "text": "E moves one cell east, and N moves one cell north."
+      },
+      {
+        "start": 11.094,
+        "end": 13.854,
+        "text": "Stay on the board and stop at a wall."
+      },
+      {
+        "start": 13.854,
+        "end": 16.393,
+        "text": "The student writes the instructions first."
+      },
+      {
+        "start": 16.393,
+        "end": 21.055,
+        "text": "The partner follows them exactly without silently fixing anything."
+      },
+      {
+        "start": 21.055,
+        "end": 22.604,
+        "text": "Then swap roles."
+      },
+      {
+        "start": 22.604,
+        "end": 25.296,
+        "text": "You can do the whole activity on paper."
+      }
+    ],
+    "duration": 25.296,
+    "bytes": 151776
+  },
+  "change-the-world": {
+    "hash": "5ce62679938809f414b3",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Run one program on two maps. The original map has a wall at B two. The changed map moves that wall to C two. Predict both results, then use Step or Run both maps. Watch the highlighted command and the stopping position. Try a different sequence and compare again. You can also open the block editor to change the route by connecting blocks. The test results come from the program and the selected maps.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 2.591,
+        "text": "Run one program on two maps."
+      },
+      {
+        "start": 2.591,
+        "end": 5.625,
+        "text": "The original map has a wall at B two."
+      },
+      {
+        "start": 5.625,
+        "end": 8.984,
+        "text": "The changed map moves that wall to C two."
+      },
+      {
+        "start": 8.984,
+        "end": 13.112,
+        "text": "Predict both results, then use Step or Run both maps."
+      },
+      {
+        "start": 13.112,
+        "end": 16.771,
+        "text": "Watch the highlighted command and the stopping position."
+      },
+      {
+        "start": 16.771,
+        "end": 19.896,
+        "text": "Try a different sequence and compare again."
+      },
+      {
+        "start": 19.896,
+        "end": 24.245,
+        "text": "You can also open the block editor to change the route by connecting blocks."
+      },
+      {
+        "start": 24.245,
+        "end": 28.368,
+        "text": "The test results come from the program and the selected maps."
+      }
+    ],
+    "duration": 28.368,
+    "bytes": 170208
+  },
+  "then-and-now": {
+    "hash": "c8083e2d2c9b7f9ce62a",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Before AI assistants, learners wrote code, searched books and documentation, and asked teachers or peers for help. Those options still matter. AI adds another way to request a draft, a hint, an explanation, or an alternative approach. Getting a first version is not the same as understanding it. Across both eras, we need to understand, test, and explain whether the program meets its goal.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 8.06,
+        "text": "Before AI assistants, learners wrote code, searched books and documentation, and asked teachers or peers for help."
+      },
+      {
+        "start": 8.06,
+        "end": 10.065,
+        "text": "Those options still matter."
+      },
+      {
+        "start": 10.065,
+        "end": 17.07,
+        "text": "AI adds another way to request a draft, a hint, an explanation, or an alternative approach."
+      },
+      {
+        "start": 17.07,
+        "end": 20.794,
+        "text": "Getting a first version is not the same as understanding it."
+      },
+      {
+        "start": 20.794,
+        "end": 27.168,
+        "text": "Across both eras, we need to understand, test, and explain whether the program meets its goal."
+      }
+    ],
+    "duration": 27.168,
+    "bytes": 163008
+  },
+  "why-learn": {
+    "hash": "958e61e2d06a42798061",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Learning the foundations gives you more control over what you build. Read a short program and understand its inputs and outputs. Make one intentional change and predict its effect. Choose a test and explain what the result supports. These abilities can help with scientific, engineering, business, and creative projects. You do not need to decide on a programming career today.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.932,
+        "text": "Learning the foundations gives you more control over what you build."
+      },
+      {
+        "start": 3.932,
+        "end": 7.93,
+        "text": "Read a short program and understand its inputs and outputs."
+      },
+      {
+        "start": 7.93,
+        "end": 11.706,
+        "text": "Make one intentional change and predict its effect."
+      },
+      {
+        "start": 11.706,
+        "end": 15.534,
+        "text": "Choose a test and explain what the result supports."
+      },
+      {
+        "start": 15.534,
+        "end": 20.846,
+        "text": "These abilities can help with scientific, engineering, business, and creative projects."
+      },
+      {
+        "start": 20.846,
+        "end": 24.024,
+        "text": "You do not need to decide on a programming career today."
+      }
+    ],
+    "duration": 24.024,
+    "bytes": 144144
+  },
+  "what-is-research": {
+    "hash": "215e147acdf2962c41bb",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Research begins with a question and a plan for evidence. Does changing light change plant growth? We might inspect existing records, collect new measurements, or explore a model. Those methods can support different conclusions. Keep three descriptions separate: the purpose of the work, its field, and its method. Biology is a field, not a requirement to use one particular method. The next map focuses on empirical and computational examples. Research also includes theory, mathematical proof, interpretation and other approaches. Our first goal is a small question, a fair comparison and an honest account of what the results show.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.724,
+        "text": "Research begins with a question and a plan for evidence."
+      },
+      {
+        "start": 3.724,
+        "end": 6.354,
+        "text": "Does changing light change plant growth?"
+      },
+      {
+        "start": 6.354,
+        "end": 11.927,
+        "text": "We might inspect existing records, collect new measurements, or explore a model."
+      },
+      {
+        "start": 11.927,
+        "end": 14.974,
+        "text": "Those methods can support different conclusions."
+      },
+      {
+        "start": 14.974,
+        "end": 21.029,
+        "text": "Keep three descriptions separate: the purpose of the work, its field, and its method."
+      },
+      {
+        "start": 21.029,
+        "end": 25.703,
+        "text": "Biology is a field, not a requirement to use one particular method."
+      },
+      {
+        "start": 25.703,
+        "end": 30.065,
+        "text": "The next map focuses on empirical and computational examples."
+      },
+      {
+        "start": 30.065,
+        "end": 36.068,
+        "text": "Research also includes theory, mathematical proof, interpretation and other approaches."
+      },
+      {
+        "start": 36.068,
+        "end": 42.432,
+        "text": "Our first goal is a small question, a fair comparison and an honest account of what the results show."
+      }
+    ],
+    "duration": 42.432,
+    "bytes": 254592
+  },
+  "research-map": {
+    "hash": "f81fcfa0a47499b79931",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Start with the gene database example in biology. Existing records let us compare groups, although a pattern alone does not establish a cause. A plant experiment changes light and collects new measurements. It needs controlled conditions and repeated observations. A growth model changes assumptions and calculates possible outcomes. Those outputs need checking against observations. In finance, existing economic records can support a comparison of inflation and interest rates. An auction experiment instead collects choices from real participants under different rules. Environment and robotics also span several regions. The horizontal direction asks how much new real-world measurement is needed. The vertical direction moves from describing observations toward testing changes. These project positions are a teaching diagram, not percentages of research.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.346,
+        "text": "Start with the gene database example in biology."
+      },
+      {
+        "start": 3.346,
+        "end": 9.362,
+        "text": "Existing records let us compare groups, although a pattern alone does not establish a cause."
+      },
+      {
+        "start": 9.362,
+        "end": 13.659,
+        "text": "A plant experiment changes light and collects new measurements."
+      },
+      {
+        "start": 13.659,
+        "end": 17.305,
+        "text": "It needs controlled conditions and repeated observations."
+      },
+      {
+        "start": 17.305,
+        "end": 22.186,
+        "text": "A growth model changes assumptions and calculates possible outcomes."
+      },
+      {
+        "start": 22.186,
+        "end": 25.781,
+        "text": "Those outputs need checking against observations."
+      },
+      {
+        "start": 25.781,
+        "end": 32.435,
+        "text": "In finance, existing economic records can support a comparison of inflation and interest rates."
+      },
+      {
+        "start": 32.435,
+        "end": 38.112,
+        "text": "An auction experiment instead collects choices from real participants under different rules."
+      },
+      {
+        "start": 38.112,
+        "end": 42.135,
+        "text": "Environment and robotics also span several regions."
+      },
+      {
+        "start": 42.135,
+        "end": 46.628,
+        "text": "The horizontal direction asks how much new real-world measurement is needed."
+      },
+      {
+        "start": 46.628,
+        "end": 51.484,
+        "text": "The vertical direction moves from describing observations toward testing changes."
+      },
+      {
+        "start": 51.484,
+        "end": 56.664,
+        "text": "These project positions are a teaching diagram, not percentages of research."
+      }
+    ],
+    "duration": 56.664,
+    "bytes": 339984
+  },
+  "research-percentages": {
+    "hash": "fb3011a2fb8a4cf4872c",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "What did these respondents mainly do? In a volunteer survey conducted in twenty seventeen and twenty eighteen, two thousand and thirty-two people answered a question about their primary research activity. About thirty-five percent selected field research, twenty-eight percent modeling, and twenty-four percent lab research. The remaining categories were geographic information systems and other activities. A different question found that thirty-eight point three percent of seventeen hundred and ninety-five respondents frequently or always used some or all data collected outside their immediate team. These are survey respondents, not percentages of all research. The sample is not a global census, and projects can combine methods. Before trusting a percentage, ask what was counted, who answered, and when.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 2.409,
+        "text": "What did these respondents mainly do?"
+      },
+      {
+        "start": 2.409,
+        "end": 12.018,
+        "text": "In a volunteer survey conducted in twenty seventeen and twenty eighteen, two thousand and thirty-two people answered a question about their primary research activity."
+      },
+      {
+        "start": 12.018,
+        "end": 19.57,
+        "text": "About thirty-five percent selected field research, twenty-eight percent modeling, and twenty-four percent lab research."
+      },
+      {
+        "start": 19.57,
+        "end": 24.987,
+        "text": "The remaining categories were geographic information systems and other activities."
+      },
+      {
+        "start": 24.987,
+        "end": 36.302,
+        "text": "A different question found that thirty-eight point three percent of seventeen hundred and ninety-five respondents frequently or always used some or all data collected outside their immediate team."
+      },
+      {
+        "start": 36.302,
+        "end": 40.664,
+        "text": "These are survey respondents, not percentages of all research."
+      },
+      {
+        "start": 40.664,
+        "end": 45.69,
+        "text": "The sample is not a global census, and projects can combine methods."
+      },
+      {
+        "start": 45.69,
+        "end": 51.552,
+        "text": "Before trusting a percentage, ask what was counted, who answered, and when."
+      }
+    ],
+    "duration": 51.552,
+    "bytes": 309312
+  },
+  "digital-twin": {
+    "hash": "7709a5b18cedbec4840e",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "A simulation can explore a model without a live connection to the system it represents. Here we use a teaching greenhouse, synthetic readings and an invented formula. First, load the next synthetic reading. It changes from twenty-four to twenty-eight degrees, but the disconnected model still estimates twenty-five. Now add a measurement link. The model starts from the latest example reading, and its estimate becomes twenty-nine. Open the vent to one hundred percent. Our toy formula now estimates twenty-six. A real digital twin connects a model to a particular real system through updated data. Its predictions still need comparison with real measurements and validation for the intended use. This demonstration explains that idea; it is not itself a real digital twin.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 5.352,
+        "text": "A simulation can explore a model without a live connection to the system it represents."
+      },
+      {
+        "start": 5.352,
+        "end": 10.625,
+        "text": "Here we use a teaching greenhouse, synthetic readings and an invented formula."
+      },
+      {
+        "start": 10.625,
+        "end": 13.151,
+        "text": "First, load the next synthetic reading."
+      },
+      {
+        "start": 13.151,
+        "end": 19.948,
+        "text": "It changes from twenty-four to twenty-eight degrees, but the disconnected model still estimates twenty-five."
+      },
+      {
+        "start": 19.948,
+        "end": 21.862,
+        "text": "Now add a measurement link."
+      },
+      {
+        "start": 21.862,
+        "end": 27.708,
+        "text": "The model starts from the latest example reading, and its estimate becomes twenty-nine."
+      },
+      {
+        "start": 27.708,
+        "end": 30.117,
+        "text": "Open the vent to one hundred percent."
+      },
+      {
+        "start": 30.117,
+        "end": 33.424,
+        "text": "Our toy formula now estimates twenty-six."
+      },
+      {
+        "start": 33.424,
+        "end": 38.776,
+        "text": "A real digital twin connects a model to a particular real system through updated data."
+      },
+      {
+        "start": 38.776,
+        "end": 44.349,
+        "text": "Its predictions still need comparison with real measurements and validation for the intended use."
+      },
+      {
+        "start": 44.349,
+        "end": 49.824,
+        "text": "This demonstration explains that idea; it is not itself a real digital twin."
+      }
+    ],
+    "duration": 49.824,
+    "bytes": 298944
+  },
+  "ai-partnership": {
+    "hash": "8f8f98a825b69b40624f",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "AI can explain an unfamiliar line, suggest an implementation, or propose a test. The learner still defines the goal, runs the program, and decides which suggestions to accept, revise, or reject. Generated code can be incorrect or miss the intended behavior. GitHub documentation also emphasizes reviewing and testing generated code. In this course, your reasoning and checks are part of the work.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 6.458,
+        "text": "AI can explain an unfamiliar line, suggest an implementation, or propose a test."
+      },
+      {
+        "start": 6.458,
+        "end": 14.531,
+        "text": "The learner still defines the goal, runs the program, and decides which suggestions to accept, revise, or reject."
+      },
+      {
+        "start": 14.531,
+        "end": 18.997,
+        "text": "Generated code can be incorrect or miss the intended behavior."
+      },
+      {
+        "start": 18.997,
+        "end": 24.193,
+        "text": "GitHub documentation also emphasizes reviewing and testing generated code."
+      },
+      {
+        "start": 24.193,
+        "end": 28.248,
+        "text": "In this course, your reasoning and checks are part of the work."
+      }
+    ],
+    "duration": 28.248,
+    "bytes": 169488
+  },
+  "ask-for-a-hint": {
+    "hash": "01aae2d09efe1df8b996",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Try asking for help that keeps you thinking. Say: Here is my rule and my prediction. Ask me one question that could expose a mistake. Give me a hint, then wait for my test. Before asking, write what you expect. After asking, test a suggestion and record your decision. An instructor can demonstrate the process, so students do not need an AI account today.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 2.721,
+        "text": "Try asking for help that keeps you thinking."
+      },
+      {
+        "start": 2.721,
+        "end": 6.276,
+        "text": "Say: Here is my rule and my prediction."
+      },
+      {
+        "start": 6.276,
+        "end": 9.674,
+        "text": "Ask me one question that could expose a mistake."
+      },
+      {
+        "start": 9.674,
+        "end": 12.526,
+        "text": "Give me a hint, then wait for my test."
+      },
+      {
+        "start": 12.526,
+        "end": 15.156,
+        "text": "Before asking, write what you expect."
+      },
+      {
+        "start": 15.156,
+        "end": 19.297,
+        "text": "After asking, test a suggestion and record your decision."
+      },
+      {
+        "start": 19.297,
+        "end": 24.696,
+        "text": "An instructor can demonstrate the process, so students do not need an AI account today."
+      }
+    ],
+    "duration": 24.696,
+    "bytes": 148176
+  },
+  "lamp-contract": {
+    "hash": "3da5dda99f27c83db4e2",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Before looking at the draft, agree on what correct means. The lamp should turn on below thirty and turn off at thirty or above. Predict the outputs for ten, fifty, and exactly thirty. Write the predictions before running anything. The student predicts, and the partner checks against the requirement. The boundary case is especially useful because it tests the exact meaning of the rule.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.841,
+        "text": "Before looking at the draft, agree on what correct means."
+      },
+      {
+        "start": 3.841,
+        "end": 8.307,
+        "text": "The lamp should turn on below thirty and turn off at thirty or above."
+      },
+      {
+        "start": 8.307,
+        "end": 12.578,
+        "text": "Predict the outputs for ten, fifty, and exactly thirty."
+      },
+      {
+        "start": 12.578,
+        "end": 15.286,
+        "text": "Write the predictions before running anything."
+      },
+      {
+        "start": 15.286,
+        "end": 19.245,
+        "text": "The student predicts, and the partner checks against the requirement."
+      },
+      {
+        "start": 19.245,
+        "end": 24.624,
+        "text": "The boundary case is especially useful because it tests the exact meaning of the rule."
+      }
+    ],
+    "duration": 24.624,
+    "bytes": 147744
+  },
+  "lamp-lab": {
+    "hash": "aec3e299cb6eef01c9fb",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "This is a classroom-made draft used to simulate checking an AI suggestion. It is not a transcript of a real AI response. Run the Python with brightness ten, then fifty, then thirty. Compare each actual output with your written prediction. Find the mismatch, change one symbol, and rerun all three cases. A program can execute successfully while still violating its requirement.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 4.857,
+        "text": "This is a classroom-made draft used to simulate checking an AI suggestion."
+      },
+      {
+        "start": 4.857,
+        "end": 8.202,
+        "text": "It is not a transcript of a real AI response."
+      },
+      {
+        "start": 8.202,
+        "end": 12.721,
+        "text": "Run the Python with brightness ten, then fifty, then thirty."
+      },
+      {
+        "start": 12.721,
+        "end": 16.393,
+        "text": "Compare each actual output with your written prediction."
+      },
+      {
+        "start": 16.393,
+        "end": 21.302,
+        "text": "Find the mismatch, change one symbol, and rerun all three cases."
+      },
+      {
+        "start": 21.302,
+        "end": 26.424,
+        "text": "A program can execute successfully while still violating its requirement."
+      }
+    ],
+    "duration": 26.424,
+    "bytes": 158544
+  },
+  "test-evidence": {
+    "hash": "d4e0326fee551e9eae37",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Test the rule and see the mismatch. Choose the draft rule and inspect brightness thirty. The scene shows the actual lamp state, and the requirement tells you what it should be. Predict the five cases, then press Test to reveal expected and actual results. Switch to the repaired rule and compare the same cases. This rule simulation complements the real Python experiment on the previous slide; it does not validate physical hardware.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 2.656,
+        "text": "Test the rule and see the mismatch."
+      },
+      {
+        "start": 2.656,
+        "end": 6.016,
+        "text": "Choose the draft rule and inspect brightness thirty."
+      },
+      {
+        "start": 6.016,
+        "end": 10.911,
+        "text": "The scene shows the actual lamp state, and the requirement tells you what it should be."
+      },
+      {
+        "start": 10.911,
+        "end": 16.615,
+        "text": "Predict the five cases, then press Test to reveal expected and actual results."
+      },
+      {
+        "start": 16.615,
+        "end": 20.495,
+        "text": "Switch to the repaired rule and compare the same cases."
+      },
+      {
+        "start": 20.495,
+        "end": 27.888,
+        "text": "This rule simulation complements the real Python experiment on the previous slide; it does not validate physical hardware."
+      }
+    ],
+    "duration": 27.888,
+    "bytes": 167328
+  },
+  "method": {
+    "hash": "ef342f8013c55e371237",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "You just experienced our method. Predict before running. Run and inspect the code and result. Modify one thing. Test again and explain the evidence and limits. Then make a small version of your own. This approach is informed by PRIMM: Predict, Run, Investigate, Modify, Make. Our course adds explicit records of AI suggestions, tests, and the decisions students make.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 2.07,
+        "text": "You just experienced our method."
+      },
+      {
+        "start": 2.07,
+        "end": 3.633,
+        "text": "Predict before running."
+      },
+      {
+        "start": 3.633,
+        "end": 6.705,
+        "text": "Run and inspect the code and result."
+      },
+      {
+        "start": 6.705,
+        "end": 8.477,
+        "text": "Modify one thing."
+      },
+      {
+        "start": 8.477,
+        "end": 12.135,
+        "text": "Test again and explain the evidence and limits."
+      },
+      {
+        "start": 12.135,
+        "end": 14.323,
+        "text": "Then make a small version of your own."
+      },
+      {
+        "start": 14.323,
+        "end": 20.286,
+        "text": "This approach is informed by PRIMM: Predict, Run, Investigate, Modify, Make."
+      },
+      {
+        "start": 20.286,
+        "end": 26.664,
+        "text": "Our course adds explicit records of AI suggestions, tests, and the decisions students make."
+      }
+    ],
+    "duration": 26.664,
+    "bytes": 159984
+  },
+  "course-practice": {
+    "hash": "47b59413c3b0d35a7038",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "A lesson begins with a short Python example and something visible, such as a grid, chart, or value display. You predict, run, change one thing, and explain your choice. The first core class uses a small sports-data experiment. The course also offers line explanations and a visual grid for inspecting behavior. We keep individual predictions and explanations so that a finished screen is not our only evidence of learning.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 7.526,
+        "text": "A lesson begins with a short Python example and something visible, such as a grid, chart, or value display."
+      },
+      {
+        "start": 7.526,
+        "end": 12.474,
+        "text": "You predict, run, change one thing, and explain your choice."
+      },
+      {
+        "start": 12.474,
+        "end": 16.484,
+        "text": "The first core class uses a small sports-data experiment."
+      },
+      {
+        "start": 16.484,
+        "end": 22.148,
+        "text": "The course also offers line explanations and a visual grid for inspecting behavior."
+      },
+      {
+        "start": 22.148,
+        "end": 29.016,
+        "text": "We keep individual predictions and explanations so that a finished screen is not our only evidence of learning."
+      }
+    ],
+    "duration": 29.016,
+    "bytes": 174096
+  },
+  "course-path": {
+    "hash": "2a58261af794b18193f9",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Our fifteen lessons build one growing research story. First, learn to read and change a small program. Next, understand the data and design an experiment. Then compare methods fairly, including a simple baseline. Finally, explain the evidence in a project someone else can check. This order matters: a model score is hard to judge if we do not understand the code, the data, or the test. Each stage leaves something useful for the next stage. You choose one small project; you do not need to use every method or work in every field.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.698,
+        "text": "Our fifteen lessons build one growing research story."
+      },
+      {
+        "start": 3.698,
+        "end": 7.656,
+        "text": "First, learn to read and change a small program."
+      },
+      {
+        "start": 7.656,
+        "end": 11.38,
+        "text": "Next, understand the data and design an experiment."
+      },
+      {
+        "start": 11.38,
+        "end": 15.417,
+        "text": "Then compare methods fairly, including a simple baseline."
+      },
+      {
+        "start": 15.417,
+        "end": 19.74,
+        "text": "Finally, explain the evidence in a project someone else can check."
+      },
+      {
+        "start": 19.74,
+        "end": 27.318,
+        "text": "This order matters: a model score is hard to judge if we do not understand the code, the data, or the test."
+      },
+      {
+        "start": 27.318,
+        "end": 30.898,
+        "text": "Each stage leaves something useful for the next stage."
+      },
+      {
+        "start": 30.898,
+        "end": 37.608,
+        "text": "You choose one small project; you do not need to use every method or work in every field."
+      }
+    ],
+    "duration": 37.608,
+    "bytes": 225648
+  },
+  "algorithm-map": {
+    "hash": "0e7b2caa9d2465604017",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "The later four lessons do different jobs. Regression is the task of predicting a number; linear regression is one method. Classification predicts a category; logistic regression is one example, despite its name. Our classification lesson focuses on labels, thresholds, misses, and false alarms. Decision trees can support both regression and classification, and help us inspect complexity. The thirteenth lesson evaluates the chosen method on the same held-out test as a baseline. Evaluation is not a fourth algorithm. A baseline is a comparison role, such as a simple rule. This is a partial map of classical machine learning, not all of AI or a ranking of methods.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 2.591,
+        "text": "The later four lessons do different jobs."
+      },
+      {
+        "start": 2.591,
+        "end": 7.799,
+        "text": "Regression is the task of predicting a number; linear regression is one method."
+      },
+      {
+        "start": 7.799,
+        "end": 14.115,
+        "text": "Classification predicts a category; logistic regression is one example, despite its name."
+      },
+      {
+        "start": 14.115,
+        "end": 20.273,
+        "text": "Our classification lesson focuses on labels, thresholds, misses, and false alarms."
+      },
+      {
+        "start": 20.273,
+        "end": 26.445,
+        "text": "Decision trees can support both regression and classification, and help us inspect complexity."
+      },
+      {
+        "start": 26.445,
+        "end": 32.434,
+        "text": "The thirteenth lesson evaluates the chosen method on the same held-out test as a baseline."
+      },
+      {
+        "start": 32.434,
+        "end": 35.508,
+        "text": "Evaluation is not a fourth algorithm."
+      },
+      {
+        "start": 35.508,
+        "end": 39.154,
+        "text": "A baseline is a comparison role, such as a simple rule."
+      },
+      {
+        "start": 39.154,
+        "end": 45.12,
+        "text": "This is a partial map of classical machine learning, not all of AI or a ranking of methods."
+      }
+    ],
+    "duration": 45.12,
+    "bytes": 270720
+  },
+  "why-these-models": {
+    "hash": "dfd9c06a6b55d11a09e1",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "We start with models whose ideas can be inspected. A line connects an input with a numerical prediction. A classification probability and threshold separate an estimate from a decision. A decision tree gives us a path we can follow. Now reveal what we must test. A line may miss a curve or fail outside the observed range. A threshold changes misses and false alarms. Extra tree branches can fit training examples without helping on new ones. These drawings are schematic, not measured results. We select these starting points because students can trace the reasoning and construct a meaningful check. The best choice for a project depends on its question and evidence.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.385,
+        "text": "We start with models whose ideas can be inspected."
+      },
+      {
+        "start": 3.385,
+        "end": 7.005,
+        "text": "A line connects an input with a numerical prediction."
+      },
+      {
+        "start": 7.005,
+        "end": 12.214,
+        "text": "A classification probability and threshold separate an estimate from a decision."
+      },
+      {
+        "start": 12.214,
+        "end": 15.534,
+        "text": "A decision tree gives us a path we can follow."
+      },
+      {
+        "start": 15.534,
+        "end": 18.086,
+        "text": "Now reveal what we must test."
+      },
+      {
+        "start": 18.086,
+        "end": 22.292,
+        "text": "A line may miss a curve or fail outside the observed range."
+      },
+      {
+        "start": 22.292,
+        "end": 25.729,
+        "text": "A threshold changes misses and false alarms."
+      },
+      {
+        "start": 25.729,
+        "end": 31.029,
+        "text": "Extra tree branches can fit training examples without helping on new ones."
+      },
+      {
+        "start": 31.029,
+        "end": 34.727,
+        "text": "These drawings are schematic, not measured results."
+      },
+      {
+        "start": 34.727,
+        "end": 41.094,
+        "text": "We select these starting points because students can trace the reasoning and construct a meaningful check."
+      },
+      {
+        "start": 41.094,
+        "end": 45.624,
+        "text": "The best choice for a project depends on its question and evidence."
+      }
+    ],
+    "duration": 45.624,
+    "bytes": 273744
+  },
+  "family-partnership": {
+    "hash": "0af2dd4abe7d45d423f2",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Families can help by being a curious audience. Ask what the student expected, what surprised them, and what they would test next. Let the student make the edit and explain an AI suggestion. A useful sign of progress is being able to say: I found why it failed, and here is how I checked the fix. You do not need to know Python to ask these questions.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.203,
+        "text": "Families can help by being a curious audience."
+      },
+      {
+        "start": 3.203,
+        "end": 8.073,
+        "text": "Ask what the student expected, what surprised them, and what they would test next."
+      },
+      {
+        "start": 8.073,
+        "end": 12.018,
+        "text": "Let the student make the edit and explain an AI suggestion."
+      },
+      {
+        "start": 12.018,
+        "end": 18.763,
+        "text": "A useful sign of progress is being able to say: I found why it failed, and here is how I checked the fix."
+      },
+      {
+        "start": 18.763,
+        "end": 22.008,
+        "text": "You do not need to know Python to ask these questions."
+      }
+    ],
+    "duration": 22.008,
+    "bytes": 132048
+  },
+  "questions": {
+    "hash": "448b25cf90edcd4ba7e0",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "What would help you begin? If you have never coded, start by reading and changing a small example. Yes, we will still read, edit, debug, and write code while using AI support. To see progress, look for predictions, independent explanations, and revisions checked with evidence. Bring back a question from the opening discussion and ask it now.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0.012,
+        "end": 1.6800000000000002,
+        "text": "What would help you begin?"
+      },
+      {
+        "start": 1.6800000000000002,
+        "end": 6.328,
+        "text": "If you have never coded, start by reading and changing a small example."
+      },
+      {
+        "start": 6.328,
+        "end": 12.409,
+        "text": "Yes, we will still read, edit, debug, and write code while using AI support."
+      },
+      {
+        "start": 12.409,
+        "end": 18.958,
+        "text": "To see progress, look for predictions, independent explanations, and revisions checked with evidence."
+      },
+      {
+        "start": 18.958,
+        "end": 22.776,
+        "text": "Bring back a question from the opening discussion and ask it now."
+      }
+    ],
+    "duration": 22.776,
+    "bytes": 136656
+  },
+  "exit-ticket": {
+    "hash": "c50ac5683fbd55212be6",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Finish with a short exit ticket. Explain why brightness thirty exposed the mistake. Name something you would like to build or explore, and suggest a first test. Ask your partner to name one decision you made today. Keep your activity sheet. The next step is Class One, Your First Python Experiment. Your first project starts with a question you care about.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 2.344,
+        "text": "Finish with a short exit ticket."
+      },
+      {
+        "start": 2.344,
+        "end": 6.106,
+        "text": "Explain why brightness thirty exposed the mistake."
+      },
+      {
+        "start": 6.106,
+        "end": 10.664,
+        "text": "Name something you would like to build or explore, and suggest a first test."
+      },
+      {
+        "start": 10.664,
+        "end": 14.193,
+        "text": "Ask your partner to name one decision you made today."
+      },
+      {
+        "start": 14.193,
+        "end": 15.872,
+        "text": "Keep your activity sheet."
+      },
+      {
+        "start": 15.872,
+        "end": 19.74,
+        "text": "The next step is Class One, Your First Python Experiment."
+      },
+      {
+        "start": 19.74,
+        "end": 22.992,
+        "text": "Your first project starts with a question you care about."
+      }
+    ],
+    "duration": 22.992,
+    "bytes": 137952
+  },
+  "references": {
+    "hash": "34e07f41af3312b1d6f1",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "The reference page connects our language stories, research examples and teaching approach with original sources. Read the annotated notes for the survey population and the meaning of each percentage. The curriculum link shows the fifteen-lesson plan and five project routes. Our diagrams, lamp draft and greenhouse formula are teaching examples. The instructor supplied the personal biography. Return to any interactive slide to explore another example at your own pace.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 7.227,
+        "text": "The reference page connects our language stories, research examples and teaching approach with original sources."
+      },
+      {
+        "start": 7.227,
+        "end": 12.878,
+        "text": "Read the annotated notes for the survey population and the meaning of each percentage."
+      },
+      {
+        "start": 12.878,
+        "end": 17.695,
+        "text": "The curriculum link shows the fifteen-lesson plan and five project routes."
+      },
+      {
+        "start": 17.695,
+        "end": 23.138,
+        "text": "Our diagrams, lamp draft and greenhouse formula are teaching examples."
+      },
+      {
+        "start": 23.138,
+        "end": 25.951,
+        "text": "The instructor supplied the personal biography."
+      },
+      {
+        "start": 25.951,
+        "end": 30.864,
+        "text": "Return to any interactive slide to explore another example at your own pace."
+      }
+    ],
+    "duration": 30.864,
+    "bytes": 185184
+  }
+}

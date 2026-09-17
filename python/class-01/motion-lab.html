@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Did the ball move, or did the camera? · Python for AI Research</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Noto Sans SC",sans-serif;color:#15364c;background:#eef4f5;color-scheme:light}*{box-sizing:border-box}body{margin:0}a{color:#08737c}header{padding:32px max(5vw,20px) 38px;background:linear-gradient(125deg,#092741,#0c484b);color:#fff}header a{color:#abe7e5}header p{max-width:790px;line-height:1.9;color:#cee2e7}h1{font-size:clamp(30px,4.5vw,54px);line-height:1.25;margin:14px 0}h2{font-size:21px;margin:0 0 15px}h3{font-size:16px;margin:0 0 10px}.eyebrow{font-size:12px;letter-spacing:.12em;color:#7adcca;font-weight:700}.pill{display:inline-block;font-size:12px;background:#164f58;border:1px solid #34747a;padding:8px 12px;border-radius:30px;color:#def9e9}main{max-width:1330px;padding:24px 20px 40px;margin:auto;display:grid;gap:20px}.card{background:#fff;border:1px solid #d5e2e7;border-radius:20px;padding:24px;min-width:0}.intro{display:grid;grid-template-columns:1.15fr 1fr;gap:24px}.hint{font-size:14px;color:#506b78;line-height:1.8}p,li{line-height:1.8}.formula{display:flex;gap:7px;flex-wrap:wrap;align-items:center;font-size:14px}.formula b{background:#edf5f5;border-radius:8px;padding:8px 10px}.formula .truth{color:#087863}.formula .shake{color:#ac5900}.formula .noise{color:#74529e}.notice{padding:14px 16px;background:#fff4df;border-left:4px solid #efb856;border-radius:10px;font-size:13px;line-height:1.8}.controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin:24px 0}label{font-size:14px;font-weight:650;display:block;margin-bottom:8px}input,select,textarea,button{font:inherit}input[type=range]{width:100%;accent-color:#087c7a;margin:13px 0}input[type=number],select,textarea{max-width:100%;width:100%;border:1px solid #b6cbd2;border-radius:9px;padding:11px;background:white;color:#15364c}textarea{resize:vertical;min-height:82px;font-size:14px;line-height:1.65}output{float:right;color:#0a7474;font-variant-numeric:tabular-nums}small{font-size:12px;color:#5b7580;line-height:1.6;display:block}.prediction{display:grid;grid-template-columns:.8fr 1.2fr;gap:18px;background:#eff7f6;border-radius:14px;padding:18px}.actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:18px}button{border:0;border-radius:10px;background:#087976;color:white;padding:12px 17px;font-weight:650;cursor:pointer}button.secondary{background:#e8eff2;color:#234758}button:disabled{opacity:.43;cursor:not-allowed}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid #f0b548;outline-offset:3px}.status{min-height:24px;font-size:13px;color:#426574;margin:12px 0 0}.plots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.plot{min-width:0;border:1px solid #d5e2e7;border-radius:14px;overflow:hidden;background:#f5f8f9}.plot-head{padding:16px 16px 8px}.plot-head h3{display:flex;justify-content:space-between;gap:8px}.metric{font-size:22px;font-variant-numeric:tabular-nums;white-space:nowrap}.plot-head small{min-height:39px}.plot canvas{display:block;width:100%;height:auto;aspect-ratio:4/3;background:#092f34}.plot .caption{margin:0;padding:12px 16px;font-size:12px;color:#506b78;min-height:63px}.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px}.legend{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:12px;color:#466372;margin:18px 0}.truth-line{display:inline-block;vertical-align:middle;width:22px;border-top:2px dashed #47666a;margin-right:6px}.timeline{display:grid;grid-template-columns:minmax(180px,1fr) auto;gap:25px;align-items:center}.time-note{font-size:13px;background:#f0f5f6;padding:12px 16px;border-radius:10px;min-width:200px}.takeaway{background:#eaf6f0;border-left:4px solid #239d7e;padding:14px 18px;border-radius:10px;line-height:1.8;font-size:14px}.detail{display:grid;grid-template-columns:1fr 1fr;gap:20px}.number{display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:50%;background:#d6eee8;color:#087365;margin-right:6px;font-size:13px}.checklist{padding-left:23px;font-size:14px}.checklist li{margin:8px 0}.prompt{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.8;font-size:13px;background:#eef5f7;padding:18px;border-radius:12px}pre{margin:16px 0;overflow:auto;white-space:pre;font-size:12px;line-height:1.65;background:#102e40;color:#d6eee6;padding:18px;border-radius:12px}details{margin-top:18px}summary{cursor:pointer;font-weight:650;line-height:1.7}details p{font-size:13px;color:#4b6571}.reflection{display:grid;gap:14px;margin-top:18px}.footer{font-size:12px;text-align:center;color:#58727e;line-height:1.8}.result-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.result-heading .tag{font-size:12px;color:#486674;background:#edf3f4;border-radius:20px;padding:7px 11px}.data-description{font-size:13px;line-height:1.8}.data-description code{font-size:12px;overflow-wrap:anywhere}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(max-width:1000px){.controls{grid-template-columns:repeat(2,minmax(0,1fr))}.plots{grid-template-columns:1fr}.plot{display:grid;grid-template-columns:1fr 1.7fr}.plot-head{padding:20px}.plot canvas{grid-column:2;grid-row:1/3}.plot .caption{grid-column:1}.metric{font-size:21px}.plot-head h3{display:block}.metric{display:block;margin-top:10px}}@media(max-width:760px){.intro,.detail,.prediction{grid-template-columns:1fr}.card{padding:18px}.timeline{grid-template-columns:1fr;gap:0}.controls{gap:18px 14px}.plot{display:block}.plot-head{padding:16px}.plot-head h3{display:flex}.metric{display:inline;margin:0}.plot .caption,.plot-head small{min-height:0}.time-note{min-width:0}.formula{font-size:12px}main{padding:18px 14px 30px}.controls label{font-size:13px}h2{font-size:20px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+.language-link{float:right;margin-left:16px;padding:7px 12px;border:1px solid #478080;border-radius:9px;font-size:14px;text-decoration:none}.controls>div,.prediction>div,.intro>div,.detail>section,.timeline>div{min-width:0}.plot-head h3>span:first-child{min-width:0;overflow-wrap:anywhere}.controls label{display:flow-root}.prompt{overflow-wrap:anywhere}@media(max-width:420px){.controls{grid-template-columns:1fr}.plot-head h3{flex-wrap:wrap}.metric{font-size:20px}.time-note{overflow-wrap:anywhere}}</style></head><body>
+<header><a class="language-link" href="motion-lab.zh.html" lang="zh-CN" hreflang="zh-CN">中文</a><a href="./index.html">← Back to Lesson 1</a><p class="eyebrow">MOTION LAB · You ask. AI helps. Evidence decides.</p><h1>Did the ball move, or did the camera?</h1><p>Add camera shake and measurement error to the same soccer-ball motion. Can three methods recover its path? Predict first, then run a repeatable experiment to find out whether smoother also means more accurate.</p><span class="pill">Synthetic data · Runs on this page · No video upload · No API key</span></header>
+<main>
+<section class="card intro"><div><h2>Turn a game problem into a research question</h2><p>Imagine building a soccer replay game. The camera shakes, and the ball seems to change direction. Your challenge: recover the ball’s actual position and explain why your method works.</p><div class="formula"><b>Observed position</b><span>=</span><b class="truth">True ball position</b><span>+</span><b class="shake">Camera translation</b><span>+</span><b class="noise">Measurement noise</b></div><p class="hint">Four fixed landmarks stay in place on the field. Compare their observed positions with their reference positions to estimate how far the camera shifted in this frame.</p></div><div><h3>Keep today’s question small enough to test</h3><p class="notice">We start with synthetic ball coordinates. We are not detecting or tracking a ball in real video. This model only simulates 2D translation: no rotation, zoom, occlusion, or perspective. <b>Smoothing a trajectory is not stabilizing video frames</b>. This page does not train an AI model.</p><p class="hint">The simulator provides the true position and actual camera shift as answer keys. Your method can use observations and landmarks, but cannot peek at those answers. Later research can explore video annotation, object detection, and matching objects across frames.</p></div></section>
+
+<section class="card"><h2><span class="number">1</span> Set up a fair experiment</h2><p class="hint">Change one factor at a time and keep the random seed fixed. We sample 0–5 seconds at 20 frames per second: 101 positions, including both endpoints. Distances use synthetic field units.</p>
+<div class="controls">
+<div><label for="shake">Camera shake <output id="shake-value" for="shake">5</output></label><input type="range" id="shake" min="0" max="12" step="0.5" value="5"><small>Controls the shared camera shift. At 0, the camera stays still.</small></div>
+<div><label for="noise">Position noise σ <output id="noise-value" for="noise">0.75</output></label><input type="range" id="noise" min="0" max="3" step="0.25" value="0.75"><small>Gaussian noise standard deviation per axis. Landmark noise is 0.3 times this value.</small></div>
+<div><label for="window">Window / frames <output id="window-value" for="window">7</output></label><input type="range" id="window" min="1" max="21" step="1" value="7"><small>Average only the current and past frames. No looking ahead.</small></div>
+<div><label for="seed">Random seed</label><input type="number" id="seed" min="0" max="2147483647" step="1" value="20260913"><small>The same settings and seed reproduce exactly the same data.</small></div>
+</div>
+<div class="prediction"><div><label for="prediction">Which path will have the smallest error?</label><select id="prediction"><option value="">Choose your prediction…</option><option value="raw">Raw observations</option><option value="compensated">Camera-compensated</option><option value="smoothed">Compensated + smoothed</option><option value="tie">A tie / it depends on the settings</option></select></div><div><label for="reason">Write one reason before running</label><textarea id="reason" placeholder="For example: With strong camera shake, fixed landmarks may help because…" maxlength="2000"></textarea></div></div>
+<div class="actions"><button id="run" disabled>Run experiment →</button><button id="reset" class="secondary">Reset experiment</button><span class="hint" id="run-hint">Choose a prediction and write a reason to run.</span></div><p id="status" class="status" role="status"></p></section>
+
+<section class="card" aria-labelledby="result-title"><div class="result-heading"><h2 id="result-title"><span class="number">2</span> Compare three methods against the same ground truth</h2><span class="tag" id="result-tag">Waiting for your prediction</span></div><p class="hint" id="metric-description">Position RMSE is the square root of the average squared 2D position error. Lower is more accurate. All three methods use all 101 frames and compare their estimates with the true position at the same time.</p>
+<div class="plots">
+<article class="plot"><div class="plot-head"><h3><span><i class="dot" style="background:#ffb16e"></i>Raw observations</span><span class="metric" id="raw-rmse">—</span></h3><small>Baseline: use the observations without any correction</small></div><canvas id="raw-canvas" width="640" height="480" role="img" aria-label="Raw observed trajectory. Run the experiment to compare it with ground truth." aria-describedby="metric-description">Raw observed trajectory. Numerical results appear in the adjacent RMSE text.</canvas><p class="caption">Use the observed ball position directly. Small orange dots show the observed landmarks in this frame.</p></article>
+<article class="plot"><div class="plot-head"><h3><span><i class="dot" style="background:#53d9d0"></i>Camera-compensated</span><span class="metric" id="compensated-rmse">—</span></h3><small>Subtract the mean shift of the four landmarks</small></div><canvas id="compensated-canvas" width="640" height="480" role="img" aria-label="Camera-compensated trajectory. Run the experiment to compare it with ground truth." aria-describedby="metric-description">Compensated trajectory. Numerical results appear in the adjacent RMSE text.</canvas><p class="caption">Landmark estimates have errors too. Camera compensation is not guaranteed to improve every experiment.</p></article>
+<article class="plot"><div class="plot-head"><h3><span><i class="dot" style="background:#cba8ff"></i>Compensated + smoothed</span><span class="metric" id="smoothed-rmse">—</span></h3><small>Average the current and past compensated positions</small></div><canvas id="smoothed-canvas" width="640" height="480" role="img" aria-label="Compensated and smoothed trajectory. Run the experiment to compare it with ground truth." aria-describedby="metric-description">Smoothed trajectory. Numerical results appear in the adjacent RMSE text.</canvas><p class="caption">A larger window may reduce noise, but it can also make the estimated ball lag behind and smooth away turns.</p></article>
+</div>
+<div class="legend"><span><i class="truth-line"></i>True path (evaluation only)</span><span>White ring: current true ball position</span><span>Colored ball: current estimate</span><span>Gray crosses: fixed landmark reference positions</span></div>
+<div class="timeline"><div><label for="frame">Inspect the same frame <output id="frame-value" for="frame">Frame 100 · 5.00 s</output></label><input id="frame" type="range" min="0" max="100" step="1" value="100" disabled><small>Scrub to a turn. Does the smoothed ball fall behind? The field grid stays fixed so you can compare positions.</small></div><div class="time-note">Nominal window-center delay: <b id="delay">—</b><br><small>For a full window: (window − 1) ÷ (2 × frame rate).<br>This is the average age of the samples, not measured program runtime.<br>At the start, use only the frames already available.</small></div></div>
+<p id="takeaway" class="takeaway" aria-live="polite">Record your prediction first. Results will appear here. A smoother-looking path is not necessarily closer to the true path.</p>
+<div class="actions"><button id="csv" disabled>Download this CSV</button><button id="record" class="secondary" disabled>Download experiment JSON</button></div><p class="hint">Results stay on this page only. Download them before refreshing. After changing settings, predict and run again so an old result is not mistaken for a new experiment.</p>
+<details><summary>Which CSV columns are inputs, and which are answer keys?</summary><div class="data-description"><p><b>Inputs: </b><code>frame, time_s, observed_x/y</code>, plus four sets of <code>landmark_1…4_reference_x/y</code> and <code>landmark_1…4_observed_x/y</code>.</p><p><b>Answer keys: </b><code>truth_x/y, camera_dx/dy</code>. Use these only for evaluation and checking the simulator. Real video does not automatically supply ground truth.</p><p><b>Method outputs: </b><code>estimated_camera_dx/dy, compensated_x/y, smoothed_x/y, smoothing_samples</code>. The Python example recomputes these values; it does not read these output columns as predictions.</p></div></details></section>
+
+<div class="detail"><section class="card"><h2><span class="number">3</span> Make AI your experiment partner</h2><p class="hint">Give your CSV and the prompt below to an AI assistant you already use. This page does not call AI automatically. You choose the question, check the code, run comparisons, and decide what the evidence supports.</p><div id="prompt" class="prompt"></div><div class="actions"><button id="copy-prompt" class="secondary">Copy the AI teamwork prompt</button></div><p class="status" id="copy-status" role="status"></p><ol class="checklist"><li><b>Your job: </b>Predict first, choose one factor, and explain why the comparison is fair.</li><li><b>AI helps: </b>Explain code, suggest one change, and list ways it might fail.</li><li><b>Check together: </b>Check for leaked answer keys or future frames. You run the code and compare it with the baseline.</li><li><b>You decide: </b>Explain one improvement and one counterexample. Save your AI conversation and experiment records.</li></ol></section>
+<section class="card"><h2><span class="number">4</span> Save evidence for your research</h2><div class="reflection"><div><label for="finding">Observations and conclusion</label><textarea id="finding" placeholder="My settings were… Error changed from… to… My prediction was… This result supports only…" maxlength="4000"></textarea></div><div><label for="ai-change">What did AI suggest? What did I accept or reject?</label><textarea id="ai-change" placeholder="Describe changes to the method, code, or explanation. If you have not used AI, leave this blank." maxlength="4000"></textarea></div><div><label for="verification">How did I check the AI suggestion?</label><textarea id="verification" placeholder="For example: calculate one frame by hand, check input columns, compare windows 1 and 11 with the same seed, then try a new seed…" maxlength="4000"></textarea></div></div><p class="hint">Your JSON download includes these notes, your prediction, settings, and metrics. Editing the page afterward does not update an already downloaded file.</p><details><summary>Three next-step challenges</summary><ol class="checklist"><li><b>Zero-noise challenge: </b>Set noise to 0. What error should camera compensation achieve? Is a larger window always better?</li><li><b>Fair-comparison challenge: </b>Keep the seed and shake fixed. Compare windows 1, 3, 7, and 15. Plot RMSE against window size.</li><li><b>Counterexample challenge: </b>Set camera shake to 0. Could landmark measurement errors make compensation worse than doing nothing?</li></ol></details></section></div>
+
+<section class="card"><h2>Take the same experiment into Python</h2><p class="hint">Run the experiment and download the CSV. Name it <code>motion-data.csv</code> and put it in the same Python working folder as the script below. Only the Python standard library is needed. The window size matches your experiment.</p><details><summary>Open the Python baseline to copy</summary><pre id="python"></pre><button id="copy-python" class="secondary" disabled>Copy Python</button><p id="python-status" class="status" role="status"></p></details><p class="notice"><b>From this model to real research: </b>Synthetic experiments provide answer keys so you can check a method. They cannot prove it works on real soccer video. Next, investigate annotation errors, occlusion, changing viewpoints, and independent test clips. Report failure cases too.</p></section>
+<p class="footer">Python for AI Research · Motion Lab<br>Model v1 · Synthetic field coordinates. This is not a player assessment, real-video tracker, or video stabilization product.</p>
+</main><script>
+const generateMotionExperiment = function generateMotionExperiment(input = {}) {
+  const config = {
+    seed: Number(input.seed ?? 20260913),
+    shake: Number(input.shake ?? 5),
+    noise: Number(input.noise ?? 0.75),
+    window: Number(input.window ?? 7),
+    fps: 20,
+    frames: 101,
+  };
+  if (!Number.isInteger(config.seed) || config.seed < 0 || config.seed > 2147483647) throw new Error('Seed must be an integer from 0 to 2147483647.');
+  if (!Number.isFinite(config.shake) || config.shake < 0 || config.shake > 12) throw new Error('Shake must be between 0 and 12.');
+  if (!Number.isFinite(config.noise) || config.noise < 0 || config.noise > 3) throw new Error('Noise must be between 0 and 3.');
+  if (!Number.isInteger(config.window) || config.window < 1 || config.window > 21) throw new Error('Window must be an integer from 1 to 21.');
+  let state = config.seed >>> 0;
+  function uniform() {
+    state = (state + 0x6D2B79F5) >>> 0;
+    let value = Math.imul(state ^ (state >>> 15), 1 | state);
+    value = (value + Math.imul(value ^ (value >>> 7), 61 | value)) ^ value;
+    return ((value ^ (value >>> 14)) >>> 0) / 4294967296;
+  }
+  function normal() {
+    return Math.sqrt(-2 * Math.log(Math.max(uniform(), 1e-12))) * Math.cos(2 * Math.PI * uniform());
+  }
+  const landmarks = [{ x: 8, y: 8 }, { x: 92, y: 8 }, { x: 8, y: 56 }, { x: 92, y: 56 }];
+  const rows = [];
+  for (let frame = 0; frame < config.frames; frame += 1) {
+    const t = frame / config.fps;
+    // Deliberate direction changes make the cost of causal smoothing visible.
+    const truthX = 12 + 15 * t;
+    const truthY = 32 + 15 * Math.sin(1.4 * t) + 3 * Math.sin(4.2 * t);
+    const cameraX = config.shake * (0.7 * Math.sin(9 * t) + 0.3 * Math.sin(17 * t));
+    const cameraY = config.shake * (0.65 * Math.cos(11 * t) + 0.35 * Math.sin(19 * t));
+    const observedX = truthX + cameraX + config.noise * normal();
+    const observedY = truthY + cameraY + config.noise * normal();
+    const row = { frame, time_s: t, truth_x: truthX, truth_y: truthY,
+      camera_dx: cameraX, camera_dy: cameraY, observed_x: observedX, observed_y: observedY };
+    let estimatedX = 0;
+    let estimatedY = 0;
+    landmarks.forEach((point, i) => {
+      const x = point.x + cameraX + config.noise * 0.3 * normal();
+      const y = point.y + cameraY + config.noise * 0.3 * normal();
+      row['landmark_' + (i + 1) + '_reference_x'] = point.x;
+      row['landmark_' + (i + 1) + '_reference_y'] = point.y;
+      row['landmark_' + (i + 1) + '_observed_x'] = x;
+      row['landmark_' + (i + 1) + '_observed_y'] = y;
+      estimatedX += x - point.x;
+      estimatedY += y - point.y;
+    });
+    row.estimated_camera_dx = estimatedX / landmarks.length;
+    row.estimated_camera_dy = estimatedY / landmarks.length;
+    row.compensated_x = row.observed_x - row.estimated_camera_dx;
+    row.compensated_y = row.observed_y - row.estimated_camera_dy;
+    const first = Math.max(0, frame - config.window + 1);
+    let sumX = row.compensated_x;
+    let sumY = row.compensated_y;
+    for (let prior = first; prior < frame; prior += 1) {
+      sumX += rows[prior].compensated_x;
+      sumY += rows[prior].compensated_y;
+    }
+    row.smoothing_samples = frame - first + 1;
+    row.smoothed_x = sumX / row.smoothing_samples;
+    row.smoothed_y = sumY / row.smoothing_samples;
+    rows.push(row);
+  }
+  function rmse(prefix) {
+    return Math.sqrt(rows.reduce((sum, row) => sum + (row[prefix + '_x'] - row.truth_x) ** 2 + (row[prefix + '_y'] - row.truth_y) ** 2, 0) / rows.length);
+  }
+  return { config, landmarks, rows, metrics: {
+    raw_rmse: rmse('observed'), compensated_rmse: rmse('compensated'), smoothed_rmse: rmse('smoothed'),
+    nominal_window_center_delay_s: (config.window - 1) / (2 * config.fps),
+  } };
+};
+const motionPython = function motionPython(windowSize = 7) {
+  if (!Number.isInteger(windowSize) || windowSize < 1 || windowSize > 21) throw new Error('Invalid smoothing window.');
+  return `# Put motion-data.csv beside this script. Synthetic coordinates, not real video.
+# Match the web experiment's window. Use only present/past frames.
+import csv
+import math
+
+WINDOW = ${windowSize}
+with open("motion-data.csv", newline="", encoding="utf-8") as file:
+    rows = [{key: float(value) for key, value in row.items()}
+            for row in csv.DictReader(file)]
+
+if not rows:
+    raise ValueError("The CSV needs at least one frame.")
+
+compensated = []
+smoothed = []
+for row in rows:
+    # Known static landmarks estimate camera movement.
+    # Do not use truth_* or camera_d* as algorithm inputs: those are answer keys.
+    dx = sum(row[f"landmark_{i}_observed_x"] - row[f"landmark_{i}_reference_x"]
+             for i in range(1, 5)) / 4
+    dy = sum(row[f"landmark_{i}_observed_y"] - row[f"landmark_{i}_reference_y"]
+             for i in range(1, 5)) / 4
+    compensated.append((row["observed_x"] - dx, row["observed_y"] - dy))
+    recent = compensated[-WINDOW:]
+    smoothed.append((sum(x for x, _ in recent) / len(recent),
+                     sum(y for _, y in recent) / len(recent)))
+
+def rmse(points):
+    # Truth is used only here, to evaluate the predicted locations.
+    return math.sqrt(sum((x - row["truth_x"]) ** 2 + (y - row["truth_y"]) ** 2
+                         for (x, y), row in zip(points, rows)) / len(rows))
+
+raw = [(row["observed_x"], row["observed_y"]) for row in rows]
+print("raw RMSE:", rmse(raw))
+print("compensated RMSE:", rmse(compensated))
+print("smoothed RMSE:", rmse(smoothed))
+print("nominal window-center delay (s):", (WINDOW - 1) / (2 * 20))
+`;
+};
+const $ = id => document.getElementById(id);
+let experiment = null;
+let savedPrediction = null;
+const labels = {raw:'Raw observations', compensated:'Camera-compensated', smoothed:'Compensated + smoothed'};
+function config(){return {seed:Number($('seed').value),shake:Number($('shake').value),noise:Number($('noise').value),window:Number($('window').value)};}
+function validConfig(){const c=config();return $('seed').value!=='' && Number.isInteger(c.seed) && c.seed>=0 && c.seed<=2147483647;}
+function predictionReady(){return Boolean($('prediction').value && $('reason').value.trim().length>=3 && validConfig());}
+function enableRun(){$('run').disabled=!predictionReady();$('run-hint').textContent=validConfig()?'Choose a prediction and write a reason of at least 3 characters to run.':'The random seed must be a whole number from 0 to 2147483647.';}
+function refreshPrompt(){const c=experiment?experiment.config:config();$('prompt').textContent='I am studying synthetic soccer-ball coordinates: how can I separate ball motion from 2D camera translation?\n\nMy responsibilities: predict, choose variables, run experiments, and explain the results. Be my coding and experiment-design partner. Do not write conclusions for me.\n\nCurrent settings: seed '+c.seed+', shake amplitude '+c.shake+', ball-position noise σ='+c.noise+', trailing-mean window '+c.window+' frames, at 20 frames per second.\n\n1. First ask me a question about my prediction. Then explain which CSV columns are inputs and which are answer keys.\n2. Estimate camera translation from the mean shift of four fixed landmarks and subtract it from the observed ball position. Build three baselines: raw observations, camera compensation, and compensation followed by a trailing mean.\n3. Suggest just one method change. Explain why it might help and when it might fail. The method must not read truth_*, camera_d*, precomputed estimate columns, or future frames. Use truth_* only for the final RMSE evaluation.\n4. Give Python code using only csv and math. Ask me to calculate one frame by hand to check your implementation. Do not invent execution results.\n5. Use the same data as the baseline. Report same-frame 2D position RMSE and the delay caused by smoothing. Keep the seed fixed while changing one setting. Then test again with a fresh seed that was not used for tuning.\n6. Wait for my actual execution output. Then help me check whether my conclusion goes beyond the evidence. Keep one failure case and state that this is not real-video tracking or video-frame stabilization.';}
+function clearResults(){experiment=null;savedPrediction=null;for(const id of ['raw-rmse','compensated-rmse','smoothed-rmse','delay'])$(id).textContent='—';for(const id of ['frame','csv','record','copy-python'])$(id).disabled=true;$('result-tag').textContent='Settings ready · Make a prediction';$('takeaway').textContent='Record a prediction, then run these settings. A smoother-looking path is not necessarily closer to the true path.';$('python').textContent=motionPython(config().window);$('status').textContent='';$('python-status').textContent='';$('copy-status').textContent='';refreshPrompt();drawAll();enableRun();}
+function updateControls(){for(const id of ['shake','noise','window'])$(id+'-value').value=$(id).value;clearResults();}
+function path(ctx,rows,xKey,yKey,color,width,dash=[]){ctx.beginPath();rows.forEach((row,i)=>{const x=56+row[xKey]*5.25,y=66+row[yKey]*5.25;i?ctx.lineTo(x,y):ctx.moveTo(x,y);});ctx.strokeStyle=color;ctx.lineWidth=width;ctx.setLineDash(dash);ctx.stroke();ctx.setLineDash([]);}
+function drawPanel(id,prefix,color){const canvas=$(id),ctx=canvas.getContext('2d');ctx.clearRect(0,0,640,480);ctx.fillStyle='#092f34';ctx.fillRect(0,0,640,480);const sx=x=>56+x*5.25,sy=y=>66+y*5.25;ctx.fillStyle='#104640';ctx.fillRect(sx(0),sy(0),525,336);for(let x=0;x<100;x+=20){ctx.fillStyle='rgba(255,255,255,.025)';ctx.fillRect(sx(x),sy(0),52.5,336);}ctx.strokeStyle='#47776d';ctx.lineWidth=1.5;ctx.strokeRect(sx(0),sy(0),525,336);ctx.beginPath();ctx.moveTo(sx(50),sy(0));ctx.lineTo(sx(50),sy(64));ctx.moveTo(sx(59),sy(32));ctx.arc(sx(50),sy(32),9*5.25,0,Math.PI*2);ctx.stroke();ctx.strokeRect(sx(0),sy(16),14*5.25,32*5.25);ctx.strokeRect(sx(86),sy(16),14*5.25,32*5.25);
+const reference=experiment || generateMotionExperiment({seed:20260913,shake:0,noise:0,window:1});const frame=Number($('frame').value),row=reference.rows[frame];
+reference.landmarks.forEach(point=>{ctx.beginPath();ctx.moveTo(sx(point.x)-6,sy(point.y));ctx.lineTo(sx(point.x)+6,sy(point.y));ctx.moveTo(sx(point.x),sy(point.y)-6);ctx.lineTo(sx(point.x),sy(point.y)+6);ctx.strokeStyle='#9cbab4';ctx.lineWidth=1.5;ctx.stroke();});
+path(ctx,reference.rows,'truth_x','truth_y','#d0e5dc',2,[7,6]);
+if(experiment){const shown=experiment.rows.slice(0,frame+1);path(ctx,shown,prefix+'_x',prefix+'_y',color,3);if(prefix!=='smoothed'){reference.landmarks.forEach((_,i)=>{let x=row['landmark_'+(i+1)+'_observed_x'],y=row['landmark_'+(i+1)+'_observed_y'];if(prefix==='compensated'){x-=row.estimated_camera_dx;y-=row.estimated_camera_dy;}ctx.beginPath();ctx.arc(sx(x),sy(y),3,0,Math.PI*2);ctx.fillStyle=color;ctx.fill();});}ctx.beginPath();ctx.moveTo(sx(row.truth_x),sy(row.truth_y));ctx.lineTo(sx(row[prefix+'_x']),sy(row[prefix+'_y']));ctx.strokeStyle='#f5e8bc';ctx.lineWidth=1.2;ctx.setLineDash([3,4]);ctx.stroke();ctx.setLineDash([]);ctx.beginPath();ctx.arc(sx(row[prefix+'_x']),sy(row[prefix+'_y']),8,0,Math.PI*2);ctx.fillStyle=color;ctx.fill();ctx.strokeStyle='#07282f';ctx.lineWidth=2;ctx.stroke();ctx.beginPath();ctx.arc(sx(row[prefix+'_x']),sy(row[prefix+'_y']),2.5,0,Math.PI*2);ctx.fillStyle='#163747';ctx.fill();canvas.setAttribute('aria-label',labels[prefix==='observed'?'raw':prefix]+', frame '+frame+'. True position '+row.truth_x.toFixed(2)+', '+row.truth_y.toFixed(2)+'; estimated position '+row[prefix+'_x'].toFixed(2)+', '+row[prefix+'_y'].toFixed(2)+'.');}else{ctx.fillStyle='#dbefea';ctx.font='19px system-ui';ctx.textAlign='center';ctx.fillText('Predict first, then reveal the paths',320,448);canvas.setAttribute('aria-label','Preview of the true path. Record your prediction before running the experiment.');}ctx.beginPath();ctx.arc(sx(row.truth_x),sy(row.truth_y),11,0,Math.PI*2);ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.stroke();}
+function drawAll(){drawPanel('raw-canvas','observed','#ffb16e');drawPanel('compensated-canvas','compensated','#53d9d0');drawPanel('smoothed-canvas','smoothed','#cba8ff');$('frame-value').value='Frame '+$('frame').value+' · '+(Number($('frame').value)/20).toFixed(2)+' s';}
+function run(){if(!predictionReady())return;try{experiment=generateMotionExperiment(config());}catch(error){$('status').textContent=error.message;return;}savedPrediction={choice:$('prediction').value,reason:$('reason').value.trim(),recorded_before_run:true};const m=experiment.metrics;for(const key of ['raw','compensated','smoothed'])$(key+'-rmse').textContent=m[key+'_rmse'].toFixed(3);$('delay').textContent=m.nominal_window_center_delay_s.toFixed(3)+' s';$('result-tag').textContent='Seed '+experiment.config.seed+' · '+experiment.rows.length+' frames';const ranked=Object.keys(labels).map(key=>({key,value:m[key+'_rmse']})).sort((a,b)=>a.value-b.value),winners=ranked.filter(item=>Math.abs(item.value-ranked[0].value)<1e-9);let observation='With these settings, '+winners.map(item=>labels[item.key]).join(' and ')+(winners.length>1?' tie for the lowest RMSE':' has the lowest RMSE')+' ('+ranked[0].value.toFixed(3)+').';if(m.smoothed_rmse>m.compensated_rmse+1e-9)observation+=' Smoothing increased RMSE: while reducing jitter, it can make a moving ball appear to lag behind.';else if(m.smoothed_rmse<m.compensated_rmse-1e-9)observation+=' Smoothing lowered RMSE in this experiment, but check for lag and errors around turns.';else observation+=' The errors match. A window of 1 leaves the compensated path unchanged.';$('takeaway').textContent=observation+' Your prediction was: "'+($('prediction').selectedOptions[0].textContent)+'". Explain your result, then look for a counterexample using different settings.';for(const id of ['frame','csv','record','copy-python'])$(id).disabled=false;$('frame').value=100;$('python').textContent=motionPython(experiment.config.window);$('status').textContent='Experiment complete. Save this CSV and JSON before changing one factor for your next comparison.';refreshPrompt();drawAll();}
+function saveFile(name,content,type){const url=URL.createObjectURL(new Blob([content],{type})),link=document.createElement('a');link.href=url;link.download=name;document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+function csv(){if(!experiment)return '';const columns=Object.keys(experiment.rows[0]);return columns.join(',')+'\n'+experiment.rows.map(row=>columns.map(key=>String(row[key])).join(',')).join('\n')+'\n';}
+function record(){if(!experiment)return null;return {schema:'meritpoint-motion-experiment/v1',model_version:'translation-landmarks-causal-mean-v1',created_at:new Date().toISOString(),data_kind:'synthetic coordinates; not video',units:'synthetic field units',config:experiment.config,prediction:savedPrediction,metrics:experiment.metrics,reflection:{finding:$('finding').value,ai_suggestion_and_student_decision:$('ai-change').value,student_verification:$('verification').value},method:{camera_estimate:'Mean displacement of four known static landmarks; independent landmark noise sigma = ball noise sigma * 0.3.',smoothing:'Trailing mean of compensated coordinates, includes current frame; startup uses available frames.',evaluation:'sqrt(mean((predicted_x - truth_x)^2 + (predicted_y - truth_y)^2)) across all 101 same-time frames.',nominal_delay:'(window - 1) / (2 * fps), full-window average sample age; not measured runtime.'},limitations:['Synthetic coordinates; no ball detection or real video tracking.','2D translation only; no rotation, zoom, perspective, occlusion or real camera calibration.','Trajectory smoothing is not video-frame stabilization.','Ground truth and camera displacement are evaluation-only answer columns.','A single seed and synthetic trajectory do not establish performance on real-world data.']};}
+async function copy(text,statusId){try{await navigator.clipboard.writeText(text);$(statusId).textContent='Copied.';}catch(_){$(statusId).textContent='Your browser blocked automatic copying. Select the text above and copy it manually.';}}
+for(const id of ['shake','noise','window','seed'])$(id).addEventListener('input',updateControls);
+for(const id of ['prediction','reason'])$(id).addEventListener('input',()=>{if(experiment){clearResults();$('status').textContent='Prediction changed. Run again; your experiment record saves the prediction made before that run.';}enableRun();});
+$('run').onclick=run;$('frame').oninput=drawAll;
+$('reset').onclick=()=>{for(const [id,value] of Object.entries({shake:5,noise:0.75,window:7,seed:20260913,frame:100}))$(id).value=value;for(const id of ['prediction','reason','finding','ai-change','verification'])$(id).value='';updateControls();};
+$('csv').onclick=()=>{if(!experiment)return;saveFile('motion-data.csv',csv(),'text/csv;charset=utf-8');$('status').textContent='CSV downloaded. Save the JSON too: it includes your settings and prediction.';};
+$('record').onclick=()=>{const data=record();if(!data)return;saveFile('motion-experiment-'+data.config.seed+'.json',JSON.stringify(data,null,2),'application/json');$('status').textContent='Experiment record downloaded, including your current observations, AI suggestions, and verification notes.';};
+$('copy-prompt').onclick=()=>copy($('prompt').textContent,'copy-status');$('copy-python').onclick=()=>{if(experiment)copy(motionPython(experiment.config.window),'python-status');};
+updateControls();
+</script></body></html>

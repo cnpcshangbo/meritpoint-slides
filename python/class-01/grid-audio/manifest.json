@@ -1,0 +1,2401 @@
+{
+  "sequence": {
+    "narration": {
+      "text": "Class 1 · Start here. Python runs these instructions from top to bottom. The duck begins facing east (right); a left turn changes its direction without changing its square. Reach the flag by moving east, then north. Predict the final square. Change only the first 3 to 2, then explain the different endpoint. Finally add a wall to the original path: does this fixed sequence still work?",
+      "file": "grid-audio/sequence-listen.mp3",
+      "line": null,
+      "hash": "3d071f4dad3f3fbcb4b7",
+      "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+      "duration": 26.208,
+      "cues": [
+        {
+          "start": 0,
+          "end": 1.875,
+          "text": "Class 1 · Start here."
+        },
+        {
+          "start": 1.875,
+          "end": 5.221,
+          "text": "Python runs these instructions from top to bottom."
+        },
+        {
+          "start": 5.221,
+          "end": 11.419,
+          "text": "The duck begins facing east (right); a left turn changes its direction without changing its square."
+        },
+        {
+          "start": 11.419,
+          "end": 14.661,
+          "text": "Reach the flag by moving east, then north."
+        },
+        {
+          "start": 14.661,
+          "end": 16.51,
+          "text": "Predict the final square."
+        },
+        {
+          "start": 16.51,
+          "end": 21.029,
+          "text": "Change only the first 3 to 2, then explain the different endpoint."
+        },
+        {
+          "start": 21.029,
+          "end": 26.208,
+          "text": "Finally add a wall to the original path: does this fixed sequence still work?"
+        }
+      ]
+    },
+    "steps": [
+      {
+        "text": "Call move_forward with the argument 3. The duck moves three squares east.",
+        "file": "grid-audio/sequence-line-1.mp3",
+        "line": 1,
+        "hash": "ab878d36e5e3830eee62",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 5.712,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.995,
+            "text": "Call move_forward with the argument 3."
+          },
+          {
+            "start": 2.995,
+            "end": 5.712,
+            "text": "The duck moves three squares east."
+          }
+        ]
+      },
+      {
+        "text": "Call turn_left with no arguments. The duck turns from east to north, staying on its square.",
+        "file": "grid-audio/sequence-line-2.mp3",
+        "line": 2,
+        "hash": "80148030297f21a4b1fe",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 6.6,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.891,
+            "text": "Call turn_left with no arguments."
+          },
+          {
+            "start": 2.891,
+            "end": 6.6,
+            "text": "The duck turns from east to north, staying on its square."
+          }
+        ]
+      },
+      {
+        "text": "Move two squares in the new direction, north, and reach the flag.",
+        "file": "grid-audio/sequence-line-3.mp3",
+        "line": 3,
+        "hash": "fd80754bbc570fc945db",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 4.56,
+        "cues": [
+          {
+            "start": 0,
+            "end": 4.5600000000000005,
+            "text": "Move two squares in the new direction, north, and reach the flag."
+          }
+        ]
+      },
+      {
+        "text": "Display the text Arrived! Quotes mark text, and the parentheses contain the value passed to say.",
+        "file": "grid-audio/sequence-line-4.mp3",
+        "line": 4,
+        "hash": "294f73f2916d8ac0a6aa",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 7.032,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.005,
+            "text": "Display the text Arrived!"
+          },
+          {
+            "start": 2.005,
+            "end": 7.032,
+            "text": "Quotes mark text, and the parentheses contain the value passed to say."
+          }
+        ]
+      }
+    ]
+  },
+  "variables": {
+    "narration": {
+      "text": "Class 1 · Watch the value card named steps. Reassigning the name changes what the next instruction receives; it does not undo an earlier move. Use the changing value of steps to reach the flag. Predict both moves. Change only steps = 2 to steps = 1. How many squares does the duck move in total? Add a wall and identify which instruction needs to change.",
+      "file": "grid-audio/variables-listen.mp3",
+      "line": null,
+      "hash": "b0020b964c5fdc415d0a",
+      "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+      "duration": 25.632,
+      "cues": [
+        {
+          "start": 0,
+          "end": 3.802,
+          "text": "Class 1 · Watch the value card named steps."
+        },
+        {
+          "start": 3.802,
+          "end": 9.896,
+          "text": "Reassigning the name changes what the next instruction receives; it does not undo an earlier move."
+        },
+        {
+          "start": 9.896,
+          "end": 13.164,
+          "text": "Use the changing value of steps to reach the flag."
+        },
+        {
+          "start": 13.164,
+          "end": 14.883,
+          "text": "Predict both moves."
+        },
+        {
+          "start": 14.883,
+          "end": 18.88,
+          "text": "Change only steps = 2 to steps = 1."
+        },
+        {
+          "start": 18.88,
+          "end": 21.693,
+          "text": "How many squares does the duck move in total?"
+        },
+        {
+          "start": 21.693,
+          "end": 25.632,
+          "text": "Add a wall and identify which instruction needs to change."
+        }
+      ]
+    },
+    "steps": [
+      {
+        "text": "Assign the integer 1 to the name steps. The equals sign assigns a value.",
+        "file": "grid-audio/variables-line-1.mp3",
+        "line": 1,
+        "hash": "fbc93e6ac47c84a92910",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 5.472,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.943,
+            "text": "Assign the integer 1 to the name steps."
+          },
+          {
+            "start": 2.943,
+            "end": 5.4719999999999995,
+            "text": "The equals sign assigns a value."
+          }
+        ]
+      },
+      {
+        "text": "Read the current value of steps, 1, and move one square east.",
+        "file": "grid-audio/variables-line-2.mp3",
+        "line": 2,
+        "hash": "c42994c79e325fa1a6f9",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 4.296,
+        "cues": [
+          {
+            "start": 0.05,
+            "end": 4.296,
+            "text": "Read the current value of steps, 1, and move one square east."
+          }
+        ]
+      },
+      {
+        "text": "Assign 2 to steps. The previous move stays in the past; only the value linked to this name changes.",
+        "file": "grid-audio/variables-line-3.mp3",
+        "line": 3,
+        "hash": "67abc205d7770306d708",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 7.416,
+        "cues": [
+          {
+            "start": 0,
+            "end": 1.823,
+            "text": "Assign 2 to steps."
+          },
+          {
+            "start": 1.823,
+            "end": 7.416,
+            "text": "The previous move stays in the past; only the value linked to this name changes."
+          }
+        ]
+      },
+      {
+        "text": "Read steps again. Its current value is 2, so move two more squares east.",
+        "file": "grid-audio/variables-line-4.mp3",
+        "line": 4,
+        "hash": "4636c108fdcaa2c57191",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 5.856,
+        "cues": [
+          {
+            "start": 0,
+            "end": 1.549,
+            "text": "Read steps again."
+          },
+          {
+            "start": 1.549,
+            "end": 5.856,
+            "text": "Its current value is 2, so move two more squares east."
+          }
+        ]
+      },
+      {
+        "text": "Display the current value of steps, 2. This is the latest setting, not the total distance.",
+        "file": "grid-audio/variables-line-5.mp3",
+        "line": 5,
+        "hash": "8b5fdd5862169a70f4b8",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 6.072,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.734,
+            "text": "Display the current value of steps, 2."
+          },
+          {
+            "start": 2.734,
+            "end": 6.072,
+            "text": "This is the latest setting, not the total distance."
+          }
+        ]
+      }
+    ]
+  },
+  "arithmetic": {
+    "narration": {
+      "text": "Class 1 · In this teaching model, each forward square costs two energy units. The program calculates the bill; energy is a Python value, not an automatic movement limit. Move three squares and calculate the remaining energy. Predict remaining before running. Change only budget = 10 to budget = 12. Does the path change, or only the energy value? Explain which variable controls each result.",
+      "file": "grid-audio/arithmetic-listen.mp3",
+      "line": null,
+      "hash": "c139e356edada3a1966e",
+      "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+      "duration": 29.976,
+      "cues": [
+        {
+          "start": 0,
+          "end": 5.911,
+          "text": "Class 1 · In this teaching model, each forward square costs two energy units."
+        },
+        {
+          "start": 5.911,
+          "end": 12.747,
+          "text": "The program calculates the bill; energy is a Python value, not an automatic movement limit."
+        },
+        {
+          "start": 12.747,
+          "end": 16.68,
+          "text": "Move three squares and calculate the remaining energy."
+        },
+        {
+          "start": 16.68,
+          "end": 19.023,
+          "text": "Predict remaining before running."
+        },
+        {
+          "start": 19.023,
+          "end": 23.177,
+          "text": "Change only budget = 10 to budget = 12."
+        },
+        {
+          "start": 23.177,
+          "end": 26.589,
+          "text": "Does the path change, or only the energy value?"
+        },
+        {
+          "start": 26.589,
+          "end": 29.976,
+          "text": "Explain which variable controls each result."
+        }
+      ]
+    },
+    "steps": [
+      {
+        "text": "Store a starting budget of 10 energy units.",
+        "file": "grid-audio/arithmetic-line-1.mp3",
+        "line": 1,
+        "hash": "99494f337e660a2df8e6",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 3.696,
+        "cues": [
+          {
+            "start": 0,
+            "end": 3.6959999999999997,
+            "text": "Store a starting budget of 10 energy units."
+          }
+        ]
+      },
+      {
+        "text": "Store the planned travel distance, three squares.",
+        "file": "grid-audio/arithmetic-line-2.mp3",
+        "line": 2,
+        "hash": "40291f316f40c1070c2f",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 3.408,
+        "cues": [
+          {
+            "start": 0,
+            "end": 3.408,
+            "text": "Store the planned travel distance, three squares."
+          }
+        ]
+      },
+      {
+        "text": "Store the teaching model: one square costs two energy units.",
+        "file": "grid-audio/arithmetic-line-3.mp3",
+        "line": 3,
+        "hash": "b7e06efea58fde4afe8a",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 4.776,
+        "cues": [
+          {
+            "start": 0,
+            "end": 4.776,
+            "text": "Store the teaching model: one square costs two energy units."
+          }
+        ]
+      },
+      {
+        "text": "Multiply distance by cost_per_step. The result 6 is assigned to used.",
+        "file": "grid-audio/arithmetic-line-4.mp3",
+        "line": 4,
+        "hash": "dbb28f55d542790f9850",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 6.528,
+        "cues": [
+          {
+            "start": 0,
+            "end": 3.685,
+            "text": "Multiply distance by cost_per_step."
+          },
+          {
+            "start": 3.685,
+            "end": 6.5280000000000005,
+            "text": "The result 6 is assigned to used."
+          }
+        ]
+      },
+      {
+        "text": "Subtract used from budget. The result 4 is assigned to remaining.",
+        "file": "grid-audio/arithmetic-line-5.mp3",
+        "line": 5,
+        "hash": "6f2eb049b04384fb12c7",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 4.728,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.018,
+            "text": "Subtract used from budget."
+          },
+          {
+            "start": 2.018,
+            "end": 4.728,
+            "text": "The result 4 is assigned to remaining."
+          }
+        ]
+      },
+      {
+        "text": "Move the duck by distance, which is still 3. Changing the budget alone would not change this instruction.",
+        "file": "grid-audio/arithmetic-line-6.mp3",
+        "line": 6,
+        "hash": "89271ddf1d07cba04e84",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 6.648,
+        "cues": [
+          {
+            "start": 0,
+            "end": 3.021,
+            "text": "Move the duck by distance, which is still 3."
+          },
+          {
+            "start": 3.021,
+            "end": 6.648,
+            "text": "Changing the budget alone would not change this instruction."
+          }
+        ]
+      },
+      {
+        "text": "Display the remaining energy, 4. This value was calculated from the model, not measured from a physical robot.",
+        "file": "grid-audio/arithmetic-line-7.mp3",
+        "line": 7,
+        "hash": "75bbb1873bc83ed07b9f",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 7.608,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.8120000000000003,
+            "text": "Display the remaining energy, 4."
+          },
+          {
+            "start": 2.8120000000000003,
+            "end": 7.608,
+            "text": "This value was calculated from the model, not measured from a physical robot."
+          }
+        ]
+      }
+    ]
+  },
+  "types": {
+    "narration": {
+      "text": "Class 1 · Watch text and numbers in the value panel. Quotes make a string. The same + symbol joins two strings or adds two numbers, depending on their types. Display 32 from text and 5 from numbers. Predict joined and total. Change only text_steps = \"3\" to text_steps = \"4\". Explain why the two results change in different ways.",
+      "file": "grid-audio/types-listen.mp3",
+      "line": null,
+      "hash": "7dc1c601aaefdee8858d",
+      "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+      "duration": 26.904,
+      "cues": [
+        {
+          "start": 0,
+          "end": 3.75,
+          "text": "Class 1 · Watch text and numbers in the value panel."
+        },
+        {
+          "start": 3.75,
+          "end": 5.443,
+          "text": "Quotes make a string."
+        },
+        {
+          "start": 5.443,
+          "end": 10.846,
+          "text": "The same + symbol joins two strings or adds two numbers, depending on their types."
+        },
+        {
+          "start": 10.846,
+          "end": 14.766,
+          "text": "Display 32 from text and 5 from numbers."
+        },
+        {
+          "start": 14.766,
+          "end": 16.927,
+          "text": "Predict joined and total."
+        },
+        {
+          "start": 16.927,
+          "end": 22.956,
+          "text": "Change only text_steps = \"3\" to text_steps = \"4\"."
+        },
+        {
+          "start": 22.956,
+          "end": 26.904,
+          "text": "Explain why the two results change in different ways."
+        }
+      ]
+    },
+    "steps": [
+      {
+        "text": "Assign the string \"3\" to text_steps. The quotes mean this value is text.",
+        "file": "grid-audio/types-line-1.mp3",
+        "line": 1,
+        "hash": "04ae31c6b0de9166c0f4",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 6.264,
+        "cues": [
+          {
+            "start": 0,
+            "end": 3.62,
+            "text": "Assign the string \"3\" to text_steps."
+          },
+          {
+            "start": 3.62,
+            "end": 6.264,
+            "text": "The quotes mean this value is text."
+          }
+        ]
+      },
+      {
+        "text": "Join the text in text_steps to the string \"2\", producing the string \"32\".",
+        "file": "grid-audio/types-line-2.mp3",
+        "line": 2,
+        "hash": "ac29255e006b26dbc853",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 6.192,
+        "cues": [
+          {
+            "start": 0,
+            "end": 6.192,
+            "text": "Join the text in text_steps to the string \"2\", producing the string \"32\"."
+          }
+        ]
+      },
+      {
+        "text": "Convert text_steps to an integer with int. Assign the number 3 to steps; text_steps remains a string.",
+        "file": "grid-audio/types-line-3.mp3",
+        "line": 3,
+        "hash": "6f9ac4620bdcb8688948",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 8.88,
+        "cues": [
+          {
+            "start": 0,
+            "end": 3.529,
+            "text": "Convert text_steps to an integer with int."
+          },
+          {
+            "start": 3.529,
+            "end": 8.88,
+            "text": "Assign the number 3 to steps; text_steps remains a string."
+          }
+        ]
+      },
+      {
+        "text": "Add the integer steps and the integer 2. Assign the number 5 to total.",
+        "file": "grid-audio/types-line-4.mp3",
+        "line": 4,
+        "hash": "c3c5cc3cd80f0b4697e1",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 5.448,
+        "cues": [
+          {
+            "start": 0,
+            "end": 3.177,
+            "text": "Add the integer steps and the integer 2."
+          },
+          {
+            "start": 3.177,
+            "end": 5.448,
+            "text": "Assign the number 5 to total."
+          }
+        ]
+      },
+      {
+        "text": "Display joined. The output is 32 because two text values were joined.",
+        "file": "grid-audio/types-line-5.mp3",
+        "line": 5,
+        "hash": "5e65ecca9ec5dea27743",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 5.856,
+        "cues": [
+          {
+            "start": 0,
+            "end": 1.393,
+            "text": "Display joined."
+          },
+          {
+            "start": 1.393,
+            "end": 5.856,
+            "text": "The output is 32 because two text values were joined."
+          }
+        ]
+      },
+      {
+        "text": "Display total. The output is 5 because two numbers were added.",
+        "file": "grid-audio/types-line-6.mp3",
+        "line": 6,
+        "hash": "8f9e9e19491bd0735eff",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 4.704,
+        "cues": [
+          {
+            "start": 0,
+            "end": 1.432,
+            "text": "Display total."
+          },
+          {
+            "start": 1.432,
+            "end": 4.704,
+            "text": "The output is 5 because two numbers were added."
+          }
+        ]
+      }
+    ]
+  },
+  "lists": {
+    "narration": {
+      "text": "Class 1 · A list keeps values in order. The first slot has index 0. Watch append add a new slot at the end; it does not replace an earlier entry. Use three entries in a list to move four squares. Predict the final list and total distance. Change only route.append(1) to route.append(2). Which move changes? Add a wall to test the limits of this stored route.",
+      "file": "grid-audio/lists-listen.mp3",
+      "line": null,
+      "hash": "a09ee91dc089cd49040a",
+      "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+      "duration": 27.48,
+      "cues": [
+        {
+          "start": 0,
+          "end": 3.021,
+          "text": "Class 1 · A list keeps values in order."
+        },
+        {
+          "start": 3.021,
+          "end": 5.456,
+          "text": "The first slot has index 0."
+        },
+        {
+          "start": 5.456,
+          "end": 10.99,
+          "text": "Watch append add a new slot at the end; it does not replace an earlier entry."
+        },
+        {
+          "start": 10.99,
+          "end": 14.544,
+          "text": "Use three entries in a list to move four squares."
+        },
+        {
+          "start": 14.544,
+          "end": 17.643,
+          "text": "Predict the final list and total distance."
+        },
+        {
+          "start": 17.643,
+          "end": 22.526,
+          "text": "Change only route.append(1) to route.append(2)."
+        },
+        {
+          "start": 22.526,
+          "end": 24.245,
+          "text": "Which move changes?"
+        },
+        {
+          "start": 24.245,
+          "end": 27.48,
+          "text": "Add a wall to test the limits of this stored route."
+        }
+      ]
+    },
+    "steps": [
+      {
+        "text": "Create an ordered list with two integers, 1 and 2, and assign it to route.",
+        "file": "grid-audio/lists-line-1.mp3",
+        "line": 1,
+        "hash": "df05c9d4d51b106261da",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 5.808,
+        "cues": [
+          {
+            "start": 0,
+            "end": 5.808,
+            "text": "Create an ordered list with two integers, 1 and 2, and assign it to route."
+          }
+        ]
+      },
+      {
+        "text": "Read the value at index 0, the first slot, and assign that value, 1, to first.",
+        "file": "grid-audio/lists-line-2.mp3",
+        "line": 2,
+        "hash": "9d541c373310b7b4eb6f",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 6.576,
+        "cues": [
+          {
+            "start": 0,
+            "end": 6.576,
+            "text": "Read the value at index 0, the first slot, and assign that value, 1, to first."
+          }
+        ]
+      },
+      {
+        "text": "Append 1 to the same list. route now has three slots: [1, 2, 1].",
+        "file": "grid-audio/lists-line-3.mp3",
+        "line": 3,
+        "hash": "7c275e38cb18f7ea85ba",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 6.312,
+        "cues": [
+          {
+            "start": 0,
+            "end": 6.312,
+            "text": "Append 1 to the same list. route now has three slots: [1, 2, 1]."
+          }
+        ]
+      },
+      {
+        "text": "Move by first, which contains 1.",
+        "file": "grid-audio/lists-line-4.mp3",
+        "line": 4,
+        "hash": "c0cb998d4ef462520081",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 2.952,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.952,
+            "text": "Move by first, which contains 1."
+          }
+        ]
+      },
+      {
+        "text": "Read index 1 of route, which contains 2, and move two more squares.",
+        "file": "grid-audio/lists-line-5.mp3",
+        "line": 5,
+        "hash": "96d63da5397469a36719",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 5.088,
+        "cues": [
+          {
+            "start": 0,
+            "end": 5.088,
+            "text": "Read index 1 of route, which contains 2, and move two more squares."
+          }
+        ]
+      },
+      {
+        "text": "Read index 2, the appended value 1, and move one more square to the flag.",
+        "file": "grid-audio/lists-line-6.mp3",
+        "line": 6,
+        "hash": "3d331ff712bf97b727a3",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 5.592,
+        "cues": [
+          {
+            "start": 0,
+            "end": 5.592,
+            "text": "Read index 2, the appended value 1, and move one more square to the flag."
+          }
+        ]
+      }
+    ]
+  },
+  "sum-len": {
+    "narration": {
+      "text": "Class 1 · Each list tile is a simulated attempt: 1 means success and 0 means failure. sum counts successes here; len counts all attempts. These have different meanings. Calculate a 60 percent success rate from five simulated attempts. Predict successes, attempts and rate. Change only the last 0 in results to 1. Does the denominator change? Explain how this differs from appending another attempt.",
+      "file": "grid-audio/sum-len-listen.mp3",
+      "line": null,
+      "hash": "f76f3b5e4e4cdcd47a04",
+      "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+      "duration": 28.896,
+      "cues": [
+        {
+          "start": 0,
+          "end": 10.794,
+          "text": "Class 1 · Each list tile is a simulated attempt: 1 means success and 0 means failure. sum counts successes here; len counts all attempts."
+        },
+        {
+          "start": 10.794,
+          "end": 12.539,
+          "text": "These have different meanings."
+        },
+        {
+          "start": 12.539,
+          "end": 17.07,
+          "text": "Calculate a 60 percent success rate from five simulated attempts."
+        },
+        {
+          "start": 17.07,
+          "end": 20.039,
+          "text": "Predict successes, attempts and rate."
+        },
+        {
+          "start": 20.039,
+          "end": 23.385,
+          "text": "Change only the last 0 in results to 1."
+        },
+        {
+          "start": 23.385,
+          "end": 25.326,
+          "text": "Does the denominator change?"
+        },
+        {
+          "start": 25.326,
+          "end": 28.896,
+          "text": "Explain how this differs from appending another attempt."
+        }
+      ]
+    },
+    "steps": [
+      {
+        "text": "Create five simulated attempt records. A 1 means success and a 0 means failure.",
+        "file": "grid-audio/sum-len-line-1.mp3",
+        "line": 1,
+        "hash": "a6a12c707ab9f9e2bb14",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 7.008,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.878,
+            "text": "Create five simulated attempt records."
+          },
+          {
+            "start": 2.878,
+            "end": 7.008,
+            "text": "A 1 means success and a 0 means failure."
+          }
+        ]
+      },
+      {
+        "text": "Add the entries. Because entries are only 0 or 1, their sum, 3, counts the successes.",
+        "file": "grid-audio/sum-len-line-2.mp3",
+        "line": 2,
+        "hash": "33ba7a1e85837cb15182",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 7.632,
+        "cues": [
+          {
+            "start": 0,
+            "end": 1.4969999999999999,
+            "text": "Add the entries."
+          },
+          {
+            "start": 1.4969999999999999,
+            "end": 7.632,
+            "text": "Because entries are only 0 or 1, their sum, 3, counts the successes."
+          }
+        ]
+      },
+      {
+        "text": "Count all list entries with len. There are 5 attempts, including failures.",
+        "file": "grid-audio/sum-len-line-3.mp3",
+        "line": 3,
+        "hash": "1010ee697f1e2bb79b7d",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 5.688,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.513,
+            "text": "Count all list entries with len."
+          },
+          {
+            "start": 2.513,
+            "end": 5.688,
+            "text": "There are 5 attempts, including failures."
+          }
+        ]
+      },
+      {
+        "text": "Divide successes by attempts and multiply by 100 to calculate a percentage, 60.0.",
+        "file": "grid-audio/sum-len-line-4.mp3",
+        "line": 4,
+        "hash": "abfa4ef1288c0e9c23e5",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 7.224,
+        "cues": [
+          {
+            "start": 0,
+            "end": 7.224,
+            "text": "Divide successes by attempts and multiply by 100 to calculate a percentage, 60.0."
+          }
+        ]
+      },
+      {
+        "text": "Display the calculated rate. This small simulated sample does not establish a real robot’s success rate.",
+        "file": "grid-audio/sum-len-line-5.mp3",
+        "line": 5,
+        "hash": "70db763e45e2f7e021c2",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 7.392,
+        "cues": [
+          {
+            "start": 0,
+            "end": 1.979,
+            "text": "Display the calculated rate."
+          },
+          {
+            "start": 1.979,
+            "end": 7.392,
+            "text": "This small simulated sample does not establish a real robot’s success rate."
+          }
+        ]
+      }
+    ]
+  },
+  "comparisons": {
+    "narration": {
+      "text": "Class 2 · Build a Boolean value before using it in an if statement. A condition computes True or False; computing it alone does not move the duck. Evaluate whether the duck has enough energy and a clear next square. Predict all three Boolean cards. Change only energy = 3 to energy = 2. Then restore it and place a wall directly east of the duck. Which part of can_move changes in each test?",
+      "file": "grid-audio/comparisons-listen.mp3",
+      "line": null,
+      "hash": "aa73db30e92f82889119",
+      "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+      "duration": 28.152,
+      "cues": [
+        {
+          "start": 0,
+          "end": 4.648,
+          "text": "Class 2 · Build a Boolean value before using it in an if statement."
+        },
+        {
+          "start": 4.648,
+          "end": 9.948,
+          "text": "A condition computes True or False; computing it alone does not move the duck."
+        },
+        {
+          "start": 9.948,
+          "end": 14.531,
+          "text": "Evaluate whether the duck has enough energy and a clear next square."
+        },
+        {
+          "start": 14.531,
+          "end": 17.083,
+          "text": "Predict all three Boolean cards."
+        },
+        {
+          "start": 17.083,
+          "end": 21.055,
+          "text": "Change only energy = 3 to energy = 2."
+        },
+        {
+          "start": 21.055,
+          "end": 24.909,
+          "text": "Then restore it and place a wall directly east of the duck."
+        },
+        {
+          "start": 24.909,
+          "end": 28.152,
+          "text": "Which part of can_move changes in each test?"
+        }
+      ]
+    },
+    "steps": [
+      {
+        "text": "Store the available energy, 3.",
+        "file": "grid-audio/comparisons-line-1.mp3",
+        "line": 1,
+        "hash": "ffa431c8082051cc0638",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 2.736,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.7359999999999998,
+            "text": "Store the available energy, 3."
+          }
+        ]
+      },
+      {
+        "text": "Store the required energy, also 3.",
+        "file": "grid-audio/comparisons-line-2.mp3",
+        "line": 2,
+        "hash": "eefab0585265a73992a5",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 3.36,
+        "cues": [
+          {
+            "start": 0,
+            "end": 3.36,
+            "text": "Store the required energy, also 3."
+          }
+        ]
+      },
+      {
+        "text": "Compare energy with required. Greater than or equal to includes equality, so enough is True.",
+        "file": "grid-audio/comparisons-line-3.mp3",
+        "line": 3,
+        "hash": "e8f2d94847b5bd2e0349",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 7.296,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.37,
+            "text": "Compare energy with required."
+          },
+          {
+            "start": 2.37,
+            "end": 7.296,
+            "text": "Greater than or equal to includes equality, so enough is True."
+          }
+        ]
+      },
+      {
+        "text": "Compare equality using two equals signs. Both numbers are 3, so exact is True.",
+        "file": "grid-audio/comparisons-line-4.mp3",
+        "line": 4,
+        "hash": "65fa40526cbbea75e33d",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 7.128,
+        "cues": [
+          {
+            "start": 0,
+            "end": 3.529,
+            "text": "Compare equality using two equals signs."
+          },
+          {
+            "start": 3.529,
+            "end": 7.128,
+            "text": "Both numbers are 3, so exact is True."
+          }
+        ]
+      },
+      {
+        "text": "Check that enough is True and the next square is not blocked. Assign the combined Boolean to can_move.",
+        "file": "grid-audio/comparisons-line-5.mp3",
+        "line": 5,
+        "hash": "bc1723978cd3bb1e53db",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 7.92,
+        "cues": [
+          {
+            "start": 0,
+            "end": 4.492,
+            "text": "Check that enough is True and the next square is not blocked."
+          },
+          {
+            "start": 4.492,
+            "end": 7.92,
+            "text": "Assign the combined Boolean to can_move."
+          }
+        ]
+      },
+      {
+        "text": "Display can_move. Testing a condition does not itself call move_forward.",
+        "file": "grid-audio/comparisons-line-6.mp3",
+        "line": 6,
+        "hash": "594668b43d44ade7f9cd",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 6.168,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.07,
+            "text": "Display can_move."
+          },
+          {
+            "start": 2.07,
+            "end": 6.168,
+            "text": "Testing a condition does not itself call move_forward."
+          }
+        ]
+      }
+    ]
+  },
+  "branches": {
+    "narration": {
+      "text": "Class 2 · The route label selects one of three branches. Indentation groups each branch’s instructions. The last move is outside all three branches, so it runs after the choice. Choose the left branch and reach the flag to the north. Predict the chosen branch and endpoint. Change only route = \"left\" to route = \"right\". Which lines are skipped? Can one label solve a new map with a wall in the path?",
+      "file": "grid-audio/branches-listen.mp3",
+      "line": null,
+      "hash": "338d6bd505e653ba6268",
+      "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+      "duration": 28.536,
+      "cues": [
+        {
+          "start": 0,
+          "end": 4.245,
+          "text": "Class 2 · The route label selects one of three branches."
+        },
+        {
+          "start": 4.245,
+          "end": 7.578,
+          "text": "Indentation groups each branch’s instructions."
+        },
+        {
+          "start": 7.578,
+          "end": 12.37,
+          "text": "The last move is outside all three branches, so it runs after the choice."
+        },
+        {
+          "start": 12.37,
+          "end": 16.237,
+          "text": "Choose the left branch and reach the flag to the north."
+        },
+        {
+          "start": 16.237,
+          "end": 19.375,
+          "text": "Predict the chosen branch and endpoint."
+        },
+        {
+          "start": 19.375,
+          "end": 23.307,
+          "text": "Change only route = \"left\" to route = \"right\"."
+        },
+        {
+          "start": 23.307,
+          "end": 25.052,
+          "text": "Which lines are skipped?"
+        },
+        {
+          "start": 25.052,
+          "end": 28.536,
+          "text": "Can one label solve a new map with a wall in the path?"
+        }
+      ]
+    },
+    "steps": [
+      {
+        "text": "Set the route label to the string \"left\".",
+        "file": "grid-audio/branches-line-1.mp3",
+        "line": 1,
+        "hash": "f615bca63f972db8116e",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 2.856,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.856,
+            "text": "Set the route label to the string \"left\"."
+          }
+        ]
+      },
+      {
+        "text": "Test whether route equals \"right\". It does not, so skip the indented right-turn instruction.",
+        "file": "grid-audio/branches-line-2.mp3",
+        "line": 2,
+        "hash": "4f7b409ff944ca3476ff",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 6.312,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.318,
+            "text": "Test whether route equals \"right\"."
+          },
+          {
+            "start": 2.318,
+            "end": 6.312,
+            "text": "It does not, so skip the indented right-turn instruction."
+          }
+        ]
+      },
+      {
+        "text": "This instruction turns right only when the first condition is True. The starter skips it.",
+        "file": "grid-audio/branches-line-3.mp3",
+        "line": 3,
+        "hash": "c404f81384f59fd56617",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 5.544,
+        "cues": [
+          {
+            "start": 0,
+            "end": 4.01,
+            "text": "This instruction turns right only when the first condition is True."
+          },
+          {
+            "start": 4.01,
+            "end": 5.5440000000000005,
+            "text": "The starter skips it."
+          }
+        ]
+      },
+      {
+        "text": "Because the first test was False, test whether route equals \"left\". This test is True.",
+        "file": "grid-audio/branches-line-4.mp3",
+        "line": 4,
+        "hash": "13935442ff5de956adf1",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 6.216,
+        "cues": [
+          {
+            "start": 0,
+            "end": 4.596,
+            "text": "Because the first test was False, test whether route equals \"left\"."
+          },
+          {
+            "start": 4.596,
+            "end": 6.216,
+            "text": "This test is True."
+          }
+        ]
+      },
+      {
+        "text": "Run the selected branch: turn left from east to north.",
+        "file": "grid-audio/branches-line-5.mp3",
+        "line": 5,
+        "hash": "237e35b7798a5f554b59",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 3.96,
+        "cues": [
+          {
+            "start": 0,
+            "end": 3.96,
+            "text": "Run the selected branch: turn left from east to north."
+          }
+        ]
+      },
+      {
+        "text": "The else branch is a fallback for when neither earlier condition is True. It is skipped in the flagter.",
+        "file": "grid-audio/branches-line-6.mp3",
+        "line": 6,
+        "hash": "42e05a7ee75ee5bc34a1",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 6,
+        "cues": [
+          {
+            "start": 0,
+            "end": 4.284,
+            "text": "The else branch is a fallback for when neither earlier condition is True."
+          },
+          {
+            "start": 4.284,
+            "end": 6,
+            "text": "It is skipped in the flagter."
+          }
+        ]
+      },
+      {
+        "text": "This message belongs to the else branch and appears only when the fallback branch runs.",
+        "file": "grid-audio/branches-line-7.mp3",
+        "line": 7,
+        "hash": "26de00e98c025e1c37d3",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 5.688,
+        "cues": [
+          {
+            "start": 0,
+            "end": 5.688,
+            "text": "This message belongs to the else branch and appears only when the fallback branch runs."
+          }
+        ]
+      },
+      {
+        "text": "This instruction has no indentation, so it follows the branch choice. Move two squares in the selected direction.",
+        "file": "grid-audio/branches-line-8.mp3",
+        "line": 8,
+        "hash": "44f59f5e632f89f487bd",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 7.92,
+        "cues": [
+          {
+            "start": 0,
+            "end": 5,
+            "text": "This instruction has no indentation, so it follows the branch choice."
+          },
+          {
+            "start": 5,
+            "end": 7.92,
+            "text": "Move two squares in the selected direction."
+          }
+        ]
+      }
+    ]
+  },
+  "for-range": {
+    "narration": {
+      "text": "Class 2 · range(3) gives 0, 1 and 2. The indented body runs once for each value. The loop counter starts at zero, even though the duck takes its first step during that iteration. Repeat one forward move three times. Predict the displayed counter values and endpoint. Change only range(3) to range(4). Does the counter ever display 4? Add a wall and explain why counting alone cannot avoid it.",
+      "file": "grid-audio/for-range-listen.mp3",
+      "line": null,
+      "hash": "459c41f75d532845cfcb",
+      "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+      "duration": 29.496,
+      "cues": [
+        {
+          "start": 0,
+          "end": 4.401,
+          "text": "Class 2 · range(3) gives 0, 1 and 2."
+        },
+        {
+          "start": 4.401,
+          "end": 7.5,
+          "text": "The indented body runs once for each value."
+        },
+        {
+          "start": 7.5,
+          "end": 13.151,
+          "text": "The loop counter starts at zero, even though the duck takes its first step during that iteration."
+        },
+        {
+          "start": 13.151,
+          "end": 16.107,
+          "text": "Repeat one forward move three times."
+        },
+        {
+          "start": 16.107,
+          "end": 19.427,
+          "text": "Predict the displayed counter values and endpoint."
+        },
+        {
+          "start": 19.427,
+          "end": 23.073,
+          "text": "Change only range(3) to range(4)."
+        },
+        {
+          "start": 23.073,
+          "end": 25.508,
+          "text": "Does the counter ever display 4?"
+        },
+        {
+          "start": 25.508,
+          "end": 29.496,
+          "text": "Add a wall and explain why counting alone cannot avoid it."
+        }
+      ]
+    },
+    "steps": [
+      {
+        "text": "Start a for loop over 0, 1 and 2. Each value is assigned to step for one iteration.",
+        "file": "grid-audio/for-range-line-1.mp3",
+        "line": 1,
+        "hash": "986b866fcaba76a88adb",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 6.768,
+        "cues": [
+          {
+            "start": 0,
+            "end": 3.398,
+            "text": "Start a for loop over 0, 1 and 2."
+          },
+          {
+            "start": 3.398,
+            "end": 6.768,
+            "text": "Each value is assigned to step for one iteration."
+          }
+        ]
+      },
+      {
+        "text": "Display the current loop counter. The starter displays 0, then 1, then 2.",
+        "file": "grid-audio/for-range-line-2.mp3",
+        "line": 2,
+        "hash": "b5608395c7306b438f85",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 5.784,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.018,
+            "text": "Display the current loop counter."
+          },
+          {
+            "start": 2.018,
+            "end": 5.784,
+            "text": "The starter displays 0, then 1, then 2."
+          }
+        ]
+      },
+      {
+        "text": "Move one square during each iteration. Three iterations produce three forward moves.",
+        "file": "grid-audio/for-range-line-3.mp3",
+        "line": 3,
+        "hash": "c677e07d4e3c749e1777",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 6.24,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.773,
+            "text": "Move one square during each iteration."
+          },
+          {
+            "start": 2.773,
+            "end": 6.24,
+            "text": "Three iterations produce three forward moves."
+          }
+        ]
+      },
+      {
+        "text": "After all iterations finish, display this message once. The line is outside the indented loop body.",
+        "file": "grid-audio/for-range-line-4.mp3",
+        "line": 4,
+        "hash": "4218e0a0d9c5436c6cf5",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 7.224,
+        "cues": [
+          {
+            "start": 0,
+            "end": 4.102,
+            "text": "After all iterations finish, display this message once."
+          },
+          {
+            "start": 4.102,
+            "end": 7.224,
+            "text": "The line is outside the indented loop body."
+          }
+        ]
+      }
+    ]
+  },
+  "while-sensor": {
+    "narration": {
+      "text": "Class 2 · is_blocked() checks the square immediately ahead, including the edge of the board. This rule follows one clear corridor; it does not search for a route around obstacles. Stop at the flag immediately before the wall. Predict the number of moves. Change only move_forward() to move_forward(2): why can checking one square be insufficient for a two-square move? Restore it, then move the wall closer and test the original rule.",
+      "file": "grid-audio/while-sensor-listen.mp3",
+      "line": null,
+      "hash": "68ba159ff3b88a46cd10",
+      "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+      "duration": 29.664,
+      "cues": [
+        {
+          "start": 0,
+          "end": 6.667,
+          "text": "Class 2 · is_blocked() checks the square immediately ahead, including the edge of the board."
+        },
+        {
+          "start": 6.667,
+          "end": 12.174,
+          "text": "This rule follows one clear corridor; it does not search for a route around obstacles."
+        },
+        {
+          "start": 12.174,
+          "end": 15.195,
+          "text": "Stop at the flag immediately before the wall."
+        },
+        {
+          "start": 15.195,
+          "end": 17.044,
+          "text": "Predict the number of moves."
+        },
+        {
+          "start": 17.044,
+          "end": 24.765,
+          "text": "Change only move_forward() to move_forward(2): why can checking one square be insufficient for a two-square move?"
+        },
+        {
+          "start": 24.765,
+          "end": 29.664,
+          "text": "Restore it, then move the wall closer and test the original rule."
+        }
+      ]
+    },
+    "steps": [
+      {
+        "text": "Check the next square. Enter or repeat the loop only while that square is not blocked.",
+        "file": "grid-audio/while-sensor-line-1.mp3",
+        "line": 1,
+        "hash": "dc336ba13c27e8ee6722",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 5.832,
+        "cues": [
+          {
+            "start": 0,
+            "end": 1.6019999999999999,
+            "text": "Check the next square."
+          },
+          {
+            "start": 1.6019999999999999,
+            "end": 5.832,
+            "text": "Enter or repeat the loop only while that square is not blocked."
+          }
+        ]
+      },
+      {
+        "text": "Move one square. Python then returns to the while condition and checks the next square again.",
+        "file": "grid-audio/while-sensor-line-2.mp3",
+        "line": 2,
+        "hash": "52f88cd3f960022ca19b",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 6.624,
+        "cues": [
+          {
+            "start": 0,
+            "end": 1.589,
+            "text": "Move one square."
+          },
+          {
+            "start": 1.589,
+            "end": 6.624,
+            "text": "Python then returns to the while condition and checks the next square again."
+          }
+        ]
+      },
+      {
+        "text": "Once a wall is directly ahead, leave the loop and record the total forward moves, 3 in the flagter.",
+        "file": "grid-audio/while-sensor-line-3.mp3",
+        "line": 3,
+        "hash": "ef5124d2aa32f727972f",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 6.576,
+        "cues": [
+          {
+            "start": 0.012,
+            "end": 6.576,
+            "text": "Once a wall is directly ahead, leave the loop and record the total forward moves, 3 in the flagter."
+          }
+        ]
+      },
+      {
+        "text": "Display the move count. The stopping rule is about the next wall, so changing the wall can change the endpoint.",
+        "file": "grid-audio/while-sensor-line-4.mp3",
+        "line": 4,
+        "hash": "092a34498444657bc0d3",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 6.816,
+        "cues": [
+          {
+            "start": 0,
+            "end": 1.771,
+            "text": "Display the move count."
+          },
+          {
+            "start": 1.771,
+            "end": 6.816,
+            "text": "The stopping rule is about the next wall, so changing the wall can change the endpoint."
+          }
+        ]
+      }
+    ]
+  },
+  "functions": {
+    "narration": {
+      "text": "Class 3 · Defining a function saves instructions for a later call. steps is a parameter local to travel. The return statement sends a result back to the calling line. Call a function that travels and returns the move count. Predict when the first movement occurs and what used receives. Change only travel(3) to travel(2). Explain the path and returned value. Test a map with a wall: does wrapping code in a function make it avoid obstacles?",
+      "file": "grid-audio/functions-listen.mp3",
+      "line": null,
+      "hash": "e189f7db9931a1bad674",
+      "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+      "duration": 31.632,
+      "cues": [
+        {
+          "start": 0,
+          "end": 7.5,
+          "text": "Class 3 · Defining a function saves instructions for a later call. steps is a parameter local to travel."
+        },
+        {
+          "start": 7.5,
+          "end": 11.224,
+          "text": "The return statement sends a result back to the calling line."
+        },
+        {
+          "start": 11.224,
+          "end": 15.078,
+          "text": "Call a function that travels and returns the move count."
+        },
+        {
+          "start": 15.078,
+          "end": 19.479,
+          "text": "Predict when the first movement occurs and what used receives."
+        },
+        {
+          "start": 19.479,
+          "end": 23.672,
+          "text": "Change only travel(3) to travel(2)."
+        },
+        {
+          "start": 23.672,
+          "end": 26.328,
+          "text": "Explain the path and returned value."
+        },
+        {
+          "start": 26.328,
+          "end": 31.632,
+          "text": "Test a map with a wall: does wrapping code in a function make it avoid obstacles?"
+        }
+      ]
+    },
+    "steps": [
+      {
+        "text": "Define a function named travel with one parameter, steps. Save its body without moving the duck yet.",
+        "file": "grid-audio/functions-line-1.mp3",
+        "line": 1,
+        "hash": "48c3356f84a785d8081b",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 7.344,
+        "cues": [
+          {
+            "start": 0,
+            "end": 4.388,
+            "text": "Define a function named travel with one parameter, steps."
+          },
+          {
+            "start": 4.388,
+            "end": 7.344,
+            "text": "Save its body without moving the duck yet."
+          }
+        ]
+      },
+      {
+        "text": "When travel is called, move by the value supplied for its local steps parameter.",
+        "file": "grid-audio/functions-line-2.mp3",
+        "line": 2,
+        "hash": "6b00cfa392cc9d2cfccd",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 5.232,
+        "cues": [
+          {
+            "start": 0,
+            "end": 5.232,
+            "text": "When travel is called, move by the value supplied for its local steps parameter."
+          }
+        ]
+      },
+      {
+        "text": "Return the run’s total forward-move count to the caller. Returning ends this function call.",
+        "file": "grid-audio/functions-line-3.mp3",
+        "line": 3,
+        "hash": "cef09b5da6d3a36f367e",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 5.52,
+        "cues": [
+          {
+            "start": 0,
+            "end": 3.294,
+            "text": "Return the run’s total forward-move count to the caller."
+          },
+          {
+            "start": 3.294,
+            "end": 5.52,
+            "text": "Returning ends this function call."
+          }
+        ]
+      },
+      {
+        "text": "Call travel with 3. After its body finishes, assign the returned move count, 3, to used.",
+        "file": "grid-audio/functions-line-5.mp3",
+        "line": 5,
+        "hash": "1754c4cb1c6c44feb6c8",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 7.224,
+        "cues": [
+          {
+            "start": 0,
+            "end": 1.823,
+            "text": "Call travel with 3."
+          },
+          {
+            "start": 1.823,
+            "end": 7.224,
+            "text": "After its body finishes, assign the returned move count, 3, to used."
+          }
+        ]
+      },
+      {
+        "text": "Display the value received from the function. If travel were called again, get_moves would report the cumulative run count.",
+        "file": "grid-audio/functions-line-6.mp3",
+        "line": 6,
+        "hash": "ae8fd931d6140ad9df84",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 7.752,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.578,
+            "text": "Display the value received from the function."
+          },
+          {
+            "start": 2.578,
+            "end": 7.752,
+            "text": "If travel were called again, get_moves would report the cumulative run count."
+          }
+        ]
+      }
+    ]
+  },
+  "dictionary": {
+    "narration": {
+      "text": "Class 3 · A dictionary pairs keys with values. Use meaningful field names to keep a small experiment record. The moves and finished fields are recorded after the movement actually runs. Record three moves and a True completion result. Predict the completed record. Change only move_forward(3) to move_forward(2). Which fields change, and which stays the same? Add an obstacle to test whether the record still describes the outcome.",
+      "file": "grid-audio/dictionary-listen.mp3",
+      "line": null,
+      "hash": "49837e3fbc98c95c4493",
+      "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+      "duration": 31.368,
+      "cues": [
+        {
+          "start": 0,
+          "end": 4.115,
+          "text": "Class 3 · A dictionary pairs keys with values."
+        },
+        {
+          "start": 4.115,
+          "end": 7.93,
+          "text": "Use meaningful field names to keep a small experiment record."
+        },
+        {
+          "start": 7.93,
+          "end": 12.669,
+          "text": "The moves and finished fields are recorded after the movement actually runs."
+        },
+        {
+          "start": 12.669,
+          "end": 16.159,
+          "text": "Record three moves and a True completion result."
+        },
+        {
+          "start": 16.159,
+          "end": 18.203,
+          "text": "Predict the completed record."
+        },
+        {
+          "start": 18.203,
+          "end": 23.424,
+          "text": "Change only move_forward(3) to move_forward(2)."
+        },
+        {
+          "start": 23.424,
+          "end": 26.68,
+          "text": "Which fields change, and which stays the same?"
+        },
+        {
+          "start": 26.68,
+          "end": 31.368,
+          "text": "Add an obstacle to test whether the record still describes the outcome."
+        }
+      ]
+    },
+    "steps": [
+      {
+        "text": "Create a dictionary with two named fields: name contains \"Duck\" and moves contains 0.",
+        "file": "grid-audio/dictionary-line-1.mp3",
+        "line": 1,
+        "hash": "2c5fd33714a7d4cfae7a",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 6.576,
+        "cues": [
+          {
+            "start": 0,
+            "end": 6.576,
+            "text": "Create a dictionary with two named fields: name contains \"Duck\" and moves contains 0."
+          }
+        ]
+      },
+      {
+        "text": "Move the duck three squares toward the flag.",
+        "file": "grid-audio/dictionary-line-2.mp3",
+        "line": 2,
+        "hash": "b594277b7d0ad3e51b18",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 2.88,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.88,
+            "text": "Move the duck three squares toward the flag."
+          }
+        ]
+      },
+      {
+        "text": "Update the existing moves field with the actual forward-move count from this run.",
+        "file": "grid-audio/dictionary-line-3.mp3",
+        "line": 3,
+        "hash": "4aa06af0fcb4e87f5a13",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 4.8,
+        "cues": [
+          {
+            "start": 0,
+            "end": 4.8,
+            "text": "Update the existing moves field with the actual forward-move count from this run."
+          }
+        ]
+      },
+      {
+        "text": "Add a finished field containing the Boolean returned by at_goal. The starter reaches the flag, so it records True.",
+        "file": "grid-audio/dictionary-line-4.mp3",
+        "line": 4,
+        "hash": "fc164716889af01aa3e4",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 8.304,
+        "cues": [
+          {
+            "start": 0,
+            "end": 4.766,
+            "text": "Add a finished field containing the Boolean returned by at_goal."
+          },
+          {
+            "start": 4.766,
+            "end": 8.304,
+            "text": "The starter reaches the flag, so it records True."
+          }
+        ]
+      },
+      {
+        "text": "Read and display the moves field by its string key. The starter displays 3.",
+        "file": "grid-audio/dictionary-line-5.mp3",
+        "line": 5,
+        "hash": "aca5d6a5a5f9324d2bb6",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 5.376,
+        "cues": [
+          {
+            "start": 0,
+            "end": 3.385,
+            "text": "Read and display the moves field by its string key."
+          },
+          {
+            "start": 3.385,
+            "end": 5.376,
+            "text": "The starter displays 3."
+          }
+        ]
+      },
+      {
+        "text": "Read and display the finished field. If a changed route ends elsewhere, this field is False.",
+        "file": "grid-audio/dictionary-line-6.mp3",
+        "line": 6,
+        "hash": "49205317471360d4ff33",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 6.72,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.826,
+            "text": "Read and display the finished field."
+          },
+          {
+            "start": 2.826,
+            "end": 6.72,
+            "text": "If a changed route ends elsewhere, this field is False."
+          }
+        ]
+      }
+    ]
+  },
+  "nested-loops": {
+    "narration": {
+      "text": "Class 2 extension · Use after simple for loops. The outer loop counts sides; the inner loop counts forward moves on one side. Watch both counters and the two indentation levels. Travel two sides of a square, three steps per side. Predict the total forward moves and turns. Change only range(2) to range(3). Explain why this adds three moves and one turn. Add a wall to find a map this geometric pattern cannot solve.",
+      "file": "grid-audio/nested-loops-listen.mp3",
+      "line": null,
+      "hash": "7ccc3c9ae10f738268c2",
+      "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+      "duration": 31.008,
+      "cues": [
+        {
+          "start": 0,
+          "end": 3.503,
+          "text": "Class 2 extension · Use after simple for loops."
+        },
+        {
+          "start": 3.503,
+          "end": 8.529,
+          "text": "The outer loop counts sides; the inner loop counts forward moves on one side."
+        },
+        {
+          "start": 8.529,
+          "end": 12.018,
+          "text": "Watch both counters and the two indentation levels."
+        },
+        {
+          "start": 12.018,
+          "end": 15.833,
+          "text": "Travel two sides of a square, three steps per side."
+        },
+        {
+          "start": 15.833,
+          "end": 18.971,
+          "text": "Predict the total forward moves and turns."
+        },
+        {
+          "start": 18.971,
+          "end": 22.904,
+          "text": "Change only range(2) to range(3)."
+        },
+        {
+          "start": 22.904,
+          "end": 26.758,
+          "text": "Explain why this adds three moves and one turn."
+        },
+        {
+          "start": 26.758,
+          "end": 31.008,
+          "text": "Add a wall to find a map this geometric pattern cannot solve."
+        }
+      ]
+    },
+    "steps": [
+      {
+        "text": "Start an outer loop with side values 0 and 1: two sides in total.",
+        "file": "grid-audio/nested-loops-line-1.mp3",
+        "line": 1,
+        "hash": "f04dffc57da1cf46eaeb",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 5.424,
+        "cues": [
+          {
+            "start": 0,
+            "end": 5.424,
+            "text": "Start an outer loop with side values 0 and 1: two sides in total."
+          }
+        ]
+      },
+      {
+        "text": "For each side, start a fresh inner loop with step values 0, 1 and 2.",
+        "file": "grid-audio/nested-loops-line-2.mp3",
+        "line": 2,
+        "hash": "e03713edc4a00aa8cb43",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 5.64,
+        "cues": [
+          {
+            "start": 0,
+            "end": 5.64,
+            "text": "For each side, start a fresh inner loop with step values 0, 1 and 2."
+          }
+        ]
+      },
+      {
+        "text": "This line is inside both loops. Move one square three times for each side.",
+        "file": "grid-audio/nested-loops-line-3.mp3",
+        "line": 3,
+        "hash": "67fd68489a851e58ae4a",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 5.976,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.591,
+            "text": "This line is inside both loops."
+          },
+          {
+            "start": 2.591,
+            "end": 5.976,
+            "text": "Move one square three times for each side."
+          }
+        ]
+      },
+      {
+        "text": "The smaller indentation places this turn after the inner loop but inside the outer loop. Turn left once per completed side.",
+        "file": "grid-audio/nested-loops-line-4.mp3",
+        "line": 4,
+        "hash": "ece775fac2ecb59fbcee",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 8.352,
+        "cues": [
+          {
+            "start": 0,
+            "end": 5.664,
+            "text": "The smaller indentation places this turn after the inner loop but inside the outer loop."
+          },
+          {
+            "start": 5.664,
+            "end": 8.352,
+            "text": "Turn left once per completed side."
+          }
+        ]
+      },
+      {
+        "text": "After both sides finish, display the total forward-move count: 2 times 3 equals 6.",
+        "file": "grid-audio/nested-loops-line-5.mp3",
+        "line": 5,
+        "hash": "d3aaf5ff366f71380088",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 6.816,
+        "cues": [
+          {
+            "start": 0,
+            "end": 6.816,
+            "text": "After both sides finish, display the total forward-move count: 2 times 3 equals 6."
+          }
+        ]
+      }
+    ]
+  },
+  "break-continue": {
+    "narration": {
+      "text": "Class 2 extension · In this small command format, 0 means skip and 9 means stop. Other entries are forward distances. continue skips the rest of one iteration; break leaves the loop entirely. Skip the zero marker, move twice, and stop at the 9 marker. Predict which entries cause movement. Change only the 9 in commands to 1. How many moves happen now, and why does the last list entry finally run?",
+      "file": "grid-audio/break-continue-listen.mp3",
+      "line": null,
+      "hash": "4c78328955df80e601fc",
+      "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+      "duration": 29.712,
+      "cues": [
+        {
+          "start": 0,
+          "end": 6.146,
+          "text": "Class 2 extension · In this small command format, 0 means skip and 9 means stop."
+        },
+        {
+          "start": 6.146,
+          "end": 14.414,
+          "text": "Other entries are forward distances. continue skips the rest of one iteration; break leaves the loop entirely."
+        },
+        {
+          "start": 14.414,
+          "end": 19.115,
+          "text": "Skip the zero marker, move twice, and stop at the 9 marker."
+        },
+        {
+          "start": 19.115,
+          "end": 21.81,
+          "text": "Predict which entries cause movement."
+        },
+        {
+          "start": 21.81,
+          "end": 24.701,
+          "text": "Change only the 9 in commands to 1."
+        },
+        {
+          "start": 24.701,
+          "end": 29.712,
+          "text": "How many moves happen now, and why does the last list entry finally run?"
+        }
+      ]
+    },
+    "steps": [
+      {
+        "text": "Store commands in order. In this example, 0 is a skip marker and 9 is a stop marker.",
+        "file": "grid-audio/break-continue-line-1.mp3",
+        "line": 1,
+        "hash": "4de3f8a5717537f80739",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 7.104,
+        "cues": [
+          {
+            "start": 0,
+            "end": 1.9140000000000001,
+            "text": "Store commands in order."
+          },
+          {
+            "start": 1.9140000000000001,
+            "end": 7.104,
+            "text": "In this example, 0 is a skip marker and 9 is a stop marker."
+          }
+        ]
+      },
+      {
+        "text": "Visit list entries one at a time, assigning each entry to steps.",
+        "file": "grid-audio/break-continue-line-2.mp3",
+        "line": 2,
+        "hash": "8b5d99069eb3ef6fb1de",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 5.208,
+        "cues": [
+          {
+            "start": 0,
+            "end": 5.208,
+            "text": "Visit list entries one at a time, assigning each entry to steps."
+          }
+        ]
+      },
+      {
+        "text": "Test whether this entry is the skip marker, 0.",
+        "file": "grid-audio/break-continue-line-3.mp3",
+        "line": 3,
+        "hash": "d464f119aaf580beb8ea",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 3.624,
+        "cues": [
+          {
+            "start": 0,
+            "end": 3.624,
+            "text": "Test whether this entry is the skip marker, 0."
+          }
+        ]
+      },
+      {
+        "text": "For a skip marker, stop this iteration immediately and continue with the next entry.",
+        "file": "grid-audio/break-continue-line-4.mp3",
+        "line": 4,
+        "hash": "d10ea3d18a63eb734db0",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 5.76,
+        "cues": [
+          {
+            "start": 0,
+            "end": 5.76,
+            "text": "For a skip marker, stop this iteration immediately and continue with the next entry."
+          }
+        ]
+      },
+      {
+        "text": "If the iteration was not skipped, test whether this entry is the stop marker, 9.",
+        "file": "grid-audio/break-continue-line-5.mp3",
+        "line": 5,
+        "hash": "05838695546b362eb85e",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 5.736,
+        "cues": [
+          {
+            "start": 0,
+            "end": 5.736,
+            "text": "If the iteration was not skipped, test whether this entry is the stop marker, 9."
+          }
+        ]
+      },
+      {
+        "text": "For a stop marker, leave the whole loop. Later entries are not visited.",
+        "file": "grid-audio/break-continue-line-6.mp3",
+        "line": 6,
+        "hash": "639c27ebd9666ac91858",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 5.544,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.943,
+            "text": "For a stop marker, leave the whole loop."
+          },
+          {
+            "start": 2.943,
+            "end": 5.5440000000000005,
+            "text": "Later entries are not visited."
+          }
+        ]
+      },
+      {
+        "text": "For an ordinary command, move by its distance. The starter reaches this line for two entries, both 1.",
+        "file": "grid-audio/break-continue-line-7.mp3",
+        "line": 7,
+        "hash": "2dcdcd351a560f503b3e",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 7.344,
+        "cues": [
+          {
+            "start": 0,
+            "end": 3.411,
+            "text": "For an ordinary command, move by its distance."
+          },
+          {
+            "start": 3.411,
+            "end": 7.344,
+            "text": "The starter reaches this line for two entries, both 1."
+          }
+        ]
+      },
+      {
+        "text": "After the loop ends, display the total forward moves, 2 in the flagter.",
+        "file": "grid-audio/break-continue-line-8.mp3",
+        "line": 8,
+        "hash": "9104b13f353eac1f6382",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 5.016,
+        "cues": [
+          {
+            "start": 0,
+            "end": 5.016,
+            "text": "After the loop ends, display the total forward moves, 2 in the flagter."
+          }
+        ]
+      }
+    ]
+  },
+  "comprehension": {
+    "narration": {
+      "text": "Class 4 extension · A bridge from ordinary lists to later array experiments. A comprehension creates a new list by visiting source values and keeping those that pass a condition. This example uses standard Python lists. Make a new list containing only route lengths at most two. Predict short_routes and whether distances changes. Change only <= 2 to <= 3. Which tile is added to the new list, and why does the original list stay unchanged?",
+      "file": "grid-audio/comprehension-listen.mp3",
+      "line": null,
+      "hash": "d362a49f4ddaccbb81ad",
+      "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+      "duration": 31.512,
+      "cues": [
+        {
+          "start": 0,
+          "end": 5.43,
+          "text": "Class 4 extension · A bridge from ordinary lists to later array experiments."
+        },
+        {
+          "start": 5.43,
+          "end": 11.745,
+          "text": "A comprehension creates a new list by visiting source values and keeping those that pass a condition."
+        },
+        {
+          "start": 11.745,
+          "end": 14.753,
+          "text": "This example uses standard Python lists."
+        },
+        {
+          "start": 14.753,
+          "end": 18.542,
+          "text": "Make a new list containing only route lengths at most two."
+        },
+        {
+          "start": 18.542,
+          "end": 22.786,
+          "text": "Predict short_routes and whether distances changes."
+        },
+        {
+          "start": 22.786,
+          "end": 27.435,
+          "text": "Change only <= 2 to <= 3."
+        },
+        {
+          "start": 27.435,
+          "end": 31.512,
+          "text": "Which tile is added to the new list, and why does the original list stay unchanged?"
+        }
+      ]
+    },
+    "steps": [
+      {
+        "text": "Store four example route lengths in the original list.",
+        "file": "grid-audio/comprehension-line-1.mp3",
+        "line": 1,
+        "hash": "9d7071508298e63df1ba",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 3.504,
+        "cues": [
+          {
+            "start": 0,
+            "end": 3.504,
+            "text": "Store four example route lengths in the original list."
+          }
+        ]
+      },
+      {
+        "text": "Visit every source value, keep values at most 2, and create a new list [1, 2]. The original distances list is unchanged.",
+        "file": "grid-audio/comprehension-line-2.mp3",
+        "line": 2,
+        "hash": "61ad24ed5a91a2832fb8",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 10.368,
+        "cues": [
+          {
+            "start": 0,
+            "end": 6.901,
+            "text": "Visit every source value, keep values at most 2, and create a new list [1, 2]."
+          },
+          {
+            "start": 6.901,
+            "end": 10.368,
+            "text": "The original distances list is unchanged."
+          }
+        ]
+      },
+      {
+        "text": "Display the filtered list. This operation selects lengths; it does not check whether any route avoids walls.",
+        "file": "grid-audio/comprehension-line-3.mp3",
+        "line": 3,
+        "hash": "da57cea82b6a688c54b7",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 7.536,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.031,
+            "text": "Display the filtered list."
+          },
+          {
+            "start": 2.031,
+            "end": 7.536,
+            "text": "This operation selects lengths; it does not check whether any route avoids walls."
+          }
+        ]
+      }
+    ]
+  },
+  "try-except": {
+    "narration": {
+      "text": "Class 3 extension · Use after strings, conversion and branches. The word \"three\" cannot be converted by int. Catch this specific ValueError and select a fallback that the program can explain. Use a one-step fallback when integer conversion fails. Predict which branch sets steps. Change only entry = \"three\" to entry = \"3\". Does the except body still run, and where does the duck stop?",
+      "file": "grid-audio/try-except-listen.mp3",
+      "line": null,
+      "hash": "4081b0f746e4600428a5",
+      "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+      "duration": 27.888,
+      "cues": [
+        {
+          "start": 0,
+          "end": 5.013,
+          "text": "Class 3 extension · Use after strings, conversion and branches."
+        },
+        {
+          "start": 5.013,
+          "end": 8.047,
+          "text": "The word \"three\" cannot be converted by int."
+        },
+        {
+          "start": 8.047,
+          "end": 13.112,
+          "text": "Catch this specific ValueError and select a fallback that the program can explain."
+        },
+        {
+          "start": 13.112,
+          "end": 16.927,
+          "text": "Use a one-step fallback when integer conversion fails."
+        },
+        {
+          "start": 16.927,
+          "end": 19.206,
+          "text": "Predict which branch sets steps."
+        },
+        {
+          "start": 19.206,
+          "end": 23.867,
+          "text": "Change only entry = \"three\" to entry = \"3\"."
+        },
+        {
+          "start": 23.867,
+          "end": 27.888,
+          "text": "Does the except body still run, and where does the duck stop?"
+        }
+      ]
+    },
+    "steps": [
+      {
+        "text": "Store the text \"three\" as a sample input value.",
+        "file": "grid-audio/try-except-line-1.mp3",
+        "line": 1,
+        "hash": "0d217f60c724ed048648",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 3.648,
+        "cues": [
+          {
+            "start": 0,
+            "end": 3.648,
+            "text": "Store the text \"three\" as a sample input value."
+          }
+        ]
+      },
+      {
+        "text": "Begin a try block containing an operation that may raise an expected error.",
+        "file": "grid-audio/try-except-line-2.mp3",
+        "line": 2,
+        "hash": "9e7d0902c59b3a1150d2",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 4.704,
+        "cues": [
+          {
+            "start": 0,
+            "end": 4.704,
+            "text": "Begin a try block containing an operation that may raise an expected error."
+          }
+        ]
+      },
+      {
+        "text": "Try to convert entry to an integer. The word \"three\" is not valid integer text, so int raises ValueError.",
+        "file": "grid-audio/try-except-line-3.mp3",
+        "line": 3,
+        "hash": "86c993bb4cbd35e702b1",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 7.8,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.708,
+            "text": "Try to convert entry to an integer."
+          },
+          {
+            "start": 2.708,
+            "end": 7.8,
+            "text": "The word \"three\" is not valid integer text, so int raises ValueError."
+          }
+        ]
+      },
+      {
+        "text": "Handle that specific ValueError here. If conversion succeeds, this handler is skipped.",
+        "file": "grid-audio/try-except-line-4.mp3",
+        "line": 4,
+        "hash": "b2bc8f4bc1e4803f9e48",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 6.36,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.708,
+            "text": "Handle that specific ValueError here."
+          },
+          {
+            "start": 2.708,
+            "end": 6.36,
+            "text": "If conversion succeeds, this handler is skipped."
+          }
+        ]
+      },
+      {
+        "text": "Set the fallback distance to 1 after the conversion fails.",
+        "file": "grid-audio/try-except-line-5.mp3",
+        "line": 5,
+        "hash": "35bb363ba5682dfe0f0d",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 4.056,
+        "cues": [
+          {
+            "start": 0,
+            "end": 4.056,
+            "text": "Set the fallback distance to 1 after the conversion fails."
+          }
+        ]
+      },
+      {
+        "text": "Continue after the try and except blocks and display the selected distance, 1 in the flagter.",
+        "file": "grid-audio/try-except-line-6.mp3",
+        "line": 6,
+        "hash": "21fa0698936b4c9ede7f",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 6.168,
+        "cues": [
+          {
+            "start": 0,
+            "end": 6.168,
+            "text": "Continue after the try and except blocks and display the selected distance, 1 in the flagter."
+          }
+        ]
+      },
+      {
+        "text": "Move by the selected distance. A successful conversion to 3 would instead move three squares.",
+        "file": "grid-audio/try-except-line-7.mp3",
+        "line": 7,
+        "hash": "5932bdc33b079c254a45",
+        "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+        "duration": 7.056,
+        "cues": [
+          {
+            "start": 0,
+            "end": 2.37,
+            "text": "Move by the selected distance."
+          },
+          {
+            "start": 2.37,
+            "end": 7.056,
+            "text": "A successful conversion to 3 would instead move three squares."
+          }
+        ]
+      }
+    ]
+  }
+}

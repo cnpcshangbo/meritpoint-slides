@@ -1,0 +1,252 @@
+{
+  "hello": {
+    "hash": "6b2ffed761d3edc4f3a2",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "Print displays the words inside the quotation marks: Hello, research! Change those words to make your own greeting, keeping both quotation marks and both parentheses.",
+        "file": "hello-w00.mp3",
+        "duration": 10.824,
+        "bytes": 64944
+      }
+    ]
+  },
+  "variables": {
+    "hash": "80b7ef819ff636e89acc",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "This assigns the number three to goals. The equals sign stores a value under a name so a later line can use it.",
+        "file": "variables-w00.mp3",
+        "duration": 7.632,
+        "bytes": 45792
+      },
+      {
+        "lines": [
+          2,
+          2
+        ],
+        "text": "This stores five in attempts. The attempt count includes every shot, whether it scored or missed.",
+        "file": "variables-w01.mp3",
+        "duration": 6.696,
+        "bytes": 40176
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "Divide goals by attempts, then multiply by one hundred to calculate a percentage. Three out of five gives sixty, which Python stores in rate.",
+        "file": "variables-w02.mp3",
+        "duration": 9.792,
+        "bytes": 58752
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "Print looks up rate and displays sixty point zero. The decimal point comes from division; this is the percentage calculated on the previous line.",
+        "file": "variables-w03.mp3",
+        "duration": 9.528,
+        "bytes": 57168
+      }
+    ]
+  },
+  "attempts": {
+    "hash": "63ae56b2736834242f56",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "This list stores five synthetic attempts in order. One means a goal and zero means a miss; there are three goals and two misses.",
+        "file": "attempts-w00.mp3",
+        "duration": 8.592,
+        "bytes": 51552
+      },
+      {
+        "lines": [
+          2,
+          2
+        ],
+        "text": "Sum adds the list entries, and print displays three. Adding zeros and ones counts goals because each goal contributes one.",
+        "file": "attempts-w01.mp3",
+        "duration": 8.592,
+        "bytes": 51552
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "Len counts the entries, and print displays five. A miss still counts as an attempt, even though its value is zero.",
+        "file": "attempts-w02.mp3",
+        "duration": 8.424,
+        "bytes": 50544
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "This divides the goal count by the attempt count and multiplies by one hundred. Print displays sixty point zero, describing the percentage for this synthetic sample.",
+        "file": "attempts-w03.mp3",
+        "duration": 10.224,
+        "bytes": 61344
+      }
+    ]
+  },
+  "distances": {
+    "hash": "477bc82dec204da1a39c",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          3
+        ],
+        "text": "These lists store the synthetic shots for near, middle, and far distances. Each has five attempts. Counting the ones gives four, three, and two goals respectively.",
+        "file": "distances-w00.mp3",
+        "duration": 11.616,
+        "bytes": 69696
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "Sum counts the goals in each distance group. This new list stores those three totals in order: four, three, and two.",
+        "file": "distances-w01.mp3",
+        "duration": 7.992,
+        "bytes": 47952
+      },
+      {
+        "lines": [
+          5,
+          5
+        ],
+        "text": "Print displays the label Goals and the list of totals. Match each position with its distance group: near first, middle second, and far third.",
+        "file": "distances-w02.mp3",
+        "duration": 9.672,
+        "bytes": 58032
+      },
+      {
+        "lines": [
+          6,
+          6
+        ],
+        "text": "The three goal totals add to nine. Dividing by three groups gives a mean of three goals per five-shot group. This output is neither meters nor a percentage.",
+        "file": "distances-w03.mp3",
+        "duration": 11.016,
+        "bytes": 66096
+      },
+      {
+        "lines": [
+          7,
+          7
+        ],
+        "text": "Max finds the largest goal total, four, and min finds the smallest, two. Print labels both results so we can tell which summary each number represents.",
+        "file": "distances-w04.mp3",
+        "duration": 11.016,
+        "bytes": 66096
+      }
+    ]
+  },
+  "chart-code": {
+    "hash": "226b77bf04627becc946",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "This imports the plotting tools from Matplotlib and gives them the short name p l t. The later drawing commands use that name.",
+        "file": "chart-code-w00.mp3",
+        "duration": 8.4,
+        "bytes": 50400
+      },
+      {
+        "lines": [
+          2,
+          4
+        ],
+        "text": "These lines define the same three groups of synthetic shots inside this program. Including them here lets this chart run independently of the earlier slides.",
+        "file": "chart-code-w01.mp3",
+        "duration": 10.152,
+        "bytes": 60912
+      },
+      {
+        "lines": [
+          5,
+          5
+        ],
+        "text": "This compact expression visits each shot list, divides its goal count by its attempt count, and multiplies by one hundred. Rates becomes eighty, sixty, and forty.",
+        "file": "chart-code-w02.mp3",
+        "duration": 11.64,
+        "bytes": 69840
+      },
+      {
+        "lines": [
+          6,
+          6
+        ],
+        "text": "Bar draws one bar for each distance label using the corresponding rate as its height. The color list gives each bar its own color; it does not change the data.",
+        "file": "chart-code-w03.mp3",
+        "duration": 9.912,
+        "bytes": 59472
+      },
+      {
+        "lines": [
+          7,
+          7
+        ],
+        "text": "This labels the vertical axis Success rate, with a percent sign. The label tells a reader how to interpret the bar heights.",
+        "file": "chart-code-w04.mp3",
+        "duration": 8.088,
+        "bytes": 48528
+      },
+      {
+        "lines": [
+          8,
+          8
+        ],
+        "text": "This sets the vertical axis from zero to one hundred. Showing the complete percentage scale helps readers judge the differences between the bars.",
+        "file": "chart-code-w05.mp3",
+        "duration": 9.024,
+        "bytes": 54144
+      },
+      {
+        "lines": [
+          9,
+          9
+        ],
+        "text": "Show displays the completed chart. Check that the labels, bar heights, and scale agree with the records and calculations above.",
+        "file": "chart-code-w06.mp3",
+        "duration": 8.304,
+        "bytes": 49824
+      }
+    ]
+  }
+}

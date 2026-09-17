@@ -187,7 +187,11 @@ def main() -> None:
 
     (OUT / "results.json").write_text(json.dumps(results, indent=2) + "\n", encoding="utf-8")
     with (OUT / "fold-results.csv").open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=["model", "fold", "accuracy", "balanced_accuracy", "roc_auc"])
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=["model", "fold", "accuracy", "balanced_accuracy", "roc_auc"],
+            lineterminator="\n",
+        )
         writer.writeheader()
         for model_name, model_result in models.items():
             for fold in model_result["folds"]:

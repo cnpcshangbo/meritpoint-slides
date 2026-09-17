@@ -28,6 +28,8 @@ header.site p{margin:3px 0 0;color:#cfe0ef;font-size:14px}
 .card .num{font-size:12px;font-weight:700;color:var(--teal);letter-spacing:1px}
 .card h3{font-size:15.5px;margin:6px 0 8px;color:var(--navy);line-height:1.32}
 .card p{font-size:13px;color:var(--muted);margin:0 0 12px;min-height:34px}
+.guide-meta{display:flex;justify-content:space-between;gap:10px;margin:2px 0 12px;padding:8px 0;border-top:1px solid var(--line);color:var(--muted);font-size:11.5px;line-height:1.3}
+.guide-meta time{color:var(--ink);font-weight:700}.guide-meta [data-guide-reads],.guide-meta [data-guide-views]{color:var(--teal);font-weight:800;font-variant-numeric:tabular-nums}
 .card .ct{display:flex;gap:6px;flex-wrap:wrap}.ct .t{font-size:11px;color:var(--muted);background:var(--cloud);border-radius:6px;padding:2px 7px}
 .card.ready .num::after{content:"● READY";float:right;color:var(--green);font-size:10px}
 /* per-class "download slides as PDF" chip (rendered as the last tag on ready cards) */

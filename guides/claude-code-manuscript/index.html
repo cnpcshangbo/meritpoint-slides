@@ -433,4 +433,4 @@ claude</pre>
   fetch('/api/comments/counts?deck='+encodeURIComponent(DECK)).then(function(r){return r.json();}).then(function(j){document.querySelectorAll('.section-comments').forEach(function(box){box.querySelector('.discussion-count').textContent=(j.counts||{})[box.dataset.section]||0;});}).catch(function(){});
 })();
 </script>
-</body></html>
+<script defer src="/meritpoint-slides/assets/guide-analytics.js" data-guide-analytics></script></body></html>
