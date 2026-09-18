@@ -1,5 +1,7 @@
 /* Real Python tracing in a disposable worker; the host owns termination/timeouts. */
-const PYODIDE_BASE = new URL('./runtime/pyodide-0.26.2/', self.location.href).href;
+// The trial runtime also bundles NumPy/Matplotlib wheels used by roaming pads.
+// Resolve beside the Python decks so static mirrors retain their URL prefix.
+const PYODIDE_BASE = new URL('../trial-lesson/runtime/pyodide-0.26.2/', self.location.href).href;
 let running = false;
 
 function post(type, details) {

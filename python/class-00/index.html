@@ -250,7 +250,7 @@
   #donateBtn,#pdfBtn,#watchBtn,#ccBtn,#listenBtn,#commentBtn,#commentPanel,#capBar,#mpAuth{display:none!important}
   #mpaLogo{display:block!important;left:16px;top:14px;width:44px;height:44px;box-shadow:none;opacity:1}
 }
-</style><link rel="stylesheet" href="class-00.css?v=2b47bc6967e1"><link rel="stylesheet" href="code-trace.css?v=42beb8fcb9d5"></head><body>
+</style><link rel="stylesheet" href="class-00.css?v=2b47bc6967e1"><link rel="stylesheet" href="code-trace.css?v=a566c1e3ecf8"><link rel="stylesheet" href="/meritpoint-slides/python/scratchpad/python-workspace.css?v=62ef8418971d"><link rel="stylesheet" href="/meritpoint-slides/assets/live-classroom.css?v=88b10c13f1b1"></head><body>
 <div class="reveal"><div class="slides">
 <section id="title" data-sid="title" class="c0-slide c0-cover" data-background-color="#0C2D52">
 <div class="c0-kicker">CLASS 0 · STUDENTS + FAMILIES · IN PERSON<span>00–01 MIN</span></div><h1>From an idea<br>to something that works.</h1><p class="c0-title-sub">Learning Python in the age of AI</p><p>Bo Shang · Merit Point Academy<br>60 minutes · No coding experience needed</p><p class="c0-small">Think together. Try a rule. Find a counterexample.</p><aside class="notes">0–1 分钟。欢迎学生与家长。开场：“今天我们先不急着装软件。我想让大家体验：一个想法，怎样变成可以运行、可以检查的东西。”介绍自己 Bo Shang。家长和学生坐在一起；没有家长的学生与同伴搭档。</aside>
@@ -1177,8 +1177,17 @@ async function getPy(statusEl){
   _py=await _pyLoading; return _py;
 }
 function labOf(el){ return el.closest('.lab'); }
+// All labs share one Python runtime and its stdout/stderr callbacks.
+let _runningLab=null;
 async function runLab(lab){
+  if(_runningLab) return;
+  _runningLab=lab;
+  const runButtons=Array.from(document.querySelectorAll('.lab .run'));
+  const disabledBefore=runButtons.map(button=>button.disabled);
+  runButtons.forEach(button=>{button.disabled=true;});
   const code=lab.querySelector('.code').value;
+  lab.dataset.liveRunCode=code; lab.dataset.liveRunId=String(Date.now()); lab.dataset.liveRunStatus='running';
+  window.dispatchEvent(new CustomEvent('courseware:python-run'));
   const out=lab.querySelector('.out'); const status=lab.querySelector('.lab-status');
   out.textContent=''; out.classList.remove('has-err'); lab.dataset.lastError='';
   try{
@@ -1192,10 +1201,16 @@ async function runLab(lab){
     await py.runPythonAsync(code);
     out.textContent=buf||'(no output — add a print(...) )';
     status.textContent='✓ done';
+    lab.dataset.liveRunStatus='success';
   }catch(err){
     const msg=(err&&err.message)?err.message:String(err);
     out.innerHTML='<span class="err">'+msg.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))+'</span>';
     lab.dataset.lastError=msg; status.textContent='✗ error — try 🐞 Debug';
+    lab.dataset.liveRunStatus='error';
+  }finally{
+    _runningLab=null;
+    runButtons.forEach((button,index)=>{button.disabled=disabledBefore[index];});
+    window.dispatchEvent(new CustomEvent('courseware:python-run'));
   }
 }
 /* very small markdown -> html for assistant replies */
@@ -1461,9 +1476,7 @@ const liveChip=document.createElement('div');
 liveChip.id='liveChip'; liveChip.style.display='none'; document.body.appendChild(liveChip);
 function setOnline(n){ liveChip.style.display=''; liveChip.textContent='🟢 '+n+' online'; }
 function sendSlide(){
-  if(!liveId) return;
-  fetch('/api/presence',{method:'POST',headers:{'content-type':'application/json'},
-    body:JSON.stringify({id:liveId,slide:curSid})}).catch(function(){});
+  // Individual slide activity is sent only by the explicit-consent live client.
 }
 function quizBySid(sid){
   const secs=document.querySelectorAll('section[data-sid]');
@@ -1492,5 +1505,6 @@ function pollLive(){ // fallback when EventSource can't stream through a proxy
 })();
 </script>
 <script defer src="/meritpoint-slides/assets/auth.js"></script>
-<script defer src="class-00.js?v=2b47bc6967e1"></script><script defer src="code-trace-client.js?v=42beb8fcb9d5"></script>
+<script defer src="class-00.js?v=2b47bc6967e1"></script><script defer src="code-trace-client.js?v=a566c1e3ecf8"></script>
+<script defer src="/meritpoint-slides/python/scratchpad/python-workspace-client.js?v=62ef8418971d"></script><script defer src="/meritpoint-slides/assets/live-classroom-client.js?v=88b10c13f1b1" data-deck="python/class-00"></script>
 </body></html>

@@ -250,7 +250,7 @@
   #donateBtn,#pdfBtn,#watchBtn,#ccBtn,#listenBtn,#commentBtn,#commentPanel,#capBar,#mpAuth{display:none!important}
   #mpaLogo{display:block!important;left:16px;top:14px;width:44px;height:44px;box-shadow:none;opacity:1}
 }
-</style></head><body>
+</style><link rel="stylesheet" href="/meritpoint-slides/python/scratchpad/python-workspace.css?v=62ef8418971d"><link rel="stylesheet" href="/meritpoint-slides/python/scratchpad/code-trace.css?v=a566c1e3ecf8"><link rel="stylesheet" href="/meritpoint-slides/assets/live-classroom.css?v=88b10c13f1b1"></head><body>
 <div class="reveal"><div class="slides">
 <section id="title" data-sid="title" class="center" data-background-gradient="linear-gradient(135deg,#0C2D52,#16406e)">
 <div class="kicker" style="color:#7fd3df">The AI Toolbox · Class 03</div>
@@ -1423,8 +1423,17 @@ async function getPy(statusEl){
   _py=await _pyLoading; return _py;
 }
 function labOf(el){ return el.closest('.lab'); }
+// All labs share one Python runtime and its stdout/stderr callbacks.
+let _runningLab=null;
 async function runLab(lab){
+  if(_runningLab) return;
+  _runningLab=lab;
+  const runButtons=Array.from(document.querySelectorAll('.lab .run'));
+  const disabledBefore=runButtons.map(button=>button.disabled);
+  runButtons.forEach(button=>{button.disabled=true;});
   const code=lab.querySelector('.code').value;
+  lab.dataset.liveRunCode=code; lab.dataset.liveRunId=String(Date.now()); lab.dataset.liveRunStatus='running';
+  window.dispatchEvent(new CustomEvent('courseware:python-run'));
   const out=lab.querySelector('.out'); const status=lab.querySelector('.lab-status');
   out.textContent=''; out.classList.remove('has-err'); lab.dataset.lastError='';
   try{
@@ -1438,10 +1447,16 @@ async function runLab(lab){
     await py.runPythonAsync(code);
     out.textContent=buf||'(no output — add a print(...) )';
     status.textContent='✓ done';
+    lab.dataset.liveRunStatus='success';
   }catch(err){
     const msg=(err&&err.message)?err.message:String(err);
     out.innerHTML='<span class="err">'+msg.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))+'</span>';
     lab.dataset.lastError=msg; status.textContent='✗ error — try 🐞 Debug';
+    lab.dataset.liveRunStatus='error';
+  }finally{
+    _runningLab=null;
+    runButtons.forEach((button,index)=>{button.disabled=disabledBefore[index];});
+    window.dispatchEvent(new CustomEvent('courseware:python-run'));
   }
 }
 /* very small markdown -> html for assistant replies */
@@ -1707,9 +1722,7 @@ const liveChip=document.createElement('div');
 liveChip.id='liveChip'; liveChip.style.display='none'; document.body.appendChild(liveChip);
 function setOnline(n){ liveChip.style.display=''; liveChip.textContent='🟢 '+n+' online'; }
 function sendSlide(){
-  if(!liveId) return;
-  fetch('/api/presence',{method:'POST',headers:{'content-type':'application/json'},
-    body:JSON.stringify({id:liveId,slide:curSid})}).catch(function(){});
+  // Individual slide activity is sent only by the explicit-consent live client.
 }
 function quizBySid(sid){
   const secs=document.querySelectorAll('section[data-sid]');
@@ -1738,4 +1751,5 @@ function pollLive(){ // fallback when EventSource can't stream through a proxy
 })();
 </script>
 <script defer src="/meritpoint-slides/assets/auth.js"></script>
+<script defer src="/meritpoint-slides/python/scratchpad/python-workspace-client.js?v=62ef8418971d"></script><script defer src="/meritpoint-slides/python/scratchpad/code-trace-client.js?v=a566c1e3ecf8"></script><script defer src="/meritpoint-slides/assets/live-classroom-client.js?v=88b10c13f1b1" data-deck="ai-toolbox/class-03"></script>
 </body></html>

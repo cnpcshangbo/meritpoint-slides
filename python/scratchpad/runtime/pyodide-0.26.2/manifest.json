@@ -1,0 +1,60 @@
+{
+  "distribution": "Pyodide",
+  "version": "0.26.2",
+  "base_url": "https://cdn.jsdelivr.net/pyodide/v0.26.2/full/",
+  "files": [
+    {
+      "filename": "pyodide-lock.json",
+      "source_url": "https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide-lock.json",
+      "bytes": 105980,
+      "sha256": "0cb7ca8faf9c35af92b4d261996ddd51dd9a6c1074ee59279f1570d67af29644"
+    },
+    {
+      "filename": "pyodide.asm.js",
+      "source_url": "https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.asm.js",
+      "bytes": 1229628,
+      "sha256": "704e56d209d8b867c8dd42e754a246db0175e448d59a46530803bdddfdfc78e0"
+    },
+    {
+      "filename": "pyodide.asm.wasm",
+      "source_url": "https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.asm.wasm",
+      "bytes": 10087885,
+      "sha256": "8f631d8453672664131b2d4c9c41f3adf5d32e9efda2cb421d3fdf38cab57a21"
+    },
+    {
+      "filename": "pyodide.js",
+      "source_url": "https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js",
+      "bytes": 14767,
+      "sha256": "037907919d58ac79dbee2eee57e96507b79fad58260ab847dc6200443915c20f"
+    },
+    {
+      "filename": "python_stdlib.zip",
+      "source_url": "https://cdn.jsdelivr.net/pyodide/v0.26.2/full/python_stdlib.zip",
+      "bytes": 2341761,
+      "sha256": "0dd443755a0244ae3052f2e0834413d68c43f362c651edd47b785ea9d26e4853"
+    }
+  ],
+  "total_bytes": 13780021,
+  "errors": [],
+  "runtime_validation": {
+    "environment": "Node.js v22.19.0",
+    "index_url": "local filesystem directory",
+    "python_version": "3.12.1",
+    "passed": [
+      "loadPyodide with default packages",
+      "import sys, json, io, contextlib",
+      "sum([1, 0, 1, 1, 0]) == 3",
+      "sys.settrace callable",
+      "io.StringIO callable"
+    ],
+    "required_wheels": [],
+    "note": "Default loader packages list is empty. micropip and packaging are optional and were not downloaded; the stdlib runtime initialized successfully with these five files."
+  },
+  "license": {
+    "filename": "LICENSE",
+    "source_url": "https://raw.githubusercontent.com/pyodide/pyodide/0.26.2/LICENSE",
+    "version": "0.26.2",
+    "bytes": 16725,
+    "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+  }
+}

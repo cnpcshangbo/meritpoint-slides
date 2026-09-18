@@ -1,6 +1,7 @@
 /* Execution snapshots are captured once; playback never reruns student code. */
 (() => {
   'use strict';
+  if (window.PythonCodeTrace) return;
   const script = document.currentScript;
   const workerURL = new URL('code-trace-worker.js', script.src);
   workerURL.search = new URL(script.src).search;
@@ -16,11 +17,11 @@
   document.body.append(dialog);
   const $ = selector => dialog.querySelector(selector);
   const controls = ['first', 'prev', 'play', 'next', 'last', 'position'];
-  let worker = null, timer = null, playTimer = null, opener = null, source = '', packages = [], steps = [], at = 0, serial = 0;
+  let worker = null, timer = null, playTimer = null, opener = null, source = '', packages = [], steps = [], at = 0, serial = 0, closeCallback = null;
   const el = (tag, className, text) => { const node = document.createElement(tag); if (className) node.className = className; if (text !== undefined) node.textContent = text; return node; };
   function pause() { clearTimeout(playTimer); playTimer = null; $('[data-ct-play]').textContent = '▶ Play'; }
   function stopWorker() { serial++; clearTimeout(timer); timer = null; if (worker) worker.terminate(); worker = null; $('[data-ct-stop]').hidden = true; }
-  function close() { pause(); stopWorker(); if (dialog.open) dialog.close(); if (opener?.isConnected) opener.focus(); }
+  function close() { pause(); stopWorker(); if (dialog.open) dialog.close(); if (opener?.isConnected) opener.focus(); const callback = closeCallback; closeCallback = null; callback?.(); }
   function valueNode(value) {
     if (value?.kind === 'ref') {
       const button = el('button', 'ct-ref', '→ ' + value.id);
@@ -166,15 +167,21 @@
     window.TrialLesson?.stopAudio();
     if (document.querySelector('[data-cancel]:not([hidden]), #preparePython:disabled')) window.TrialLesson?.terminatePython('Run stopped to visualize code.');
     const lab = button.closest('.lab, .tl-lab');
-    source = lab.querySelector('textarea.code').value;
-    packages = (lab.dataset.packages || '').split(',').map(s => s.trim()).filter(Boolean);
-    opener = button;
+    openCode({code: lab.querySelector('textarea.code').value, packages: (lab.dataset.packages || '').split(',').map(s => s.trim()).filter(Boolean), opener: button});
+  }
+  function openCode(options = {}) {
+    if (dialog.open) close();
+    source = String(options.code || '').slice(0, 20000);
+    packages = Array.isArray(options.packages) ? options.packages : [];
+    opener = options.opener || document.activeElement;
+    closeCallback = typeof options.onClose === 'function' ? options.onClose : null;
     const code = $('[data-ct-code]'); code.replaceChildren();
     source.split('\n').forEach((line, i) => { const row = el('div', 'ct-code-line'); row.append(el('span', 'ct-line-number', String(i + 1)), el('code', '', line || ' ')); code.append(row); });
     $('[data-ct-frames]').replaceChildren(); $('[data-ct-heap]').replaceChildren(); $('[data-ct-output]').textContent = ''; $('[data-ct-count]').textContent = '';
     $('[data-ct-position]').value = 0; $('[data-ct-position]').max = 0;
     dialog.showModal(); $('[data-ct-close]').focus(); trace();
   }
+  window.PythonCodeTrace = {openCode, close, getSnapshot: () => dialog.open ? {code: source, output: steps[at]?.stdout || '', status: worker ? 'running' : steps.at(-1)?.event === 'error' ? 'error' : 'idle', step: at + 1, line: steps[at]?.line || null} : null};
   for (const lab of document.querySelectorAll('.lab, .tl-lab')) {
     const bar = lab.querySelector('.lab-bar, .tl-lab-actions');
     if (!bar || !lab.querySelector('textarea.code')) continue;
