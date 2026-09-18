@@ -1,0 +1,354 @@
+{
+  "first-run": {
+    "hash": "55698fd6ad2327ec52bf",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Welcome to your soccer data lab. You will do the experimenting. Press Run Python to try the starter, then replace Soccer Lab with a nickname or a made-up lab name. Keep the quotation marks and parentheses. Before running your edit, predict the exact words you will see. Point to your changed code and its result. Your data and team names can all be invented.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 2.135,
+        "text": "Welcome to your soccer data lab."
+      },
+      {
+        "start": 2.135,
+        "end": 3.997,
+        "text": "You will do the experimenting."
+      },
+      {
+        "start": 3.997,
+        "end": 10.365,
+        "text": "Press Run Python to try the starter, then replace Soccer Lab with a nickname or a made-up lab name."
+      },
+      {
+        "start": 10.365,
+        "end": 13.372,
+        "text": "Keep the quotation marks and parentheses."
+      },
+      {
+        "start": 13.372,
+        "end": 17.422,
+        "text": "Before running your edit, predict the exact words you will see."
+      },
+      {
+        "start": 17.422,
+        "end": 20.547,
+        "text": "Point to your changed code and its result."
+      },
+      {
+        "start": 20.547,
+        "end": 23.904,
+        "text": "Your data and team names can all be invented."
+      }
+    ],
+    "duration": 23.904,
+    "bytes": 143424
+  },
+  "named-numbers": {
+    "hash": "b192cc67c69f318f70fb",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "This invented practice has three goals in five attempts. Before running, predict what the program will print. Will its first rate be three, five, or sixty? Run to check. Then change goals to four, keeping attempts at five. Predict again and run a second time. Explain which input you changed and which one you kept the same.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.776,
+        "text": "This invented practice has three goals in five attempts."
+      },
+      {
+        "start": 3.776,
+        "end": 6.966,
+        "text": "Before running, predict what the program will print."
+      },
+      {
+        "start": 6.966,
+        "end": 10.845,
+        "text": "Will its first rate be three, five, or sixty?"
+      },
+      {
+        "start": 10.845,
+        "end": 12.018,
+        "text": "Run to check."
+      },
+      {
+        "start": 12.018,
+        "end": 15.56,
+        "text": "Then change goals to four, keeping attempts at five."
+      },
+      {
+        "start": 15.56,
+        "end": 18.451,
+        "text": "Predict again and run a second time."
+      },
+      {
+        "start": 18.451,
+        "end": 22.608,
+        "text": "Explain which input you changed and which one you kept the same."
+      }
+    ],
+    "duration": 22.608,
+    "bytes": 135648
+  },
+  "count-shots": {
+    "hash": "2840854c9ace7bb1759e",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Each item in this invented list represents one attempt. One means a goal and zero means a miss. Count the goals and attempts by hand, then run Python to check. For experiment A, replace exactly one zero with one. Do not add or remove any items. Predict what will change, run again, and explain whether the number of attempts changed.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.932,
+        "text": "Each item in this invented list represents one attempt."
+      },
+      {
+        "start": 3.932,
+        "end": 7.383,
+        "text": "One means a goal and zero means a miss."
+      },
+      {
+        "start": 7.383,
+        "end": 11.992,
+        "text": "Count the goals and attempts by hand, then run Python to check."
+      },
+      {
+        "start": 11.992,
+        "end": 16.445,
+        "text": "For experiment A, replace exactly one zero with one."
+      },
+      {
+        "start": 16.445,
+        "end": 19.115,
+        "text": "Do not add or remove any items."
+      },
+      {
+        "start": 19.115,
+        "end": 24.96,
+        "text": "Predict what will change, run again, and explain whether the number of attempts changed."
+      }
+    ],
+    "duration": 24.96,
+    "bytes": 149760
+  },
+  "debug-and-test": {
+    "hash": "7cf1c5f044a5a1fcfef3",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "This independent starter begins again with the original five attempts. It contains one deliberate mistake in a variable name. Run it and read the final error line. Compare the name being used with the names defined above. Repair the name and run again. For experiment B, add one new goal to the list. Predict whether this will match experiment A, then test your idea. An error is a clue you can investigate.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 4.44,
+        "text": "This independent starter begins again with the original five attempts."
+      },
+      {
+        "start": 4.44,
+        "end": 8.151,
+        "text": "It contains one deliberate mistake in a variable name."
+      },
+      {
+        "start": 8.151,
+        "end": 11.042,
+        "text": "Run it and read the final error line."
+      },
+      {
+        "start": 11.042,
+        "end": 14.713,
+        "text": "Compare the name being used with the names defined above."
+      },
+      {
+        "start": 14.713,
+        "end": 17.096,
+        "text": "Repair the name and run again."
+      },
+      {
+        "start": 17.096,
+        "end": 20.859,
+        "text": "For experiment B, add one new goal to the list."
+      },
+      {
+        "start": 20.859,
+        "end": 25.169,
+        "text": "Predict whether this will match experiment A, then test your idea."
+      },
+      {
+        "start": 25.169,
+        "end": 27.96,
+        "text": "An error is a clue you can investigate."
+      }
+    ],
+    "duration": 27.96,
+    "bytes": 167760
+  },
+  "fair-comparison": {
+    "hash": "3408c12508c008159d55",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "These two invented groups have different numbers of attempts. Count both goals and attempts before comparing them. The nine meter group has more goals. Does that guarantee a higher success rate? Predict the two bar heights, then run the supplied chart. Change one miss to a goal in the nine meter group without changing the number of attempts. Run again and compare the printed rates with the bars. You may use the plotting scaffold without memorizing it. Invented data cannot prove what distance does to a real player.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.255,
+        "text": "These two invented groups have different numbers of attempts."
+      },
+      {
+        "start": 3.255,
+        "end": 6.745,
+        "text": "Count both goals and attempts before comparing them."
+      },
+      {
+        "start": 6.745,
+        "end": 9.141,
+        "text": "The nine meter group has more goals."
+      },
+      {
+        "start": 9.141,
+        "end": 11.797,
+        "text": "Does that guarantee a higher success rate?"
+      },
+      {
+        "start": 11.797,
+        "end": 15.638,
+        "text": "Predict the two bar heights, then run the supplied chart."
+      },
+      {
+        "start": 15.638,
+        "end": 21.003,
+        "text": "Change one miss to a goal in the nine meter group without changing the number of attempts."
+      },
+      {
+        "start": 21.003,
+        "end": 24.44,
+        "text": "Run again and compare the printed rates with the bars."
+      },
+      {
+        "start": 24.44,
+        "end": 27.656,
+        "text": "You may use the plotting scaffold without memorizing it."
+      },
+      {
+        "start": 27.656,
+        "end": 31.968,
+        "text": "Invented data cannot prove what distance does to a real player."
+      }
+    ],
+    "duration": 31.968,
+    "bytes": 191808
+  },
+  "my-experiment": {
+    "hash": "153d181be576c9428b8e",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Now choose your own question. What happens if you add a goal, add a miss, or replace a miss? First run the unchanged baseline. Write down your prediction and the values you will keep unchanged. Then make one planned edit to the test list and give your experiment a matching title. Run again. Keep your code, printed results, chart, and explanation together. Your finding should include both goals and attempts. A title alone is not a change to the data.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 1.927,
+        "text": "Now choose your own question."
+      },
+      {
+        "start": 1.927,
+        "end": 6.654,
+        "text": "What happens if you add a goal, add a miss, or replace a miss?"
+      },
+      {
+        "start": 6.654,
+        "end": 9.401,
+        "text": "First run the unchanged baseline."
+      },
+      {
+        "start": 9.401,
+        "end": 13.424,
+        "text": "Write down your prediction and the values you will keep unchanged."
+      },
+      {
+        "start": 13.424,
+        "end": 18.866,
+        "text": "Then make one planned edit to the test list and give your experiment a matching title."
+      },
+      {
+        "start": 18.866,
+        "end": 19.87,
+        "text": "Run again."
+      },
+      {
+        "start": 19.87,
+        "end": 24.505,
+        "text": "Keep your code, printed results, chart, and explanation together."
+      },
+      {
+        "start": 24.505,
+        "end": 27.839,
+        "text": "Your finding should include both goals and attempts."
+      },
+      {
+        "start": 27.839,
+        "end": 30.816,
+        "text": "A title alone is not a change to the data."
+      }
+    ],
+    "duration": 30.816,
+    "bytes": 184896
+  },
+  "share-and-keep": {
+    "hash": "139ac05e7adf5d5354e1",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Your own experiment from round six is here. Finish four sentences: I predicted. I changed. I found. And, this does not prove. Use the actual goals, attempts, and percentage from your own result. Explain your work to a classmate in about thirty seconds, pointing to the decision you made. Download a backup and your Python code so you can keep experimenting. These invented shots cannot establish a real player’s ability.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 2.904,
+        "text": "Your own experiment from round six is here."
+      },
+      {
+        "start": 2.904,
+        "end": 6.107,
+        "text": "Finish four sentences: I predicted."
+      },
+      {
+        "start": 6.107,
+        "end": 7.461,
+        "text": "I changed."
+      },
+      {
+        "start": 7.461,
+        "end": 8.659,
+        "text": "I found."
+      },
+      {
+        "start": 8.659,
+        "end": 10.742,
+        "text": "And, this does not prove."
+      },
+      {
+        "start": 10.742,
+        "end": 15.391,
+        "text": "Use the actual goals, attempts, and percentage from your own result."
+      },
+      {
+        "start": 15.391,
+        "end": 20.729,
+        "text": "Explain your work to a classmate in about thirty seconds, pointing to the decision you made."
+      },
+      {
+        "start": 20.729,
+        "end": 25.156,
+        "text": "Download a backup and your Python code so you can keep experimenting."
+      },
+      {
+        "start": 25.156,
+        "end": 29.016,
+        "text": "These invented shots cannot establish a real player’s ability."
+      }
+    ],
+    "duration": 29.016,
+    "bytes": 174096
+  }
+}
