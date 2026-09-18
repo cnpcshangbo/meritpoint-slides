@@ -1,0 +1,174 @@
+{
+  "lessonId": "python-trial-lesson",
+  "watchUrl": "https://academic.hopeembark.org/watch?lesson=python-trial-lesson",
+  "videoDuration": 2976.775011,
+  "source": {
+    "storyboardSha256": "b02da2ec7895cc65e2d59d33c4fb97f0046e96b8986c3acaced97ff2c6449620",
+    "transcriptSha256": "a194fb0f8a0dd522edff6d860bf4a296ec3f269d82ad7f1c4503ab85d5e8d00e",
+    "videoSha256": "88a85f56314a0de5efd38594e02b5b50d1d2da116ef59677ea3625df53bbf296"
+  },
+  "slides": [
+    {
+      "sid": "title",
+      "t": 0,
+      "title": "Your first Python research experiment.",
+      "sceneKey": "s001"
+    },
+    {
+      "sid": "academy",
+      "t": 52.16,
+      "title": "Students first. Growth for the long term.",
+      "sceneKey": "s003"
+    },
+    {
+      "sid": "history",
+      "t": 87.58,
+      "title": "Built around what students need.",
+      "sceneKey": "s004"
+    },
+    {
+      "sid": "ai-approach",
+      "t": 149.99,
+      "title": "AI expands the toolkit. Students lead the research.",
+      "sceneKey": "s006"
+    },
+    {
+      "sid": "mentors",
+      "t": 179.08,
+      "title": "Meet the mentor team.",
+      "sceneKey": "s007"
+    },
+    {
+      "sid": "pathway",
+      "t": 211.11,
+      "title": "From Python to your own research.",
+      "sceneKey": "s008"
+    },
+    {
+      "sid": "phase-one",
+      "t": 248.5,
+      "title": "Python: from code to data.",
+      "sceneKey": "s009"
+    },
+    {
+      "sid": "syllabus-project",
+      "t": 279.74,
+      "title": "Python: from models to research.",
+      "sceneKey": "s010"
+    },
+    {
+      "sid": "mission",
+      "t": 313.57,
+      "title": "Make something you can explain.",
+      "sceneKey": "s011"
+    },
+    {
+      "sid": "python-uses",
+      "t": 366.72,
+      "title": "What can Python do?",
+      "sceneKey": "s013"
+    },
+    {
+      "sid": "question",
+      "t": 446.09,
+      "title": "Does scoring change with distance?",
+      "sceneKey": "s016"
+    },
+    {
+      "sid": "workspace",
+      "t": 610.52,
+      "title": "Your browser is a tiny research lab.",
+      "sceneKey": "s022"
+    },
+    {
+      "sid": "hello",
+      "t": 693.91,
+      "title": "Make Python say something.",
+      "sceneKey": "s025"
+    },
+    {
+      "sid": "variables",
+      "t": 876.26,
+      "title": "Give the numbers a name.",
+      "sceneKey": "s031"
+    },
+    {
+      "sid": "attempts",
+      "t": 1053.95,
+      "title": "A list remembers every attempt.",
+      "sceneKey": "s037"
+    },
+    {
+      "sid": "distances",
+      "t": 1233.91,
+      "title": "Compare the same kind of number.",
+      "sceneKey": "s043"
+    },
+    {
+      "sid": "chart-code",
+      "t": 1417.49,
+      "title": "Turn the table into a picture.",
+      "sceneKey": "s049"
+    },
+    {
+      "sid": "read-chart",
+      "t": 1573.47,
+      "title": "What does your chart actually say?",
+      "sceneKey": "s054"
+    },
+    {
+      "sid": "challenge",
+      "t": 1785.46,
+      "title": "One small edit. Predict before you run.",
+      "sceneKey": "s061"
+    },
+    {
+      "sid": "reveal",
+      "t": 1884.05,
+      "title": "The denominator changes the story.",
+      "sceneKey": "s064"
+    },
+    {
+      "sid": "ai-next",
+      "t": 2238.72,
+      "title": "What if the data become more complex?",
+      "sceneKey": "s075"
+    },
+    {
+      "sid": "ai-check",
+      "t": 2359.54,
+      "title": "AI can suggest. You still check.",
+      "sceneKey": "s079"
+    },
+    {
+      "sid": "real-project",
+      "t": 2478.97,
+      "title": "The same habit appears in real projects.",
+      "sceneKey": "s083"
+    },
+    {
+      "sid": "poster",
+      "t": 2571.43,
+      "title": "Your notebook can become a poster.",
+      "sceneKey": "s086"
+    },
+    {
+      "sid": "share",
+      "t": 2700.54,
+      "title": "Give a 30-second research talk.",
+      "sceneKey": "s090"
+    },
+    {
+      "sid": "exit-ticket",
+      "t": 2793.36,
+      "title": "Keep your evidence.",
+      "sceneKey": "s093"
+    },
+    {
+      "sid": "next",
+      "t": 2917.65,
+      "title": "What would you try next?",
+      "sceneKey": "s097"
+    }
+  ]
+}
