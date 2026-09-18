@@ -1,0 +1,658 @@
+{
+  "first-run": {
+    "hash": "5f51f17a62139fbe536d",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "Print displays the words inside the quotation marks. Edit those words while keeping the quotation marks and parentheses.",
+        "file": "first-run-w00.mp3",
+        "duration": 7.752,
+        "bytes": 46512
+      }
+    ]
+  },
+  "named-numbers": {
+    "hash": "265b4712ceb45dd1b463",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "This assigns three to the name goals. Later lines can use that name to look up its value.",
+        "file": "named-numbers-w00.mp3",
+        "duration": 6.144,
+        "bytes": 36864
+      },
+      {
+        "lines": [
+          2,
+          2
+        ],
+        "text": "This assigns five to attempts. Every attempt counts, whether it scores or misses.",
+        "file": "named-numbers-w01.mp3",
+        "duration": 6.216,
+        "bytes": 37296
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "Divide goals by attempts, then multiply by one hundred. Store the percentage in rate.",
+        "file": "named-numbers-w02.mp3",
+        "duration": 6.096,
+        "bytes": 36576
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "Print displays a label, the value of rate, and a percent sign. The label helps explain what the number means.",
+        "file": "named-numbers-w03.mp3",
+        "duration": 7.32,
+        "bytes": 43920
+      }
+    ]
+  },
+  "count-shots": {
+    "hash": "70b153eb54f9adf21fa1",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "Shots is a list of five invented attempts. Each one means a goal; each zero means a miss. Commas separate the items.",
+        "file": "count-shots-w00.mp3",
+        "duration": 9.648,
+        "bytes": 57888
+      },
+      {
+        "lines": [
+          2,
+          2
+        ],
+        "text": "Sum adds the list values. Because each goal contributes one and each miss contributes zero, this counts goals.",
+        "file": "count-shots-w01.mp3",
+        "duration": 8.424,
+        "bytes": 50544
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "Len counts every item in the list, including zeros. This gives the total number of attempts.",
+        "file": "count-shots-w02.mp3",
+        "duration": 6.48,
+        "bytes": 38880
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "Divide the goal count by the attempt count and multiply by one hundred to calculate the percentage.",
+        "file": "count-shots-w03.mp3",
+        "duration": 5.976,
+        "bytes": 35856
+      },
+      {
+        "lines": [
+          5,
+          5
+        ],
+        "text": "Print displays the number of goals with its label.",
+        "file": "count-shots-w04.mp3",
+        "duration": 3.048,
+        "bytes": 18288
+      },
+      {
+        "lines": [
+          6,
+          6
+        ],
+        "text": "Print displays the number of attempts with its label.",
+        "file": "count-shots-w05.mp3",
+        "duration": 2.928,
+        "bytes": 17568
+      },
+      {
+        "lines": [
+          7,
+          7
+        ],
+        "text": "Round with the number one displays the rate to one decimal place. Print adds a label and percent sign.",
+        "file": "count-shots-w06.mp3",
+        "duration": 7.296,
+        "bytes": 43776
+      }
+    ]
+  },
+  "debug-and-test": {
+    "hash": "c8db532bf4aff2ddba4a",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "This independent experiment starts with the original five attempts. It does not copy your previous round’s edit.",
+        "file": "debug-and-test-w00.mp3",
+        "duration": 6.84,
+        "bytes": 41040
+      },
+      {
+        "lines": [
+          2,
+          2
+        ],
+        "text": "Sum adds the values and stores the goal count under goals, with an s.",
+        "file": "debug-and-test-w01.mp3",
+        "duration": 5.136,
+        "bytes": 30816
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "Len counts the attempts, including missed shots.",
+        "file": "debug-and-test-w02.mp3",
+        "duration": 3.48,
+        "bytes": 20880
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "This starter deliberately uses goal without an s. No value has been assigned to that name, so Python raises a name error. Compare it with goals above, repair the spelling, and run again.",
+        "file": "debug-and-test-w03.mp3",
+        "duration": 13.032,
+        "bytes": 78192
+      },
+      {
+        "lines": [
+          5,
+          5
+        ],
+        "text": "After the earlier error is repaired, this line can print the goal count.",
+        "file": "debug-and-test-w04.mp3",
+        "duration": 4.992,
+        "bytes": 29952
+      },
+      {
+        "lines": [
+          6,
+          6
+        ],
+        "text": "This line prints the attempt count. Adding a new list item changes this count, too.",
+        "file": "debug-and-test-w05.mp3",
+        "duration": 6.168,
+        "bytes": 37008
+      },
+      {
+        "lines": [
+          7,
+          7
+        ],
+        "text": "This prints the calculated percentage rounded to one decimal place. Compare it with the earlier experiment that replaced a result instead of adding an attempt.",
+        "file": "debug-and-test-w06.mp3",
+        "duration": 9.864,
+        "bytes": 59184
+      }
+    ]
+  },
+  "fair-comparison": {
+    "hash": "822e2458b2b17b388bcc",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "Import loads Matplotlib’s plotting tools and names them p l t. This is supplied scaffolding you can use without memorizing it.",
+        "file": "fair-comparison-w00.mp3",
+        "duration": 8.76,
+        "bytes": 52560
+      },
+      {
+        "lines": [
+          2,
+          2
+        ],
+        "text": "A line beginning with a hash is a comment for people. This reminds you how the shot records are encoded.",
+        "file": "fair-comparison-w01.mp3",
+        "duration": 6.576,
+        "bytes": 39456
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "Near stores five invented attempts for the three meter group. Each list item records one attempt.",
+        "file": "fair-comparison-w02.mp3",
+        "duration": 6.888,
+        "bytes": 41328
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "Far stores ten invented attempts for the nine meter group. A larger group can have more goals without a higher percentage.",
+        "file": "fair-comparison-w03.mp3",
+        "duration": 8.736,
+        "bytes": 52416
+      },
+      {
+        "lines": [
+          5,
+          5
+        ],
+        "text": "Sum near counts its goals. Len near counts its attempts. Dividing these and multiplying by one hundred gives the near percentage.",
+        "file": "fair-comparison-w04.mp3",
+        "duration": 9.024,
+        "bytes": 54144
+      },
+      {
+        "lines": [
+          6,
+          6
+        ],
+        "text": "Apply the same calculation to the far list. Each group uses its own number of attempts.",
+        "file": "fair-comparison-w05.mp3",
+        "duration": 6.048,
+        "bytes": 36288
+      },
+      {
+        "lines": [
+          7,
+          7
+        ],
+        "text": "Print displays the three meter group’s goals, attempts, and rounded percentage. Keep all three numbers when you compare groups.",
+        "file": "fair-comparison-w06.mp3",
+        "duration": 7.944,
+        "bytes": 47664
+      },
+      {
+        "lines": [
+          8,
+          8
+        ],
+        "text": "Print displays the same information for the nine meter group so the comparison is visible as text, too.",
+        "file": "fair-comparison-w07.mp3",
+        "duration": 6.792,
+        "bytes": 40752
+      },
+      {
+        "lines": [
+          9,
+          9
+        ],
+        "text": "This comment marks the supplied plotting scaffold. Your experiment changes list data above it.",
+        "file": "fair-comparison-w08.mp3",
+        "duration": 6.408,
+        "bytes": 38448
+      },
+      {
+        "lines": [
+          10,
+          10
+        ],
+        "text": "Bar draws the near and far rates in the same order as the three meter and nine meter labels.",
+        "file": "fair-comparison-w09.mp3",
+        "duration": 5.976,
+        "bytes": 35856
+      },
+      {
+        "lines": [
+          11,
+          11
+        ],
+        "text": "The vertical axis runs from zero to one hundred. Keeping the full percentage scale helps you compare the bars.",
+        "file": "fair-comparison-w10.mp3",
+        "duration": 7.176,
+        "bytes": 43056
+      },
+      {
+        "lines": [
+          12,
+          12
+        ],
+        "text": "This labels the vertical axis as goal rate in percent.",
+        "file": "fair-comparison-w11.mp3",
+        "duration": 3.768,
+        "bytes": 22608
+      },
+      {
+        "lines": [
+          13,
+          13
+        ],
+        "text": "Show displays the chart built from this run. Check that the bar heights agree with the printed rates.",
+        "file": "fair-comparison-w12.mp3",
+        "duration": 6.024,
+        "bytes": 36144
+      }
+    ]
+  },
+  "my-experiment": {
+    "hash": "58073a4a15da87ca895b",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "This loads the supplied plotting tools and gives them the short name p l t.",
+        "file": "my-experiment-w00.mp3",
+        "duration": 5.016,
+        "bytes": 30096
+      },
+      {
+        "lines": [
+          2,
+          2
+        ],
+        "text": "Experiment stores your title as text. Rename it to describe your planned data edit. A title alone does not change the results.",
+        "file": "my-experiment-w01.mp3",
+        "duration": 8.376,
+        "bytes": 50256
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "Baseline stores the original invented attempts. Keep this list unchanged so you have a comparison.",
+        "file": "my-experiment-w02.mp3",
+        "duration": 6.984,
+        "bytes": 41904
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "Test starts as a separate list with the same values. Make your one planned edit here after predicting and running the baseline.",
+        "file": "my-experiment-w03.mp3",
+        "duration": 8.016,
+        "bytes": 48096
+      },
+      {
+        "lines": [
+          5,
+          5
+        ],
+        "text": "Calculate the baseline percentage using its goals and attempts.",
+        "file": "my-experiment-w04.mp3",
+        "duration": 4.704,
+        "bytes": 28224
+      },
+      {
+        "lines": [
+          6,
+          6
+        ],
+        "text": "Calculate the test percentage using its own goals and attempts. Adding an item changes the number of attempts as well.",
+        "file": "my-experiment-w05.mp3",
+        "duration": 8.088,
+        "bytes": 48528
+      },
+      {
+        "lines": [
+          7,
+          7
+        ],
+        "text": "Print displays your experiment title.",
+        "file": "my-experiment-w06.mp3",
+        "duration": 2.544,
+        "bytes": 15264
+      },
+      {
+        "lines": [
+          8,
+          8
+        ],
+        "text": "Print displays the baseline goal count, attempt count, and rounded percentage.",
+        "file": "my-experiment-w07.mp3",
+        "duration": 5.448,
+        "bytes": 32688
+      },
+      {
+        "lines": [
+          9,
+          9
+        ],
+        "text": "Print displays your test’s goal count, attempt count, and rounded percentage. Use these actual numbers in your finding.",
+        "file": "my-experiment-w08.mp3",
+        "duration": 7.704,
+        "bytes": 46224
+      },
+      {
+        "lines": [
+          10,
+          10
+        ],
+        "text": "This comment marks the provided chart scaffold. You can use it without memorizing the drawing commands.",
+        "file": "my-experiment-w09.mp3",
+        "duration": 6.36,
+        "bytes": 38160
+      },
+      {
+        "lines": [
+          11,
+          11
+        ],
+        "text": "Draw two bars for the baseline and test percentages, in that order.",
+        "file": "my-experiment-w10.mp3",
+        "duration": 4.872,
+        "bytes": 29232
+      },
+      {
+        "lines": [
+          12,
+          12
+        ],
+        "text": "Keep the vertical axis between zero and one hundred for both bars.",
+        "file": "my-experiment-w11.mp3",
+        "duration": 4.728,
+        "bytes": 28368
+      },
+      {
+        "lines": [
+          13,
+          13
+        ],
+        "text": "Label the vertical axis as goal rate in percent.",
+        "file": "my-experiment-w12.mp3",
+        "duration": 3.528,
+        "bytes": 21168
+      },
+      {
+        "lines": [
+          14,
+          14
+        ],
+        "text": "Display the chart for this run. If you edit the code again, run again before describing the new result.",
+        "file": "my-experiment-w13.mp3",
+        "duration": 6.384,
+        "bytes": 38304
+      }
+    ]
+  },
+  "share-and-keep": {
+    "hash": "58073a4a15da87ca895b",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "This loads the supplied plotting tools and gives them the short name p l t.",
+        "file": "share-and-keep-w00.mp3",
+        "duration": 5.016,
+        "bytes": 30096
+      },
+      {
+        "lines": [
+          2,
+          2
+        ],
+        "text": "Experiment stores your title as text. Rename it to describe your planned data edit. A title alone does not change the results.",
+        "file": "share-and-keep-w01.mp3",
+        "duration": 8.376,
+        "bytes": 50256
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "Baseline stores the original invented attempts. Keep this list unchanged so you have a comparison.",
+        "file": "share-and-keep-w02.mp3",
+        "duration": 6.888,
+        "bytes": 41328
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "Test starts as a separate list with the same values. Make your one planned edit here after predicting and running the baseline.",
+        "file": "share-and-keep-w03.mp3",
+        "duration": 8.016,
+        "bytes": 48096
+      },
+      {
+        "lines": [
+          5,
+          5
+        ],
+        "text": "Calculate the baseline percentage using its goals and attempts.",
+        "file": "share-and-keep-w04.mp3",
+        "duration": 4.704,
+        "bytes": 28224
+      },
+      {
+        "lines": [
+          6,
+          6
+        ],
+        "text": "Calculate the test percentage using its own goals and attempts. Adding an item changes the number of attempts as well.",
+        "file": "share-and-keep-w05.mp3",
+        "duration": 8.088,
+        "bytes": 48528
+      },
+      {
+        "lines": [
+          7,
+          7
+        ],
+        "text": "Print displays your experiment title.",
+        "file": "share-and-keep-w06.mp3",
+        "duration": 2.544,
+        "bytes": 15264
+      },
+      {
+        "lines": [
+          8,
+          8
+        ],
+        "text": "Print displays the baseline goal count, attempt count, and rounded percentage.",
+        "file": "share-and-keep-w07.mp3",
+        "duration": 5.448,
+        "bytes": 32688
+      },
+      {
+        "lines": [
+          9,
+          9
+        ],
+        "text": "Print displays your test’s goal count, attempt count, and rounded percentage. Use these actual numbers in your finding.",
+        "file": "share-and-keep-w08.mp3",
+        "duration": 7.704,
+        "bytes": 46224
+      },
+      {
+        "lines": [
+          10,
+          10
+        ],
+        "text": "This comment marks the provided chart scaffold. You can use it without memorizing the drawing commands.",
+        "file": "share-and-keep-w09.mp3",
+        "duration": 6.432,
+        "bytes": 38592
+      },
+      {
+        "lines": [
+          11,
+          11
+        ],
+        "text": "Draw two bars for the baseline and test percentages, in that order.",
+        "file": "share-and-keep-w10.mp3",
+        "duration": 4.872,
+        "bytes": 29232
+      },
+      {
+        "lines": [
+          12,
+          12
+        ],
+        "text": "Keep the vertical axis between zero and one hundred for both bars.",
+        "file": "share-and-keep-w11.mp3",
+        "duration": 4.728,
+        "bytes": 28368
+      },
+      {
+        "lines": [
+          13,
+          13
+        ],
+        "text": "Label the vertical axis as goal rate in percent.",
+        "file": "share-and-keep-w12.mp3",
+        "duration": 3.528,
+        "bytes": 21168
+      },
+      {
+        "lines": [
+          14,
+          14
+        ],
+        "text": "Display the chart for this run. If you edit the code again, run again before describing the new result.",
+        "file": "share-and-keep-w13.mp3",
+        "duration": 6.384,
+        "bytes": 38304
+      }
+    ]
+  }
+}

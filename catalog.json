@@ -853,6 +853,22 @@
       "trialLessonUrl": "/meritpoint-slides/python/trial-lesson/",
       "decks": [
         {
+          "id": "trial-lab",
+          "n": 0,
+          "numLabel": "TRIAL LAB · 50 MIN",
+          "title": "Python Trial Lab · Less Watching, More Making",
+          "summary": "Seven hands-on rounds for a small class: change Python, predict results, fix a bug, compare invented soccer data, make a chart and share your own experiment. Saved code and notes, a roaming Python pad, and a Chinese teacher guide.",
+          "tags": [
+            "trial lab",
+            "hands-on",
+            "beginner",
+            "Python"
+          ],
+          "duration": "50 min",
+          "status": "ready",
+          "noPdf": true
+        },
+        {
           "id": "trial-lesson",
           "n": 0,
           "numLabel": "TRIAL · 50 MIN",
