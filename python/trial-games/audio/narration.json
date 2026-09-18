@@ -1,0 +1,350 @@
+{
+  "mascot": {
+    "hash": "2310a971e035d3ac282c",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Make a mascot from simple shapes. Run the starter first. Before changing x from one hundred twenty to two hundred sixty, predict which way the face will move. Run your edit and point to the change. The drawing lines are provided tools. You only need to explain the value you changed. If you want another experiment, change the color or the y position, one at a time.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 2.539,
+        "text": "Make a mascot from simple shapes."
+      },
+      {
+        "start": 2.539,
+        "end": 4.245,
+        "text": "Run the starter first."
+      },
+      {
+        "start": 4.245,
+        "end": 10.533,
+        "text": "Before changing x from one hundred twenty to two hundred sixty, predict which way the face will move."
+      },
+      {
+        "start": 10.533,
+        "end": 13.125,
+        "text": "Run your edit and point to the change."
+      },
+      {
+        "start": 13.125,
+        "end": 15.69,
+        "text": "The drawing lines are provided tools."
+      },
+      {
+        "start": 15.69,
+        "end": 18.49,
+        "text": "You only need to explain the value you changed."
+      },
+      {
+        "start": 18.49,
+        "end": 23.76,
+        "text": "If you want another experiment, change the color or the y position, one at a time."
+      }
+    ],
+    "duration": 23.76,
+    "bytes": 142560
+  },
+  "ball-speed": {
+    "hash": "a1e0394c1b23fbf3d8de",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Watch the ball cross the canvas and wrap back to the left. Stop the game, then change only speed from one hundred to two hundred. Predict what will change about the trip and what will stay the same. Run again from the same starting position. Compare the movement and explain where the code uses speed. You can use the supplied update function without writing your own game loop.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.594,
+        "text": "Watch the ball cross the canvas and wrap back to the left."
+      },
+      {
+        "start": 3.594,
+        "end": 8.047,
+        "text": "Stop the game, then change only speed from one hundred to two hundred."
+      },
+      {
+        "start": 8.047,
+        "end": 12.148,
+        "text": "Predict what will change about the trip and what will stay the same."
+      },
+      {
+        "start": 12.148,
+        "end": 14.688,
+        "text": "Run again from the same starting position."
+      },
+      {
+        "start": 14.688,
+        "end": 18.841,
+        "text": "Compare the movement and explain where the code uses speed."
+      },
+      {
+        "start": 18.841,
+        "end": 22.968,
+        "text": "You can use the supplied update function without writing your own game loop."
+      }
+    ],
+    "duration": 22.968,
+    "bytes": 137808
+  },
+  "dice-duel": {
+    "hash": "cce8229258e7bfce9966",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Run this tiny dice game several times. Each run rolls one die for you and one for the bot. Must unchanged code always give unchanged rolls? Predict the allowed values for a twelve sided die, then change only your die from six sides to twelve. Record actual rolls. Explain why one win or loss is not enough to describe every possible round.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0.025,
+        "end": 3.138,
+        "text": "Run this tiny dice game several times."
+      },
+      {
+        "start": 3.138,
+        "end": 6.8100000000000005,
+        "text": "Each run rolls one die for you and one for the bot."
+      },
+      {
+        "start": 6.8100000000000005,
+        "end": 10.404,
+        "text": "Must unchanged code always give unchanged rolls?"
+      },
+      {
+        "start": 10.404,
+        "end": 16.835,
+        "text": "Predict the allowed values for a twelve sided die, then change only your die from six sides to twelve."
+      },
+      {
+        "start": 16.835,
+        "end": 18.763,
+        "text": "Record actual rolls."
+      },
+      {
+        "start": 18.763,
+        "end": 24.552,
+        "text": "Explain why one win or loss is not enough to describe every possible round."
+      }
+    ],
+    "duration": 24.552,
+    "bytes": 147312
+  },
+  "coin-collector": {
+    "hash": "fe4103560a7a26278c4a",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Run the game, focus the game area, and use arrow keys or the direction buttons to move the blue player toward the gold coin. Collect it once before editing. Then predict whether increasing player speed will also increase the points per coin. Change only speed from one hundred forty to two hundred twenty. Run again and observe both movement and score. Point to the separate rules for moving and scoring.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 7.6690000000000005,
+        "text": "Run the game, focus the game area, and use arrow keys or the direction buttons to move the blue player toward the gold coin."
+      },
+      {
+        "start": 7.6690000000000005,
+        "end": 9.87,
+        "text": "Collect it once before editing."
+      },
+      {
+        "start": 9.87,
+        "end": 14.753,
+        "text": "Then predict whether increasing player speed will also increase the points per coin."
+      },
+      {
+        "start": 14.753,
+        "end": 18.971,
+        "text": "Change only speed from one hundred forty to two hundred twenty."
+      },
+      {
+        "start": 18.971,
+        "end": 22.355,
+        "text": "Run again and observe both movement and score."
+      },
+      {
+        "start": 22.355,
+        "end": 25.536,
+        "text": "Point to the separate rules for moving and scoring."
+      }
+    ],
+    "duration": 25.536,
+    "bytes": 153216
+  },
+  "bounce-wall": {
+    "hash": "7f96ced9b96c798c18d6",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "This ball game contains one deliberate rule mistake. Run it and watch what happens at the right wall. Should the ball move right or left after reaching that wall? Compare the two wall rules. Change the right wall velocity to negative absolute velocity, keeping the left wall rule unchanged. Run again, watch both walls, and explain how the sign of velocity relates to direction.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.515,
+        "text": "This ball game contains one deliberate rule mistake."
+      },
+      {
+        "start": 3.515,
+        "end": 6.341,
+        "text": "Run it and watch what happens at the right wall."
+      },
+      {
+        "start": 6.341,
+        "end": 10.117,
+        "text": "Should the ball move right or left after reaching that wall?"
+      },
+      {
+        "start": 10.117,
+        "end": 12.279,
+        "text": "Compare the two wall rules."
+      },
+      {
+        "start": 12.279,
+        "end": 18.828,
+        "text": "Change the right wall velocity to negative absolute velocity, keeping the left wall rule unchanged."
+      },
+      {
+        "start": 18.828,
+        "end": 25.104,
+        "text": "Run again, watch both walls, and explain how the sign of velocity relates to direction."
+      }
+    ],
+    "duration": 25.104,
+    "bytes": 150624
+  },
+  "guess-number": {
+    "hash": "afd923adafd97a5c6bcf",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "This practice game keeps its secret visible so you can test all three rules. Predict the message when the secret is seven and the guess is four. Change only guess and run each attempt. Test a value below seven, one equal to seven, and one above seven. Keep the indentation of the supplied code. Explain which branch each test reaches. You edit the guess in the code; the output box does not ask you to type an answer.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 4.961,
+        "text": "This practice game keeps its secret visible so you can test all three rules."
+      },
+      {
+        "start": 4.961,
+        "end": 8.763,
+        "text": "Predict the message when the secret is seven and the guess is four."
+      },
+      {
+        "start": 8.763,
+        "end": 11.667,
+        "text": "Change only guess and run each attempt."
+      },
+      {
+        "start": 11.667,
+        "end": 16.589,
+        "text": "Test a value below seven, one equal to seven, and one above seven."
+      },
+      {
+        "start": 16.589,
+        "end": 19.44,
+        "text": "Keep the indentation of the supplied code."
+      },
+      {
+        "start": 19.44,
+        "end": 22.474,
+        "text": "Explain which branch each test reaches."
+      },
+      {
+        "start": 22.474,
+        "end": 27.384,
+        "text": "You edit the guess in the code; the output box does not ask you to type an answer."
+      }
+    ],
+    "duration": 27.384,
+    "bytes": 164304
+  },
+  "paddle-rally": {
+    "hash": "42d1d889c7e1e550124f",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Use the left and right controls to move the paddle and catch the ball. A catch increases hits. A miss ends the round; Run starts a fresh round. Predict what a wider paddle might change. Change only paddle width from eighty to one hundred forty, keeping both ball velocities unchanged. Show a bounce, a miss, and a restart. Explain your parameter change rather than comparing only your highest score.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 4.128,
+        "text": "Use the left and right controls to move the paddle and catch the ball."
+      },
+      {
+        "start": 4.128,
+        "end": 6.276,
+        "text": "A catch increases hits."
+      },
+      {
+        "start": 6.276,
+        "end": 10.247,
+        "text": "A miss ends the round; Run starts a fresh round."
+      },
+      {
+        "start": 10.247,
+        "end": 13.216,
+        "text": "Predict what a wider paddle might change."
+      },
+      {
+        "start": 13.216,
+        "end": 19.727,
+        "text": "Change only paddle width from eighty to one hundred forty, keeping both ball velocities unchanged."
+      },
+      {
+        "start": 19.727,
+        "end": 22.93,
+        "text": "Show a bounce, a miss, and a restart."
+      },
+      {
+        "start": 22.93,
+        "end": 27.36,
+        "text": "Explain your parameter change rather than comparing only your highest score."
+      }
+    ],
+    "duration": 27.36,
+    "bytes": 164160
+  },
+  "meteor-dodge": {
+    "hash": "0e11f9a7162362cfd24a",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "script": "Move the blue player left or right to dodge the falling meteor. A collision ends the round. Watch seconds and alive in the state panel. Predict what will change if the meteor moves faster while player speed stays the same. Change only meteor speed from one hundred to one hundred sixty, then run again. Test movement, a collision, and a restart. Explain the rule you changed and one rule you kept fixed.",
+    "model": "reviewed-script",
+    "cues": [
+      {
+        "start": 0,
+        "end": 3.971,
+        "text": "Move the blue player left or right to dodge the falling meteor."
+      },
+      {
+        "start": 3.971,
+        "end": 6.159,
+        "text": "A collision ends the round."
+      },
+      {
+        "start": 6.159,
+        "end": 9.779,
+        "text": "Watch seconds and alive in the state panel."
+      },
+      {
+        "start": 9.779,
+        "end": 14.818,
+        "text": "Predict what will change if the meteor moves faster while player speed stays the same."
+      },
+      {
+        "start": 14.818,
+        "end": 20.078,
+        "text": "Change only meteor speed from one hundred to one hundred sixty, then run again."
+      },
+      {
+        "start": 20.078,
+        "end": 23.372,
+        "text": "Test movement, a collision, and a restart."
+      },
+      {
+        "start": 23.372,
+        "end": 27.624,
+        "text": "Explain the rule you changed and one rule you kept fixed."
+      }
+    ],
+    "duration": 27.624,
+    "bytes": 165744
+  }
+}

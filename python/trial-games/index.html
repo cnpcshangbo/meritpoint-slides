@@ -1,0 +1,253 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#143f42"><title>Python Game Lab · Optional Challenges</title><meta name="description" content="Eight optional Python experiments: draw a mascot, move a ball, collect coins, repair a bounce, play dice, test guesses, catch a ball and dodge meteors."><link rel="icon" href="/meritpoint-slides/assets/favicon.png"><link rel="stylesheet" href="trial-lab.css?v=4da91eebd8ce"><link rel="stylesheet" href="trial-games.css?v=4da91eebd8ce"><link rel="stylesheet" href="../scratchpad/code-trace.css?v=a566c1e3ecf8"><link rel="stylesheet" href="/meritpoint-slides/python/scratchpad/python-workspace.css?v=62ef8418971d"><link rel="stylesheet" href="/meritpoint-slides/assets/live-classroom.css?v=88b10c13f1b1"></head><body class="pl-page pg-page" data-deck="python/trial-lab" data-source-deck="python/trial-games" data-notebook="python-trial-games">
+    <header class="pl-header"><a class="pl-brand" href="../trial-lab/"><img src="/meritpoint-slides/assets/mpa-logo.png" alt="" width="36" height="36"><span>MERIT POINT <small>PYTHON / THE GAME LAB</small></span></a><nav aria-label="Lesson resources"><a href="../trial-lab/">← 50-minute lab</a><a href="instructor-notes.html" target="_blank" rel="noopener">教师游戏任务指南 ↗</a></nav></header>
+    <main class="pl-shell"><div class="pl-intro"><div><div class="pl-eyebrow">OPTIONAL CHALLENGES · CHOOSE ONE</div><h1>Choose your next game experiment</h1><p>Start with a picture or a number. Change one rule. Make the game yours.</p></div><div class="pl-progress"><strong data-progress>0 / 8</strong><span>experiments you can explain</span><progress max="8" value="0" aria-label="Self-reported challenge progress"></progress></div></div><p class="pg-choice-note">These challenges are extra. Pick one when you are ready, or return after class. The 50-minute lab still has seven rounds.</p>
+    <nav class="pl-rounds" aria-label="Optional game challenges"><button type="button" data-go="mascot" aria-current="step"><b>01</b><span>Draw your mascot</span><small>3–5 min</small><em>Start here</em></button><button type="button" data-go="ball-speed" ><b>02</b><span>Set the ball speed</span><small>3–5 min</small><em>Start here</em></button><button type="button" data-go="dice-duel" ><b>03</b><span>Dice showdown</span><small>3–5 min</small><em>Start here</em></button><button type="button" data-go="coin-collector" ><b>04</b><span>Collect the coin</span><small>8–12 min</small><em>Next step</em></button><button type="button" data-go="bounce-wall" ><b>05</b><span>Build a bounce wall</span><small>8–12 min</small><em>Next step</em></button><button type="button" data-go="guess-number" ><b>06</b><span>Guess the number</span><small>8–12 min</small><em>Next step</em></button><button type="button" data-go="paddle-rally" ><b>07</b><span>Keep it up!</span><small>12–20 min</small><em>Stretch</em></button><button type="button" data-go="meteor-dodge" ><b>08</b><span>Meteor dodge</span><small>12–20 min</small><em>Stretch</em></button></nav>
+    <div class="pl-savebar"><p data-save-status role="status">Preparing your game notebook…</p><div><button type="button" data-export>Back up my games</button><button type="button" data-import>Load game backup</button><input type="file" data-import-file accept=".json,application/json" hidden><button type="button" data-download>Download this code .py</button></div></div><div class="pl-stages"><section id="mascot" data-sid="mascot" data-code-source="mascot" data-engine="pygame" class="is-current" aria-hidden="false">
+    <div class="pl-mission"><div class="pl-eyebrow">START HERE<span>3–5 min · optional</span></div><h2 tabindex="-1">Draw your mascot</h2><p class="pl-goal">Make a character from simple shapes and control where it appears.</p><button type="button" data-lab-listen id="listenBtn" disabled>Listen to instructions</button>
+    <div class="pl-task"><span class="pl-label">YOUR MISSION</span><p>Run the starter to meet your mascot. The provided drawing lines make its face. Choose a new x value, then run your edited code.</p></div><label class="pl-label" for="prediction-mascot">PREDICT BEFORE YOU CHANGE IT</label><p class="pl-question">When x gets larger, which way will the whole face move?</p><textarea id="prediction-mascot" data-prediction rows="2" maxlength="1200" placeholder="I think…"></textarea>
+    <div class="pl-task pl-change"><span class="pl-label">CHANGE ONE THING</span><p>Change only x from 120 to 260. Run again and compare the position.</p></div><details class="pl-hint"><summary>Need a small hint?</summary><p>x increases toward the right; y increases downward. The eye positions use x too, so they move with the face.</p></details><details class="pl-hint"><summary>Ready for a stretch?</summary><p>Make a second experiment: change color or y, one at a time. Then add a rectangle for a hat using the provided drawing pattern.</p></details>
+    </div><div class="pl-work"><div class="lab" data-lab="mascot" id="lab-mascot"><div class="pg-workbench"><div class="pg-code-pane"><div class="pl-editor-heading"><label for="code-mascot">mascot.py</label><span>EDIT → PLAY → EXPLAIN</span></div><textarea class="code" id="code-mascot" spellcheck="false" autocapitalize="off" autocomplete="off" wrap="off" maxlength="20000" aria-label="Draw your mascot Python code" disabled>import pygame
+
+# Your experiment: change just x first.
+x = 120
+y = 150
+radius = 38
+color = "gold"
+
+def update(dt, keys):
+    pass  # This picture does not need movement yet.
+
+def draw(screen):
+    screen.fill("midnightblue")
+    pygame.draw.circle(screen, color, (x, y), radius)
+    pygame.draw.circle(screen, "black", (x - 13, y - 9), 5)
+    pygame.draw.circle(screen, "black", (x + 13, y - 9), 5)
+    pygame.draw.line(screen, "black", (x - 12, y + 14), (x + 12, y + 14), 4)</textarea>
+    <div class="pl-runbar"><button type="button" class="pl-primary" data-run disabled>▶ Play game</button><button type="button" data-stop hidden>Stop</button><button type="button" data-visualize>Inspect game state</button><button type="button" data-reset>Starter code</button><button type="button" data-undo hidden>Undo reset</button><button type="button" data-pad>Keep in Python pad / Ask AI</button></div></div>
+<div class="pg-play-pane"><div class="pg-game-heading"><b>YOUR GAME</b><span data-game-frame>No frames yet</span></div><div class="pg-canvas-wrap"><canvas data-game-canvas width="480" height="320" tabindex="0" aria-label="Draw your mascot game. Arrow keys or W A S D move your player; on-screen buttons are available below."></canvas><div class="pg-overlay" data-game-overlay>Press Play to run your code.</div></div><div class="pg-controls"><div class="pg-transport"><button type="button" data-game-pause disabled>Pause</button><button type="button" data-game-step disabled>Step 1 frame</button></div><div class="pg-direction" aria-label="Hold a direction to move"><button type="button" data-game-key="left" aria-label="Move left">←</button><button type="button" data-game-key="up" aria-label="Move up">↑</button><button type="button" data-game-key="down" aria-label="Move down">↓</button><button type="button" data-game-key="right" aria-label="Move right">→</button><button type="button" data-game-key="space" aria-label="Space action">Space</button></div></div><p class="pg-control-note">Click the game to use arrow keys / W A S D, or hold a direction button. Pause, then step one frame to inspect a change.</p><details data-game-inspector open><summary>Python state <small>live values from your code</small></summary><dl data-game-state></dl></details></div></div>
+    <div class="pl-result-heading"><b>Run log</b><span data-status role="status">Press Play to start.</span></div><pre class="out" data-output aria-live="off"></pre><div class="pl-plots" data-plots></div></div>
+<p class="pg-scaffold">The lab supplies a 480 × 320 screen and calls <code>update(dt, keys)</code> and <code>draw(screen)</code>. You change the Python rules. Games run here; the Python pad can keep a copy and ask AI for a hint. <a href="instructor-notes.html#runtime">About the game runner</a></p>
+    <div class="pl-evidence"><span class="pl-label">SHOW WHAT CHANGED</span><p>Which value or rule did you change? What happened when you ran it?</p><details class="pl-hint"><summary>Check your result after trying</summary><p>The whole face moved right; its eyes and mouth stayed with it. Point to the value you changed and explain the visible effect.</p></details><label class="sr-only" for="reflection-mascot">My observation and explanation</label><textarea id="reflection-mascot" data-reflection rows="2" maxlength="1600" placeholder="I changed… I observed… I think this happened because…"></textarea><label class="pl-done"><input type="checkbox" data-done> I can explain my experiment.</label><small>Your own check-in. Scores and reaction speed are not grades.</small></div></div></section>
+<section id="ball-speed" data-sid="ball-speed" data-code-source="ball-speed" data-engine="pygame" hidden aria-hidden="true">
+    <div class="pl-mission"><div class="pl-eyebrow">START HERE<span>3–5 min · optional</span></div><h2 tabindex="-1">Set the ball speed</h2><p class="pl-goal">Use one number to change a moving ball’s speed.</p><button type="button" data-lab-listen  disabled>Listen to instructions</button>
+    <div class="pl-task"><span class="pl-label">YOUR MISSION</span><p>Watch the ball travel across the canvas and wrap back to the left. Stop it, edit speed, and run from the same starting position.</p></div><label class="pl-label" for="prediction-ball-speed">PREDICT BEFORE YOU CHANGE IT</label><p class="pl-question">If you double speed, what will change about the trip across the canvas? What will stay the same?</p><textarea id="prediction-ball-speed" data-prediction rows="2" maxlength="1200" placeholder="I think…"></textarea>
+    <div class="pl-task pl-change"><span class="pl-label">CHANGE ONE THING</span><p>Change only speed from 100 to 200. Run again from the starter position.</p></div><details class="pl-hint"><summary>Need a small hint?</summary><p>The supplied update function runs repeatedly. speed * dt adds the distance traveled during one short update.</p></details><details class="pl-hint"><summary>Ready for a stretch?</summary><p>Try speed = 0 and explain the result. Then add a left-edge wrap rule before experimenting with a negative speed.</p></details>
+    </div><div class="pl-work"><div class="lab" data-lab="ball-speed" id="lab-ball-speed"><div class="pg-workbench"><div class="pg-code-pane"><div class="pl-editor-heading"><label for="code-ball-speed">ball-speed.py</label><span>EDIT → PLAY → EXPLAIN</span></div><textarea class="code" id="code-ball-speed" spellcheck="false" autocapitalize="off" autocomplete="off" wrap="off" maxlength="20000" aria-label="Set the ball speed Python code" disabled>import pygame
+
+x = 24.0
+y = HEIGHT / 2
+speed = 100
+radius = 14
+
+def update(dt, keys):
+    global x
+    # dt is the time since the last update, in seconds.
+    x += speed * dt
+    if x &gt; WIDTH + radius:
+        x = -radius
+
+def draw(screen):
+    screen.fill("midnightblue")
+    pygame.draw.circle(screen, "gold", (round(x), round(y)), radius)</textarea>
+    <div class="pl-runbar"><button type="button" class="pl-primary" data-run disabled>▶ Play game</button><button type="button" data-stop hidden>Stop</button><button type="button" data-visualize>Inspect game state</button><button type="button" data-reset>Starter code</button><button type="button" data-undo hidden>Undo reset</button><button type="button" data-pad>Keep in Python pad / Ask AI</button></div></div>
+<div class="pg-play-pane"><div class="pg-game-heading"><b>YOUR GAME</b><span data-game-frame>No frames yet</span></div><div class="pg-canvas-wrap"><canvas data-game-canvas width="480" height="320" tabindex="0" aria-label="Set the ball speed game. Arrow keys or W A S D move your player; on-screen buttons are available below."></canvas><div class="pg-overlay" data-game-overlay>Press Play to run your code.</div></div><div class="pg-controls"><div class="pg-transport"><button type="button" data-game-pause disabled>Pause</button><button type="button" data-game-step disabled>Step 1 frame</button></div><div class="pg-direction" aria-label="Hold a direction to move"><button type="button" data-game-key="left" aria-label="Move left">←</button><button type="button" data-game-key="up" aria-label="Move up">↑</button><button type="button" data-game-key="down" aria-label="Move down">↓</button><button type="button" data-game-key="right" aria-label="Move right">→</button><button type="button" data-game-key="space" aria-label="Space action">Space</button></div></div><p class="pg-control-note">Click the game to use arrow keys / W A S D, or hold a direction button. Pause, then step one frame to inspect a change.</p><details data-game-inspector open><summary>Python state <small>live values from your code</small></summary><dl data-game-state></dl></details></div></div>
+    <div class="pl-result-heading"><b>Run log</b><span data-status role="status">Press Play to start.</span></div><pre class="out" data-output aria-live="off"></pre><div class="pl-plots" data-plots></div></div>
+<p class="pg-scaffold">The lab supplies a 480 × 320 screen and calls <code>update(dt, keys)</code> and <code>draw(screen)</code>. You change the Python rules. Games run here; the Python pad can keep a copy and ask AI for a hint. <a href="instructor-notes.html#runtime">About the game runner</a></p>
+    <div class="pl-evidence"><span class="pl-label">SHOW WHAT CHANGED</span><p>Which value or rule did you change? What happened when you ran it?</p><details class="pl-hint"><summary>Check your result after trying</summary><p>The edited ball crosses the same canvas faster. Its radius, color, and travel direction stay the same. Explain which line uses speed.</p></details><label class="sr-only" for="reflection-ball-speed">My observation and explanation</label><textarea id="reflection-ball-speed" data-reflection rows="2" maxlength="1600" placeholder="I changed… I observed… I think this happened because…"></textarea><label class="pl-done"><input type="checkbox" data-done> I can explain my experiment.</label><small>Your own check-in. Scores and reaction speed are not grades.</small></div></div></section>
+<section id="dice-duel" data-sid="dice-duel" data-code-source="dice-duel" data-engine="python" hidden aria-hidden="true">
+    <div class="pl-mission"><div class="pl-eyebrow">START HERE<span>3–5 min · optional</span></div><h2 tabindex="-1">Dice showdown</h2><p class="pl-goal">Run a tiny dice game and distinguish a rule from a random result.</p><button type="button" data-lab-listen  disabled>Listen to instructions</button>
+    <div class="pl-task"><span class="pl-label">YOUR MISSION</span><p>Run the program several times. Each run rolls one die for you and one for the bot. Then experiment with a different number of sides on your die.</p></div><label class="pl-label" for="prediction-dice-duel">PREDICT BEFORE YOU CHANGE IT</label><p class="pl-question">Must the same code show the same rolls each time? What values would a twelve-sided die allow?</p><textarea id="prediction-dice-duel" data-prediction rows="2" maxlength="1200" placeholder="I think…"></textarea>
+    <div class="pl-task pl-change"><span class="pl-label">CHANGE ONE THING</span><p>Change only my_sides from 6 to 12. Run several times and record actual rolls, including a loss or tie if one happens.</p></div><details class="pl-hint"><summary>Need a small hint?</summary><p>random.randint(1, 12) can return any whole number from 1 through 12, including both ends. A bigger die can still roll a small number.</p></details><details class="pl-hint"><summary>Ready for a stretch?</summary><p>Restore equal dice and use a supplied for-loop pattern to record ten rounds. Count wins, losses, and ties; explain why ten rounds do not establish an exact long-run win rate.</p></details>
+    </div><div class="pl-work"><div class="lab" data-lab="dice-duel" id="lab-dice-duel"><div class="pg-workbench"><div class="pg-code-pane"><div class="pl-editor-heading"><label for="code-dice-duel">dice-duel.py</label><span>EDIT → PLAY → EXPLAIN</span></div><textarea class="code" id="code-dice-duel" spellcheck="false" autocapitalize="off" autocomplete="off" wrap="off" maxlength="20000" aria-label="Dice showdown Python code" disabled>import random
+
+# Your experiment: change only your die first.
+my_sides = 6
+bot_sides = 6
+my_roll = random.randint(1, my_sides)
+bot_roll = random.randint(1, bot_sides)
+print("My roll:", my_roll)
+print("Bot roll:", bot_roll)
+
+if my_roll &gt; bot_roll:
+    print("You win this round!")
+elif my_roll &lt; bot_roll:
+    print("The bot wins this round.")
+else:
+    print("A tie!")</textarea>
+    <div class="pl-runbar"><button type="button" class="pl-primary" data-run disabled>▶ Run Python</button><button type="button" data-stop hidden>Stop</button><button type="button" data-visualize>Visualize</button><button type="button" data-reset>Starter code</button><button type="button" data-undo hidden>Undo reset</button><button type="button" data-pad>Keep in Python pad / Ask AI</button></div></div>
+</div>
+    <div class="pl-result-heading"><b>Output</b><span data-status role="status">Run your code to see what happens.</span></div><pre class="out" data-output aria-live="off"></pre><div class="pl-plots" data-plots></div></div>
+
+    <div class="pl-evidence"><span class="pl-label">SHOW WHAT CHANGED</span><p>Which value or rule did you change? What happened when you ran it?</p><details class="pl-hint"><summary>Check your result after trying</summary><p>Your rolls stay between 1 and 12; the bot’s stay between 1 and 6. You can explain why changing the rule does not guarantee a win on every run.</p></details><label class="sr-only" for="reflection-dice-duel">My observation and explanation</label><textarea id="reflection-dice-duel" data-reflection rows="2" maxlength="1600" placeholder="I changed… I observed… I think this happened because…"></textarea><label class="pl-done"><input type="checkbox" data-done> I can explain my experiment.</label><small>Your own check-in. Scores and reaction speed are not grades.</small></div></div></section>
+<section id="coin-collector" data-sid="coin-collector" data-code-source="coin-collector" data-engine="pygame" hidden aria-hidden="true">
+    <div class="pl-mission"><div class="pl-eyebrow">NEXT STEP<span>8–12 min · optional</span></div><h2 tabindex="-1">Collect the coin</h2><p class="pl-goal">Control a player and connect touching a coin to a score change.</p><button type="button" data-lab-listen  disabled>Listen to instructions</button>
+    <div class="pl-task"><span class="pl-label">YOUR MISSION</span><p>Run the game, focus the game area, and use the arrow keys or on-screen controls to reach the gold coin. Collect it once before editing.</p></div><label class="pl-label" for="prediction-coin-collector">PREDICT BEFORE YOU CHANGE IT</label><p class="pl-question">If you increase player speed, will each coin be worth more points?</p><textarea id="prediction-coin-collector" data-prediction rows="2" maxlength="1200" placeholder="I think…"></textarea>
+    <div class="pl-task pl-change"><span class="pl-label">CHANGE ONE THING</span><p>Change only speed from 140 to 220. Restart, collect a coin, and compare the movement and score rule.</p></div><details class="pl-hint"><summary>Need a small hint?</summary><p>The arrow-key lines move the player. colliderect checks whether the player and coin rectangles overlap. score += 1 changes the score.</p></details><details class="pl-hint"><summary>Ready for a stretch?</summary><p>In a separate experiment, change the reward from 1 to 5. Explain how a rule change differs from a movement change.</p></details>
+    </div><div class="pl-work"><div class="lab" data-lab="coin-collector" id="lab-coin-collector"><div class="pg-workbench"><div class="pg-code-pane"><div class="pl-editor-heading"><label for="code-coin-collector">coin-collector.py</label><span>EDIT → PLAY → EXPLAIN</span></div><textarea class="code" id="code-coin-collector" spellcheck="false" autocapitalize="off" autocomplete="off" wrap="off" maxlength="20000" aria-label="Collect the coin Python code" disabled>import pygame
+
+x, y = 40.0, 140.0
+speed = 140
+score = 0
+coin = pygame.Rect(370, 140, 22, 22)
+
+def update(dt, keys):
+    global x, y, score
+    x += (("right" in keys) - ("left" in keys)) * speed * dt
+    y += (("down" in keys) - ("up" in keys)) * speed * dt
+    x = max(0, min(WIDTH - 24, x))
+    y = max(0, min(HEIGHT - 24, y))
+    player = pygame.Rect(round(x), round(y), 24, 24)
+    if player.colliderect(coin):
+        score += 1
+        # Move the coin away after it has been collected.
+        coin.x = 50 if coin.x &gt; WIDTH / 2 else 390
+        coin.y = 220 if coin.y &lt; HEIGHT / 2 else 80
+
+def draw(screen):
+    screen.fill("midnightblue")
+    pygame.draw.rect(screen, "deepskyblue", (round(x), round(y), 24, 24))
+    pygame.draw.rect(screen, "gold", coin)</textarea>
+    <div class="pl-runbar"><button type="button" class="pl-primary" data-run disabled>▶ Play game</button><button type="button" data-stop hidden>Stop</button><button type="button" data-visualize>Inspect game state</button><button type="button" data-reset>Starter code</button><button type="button" data-undo hidden>Undo reset</button><button type="button" data-pad>Keep in Python pad / Ask AI</button></div></div>
+<div class="pg-play-pane"><div class="pg-game-heading"><b>YOUR GAME</b><span data-game-frame>No frames yet</span></div><div class="pg-canvas-wrap"><canvas data-game-canvas width="480" height="320" tabindex="0" aria-label="Collect the coin game. Arrow keys or W A S D move your player; on-screen buttons are available below."></canvas><div class="pg-overlay" data-game-overlay>Press Play to run your code.</div></div><div class="pg-controls"><div class="pg-transport"><button type="button" data-game-pause disabled>Pause</button><button type="button" data-game-step disabled>Step 1 frame</button></div><div class="pg-direction" aria-label="Hold a direction to move"><button type="button" data-game-key="left" aria-label="Move left">←</button><button type="button" data-game-key="up" aria-label="Move up">↑</button><button type="button" data-game-key="down" aria-label="Move down">↓</button><button type="button" data-game-key="right" aria-label="Move right">→</button><button type="button" data-game-key="space" aria-label="Space action">Space</button></div></div><p class="pg-control-note">Click the game to use arrow keys / W A S D, or hold a direction button. Pause, then step one frame to inspect a change.</p><details data-game-inspector open><summary>Python state <small>live values from your code</small></summary><dl data-game-state></dl></details></div></div>
+    <div class="pl-result-heading"><b>Run log</b><span data-status role="status">Press Play to start.</span></div><pre class="out" data-output aria-live="off"></pre><div class="pl-plots" data-plots></div></div>
+<p class="pg-scaffold">The lab supplies a 480 × 320 screen and calls <code>update(dt, keys)</code> and <code>draw(screen)</code>. You change the Python rules. Games run here; the Python pad can keep a copy and ask AI for a hint. <a href="instructor-notes.html#runtime">About the game runner</a></p>
+    <div class="pl-evidence"><span class="pl-label">SHOW WHAT CHANGED</span><p>Which value or rule did you change? What happened when you ran it?</p><details class="pl-hint"><summary>Check your result after trying</summary><p>You can move the blue player, collect a coin, and find score in the state panel. Each collected coin adds one point even after the speed edit.</p></details><label class="sr-only" for="reflection-coin-collector">My observation and explanation</label><textarea id="reflection-coin-collector" data-reflection rows="2" maxlength="1600" placeholder="I changed… I observed… I think this happened because…"></textarea><label class="pl-done"><input type="checkbox" data-done> I can explain my experiment.</label><small>Your own check-in. Scores and reaction speed are not grades.</small></div></div></section>
+<section id="bounce-wall" data-sid="bounce-wall" data-code-source="bounce-wall" data-engine="pygame" hidden aria-hidden="true">
+    <div class="pl-mission"><div class="pl-eyebrow">NEXT STEP<span>8–12 min · optional</span></div><h2 tabindex="-1">Build a bounce wall</h2><p class="pl-goal">Repair one direction rule so a ball bounces between both walls.</p><button type="button" data-lab-listen  disabled>Listen to instructions</button>
+    <div class="pl-task"><span class="pl-label">YOUR MISSION</span><p>This game has one deliberate bug. Run it and observe the ball at the right wall. Compare the two wall rules, then repair the direction.</p></div><label class="pl-label" for="prediction-bounce-wall">PREDICT BEFORE YOU CHANGE IT</label><p class="pl-question">At the right wall, should vx point right or left? What sign would make x decrease?</p><textarea id="prediction-bounce-wall" data-prediction rows="2" maxlength="1200" placeholder="I think…"></textarea>
+    <div class="pl-task pl-change"><span class="pl-label">CHANGE ONE THING</span><p>Change only the right-wall assignment from vx = abs(vx) to vx = -abs(vx). Keep the left-wall assignment unchanged.</p></div><details class="pl-hint"><summary>Need a small hint?</summary><p>abs(vx) is a nonnegative speed. -abs(vx) makes it negative. Adding a negative change makes x smaller.</p></details><details class="pl-hint"><summary>Ready for a stretch?</summary><p>Add a separate y velocity and top/bottom wall rules. First predict the sign needed at each wall.</p></details>
+    </div><div class="pl-work"><div class="lab" data-lab="bounce-wall" id="lab-bounce-wall"><div class="pg-workbench"><div class="pg-code-pane"><div class="pl-editor-heading"><label for="code-bounce-wall">bounce-wall.py</label><span>EDIT → PLAY → EXPLAIN</span></div><textarea class="code" id="code-bounce-wall" spellcheck="false" autocapitalize="off" autocomplete="off" wrap="off" maxlength="20000" aria-label="Build a bounce wall Python code" disabled>import pygame
+
+x = 80.0
+y = HEIGHT / 2
+vx = 130
+radius = 15
+
+def update(dt, keys):
+    global x, vx
+    x += vx * dt
+    if x &gt;= WIDTH - radius:
+        x = WIDTH - radius
+        vx = abs(vx)  # Investigate this right-wall rule.
+    if x &lt;= radius:
+        x = radius
+        vx = abs(vx)
+
+def draw(screen):
+    screen.fill("midnightblue")
+    pygame.draw.line(screen, "white", (0, 0), (0, HEIGHT), 4)
+    pygame.draw.line(screen, "white", (WIDTH - 1, 0), (WIDTH - 1, HEIGHT), 4)
+    pygame.draw.circle(screen, "coral", (round(x), round(y)), radius)</textarea>
+    <div class="pl-runbar"><button type="button" class="pl-primary" data-run disabled>▶ Play game</button><button type="button" data-stop hidden>Stop</button><button type="button" data-visualize>Inspect game state</button><button type="button" data-reset>Starter code</button><button type="button" data-undo hidden>Undo reset</button><button type="button" data-pad>Keep in Python pad / Ask AI</button></div></div>
+<div class="pg-play-pane"><div class="pg-game-heading"><b>YOUR GAME</b><span data-game-frame>No frames yet</span></div><div class="pg-canvas-wrap"><canvas data-game-canvas width="480" height="320" tabindex="0" aria-label="Build a bounce wall game. Arrow keys or W A S D move your player; on-screen buttons are available below."></canvas><div class="pg-overlay" data-game-overlay>Press Play to run your code.</div></div><div class="pg-controls"><div class="pg-transport"><button type="button" data-game-pause disabled>Pause</button><button type="button" data-game-step disabled>Step 1 frame</button></div><div class="pg-direction" aria-label="Hold a direction to move"><button type="button" data-game-key="left" aria-label="Move left">←</button><button type="button" data-game-key="up" aria-label="Move up">↑</button><button type="button" data-game-key="down" aria-label="Move down">↓</button><button type="button" data-game-key="right" aria-label="Move right">→</button><button type="button" data-game-key="space" aria-label="Space action">Space</button></div></div><p class="pg-control-note">Click the game to use arrow keys / W A S D, or hold a direction button. Pause, then step one frame to inspect a change.</p><details data-game-inspector open><summary>Python state <small>live values from your code</small></summary><dl data-game-state></dl></details></div></div>
+    <div class="pl-result-heading"><b>Run log</b><span data-status role="status">Press Play to start.</span></div><pre class="out" data-output aria-live="off"></pre><div class="pl-plots" data-plots></div></div>
+<p class="pg-scaffold">The lab supplies a 480 × 320 screen and calls <code>update(dt, keys)</code> and <code>draw(screen)</code>. You change the Python rules. Games run here; the Python pad can keep a copy and ask AI for a hint. <a href="instructor-notes.html#runtime">About the game runner</a></p>
+    <div class="pl-evidence"><span class="pl-label">SHOW WHAT CHANGED</span><p>Which value or rule did you change? What happened when you ran it?</p><details class="pl-hint"><summary>Check your result after trying</summary><p>The repaired ball reverses at the right wall and later at the left wall. In the state panel, vx changes sign when the ball reverses.</p></details><label class="sr-only" for="reflection-bounce-wall">My observation and explanation</label><textarea id="reflection-bounce-wall" data-reflection rows="2" maxlength="1600" placeholder="I changed… I observed… I think this happened because…"></textarea><label class="pl-done"><input type="checkbox" data-done> I can explain my experiment.</label><small>Your own check-in. Scores and reaction speed are not grades.</small></div></div></section>
+<section id="guess-number" data-sid="guess-number" data-code-source="guess-number" data-engine="python" hidden aria-hidden="true">
+    <div class="pl-mission"><div class="pl-eyebrow">NEXT STEP<span>8–12 min · optional</span></div><h2 tabindex="-1">Guess the number</h2><p class="pl-goal">Use three deliberate guesses to test three branches of a program.</p><button type="button" data-lab-listen  disabled>Listen to instructions</button>
+    <div class="pl-task"><span class="pl-label">YOUR MISSION</span><p>This practice game keeps the secret visible so you can test every rule. Edit guess and run each attempt; you do not need to type into the output box.</p></div><label class="pl-label" for="prediction-guess-number">PREDICT BEFORE YOU CHANGE IT</label><p class="pl-question">With secret = 7 and guess = 4, which message will appear? Which guess would test the equality branch?</p><textarea id="prediction-guess-number" data-prediction rows="2" maxlength="1200" placeholder="I think…"></textarea>
+    <div class="pl-task pl-change"><span class="pl-label">CHANGE ONE THING</span><p>Change only guess. Run once with a value below 7, once equal to 7, and once above 7. Record which branch each test reaches.</p></div><details class="pl-hint"><summary>Need a small hint?</summary><p>Python checks if first, then elif when needed. else handles the remaining case. Keep the indentation of the supplied messages.</p></details><details class="pl-hint"><summary>Ready for a stretch?</summary><p>Use Visualize to follow the selected branch. Then add a valid range from 1 to 10 and give an out-of-range guess a separate message.</p></details>
+    </div><div class="pl-work"><div class="lab" data-lab="guess-number" id="lab-guess-number"><div class="pg-workbench"><div class="pg-code-pane"><div class="pl-editor-heading"><label for="code-guess-number">guess-number.py</label><span>EDIT → PLAY → EXPLAIN</span></div><textarea class="code" id="code-guess-number" spellcheck="false" autocapitalize="off" autocomplete="off" wrap="off" maxlength="20000" aria-label="Guess the number Python code" disabled>secret = 7
+guess = 4
+
+print("My guess:", guess)
+if guess &lt; secret:
+    print("Too low. Try a larger number.")
+elif guess &gt; secret:
+    print("Too high. Try a smaller number.")
+else:
+    print("You found the number!")</textarea>
+    <div class="pl-runbar"><button type="button" class="pl-primary" data-run disabled>▶ Run Python</button><button type="button" data-stop hidden>Stop</button><button type="button" data-visualize>Visualize</button><button type="button" data-reset>Starter code</button><button type="button" data-undo hidden>Undo reset</button><button type="button" data-pad>Keep in Python pad / Ask AI</button></div></div>
+</div>
+    <div class="pl-result-heading"><b>Output</b><span data-status role="status">Run your code to see what happens.</span></div><pre class="out" data-output aria-live="off"></pre><div class="pl-plots" data-plots></div></div>
+
+    <div class="pl-evidence"><span class="pl-label">SHOW WHAT CHANGED</span><p>Which value or rule did you change? What happened when you ran it?</p><details class="pl-hint"><summary>Check your result after trying</summary><p>Your three intentional tests produce “Too low”, “You found the number!”, and “Too high”. Explain why just one branch runs per attempt.</p></details><label class="sr-only" for="reflection-guess-number">My observation and explanation</label><textarea id="reflection-guess-number" data-reflection rows="2" maxlength="1600" placeholder="I changed… I observed… I think this happened because…"></textarea><label class="pl-done"><input type="checkbox" data-done> I can explain my experiment.</label><small>Your own check-in. Scores and reaction speed are not grades.</small></div></div></section>
+<section id="paddle-rally" data-sid="paddle-rally" data-code-source="paddle-rally" data-engine="pygame" hidden aria-hidden="true">
+    <div class="pl-mission"><div class="pl-eyebrow">STRETCH<span>12–20 min · optional</span></div><h2 tabindex="-1">Keep it up!</h2><p class="pl-goal">Use a paddle to keep a ball in play and investigate one game setting.</p><button type="button" data-lab-listen  disabled>Listen to instructions</button>
+    <div class="pl-task"><span class="pl-label">YOUR MISSION</span><p>Run and move the paddle with left/right controls. A catch bounces the ball and increases hits. A miss ends the round. Run again to restart.</p></div><label class="pl-label" for="prediction-paddle-rally">PREDICT BEFORE YOU CHANGE IT</label><p class="pl-question">What might a wider paddle change? Will changing its width automatically change the ball speed?</p><textarea id="prediction-paddle-rally" data-prediction rows="2" maxlength="1200" placeholder="I think…"></textarea>
+    <div class="pl-task pl-change"><span class="pl-label">CHANGE ONE THING</span><p>Change only paddle_width from 80 to 140. Start a new run and compare. Keep both ball velocities unchanged.</p></div><details class="pl-hint"><summary>Need a small hint?</summary><p>Watch hits and alive in the state panel. The supplied collision code bounces a falling ball when its rectangle touches the paddle.</p></details><details class="pl-hint"><summary>Ready for a stretch?</summary><p>Add a controlled speed increase after a catch, or add three lives. Keep restart behavior clear and test both a catch and a miss.</p></details>
+    </div><div class="pl-work"><div class="lab" data-lab="paddle-rally" id="lab-paddle-rally"><div class="pg-workbench"><div class="pg-code-pane"><div class="pl-editor-heading"><label for="code-paddle-rally">paddle-rally.py</label><span>EDIT → PLAY → EXPLAIN</span></div><textarea class="code" id="code-paddle-rally" spellcheck="false" autocapitalize="off" autocomplete="off" wrap="off" maxlength="20000" aria-label="Keep it up! Python code" disabled>import pygame
+
+x, y = 90.0, 65.0
+vx, vy = 120, 130
+paddle_x = 190.0
+paddle_width = 80
+hits = 0
+alive = True
+
+def update(dt, keys):
+    global x, y, vx, vy, paddle_x, hits, alive
+    if not alive:
+        return
+    paddle_x += (("right" in keys) - ("left" in keys)) * 260 * dt
+    paddle_x = max(0, min(WIDTH - paddle_width, paddle_x))
+    x += vx * dt
+    y += vy * dt
+    if x &gt;= WIDTH - 8:
+        x, vx = WIDTH - 8, -abs(vx)
+    if x &lt;= 8:
+        x, vx = 8, abs(vx)
+    if y &lt;= 8:
+        y, vy = 8, abs(vy)
+    paddle = pygame.Rect(round(paddle_x), HEIGHT - 28, paddle_width, 12)
+    ball = pygame.Rect(round(x) - 8, round(y) - 8, 16, 16)
+    if vy &gt; 0 and ball.colliderect(paddle):
+        y, vy = paddle.top - 8, -abs(vy)
+        hits += 1
+    if y &gt; HEIGHT + 8:
+        alive = False
+
+def draw(screen):
+    screen.fill("midnightblue")
+    pygame.draw.rect(screen, "deepskyblue", (round(paddle_x), HEIGHT - 28, paddle_width, 12))
+    if alive:
+        pygame.draw.circle(screen, "gold", (round(x), round(y)), 8)
+    else:
+        pygame.draw.rect(screen, "coral", (100, 100, 280, 70), 4)</textarea>
+    <div class="pl-runbar"><button type="button" class="pl-primary" data-run disabled>▶ Play game</button><button type="button" data-stop hidden>Stop</button><button type="button" data-visualize>Inspect game state</button><button type="button" data-reset>Starter code</button><button type="button" data-undo hidden>Undo reset</button><button type="button" data-pad>Keep in Python pad / Ask AI</button></div></div>
+<div class="pg-play-pane"><div class="pg-game-heading"><b>YOUR GAME</b><span data-game-frame>No frames yet</span></div><div class="pg-canvas-wrap"><canvas data-game-canvas width="480" height="320" tabindex="0" aria-label="Keep it up! game. Arrow keys or W A S D move your player; on-screen buttons are available below."></canvas><div class="pg-overlay" data-game-overlay>Press Play to run your code.</div></div><div class="pg-controls"><div class="pg-transport"><button type="button" data-game-pause disabled>Pause</button><button type="button" data-game-step disabled>Step 1 frame</button></div><div class="pg-direction" aria-label="Hold a direction to move"><button type="button" data-game-key="left" aria-label="Move left">←</button><button type="button" data-game-key="up" aria-label="Move up">↑</button><button type="button" data-game-key="down" aria-label="Move down">↓</button><button type="button" data-game-key="right" aria-label="Move right">→</button><button type="button" data-game-key="space" aria-label="Space action">Space</button></div></div><p class="pg-control-note">Click the game to use arrow keys / W A S D, or hold a direction button. Pause, then step one frame to inspect a change.</p><details data-game-inspector open><summary>Python state <small>live values from your code</small></summary><dl data-game-state></dl></details></div></div>
+    <div class="pl-result-heading"><b>Run log</b><span data-status role="status">Press Play to start.</span></div><pre class="out" data-output aria-live="off"></pre><div class="pl-plots" data-plots></div></div>
+<p class="pg-scaffold">The lab supplies a 480 × 320 screen and calls <code>update(dt, keys)</code> and <code>draw(screen)</code>. You change the Python rules. Games run here; the Python pad can keep a copy and ask AI for a hint. <a href="instructor-notes.html#runtime">About the game runner</a></p>
+    <div class="pl-evidence"><span class="pl-label">SHOW WHAT CHANGED</span><p>Which value or rule did you change? What happened when you ran it?</p><details class="pl-hint"><summary>Check your result after trying</summary><p>Show a successful bounce, a miss, and a fresh restart. Explain that paddle width changes the contact area while vx and vy still set the ball velocities.</p></details><label class="sr-only" for="reflection-paddle-rally">My observation and explanation</label><textarea id="reflection-paddle-rally" data-reflection rows="2" maxlength="1600" placeholder="I changed… I observed… I think this happened because…"></textarea><label class="pl-done"><input type="checkbox" data-done> I can explain my experiment.</label><small>Your own check-in. Scores and reaction speed are not grades.</small></div></div></section>
+<section id="meteor-dodge" data-sid="meteor-dodge" data-code-source="meteor-dodge" data-engine="pygame" hidden aria-hidden="true">
+    <div class="pl-mission"><div class="pl-eyebrow">STRETCH<span>12–20 min · optional</span></div><h2 tabindex="-1">Meteor dodge</h2><p class="pl-goal">Dodge an obstacle and connect movement, elapsed time, and a game-over rule.</p><button type="button" data-lab-listen  disabled>Listen to instructions</button>
+    <div class="pl-task"><span class="pl-label">YOUR MISSION</span><p>Move the blue player left or right while the meteor falls. A collision stops the round. Read seconds and alive in the state panel; Run again starts a fresh round.</p></div><label class="pl-label" for="prediction-meteor-dodge">PREDICT BEFORE YOU CHANGE IT</label><p class="pl-question">If meteor_speed increases while player_speed stays fixed, what part of the game changes?</p><textarea id="prediction-meteor-dodge" data-prediction rows="2" maxlength="1200" placeholder="I think…"></textarea>
+    <div class="pl-task pl-change"><span class="pl-label">CHANGE ONE THING</span><p>Change only meteor_speed from 100 to 160. Restart and observe its fall. Keep player_speed and the other rules unchanged.</p></div><details class="pl-hint"><summary>Need a small hint?</summary><p>meteor_y increases as the obstacle falls. When alive becomes False, update returns before moving anything or adding time.</p></details><details class="pl-hint"><summary>Ready for a stretch?</summary><p>Add three lives or a second meteor. Decide how to avoid subtracting a life on every update while shapes still overlap.</p></details>
+    </div><div class="pl-work"><div class="lab" data-lab="meteor-dodge" id="lab-meteor-dodge"><div class="pg-workbench"><div class="pg-code-pane"><div class="pl-editor-heading"><label for="code-meteor-dodge">meteor-dodge.py</label><span>EDIT → PLAY → EXPLAIN</span></div><textarea class="code" id="code-meteor-dodge" spellcheck="false" autocapitalize="off" autocomplete="off" wrap="off" maxlength="20000" aria-label="Meteor dodge Python code" disabled>import pygame
+
+player_x = 225.0
+player_speed = 230
+meteor_x, meteor_y = 228.0, -24.0
+meteor_speed = 100
+seconds = 0.0
+alive = True
+
+def update(dt, keys):
+    global player_x, meteor_x, meteor_y, seconds, alive
+    if not alive:
+        return
+    seconds += dt
+    player_x += (("right" in keys) - ("left" in keys)) * player_speed * dt
+    player_x = max(0, min(WIDTH - 30, player_x))
+    meteor_y += meteor_speed * dt
+    if meteor_y &gt; HEIGHT:
+        meteor_y = -24
+        meteor_x = (meteor_x + 137) % (WIDTH - 24)
+    player = pygame.Rect(round(player_x), HEIGHT - 42, 30, 24)
+    meteor = pygame.Rect(round(meteor_x), round(meteor_y), 24, 24)
+    if player.colliderect(meteor):
+        alive = False
+
+def draw(screen):
+    screen.fill("midnightblue")
+    player_color = "deepskyblue" if alive else "coral"
+    pygame.draw.rect(screen, player_color, (round(player_x), HEIGHT - 42, 30, 24))
+    pygame.draw.rect(screen, "gold", (round(meteor_x), round(meteor_y), 24, 24))</textarea>
+    <div class="pl-runbar"><button type="button" class="pl-primary" data-run disabled>▶ Play game</button><button type="button" data-stop hidden>Stop</button><button type="button" data-visualize>Inspect game state</button><button type="button" data-reset>Starter code</button><button type="button" data-undo hidden>Undo reset</button><button type="button" data-pad>Keep in Python pad / Ask AI</button></div></div>
+<div class="pg-play-pane"><div class="pg-game-heading"><b>YOUR GAME</b><span data-game-frame>No frames yet</span></div><div class="pg-canvas-wrap"><canvas data-game-canvas width="480" height="320" tabindex="0" aria-label="Meteor dodge game. Arrow keys or W A S D move your player; on-screen buttons are available below."></canvas><div class="pg-overlay" data-game-overlay>Press Play to run your code.</div></div><div class="pg-controls"><div class="pg-transport"><button type="button" data-game-pause disabled>Pause</button><button type="button" data-game-step disabled>Step 1 frame</button></div><div class="pg-direction" aria-label="Hold a direction to move"><button type="button" data-game-key="left" aria-label="Move left">←</button><button type="button" data-game-key="up" aria-label="Move up">↑</button><button type="button" data-game-key="down" aria-label="Move down">↓</button><button type="button" data-game-key="right" aria-label="Move right">→</button><button type="button" data-game-key="space" aria-label="Space action">Space</button></div></div><p class="pg-control-note">Click the game to use arrow keys / W A S D, or hold a direction button. Pause, then step one frame to inspect a change.</p><details data-game-inspector open><summary>Python state <small>live values from your code</small></summary><dl data-game-state></dl></details></div></div>
+    <div class="pl-result-heading"><b>Run log</b><span data-status role="status">Press Play to start.</span></div><pre class="out" data-output aria-live="off"></pre><div class="pl-plots" data-plots></div></div>
+<p class="pg-scaffold">The lab supplies a 480 × 320 screen and calls <code>update(dt, keys)</code> and <code>draw(screen)</code>. You change the Python rules. Games run here; the Python pad can keep a copy and ask AI for a hint. <a href="instructor-notes.html#runtime">About the game runner</a></p>
+    <div class="pl-evidence"><span class="pl-label">SHOW WHAT CHANGED</span><p>Which value or rule did you change? What happened when you ran it?</p><details class="pl-hint"><summary>Check your result after trying</summary><p>Show movement, a collision ending the round, and a restart with seconds near zero and alive set to True. Explain which speed you changed and which you kept fixed.</p></details><label class="sr-only" for="reflection-meteor-dodge">My observation and explanation</label><textarea id="reflection-meteor-dodge" data-reflection rows="2" maxlength="1600" placeholder="I changed… I observed… I think this happened because…"></textarea><label class="pl-done"><input type="checkbox" data-done> I can explain my experiment.</label><small>Your own check-in. Scores and reaction speed are not grades.</small></div></div></section></div>
+    <footer class="pl-footer"><button type="button" data-prev>← Previous challenge</button><span>Choose one. Try a change. Explain what happened.</span><button type="button" class="pl-primary" data-next>Next challenge →</button></footer><p class="pl-storage-note">Your code and notes save on this device for the current account. Game backups are separate from the main lab. Download a backup to move devices. Python and pygame run in your browser; first Play downloads the game tools. AI requests and live-class sharing are optional. Live-class sharing includes code and text results, not the game canvas.</p><p class="pg-license">Powered by <a href="https://pyga.me/" target="_blank" rel="noopener">pygame-ce</a> and <a href="https://pyodide.org/" target="_blank" rel="noopener">Pyodide</a>. <a href="packages/README.md">Runtime sources and licenses</a>.</p></main>
+    <dialog class="pl-import-dialog"><h2>Load this game backup?</h2><p>Your current game notebook will be downloaded as a backup before these challenges are replaced.</p><button type="button" data-import-confirm>Back up current games &amp; load</button><button type="button" data-import-cancel>Cancel</button></dialog><noscript>This game lab needs JavaScript. Read the <a href="instructor-notes.html">teacher guide</a> for offline alternatives.</noscript>
+    <script defer src="trial-games.js?v=4da91eebd8ce"></script><script defer src="trial-game-client.js?v=4da91eebd8ce"></script><script defer src="../scratchpad/code-trace-client.js?v=a566c1e3ecf8"></script><script defer src="/meritpoint-slides/python/scratchpad/python-workspace-client.js?v=62ef8418971d"></script><script defer src="/meritpoint-slides/assets/live-classroom-client.js?v=88b10c13f1b1" data-deck="python/trial-lab"></script><script defer src="trial-games-audio.js?v=4da91eebd8ce"></script><script defer src="/meritpoint-slides/assets/auth.js"></script></body></html>
