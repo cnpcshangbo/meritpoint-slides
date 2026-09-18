@@ -1,0 +1,123 @@
+{
+  "name": "pygame-ce",
+  "version": "2.4.1",
+  "runtime": "Pyodide 0.26.2",
+  "python": "3.12",
+  "abi": "pyodide_2024_0_wasm32",
+  "file": "pygame_ce-2.4.1-cp312-cp312-pyodide_2024_0_wasm32.whl",
+  "bytes": 11714657,
+  "sha256": "96a66dd45b7acb5e02ae109c8f17b20b829ff0e71b4c7fa006e7f9f214ab0445",
+  "download": "https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pygame_ce-2.4.1-cp312-cp312-pyodide_2024_0_wasm32.whl",
+  "runtimeDependencies": [],
+  "license": "LGPL-2.1",
+  "licenseFile": "LICENSE.pygame-ce.txt",
+  "licenseSource": "https://raw.githubusercontent.com/pygame-community/pygame-ce/2.4.1/docs/LGPL.txt",
+  "upstreamSource": "https://github.com/pygame-community/pygame-ce/tree/2.4.1",
+  "sourceArchive": "https://files.pythonhosted.org/packages/dc/b1/64fffc2c8664497ae82b2afb4f5efe0130d38b39f2d25af0288c4261df3e/pygame-ce-2.4.1.tar.gz",
+  "sourceArchiveSha256": "70a84aa1417c633a0fd6754ffa5dc92ee1b9aeb70baaa52c8c8c94a7c6db9cf0",
+  "buildRecipe": "https://github.com/pyodide/pyodide/blob/0.26.2/packages/pygame-ce/meta.yaml",
+  "emscriptenPorts": "https://github.com/emscripten-core/emscripten/tree/3.1.58/tools/ports",
+  "distribution": "Unmodified official Pyodide wheel. Pygame source, Pyodide patches/build recipe and Emscripten dependency sources are linked above.",
+  "dependencyLicenseNotices": [
+    {
+      "file": "licenses/LICENSE.FLAC.txt",
+      "source": "https://raw.githubusercontent.com/pygame-community/pygame-ce/2.4.1/docs/licenses/LICENSE.FLAC.txt",
+      "sha256": "349b7bdbf2de10e1303fc3e8aa81f944fd2832fe40270e1b805e20b1b131187c"
+    },
+    {
+      "file": "licenses/LICENSE.fluidsynth.txt",
+      "source": "https://raw.githubusercontent.com/pygame-community/pygame-ce/2.4.1/docs/licenses/LICENSE.fluidsynth.txt",
+      "sha256": "9b872a8a070b8ad329c4bd380fb1bf0000f564c75023ec8e1e6803f15364b9e9"
+    },
+    {
+      "file": "licenses/LICENSE.freetype.txt",
+      "source": "https://raw.githubusercontent.com/pygame-community/pygame-ce/2.4.1/docs/licenses/LICENSE.freetype.txt",
+      "sha256": "650737ec7589c35600de73b0db88dafb314f7e32e7e3cf38d0c87ceb1a7ed31b"
+    },
+    {
+      "file": "licenses/LICENSE.jpeg.txt",
+      "source": "https://raw.githubusercontent.com/pygame-community/pygame-ce/2.4.1/docs/licenses/LICENSE.jpeg.txt",
+      "sha256": "2899a194cc43af0cfbeff33cdecfad20de8bbf784155b0cd0217d27c37609a28"
+    },
+    {
+      "file": "licenses/LICENSE.modplug.txt",
+      "source": "https://raw.githubusercontent.com/pygame-community/pygame-ce/2.4.1/docs/licenses/LICENSE.modplug.txt",
+      "sha256": "b64d05522976d26e870bfbbf701e5a89cc5e2ab8fbde677e24f07ddaf0dac7c1"
+    },
+    {
+      "file": "licenses/LICENSE.mpg123.txt",
+      "source": "https://raw.githubusercontent.com/pygame-community/pygame-ce/2.4.1/docs/licenses/LICENSE.mpg123.txt",
+      "sha256": "892cd7e1c0b23374c8a82c244f64c30297c1feada0143cfdd9f6a25f445b0dd6"
+    },
+    {
+      "file": "licenses/LICENSE.numpy.txt",
+      "source": "https://raw.githubusercontent.com/pygame-community/pygame-ce/2.4.1/docs/licenses/LICENSE.numpy.txt",
+      "sha256": "faaa516b85dbf609b0296918d61924e3145c9d2b8d91ea5be93e7ba073a78aa1"
+    },
+    {
+      "file": "licenses/LICENSE.ogg-vorbis.txt",
+      "source": "https://raw.githubusercontent.com/pygame-community/pygame-ce/2.4.1/docs/licenses/LICENSE.ogg-vorbis.txt",
+      "sha256": "776b6f6ab87afa263d534ad4061b6180149de0fed90e2e18e1592992922327ce"
+    },
+    {
+      "file": "licenses/LICENSE.opus.txt",
+      "source": "https://raw.githubusercontent.com/pygame-community/pygame-ce/2.4.1/docs/licenses/LICENSE.opus.txt",
+      "sha256": "fde149f902d124a8c02a218527c440ee2fab6884323f180061b1405fb06af60e"
+    },
+    {
+      "file": "licenses/LICENSE.opusfile.txt",
+      "source": "https://raw.githubusercontent.com/pygame-community/pygame-ce/2.4.1/docs/licenses/LICENSE.opusfile.txt",
+      "sha256": "54e125c8250361407b34322e0f328f6bdf7fd30cd4f2941a321e47b41f9c159d"
+    },
+    {
+      "file": "licenses/LICENSE.png.txt",
+      "source": "https://raw.githubusercontent.com/pygame-community/pygame-ce/2.4.1/docs/licenses/LICENSE.png.txt",
+      "sha256": "0ad3bfee8be10e5519949e7af492e36bc349376b75fbeb412229a5967e3e9434"
+    },
+    {
+      "file": "licenses/LICENSE.portmidi.txt",
+      "source": "https://raw.githubusercontent.com/pygame-community/pygame-ce/2.4.1/docs/licenses/LICENSE.portmidi.txt",
+      "sha256": "eb5d0724b2ae76a94ae804c44b3d6cfaaca822b7d42907aefa9256cb93db6fe0"
+    },
+    {
+      "file": "licenses/LICENSE.sdl2.txt",
+      "source": "https://raw.githubusercontent.com/pygame-community/pygame-ce/2.4.1/docs/licenses/LICENSE.sdl2.txt",
+      "sha256": "ae4df3759a726538607b84c00ab8f8a5567d9f38ad5397486eb9b5c5f626caef"
+    },
+    {
+      "file": "licenses/LICENSE.sdl2_image.txt",
+      "source": "https://raw.githubusercontent.com/pygame-community/pygame-ce/2.4.1/docs/licenses/LICENSE.sdl2_image.txt",
+      "sha256": "45079362e2230154205413a6940544ca94e3479ccf76205c71c4f542a6815d25"
+    },
+    {
+      "file": "licenses/LICENSE.sdl2_mixer.txt",
+      "source": "https://raw.githubusercontent.com/pygame-community/pygame-ce/2.4.1/docs/licenses/LICENSE.sdl2_mixer.txt",
+      "sha256": "113727180e7956cb9718b03b41da85b63ea54743a33047071a623bf672895a10"
+    },
+    {
+      "file": "licenses/LICENSE.sdl_gfx.txt",
+      "source": "https://raw.githubusercontent.com/pygame-community/pygame-ce/2.4.1/docs/licenses/LICENSE.sdl_gfx.txt",
+      "sha256": "63744690fa28ecf2a9dedacafb08d1209031e7eff1820430d952264f678a1bcf"
+    },
+    {
+      "file": "licenses/LICENSE.sse2neon-h.txt",
+      "source": "https://raw.githubusercontent.com/pygame-community/pygame-ce/2.4.1/docs/licenses/LICENSE.sse2neon-h.txt",
+      "sha256": "ada11c843d252c0b70837629ac7a54a525ecb7d8c0932ebccf863c55dbd32cb1"
+    },
+    {
+      "file": "licenses/LICENSE.tiff.txt",
+      "source": "https://raw.githubusercontent.com/pygame-community/pygame-ce/2.4.1/docs/licenses/LICENSE.tiff.txt",
+      "sha256": "8eeab3915f97f6f7b62a8008bf77e7ac3bfbb034b04d93cd63aafa10b2dd6614"
+    },
+    {
+      "file": "licenses/LICENSE.webp.txt",
+      "source": "https://raw.githubusercontent.com/pygame-community/pygame-ce/2.4.1/docs/licenses/LICENSE.webp.txt",
+      "sha256": "17c029a902ad45a199dfe8e3a1c39305ab28d302b0703360c4a27351a4673dcb"
+    },
+    {
+      "file": "licenses/LICENSE.zlib.txt",
+      "source": "https://raw.githubusercontent.com/pygame-community/pygame-ce/2.4.1/docs/licenses/LICENSE.zlib.txt",
+      "sha256": "31010e0bc26df3001c7bb3c1b7a7094a8972bf6d37a5d0c59d3d3c98fbfaf463"
+    }
+  ]
+}

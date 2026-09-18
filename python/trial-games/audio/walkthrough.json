@@ -1,0 +1,1596 @@
+{
+  "mascot": {
+    "hash": "f0c288ed6973b792c578",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "Import makes pygame drawing tools available.",
+        "file": "mascot-w00.mp3",
+        "duration": 3.192,
+        "bytes": 19152
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "This comment reminds you to change only x in your first experiment.",
+        "file": "mascot-w01.mp3",
+        "duration": 4.296,
+        "bytes": 25776
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "Set the horizontal position, x, to one hundred twenty.",
+        "file": "mascot-w02.mp3",
+        "duration": 4.392,
+        "bytes": 26352
+      },
+      {
+        "lines": [
+          5,
+          5
+        ],
+        "text": "Set the vertical position, y, to one hundred fifty.",
+        "file": "mascot-w03.mp3",
+        "duration": 3.96,
+        "bytes": 23760
+      },
+      {
+        "lines": [
+          6,
+          6
+        ],
+        "text": "The radius sets the distance from the face center to its edge.",
+        "file": "mascot-w04.mp3",
+        "duration": 3.96,
+        "bytes": 23760
+      },
+      {
+        "lines": [
+          7,
+          7
+        ],
+        "text": "Store the color name as text inside quotation marks.",
+        "file": "mascot-w05.mp3",
+        "duration": 3.912,
+        "bytes": 23472
+      },
+      {
+        "lines": [
+          9,
+          9
+        ],
+        "text": "Define the update function. The game runner supplies elapsed time and held keys.",
+        "file": "mascot-w06.mp3",
+        "duration": 5.856,
+        "bytes": 35136
+      },
+      {
+        "lines": [
+          10,
+          10
+        ],
+        "text": "Pass does nothing. This static picture needs no movement update.",
+        "file": "mascot-w07.mp3",
+        "duration": 4.968,
+        "bytes": 29808
+      },
+      {
+        "lines": [
+          12,
+          12
+        ],
+        "text": "Define draw. The game runner provides the screen surface to draw on.",
+        "file": "mascot-w08.mp3",
+        "duration": 4.728,
+        "bytes": 28368
+      },
+      {
+        "lines": [
+          13,
+          13
+        ],
+        "text": "Fill the screen with a dark blue background.",
+        "file": "mascot-w09.mp3",
+        "duration": 2.904,
+        "bytes": 17424
+      },
+      {
+        "lines": [
+          14,
+          14
+        ],
+        "text": "Draw the face using its color, center position, and radius.",
+        "file": "mascot-w10.mp3",
+        "duration": 4.536,
+        "bytes": 27216
+      },
+      {
+        "lines": [
+          15,
+          15
+        ],
+        "text": "Draw the left eye relative to the face center.",
+        "file": "mascot-w11.mp3",
+        "duration": 3.12,
+        "bytes": 18720
+      },
+      {
+        "lines": [
+          16,
+          16
+        ],
+        "text": "Draw the right eye relative to the same center.",
+        "file": "mascot-w12.mp3",
+        "duration": 3.168,
+        "bytes": 19008
+      },
+      {
+        "lines": [
+          17,
+          17
+        ],
+        "text": "Draw a four pixel thick line for the mouth, below the center.",
+        "file": "mascot-w13.mp3",
+        "duration": 4.272,
+        "bytes": 25632
+      }
+    ]
+  },
+  "ball-speed": {
+    "hash": "0bcf3254b8fe53dbf7d3",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "Import pygame for drawing the moving ball.",
+        "file": "ball-speed-w00.mp3",
+        "duration": 2.76,
+        "bytes": 16560
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "Start the ball twenty four pixels from the left edge.",
+        "file": "ball-speed-w01.mp3",
+        "duration": 3.288,
+        "bytes": 19728
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "Half the provided height places the ball halfway down the canvas.",
+        "file": "ball-speed-w02.mp3",
+        "duration": 4.272,
+        "bytes": 25632
+      },
+      {
+        "lines": [
+          5,
+          5
+        ],
+        "text": "Speed is the number of pixels traveled per second.",
+        "file": "ball-speed-w03.mp3",
+        "duration": 3.456,
+        "bytes": 20736
+      },
+      {
+        "lines": [
+          6,
+          6
+        ],
+        "text": "The ball radius is fourteen pixels.",
+        "file": "ball-speed-w04.mp3",
+        "duration": 2.856,
+        "bytes": 17136
+      },
+      {
+        "lines": [
+          8,
+          8
+        ],
+        "text": "The game runner repeatedly calls update with elapsed time and held keys.",
+        "file": "ball-speed-w05.mp3",
+        "duration": 5.112,
+        "bytes": 30672
+      },
+      {
+        "lines": [
+          9,
+          9
+        ],
+        "text": "Global lets this function reassign the shared x value.",
+        "file": "ball-speed-w06.mp3",
+        "duration": 4.08,
+        "bytes": 24480
+      },
+      {
+        "lines": [
+          10,
+          10
+        ],
+        "text": "This comment explains that d t is elapsed update time in seconds.",
+        "file": "ball-speed-w07.mp3",
+        "duration": 4.752,
+        "bytes": 28512
+      },
+      {
+        "lines": [
+          11,
+          11
+        ],
+        "text": "Add speed times elapsed time to the horizontal position.",
+        "file": "ball-speed-w08.mp3",
+        "duration": 3.816,
+        "bytes": 22896
+      },
+      {
+        "lines": [
+          12,
+          12
+        ],
+        "text": "Check whether the whole ball has passed the right edge.",
+        "file": "ball-speed-w09.mp3",
+        "duration": 3.216,
+        "bytes": 19296
+      },
+      {
+        "lines": [
+          13,
+          13
+        ],
+        "text": "When it has, move its center just outside the left edge.",
+        "file": "ball-speed-w10.mp3",
+        "duration": 3.552,
+        "bytes": 21312
+      },
+      {
+        "lines": [
+          15,
+          15
+        ],
+        "text": "Define the drawing function for the current ball position.",
+        "file": "ball-speed-w11.mp3",
+        "duration": 3.096,
+        "bytes": 18576
+      },
+      {
+        "lines": [
+          16,
+          16
+        ],
+        "text": "Clear the previous frame with the background color.",
+        "file": "ball-speed-w12.mp3",
+        "duration": 3.264,
+        "bytes": 19584
+      },
+      {
+        "lines": [
+          17,
+          17
+        ],
+        "text": "Draw a gold ball, rounding its center coordinates to pixels.",
+        "file": "ball-speed-w13.mp3",
+        "duration": 4.392,
+        "bytes": 26352
+      }
+    ]
+  },
+  "dice-duel": {
+    "hash": "fb45dc98edadf522455a",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "Import Python’s random number tools.",
+        "file": "dice-duel-w00.mp3",
+        "duration": 2.712,
+        "bytes": 16272
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "This comment marks the one rule to change first.",
+        "file": "dice-duel-w01.mp3",
+        "duration": 3.336,
+        "bytes": 20016
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "Your die starts with six sides.",
+        "file": "dice-duel-w02.mp3",
+        "duration": 2.496,
+        "bytes": 14976
+      },
+      {
+        "lines": [
+          5,
+          5
+        ],
+        "text": "The bot’s die also starts with six sides.",
+        "file": "dice-duel-w03.mp3",
+        "duration": 3.096,
+        "bytes": 18576
+      },
+      {
+        "lines": [
+          6,
+          6
+        ],
+        "text": "Choose a random whole number from one through your number of sides.",
+        "file": "dice-duel-w04.mp3",
+        "duration": 3.912,
+        "bytes": 23472
+      },
+      {
+        "lines": [
+          7,
+          7
+        ],
+        "text": "Choose the bot’s roll using its own number of sides.",
+        "file": "dice-duel-w05.mp3",
+        "duration": 3.6,
+        "bytes": 21600
+      },
+      {
+        "lines": [
+          8,
+          8
+        ],
+        "text": "Print your actual roll with a label.",
+        "file": "dice-duel-w06.mp3",
+        "duration": 2.448,
+        "bytes": 14688
+      },
+      {
+        "lines": [
+          9,
+          9
+        ],
+        "text": "Print the bot’s actual roll for comparison.",
+        "file": "dice-duel-w07.mp3",
+        "duration": 3.024,
+        "bytes": 18144
+      },
+      {
+        "lines": [
+          11,
+          11
+        ],
+        "text": "Check whether your roll is greater than the bot’s roll.",
+        "file": "dice-duel-w08.mp3",
+        "duration": 3.144,
+        "bytes": 18864
+      },
+      {
+        "lines": [
+          12,
+          12
+        ],
+        "text": "If so, print that you won this round.",
+        "file": "dice-duel-w09.mp3",
+        "duration": 2.88,
+        "bytes": 17280
+      },
+      {
+        "lines": [
+          13,
+          13
+        ],
+        "text": "Otherwise, check whether your roll is smaller.",
+        "file": "dice-duel-w10.mp3",
+        "duration": 2.928,
+        "bytes": 17568
+      },
+      {
+        "lines": [
+          14,
+          14
+        ],
+        "text": "If it is smaller, print that the bot won.",
+        "file": "dice-duel-w11.mp3",
+        "duration": 2.712,
+        "bytes": 16272
+      },
+      {
+        "lines": [
+          15,
+          15
+        ],
+        "text": "The remaining case is equality: neither roll is larger.",
+        "file": "dice-duel-w12.mp3",
+        "duration": 4.056,
+        "bytes": 24336
+      },
+      {
+        "lines": [
+          16,
+          16
+        ],
+        "text": "Print a tie for that remaining case.",
+        "file": "dice-duel-w13.mp3",
+        "duration": 2.544,
+        "bytes": 15264
+      }
+    ]
+  },
+  "coin-collector": {
+    "hash": "fa67c830438e7d9e5e87",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "Import pygame’s drawing and rectangle tools.",
+        "file": "coin-collector-w00.mp3",
+        "duration": 3.48,
+        "bytes": 20880
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "Set the player’s starting horizontal and vertical positions.",
+        "file": "coin-collector-w01.mp3",
+        "duration": 3.96,
+        "bytes": 23760
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "Set player speed in pixels per second.",
+        "file": "coin-collector-w02.mp3",
+        "duration": 2.784,
+        "bytes": 16704
+      },
+      {
+        "lines": [
+          5,
+          5
+        ],
+        "text": "Start the score at zero for a fresh run.",
+        "file": "coin-collector-w03.mp3",
+        "duration": 2.928,
+        "bytes": 17568
+      },
+      {
+        "lines": [
+          6,
+          6
+        ],
+        "text": "Create the coin rectangle from its left position, top position, width, and height.",
+        "file": "coin-collector-w04.mp3",
+        "duration": 6.12,
+        "bytes": 36720
+      },
+      {
+        "lines": [
+          8,
+          8
+        ],
+        "text": "Define the update called by the game runner.",
+        "file": "coin-collector-w05.mp3",
+        "duration": 2.808,
+        "bytes": 16848
+      },
+      {
+        "lines": [
+          9,
+          9
+        ],
+        "text": "Allow this function to change the shared position and score.",
+        "file": "coin-collector-w06.mp3",
+        "duration": 3.84,
+        "bytes": 23040
+      },
+      {
+        "lines": [
+          10,
+          10
+        ],
+        "text": "Right adds horizontal movement; left subtracts it. Both together cancel.",
+        "file": "coin-collector-w07.mp3",
+        "duration": 5.496,
+        "bytes": 32976
+      },
+      {
+        "lines": [
+          11,
+          11
+        ],
+        "text": "Down adds vertical movement; up subtracts it.",
+        "file": "coin-collector-w08.mp3",
+        "duration": 3.792,
+        "bytes": 22752
+      },
+      {
+        "lines": [
+          12,
+          12
+        ],
+        "text": "Keep the player’s horizontal position inside the canvas.",
+        "file": "coin-collector-w09.mp3",
+        "duration": 3.576,
+        "bytes": 21456
+      },
+      {
+        "lines": [
+          13,
+          13
+        ],
+        "text": "Keep the player’s vertical position inside the canvas.",
+        "file": "coin-collector-w10.mp3",
+        "duration": 3.36,
+        "bytes": 20160
+      },
+      {
+        "lines": [
+          14,
+          14
+        ],
+        "text": "Create the player’s current collision rectangle.",
+        "file": "coin-collector-w11.mp3",
+        "duration": 2.952,
+        "bytes": 17712
+      },
+      {
+        "lines": [
+          15,
+          15
+        ],
+        "text": "Check whether the player and coin rectangles overlap.",
+        "file": "coin-collector-w12.mp3",
+        "duration": 3.504,
+        "bytes": 21024
+      },
+      {
+        "lines": [
+          16,
+          16
+        ],
+        "text": "If they overlap, add one point to score.",
+        "file": "coin-collector-w13.mp3",
+        "duration": 3.408,
+        "bytes": 20448
+      },
+      {
+        "lines": [
+          17,
+          17
+        ],
+        "text": "This comment explains why the coin must move after collection.",
+        "file": "coin-collector-w14.mp3",
+        "duration": 3.984,
+        "bytes": 23904
+      },
+      {
+        "lines": [
+          18,
+          18
+        ],
+        "text": "Choose a new coin position on the opposite side.",
+        "file": "coin-collector-w15.mp3",
+        "duration": 3.24,
+        "bytes": 19440
+      },
+      {
+        "lines": [
+          19,
+          19
+        ],
+        "text": "Move the coin to a different height as well.",
+        "file": "coin-collector-w16.mp3",
+        "duration": 3,
+        "bytes": 18000
+      },
+      {
+        "lines": [
+          21,
+          21
+        ],
+        "text": "Define how to draw the current game state.",
+        "file": "coin-collector-w17.mp3",
+        "duration": 2.784,
+        "bytes": 16704
+      },
+      {
+        "lines": [
+          22,
+          22
+        ],
+        "text": "Clear the old frame with the background color.",
+        "file": "coin-collector-w18.mp3",
+        "duration": 3.048,
+        "bytes": 18288
+      },
+      {
+        "lines": [
+          23,
+          23
+        ],
+        "text": "Draw the blue player rectangle at its current position.",
+        "file": "coin-collector-w19.mp3",
+        "duration": 3.288,
+        "bytes": 19728
+      },
+      {
+        "lines": [
+          24,
+          24
+        ],
+        "text": "Draw the gold coin using its rectangle.",
+        "file": "coin-collector-w20.mp3",
+        "duration": 2.88,
+        "bytes": 17280
+      }
+    ]
+  },
+  "bounce-wall": {
+    "hash": "46fa20944366b30b561a",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "Import pygame’s drawing tools.",
+        "file": "bounce-wall-w00.mp3",
+        "duration": 2.568,
+        "bytes": 15408
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "Start the ball eighty pixels from the left.",
+        "file": "bounce-wall-w01.mp3",
+        "duration": 2.784,
+        "bytes": 16704
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "Place the ball halfway down the canvas.",
+        "file": "bounce-wall-w02.mp3",
+        "duration": 2.736,
+        "bytes": 16416
+      },
+      {
+        "lines": [
+          5,
+          5
+        ],
+        "text": "A positive horizontal velocity initially moves the ball right.",
+        "file": "bounce-wall-w03.mp3",
+        "duration": 4.392,
+        "bytes": 26352
+      },
+      {
+        "lines": [
+          6,
+          6
+        ],
+        "text": "Set the ball radius to fifteen pixels.",
+        "file": "bounce-wall-w04.mp3",
+        "duration": 3.048,
+        "bytes": 18288
+      },
+      {
+        "lines": [
+          8,
+          8
+        ],
+        "text": "Define the repeated movement update.",
+        "file": "bounce-wall-w05.mp3",
+        "duration": 2.52,
+        "bytes": 15120
+      },
+      {
+        "lines": [
+          9,
+          9
+        ],
+        "text": "Allow this function to change the shared position and velocity.",
+        "file": "bounce-wall-w06.mp3",
+        "duration": 4.152,
+        "bytes": 24912
+      },
+      {
+        "lines": [
+          10,
+          10
+        ],
+        "text": "Move by horizontal velocity times elapsed time.",
+        "file": "bounce-wall-w07.mp3",
+        "duration": 3.696,
+        "bytes": 22176
+      },
+      {
+        "lines": [
+          11,
+          11
+        ],
+        "text": "Check whether the ball reaches the right wall.",
+        "file": "bounce-wall-w08.mp3",
+        "duration": 2.616,
+        "bytes": 15696
+      },
+      {
+        "lines": [
+          12,
+          12
+        ],
+        "text": "Place the ball just inside that wall.",
+        "file": "bounce-wall-w09.mp3",
+        "duration": 2.544,
+        "bytes": 15264
+      },
+      {
+        "lines": [
+          13,
+          13
+        ],
+        "text": "This is the deliberate bug. Positive absolute velocity keeps pointing right. Use negative absolute velocity here to bounce left.",
+        "file": "bounce-wall-w10.mp3",
+        "duration": 9.408,
+        "bytes": 56448
+      },
+      {
+        "lines": [
+          14,
+          14
+        ],
+        "text": "Check whether the ball reaches the left wall.",
+        "file": "bounce-wall-w11.mp3",
+        "duration": 2.712,
+        "bytes": 16272
+      },
+      {
+        "lines": [
+          15,
+          15
+        ],
+        "text": "Place the ball just inside the left wall.",
+        "file": "bounce-wall-w12.mp3",
+        "duration": 2.712,
+        "bytes": 16272
+      },
+      {
+        "lines": [
+          16,
+          16
+        ],
+        "text": "Positive absolute velocity points right, away from the left wall.",
+        "file": "bounce-wall-w13.mp3",
+        "duration": 4.608,
+        "bytes": 27648
+      },
+      {
+        "lines": [
+          18,
+          18
+        ],
+        "text": "Define the current frame’s drawing.",
+        "file": "bounce-wall-w14.mp3",
+        "duration": 2.256,
+        "bytes": 13536
+      },
+      {
+        "lines": [
+          19,
+          19
+        ],
+        "text": "Clear the screen with the background color.",
+        "file": "bounce-wall-w15.mp3",
+        "duration": 2.544,
+        "bytes": 15264
+      },
+      {
+        "lines": [
+          20,
+          20
+        ],
+        "text": "Draw a white line along the left wall.",
+        "file": "bounce-wall-w16.mp3",
+        "duration": 2.88,
+        "bytes": 17280
+      },
+      {
+        "lines": [
+          21,
+          21
+        ],
+        "text": "Draw a white line along the right wall.",
+        "file": "bounce-wall-w17.mp3",
+        "duration": 2.88,
+        "bytes": 17280
+      },
+      {
+        "lines": [
+          22,
+          22
+        ],
+        "text": "Draw the ball at its rounded current coordinates.",
+        "file": "bounce-wall-w18.mp3",
+        "duration": 3.216,
+        "bytes": 19296
+      }
+    ]
+  },
+  "guess-number": {
+    "hash": "65d66fe24f9c6eceaef6",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "Keep the secret visible as seven so you can test every rule.",
+        "file": "guess-number-w00.mp3",
+        "duration": 4.08,
+        "bytes": 24480
+      },
+      {
+        "lines": [
+          2,
+          2
+        ],
+        "text": "Set the guess to four. Edit this value for each new test.",
+        "file": "guess-number-w01.mp3",
+        "duration": 4.68,
+        "bytes": 28080
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "Print the guess used in this run.",
+        "file": "guess-number-w02.mp3",
+        "duration": 2.352,
+        "bytes": 14112
+      },
+      {
+        "lines": [
+          5,
+          5
+        ],
+        "text": "Check whether the guess is smaller than the secret.",
+        "file": "guess-number-w03.mp3",
+        "duration": 2.976,
+        "bytes": 17856
+      },
+      {
+        "lines": [
+          6,
+          6
+        ],
+        "text": "For a smaller guess, print the clue to try a larger number.",
+        "file": "guess-number-w04.mp3",
+        "duration": 3.816,
+        "bytes": 22896
+      },
+      {
+        "lines": [
+          7,
+          7
+        ],
+        "text": "Otherwise, check whether the guess is larger than the secret.",
+        "file": "guess-number-w05.mp3",
+        "duration": 3.672,
+        "bytes": 22032
+      },
+      {
+        "lines": [
+          8,
+          8
+        ],
+        "text": "For a larger guess, print the clue to try a smaller number.",
+        "file": "guess-number-w06.mp3",
+        "duration": 3.912,
+        "bytes": 23472
+      },
+      {
+        "lines": [
+          9,
+          9
+        ],
+        "text": "If neither comparison was true, the two numbers are equal.",
+        "file": "guess-number-w07.mp3",
+        "duration": 4.272,
+        "bytes": 25632
+      },
+      {
+        "lines": [
+          10,
+          10
+        ],
+        "text": "Print the success message for the equality case.",
+        "file": "guess-number-w08.mp3",
+        "duration": 3.24,
+        "bytes": 19440
+      }
+    ]
+  },
+  "paddle-rally": {
+    "hash": "3c3b4c8d7e8fbf5346a1",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "Import pygame’s drawing and collision tools.",
+        "file": "paddle-rally-w00.mp3",
+        "duration": 3.288,
+        "bytes": 19728
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "Set the ball’s starting horizontal and vertical positions.",
+        "file": "paddle-rally-w01.mp3",
+        "duration": 3.864,
+        "bytes": 23184
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "Set horizontal and vertical ball velocities in pixels per second.",
+        "file": "paddle-rally-w02.mp3",
+        "duration": 4.68,
+        "bytes": 28080
+      },
+      {
+        "lines": [
+          5,
+          5
+        ],
+        "text": "Set the paddle’s starting horizontal position.",
+        "file": "paddle-rally-w03.mp3",
+        "duration": 3.072,
+        "bytes": 18432
+      },
+      {
+        "lines": [
+          6,
+          6
+        ],
+        "text": "Set the paddle width. This is your first experiment’s parameter.",
+        "file": "paddle-rally-w04.mp3",
+        "duration": 4.752,
+        "bytes": 28512
+      },
+      {
+        "lines": [
+          7,
+          7
+        ],
+        "text": "Start the count of successful paddle hits at zero.",
+        "file": "paddle-rally-w05.mp3",
+        "duration": 3.336,
+        "bytes": 20016
+      },
+      {
+        "lines": [
+          8,
+          8
+        ],
+        "text": "Alive is true while this round is running.",
+        "file": "paddle-rally-w06.mp3",
+        "duration": 2.64,
+        "bytes": 15840
+      },
+      {
+        "lines": [
+          10,
+          10
+        ],
+        "text": "Define the repeated game update.",
+        "file": "paddle-rally-w07.mp3",
+        "duration": 2.328,
+        "bytes": 13968
+      },
+      {
+        "lines": [
+          11,
+          11
+        ],
+        "text": "Allow updates to the shared ball, paddle, and round state.",
+        "file": "paddle-rally-w08.mp3",
+        "duration": 4.392,
+        "bytes": 26352
+      },
+      {
+        "lines": [
+          12,
+          12
+        ],
+        "text": "Check whether the round has already ended.",
+        "file": "paddle-rally-w09.mp3",
+        "duration": 2.616,
+        "bytes": 15696
+      },
+      {
+        "lines": [
+          13,
+          13
+        ],
+        "text": "If it has ended, return immediately without moving anything.",
+        "file": "paddle-rally-w10.mp3",
+        "duration": 4.392,
+        "bytes": 26352
+      },
+      {
+        "lines": [
+          14,
+          14
+        ],
+        "text": "Move the paddle right or left at its supplied control speed.",
+        "file": "paddle-rally-w11.mp3",
+        "duration": 4.032,
+        "bytes": 24192
+      },
+      {
+        "lines": [
+          15,
+          15
+        ],
+        "text": "Keep the full paddle inside the canvas.",
+        "file": "paddle-rally-w12.mp3",
+        "duration": 2.952,
+        "bytes": 17712
+      },
+      {
+        "lines": [
+          16,
+          16
+        ],
+        "text": "Update the ball’s horizontal position.",
+        "file": "paddle-rally-w13.mp3",
+        "duration": 2.568,
+        "bytes": 15408
+      },
+      {
+        "lines": [
+          17,
+          17
+        ],
+        "text": "Update the ball’s vertical position.",
+        "file": "paddle-rally-w14.mp3",
+        "duration": 2.328,
+        "bytes": 13968
+      },
+      {
+        "lines": [
+          18,
+          18
+        ],
+        "text": "Check the right wall, allowing for the ball radius.",
+        "file": "paddle-rally-w15.mp3",
+        "duration": 3.672,
+        "bytes": 22032
+      },
+      {
+        "lines": [
+          19,
+          19
+        ],
+        "text": "Clamp the ball inside the right wall and point its velocity left.",
+        "file": "paddle-rally-w16.mp3",
+        "duration": 4.728,
+        "bytes": 28368
+      },
+      {
+        "lines": [
+          20,
+          20
+        ],
+        "text": "Check the left wall.",
+        "file": "paddle-rally-w17.mp3",
+        "duration": 1.68,
+        "bytes": 10080
+      },
+      {
+        "lines": [
+          21,
+          21
+        ],
+        "text": "Clamp the ball inside the left wall and point its velocity right.",
+        "file": "paddle-rally-w18.mp3",
+        "duration": 4.488,
+        "bytes": 26928
+      },
+      {
+        "lines": [
+          22,
+          22
+        ],
+        "text": "Check whether the ball reaches the top wall.",
+        "file": "paddle-rally-w19.mp3",
+        "duration": 2.76,
+        "bytes": 16560
+      },
+      {
+        "lines": [
+          23,
+          23
+        ],
+        "text": "Place it below the top wall and point its velocity downward.",
+        "file": "paddle-rally-w20.mp3",
+        "duration": 4.176,
+        "bytes": 25056
+      },
+      {
+        "lines": [
+          24,
+          24
+        ],
+        "text": "Create the paddle’s current collision rectangle near the bottom.",
+        "file": "paddle-rally-w21.mp3",
+        "duration": 3.696,
+        "bytes": 22176
+      },
+      {
+        "lines": [
+          25,
+          25
+        ],
+        "text": "Create a small collision rectangle around the ball.",
+        "file": "paddle-rally-w22.mp3",
+        "duration": 3.48,
+        "bytes": 20880
+      },
+      {
+        "lines": [
+          26,
+          26
+        ],
+        "text": "Catch only a downward moving ball that overlaps the paddle.",
+        "file": "paddle-rally-w23.mp3",
+        "duration": 3.936,
+        "bytes": 23616
+      },
+      {
+        "lines": [
+          27,
+          27
+        ],
+        "text": "Place the caught ball above the paddle and reverse its vertical direction.",
+        "file": "paddle-rally-w24.mp3",
+        "duration": 4.104,
+        "bytes": 24624
+      },
+      {
+        "lines": [
+          28,
+          28
+        ],
+        "text": "Count one successful catch.",
+        "file": "paddle-rally-w25.mp3",
+        "duration": 2.328,
+        "bytes": 13968
+      },
+      {
+        "lines": [
+          29,
+          29
+        ],
+        "text": "Check whether the whole ball has fallen below the canvas.",
+        "file": "paddle-rally-w26.mp3",
+        "duration": 3.6,
+        "bytes": 21600
+      },
+      {
+        "lines": [
+          30,
+          30
+        ],
+        "text": "If it has, mark the round as ended.",
+        "file": "paddle-rally-w27.mp3",
+        "duration": 3.504,
+        "bytes": 21024
+      },
+      {
+        "lines": [
+          32,
+          32
+        ],
+        "text": "Define the drawing function for this frame.",
+        "file": "paddle-rally-w28.mp3",
+        "duration": 2.64,
+        "bytes": 15840
+      },
+      {
+        "lines": [
+          33,
+          33
+        ],
+        "text": "Clear the old frame with the background color.",
+        "file": "paddle-rally-w29.mp3",
+        "duration": 3.048,
+        "bytes": 18288
+      },
+      {
+        "lines": [
+          34,
+          34
+        ],
+        "text": "Draw the blue paddle using its current width and position.",
+        "file": "paddle-rally-w30.mp3",
+        "duration": 3.696,
+        "bytes": 22176
+      },
+      {
+        "lines": [
+          35,
+          35
+        ],
+        "text": "Check whether the round is still active.",
+        "file": "paddle-rally-w31.mp3",
+        "duration": 2.592,
+        "bytes": 15552
+      },
+      {
+        "lines": [
+          36,
+          36
+        ],
+        "text": "Draw the gold ball during an active round.",
+        "file": "paddle-rally-w32.mp3",
+        "duration": 2.496,
+        "bytes": 14976
+      },
+      {
+        "lines": [
+          37,
+          37
+        ],
+        "text": "Otherwise, draw the game-over indication instead.",
+        "file": "paddle-rally-w33.mp3",
+        "duration": 3.528,
+        "bytes": 21168
+      },
+      {
+        "lines": [
+          38,
+          38
+        ],
+        "text": "A coral outline marks the ended round. Run again to restart.",
+        "file": "paddle-rally-w34.mp3",
+        "duration": 4.584,
+        "bytes": 27504
+      }
+    ]
+  },
+  "meteor-dodge": {
+    "hash": "6ebbd6ffe482908b236d",
+    "voice": "azure:en-US-AvaMultilingualNeural:-4%:azure-speech-bookmarks-v1:source-sentence-srt-v1:ac6995eb8dbcce51",
+    "tts_provider": "azure",
+    "model": "reviewed-script",
+    "steps": [
+      {
+        "lines": [
+          1,
+          1
+        ],
+        "text": "Import pygame’s drawing and collision tools.",
+        "file": "meteor-dodge-w00.mp3",
+        "duration": 3.288,
+        "bytes": 19728
+      },
+      {
+        "lines": [
+          3,
+          3
+        ],
+        "text": "Set the player’s starting horizontal position.",
+        "file": "meteor-dodge-w01.mp3",
+        "duration": 2.832,
+        "bytes": 16992
+      },
+      {
+        "lines": [
+          4,
+          4
+        ],
+        "text": "Set player movement speed in pixels per second.",
+        "file": "meteor-dodge-w02.mp3",
+        "duration": 3.24,
+        "bytes": 19440
+      },
+      {
+        "lines": [
+          5,
+          5
+        ],
+        "text": "Start the meteor above the canvas at a fixed horizontal position.",
+        "file": "meteor-dodge-w03.mp3",
+        "duration": 4.344,
+        "bytes": 26064
+      },
+      {
+        "lines": [
+          6,
+          6
+        ],
+        "text": "Set meteor falling speed. Change this value for your experiment.",
+        "file": "meteor-dodge-w04.mp3",
+        "duration": 4.68,
+        "bytes": 28080
+      },
+      {
+        "lines": [
+          7,
+          7
+        ],
+        "text": "Start elapsed game time at zero.",
+        "file": "meteor-dodge-w05.mp3",
+        "duration": 2.64,
+        "bytes": 15840
+      },
+      {
+        "lines": [
+          8,
+          8
+        ],
+        "text": "Alive is true at the start of a fresh round.",
+        "file": "meteor-dodge-w06.mp3",
+        "duration": 3.336,
+        "bytes": 20016
+      },
+      {
+        "lines": [
+          10,
+          10
+        ],
+        "text": "Define the repeated game update.",
+        "file": "meteor-dodge-w07.mp3",
+        "duration": 2.328,
+        "bytes": 13968
+      },
+      {
+        "lines": [
+          11,
+          11
+        ],
+        "text": "Allow changes to positions, elapsed time, and the alive flag.",
+        "file": "meteor-dodge-w08.mp3",
+        "duration": 4.848,
+        "bytes": 29088
+      },
+      {
+        "lines": [
+          12,
+          12
+        ],
+        "text": "Check whether a collision already ended the round.",
+        "file": "meteor-dodge-w09.mp3",
+        "duration": 3.096,
+        "bytes": 18576
+      },
+      {
+        "lines": [
+          13,
+          13
+        ],
+        "text": "After game over, return without moving objects or adding time.",
+        "file": "meteor-dodge-w10.mp3",
+        "duration": 4.776,
+        "bytes": 28656
+      },
+      {
+        "lines": [
+          14,
+          14
+        ],
+        "text": "Add this update’s elapsed time to the timer.",
+        "file": "meteor-dodge-w11.mp3",
+        "duration": 3.024,
+        "bytes": 18144
+      },
+      {
+        "lines": [
+          15,
+          15
+        ],
+        "text": "Use left and right controls to move the player.",
+        "file": "meteor-dodge-w12.mp3",
+        "duration": 3.456,
+        "bytes": 20736
+      },
+      {
+        "lines": [
+          16,
+          16
+        ],
+        "text": "Keep the full player rectangle inside the canvas.",
+        "file": "meteor-dodge-w13.mp3",
+        "duration": 3.384,
+        "bytes": 20304
+      },
+      {
+        "lines": [
+          17,
+          17
+        ],
+        "text": "Move the meteor downward using its own speed.",
+        "file": "meteor-dodge-w14.mp3",
+        "duration": 3.192,
+        "bytes": 19152
+      },
+      {
+        "lines": [
+          18,
+          18
+        ],
+        "text": "Check whether the meteor passed the bottom edge.",
+        "file": "meteor-dodge-w15.mp3",
+        "duration": 2.808,
+        "bytes": 16848
+      },
+      {
+        "lines": [
+          19,
+          19
+        ],
+        "text": "If so, start its next fall above the top edge.",
+        "file": "meteor-dodge-w16.mp3",
+        "duration": 3.408,
+        "bytes": 20448
+      },
+      {
+        "lines": [
+          20,
+          20
+        ],
+        "text": "Choose the next horizontal position with a fixed wrapping rule. The percent sign gives a remainder.",
+        "file": "meteor-dodge-w17.mp3",
+        "duration": 6.456,
+        "bytes": 38736
+      },
+      {
+        "lines": [
+          21,
+          21
+        ],
+        "text": "Create the player’s collision rectangle near the bottom.",
+        "file": "meteor-dodge-w18.mp3",
+        "duration": 3.456,
+        "bytes": 20736
+      },
+      {
+        "lines": [
+          22,
+          22
+        ],
+        "text": "Create the meteor’s current collision rectangle.",
+        "file": "meteor-dodge-w19.mp3",
+        "duration": 3.144,
+        "bytes": 18864
+      },
+      {
+        "lines": [
+          23,
+          23
+        ],
+        "text": "Check whether the two rectangles overlap.",
+        "file": "meteor-dodge-w20.mp3",
+        "duration": 3.144,
+        "bytes": 18864
+      },
+      {
+        "lines": [
+          24,
+          24
+        ],
+        "text": "An overlap sets alive to false and ends the round.",
+        "file": "meteor-dodge-w21.mp3",
+        "duration": 3.864,
+        "bytes": 23184
+      },
+      {
+        "lines": [
+          26,
+          26
+        ],
+        "text": "Define how to draw the current state.",
+        "file": "meteor-dodge-w22.mp3",
+        "duration": 2.568,
+        "bytes": 15408
+      },
+      {
+        "lines": [
+          27,
+          27
+        ],
+        "text": "Clear the previous frame with the background color.",
+        "file": "meteor-dodge-w23.mp3",
+        "duration": 3.264,
+        "bytes": 19584
+      },
+      {
+        "lines": [
+          28,
+          28
+        ],
+        "text": "Use blue for an active player and coral after game over.",
+        "file": "meteor-dodge-w24.mp3",
+        "duration": 3.768,
+        "bytes": 22608
+      },
+      {
+        "lines": [
+          29,
+          29
+        ],
+        "text": "Draw the player at its current horizontal position.",
+        "file": "meteor-dodge-w25.mp3",
+        "duration": 3.264,
+        "bytes": 19584
+      },
+      {
+        "lines": [
+          30,
+          30
+        ],
+        "text": "Draw the meteor at its current position.",
+        "file": "meteor-dodge-w26.mp3",
+        "duration": 2.64,
+        "bytes": 15840
+      }
+    ]
+  }
+}
