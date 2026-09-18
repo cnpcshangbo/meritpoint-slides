@@ -23,11 +23,17 @@
       var label = d.user.name || d.user.email;
       var initial = label.charAt(0).toUpperCase();
       el.innerHTML = '<div class="chip" role="button" aria-haspopup="true">'
-        + '<span class="av">' + initial + '</span><span>' + label.split(' ')[0].split('@')[0] + '</span></div>'
+        + '<span class="av"></span><span class="first-name"></span></div>'
         + '<div class="menu"><div class="who"><b></b><span></span></div>'
         + '<a href="/meritpoint-slides/ai-toolbox/">📚 My classes · 课程</a>'
+        + '<a href="/meritpoint-slides/python/scratchpad/">Python scratchpad</a>'
         + '<a href="https://academic.hopeembark.org/assignments">📝 Assignments &amp; grades · 作业与成绩</a>'
         + '<a class="out" href="/auth/logout">Sign out · 退出登录</a></div>';
+      el.querySelector('.av').textContent = initial;
+      el.querySelector('.first-name').textContent = label.split(' ')[0].split('@')[0];
+      if (d.user.role === 'teacher' || d.user.role === 'admin') {
+        var teacherLink = document.createElement('a'); teacherLink.href = '/live'; teacherLink.textContent = 'Teacher mode · Live class'; el.querySelector('.menu').insertBefore(teacherLink, el.querySelector('.out'));
+      }
       el.querySelector('.who b').textContent = d.user.name || '(no name)';
       el.querySelector('.who span').textContent = d.user.email + (d.user.role ? ' · ' + d.user.role : '');
       el.querySelector('.chip').addEventListener('click', function(){ el.classList.toggle('open'); });
