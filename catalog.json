@@ -3,6 +3,264 @@
   "tagline": "Hands-on AI & research courses for high-school students.",
   "courses": [
     {
+      "id": "python",
+      "title": "Phase I: Python for AI Research",
+      "subtitle": "Python Class 2 · Sundays 8:30–9:30pm ET · student × AI: games, experiments and a research project.",
+      "tags": [
+        "Python",
+        "AI research",
+        "beginner",
+        "interactive",
+        "English"
+      ],
+      "accent": "#0F9DB0",
+      "registrationUrl": "https://us06web.zoom.us/meeting/register/mnXWAd7MTu6uTSRapF--zQ",
+      "researchHubUrl": "/meritpoint-slides/python/research/",
+      "trialLessonUrl": "/meritpoint-slides/python/trial-lesson/",
+      "decks": [
+        {
+          "id": "trial-lab",
+          "n": 0,
+          "numLabel": "TRIAL LAB · 50 MIN",
+          "title": "Python Trial Lab · Less Watching, More Making",
+          "summary": "Seven hands-on rounds for a small class: change Python, predict results, fix a bug, compare invented soccer data, make a chart and share your own experiment. Saved code and notes, a roaming Python pad, and a Chinese teacher guide.",
+          "tags": [
+            "trial lab",
+            "hands-on",
+            "beginner",
+            "Python"
+          ],
+          "duration": "50 min",
+          "status": "ready",
+          "noPdf": true
+        },
+        {
+          "id": "trial-lesson",
+          "n": 0,
+          "numLabel": "TRIAL · 50 MIN",
+          "title": "Your First Python Research Experiment · Huaxia Trial Lesson",
+          "summary": "A complete first research experience: predict, run Python, explore soccer data, make a chart and explain your evidence. English Listen audio, captions and beginner / stretch activities. Open to visiting students and families.",
+          "tags": [
+            "trial lesson",
+            "interactive",
+            "Python",
+            "Listen audio"
+          ],
+          "duration": "50 min",
+          "status": "ready"
+        },
+        {
+          "id": "class-00",
+          "n": 0,
+          "title": "Learning Python in the Age of AI · Family Introduction",
+          "summary": "An in-person Class 0 for students and families: Bo Shang’s programming journey, two partner activities, and how we learn with AI. English slides with Chinese speaker notes.",
+          "tags": [
+            "Python",
+            "families",
+            "in-person",
+            "AI literacy"
+          ],
+          "duration": "60 min",
+          "status": "ready"
+        },
+        {
+          "id": "class-01",
+          "n": 1,
+          "title": "Your First Python Experiment",
+          "summary": "Predict, run, change and explain: variables, output, lists and a tiny sports-data experiment.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "ready"
+        },
+        {
+          "id": "class-02",
+          "n": 2,
+          "title": "Decisions & Loops",
+          "summary": "Turn a rule into code, test its boundary, and repeat it over a collection.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-03",
+          "n": 3,
+          "title": "Functions & Research Records",
+          "summary": "Organize data and write small reusable functions.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-04",
+          "n": 4,
+          "title": "NumPy & Simulation",
+          "summary": "Use arrays to explore variation and repeated experiments.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-05",
+          "n": 5,
+          "title": "pandas & Tables",
+          "summary": "Inspect, filter and summarize a small dataset.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-06",
+          "n": 6,
+          "title": "Cleaning With a Reason",
+          "summary": "Handle missing, duplicate and unusual values, keeping a decision log.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-07",
+          "n": 7,
+          "title": "Charts That Answer Questions",
+          "summary": "Match a chart to a question and explain what it shows.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-08",
+          "n": 8,
+          "title": "Exploring a Research Question",
+          "summary": "Connect data patterns to a question and its limitations.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-09",
+          "n": 9,
+          "title": "Your First Machine-Learning Baseline",
+          "summary": "Separate training from testing and compare against a simple baseline.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-10",
+          "n": 10,
+          "title": "Predicting Numbers",
+          "summary": "Fit a regression model and examine its errors.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-11",
+          "n": 11,
+          "title": "Predicting Categories",
+          "summary": "Compare classifiers and read a confusion matrix.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-12",
+          "n": 12,
+          "title": "Trees & Overfitting",
+          "summary": "Explore model complexity and why memorization is not learning.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-13",
+          "n": 13,
+          "title": "A Fair Model Comparison",
+          "summary": "Keep data splits and metrics fixed while comparing models.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-14",
+          "n": 14,
+          "title": "A Reproducible Research Story",
+          "summary": "Bring the question, code, figures and limitations together.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        },
+        {
+          "id": "class-15",
+          "n": 15,
+          "title": "Project Showcase",
+          "summary": "Present a small project, explain the evidence and respond to questions.",
+          "tags": [
+            "Python",
+            "research",
+            "interactive"
+          ],
+          "duration": "60 min",
+          "status": "planned"
+        }
+      ]
+    },
+    {
       "id": "ai-toolbox",
       "title": "The AI Toolbox",
       "subtitle": "From perception to publication — a 15-class research track.",
@@ -833,264 +1091,6 @@
           ],
           "duration": "6 × 1 min",
           "status": "ready"
-        }
-      ]
-    },
-    {
-      "id": "python",
-      "title": "Phase I: Python for AI Research",
-      "subtitle": "Python Class 2 · Sundays 8:30–9:30pm ET · student × AI: games, experiments and a research project.",
-      "tags": [
-        "Python",
-        "AI research",
-        "beginner",
-        "interactive",
-        "English"
-      ],
-      "accent": "#0F9DB0",
-      "registrationUrl": "https://us06web.zoom.us/meeting/register/mnXWAd7MTu6uTSRapF--zQ",
-      "researchHubUrl": "/meritpoint-slides/python/research/",
-      "trialLessonUrl": "/meritpoint-slides/python/trial-lesson/",
-      "decks": [
-        {
-          "id": "trial-lab",
-          "n": 0,
-          "numLabel": "TRIAL LAB · 50 MIN",
-          "title": "Python Trial Lab · Less Watching, More Making",
-          "summary": "Seven hands-on rounds for a small class: change Python, predict results, fix a bug, compare invented soccer data, make a chart and share your own experiment. Saved code and notes, a roaming Python pad, and a Chinese teacher guide.",
-          "tags": [
-            "trial lab",
-            "hands-on",
-            "beginner",
-            "Python"
-          ],
-          "duration": "50 min",
-          "status": "ready",
-          "noPdf": true
-        },
-        {
-          "id": "trial-lesson",
-          "n": 0,
-          "numLabel": "TRIAL · 50 MIN",
-          "title": "Your First Python Research Experiment · Huaxia Trial Lesson",
-          "summary": "A complete first research experience: predict, run Python, explore soccer data, make a chart and explain your evidence. English Listen audio, captions and beginner / stretch activities. Open to visiting students and families.",
-          "tags": [
-            "trial lesson",
-            "interactive",
-            "Python",
-            "Listen audio"
-          ],
-          "duration": "50 min",
-          "status": "ready"
-        },
-        {
-          "id": "class-00",
-          "n": 0,
-          "title": "Learning Python in the Age of AI · Family Introduction",
-          "summary": "An in-person Class 0 for students and families: Bo Shang’s programming journey, two partner activities, and how we learn with AI. English slides with Chinese speaker notes.",
-          "tags": [
-            "Python",
-            "families",
-            "in-person",
-            "AI literacy"
-          ],
-          "duration": "60 min",
-          "status": "ready"
-        },
-        {
-          "id": "class-01",
-          "n": 1,
-          "title": "Your First Python Experiment",
-          "summary": "Predict, run, change and explain: variables, output, lists and a tiny sports-data experiment.",
-          "tags": [
-            "Python",
-            "research",
-            "interactive"
-          ],
-          "duration": "60 min",
-          "status": "ready"
-        },
-        {
-          "id": "class-02",
-          "n": 2,
-          "title": "Decisions & Loops",
-          "summary": "Turn a rule into code, test its boundary, and repeat it over a collection.",
-          "tags": [
-            "Python",
-            "research",
-            "interactive"
-          ],
-          "duration": "60 min",
-          "status": "planned"
-        },
-        {
-          "id": "class-03",
-          "n": 3,
-          "title": "Functions & Research Records",
-          "summary": "Organize data and write small reusable functions.",
-          "tags": [
-            "Python",
-            "research",
-            "interactive"
-          ],
-          "duration": "60 min",
-          "status": "planned"
-        },
-        {
-          "id": "class-04",
-          "n": 4,
-          "title": "NumPy & Simulation",
-          "summary": "Use arrays to explore variation and repeated experiments.",
-          "tags": [
-            "Python",
-            "research",
-            "interactive"
-          ],
-          "duration": "60 min",
-          "status": "planned"
-        },
-        {
-          "id": "class-05",
-          "n": 5,
-          "title": "pandas & Tables",
-          "summary": "Inspect, filter and summarize a small dataset.",
-          "tags": [
-            "Python",
-            "research",
-            "interactive"
-          ],
-          "duration": "60 min",
-          "status": "planned"
-        },
-        {
-          "id": "class-06",
-          "n": 6,
-          "title": "Cleaning With a Reason",
-          "summary": "Handle missing, duplicate and unusual values, keeping a decision log.",
-          "tags": [
-            "Python",
-            "research",
-            "interactive"
-          ],
-          "duration": "60 min",
-          "status": "planned"
-        },
-        {
-          "id": "class-07",
-          "n": 7,
-          "title": "Charts That Answer Questions",
-          "summary": "Match a chart to a question and explain what it shows.",
-          "tags": [
-            "Python",
-            "research",
-            "interactive"
-          ],
-          "duration": "60 min",
-          "status": "planned"
-        },
-        {
-          "id": "class-08",
-          "n": 8,
-          "title": "Exploring a Research Question",
-          "summary": "Connect data patterns to a question and its limitations.",
-          "tags": [
-            "Python",
-            "research",
-            "interactive"
-          ],
-          "duration": "60 min",
-          "status": "planned"
-        },
-        {
-          "id": "class-09",
-          "n": 9,
-          "title": "Your First Machine-Learning Baseline",
-          "summary": "Separate training from testing and compare against a simple baseline.",
-          "tags": [
-            "Python",
-            "research",
-            "interactive"
-          ],
-          "duration": "60 min",
-          "status": "planned"
-        },
-        {
-          "id": "class-10",
-          "n": 10,
-          "title": "Predicting Numbers",
-          "summary": "Fit a regression model and examine its errors.",
-          "tags": [
-            "Python",
-            "research",
-            "interactive"
-          ],
-          "duration": "60 min",
-          "status": "planned"
-        },
-        {
-          "id": "class-11",
-          "n": 11,
-          "title": "Predicting Categories",
-          "summary": "Compare classifiers and read a confusion matrix.",
-          "tags": [
-            "Python",
-            "research",
-            "interactive"
-          ],
-          "duration": "60 min",
-          "status": "planned"
-        },
-        {
-          "id": "class-12",
-          "n": 12,
-          "title": "Trees & Overfitting",
-          "summary": "Explore model complexity and why memorization is not learning.",
-          "tags": [
-            "Python",
-            "research",
-            "interactive"
-          ],
-          "duration": "60 min",
-          "status": "planned"
-        },
-        {
-          "id": "class-13",
-          "n": 13,
-          "title": "A Fair Model Comparison",
-          "summary": "Keep data splits and metrics fixed while comparing models.",
-          "tags": [
-            "Python",
-            "research",
-            "interactive"
-          ],
-          "duration": "60 min",
-          "status": "planned"
-        },
-        {
-          "id": "class-14",
-          "n": 14,
-          "title": "A Reproducible Research Story",
-          "summary": "Bring the question, code, figures and limitations together.",
-          "tags": [
-            "Python",
-            "research",
-            "interactive"
-          ],
-          "duration": "60 min",
-          "status": "planned"
-        },
-        {
-          "id": "class-15",
-          "n": 15,
-          "title": "Project Showcase",
-          "summary": "Present a small project, explain the evidence and respond to questions.",
-          "tags": [
-            "Python",
-            "research",
-            "interactive"
-          ],
-          "duration": "60 min",
-          "status": "planned"
         }
       ]
     }
