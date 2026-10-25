@@ -1,6 +1,7 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Guide 03 · Your First Video-Game Research Project — Merit Point Academy</title>
-<link rel="icon" type="image/png" href="/meritpoint-slides/assets/favicon.png"><link rel="stylesheet" href="/meritpoint-slides/assets/site.css">
+<link href="/meritpoint-slides/assets/favicon.png" rel="icon" type="image/png"/><link href="/meritpoint-slides/assets/site.css" rel="stylesheet"/>
 <style>
 main.wrap{max-width:860px;padding-bottom:60vh}
 .crumb{margin-top:18px}
@@ -89,22 +90,31 @@ table.data td.num{text-align:right;font-variant-numeric:tabular-nums}
 .bars .track{flex:1;background:#EEF4FA;border-radius:999px;height:20px;overflow:hidden}
 .bars .fillb{height:100%;background:linear-gradient(90deg,#0F9DB0,#2BC4D4);border-radius:999px;display:flex;align-items:center;justify-content:flex-end;color:#fff;font-size:11px;padding-right:7px;min-width:34px}
 .stars{color:#F2A93B;letter-spacing:1px}
-</style></head><body>
-<header class="site"><div class="wrap"><img class="logo" src="/meritpoint-slides/assets/mpa-logo.png" alt="Merit Point Academy logo"><div><h1>Guide 03 · Your First Video-Game Research Project 🎮📊</h1><p>Turn "I love games" into a real research question — with real data you can download today.</p></div>
+</style><style>.class06-mirror-notice{box-sizing:border-box;max-width:1120px;
+margin:16px auto;padding:14px 18px;border:1px solid #9cb7af;border-radius:10px;
+background:#edf5ed;color:#173e38;font:15px/1.5 system-ui,sans-serif}
+.class06-mirror-notice a{color:#07564b;font-weight:700}
+.class06-mirror-notice p{margin:6px 0 0}
+.class06-video-note{padding:14px;border:1px solid #a8bdb5;border-radius:8px;
+background:#f0f5f0;color:#173e38}
+@media(max-width:700px){.class06-mirror-notice{margin:12px}}
+</style></head><body><aside aria-label="Static backup" class="class06-mirror-notice">
+<a href="/meritpoint-slides/python/class-06-lab/">← Class 6 research clinic</a>
+<p>Static backup: teaching text, local filters and quick checks stay available here.
+Videos, comments and server-generated drafts are omitted. Dataset publisher links
+still need internet access. Browser progress is saved separately on each site.</p>
+</aside>
+<header class="site"><div class="wrap"><img alt="Merit Point Academy logo" class="logo" src="/meritpoint-slides/assets/mpa-logo.png"/><div><h1>Guide 03 · Your First Video-Game Research Project 🎮📊</h1><p>Turn "I love games" into a real research question — with real data you can download today.</p></div>
 <div class="hdr-actions">
-<a class="asg-btn" href="https://academic.hopeembark.org/assignments">📝 Assignments · 作业</a>
-<a class="donate-btn" href="https://buy.stripe.com/14AbIT26kfUzbqjbGv4ow00" target="_blank" rel="noopener">♥ Donate</a></div></div></header>
+<a class="asg-btn" href="/meritpoint-slides/python/class-06-lab/">Class 6 clinic · 第六课</a>
+<a class="donate-btn" href="https://buy.stripe.com/14AbIT26kfUzbqjbGv4ow00" rel="noopener" target="_blank">♥ Donate</a></div></div></header>
 <main class="wrap">
 <p class="crumb"><a href="../">← All guides</a></p>
-
 <div id="pgbar"><div class="lbl"><span id="pgtxt">0%</span> of steps checked — your progress is saved in this browser</div><div class="rail"><div class="fill" id="pgfill"></div></div></div>
-
 <p class="lead">Scientists study video games <b>for real</b>: what makes them fun, why some sell 80 million copies and others 80, whether practice in a game transfers to real skills. You can do this kind of research too — because the game industry publishes <b>mountains of free data</b>. These notes help you pick a question, grab a real dataset, and run the same pipeline we use in class. You do <b>not</b> need to be a math genius. You need to be curious about games — and you already are.</p>
-
 <div class="navchips">
 <a href="#s1">1 · A real question</a><a href="#s2">2 · Question builder</a><a href="#s3">3 · Explore real data</a><a href="#s4">4 · Dataset chest</a><a href="#s5">5 · The pipeline</a><a href="#s6">6 · Level up</a>
 </div>
-
 <!-- ============================================================ -->
 <h2 class="sec" id="s1"><span class="no">1</span>What makes a question a <i>research</i> question?</h2>
 <p>There is a simple test. A research question is one that <b>data can answer</b>. Opinions can't be measured; numbers can:</p>
@@ -117,21 +127,18 @@ table.data td.num{text-align:right;font-variant-numeric:tabular-nums}
 <tr><td>"Did game prices on Steam change after 2020?"</td><td>✅ Yes!</td><td>Compare before vs after — a classic research shape.</td></tr>
 </table>
 <div class="why"><b>The magic pattern:</b> almost every beginner research question has the shape <b>"Is ___ related to ___?"</b> or <b>"Does group A have more ___ than group B?"</b> If your question fits one of those shapes, you can research it. If it doesn't, reshape it until it does.</div>
-
 <div class="quiz"><p class="qq">Quiz — which one could YOU answer with a spreadsheet of game data?</p>
-<button data-x>"Is Minecraft better than Roblox?"</button><button data-ok>"Do games rated E (Everyone) sell more copies than games rated M (Mature)?"</button><button data-x>"Are video games art?"</button>
+<button data-x="">"Is Minecraft better than Roblox?"</button><button data-ok="">"Do games rated E (Everyone) sell more copies than games rated M (Mature)?"</button><button data-x="">"Are video games art?"</button>
 <p class="exp">Only the middle one compares measurable numbers between clear groups. The other two are great debates — but debates, not data questions.</p></div>
-
 <!-- ============================================================ -->
 <h2 class="sec" id="s2"><span class="no">2</span>Build your research question 🛠️</h2>
 <p>Pick two ingredients — the builder writes the question and tells you which dataset can answer it:</p>
 <div class="qbuild">
-  <div class="row">Is a game's&nbsp;<select id="qbX"></select>&nbsp;related to its&nbsp;<select id="qbY"></select>&nbsp;?</div>
-  <div class="out"><b class="q" id="qbQ"></b><span class="ds" id="qbD"></span></div>
+<div class="row">Is a game's <select id="qbX"></select> related to its <select id="qbY"></select> ?</div>
+<div class="out"><b class="q" id="qbQ"></b><span class="ds" id="qbD"></span></div>
 </div>
-<label class="step"><input type="checkbox" data-k="q-pick"><span class="t">Play with the builder until one question makes you go "ooh, I actually want to know that." Write it at the top of a fresh page — that is your project title.</span></label>
+<label class="step"><input data-k="q-pick" type="checkbox"/><span class="t">Play with the builder until one question makes you go "ooh, I actually want to know that." Write it at the top of a fresh page — that is your project title.</span></label>
 <div class="why"><b>Then sharpen it.</b> "Is genre related to sales?" is good; "Did Sports games outsell Action games on the Wii?" is better — smaller questions give sharper answers. Professional scientists shrink their questions on purpose.</div>
-
 <!-- ============================================================ -->
 <h2 class="sec" id="s3"><span class="no">3</span>Explore real data — right now, right here</h2>
 <p>This is a <b>real slice</b> of the famous <i>vgsales</i> dataset: the 25 best-selling games it records, with sales in <b>millions of copies</b>. <b>Click any column header to sort.</b> Sorting is baby's-first-analysis — and it already reveals patterns:</p>
@@ -141,27 +148,24 @@ table.data td.num{text-align:right;font-variant-numeric:tabular-nums}
 </table></div>
 <p>Now the same 25 games, <b>added up by genre</b> — your first chart:</p>
 <div class="bars" id="gbars"></div>
-<label class="step"><input type="checkbox" data-k="e-sort"><span class="t">Sort the table by <b>Year</b>. What decade do most mega-hits come from? Now sort by <b>Platform</b> — which console dominates, and can you guess why? (Hint: it shipped with one of these games in the box.)</span></label>
-<label class="step"><input type="checkbox" data-k="e-notice"><span class="t">Look at the genre chart. Write down ONE thing that surprises you. Congratulations — noticing a surprise in data is literally how research papers begin.</span></label>
-
+<label class="step"><input data-k="e-sort" type="checkbox"/><span class="t">Sort the table by <b>Year</b>. What decade do most mega-hits come from? Now sort by <b>Platform</b> — which console dominates, and can you guess why? (Hint: it shipped with one of these games in the box.)</span></label>
+<label class="step"><input data-k="e-notice" type="checkbox"/><span class="t">Look at the genre chart. Write down ONE thing that surprises you. Congratulations — noticing a surprise in data is literally how research papers begin.</span></label>
 <div class="quiz"><p class="qq">Quiz — Minecraft has sold 300+ million copies, yet it is nowhere near the top of this table. Why?</p>
-<button data-x>Minecraft is secretly unpopular</button><button data-x>The table is randomly wrong</button><button data-ok>This dataset counts mostly physical retail copies and stops around 2016 — Minecraft sells digitally</button>
+<button data-x="">Minecraft is secretly unpopular</button><button data-x="">The table is randomly wrong</button><button data-ok="">This dataset counts mostly physical retail copies and stops around 2016 — Minecraft sells digitally</button>
 <p class="exp">Every dataset has limits: what it counts, and when it stopped counting. A real researcher always asks "what is my data NOT seeing?" Write your dataset's limits in your report — that honesty is what separates science from hot takes.</p></div>
-
 <!-- ============================================================ -->
 <h2 class="sec" id="s4"><span class="no">4</span>The dataset chest 📦 — real data you can download</h2>
 <p>All free. Kaggle needs a free account (ask a parent to help you sign up). Difficulty: <span class="stars">★</span> = start here.</p>
 <table class="cheat">
 <tr><th>Dataset</th><th>What's inside</th><th>Good for questions about…</th><th>Level</th></tr>
-<tr><td><a href="https://www.kaggle.com/datasets/gregorut/videogamesales" target="_blank" rel="noopener">Video Game Sales (vgsales)</a></td><td>16,500 games: platform, year, genre, sales by region</td><td>genres, platforms, decades, regions (NA vs Japan!)</td><td><span class="stars">★</span></td></tr>
-<tr><td><a href="https://www.kaggle.com/datasets/rush4ratio/video-game-sales-with-ratings" target="_blank" rel="noopener">Sales + Ratings</a></td><td>vgsales <i>plus</i> Metacritic critic &amp; user scores</td><td>"do good reviews mean big sales?"</td><td><span class="stars">★★</span></td></tr>
-<tr><td><a href="https://www.kaggle.com/datasets/nikdavis/steam-store-games" target="_blank" rel="noopener">Steam Store Games</a></td><td>27,000 PC games: price, genres, playtime, ratings</td><td>prices, free-to-play, what people actually play</td><td><span class="stars">★★</span></td></tr>
-<tr><td><a href="https://www.kaggle.com/datasets/rankirsh/esports-earnings" target="_blank" rel="noopener">Esports Earnings</a></td><td>prize money by game, player and country</td><td>which games/countries dominate esports</td><td><span class="stars">★★</span></td></tr>
-<tr><td><a href="https://www.kaggle.com/datasets/rankirsh/evolution-of-top-games-on-twitch" target="_blank" rel="noopener">Top Games on Twitch</a></td><td>monthly viewers &amp; streamers per game since 2016</td><td>watching vs playing, the rise and fall of hit games</td><td><span class="stars">★★</span></td></tr>
-<tr><td><a href="https://rawg.io/apidocs" target="_blank" rel="noopener">RAWG API</a></td><td>a live database of 500,000+ games, via code</td><td>anything — once you learn APIs (later!)</td><td><span class="stars">★★★</span></td></tr>
+<tr><td><a href="https://www.kaggle.com/datasets/gregorut/videogamesales" rel="noopener" target="_blank">Video Game Sales (vgsales)</a></td><td>16,500 games: platform, year, genre, sales by region</td><td>genres, platforms, decades, regions (NA vs Japan!)</td><td><span class="stars">★</span></td></tr>
+<tr><td><a href="https://www.kaggle.com/datasets/rush4ratio/video-game-sales-with-ratings" rel="noopener" target="_blank">Sales + Ratings</a></td><td>vgsales <i>plus</i> Metacritic critic &amp; user scores</td><td>"do good reviews mean big sales?"</td><td><span class="stars">★★</span></td></tr>
+<tr><td><a href="https://www.kaggle.com/datasets/nikdavis/steam-store-games" rel="noopener" target="_blank">Steam Store Games</a></td><td>27,000 PC games: price, genres, playtime, ratings</td><td>prices, free-to-play, what people actually play</td><td><span class="stars">★★</span></td></tr>
+<tr><td><a href="https://www.kaggle.com/datasets/rankirsh/esports-earnings" rel="noopener" target="_blank">Esports Earnings</a></td><td>prize money by game, player and country</td><td>which games/countries dominate esports</td><td><span class="stars">★★</span></td></tr>
+<tr><td><a href="https://www.kaggle.com/datasets/rankirsh/evolution-of-top-games-on-twitch" rel="noopener" target="_blank">Top Games on Twitch</a></td><td>monthly viewers &amp; streamers per game since 2016</td><td>watching vs playing, the rise and fall of hit games</td><td><span class="stars">★★</span></td></tr>
+<tr><td><a href="https://rawg.io/apidocs" rel="noopener" target="_blank">RAWG API</a></td><td>a live database of 500,000+ games, via code</td><td>anything — once you learn APIs (later!)</td><td><span class="stars">★★★</span></td></tr>
 </table>
-<label class="step"><input type="checkbox" data-k="d-dl"><span class="t">Download <b>vgsales.csv</b> from the first link (button "Download" on Kaggle). Put it somewhere you can find — remember Guide 01/02: you will need its <b>path</b> (coordinates!).</span></label>
-
+<label class="step"><input data-k="d-dl" type="checkbox"/><span class="t">Download <b>vgsales.csv</b> from the first link (button "Download" on Kaggle). Put it somewhere you can find — remember Guide 01/02: you will need its <b>path</b> (coordinates!).</span></label>
 <!-- ============================================================ -->
 <h2 class="sec" id="s5"><span class="no">5</span>The pipeline — same 6 steps as class</h2>
 <p>Every research project in our course walks the same road: <b>Question → Data → Look → Analyze → Chart → Conclusion</b>. Here it is for the worked example <i>"Which genres sell most?"</i> — swap in your own question and dataset:</p>
@@ -175,15 +179,13 @@ totals = df.groupby(<span class="o">"Genre"</span>)[<span class="o">"Global_Sale
 totals</pre>
 <pre class="cmd"><span class="c"># CHART: one line makes the picture</span>
 totals.plot(kind=<span class="o">"barh"</span>, title=<span class="o">"Total sales by genre (millions)"</span>)</pre>
-<label class="step"><input type="checkbox" data-k="p-load"><span class="t">Run the first block on your computer. If you get <code>FileNotFoundError</code> — you know exactly what that means now (wrong coordinates → fix the path).</span></label>
-<label class="step"><input type="checkbox" data-k="p-group"><span class="t">Run the <code>groupby</code>. Does the winner match the little chart in section 3? (It might not — you now have <b>16,500</b> games instead of 25. More data can change the answer. That's a finding!)</span></label>
-<label class="step"><input type="checkbox" data-k="p-chart"><span class="t">Make the chart, screenshot it, and write ONE sentence: "My data shows ___." That sentence is a research conclusion.</span></label>
+<label class="step"><input data-k="p-load" type="checkbox"/><span class="t">Run the first block on your computer. If you get <code>FileNotFoundError</code> — you know exactly what that means now (wrong coordinates → fix the path).</span></label>
+<label class="step"><input data-k="p-group" type="checkbox"/><span class="t">Run the <code>groupby</code>. Does the winner match the little chart in section 3? (It might not — you now have <b>16,500</b> games instead of 25. More data can change the answer. That's a finding!)</span></label>
+<label class="step"><input data-k="p-chart" type="checkbox"/><span class="t">Make the chart, screenshot it, and write ONE sentence: "My data shows ___." That sentence is a research conclusion.</span></label>
 <div class="why"><b>Then be an honest scientist</b> — add one more sentence: "But my data can't see ___." (digital sales? mobile games? games after 2016?) Every real paper has a <i>limitations</i> section. Yours should too. It doesn't weaken your project — it's what makes it science.</div>
-
 <div class="quiz"><p class="qq">Quiz — your data shows games with more Twitch viewers also have more sales. Does watching <i>cause</i> buying?</p>
-<button data-x>Yes — the data proves it</button><button data-ok>Can't tell yet — maybe good games attract BOTH viewers and buyers</button><button data-x>No — data never means anything</button>
+<button data-x="">Yes — the data proves it</button><button data-ok="">Can't tell yet — maybe good games attract BOTH viewers and buyers</button><button data-x="">No — data never means anything</button>
 <p class="exp">Two things moving together ("correlation") doesn't prove one causes the other. Maybe streaming sells games; maybe great games attract streamers; maybe both. Saying "these are related, and here are three possible reasons" is EXACTLY what good scientists write.</p></div>
-
 <!-- ============================================================ -->
 <h2 class="sec" id="s6"><span class="no">6</span>Level up — project ideas by difficulty</h2>
 <table class="cheat">
@@ -197,7 +199,6 @@ totals.plot(kind=<span class="o">"barh"</span>, title=<span class="o">"Total sal
 </table>
 <p class="lead" style="margin-top:26px"><b>Homework:</b> ① build your question in section 2, ② download vgsales, ③ run the three code blocks with your own path, ④ bring your chart + your one-sentence finding + your one-sentence limitation to class. ⑤ Bonus level: put it on a real website with <a href="../publish-research/">Guide 04 · Publish Your Research on GitHub Pages</a> 🌐. Need the terminal or paths again? They're one click away: <a href="../git-for-gamers/">Guide 02 (Video Game Edition)</a> · <a href="../github-terminal/">Guide 01 (full version)</a>. And when your project works — <code>git commit -m "my first research project"</code> 😉</p>
 </main>
-
 <footer class="site">Merit Point Academy · Guides</footer>
 <script>
 (function(){
@@ -336,4 +337,4 @@ totals.plot(kind=<span class="o">"barh"</span>, title=<span class="o">"Total sal
   upd();
 })();
 </script>
-<script defer src="/meritpoint-slides/assets/auth.js"></script></body></html>
+</body></html>
