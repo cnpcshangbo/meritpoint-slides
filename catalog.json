@@ -129,17 +129,19 @@
           "status": "planned"
         },
         {
-          "id": "class-06",
+          "id": "class-06-lab",
           "n": 6,
-          "title": "Cleaning With a Reason",
-          "summary": "Handle missing, duplicate and unusual values, keeping a decision log.",
+          "title": "Your Question. Your Data. · Research Clinic",
+          "summary": "Work on your own research question and dataset. Use AI to inspect data, verify each decision, and save your L06 audit. Includes Handout 6, topic packs and notebook cells.",
           "tags": [
             "Python",
             "research",
-            "interactive"
+            "data audit",
+            "Class 6"
           ],
           "duration": "60 min",
-          "status": "planned"
+          "status": "ready",
+          "noPdf": true
         },
         {
           "id": "class-07",
