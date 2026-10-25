@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "release": "class06-pages-2026-10-25",
+  "mirror_base": "https://cnpcshangbo.github.io/meritpoint-slides/",
+  "source_student_release": "platform-20261025-lesson06-clinic-02",
+  "source_generator_commit": "f53f96a985bdb818c871a35137350a7cd8f8bfac",
+  "original_mirror_commit": "e2859c3b579bc09e4bd44fc7b0b5e54c0a3ac3fe",
+  "scope": "Public Class 6 work page, handout, topic packs, research hub, college snapshot, shared assets and catalog. No teacher notes or student records.",
+  "inputs": {
+    "python/class-06-lab/index.html": {
+      "sha256": "7d5af8547b42cd9862c52223b57e4a6e15b09bb65d2b50041271de9410b91abd",
+      "bytes": 28721,
+      "source_url": "https://courses.hopeembark.org/python/class-06-lab/index.html"
+    },
+    "python/class-06-lab/clinic.css": {
+      "sha256": "bac0949473c00d5232eb4f81582fbe53f07f11106035caf629d5cfae0beb6bec",
+      "bytes": 7559,
+      "source_url": "https://courses.hopeembark.org/python/class-06-lab/clinic.css"
+    },
+    "python/class-06-lab/clinic.js": {
+      "sha256": "52f72dcd7870c68c4f142faa3eb06eb32fcc66661ec22c302344bc4b4e7611f8",
+      "bytes": 3608,
+      "source_url": "https://courses.hopeembark.org/python/class-06-lab/clinic.js"
+    },
+    "python/class-06-lab/L06_data_audit.py": {
+      "sha256": "ddc064c854b74ab3463217e5213b280bd507d446ae0037b79e2c721d5fe79aeb",
+      "bytes": 17026,
+      "source_url": "https://courses.hopeembark.org/python/class-06-lab/L06_data_audit.py"
+    },
+    "python/class-06-lab/L06_data_audit.ipynb": {
+      "sha256": "ed5331db2c16aa9bbe84916697127173f9e8a85f787a2c6b5f2ec6d09ee94536",
+      "bytes": 19571,
+      "source_url": "https://courses.hopeembark.org/python/class-06-lab/L06_data_audit.ipynb"
+    },
+    "python/handout-06/index.html": {
+      "sha256": "1c86173a260acfbb4d88c141fbb4a6835c65abf53fdfc6295d10951c05fc6d48",
+      "bytes": 7483,
+      "source_url": "https://courses.hopeembark.org/python/handout-06/index.html"
+    },
+    "python/class-05-lab/colleges.csv": {
+      "sha256": "8e6df17091d2a1764f795d8819f93ddce5603c5bed30412f4c166a27831e4d8d",
+      "bytes": 35390,
+      "source_url": "https://courses.hopeembark.org/python/class-05-lab/colleges.csv"
+    },
+    "python/class-05-lab/dataset-metadata.json": {
+      "sha256": "6beeb76e0f74e049ce5a40f5a441259c6c3e61c9f328d3ddd2c9ac7990ec0268",
+      "bytes": 9960,
+      "source_url": "https://courses.hopeembark.org/python/class-05-lab/dataset-metadata.json"
+    },
+    "guides/video-game-research/index.html": {
+      "sha256": "5f3ff5f21f6d64540b386aa722524909e5ba56aaacfa88f8c6fcfa99d8abfbbd",
+      "bytes": 29026,
+      "source_url": "https://courses.hopeembark.org/guides/video-game-research/index.html"
+    },
+    "guides/health-datasets/index.html": {
+      "sha256": "7c69b9acb2f734289c74611f088421a74e85d8e1aef3b2799368d0fcfab8cef1",
+      "bytes": 395904,
+      "source_url": "https://courses.hopeembark.org/guides/health-datasets/index.html"
+    },
+    "guides/cybersecurity-datasets/index.html": {
+      "sha256": "cc37f85dfd2c834e072e28a5534aae047b4675c147a1a234213f59c6f62b737f",
+      "bytes": 115695,
+      "source_url": "https://courses.hopeembark.org/guides/cybersecurity-datasets/index.html"
+    },
+    "guides/biomedical-ai/index.html": {
+      "sha256": "8f3a02ca808330756572b7306b2effd9cf403317e39e6c6940f1a0bb816714d9",
+      "bytes": 127192,
+      "source_url": "https://courses.hopeembark.org/guides/biomedical-ai/index.html"
+    },
+    "guides/dental-research/index.html": {
+      "sha256": "e095c0e56f7581d4252e7a206b4b3ace11071c103be4c704a424c43bd8301c61",
+      "bytes": 43272,
+      "source_url": "https://courses.hopeembark.org/guides/dental-research/index.html"
+    },
+    "guides/download-right-data/index.html": {
+      "sha256": "08d7e8dfa2ff8b34b906f6a6d05c7b9c56b0a6d16d11fdaf269ed393f2d53bf3",
+      "bytes": 30000,
+      "source_url": "https://courses.hopeembark.org/guides/download-right-data/index.html"
+    },
+    "python/research/index.html": {
+      "sha256": "cae03532be062ad21f3de7c28adce7e5479c809675a44288566d7bcbc226e87d",
+      "bytes": 73903,
+      "source_url": "https://courses.hopeembark.org/python/research/index.html"
+    },
+    "python/research/zh/index.html": {
+      "sha256": "fbb907ed411d42ae20b93ef04787ab74bbe70246bb8456a7d3d90399944f1108",
+      "bytes": 65739,
+      "source_url": "https://courses.hopeembark.org/python/research/zh/index.html"
+    },
+    "index.html": {
+      "sha256": "79a9c4d203cba2d53766140509e208d61f6076c6fff6897c7b052f0112e8a521",
+      "bytes": 26825,
+      "source_url": "https://cnpcshangbo.github.io/meritpoint-slides/index.html"
+    },
+    "catalog.json": {
+      "sha256": "54860c8b1577da3c809e684b8d167e65373f7a34b0db5836b4f33855c6cb2a88",
+      "bytes": 37865,
+      "source_url": "https://cnpcshangbo.github.io/meritpoint-slides/catalog.json"
+    }
+  },
+  "outputs": {
+    "python/class-06-lab/index.html": {
+      "sha256": "3cb886b3fe83a83beeca346cade91552822234c98a9f6eb62069061b96d97af9",
+      "bytes": 29451
+    },
+    "python/class-06-lab/clinic.css": {
+      "sha256": "9c291827cc7f1ea865da8080077ce7b542d5af32f475b685d620f833c4a794cb",
+      "bytes": 7671
+    },
+    "python/class-06-lab/clinic.js": {
+      "sha256": "52f72dcd7870c68c4f142faa3eb06eb32fcc66661ec22c302344bc4b4e7611f8",
+      "bytes": 3608
+    },
+    "python/class-06-lab/L06_data_audit.py": {
+      "sha256": "ddc064c854b74ab3463217e5213b280bd507d446ae0037b79e2c721d5fe79aeb",
+      "bytes": 17026
+    },
+    "python/class-06-lab/L06_data_audit.ipynb": {
+      "sha256": "ed5331db2c16aa9bbe84916697127173f9e8a85f787a2c6b5f2ec6d09ee94536",
+      "bytes": 19571
+    },
+    "python/handout-06/index.html": {
+      "sha256": "cdd36b597734a5a04f124cf27fec70f1e34f0d9b3c1dd1f26fe09ac427f5c7cb",
+      "bytes": 7766
+    },
+    "python/class-05-lab/colleges.csv": {
+      "sha256": "8e6df17091d2a1764f795d8819f93ddce5603c5bed30412f4c166a27831e4d8d",
+      "bytes": 35390
+    },
+    "python/class-05-lab/dataset-metadata.json": {
+      "sha256": "6beeb76e0f74e049ce5a40f5a441259c6c3e61c9f328d3ddd2c9ac7990ec0268",
+      "bytes": 9960
+    },
+    "guides/video-game-research/index.html": {
+      "sha256": "9ef461c418f8ce45d4a6d5f40ee1af08bb153853d64fe00e602fd1ae9e69bc28",
+      "bytes": 29941
+    },
+    "guides/health-datasets/index.html": {
+      "sha256": "6e487d86bdece67b0dcb73a1e0101fd2401cc75daf47708255c7439f4b608d76",
+      "bytes": 255923
+    },
+    "guides/cybersecurity-datasets/index.html": {
+      "sha256": "d3d4ed46ad88584e6b79f862e971559f2d96feaceed4d2755379306a19d18a1a",
+      "bytes": 107198
+    },
+    "guides/biomedical-ai/index.html": {
+      "sha256": "df999fc8fa166205d5dc78f1d8358d1e2ea38a303e1fa6ad8210817937c87e54",
+      "bytes": 125293
+    },
+    "guides/dental-research/index.html": {
+      "sha256": "70ad5eae08c98abe09abe96062fc12be74092a058597839d30cc6a0ceaedfa57",
+      "bytes": 44010
+    },
+    "guides/download-right-data/index.html": {
+      "sha256": "c66b9ddf19b34f9ba094e6cc6eaf12e9d3d109eb16a663714c000a416a4caaad",
+      "bytes": 22588
+    },
+    "python/research/index.html": {
+      "sha256": "61907d82cad0c0e0427e73c3457c19c296a02aad9ba8c3580d3f7ecde8e54a39",
+      "bytes": 74926
+    },
+    "python/research/zh/index.html": {
+      "sha256": "53284729830513d20d3db6eddefeb5eb8d8963f8d4005fbe6a19d46e84529c0d",
+      "bytes": 66758
+    },
+    "index.html": {
+      "sha256": "9fadbee602eb0fbe2e324b5d4f56587b81f1725d47ac9589dc5fe0254fdac70a",
+      "bytes": 27252
+    },
+    "catalog.json": {
+      "sha256": "1860fd9b4fcd87015681bf3df0838b225a0f7fa33c5975e9a838cd1b5992ba76",
+      "bytes": 38037
+    },
+    "python/class-06-lab/college-source.html": {
+      "sha256": "a32ad9aecd8930ba2192aaf5d6eade16085036c764513e0f3843aa31e1d810da",
+      "bytes": 4746
+    },
+    "python/handout-06/Handout_06_Research_Clinic.pdf": {
+      "sha256": "50873a887a374e87457957e778d0c918bd120c9b8d43127986f09eea31c91fa1",
+      "bytes": 91590
+    },
+    "assets/site.css": {
+      "sha256": "78061c34dfebaac8140202f4fb93efe4ae1f9bcc443df1b1d8aa7103aa549e12",
+      "bytes": 5253
+    },
+    "assets/site.js": {
+      "sha256": "20009557d36ee205431cdeae41f7caa600daf91d74203417725e6d2c6952b563",
+      "bytes": 4350
+    },
+    "assets/mpa-logo.png": {
+      "sha256": "ef1bd4821a5adcc841aa19be1a73394ee7621b8ed25abd5182df1e71aa4aeee0",
+      "bytes": 14098
+    },
+    "assets/favicon.png": {
+      "sha256": "3c3d320104a6149e1f1c202ba1f55bcb59ceb733e929ab9ee5eef7babe06597c",
+      "bytes": 4985
+    }
+  }
+}

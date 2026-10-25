@@ -1,7 +1,8 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Guide 05 · Downloading the Right Data — Merit Point Academy</title>
-<meta name="description" content="A student-friendly checklist for choosing, verifying, downloading, organizing, and documenting the right dataset for a research project.">
-<link rel="icon" type="image/png" href="/meritpoint-slides/assets/favicon.png"><link rel="stylesheet" href="/meritpoint-slides/assets/site.css">
+<meta content="A student-friendly checklist for choosing, verifying, downloading, organizing, and documenting the right dataset for a research project." name="description"/>
+<link href="/meritpoint-slides/assets/favicon.png" rel="icon" type="image/png"/><link href="/meritpoint-slides/assets/site.css" rel="stylesheet"/>
 <style>
 main.wrap{max-width:860px;padding-bottom:60vh}
 .crumb{margin-top:18px}
@@ -84,35 +85,33 @@ footer.site{margin-top:60px}
 .discussion-form{border-top:1px solid #d8e2eb;padding-top:12px;display:grid;gap:9px}.discussion-form label span{display:block;font-size:12px;font-weight:700;color:#0c2d52;margin-bottom:4px}.discussion-form small{font-weight:400;color:#687b8f}
 .discussion-form input,.discussion-form textarea{box-sizing:border-box;width:100%;border:1px solid #cbd9e6;border-radius:8px;padding:8px 10px;font:inherit;font-size:13px}.discussion-form textarea{min-height:72px;resize:vertical}.discussion-form input:focus,.discussion-form textarea:focus{outline:2px solid #8edce5;outline-offset:1px}
 .discussion-actions{display:flex;align-items:center;gap:10px}.discussion-actions button{border:0;border-radius:8px;background:#0f9db0;color:#fff;padding:8px 16px;font:inherit;font-size:13px;font-weight:700;cursor:pointer}.discussion-actions button:disabled{opacity:.6;cursor:wait}.discussion-status{font-size:11px;color:#687b8f}
-</style></head><body>
-<header class="site"><div class="wrap"><img class="logo" src="/meritpoint-slides/assets/mpa-logo.png" alt="Merit Point Academy logo"><div><h1>Guide 05 · Downloading the Right Data 📥</h1><p>Pick data that answers your question — then download it safely and reproducibly.</p></div>
-<div class="hdr-actions"><a class="asg-btn" href="https://academic.hopeembark.org/assignments">📝 Assignments · 作业</a><a class="donate-btn" href="https://buy.stripe.com/14AbIT26kfUzbqjbGv4ow00" target="_blank" rel="noopener">♥ Donate</a></div></div></header>
+</style><style>.class06-mirror-notice{box-sizing:border-box;max-width:1120px;
+margin:16px auto;padding:14px 18px;border:1px solid #9cb7af;border-radius:10px;
+background:#edf5ed;color:#173e38;font:15px/1.5 system-ui,sans-serif}
+.class06-mirror-notice a{color:#07564b;font-weight:700}
+.class06-mirror-notice p{margin:6px 0 0}
+.class06-video-note{padding:14px;border:1px solid #a8bdb5;border-radius:8px;
+background:#f0f5f0;color:#173e38}
+@media(max-width:700px){.class06-mirror-notice{margin:12px}}
+</style></head><body><aside aria-label="Static backup" class="class06-mirror-notice">
+<a href="/meritpoint-slides/python/class-06-lab/">← Class 6 research clinic</a>
+<p>Static backup: teaching text, local filters and quick checks stay available here.
+Videos, comments and server-generated drafts are omitted. Dataset publisher links
+still need internet access. Browser progress is saved separately on each site.</p>
+</aside>
+<header class="site"><div class="wrap"><img alt="Merit Point Academy logo" class="logo" src="/meritpoint-slides/assets/mpa-logo.png"/><div><h1>Guide 05 · Downloading the Right Data 📥</h1><p>Pick data that answers your question — then download it safely and reproducibly.</p></div>
+<div class="hdr-actions"><a class="asg-btn" href="/meritpoint-slides/python/class-06-lab/">Class 6 clinic · 第六课</a><a class="donate-btn" href="https://buy.stripe.com/14AbIT26kfUzbqjbGv4ow00" rel="noopener" target="_blank">♥ Donate</a></div></div></header>
 <main class="wrap">
 <p class="crumb"><a href="../">← All guides</a></p>
 <div id="pgbar"><div class="lbl"><span id="pgtxt">0%</span> of steps checked — your progress is saved in this browser</div><div class="rail"><div class="fill" id="pgfill"></div></div></div>
-
 <div class="answer"><p><strong>Short answer to your question:</strong> do not download the first dataset that looks interesting. First write what one row should represent and which columns you need. Then check the source, license, date, size, documentation, and missing values. Download the original file, keep it unchanged, record its link and access date, and analyze a copy.</p></div>
-
 <p class="lead">The “right” data is not necessarily the biggest or most popular dataset. It is the dataset that can <b>actually answer your research question</b>, comes from a source you can explain, and is legal and practical for you to use. This guide gives you a repeatable 15-minute check before you commit to a download.</p>
-
 <div class="navchips"><a href="#s1">1 · Start with the question</a><a href="#s2">2 · Score the dataset</a><a href="#s3">3 · Preview first</a><a href="#s4">4 · Download safely</a><a href="#s5">5 · Verify it</a><a href="#s6">6 · Record your source</a></div>
-
 <h2 class="sec" id="s1"><span class="no">1</span>Start with the question, not the download button</h2>
 <p>Before searching, turn your project into a tiny data specification. Write these four lines:</p>
 <div class="template"><ul><li><b>Question:</b> What exactly am I trying to find out?</li><li><b>One row means:</b> one game, one patient, one image, one day, one survey response…</li><li><b>I must have:</b> the columns or labels needed to answer the question.</li><li><b>Scope:</b> the place, population, and time period I want to study.</li></ul></div>
 <p><b>Example:</b> “Did action games receive higher user ratings than puzzle games from 2015–2025?” One row should be one game. You need at least <code>genre</code>, <code>user_rating</code>, and <code>release_year</code>. A dataset without ratings cannot answer the question, no matter how large it is.</p>
-<label class="step"><input type="checkbox" data-k="spec"><span class="t">Write your four-line data specification before opening Kaggle, Google Dataset Search, a government portal, or an API.</span></label>
-<aside class="section-comments" data-section="s1-question" data-label="Start with the question">
-  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
-  <div class="discussion-panel" hidden>
-    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
-    <form class="discussion-form">
-      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
-      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="What would you like to ask or share about this section?"></textarea></label>
-      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
-    </form>
-  </div>
-</aside>
+<label class="step"><input data-k="spec" type="checkbox"/><span class="t">Write your four-line data specification before opening Kaggle, Google Dataset Search, a government portal, or an API.</span></label>
 
 <h2 class="sec" id="s2"><span class="no">2</span>Use the RIGHT checklist</h2>
 <table class="cheat score"><tr><th>Check</th><th>Points</th><th>What good looks like</th></tr>
@@ -122,19 +121,8 @@ footer.site{margin-top:60px}
 <tr><td>H · Healthy quality</td><td>0–2</td><td>Definitions exist; missing values, duplicates, and obvious errors are manageable.</td></tr>
 <tr><td>T · Timely &amp; tractable</td><td>0–2</td><td>Dates fit the question; the file size and format work with your tools.</td></tr></table>
 <div class="why"><b>Decision:</b> <span class="signal good">8–10 · use it</span> <span class="signal warn">5–7 · investigate</span> <span class="signal stop">0–4 · keep searching</span> A famous dataset can still score poorly for <i>your</i> question.</div>
-<label class="step"><input type="checkbox" data-k="score"><span class="t">Score at least two candidate datasets. Keep the stronger one, and write one sentence explaining your choice.</span></label>
-<div class="quiz"><p class="qq">Your question is about current electric vehicles, but a clean, well-documented dataset ends in 2014. Is it the right data?</p><button data-x>Yes — clean data is always right</button><button data-ok>No — it fails relevance and timeliness for this question</button><button data-x>Yes — older data is automatically less biased</button><p class="exp">Quality is not enough. The data must match the time period and population named in the question.</p></div>
-<aside class="section-comments" data-section="s2-right-checklist" data-label="Use the RIGHT checklist">
-  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
-  <div class="discussion-panel" hidden>
-    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
-    <form class="discussion-form">
-      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
-      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="What would you like to ask or share about this section?"></textarea></label>
-      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
-    </form>
-  </div>
-</aside>
+<label class="step"><input data-k="score" type="checkbox"/><span class="t">Score at least two candidate datasets. Keep the stronger one, and write one sentence explaining your choice.</span></label>
+<div class="quiz"><p class="qq">Your question is about current electric vehicles, but a clean, well-documented dataset ends in 2014. Is it the right data?</p><button data-x="">Yes — clean data is always right</button><button data-ok="">No — it fails relevance and timeliness for this question</button><button data-x="">Yes — older data is automatically less biased</button><p class="exp">Quality is not enough. The data must match the time period and population named in the question.</p></div>
 
 <h2 class="sec" id="s3"><span class="no">3</span>Preview before downloading</h2>
 <p>Read the dataset page, documentation, or “data card.” Look at a sample of rows and ask:</p>
@@ -146,18 +134,7 @@ footer.site{margin-top:60px}
 <tr><td>Target/label</td><td>How was the answer label decided?</td><td>Labels created with no explanation</td></tr>
 <tr><td>Privacy</td><td>Does it contain names, emails, faces, IDs, or sensitive information?</td><td>Personal data with unclear consent</td></tr></table>
 <div class="why"><b>Best source order:</b> original publisher first (government agency, research lab, company, or author), then a trusted repository that links back to the original. Reuploads are convenient, but they may be old, changed, or missing documentation.</div>
-<label class="step"><input type="checkbox" data-k="preview"><span class="t">Open the documentation and preview at least 10 rows. Confirm the meaning and units of every column you plan to use.</span></label>
-<aside class="section-comments" data-section="s3-preview" data-label="Preview before downloading">
-  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
-  <div class="discussion-panel" hidden>
-    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
-    <form class="discussion-form">
-      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
-      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="What would you like to ask or share about this section?"></textarea></label>
-      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
-    </form>
-  </div>
-</aside>
+<label class="step"><input data-k="preview" type="checkbox"/><span class="t">Open the documentation and preview at least 10 rows. Confirm the meaning and units of every column you plan to use.</span></label>
 
 <h2 class="sec" id="s4"><span class="no">4</span>Download safely and keep the raw file raw</h2>
 <p>Prefer simple, open formats: <code>.csv</code> for tables, <code>.json</code> for structured records, and documented image/audio folders for media. Avoid unknown executable files. If the download is a <code>.zip</code>, inspect its contents after unzipping.</p>
@@ -167,19 +144,8 @@ footer.site{margin-top:60px}
 │   └── processed/    <span class="c"># cleaned data your code creates</span>
 ├── notebooks/
 └── README.md         <span class="c"># source, license, dates, and decisions</span></pre>
-<label class="step"><input type="checkbox" data-k="raw"><span class="t">Save the original file in <code>data/raw/</code>. Give it a clear name such as <code>ev_registrations_2026-07-29.csv</code>; include a version or download date when the publisher does not.</span></label>
-<label class="step"><input type="checkbox" data-k="copy"><span class="t">Do not fix cells by hand in the raw file. Write cleaning steps in Python or a notebook so another person can repeat them.</span></label>
-<aside class="section-comments" data-section="s4-download" data-label="Download safely">
-  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
-  <div class="discussion-panel" hidden>
-    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
-    <form class="discussion-form">
-      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
-      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="What would you like to ask or share about this section?"></textarea></label>
-      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
-    </form>
-  </div>
-</aside>
+<label class="step"><input data-k="raw" type="checkbox"/><span class="t">Save the original file in <code>data/raw/</code>. Give it a clear name such as <code>ev_registrations_2026-07-29.csv</code>; include a version or download date when the publisher does not.</span></label>
+<label class="step"><input data-k="copy" type="checkbox"/><span class="t">Do not fix cells by hand in the raw file. Write cleaning steps in Python or a notebook so another person can repeat them.</span></label>
 
 <h2 class="sec" id="s5"><span class="no">5</span>Verify immediately after download</h2>
 <p>Open the file before building your project around it. For a CSV in Python:</p>
@@ -192,35 +158,13 @@ print(df.head())                <span class="c"># values look sensible?</span>
 print(df.isna().mean().sort_values(ascending=False).head())
 print("duplicate rows:", df.duplicated().sum())</pre>
 <p>Compare the row count, column count, and file size with the publisher’s description. Scan categories and number ranges. A column that is 90% empty or an age of 300 is not always fatal—but it must be investigated.</p>
-<label class="step"><input type="checkbox" data-k="verify"><span class="t">Run the five checks above. Record anything surprising before cleaning.</span></label>
-<div class="quiz"><p class="qq">You downloaded 2 million rows, but your spreadsheet displays only part of them. What should you do?</p><button data-x>Assume the hidden rows do not matter</button><button data-x>Delete rows until the file opens</button><button data-ok>Use Python/pandas or a database, and verify the full row count there</button><p class="exp">The tool must fit the data. Spreadsheet limits or slow loading do not mean the rest of the dataset is absent.</p></div>
-<aside class="section-comments" data-section="s5-verify" data-label="Verify after download">
-  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
-  <div class="discussion-panel" hidden>
-    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
-    <form class="discussion-form">
-      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
-      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="What would you like to ask or share about this section?"></textarea></label>
-      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
-    </form>
-  </div>
-</aside>
+<label class="step"><input data-k="verify" type="checkbox"/><span class="t">Run the five checks above. Record anything surprising before cleaning.</span></label>
+<div class="quiz"><p class="qq">You downloaded 2 million rows, but your spreadsheet displays only part of them. What should you do?</p><button data-x="">Assume the hidden rows do not matter</button><button data-x="">Delete rows until the file opens</button><button data-ok="">Use Python/pandas or a database, and verify the full row count there</button><p class="exp">The tool must fit the data. Spreadsheet limits or slow loading do not mean the rest of the dataset is absent.</p></div>
 
 <h2 class="sec" id="s6"><span class="no">6</span>Leave a receipt: make the download reproducible</h2>
 <p>In your project README or dataset notes, record:</p>
 <div class="template"><ul><li><b>Dataset title and publisher</b></li><li><b>Original page URL</b> (not just a search-results link)</li><li><b>Date accessed and dataset version/date</b></li><li><b>License or terms of use</b></li><li><b>File name, size, and row/column count</b></li><li><b>What one row represents</b></li><li><b>Known limits, missing groups, and likely biases</b></li><li><b>Any filters or cleaning performed</b></li></ul></div>
-<label class="step"><input type="checkbox" data-k="receipt"><span class="t">Create your dataset receipt. A classmate should be able to find the same source and understand your file without asking you.</span></label>
-<aside class="section-comments" data-section="s6-receipt" data-label="Leave a dataset receipt">
-  <button class="discussion-toggle" type="button" aria-expanded="false">💬 Comments &amp; questions <span class="discussion-count">0</span></button>
-  <div class="discussion-panel" hidden>
-    <div class="discussion-list" aria-live="polite"><p class="discussion-empty">Loading…</p></div>
-    <form class="discussion-form">
-      <label><span>Your name <small>(optional)</small></span><input name="name" maxlength="40" autocomplete="name"></label>
-      <label><span>Comment or question</span><textarea name="body" maxlength="2000" required placeholder="What would you like to ask or share about this section?"></textarea></label>
-      <div class="discussion-actions"><button type="submit">Post</button><span class="discussion-status">Visible to your instructor and classmates.</span></div>
-    </form>
-  </div>
-</aside>
+<label class="step"><input data-k="receipt" type="checkbox"/><span class="t">Create your dataset receipt. A classmate should be able to find the same source and understand your file without asking you.</span></label>
 
 <div class="why"><b>The final rule:</b> never choose data only because it is easy to download. Choose it because you can defend the match between the <i>question</i>, the <i>rows</i>, the <i>columns</i>, the <i>source</i>, and the <i>license</i>.</div>
 <p class="lead" style="margin-top:26px"><b>Your next step:</b> write your four-line specification, compare two datasets with the RIGHT score, and bring your winning dataset receipt to class. For finding research data, revisit <a href="../../ai-toolbox/class-07/">Class 07 · What Is Data? How to Obtain It</a>. For loading a CSV, use <a href="../../ai-toolbox/class-05/">Class 05 · Data Analysis Tools</a>. For file paths, see <a href="../github-terminal/">Guide 01</a>.</p>
@@ -271,31 +215,5 @@ print("duplicate rows:", df.duplicated().sum())</pre>
   });
 
 })();</script>
-<script>
-(function(){
-  var DECK='guides/download-right-data';
-  function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
-  function when(ts){var d=new Date(ts);return d.toLocaleDateString()+' '+d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});}
-  function load(box){
-    var section=box.dataset.section,list=box.querySelector('.discussion-list'),count=box.querySelector('.discussion-count');
-    list.innerHTML='<p class="discussion-empty">Loading…</p>';
-    fetch('/api/comments?deck='+encodeURIComponent(DECK)+'&slide='+encodeURIComponent(section)).then(function(r){return r.json();}).then(function(j){
-      var cs=j.comments||[];count.textContent=cs.length;
-      list.innerHTML=cs.length?cs.map(function(c){return '<div class="discussion-item"><div class="discussion-meta"><b>'+esc(c.name)+'</b> · '+when(c.created)+'</div><div class="discussion-body">'+esc(c.body)+'</div></div>';}).join(''):'<p class="discussion-empty">No comments yet — ask the first question.</p>';
-    }).catch(function(){list.innerHTML='<p class="discussion-empty">Could not load comments. Please try again.</p>';});
-  }
-  document.querySelectorAll('.section-comments').forEach(function(box){
-    var toggle=box.querySelector('.discussion-toggle'),panel=box.querySelector('.discussion-panel'),form=box.querySelector('.discussion-form'),status=box.querySelector('.discussion-status');
-    toggle.addEventListener('click',function(){var opening=panel.hidden;panel.hidden=!opening;toggle.setAttribute('aria-expanded',String(opening));if(opening)load(box);});
-    form.addEventListener('submit',function(e){
-      e.preventDefault();var body=form.elements.body.value.trim(),submit=form.querySelector('[type="submit"]');if(!body){status.textContent='Write a comment or question first.';return;}
-      submit.disabled=true;status.textContent='Posting…';
-      fetch('/api/comments',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({deck:DECK,slide:box.dataset.section,name:form.elements.name.value,body:body})}).then(function(r){return r.json();}).then(function(j){
-        if(!j.ok)throw new Error(j.error||'Could not post.');form.elements.body.value='';status.textContent='Posted — thank you!';load(box);
-      }).catch(function(err){status.textContent=err.message||'Could not post. Please try again.';}).finally(function(){submit.disabled=false;});
-    });
-  });
-  fetch('/api/comments/counts?deck='+encodeURIComponent(DECK)).then(function(r){return r.json();}).then(function(j){document.querySelectorAll('.section-comments').forEach(function(box){box.querySelector('.discussion-count').textContent=(j.counts||{})[box.dataset.section]||0;});}).catch(function(){});
-})();
-</script>
-<script defer src="/meritpoint-slides/assets/guide-analytics.js" data-guide-analytics></script></body></html>
+
+</body></html>

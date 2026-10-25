@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-10-18",
+  "sources": {
+    "scorecard": {
+      "file": "scorecard.csv",
+      "url": "https://ed-public-download.scorecard.network/downloads/Most-Recent-Cohorts-Institution_10152026.zip",
+      "page": "https://collegescorecard.ed.gov/data/",
+      "release": "2026-10-15",
+      "sha256": "f81be8ba630b4ae887cf7ba6fc3c082a12459467fa077aa8d67b59b55b729902",
+      "accessed": "2026-10-18"
+    },
+    "dictionary": {
+      "file": "scorecard-dictionary.xlsx",
+      "url": "https://collegescorecard.ed.gov/files/CollegeScorecardDataDictionary.xlsx",
+      "sha256": "b11eb3623f00de6f4ae1bd2325738b555ffb735d7c9c30c7aaaac2fbd6977bf3",
+      "accessed": "2026-10-18"
+    },
+    "majors": {
+      "file": "nyfed-majors.csv",
+      "url": "https://www.newyorkfed.org/medialibrary/research/interactives/data/college-labor-market/college-labor-outcomes-by-major-data.csv",
+      "page": "https://www.newyorkfed.org/research/college-labor-market",
+      "release": "2026-02-04",
+      "sha256": "f3eedbdbdb7683bff6caad9d8c2d9772250626378e47b44f01801994b4666495",
+      "accessed": "2026-10-18"
+    },
+    "majorsMetadata": {
+      "file": "nyfed-meta.json",
+      "url": "https://www.newyorkfed.org/medialibrary/research/interactives/data/college-labor-market/college-labor-chart-meta.json",
+      "sha256": "4735ac0a6ebdb2bbfb625d12cf1aea70fdbe382af833f5e9f7edf62a322f552b",
+      "accessed": "2026-10-18"
+    },
+    "ai": {
+      "file": "census-ai.html",
+      "url": "https://www.census.gov/library/stories/2026/05/ai-use-businesses.html?trk=public_post_comment-text",
+      "release": "2026-05-26",
+      "sha256": "86aba4ccf60b3bcc11d98e198ed5cc84c909e7639fac452f131b540a6fe87f48",
+      "accessed": "2026-10-18"
+    },
+    "boundaries": {
+      "file": "states-2025-20m.zip",
+      "url": "https://www2.census.gov/geo/tiger/GENZ2025/shp/cb_2025_us_state_20m.zip",
+      "page": "https://www.census.gov/geographies/mapping-files/2025/geo/carto-boundary-file.html",
+      "sha256": "9340b6d995e971b2b4230518f4fa85e6cd9e7fe6811afabc90a6a8b1191530f6",
+      "accessed": "2026-10-18"
+    }
+  },
+  "colleges": {
+    "title": "College map: New York, New Jersey and Pennsylvania",
+    "row_unit": "One institution (UNITID) in the College Scorecard October 15, 2026 most-recent-cohorts snapshot.",
+    "selection": "STABBR in NY/NJ/PA; CURROPER = 1; PREDDEG = 3 (predominantly bachelor-degree granting). All matching institutions retained, including missing measures. This is a geographic teaching subset, not a ranking or representative national sample.",
+    "raw_rows": 6278,
+    "rows": 332,
+    "states": [
+      "NY",
+      "NJ",
+      "PA"
+    ],
+    "missing": {
+      "latitude": 1,
+      "longitude": 1,
+      "annual_net_price": 26,
+      "completion_rate": 14
+    },
+    "fields": {
+      "college_id": {
+        "source": "UNITID",
+        "meaning": "Stable IPEDS institution identifier; not a rank."
+      },
+      "name": {
+        "source": "INSTNM",
+        "meaning": "Institution name."
+      },
+      "state": {
+        "source": "STABBR",
+        "meaning": "State postal abbreviation."
+      },
+      "city": {
+        "source": "CITY",
+        "meaning": "Institution city."
+      },
+      "latitude": {
+        "source": "LATITUDE",
+        "unit": "degrees north",
+        "period": "2025–26",
+        "meaning": "Reported institution location; missing coordinates stay blank and cannot be mapped."
+      },
+      "longitude": {
+        "source": "LONGITUDE",
+        "unit": "degrees east",
+        "period": "2025–26",
+        "meaning": "Reported institution location; negative values west of Greenwich."
+      },
+      "control": {
+        "source": "CONTROL",
+        "meaning": "1 Public; 2 Private nonprofit; 3 Private for-profit."
+      },
+      "annual_net_price": {
+        "source": "NPT4_PUB for public; NPT4_PRIV for private",
+        "unit": "US dollars per academic year",
+        "period": "2024–25, reported in 2025–26",
+        "meaning": "Average cost of attendance minus grants and scholarships for full-time, first-time undergraduates receiving Title IV aid. Public colleges use in-state students. It is an observed group average, not a personalized quote, sticker tuition, or necessarily the price for an out-of-state applicant."
+      },
+      "completion_rate": {
+        "source": "C150_4",
+        "unit": "fraction from 0 to 1",
+        "period": "Fall 2019 or academic year 2019–20 entry cohort; reported in 2025–26",
+        "meaning": "First-time, full-time degree/certificate-seeking cohort completing at the institution within 150% of normal program time (typically six years for a bachelor degree). Does not describe all students or personal chances."
+      },
+      "data_release": {
+        "meaning": "Snapshot release date, not the observation year of every measure."
+      }
+    },
+    "missing_policy": "NA, NULL, PrivacySuppressed or empty source values become null in JSON and empty fields in CSV. Never zero-fill. Price conditions omit missing prices; show the missing count separately. One row has no coordinates and remains in table/filter counts.",
+    "limits": [
+      "No major offerings or admission-rank data are included.",
+      "State and institution-type summaries are unweighted institution summaries, not student-level estimates.",
+      "Net price and completion concern different cohorts; the release combines multiple reporting periods."
+    ]
+  },
+  "majors": {
+    "title": "National outcomes by undergraduate major",
+    "rows": 73,
+    "selection": "All 73 named major categories; the source Overall aggregate is excluded to avoid treating it as an additional major.",
+    "row_unit": "One undergraduate-major category, nationally aggregated; not a college or an individual.",
+    "data_year": 2024,
+    "release": "2026-02-04",
+    "source_notes": "Notes: Figures are for 2024. Unemployment and underemployment rates are for recent college graduates (that is, those aged 22 to 27 with a bachelor's degree or higher), and median wages are for full-time workers with a bachelor's degree only. Early career graduates are those aged 22 to 27, and mid-career graduates are those aged 35 to 45. Graduate degree share is based on the adult working-age population (that is, those aged 25 to 65) with a bachelor's degree or higher. All figures exclude those currently enrolled in school. Data are updated annually at the beginning of each calendar year.",
+    "source": "Source: U.S. Census Bureau, American Community Survey (IPUMS).",
+    "wage_population": "Full-time workers with a bachelor degree only, not currently enrolled; early career ages 22–27 and mid-career ages 35–45.",
+    "rate_population": "Recent graduates ages 22–27 with a bachelor degree or higher, not currently enrolled.",
+    "graduate_degree_population": "Working-age adults ages 25–65 with a bachelor degree or higher, not currently enrolled.",
+    "underemployment_definition": "Working in a job that typically does not require a college degree; this does not mean unemployed or necessarily low paid.",
+    "currency": "US dollars, annual median wage in 2024",
+    "rate_unit": "percent, 0 to 100",
+    "limits": [
+      "Two age groups are different people observed in the same year, not a tracked salary-growth path.",
+      "Medians are not a salary range or individual forecast. These data do not identify the causal effect of choosing a major.",
+      "National major categories cannot be joined directly to this college shortlist or used to infer offered programs.",
+      "This dataset has bachelor-major categories; it does not compare all career pathways or professional training durations."
+    ]
+  },
+  "ai": {
+    "title": "Reported business AI use: selected sectors and national reference",
+    "rows": 3,
+    "row_unit": "One sector estimate or the national all-businesses reference for the same survey period.",
+    "period_end": "2026-05-03",
+    "release": "2026-05-26",
+    "measure": "Share of surveyed businesses reporting AI use in any business function during the preceding two weeks.",
+    "unit": "percent, 0 to 100",
+    "scope": "Two selected sectors plus a national reference, transcribed from precise published estimates in the Census article. The approximate Retail Trade value is intentionally omitted.",
+    "limits": [
+      "Business adoption is not the percentage of jobs lost, worker use, exposure, or a forecast for a college major.",
+      "The national reference includes sectors; these three rows are not disjoint pieces and must not be added.",
+      "Point estimates are descriptive here; no confidence-interval or significance test is reconstructed.",
+      "The question wording changed on November 17, 2025. Do not splice these estimates into the earlier goods/services-use series as if comparable.",
+      "This is a dated May 2026 snapshot, not the latest available BTOS release."
+    ],
+    "wording_source": "https://www.census.gov/hfp/btos/downloads/AI%20Question%20Wording%20Updates.pdf"
+  },
+  "geometry": {
+    "title": "2025 Census state cartographic boundaries at 1:20,000,000",
+    "features": 49,
+    "scope": "Contiguous 48 states plus District of Columbia; Alaska, Hawaii and territories omitted from this regional teaching-map basemap.",
+    "coordinate_system": "Source NAD83 geographic longitude/latitude; used for generalized display only.",
+    "limits": "Generalized geographic display; not for address geocoding, exact boundaries, distance or area measurement."
+  },
+  "data_provenance": {
+    "bundle_sha256": "07dc7abab174dd6a16644548f0742fb976241257b87dfe1d6a2a01397f52ef76",
+    "files": {
+      "ai_adoption.csv": "6b2d6ea13d5d1bcdf8d8398d9d2bf645e94352e59773462a745969df8ed8efaa",
+      "colleges.csv": "8e6df17091d2a1764f795d8819f93ddce5603c5bed30412f4c166a27831e4d8d",
+      "majors.csv": "59ecf08b6bb5e95e20cbf64d6e52197589a92c7ba212b8a3cfe410807ad0b6bf"
+    }
+  }
+}

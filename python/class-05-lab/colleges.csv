@@ -1,0 +1,333 @@
+college_id,name,state,city,latitude,longitude,control,annual_net_price,completion_rate,data_release
+183789,Berkeley College-Woodland Park,NJ,Woodland Park,40.898587,-74.189483,Private for-profit,16902,0.4368,2026-10-15
+183804,Beth Medrash Govoha,NJ,Lakewood,40.095672,-74.221328,Private nonprofit,,,2026-10-15
+183822,Bloomfield College of Montclair State University,NJ,Bloomfield,40.795105,-74.194309,Public,13249,0.36,2026-10-15
+183910,Caldwell University,NJ,Caldwell,40.832753,-74.272571,Private nonprofit,15180,0.5663,2026-10-15
+183974,Centenary University,NJ,Hackettstown,40.84764,-74.833644,Private nonprofit,21655,0.665,2026-10-15
+184348,Drew University,NJ,Madison,40.761829,-74.424584,Private nonprofit,25614,0.7075,2026-10-15
+184603,Fairleigh Dickinson University-Metropolitan Campus,NJ,Teaneck,40.897209,-74.028986,Private nonprofit,17923,0.5346,2026-10-15
+184612,Felician University,NJ,Lodi,40.867272,-74.096452,Private nonprofit,10378,0.4751,2026-10-15
+184694,Fairleigh Dickinson University-Florham Campus,NJ,Madison,40.774498,-74.432121,Private nonprofit,24803,0.7054,2026-10-15
+184773,Georgian Court University,NJ,Lakewood,40.099617,-74.228186,Private nonprofit,18221,0.627,2026-10-15
+184782,Rowan University,NJ,Glassboro,39.709108,-75.119119,Public,23938,0.6895,2026-10-15
+185129,New Jersey City University,NJ,Jersey City,40.709937,-74.08727,Public,10591,0.3898,2026-10-15
+185262,Kean University,NJ,Union,40.677981,-74.233503,Public,14465,0.4849,2026-10-15
+185572,Monmouth University,NJ,West Long Branch,40.280066,-74.006447,Private nonprofit,30978,0.7221,2026-10-15
+185590,Montclair State University,NJ,Montclair,40.860414,-74.198141,Public,15193,0.656,2026-10-15
+185828,New Jersey Institute of Technology,NJ,Newark,40.741997,-74.177113,Public,18783,0.7211,2026-10-15
+186131,Princeton University,NJ,Princeton,40.348732,-74.659365,Private nonprofit,7815,0.9737,2026-10-15
+186186,Rabbinical College of America,NJ,Morristown,40.805705,-74.49878,Private nonprofit,9662,0.2222,2026-10-15
+186201,Ramapo College of New Jersey,NJ,Mahwah,41.080942,-74.174086,Public,16382,0.6774,2026-10-15
+186283,Rider University,NJ,Lawrenceville,40.278796,-74.737833,Private nonprofit,24780,0.6234,2026-10-15
+186371,Rutgers University-Camden,NJ,Camden,39.948064,-75.12224,Public,15732,0.6102,2026-10-15
+186380,Rutgers University-New Brunswick,NJ,New Brunswick,40.498769,-74.446251,Public,24897,0.8388,2026-10-15
+186399,Rutgers University-Newark,NJ,Newark,40.739122,-74.175809,Public,16013,0.6488,2026-10-15
+186432,Saint Peter's University,NJ,Jersey City,40.727105,-74.071541,Private nonprofit,8127,0.5455,2026-10-15
+186584,Seton Hall University,NJ,South Orange,40.742336,-74.246027,Private nonprofit,31552,0.7049,2026-10-15
+186618,Saint Elizabeth University,NJ,Morristown,40.78182,-74.438221,Private nonprofit,19010,0.4911,2026-10-15
+186867,Stevens Institute of Technology,NJ,Hoboken,40.744776,-74.025334,Private nonprofit,37396,0.8874,2026-10-15
+186876,Stockton University,NJ,Galloway,39.492036,-74.531087,Public,24030,0.6848,2026-10-15
+187046,Thomas Edison State University,NJ,Trenton,40.220487,-74.768562,Public,,,2026-10-15
+187134,The College of New Jersey,NJ,Ewing,40.268651,-74.778791,Public,26752,0.8526,2026-10-15
+187444,William Paterson University of New Jersey,NJ,Wayne,40.945255,-74.200248,Public,18533,0.4431,2026-10-15
+188429,Adelphi University,NY,Garden City,40.721439,-73.653321,Private nonprofit,26646,0.7091,2026-10-15
+188526,Albany College of Pharmacy and Health Sciences,NY,Albany,42.650371,-73.779063,Private nonprofit,28425,0.2865,2026-10-15
+188641,Alfred University,NY,Alfred,42.254476,-77.788106,Private nonprofit,22325,0.4563,2026-10-15
+189088,Bard College,NY,Annandale-On-Hudson,42.020386,-73.909927,Private nonprofit,27126,0.6929,2026-10-15
+189097,Barnard College,NY,New York,40.810098,-73.963346,Private nonprofit,28930,0.9165,2026-10-15
+189228,Berkeley College-New York,NY,New York,40.753986,-73.979458,Private for-profit,32052,0.4223,2026-10-15
+189282,Mount Sinai Phillips School of Nursing,NY,New York,40.804778,-73.936639,Private nonprofit,,,2026-10-15
+189413,Boricua College,NY,New York,40.833434,-73.9458,Private nonprofit,15934,0.2088,2026-10-15
+189565,Bryant & Stratton College-Syracuse North,NY,Liverpool,43.149337,-76.230807,Private nonprofit,11093,0.2887,2026-10-15
+189705,Canisius University,NY,Buffalo,42.925206,-78.852577,Private nonprofit,18178,0.6138,2026-10-15
+189857,Central Yeshiva Tomchei Tmimim Lubavitz,NY,Brooklyn,40.669694,-73.938778,Private nonprofit,22939,0.2211,2026-10-15
+190044,Clarkson University,NY,Potsdam,44.662716,-74.999359,Private nonprofit,32137,0.7195,2026-10-15
+190099,Colgate University,NY,Hamilton,42.819475,-75.536346,Private nonprofit,29409,0.888,2026-10-15
+190114,Metropolitan College of New York,NY,New York,40.708706,-74.014702,Private nonprofit,29006,0.3103,2026-10-15
+190150,Columbia University in the City of New York,NY,New York,40.808286,-73.961885,Private nonprofit,15370,0.9517,2026-10-15
+190372,The Cooper Union for the Advancement of Science and Art,NY,New York,40.728148,-73.991609,Private nonprofit,12999,0.8182,2026-10-15
+190415,Cornell University,NY,Ithaca,42.4472,-76.483084,Private nonprofit,33934,0.9455,2026-10-15
+190512,CUNY Bernard M Baruch College,NY,New York,40.740238,-73.983417,Public,657,0.6966,2026-10-15
+190549,CUNY Brooklyn College,NY,Brooklyn,40.631517,-73.949898,Public,950,0.5313,2026-10-15
+190558,College of Staten Island CUNY,NY,Staten Island,40.601831,-74.14849,Public,3153,0.3576,2026-10-15
+190567,CUNY City College,NY,New York,40.819846,-73.948542,Public,1557,0.4961,2026-10-15
+190576,CUNY Graduate School and University Center,NY,New York,40.748612,-73.983822,Public,4766,,2026-10-15
+190594,CUNY Hunter College,NY,New York,40.768669,-73.964795,Public,1051,0.5895,2026-10-15
+190600,CUNY John Jay College of Criminal Justice,NY,New York,40.770351,-73.98841,Public,1110,0.5378,2026-10-15
+190637,CUNY Lehman College,NY,Bronx,40.872962,-73.895379,Public,541,0.4823,2026-10-15
+190646,CUNY Medgar Evers College,NY,Brooklyn,40.666256,-73.957076,Public,3245,0.1949,2026-10-15
+190655,CUNY New York City College of Technology,NY,Brooklyn,40.695483,-73.987856,Public,2818,0.1938,2026-10-15
+190664,CUNY Queens College,NY,Queens,40.736416,-73.820053,Public,1272,0.5316,2026-10-15
+190691,CUNY York College,NY,Jamaica,40.701576,-73.796313,Public,1956,0.2709,2026-10-15
+190716,D'Youville  University,NY,Buffalo,42.902636,-78.890868,Private nonprofit,22038,0.6157,2026-10-15
+190725,Daemen University,NY,Amherst,42.965605,-78.788111,Private nonprofit,19350,0.5888,2026-10-15
+190752,Yeshiva of Far Rockaway Derech Ayson Rabbinical Seminary,NY,Far Rockaway,40.60049,-73.743901,Private nonprofit,8146,0.0909,2026-10-15
+190761,Dominican University New York,NY,Orangeburg,41.047419,-73.950555,Private nonprofit,25971,0.4334,2026-10-15
+190983,Elmira College,NY,Elmira,42.0961,-76.813459,Private nonprofit,23178,0.4839,2026-10-15
+191205,Five Towns College,NY,Dix Hills,40.794506,-73.369348,Private for-profit,21094,0.5333,2026-10-15
+191241,Fordham University,NY,Bronx,40.859354,-73.882705,Private nonprofit,42760,0.8088,2026-10-15
+191515,Hamilton College,NY,Clinton,43.050245,-75.408195,Private nonprofit,25793,0.8985,2026-10-15
+191533,Hartwick College,NY,Oneonta,42.457599,-75.071994,Private nonprofit,36296,0.5319,2026-10-15
+191621,Hilbert College,NY,Hamburg,42.75464,-78.820257,Private nonprofit,20955,0.5,2026-10-15
+191630,Hobart William Smith Colleges,NY,Geneva,42.858131,-76.985516,Private nonprofit,31617,0.7112,2026-10-15
+191649,Hofstra University,NY,Hempstead,40.715959,-73.60078,Private nonprofit,30647,0.6567,2026-10-15
+191676,Houghton University,NY,Houghton,42.426137,-78.155426,Private nonprofit,21959,0.6236,2026-10-15
+191931,Iona University,NY,New Rochelle,40.925725,-73.788046,Private nonprofit,26250,0.5928,2026-10-15
+191968,Ithaca College,NY,Ithaca,42.422154,-76.494136,Private nonprofit,33233,0.7168,2026-10-15
+192040,Jewish Theological Seminary of America,NY,New York,40.811892,-73.960582,Private nonprofit,48432,0.8158,2026-10-15
+192110,The Juilliard School,NY,New York,40.773725,-73.982913,Private nonprofit,41799,0.9138,2026-10-15
+192165,Kehilath Yakov Rabbinical Seminary,NY,Ossining,41.220521,-73.814887,Private nonprofit,3925,0.5814,2026-10-15
+192192,Keuka College,NY,Keuka Park,42.615253,-77.090562,Private nonprofit,35459,0.4883,2026-10-15
+192271,LIM College,NY,New York,40.754991,-73.979413,Private for-profit,41549,0.4353,2026-10-15
+192323,Le Moyne College,NY,Syracuse,43.049192,-76.090435,Private nonprofit,23835,0.6728,2026-10-15
+192448,Long Island University,NY,Brookville,40.820714,-73.593678,Private nonprofit,23862,0.5947,2026-10-15
+192624,Machzikei Hadath Rabbinical College,NY,Brooklyn,40.627937,-73.988378,Private nonprofit,8628,0.1471,2026-10-15
+192703,Manhattan University,NY,Riverdale,40.889756,-73.901893,Private nonprofit,25074,0.678,2026-10-15
+192712,Manhattan School of Music,NY,New York,40.812312,-73.961334,Private nonprofit,55613,0.7692,2026-10-15
+192749,Manhattanville University,NY,Purchase,41.032187,-73.715645,Private nonprofit,21572,0.5865,2026-10-15
+192819,Marist University,NY,Poughkeepsie,41.720937,-73.935484,Private nonprofit,42789,0.8063,2026-10-15
+192864,Marymount Manhattan College,NY,New York,40.768787,-73.959767,Private nonprofit,38195,0.531,2026-10-15
+193016,Mercy University,NY,Dobbs Ferry,41.021626,-73.874447,Private nonprofit,15093,0.4505,2026-10-15
+193052,Mesivta Torah Vodaath Rabbinical Seminary,NY,Brooklyn,40.6382,-73.969395,Private nonprofit,9232,0.5714,2026-10-15
+193070,Mesivtha Tifereth Jerusalem of America,NY,New York,40.713812,-73.991271,Private nonprofit,10954,0,2026-10-15
+193292,Molloy University,NY,Rockville Centre,40.685941,-73.626183,Private nonprofit,26735,0.6857,2026-10-15
+193353,Mount Saint Mary College,NY,Newburgh,41.513872,-74.012655,Private nonprofit,26680,0.5476,2026-10-15
+193399,University of Mount Saint Vincent,NY,Bronx,40.913657,-73.908887,Private nonprofit,19758,0.5238,2026-10-15
+193584,Nazareth University,NY,Rochester,43.101576,-77.518579,Private nonprofit,30265,0.7267,2026-10-15
+193654,The New School,NY,New York,40.735508,-73.997114,Private nonprofit,48163,0.6781,2026-10-15
+193900,New York University,NY,New York,40.729452,-73.997264,Private nonprofit,35737,0.8783,2026-10-15
+193973,Niagara University,NY,Niagara University,43.137279,-79.036689,Private nonprofit,17246,0.6336,2026-10-15
+194091,New York Institute of Technology,NY,Old Westbury,40.812447,-73.6078,Private nonprofit,22613,0.5872,2026-10-15
+194310,Pace University,NY,New York,40.711014,-74.004719,Private nonprofit,30721,0.5564,2026-10-15
+194392,Paul Smiths College of Arts and Science,NY,Paul Smiths,44.433965,-74.252675,Private nonprofit,23753,0.4649,2026-10-15
+194569,Davis College,NY,Pottersville,43.730713,-73.812057,Private nonprofit,18614,,2026-10-15
+194578,Pratt Institute-Main,NY,Brooklyn,40.691297,-73.96431,Private nonprofit,48876,0.7428,2026-10-15
+194657,Rabbinical Academy Mesivta Rabbi Chaim Berlin,NY,Brooklyn,40.618347,-73.963615,Private nonprofit,4647,0.4118,2026-10-15
+194666,Rabbinical College Bobover Yeshiva Bnei Zion,NY,Brooklyn,40.631954,-73.985026,Private nonprofit,8358,0.7727,2026-10-15
+194718,Rabbinical Seminary Mkor Chaim,NJ,Lakewood,40.046838,-74.214817,Private nonprofit,7629,,2026-10-15
+194763,Rabbinical Seminary of America,NY,Flushing,40.72308,-73.817161,Private nonprofit,7309,0.4536,2026-10-15
+194824,Rensselaer Polytechnic Institute,NY,Troy,42.729978,-73.676646,Private nonprofit,32758,0.8028,2026-10-15
+194958,Roberts Wesleyan University,NY,Rochester,43.125755,-77.798498,Private nonprofit,23239,0.3901,2026-10-15
+195003,Rochester Institute of Technology,NY,Rochester,43.084188,-77.67386,Private nonprofit,37232,0.7039,2026-10-15
+195030,University of Rochester,NY,Rochester,43.126397,-77.631202,Private nonprofit,34347,0.8337,2026-10-15
+195128,Russell Sage College,NY,Troy,42.72822,-73.693711,Private nonprofit,21084,0.5855,2026-10-15
+195164,St Bonaventure University,NY,Saint Bonaventure,42.080191,-78.481107,Private nonprofit,27673,0.6911,2026-10-15
+195173,St. Francis College,NY,Brooklyn,40.690233,-73.986559,Private nonprofit,14219,0.5139,2026-10-15
+195216,St Lawrence University,NY,Canton,44.589879,-75.161343,Private nonprofit,31355,0.7864,2026-10-15
+195243,St. Thomas Aquinas College,NY,Sparkill,41.041576,-73.936799,Private nonprofit,21253,0.5331,2026-10-15
+195304,Sarah Lawrence College,NY,Bronxville,40.9355,-73.843727,Private nonprofit,37068,0.6642,2026-10-15
+195438,Sh'or Yoshuv Rabbinical College,NY,Lawrence,40.605227,-73.740085,Private nonprofit,,0,2026-10-15
+195474,Siena University,NY,Loudonville,42.717602,-73.7526,Private nonprofit,33934,0.7509,2026-10-15
+195526,Skidmore College,NY,Saratoga Springs,43.097035,-73.785335,Private nonprofit,31829,0.8186,2026-10-15
+195544,St. Joseph's University-New York,NY,Brooklyn,40.690418,-73.967664,Private nonprofit,18853,0.6833,2026-10-15
+195720,St. John Fisher University,NY,Rochester,43.116259,-77.513056,Private nonprofit,29743,0.7421,2026-10-15
+195809,St. John's University-New York,NY,Queens,40.722523,-73.796104,Private nonprofit,24508,0.6872,2026-10-15
+196015,SUNY College of Technology at Canton,NY,Canton,44.604096,-75.182906,Public,12696,0.3707,2026-10-15
+196033,SUNY College of Agriculture and Technology at Cobleskill,NY,Cobleskill,42.672534,-74.498258,Public,19526,0.4466,2026-10-15
+196042,Farmingdale State College,NY,Farmingdale,40.754224,-73.42832,Public,6146,0.4852,2026-10-15
+196060,University at Albany,NY,Albany,42.685489,-73.824662,Public,18266,0.6281,2026-10-15
+196079,Binghamton University,NY,Vestal,42.087868,-75.966889,Public,20907,0.8196,2026-10-15
+196088,University at Buffalo,NY,Buffalo,43.000942,-78.789458,Public,21775,0.7283,2026-10-15
+196097,Stony Brook University,NY,Stony Brook,40.91476,-73.12046,Public,18902,0.7711,2026-10-15
+196103,SUNY College of Environmental Science and Forestry,NY,Syracuse,43.034765,-76.138724,Public,18375,0.7195,2026-10-15
+196112,SUNY Polytechnic Institute,NY,Utica,43.137701,-75.229841,Public,12893,0.5644,2026-10-15
+196121,SUNY Brockport,NY,Brockport,43.211926,-77.947188,Public,17315,0.5032,2026-10-15
+196130,SUNY Buffalo State University,NY,Buffalo,42.933832,-78.882125,Public,10886,0.341,2026-10-15
+196149,State University of New York at Cortland,NY,Cortland,42.598022,-76.188655,Public,22125,0.7216,2026-10-15
+196158,SUNY at Fredonia,NY,Fredonia,42.452236,-79.337375,Public,15275,0.5532,2026-10-15
+196167,SUNY College at Geneseo,NY,Geneseo,42.796645,-77.821894,Public,18952,0.7031,2026-10-15
+196176,State University of New York at New Paltz,NY,New Paltz,41.740936,-74.082188,Public,19499,0.6868,2026-10-15
+196185,SUNY Oneonta,NY,Oneonta,42.468861,-75.063632,Public,18369,0.6614,2026-10-15
+196194,State University of New York at Oswego,NY,Oswego,43.454287,-76.540798,Public,16300,0.5823,2026-10-15
+196200,SUNY College at Potsdam,NY,Potsdam,44.662148,-74.973815,Public,13628,0.5484,2026-10-15
+196219,SUNY at Purchase College,NY,Purchase,41.047223,-73.701955,Public,19338,0.6109,2026-10-15
+196237,SUNY Old Westbury,NY,Old Westbury,40.799021,-73.571907,Public,8991,0.4264,2026-10-15
+196246,State University of New York at Plattsburgh,NY,Plattsburgh,44.69293,-73.466536,Public,15606,0.5567,2026-10-15
+196255,SUNY Downstate Health Sciences University,NY,Brooklyn,40.653855,-73.945535,Public,,,2026-10-15
+196264,Empire State University,NY,Saratoga Springs,43.077283,-73.782484,Public,11131,0.4778,2026-10-15
+196291,SUNY Maritime College,NY,Throggs Neck,40.807217,-73.795309,Public,22888,0.5378,2026-10-15
+196307,Upstate Medical University,NY,Syracuse,43.041819,-76.140009,Public,,,2026-10-15
+196413,Syracuse University,NY,Syracuse,43.036644,-76.133989,Private nonprofit,43336,0.8051,2026-10-15
+196431,Talmudical Seminary Oholei Torah,NY,Brooklyn,40.670089,-73.945759,Private nonprofit,9725,0.22,2026-10-15
+196440,Talmudical Institute of Upstate New York,NY,Rochester,43.147062,-77.574943,Private nonprofit,4183,1,2026-10-15
+196592,Touro University,NY,New York,40.756832,-73.987049,Private nonprofit,28433,0.6703,2026-10-15
+196680,Excelsior University,NY,Albany,42.705487,-73.862981,Private nonprofit,,,2026-10-15
+196866,Union College,NY,Schenectady,42.818097,-73.928788,Private nonprofit,28128,0.8091,2026-10-15
+197018,United Talmudical Seminary,NY,Brooklyn,40.705687,-73.959113,Private nonprofit,9053,0.5045,2026-10-15
+197027,United States Merchant Marine Academy,NY,Kings Point,40.81357,-73.763004,Public,1516,0.7804,2026-10-15
+197036,United States Military Academy,NY,West  Point,41.388988,-73.956772,Public,,0.8617,2026-10-15
+197045,Utica University,NY,Utica,43.096213,-75.272916,Private nonprofit,24195,0.538,2026-10-15
+197133,Vassar College,NY,Poughkeepsie,41.686895,-73.895088,Private nonprofit,36924,0.8857,2026-10-15
+197142,Villa Maria College,NY,Buffalo,42.91223,-78.796823,Private nonprofit,12863,0.3231,2026-10-15
+197151,School of Visual Arts,NY,New York,40.738809,-73.982359,Private for-profit,59593,0.7784,2026-10-15
+197197,Wagner College,NY,Staten Island,40.615588,-74.092913,Private nonprofit,30038,0.621,2026-10-15
+197221,Webb Institute,NY,Glen Cove,40.884444,-73.644909,Private nonprofit,14510,0.8846,2026-10-15
+197285,The College of Westchester,NY,White Plains,41.033687,-73.784404,Private for-profit,17774,0.4474,2026-10-15
+197601,Yeshiva Karlin Stolin,NY,Brooklyn,40.624918,-73.983373,Private nonprofit,6447,0.037,2026-10-15
+197674,Yeshiva of Nitra Rabbinical College,NY,Chester,41.353674,-74.255911,Private nonprofit,11908,0.25,2026-10-15
+197692,Yeshivath Shaar Hatorah,NY,Kew Gardens,40.704048,-73.835009,Private nonprofit,16217,0.4643,2026-10-15
+197708,Yeshiva University,NY,New York,40.850605,-73.929873,Private nonprofit,49210,0.8677,2026-10-15
+197735,Yeshivath Viznitz,NY,Monsey,41.114682,-74.070243,Private nonprofit,10421,0.5733,2026-10-15
+210492,Bryn Athyn College of the New Church,PA,Bryn Athyn,40.134393,-75.060808,Private nonprofit,20714,0.5556,2026-10-15
+210571,Albright College,PA,Reading,40.361351,-75.909742,Private nonprofit,20596,0.5149,2026-10-15
+210669,Allegheny College,PA,Meadville,41.64869,-80.147168,Private nonprofit,23895,0.697,2026-10-15
+210739,DeSales University,PA,Center Valley,40.539091,-75.375608,Private nonprofit,29183,0.6952,2026-10-15
+210775,Alvernia University,PA,Reading,40.310028,-75.936754,Private nonprofit,27122,0.5138,2026-10-15
+211088,Arcadia University,PA,Glenside,40.092606,-75.163876,Private nonprofit,25397,0.5803,2026-10-15
+211273,Bryn Mawr College,PA,Bryn Mawr,40.02736,-75.313223,Private nonprofit,44593,0.8316,2026-10-15
+211291,Bucknell University,PA,Lewisburg,40.954317,-76.882616,Private nonprofit,50021,0.8482,2026-10-15
+211431,Carlow University,PA,Pittsburgh,40.439293,-79.963448,Private nonprofit,22455,0.6852,2026-10-15
+211440,Carnegie Mellon University,PA,Pittsburgh,40.44357,-79.941993,Private nonprofit,35780,0.9431,2026-10-15
+211468,Cedar Crest College,PA,Allentown,40.586318,-75.519221,Private nonprofit,23513,0.6049,2026-10-15
+211556,Chatham University,PA,Pittsburgh,40.448432,-79.926083,Private nonprofit,25502,0.6401,2026-10-15
+211583,Chestnut Hill College,PA,Philadelphia,40.08678,-75.228742,Private nonprofit,20972,0.4928,2026-10-15
+211608,Cheyney University of Pennsylvania,PA,Cheyney,39.932274,-75.529262,Public,12255,0.2019,2026-10-15
+211893,Curtis Institute of Music,PA,Philadelphia,39.948857,-75.170727,Private nonprofit,,1,2026-10-15
+211981,Delaware Valley University,PA,Doylestown,40.298659,-75.158452,Private nonprofit,28226,0.5,2026-10-15
+212009,Dickinson College,PA,Carlisle,40.202796,-77.197854,Private nonprofit,28634,0.7367,2026-10-15
+212054,Drexel University,PA,Philadelphia,39.955217,-75.190051,Private nonprofit,37529,0.7794,2026-10-15
+212106,Duquesne University,PA,Pittsburgh,40.43589,-79.993123,Private nonprofit,37704,0.7629,2026-10-15
+212115,East Stroudsburg University of Pennsylvania,PA,East Stroudsburg,40.99599,-75.173905,Public,21084,0.4568,2026-10-15
+212133,Eastern University,PA,Saint Davids,40.050448,-75.370316,Private nonprofit,27498,0.5836,2026-10-15
+212197,Elizabethtown College,PA,Elizabethtown,40.149236,-76.593224,Private nonprofit,25682,0.8152,2026-10-15
+212577,Franklin and Marshall College,PA,Lancaster,40.048045,-76.319037,Private nonprofit,33445,0.7911,2026-10-15
+212601,Gannon University,PA,Erie,42.128403,-80.087166,Private nonprofit,24443,0.7093,2026-10-15
+212656,Geneva College,PA,Beaver Falls,40.772518,-80.321826,Private nonprofit,19090,0.6326,2026-10-15
+212674,Gettysburg College,PA,Gettysburg,39.836597,-77.236792,Private nonprofit,33015,0.7858,2026-10-15
+212771,Gratz College,PA,Jenkintown,40.067206,-75.133915,Private nonprofit,,,2026-10-15
+212805,Grove City College,PA,Grove City,41.1558,-80.081481,Private nonprofit,,0.8078,2026-10-15
+212832,Gwynedd Mercy University,PA,Gwynedd Valley,40.19774,-75.237224,Private nonprofit,27541,0.584,2026-10-15
+212911,Haverford College,PA,Haverford,40.007452,-75.305207,Private nonprofit,31075,0.8898,2026-10-15
+212984,Holy Family University,PA,Philadelphia,40.060581,-74.986451,Private nonprofit,12882,0.6715,2026-10-15
+213011,Immaculata University,PA,Immaculata,40.027981,-75.570711,Private nonprofit,23811,0.631,2026-10-15
+213020,Indiana University of Pennsylvania,PA,Indiana,40.617531,-79.159332,Public,17391,0.5175,2026-10-15
+213251,Juniata College,PA,Huntingdon,40.500523,-78.017292,Private nonprofit,24001,0.6902,2026-10-15
+213303,Keystone College,PA,La Plume,41.558969,-75.777456,Private nonprofit,22909,0.3765,2026-10-15
+213321,King's College,PA,Wilkes-Barre,41.250097,-75.879822,Private nonprofit,21439,0.6068,2026-10-15
+213349,Kutztown University of Pennsylvania,PA,Kutztown,40.513561,-75.783933,Public,22146,0.5539,2026-10-15
+213358,La Roche University,PA,Pittsburgh,40.568615,-80.014851,Private nonprofit,27449,0.4585,2026-10-15
+213367,La Salle University,PA,Philadelphia,40.037979,-75.153061,Private nonprofit,19758,0.6018,2026-10-15
+213385,Lafayette College,PA,Easton,40.69956,-75.209786,Private nonprofit,35879,0.8539,2026-10-15
+213400,Lancaster Bible College,PA,Lancaster,40.075347,-76.287761,Private nonprofit,24806,0.6928,2026-10-15
+213507,Lebanon Valley College,PA,Annville,40.330604,-76.514431,Private nonprofit,28059,0.6913,2026-10-15
+213543,Lehigh University,PA,Bethlehem,40.606822,-75.380236,Private nonprofit,25272,0.852,2026-10-15
+213598,Lincoln University,PA,Lincoln University,39.807723,-75.926458,Public,13517,0.447,2026-10-15
+213668,Lycoming College,PA,Williamsport,41.24666,-77,Private nonprofit,18815,0.5824,2026-10-15
+213826,Marywood University,PA,Scranton,41.434587,-75.634142,Private nonprofit,21059,0.6833,2026-10-15
+213987,Mercyhurst University,PA,Erie,42.10578,-80.053412,Private nonprofit,26486,0.6104,2026-10-15
+213996,Messiah University,PA,Mechanicsburg,40.156579,-76.988269,Private nonprofit,25955,0.7822,2026-10-15
+214041,Millersville University of Pennsylvania,PA,Millersville,40.000337,-76.357381,Public,18817,0.5481,2026-10-15
+214069,Misericordia University,PA,Dallas,41.345277,-75.971541,Private nonprofit,40348,0.7293,2026-10-15
+214148,Moore College of Art and Design,PA,Philadelphia,39.957078,-75.172105,Private nonprofit,44587,0.549,2026-10-15
+214157,Moravian University,PA,Bethlehem,40.630947,-75.383638,Private nonprofit,35264,0.7424,2026-10-15
+214166,Mount Aloysius College,PA,Cresson,40.459679,-78.600898,Private nonprofit,21483,0.5331,2026-10-15
+214175,Muhlenberg College,PA,Allentown,40.596416,-75.508502,Private nonprofit,25253,0.8327,2026-10-15
+214272,Neumann University,PA,Aston,39.874876,-75.440022,Private nonprofit,27749,0.4602,2026-10-15
+214591,Pennsylvania State University-Penn State Erie-Behrend College,PA,Erie,42.119417,-79.983818,Public,23165,0.47,2026-10-15
+214625,Pennsylvania State University-Penn State New Kensington,PA,New Kensington,40.551056,-79.697461,Public,10866,0.2574,2026-10-15
+214634,Pennsylvania State University-Penn State Shenango,PA,Sharon,41.235131,-80.50924,Public,10802,0.3077,2026-10-15
+214643,Pennsylvania State University-Penn State Wilkes-Barre,PA,Dallas,41.305602,-76.016151,Public,10521,0.1239,2026-10-15
+214652,Pennsylvania State University-Penn State Scranton,PA,Dunmore,41.439843,-75.621401,Public,12204,0.3117,2026-10-15
+214670,Pennsylvania State University-Penn State Lehigh Valley,PA,Center Valley,40.559201,-75.40267,Public,12029,0.1811,2026-10-15
+214689,Pennsylvania State University-Penn State Altoona,PA,Altoona,40.541759,-78.409601,Public,21714,0.1593,2026-10-15
+214698,Pennsylvania State University-Penn State Beaver,PA,Monaca,40.678271,-80.296316,Public,16063,0.2526,2026-10-15
+214704,Pennsylvania State University-Penn State Berks,PA,Reading,40.358839,-75.97329,Public,19570,0.2866,2026-10-15
+214713,Pennsylvania State University-Penn State Harrisburg,PA,Middletown,40.204253,-76.741216,Public,16753,0.274,2026-10-15
+214731,Pennsylvania State University-Penn State Brandywine,PA,Media,39.927123,-75.449704,Public,18053,0.1899,2026-10-15
+214740,Pennsylvania State University-Penn State DuBois,PA,DuBois,41.127184,-78.751554,Public,11531,0.3033,2026-10-15
+214759,Pennsylvania State University-Penn State Fayette- Eberly,PA,Lemont Furnace,39.946455,-79.659317,Public,11957,0.3642,2026-10-15
+214768,Pennsylvania State University-Penn State Hazleton,PA,Hazleton,40.98396,-76.030975,Public,14209,0.2264,2026-10-15
+214777,Pennsylvania State University-Main Campus,PA,University Park,40.7965,-77.862848,Public,33675,0.8542,2026-10-15
+214786,Pennsylvania State University-Penn State Greater Allegheny,PA,McKeesport,40.345591,-79.827428,Public,14194,0.2647,2026-10-15
+214795,Pennsylvania State University-Penn State Mont Alto,PA,Mont Alto,39.842212,-77.541797,Public,16748,0.3978,2026-10-15
+214801,Pennsylvania State University-Penn State Abington,PA,Abington,40.117101,-75.110724,Public,14429,0.2243,2026-10-15
+214810,Pennsylvania State University-Penn State Schuylkill,PA,Schuylkill Haven,40.640512,-76.166374,Public,15199,0.3216,2026-10-15
+214829,Pennsylvania State University-Penn State York,PA,York,39.95283,-76.703486,Public,12374,0.1818,2026-10-15
+214883,Peirce College,PA,Philadelphia,39.949623,-75.168105,Private nonprofit,,0.2609,2026-10-15
+214971,Pennsylvania Academy of the Fine Arts,PA,Philadelphia,39.955692,-75.163456,Private nonprofit,,0.3333,2026-10-15
+215053,Pennsylvania College of Art and Design,PA,Lancaster,40.041152,-76.308769,Private nonprofit,33456,0.6875,2026-10-15
+215062,University of Pennsylvania,PA,Philadelphia,39.950929,-75.19391,Private nonprofit,29577,0.9688,2026-10-15
+215114,Cairn University-Langhorne,PA,Langhorne,40.165809,-74.909509,Private nonprofit,31280,0.5388,2026-10-15
+215266,University of Pittsburgh-Bradford,PA,Bradford,41.943415,-78.673701,Public,13598,0.3767,2026-10-15
+215275,University of Pittsburgh-Greensburg,PA,Greensburg,40.276447,-79.532676,Public,17075,0.4499,2026-10-15
+215284,University of Pittsburgh-Johnstown,PA,Johnstown,40.265957,-78.834163,Public,16375,0.5546,2026-10-15
+215293,University of Pittsburgh-Pittsburgh Campus,PA,Pittsburgh,40.444388,-79.953254,Public,29362,0.8576,2026-10-15
+215442,Point Park University,PA,Pittsburgh,40.438768,-80.002061,Private nonprofit,26028,0.5446,2026-10-15
+215655,Robert Morris University,PA,Moon Township,40.520415,-80.210468,Private nonprofit,21445,0.6402,2026-10-15
+215691,Rosemont College,PA,Rosemont,40.033417,-75.32925,Private nonprofit,20820,0.4947,2026-10-15
+215743,Saint Francis University,PA,Loretto,40.506734,-78.63904,Private nonprofit,28219,0.7683,2026-10-15
+215770,Saint Joseph's University - Philadelphia,PA,Philadelphia,39.994442,-75.238343,Private nonprofit,33840,0.8112,2026-10-15
+215798,Saint Vincent College,PA,Latrobe,40.29265,-79.403762,Private nonprofit,23122,0.6955,2026-10-15
+215929,University of Scranton,PA,Scranton,41.406556,-75.656915,Private nonprofit,32132,0.8189,2026-10-15
+215947,Seton Hill University,PA,Greensburg,40.309407,-79.557433,Private nonprofit,25519,0.6667,2026-10-15
+216010,Shippensburg University of Pennsylvania,PA,Shippensburg,40.057933,-77.522335,Public,21129,0.4876,2026-10-15
+216038,Slippery Rock University of Pennsylvania,PA,Slippery Rock,41.062719,-80.045965,Public,19972,0.6828,2026-10-15
+216047,Saint Charles Borromeo Seminary-Overbrook,PA,Ambler,40.201235,-75.231732,Private nonprofit,,1,2026-10-15
+216278,Susquehanna University,PA,Selinsgrove,40.797502,-76.875329,Private nonprofit,28585,0.7855,2026-10-15
+216287,Swarthmore College,PA,Swarthmore,39.905159,-75.354278,Private nonprofit,17392,0.9161,2026-10-15
+216311,Talmudical Yeshiva of Philadelphia,PA,Philadelphia,39.989249,-75.247964,Private nonprofit,8970,0.75,2026-10-15
+216339,Temple University,PA,Philadelphia,39.980546,-75.156859,Public,23058,0.727,2026-10-15
+216357,Thiel College,PA,Greenville,41.41354,-80.384383,Private nonprofit,24478,0.5344,2026-10-15
+216366,Thomas Jefferson University,PA,Philadelphia,39.948274,-75.158266,Private nonprofit,25555,0.7122,2026-10-15
+216524,Ursinus College,PA,Collegeville,40.193023,-75.456505,Private nonprofit,30181,0.7256,2026-10-15
+216597,Villanova University,PA,Villanova,40.036463,-75.340502,Private nonprofit,41536,0.9281,2026-10-15
+216667,Washington & Jefferson College,PA,Washington,40.170622,-80.24049,Private nonprofit,21690,0.6632,2026-10-15
+216694,Waynesburg University,PA,Waynesburg,39.899871,-80.186205,Private nonprofit,18810,0.5421,2026-10-15
+216764,West Chester University of Pennsylvania,PA,West Chester,39.953398,-75.59812,Public,24778,0.6784,2026-10-15
+216807,Westminster College,PA,New Wilmington,41.119272,-80.331017,Private nonprofit,19484,0.5978,2026-10-15
+216852,Widener University,PA,Chester,39.861689,-75.355363,Private nonprofit,26151,0.6685,2026-10-15
+216931,Wilkes University,PA,Wilkes-Barre,41.244199,-75.890262,Private nonprofit,25799,0.5921,2026-10-15
+217013,Wilson College,PA,Chambersburg,39.949659,-77.650712,Private nonprofit,20699,0.5505,2026-10-15
+217059,York College of Pennsylvania,PA,York,39.94614,-76.727984,Private nonprofit,21886,0.621,2026-10-15
+245777,Bais Medrash Elyon,NY,Monsey,41.114079,-74.069798,Private nonprofit,8387,0.2857,2026-10-15
+375230,Yeshiva Gedolah Imrei Yosef D'spinka,NY,Brooklyn,40.628468,-73.992328,Private nonprofit,7392,0.25,2026-10-15
+384421,Rabbi Jacob Joseph School,NJ,Edison,40.501001,-74.397954,Private nonprofit,4718,0,2026-10-15
+405854,Rabbinical College of Ohr Shimon Yisroel,NY,Brooklyn,40.704389,-73.956772,Private nonprofit,33034,0.45,2026-10-15
+418126,New York College of Health Professions,NY,Syosset,40.811129,-73.51534,Private nonprofit,,0.3182,2026-10-15
+420325,Yeshiva D'monsey Rabbinical College,NY,Monsey,41.114173,-74.064721,Private nonprofit,9068,0.0417,2026-10-15
+421878,Eastern International College-Jersey City,NJ,Jersey City,40.735178,-74.060452,Private for-profit,17756,0.5584,2026-10-15
+440794,Pillar College,NJ,Newark,40.738539,-74.169153,Private nonprofit,2785,0.36,2026-10-15
+443784,Strayer University-Pennsylvania,PA,Philadelphia,40.13955,-74.962991,Private for-profit,,0.4,2026-10-15
+444413,Beis Medrash Heichal Dovid,NY,Far Rockaway,40.596845,-73.751633,Private nonprofit,8953,0.4231,2026-10-15
+446604,Uta Mesivta of Kiryas Joel,NY,Monroe,41.333864,-74.161179,Private nonprofit,5694,0.7143,2026-10-15
+446640,Harrisburg University of Science and Technology,PA,Harrisburg,40.26193,-76.880261,Private nonprofit,14133,0.3575,2026-10-15
+449658,Bais Medrash Toras Chesed,NJ,Lakewood,40.099704,-74.21127,Private nonprofit,6306,0.5926,2026-10-15
+451370,Yeshivas Be'er Yitzchok,NJ,Elizabeth,40.682465,-74.213255,Private nonprofit,13395,0.5,2026-10-15
+451398,Yeshiva Toras Chaim,NJ,Lakewood,40.098692,-74.182143,Private nonprofit,1391,0.1698,2026-10-15
+451404,Talmudical Seminary of Bobov,NY,Brooklyn,40.634485,-73.995378,Private nonprofit,5091,0.5,2026-10-15
+453215,Strayer University-New Jersey,NJ,Piscataway,40.554506,-74.474974,Private for-profit,,0,2026-10-15
+455257,Yeshiva of Machzikai Hadas,NY,Brooklyn,40.636104,-73.990592,Private nonprofit,14533,0.6778,2026-10-15
+461847,Keser Torah-Mayan Hatalmud,NJ,Lakewood,40.098369,-74.17029,Private nonprofit,,0.1667,2026-10-15
+476717,Be'er Yaakov Talmudic Seminary,NY,Spring Valley,41.1382062,-74.029573,Private nonprofit,3313,0.5385,2026-10-15
+479956,Pennsylvania State University-World Campus,PA,University Park,40.7965,-77.862848,Public,12651,0.5094,2026-10-15
+481410,Yeshiva Gedolah Kesser Torah,NY,Monsey,41.124819,-74.068553,Private nonprofit,7511,0.25,2026-10-15
+481438,Yeshiva Yesodei Hatorah,NJ,Lakewood,40.065908,-74.202016,Private nonprofit,11404,0.1379,2026-10-15
+482413,DeVry College of New York,NY,New York,40.747747,-73.983492,Private for-profit,,0.4333,2026-10-15
+482556,DeVry University-New Jersey,NJ,Iselin,40.557503,-74.311372,Private for-profit,,0.3333,2026-10-15
+484871,Rabbinical College Ohr Yisroel,NY,Brooklyn,40.629707,-73.896524,Private nonprofit,4532,0.3333,2026-10-15
+485999,Bet Medrash Gadol Ateret Torah,NY,Brooklyn,40.607809,-73.969945,Private nonprofit,3033,0.8276,2026-10-15
+486017,Yeshiva Ohr Yisrael,NY,Brooklyn,40.61359,-73.944041,Private nonprofit,,0.2,2026-10-15
+486026,Yeshiva Sholom Shachna,NY,Brooklyn,40.6275,-73.973431,Private nonprofit,7844,0.2381,2026-10-15
+486956,Chamberlain University-New Jersey,NJ,North Brunswick,40.465934,-74.438877,Private for-profit,42922,0.6,2026-10-15
+487746,Yeshiva Zichron Aryeh,NY,Far Rockaway,40.606105,-73.764423,Private nonprofit,,0,2026-10-15
+488004,Central Yeshiva Beth Joseph,NY,Airmont,40.615411,-73.959386,Private nonprofit,,,2026-10-15
+488314,Beth Medrash of Asbury Park,NJ,Lakewood,40.043705,-74.210816,Private nonprofit,8724,0.1667,2026-10-15
+490276,Yeshiva Shaar Ephraim,NY,Monsey,41.116935,-74.060858,Private nonprofit,10470,0.0645,2026-10-15
+490319,Yeshiva Bais Aharon,NJ,Lakewood,40.101002,-74.203094,Private nonprofit,9677,0,2026-10-15
+490328,Mechon L'hoyroa,NY,Monsey,41.117029,-74.058177,Private nonprofit,,,2026-10-15
+490504,Yeshiva Ohr Naftoli,NY,New Windsor,41.456984,-74.046291,Private nonprofit,12987,0.1667,2026-10-15
+490513,Bais Medrash Mayan Hatorah,NJ,Lakewood,40.107414,-74.204332,Private nonprofit,13000,0.1111,2026-10-15
+491057,Yeshiva Kollel Tifereth Elizer,NY,Brooklyn,40.637096,-73.992171,Private nonprofit,9732,0.25,2026-10-15
+491613,Yeshiva Gedolah Tiferes Boruch,NJ,North Plainfield,40.619593,-74.4346,Private nonprofit,8787,0,2026-10-15
+491710,Yeshiva Gedolah of Cliffwood,NJ,Keyport,40.442213,-74.224235,Private nonprofit,,0.0476,2026-10-15
+491765,Yeshivas Emek Hatorah,NJ,Howell,40.112501,-74.232083,Private nonprofit,,0.0345,2026-10-15
+493594,Yeshiva of Ocean,NY,Greenfield Park,41.732961,-74.501698,Private nonprofit,8569,0.4286,2026-10-15
+493600,Congregation Talmidei Mesivta Tiferes Shmiel Aleksander,NY,Brooklyn,40.624233,-73.994778,Private nonprofit,5915,0.1132,2026-10-15
+493664,Yeshivat Hechal Shemuel,NY,Brooklyn,40.610906,-73.955944,Private nonprofit,6828,,2026-10-15
+494737,Yeshiva Yesoda Hatorah Vetz Chaim,NY,Brooklyn,40.706959,-73.961026,Private nonprofit,5737,0.3636,2026-10-15
+495031,Bais Medrash of Dexter Park,NY,Chestnut Ridge,41.081404,-74.045927,Private nonprofit,20662,0.4,2026-10-15
+498562,Commonwealth University of Pennsylvania,PA,Bloomsburg,41.00782,-76.447844,Public,17468,0.5388,2026-10-15
+498571,Pennsylvania Western University,PA,California,40.064964,-79.88679,Public,17839,0.5137,2026-10-15
+498809,Yeshiva of Kasho,NY,Brooklyn,40.671255,-74.00015,Private nonprofit,9021,0.1636,2026-10-15
+498906,Yeshivas Sanz Klauzenburg,NY,Brooklyn,40.632725,-73.990129,Private nonprofit,9193,0.4,2026-10-15
+500740,Congregation YMH,NY,Brooklyn,,,Private nonprofit,11707,,2026-10-15
